@@ -2,10 +2,9 @@
 
 Instructions to ostKIT $\alpha$ api documentation 
 
-1. git clone https://github.com/OpenSTFoundation/openst-platform-apis.git
-2. cd openst-platform-apis
-3. git checkout develop
-4. cd apidocs/website
+1. git clone https://github.com/OpenSTFoundation/website-docupony.git
+2. git checkout ben/gh1/kit-api
+4. cd api/website
 3. npm start
 4. Open http://localhost:3000/ostkit-restful-api/docs/started.html
 
