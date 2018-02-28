@@ -21,19 +21,19 @@ The user in ostKIT alpha, is the individual or the end-user accessing and intera
 
 ### User Object Sub-Attributes
 
-#### **_filter_** Sub-Attributes
+#### **_filter_** 
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _all_   | String | All the end-users that have been previously air-dropped tokens. |
 | _new_   | String | All the end-users that have **_not_** been previously any air-dropped tokens. |
 
-#### **_list_type_** Sub-Attributes
+#### **_list_type_**
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _all_   | String | All the end-users that have been previously air-dropped tokens. |
 | _new_   | String | All the end-users that have **_not_** been previously any air-dropped tokens. |
 
-#### **_sort_by_** Sub-Attributes
+#### **_sort_by_** 
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _creation_time_   | String | The method to list end-users by the time of end-user creation. |
