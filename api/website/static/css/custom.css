@@ -16,12 +16,7 @@
 }
 
 
-.mainContainer .wrapper .post .postHeader h1 {
-    font-size: 250%;
-    font-weight: 500;
-    color: #438CAD !important;
-  }
-
+/** Side Nav Fixes **/
 
 nav.toc {
 	position: fixed;
@@ -46,6 +41,13 @@ nav.toc .toggleNav ul li a.navItemActive {
   font-weight: bold;
 }
 
+/** H1, H2, H3 **/
+.mainContainer .wrapper .post .postHeader h1 {
+    font-size: 250%;
+    font-weight: 500;
+    color: #438CAD !important;
+  }
+
 
 .container .wrapper h3 {
   color: #438CAD;
@@ -68,6 +70,7 @@ nav.toc .toggleNav ul li a.navItemActive {
   font-style: italic;
 }
 
+/** Top Nav and Header **/
 .navigationSlider .slidingNav ul li a {
     border: 0;
     color: rgba(255, 255, 255, 0.8);
@@ -85,9 +88,6 @@ nav.toc .toggleNav ul li a.navItemActive {
     color: #fff;
   }
 
- 
-
-
 .fixedHeaderContainer header h2 {
   display: block;
   color: #34445B !important;
@@ -103,3 +103,7 @@ nav.toc .toggleNav ul li a.navItemActive {
   margin-left: 10px;
   font-size: 16px;
 }
+
+/** Footer **/
+
+
