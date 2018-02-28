@@ -12,22 +12,26 @@ So an important aspect of setting up a branded token economy is to setup transac
 ### Transaction Object  
 | Parameter           | Type   | Description                                                                                                                                       |
 |---------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| _name_                | String | The name of the transaction. Example: an "Upvote","buy a coffee".                                                                                                                                                                                   |
-| [_kind_](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind-sub-attributes)               | String | The type of transaction, differentiated based on the owners involved in the token exchange. The three types of transactions are _user_to_user_, _company_to_user_ and _user_to_company_ .                                                                                                                                                      |
-| [_value_currency_type_](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#value-currency-type-sub-attributes)| String | The currency type in which the value of the transaction has been set. The transaction value can either be set in USD or in branded tokens (BT). Example: you can set value of an "Upvote" transaction to be 20 cents or 10 of your branded tokens. If the value is set in USD, the string used should be _usd_ and if the value is set in branded tokens the string used should be _bt_ .                                                                                                                                                        |
-| _value_in_bt_         | Float  | The amount in branded tokens (BT) to be set as transaction value.                                                                                                                                                                                                                |
+| _name_                | String | The name of the transaction. Example: an "Upvote","buy a coffee".|
+| [_kind_](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind-sub-attributes)               | String | The type of transaction, differentiated based on the owners involved in the token exchange. The three types of transactions are _user_to_user_, _company_to_user_ and _user_to_company_ .|
+| [_value_currency_type_](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#value-currency-type-sub-attributes)| String | The currency type in which the value of the transaction has been set. The transaction value can either be set in USD or in branded tokens (BT). Example: you can set value of an "Upvote" transaction to be 20 cents or 10 of your branded tokens. If the value is set in USD, the string used should be _usd_ and if the value is set in branded tokens the string used should be _bt_ .|
+| _value_in_bt_         | Float  | The amount in branded tokens (BT) to be set as transaction value.|
 | _commission_percent_  | Float  | As the company, you can set a fee on _user_to_user_ transactions. Example: If a user buys a service on your platform from another user, you can set a fee on these 'buy' transactions.  This fee is set in percentage of the total value of the transaction and is not additional to the transaction value. |
-| _value_in_usd_        | Float  | Amount in dollars (USD) to be set as transaction value.                                                                                                                                                                                                            |
+| _token_erc20_address_        | String  | Amount in dollars (USD) to be set as transaction value.|
+| _token_uuid_        | String  | Amount in dollars (USD) to be set as transaction value.|
+| _conversion_rate_        | Float  | Amount in dollars (USD) to be set as transaction value.|
+| _created_at_        | String  | Amount in dollars (USD) to be set as transaction value.|
+| _updated_at_        | String  | Amount in dollars (USD) to be set as transaction value.|
 ### Transaction Object Sub-Attributes
 
-#### _kind_ Sub-Attributes 
+#### _kind_  
 | Parameter       | Type   | Definition                                                                                    |
 |-----------------|--------|-----------------------------------------------------------------------------------------------|
 | _user_to_user_    | String | Value transfer from one end-user to another. Example: "Upvote" or "like".                                         |
 | _user_to_company_ | String | Value transfer from an end-user to you (the application service provider). Example: “API call”. |
 | _company_to_user_ | String | Value transfer from the application service provider to an end-user. Example: “Rewards”.    |
 
-#### _value_currency_type_ Sub-Attributes
+#### _value_currency_type_ 
 | Parameter | Type   | Definition                                                                                                        |
 |-----------|--------|-------------------------------------------------------------------------------------------------------------------|
 | _usd_       | String | Fiat currency that the transaction is valued in.                                                                |
@@ -201,5 +205,54 @@ Returns a hash with a key _result-type_. The value of _result-type_ is in-turn a
 ```
 
 If no more transactions are available, the resulting hash will have the meta parameter with an empty value of next_page_payload.
+
+
+
+
+
+### 4. Execute Transaction API
+To execute a transaction between one end-user to another end-user, an action can be utlizied to crete a branded token exchange. This can be done by specifying the from end-user _uuid_ to another end-user _uuid_ and the transaction [kind](http://localhost:3000/ostkit-restful-api/docs/transaction.html#kind). 
+
+#### POST 
+```url
+{{saas_api_url}}/transaction/execute
+```
+
+#### Parameters 
+| Parameter           | Type   | Value                                               |
+|---------------------|--------|-----------------------------------------------------|
+| _from_user_uuid_                | String | The origin end-user of the transaction. Example: 5f79063f-e22a-4d28-99d7-dd095f02c72e                              |
+| _to_user_uuid_                | String | The destination end-user of the transaction. Example: 7a1e31e5-cc39-4a14-a176-29bc4d117867                  |
+| _transaction_kind_ | String | The [kind](http://localhost:3000/ostkit-restful-api/docs/transaction.html#kind) of transaction defined earlier. Example: Upvote.                                |
+
+#### Sample Code | Curl 
+```bash
+curl --request POST \
+  --url 'http://{{saas_api_url}}/transaction/execute' \
+  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  --form from_user_uuid=5f79063f-e22a-4d28-99d7-dd095f02c72e \
+  --form to_user_uuid=7a1e31e5-cc39-4a14-a176-29bc4d117867 \
+  --form transaction_kind=Upvote
+```
+
+
+#### Response
+```javascript
+{"client_id"=>28, "result_type"=>"transaction_types", 
+"transaction_types"=> [ {"id"=>"5", "name"=>"Transaction 4", 
+"kind"=>"company_to_user", "currency_type"=>"bt", 
+"currency_value"=>"0.5", "commission_percent"=>"0.000", 
+"status"=>"active"}], "meta"=>{"next_page_payload"=>{}}, 
+"price_points"=>{"ost"=>{"usd"=>"1"}}, "client_tokens"=> 
+[{"id"=>"16", "client_id"=>28, "reserve_managed_address_id"=>90, 
+"name"=>"sd1", "symbol"=>"sd1", "symbol_icon"=>nil, "token_erc20_address"=>"0xdc1A2F9A712a38F673fe7758C35Bec4F9051Da63", 
+"token_uuid"=> "0xf4842e7905d55ebd6699832662570539c2995d35e345360a4cf05e9b486e0a95", "conversion_rate"=>"1.000000", "created_at"=>"2018-02-20 08:16:27", 
+"updated_at"=>"2018-02-20 08:31:44"}]}
+```
+#### Returns
+Returns a transaction object with information on various parameters such as the value of the transaction, the commission to you, conversion rates, token address, uuids, last updated information and the branded token currency type. 
+
+
+
 
 
