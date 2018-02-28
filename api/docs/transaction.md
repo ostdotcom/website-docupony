@@ -17,11 +17,11 @@ So an important aspect of setting up a branded token economy is to setup transac
 | [_value_currency_type_](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#value-currency-type-sub-attributes)| String | The currency type in which the value of the transaction has been set. The transaction value can either be set in USD or in branded tokens (BT). Example: you can set value of an "Upvote" transaction to be 20 cents or 10 of your branded tokens. If the value is set in USD, the string used should be _usd_ and if the value is set in branded tokens the string used should be _bt_ .|
 | _value_in_bt_         | Float  | The amount in branded tokens (BT) to be set as transaction value.|
 | _commission_percent_  | Float  | As the company, you can set a fee on _user_to_user_ transactions. Example: If a user buys a service on your platform from another user, you can set a fee on these 'buy' transactions.  This fee is set in percentage of the total value of the transaction and is not additional to the transaction value. |
-| _token_erc20_address_        | String  | Amount in dollars (USD) to be set as transaction value.|
-| _token_uuid_        | String  | Amount in dollars (USD) to be set as transaction value.|
-| _conversion_rate_        | Float  | Amount in dollars (USD) to be set as transaction value.|
-| _created_at_        | String  | Amount in dollars (USD) to be set as transaction value.|
-| _updated_at_        | String  | Amount in dollars (USD) to be set as transaction value.|
+| _token_erc20_address_        | String  | The erc20 token address on the utility blockchain |
+| _token_uuid_        | String  |  |
+| _conversion_rate_        | Float  | |
+| _created_at_        | String  | |
+| _updated_at_        | String  | |
 ### Transaction Object Sub-Attributes
 
 #### _kind_  
@@ -146,7 +146,7 @@ Returns a transaction object if the update is successful. This call will return 
 
 
 
-### 3. List transactions API
+### 3. List transaction kind API
 Returns a list of all existing transactions created. The transactions are returned in creation order, with the transcations created first, appearing at the top. 
 
 #### GET 
@@ -251,6 +251,60 @@ curl --request POST \
 ```
 #### Returns
 Returns a transaction object with information on various parameters such as the value of the transaction, the commission to you, conversion rates, token address, uuids, last updated information and the branded token currency type. 
+
+
+
+
+
+### 5. List Transactions API
+To get a list of all trasacations that have been initiated and exectued between one end-user and another end-user using your tokenized application.    
+
+#### POST 
+```url
+{{saas_api_url}}/transaction/list?page_no=1
+```
+
+#### Parameters 
+| Parameter | Type | Value                                         |
+|-----------|------|-----------------------------------------------|
+| _page_no_   | Int  | 1 (page number for all the transaction types) |
+
+#### Sample Code | Curl 
+```bash
+curl --request GET \
+  --url 'http://{{saas_api_url}}/transaction/list?page_no=1'
+```
+
+
+#### Response
+```javascript
+{:economy_users=> {1=> {:id=>1, :name=>"company User", :uuid=>"a1", :total_airdropped_tokens=>"active",
+:token_balance=>1000}, 2=> {:id=>2, :name=>"Aman User1", :uuid=>"a2", :total_airdropped_tokens=>"active",
+:token_balance=>100}, 3=> {:id=>3, :name=>"Rachin User3", :uuid=>"a3", :total_airdropped_tokens=>"active",
+:token_balance=>10}}, :client_token=> {:id=>1, :client_id=>1, :name=>"TakTakTak", :symbol=>"T3K", 
+:symbol_icon=>"", :status=>"active", :conversion_factor=>3.003, :setup_steps=> ["token_worth_in_usd",
+"configure_transactions", "propose_initiated", "propose_done", "registered_on_uc", "registered_on_vc",
+"received_test_ost"]}, :transaction_types=> {1=> {:id=>1, :name=>"Upvote", :kind=>"user_to_user",
+:currency_type=>"bt", :currency_value=>"10", :commission_percent=>"0.000", :status=>"active"}, 
+2=> {:id=>2, :name=>"Service Charge", :kind=>"user_to_company", :currency_type=>"bt", :currency_value=>"30",
+:commission_percent=>"0.000", :status=>"active"}, 3=> {:id=>3, :name=>"Like", :kind=>"user_to_user",
+:currency_type=>"usd", :currency_value=>"20", :commission_percent=>"10.000", :status=>"active"}},
+:result_type=>"transactions", :transactions=> [{:id=>"a2-a3", :transaction_uuid=>"a2-a3", :status=>"active",
+:transaction_hash=>"uussyyuuwww-1519655294", :uts=>"1519655294", :from_user_id=>2, :to_user_id=>3,
+:transaction_type_id=>1, :client_token_id=>1, :currency_value=>10, :gas_value=>0.011, :block_number=>1,
+:block_timestamp=>"1519655294", :transfers=> [{:from_user_id=>2, :to_user_id=>3, :type=>"transfer",
+:currency_value=>10}]}, {:id=>"a2-a1", :transaction_uuid=>"a2-a1", :status=>"active",
+:transaction_hash=>"uussyyuuwww-1519655294", :uts=>"1519655294", :from_user_id=>2, :to_user_id=>1,
+:transaction_type_id=>2, :client_token_id=>1, :currency_value=>30, :gas_value=>0.021, :block_number=>2,
+:block_timestamp=>"1519655294", :transfers=> [{:from_user_id=>2, :to_user_id=>1, :type=>"transfer",
+:currency_value=>30}]}, {:id=>"a3-a2", :transaction_uuid=>"a3-a2", :status=>"pending", :transaction_hash=>nil,
+:uts=>"1519655294", :from_user_id=>3, :to_user_id=>2, :transaction_type_id=>3, :currency_value=>nil, 
+:gas_value=>nil, :block_number=>nil, :block_timestamp=>nil, :transfers=>[]}], :oracle_price_points=>
+{:ost=>{:usd=>0.3}}, :meta=>{:next_page_payload=>{}}}
+```
+
+#### Returns
+Returns the list of all transactions ([kinds](http://localhost:3000/ostkit-restful-api/docs/transaction.html#kind)) with information on various parameters such as the value of the transaction, the commission to you, conversion rates, token addresses, gas values, uuids, status of the transactions, last updated information and the branded token currency type. 
 
 
 

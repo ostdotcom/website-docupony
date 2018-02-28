@@ -1,15 +1,14 @@
 ---
 id: authentication
-title: Authentication API documentation
+title: Authentication 
 sidebar_label:Authentication
 ---
-
 
 Authenticate your account when using the API by including the API signature in each API request.  You can get your API keys in the ostKIT alpha developers page **_link_**.  Please be sure to keep your API keys safely. Do not share your secret API keys in publicly accessible areas such as GitHub, docs etc. 
 
 To generate the API signature follow the steps below:
 
-### 1.String-to-sign creation by concatenation 
+### 1. String-to-sign creation by concatenation 
 
 #### API Endpoint
 ```url
