@@ -1267,6 +1267,7 @@ ul#languages li {
 }
 nav.toc {
   width: 240px;
+  position: fixed;
 }
 nav.toc section {
   padding: 0px;
