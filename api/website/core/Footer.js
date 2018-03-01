@@ -45,35 +45,26 @@ class Footer extends React.Component {
               API Reference (or other categories)
             </a>
           </div>
+          // <div>
+          //   <h5>Community</h5>
+          //   <a href={this.pageUrl('users.html', this.props.language)}>
+          //     User Showcase
+          //   </a>
+          //   <a
+          //     href="http://stackoverflow.com/questions/tagged/"
+          //     target="_blank">
+          //     Stack Overflow
+          //   </a>
+          //   <a href="https://discordapp.com/">Project Chat</a>
+          //   <a href="https://https://twitter.com/thesimpletoken" target="_blank">
+          //     Twitter
+          //   </a>
+          // </div>
           <div>
-            /*<h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
-            <a
-              href="http://stackoverflow.com/questions/tagged/"
-              target="_blank">
-              Stack Overflow
-            </a>
-            <a href="https://discordapp.com/">Project Chat</a>
-            <a href="https://https://twitter.com/thesimpletoken" target="_blank">
-              Twitter
-            </a>
-          </div>*/
-          <div>
-            /*<h5>More</h5>
-            <a href={this.props.config.baseUrl + 'blog'}>Blog</a>*/
+            // <h5>More</h5>
+            // <a href={this.props.config.baseUrl + 'blog'}>Blog</a>
             <a href="https://github.com/OpenSTFoundation">GitHub</a>
-            /*<a
-              className="github-button"
-              href={this.props.config.repoUrl}
-              data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
-              data-show-count={true}
-              data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub">
-              Star
-            </a>*/
+            
           </div>
         </section>
 
