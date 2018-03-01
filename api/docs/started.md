@@ -1,57 +1,169 @@
 ---
 id: started
-title: Getting Started 
-sidebar_label: Getting Started 
+title: Starting Overview 
+sidebar_label: Starting Overview 
 ---
+The API documentation for the $OST powered complete blockchain toolkit for businesses. 
 
-The API documentation for the the complete blockchain toolkit for businesses. 
 
-OST helps you launch and manage your cryptocurrency powered economy. Great OST use cases include projects with P2P micro-payments, enabling transparent and incentives and rewards, monetizing API calls, low cost cross-border payments and many more.
+OST KIT helps you launch, manage and monitor your cryptocurrency powered economy. Great OST KIT use cases include projects with P2P micro-payments, enabling transparent incentives and rewards, monetizing API calls, low cost cross-border payments and much [more](https://ostkit.com/linktothingsostkitcando).
+
+OST also provids a [ruby sdk](https://github.com/OpenSTFoundation/ost-sdk-ruby). This has three modules at the moment, a [Transaction](http://localhost:3000/ostkit-restful-api/docs/transaction.html) module that allows one to create new transaction [kinds](http://localhost:3000/ostkit-restful-api/docs/transaction.html#kind) and maintain them, an Address module that allows one to fetch $OST, _OST"_(transaction fees), ETH, FRC balances etc and a [User](http://localhost:3000/ostkit-restful-api/docs/user.html) module that allows for creation and maintaining end-users on your application utilizing the OST branded tokenization economy. The SDK directly connects to the OpenST platform underneath the hood of the OST KIT alpha. 
 
 ## Create your Branded Tokens 
-ostKIT aplha enables you to design create and manage your branded token economy.  You may want to set just one branded token for your company or a few, depending upon the range of services and product variations you offer. For example : ….
+OST KIT aplha enables you to design, create and manage your branded token (BT) economy. You may want to set just one branded token for your company or a few, depending upon your business model, range of services and product variations you offer. Please use the [faq](https://ostkit.com/faq) or the developer forum on [gitter](https://gitter.com/ostkit) and this will help you understand the right approach towards achieveing a fully functional booming branded token economy. 
 
-You can proceed through the rest of the tutorial ones who have created your branded token using ostKIT alpha.
+### Staking and Minting Branded Tokens
 
-## Create Users 
+Step-by-Step Process to creating and minting your branded tokens.
+1. Go to the homepage of OST KIT [sign up](https://kit.stagingost.com/sign-up) page.
+2. Set a 3-4 Letter Token Symbol and select an Icon from the list of available icons.
+3. Provide your email address and enter a password for your account creation.
+4. Soon after an email will be sent to the entered email.
+5. Activate your account using the link in the email address. Without activating you will be unable to recieve $OST or create your BT economy.
+6. Plan your BT economy in the 3 easy steps by following the provided instructions. FAQs and support articles will be provided on the page.
+7. Once you have registered, staked $OST and minted BT, the airdrop process will begin and drop the requested amount of BT into your account, which you can distribute to users once they have been created following the process below.  
 
-Users here represent your actual users and ost provides an easy way to process their token transfers. Your business may onboard your existing or new end-users to participate in your branded token economy.
-Note: This tutorial assumes you’ve created api signature using steps given here and are aware of the Error Handling recommendations. 
+You can proceed through the rest of the tutorial ones who have created andminted your branded token using ostKIT alpha. Follow the steps to create users, create transaction kind and execute a trasacation using the APIs provided below. 
 
-This code creates a user via API 
 
-### POST  
+
+### 1. Create Users API
+The user in OST KIT alpha, is the individual or the end-user accessing and interacting with your application. OST KIT provides an easy way to process their token transfers as this example will illustrate. For onboarding your end-users to participate in your branded token economy enabled application, you need to create users with this API.
+
+This tutorial assumes you’ve created an API signature using steps given in the [authentication]() and are aware of the [errors]() that may arise in the process. 
+
+#### POST - endpoint 
 ```url
 {{saas_api_url}}/addresses/create
 ```
-### Parameters 
 
-| Attribute | Type   | Value  |
+#### Parameters
+| Parameter | Type   | Value  |
 |-----------|--------|--------|
-| _name_      | String | Puneet (sample name) |
+| _name_      | String | String representing the name of the user. Example : Puneet |
 
-### Sample Code | Curl 
-
+#### Sample Code | Curl 
 ```bash
 curl --request POST \
- --url 'http://{{saas_api_url}}/addresses/create' \
- --data name=Puneet%20
+--url 'http://{{saas_api_url}}/addresses/create' \
+--data name=Puneet%20
 ```
 
-OST returns an object?? With all the relevant details : 
-### Response
+#### Response 
 ```javascript
-{"result_type"=>"economy_users", "economy_users"=>  [{"id"=>160,
-"uuid"=>"4697a3c8-7aa8-47c7-8192-6df7b90f1e7f", "name"=>"PK",
-"total_airdropped_tokens"=>0, "token_balance"=>0}],
+{"result_type"=>"economy_users", "economy_users"=> 
+[{"id"=>160, "uuid"=>"4697a3c8-7aa8-47c7-8192-6df7b90f1e7f", 
+"name"=>"Puneet", "total_airdropped_tokens"=>0, "token_balance"=>0}], 
 "meta"=>{"next_page_payload"=>{}}}
 ```
 
-Once you create a user, store the “uuid” value in your own database for later reference (presumably with the user’s name or email id.)
+#### Returns
+A user object if the call is successful. The returned object will have information about the tokens given to him by you as a company via [Airdrop](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#4-initiate-air-drop-api), if this is the case. It also has the information about the [branded token balance](). Along with these, the response will have the attribute **_id_** which you should save in your database. This **_id_** will be used to update or retrieve information about the user. 
 
-		
-3. View the list of default Transactions.
-4. Run a Transaction.
+Once you create a user, store the _uuid_ value in your own database for later reference, it is advised to store this with the user’s name or email id for making a cross reference.
 
-### NEXT STEPS
+
+
+
+### 2. Create Transaction API
+Creating transactions requires evaluating core user actions on your application and filtering out for the ones that you want to trigger branded token exchanges. Once you have decided the core actions you should start with creating a transaction for each of them. While setting up these transactions you should decide the type of the transaction, associate a value to it and also (if required) set a commission on it. An “Upvote” for example would be setup as a _user-to-user_ transaction, whereas something like “Rewards”  would be setup as a _company-to-user_ transaction. The value for a transaction can be set in two ways. One in the fiat value system: USD - US dollars and second in the tokenized value system: BT - your branded token.
+
+#### POST 
+```url
+{{saas_api_url}}/transaction/kind/create
+```
+
+#### Parameters 
+| Parameter           | Type   | Value                                               |
+|---------------------|--------|-----------------------------------------------------|
+| _name_                | String | The name of the transaction. Example: "Upvote","buy a coffee".                               |
+| _kind_                | String | The type of transaction based on the owners involved in the token exchange. Example: _user_to_user_.                  |
+| _value_currency_type_ | String | String representing the currency the transaction is valued in. Two possible values are **_usd_** or **_bt_** .                                 |
+| _value_in_bt_         | Float  | Positive number that represents amount of branded token to be set as transaction value.                 |
+| _commission_percent_  | Float  | Percentage of transaction value that you set as a service provider on a transaction. Can be set for only _user_to_user_ transaction type. |
+| _value_in_usd_        | Float  | Positive number that represents amount in dollars (USD) to be set as transaction value.               |
+
+
+#### Sample Code | Curl 
+```bash
+curl --request POST \
+  --url 'http://{{saas_api_url}}/transaction/kind/create' \
+  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  --form name=ABC \
+  --form kind=user_to_user \
+  --form value_currency_type=usd \
+  --form value_in_bt=1 \
+  --form commission_percent=10 \
+  --form value_in_usd=1
+```
+
+
+#### Response
+```javascript
+{"client_id"=>28, "result_type"=>"transaction_types", 
+"transaction_types"=> [ {"id"=>"5","name"=>"Transaction 4", 
+"kind"=>"company_to_user", "currency_type"=>"bt", 
+"currency_value"=>"0.5", "commission_percent"=>"0.000", 
+"status"=>"active"}], "meta"=>{"next_page_payload"=>{}},
+"price_points"=>{"ost"=>{"usd"=>"1"}}, "client_tokens"=> 
+[{"id"=>"16", "client_id"=>28, "reserve_managed_address_id"=>90, 
+"name"=>"sd1", "symbol"=>"sd1", "symbol_icon"=>nil,
+"token_erc20_address"=>"0xdc1A2F9A712a38F673fe7758C35Bec4F9051Da63", 
+"token_uuid"=> "0xf4842e7905d55ebd6699832662570539c2995d35e345360a4cf05e9b486e0a95",
+"conversion_rate"=>"1.000000", "created_at"=>"2018-02-20 08:16:27",
+"updated_at"=>"2018-02-20 08:31:44"}]}
+
+```
+#### Returns
+Returns a transaction object if there were no initial errors with the transaction creation. Example - transactions being created with duplicate names, or value of the transaction set breaches the max value set. This call will return an error if create parameters are invalid. Errors are sent as per specification [here.](https://dev.stagingost.com/ostkit-restful-api/docs/error.html)
+
+
+
+
+
+### 3. Execute Transaction API
+To execute a transaction between one end-user to another end-user, an action can be utlizied to crete a branded token exchange. This can be done by specifying the from end-user _uuid_ to another end-user _uuid_ and the transaction [kind](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind). 
+
+#### POST 
+```url
+{{saas_api_url}}/transaction/execute
+```
+
+#### Parameters 
+| Parameter           | Type   | Value                                               |
+|---------------------|--------|-----------------------------------------------------|
+| _from_user_uuid_                | String | The origin end-user of the transaction. Example: 5f79063f-e22a-4d28-99d7-dd095f02c72e                              |
+| _to_user_uuid_                | String | The destination end-user of the transaction. Example: 7a1e31e5-cc39-4a14-a176-29bc4d117867                  |
+| _transaction_kind_ | String | The [kind](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind) of transaction defined earlier. Example: Upvote.                                |
+
+#### Sample Code | Curl 
+```bash
+curl --request POST \
+  --url 'http://{{saas_api_url}}/transaction/execute' \
+  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  --form from_user_uuid=5f79063f-e22a-4d28-99d7-dd095f02c72e \
+  --form to_user_uuid=7a1e31e5-cc39-4a14-a176-29bc4d117867 \
+  --form transaction_kind=Upvote
+```
+
+
+#### Response
+```javascript
+{"client_id"=>28, "result_type"=>"transaction_types", 
+"transaction_types"=> [ {"id"=>"5", "name"=>"Transaction 4", 
+"kind"=>"company_to_user", "currency_type"=>"bt", 
+"currency_value"=>"0.5", "commission_percent"=>"0.000", 
+"status"=>"active"}], "meta"=>{"next_page_payload"=>{}}, 
+"price_points"=>{"ost"=>{"usd"=>"1"}}, "client_tokens"=> 
+[{"id"=>"16", "client_id"=>28, "reserve_managed_address_id"=>90, 
+"name"=>"sd1", "symbol"=>"sd1", "symbol_icon"=>nil, "token_erc20_address"=>"0xdc1A2F9A712a38F673fe7758C35Bec4F9051Da63", 
+"token_uuid"=> "0xf4842e7905d55ebd6699832662570539c2995d35e345360a4cf05e9b486e0a95", "conversion_rate"=>"1.000000", "created_at"=>"2018-02-20 08:16:27", 
+"updated_at"=>"2018-02-20 08:31:44"}]}
+```
+#### Returns
+Returns a transaction object with information on various parameters such as the value of the transaction, the commission to you, conversion rates, token address, uuids, last updated information and the branded token currency type.
+
+
+### Next Steps
 Congrats! You’ve run a transaction in your branded token ecosystem. You may want to learn how to setup transactions , add users and run specific transactions in more detail.

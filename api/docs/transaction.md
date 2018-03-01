@@ -17,8 +17,8 @@ So an important aspect of setting up a branded token economy is to setup transac
 | [_value_currency_type_](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#value-currency-type-sub-attributes)| String | The currency type in which the value of the transaction has been set. The transaction value can either be set in USD or in branded tokens (BT). Example: you can set value of an "Upvote" transaction to be 20 cents or 10 of your branded tokens. If the value is set in USD, the string used should be _usd_ and if the value is set in branded tokens the string used should be _bt_ .|
 | _value_in_bt_         | Float  | The amount in branded tokens (BT) to be set as transaction value.|
 | _commission_percent_  | Float  | As the company, you can set a fee on _user_to_user_ transactions. Example: If a user buys a service on your platform from another user, you can set a fee on these 'buy' transactions.  This fee is set in percentage of the total value of the transaction and is not additional to the transaction value. |
-| _token_erc20_address_        | String  | The erc20 token address on the utility blockchain |
-| _token_uuid_        | String  |  |
+| _token_erc20_address_        | String  | The erc20 token address on the utility chain. |
+| _token_uuid_        | String  | |
 | _conversion_rate_        | Float  | |
 | _created_at_        | String  | |
 | _updated_at_        | String  | |
@@ -211,7 +211,7 @@ If no more transactions are available, the resulting hash will have the meta par
 
 
 ### 4. Execute Transaction API
-To execute a transaction between one end-user to another end-user, an action can be utlizied to crete a branded token exchange. This can be done by specifying the from end-user _uuid_ to another end-user _uuid_ and the transaction [kind](http://localhost:3000/ostkit-restful-api/docs/transaction.html#kind). 
+To execute a transaction between one end-user to another end-user, an action can be utlizied to crete a branded token exchange. This can be done by specifying the from end-user _uuid_ to another end-user _uuid_ and the transaction [kind](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind). 
 
 #### POST 
 ```url
@@ -223,7 +223,7 @@ To execute a transaction between one end-user to another end-user, an action can
 |---------------------|--------|-----------------------------------------------------|
 | _from_user_uuid_                | String | The origin end-user of the transaction. Example: 5f79063f-e22a-4d28-99d7-dd095f02c72e                              |
 | _to_user_uuid_                | String | The destination end-user of the transaction. Example: 7a1e31e5-cc39-4a14-a176-29bc4d117867                  |
-| _transaction_kind_ | String | The [kind](http://localhost:3000/ostkit-restful-api/docs/transaction.html#kind) of transaction defined earlier. Example: Upvote.                                |
+| _transaction_kind_ | String | The [kind](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind) of transaction defined earlier. Example: Upvote.                                |
 
 #### Sample Code | Curl 
 ```bash
@@ -304,7 +304,7 @@ curl --request GET \
 ```
 
 #### Returns
-Returns the list of all transactions ([kinds](http://localhost:3000/ostkit-restful-api/docs/transaction.html#kind)) with information on various parameters such as the value of the transaction, the commission to you, conversion rates, token addresses, gas values, uuids, status of the transactions, last updated information and the branded token currency type. 
+Returns the list of all transactions ([kinds](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind)) with information on various parameters such as the value of the transaction, the commission to you, conversion rates, token addresses, gas values, uuids, status of the transactions, last updated information and the branded token currency type. 
 
 
 
