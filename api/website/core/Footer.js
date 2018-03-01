@@ -47,30 +47,27 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
-            
             
             <a href="https://twitter.com/thesimpletoken" target="_blank">
               Twitter
             </a>
-          </div>
-          <div>
-            <h5>More</h5>
-            <a href={this.props.config.baseUrl + 'blog'}>Blog</a>
-            <a href="https://github.com/OpenSTFoundation">GitHub</a>
-            <a
-              className="github-button"
-              href={this.props.config.repoUrl}
-              data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
-              data-show-count={true}
-              data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub">
-              Star
+            <a href="https://www.facebook.com/simpletoken/" target="_blank">
+              Facebook
+            </a>
+            <a href="https://t.me/OSTdotcom" target="_blank">
+              Telegram
+            </a>
+            <a href="https://medium.com/simple-token" target="_blank">
+              Medium
+            </a>
+            <a href="https://www.linkedin.com/company/18209852/" target="_blank">
+              LinkedIn
+            </a>
+            <a href="https://github.com/OpenSTFoundation" target="_blank">
+            GitHub
             </a>
           </div>
+          
         </section>
 
         <a
@@ -80,8 +77,7 @@ class Footer extends React.Component {
           <img
             src={this.props.config.baseUrl + 'img/ost.png'}
             alt="Simple Token"
-            width="170"
-            height="45"
+            width="100"
           />
         </a>
         <section className="copyright">

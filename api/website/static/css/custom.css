@@ -180,3 +180,12 @@ footer .copyright {
   text-align: center;
 }
 
+footer .fbOpenSource {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+  opacity: 0.4;
+  transition: opacity 0.15s ease-in-out;
+  width: 170px;
+}
+
