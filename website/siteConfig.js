@@ -16,16 +16,14 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Test Site' /* title for your website */,
-  tagline: 'A website for testing',
-  url: 'https://facebook.github.io' /* your website url */,
-  baseUrl: '/test-site/' /* base url for your project */,
-  projectName: 'test-site',
+  title: 'Developers' /* title for your website */,
+  tagline: 'Developers Documentation',
+  url: 'https://ost.com' /* your website url */,
+  baseUrl: '/ostkit-restful-api/' /* base url for your project */,
+  projectName: 'ostkit-restful-api',
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    {doc: 'started', label: 'Docs'},
+    {doc: 'user', label: 'API'},
   ],
   users,
   /* path to images for header/footer */
@@ -34,7 +32,7 @@ const siteConfig = {
   favicon: 'img/favicon.png',
   /* colors for website */
   colors: {
-    primaryColor: '#2E8555',
+    primaryColor: '#34445B',
     secondaryColor: '#205C3B',
   },
   /* custom fonts for website */
@@ -52,7 +50,7 @@ const siteConfig = {
   copyright:
     'Copyright © ' +
     new Date().getFullYear() +
-    ' Your Name or Your Company Name',
+    'OST',
   // organizationName: 'deltice', // or set an env variable ORGANIZATION_NAME
   // projectName: 'test-site', // or set an env variable PROJECT_NAME
   highlight: {
