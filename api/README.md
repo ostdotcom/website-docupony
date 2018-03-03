@@ -1,15 +1,16 @@
 ## README.md
 
-Instructions to ostKIT $\alpha$ api documentation 
+Instructions to host the OST KIT alpha API documentation 
 
-1. git clone https://github.com/OpenSTFoundation/website-docupony.git
-2. git checkout pranay/gh3/website-build
-3. Make sure you have[node.js](https://nodejs.org/en/download/current/) installed.
-4. cd website-docupony/api/website 
-5. npm start
-6. Make sure that you get the follwing response
+requires nodejs; see [installation instructions here](https://nodejs.org/en/download/current/).
+
+1. `git clone https://github.com/OpenSTFoundation/website-docupony.git && cd website-docupony/api/website`
+2. `git checkout develop-beta`
+3. `npm install`
+4. `npm start`
+5. Make sure that you get the following response
 `Starting Docusaurus server on port 3000...`
 `Open http://localhost:3000/ `
-7. Open http://localhost:3000/ostkit-restful-api/docs/started.html
+6. Open http://localhost:3000/ostkit-restful-api/docs/started.html
 
 
