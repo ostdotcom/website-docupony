@@ -14,3 +14,178 @@
 
 @media only screen and (min-width: 1500px) {
 }
+
+
+/** Side Nav Fixes **/
+
+nav.toc {
+	position: fixed;
+}
+
+nav.toc .toggleNav ul li a {
+  border: none;
+  color: #34445B !important;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.1em;
+  margin: 2px 10px 5px;
+  padding: 5px 0 2px;
+  transition: color 0.3s;
+}
+nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
+  color: #438CAD !important;
+}
+
+nav.toc .toggleNav ul li a.navItemActive {
+  color: #34445B !important;
+  font-weight: bold;
+}
+
+/** H1, H2, H3 **/
+.mainContainer .wrapper .post .postHeader h1 {
+    font-size: 250%;
+    font-weight: 500;
+    color: #438CAD !important;
+  }
+
+
+.container .wrapper h3 {
+  color: #438CAD;
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.mainContainer .wrapper .post h2 {
+  font-size: 130%;
+  color: #438CAD;
+}
+.mainContainer .wrapper .post h3 {
+  font-size: 110%;
+  color: #438CAD;
+}
+.mainContainer .wrapper .post h5 {
+  font-weight: 300;
+  color: #438CAD;
+  font-style: italic;
+}
+
+/** Top Nav and Header **/
+.navigationSlider .slidingNav ul li a {
+    border: 0;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.2em;
+    padding: 6px 10px;
+    height: 32px;
+    font-size: 1em;
+  }
+  .navigationSlider .slidingNav ul li a:hover {
+    color: #fff;
+  }
+
+.fixedHeaderContainer header h2 {
+  display: block;
+  color: #34445B !important;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+  line-height: 0px !important;
+  position: relative;
+  z-index: 9999;
+}
+.fixedHeaderContainer header h3 {
+  text-decoration: underline;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+  color: white;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+/** Footer **/
+footer .sitemap .nav-home {
+  display: none;
+  margin: -12px 20px 0 0;
+  padding: 10px;
+  width: 0px;
+  height: 0px;
+  opacity: 0.4;
+  transition: opacity 0.15s ease-in-out;
+}
+
+
+footer.nav-footer {
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  font-weight: 400;
+  color: #597A84 !important;
+  font-size: 15px;
+  line-height: 24px;
+  background: #F4F8F9;
+  box-shadow: inset 0 0px 0px 0px rgba(0,0,0,0.2) !important; 
+  padding-top: 2em;
+  padding-bottom: 2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+footer .sitemap a {
+  color: #597A84 !important;
+  display: table;
+  margin: 2px -10px;
+  padding: 3px 10px;
+}
+footer .sitemap a:hover,
+footer .sitemap a:focus {
+  color: #438CAD !important;
+  text-decoration: none;
+}
+footer .sitemap h5 > a:hover,
+footer .sitemap h5 > a:focus {
+  color: #438CAD !important;
+  text-decoration: none;
+}
+footer .sitemap h5,
+footer .sitemap h6 {
+  margin: 0 0 10px;
+}
+footer .sitemap h5 {
+  color: #597A84 !important;
+}
+
+footer .sitemap h6,
+footer .sitemap h5 > a,
+footer .sitemap h6 > a {
+  color: #597A84 !important;
+}
+footer .sitemap h5 > a,
+footer .sitemap h6 > a {
+  margin: 0 -10px;
+}
+footer .fbOpenSource {
+  display: block;
+  margin: 1em auto;
+  opacity: 0.4;
+  transition: opacity 0.15s ease-in-out;
+  width: 170px;
+}
+footer .fbOpenSource:hover {
+  opacity: 1.0;
+}
+footer .copyright {
+  color: #597A84 !important;
+  text-align: center;
+}
+
+footer .fbOpenSource {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+  opacity: 0.4;
+  transition: opacity 0.15s ease-in-out;
+  width: 170px;
+}
+
