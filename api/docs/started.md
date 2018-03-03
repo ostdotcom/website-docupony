@@ -6,34 +6,38 @@ sidebar_label: Starting Overview
 The API documentation for the $OST powered complete blockchain toolkit for businesses. 
 
 
-OST KIT gives you the power to launch, manage and monitor your branded token economy powered by $OST. Great OST KIT use cases include projects with P2P micro-payments to encourage content creation, enabling transparent incentives and rewards for your platform users, monetizing API calls to third parties, low cost cross-border payments and much [more](https://ostkit.com/linktothingsostkitcando).
+OST KIT alpha gives you the power to launch, manage and monitor your branded token economy powered by $OST. Great OST KIT alpha use cases include projects with P2P micro-payments, encouraging content creation, end-user interaction, enabling transparent incentives, rewards for your platform users, monetizing API calls to third parties, low cost cross-border payments and much [more](https://simpletoken.org/partners).
 
-OST also provides a [ruby sdk](https://github.com/OpenSTFoundation/ost-sdk-ruby) with three modules at the moment. A [Transaction](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html) module that allows one to create new transaction [kinds](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind) and maintain them, an Address module that allows one to fetch $OST, _OST"_(transaction fees), ETH, FRC balances etc and a [User](https://dev.stagingost.com/ostkit-restful-api/docs/user.html) module that allows for the creation and maintaining of end-users on your application utilizing the OST enabled branded token economy. The SDK directly connects to the OpenST platform under the hood of the OST KIT alpha. Thus also giving an insight into the OpenST-protocol. Find more documentation on this [here](https://github.com/OpenSTFoundation/ost-sdk-ruby/blob/master/README.md). 
+OST also provides a [ruby sdk](https://github.com/OpenSTFoundation/ost-sdk-ruby) with three modules at the moment. A Transaction Kind module that allows one to create new transaction [kinds](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind) and maintain them. An Address module that allows one to fetch balances on $OST, OST'(transaction fees), Ether (ETH), Branded Tokens (BT) and US dollards (USD). A [User](https://dev.stagingost.com/ostkit-restful-api/docs/user.html) module that allows for the creation and maintainance of end-users and their _address_uuid_ in your application, utilizing the OST enabled branded token economy. 
+
+The SDK itself directly bridges the [OpenST-Platform](https://github.com/OpenSTFoundation/openst-platform) under the hood of the OST KIT alpha. Thus also giving an insight into the operations of the [OpenST-Protocol](https://github.com/OpenSTFoundation/openst-protocol). Find more documentation on the ost-ruby-SDK [here](https://github.com/OpenSTFoundation/ost-sdk-ruby/blob/master/README.md).
 
 ## Create your Branded Tokens 
-OST KIT alpha enables you to design, create and manage your branded token (BT) economy. You may want to set just one branded token for your company or a few, depending upon your business model, range of services and product variations you offer. Please use the OST [FAQ](https://ostkit.com/faq) or the developer forum on [gitter](https://gitter.im/OpenSTFoundation/SimpleToken) to ask us development related questions directly. This will help you understand the right approach towards achieveing a fully functional booming branded token economy and us better about how to serve your business requirements. 
+OST KIT alpha enables you to design, create and manage your branded token (BT) economy. You may want to set just one branded token for your company or a few, depending upon your business model, range of services and product variations you offer. We request you to utilize the OST [FAQ](https://ostkit.com/faq) section and the developer forums on [gitter](https://gitter.im/OpenSTFoundation/SimpleToken) to ask us development related questions directly. You can also drop us a [mail](pranay@ost.com). This will help you understand the right approach towards achieveing a blooming and fully functional branded token economy and also help us better understand on how to serve your tokenized business requirements. 
 
-### Staking and Minting Branded Tokens
+### Staking $OST and Minting Branded Tokens
 
-7 Step process to creating and minting your branded tokens using the [OST KIT alpha](https://kit.stagingost.com/sign-up).
-1. Go to the homepage of OST KIT [sign up](https://kit.stagingost.com/sign-up) page.
+A simple 7 Step process to staking and minting your branded tokens using the [OST KIT alpha](https://simpletoken.org/product).
+1. Go to the OST KIT [sign up](https://kit.stagingost.com/sign-up) page.
 2. Set a 3-4 Letter Token Symbol and select an icon from the list of available icons.
 3. Provide your email address and enter a password for your account creation.
-4. Soon after an email will be sent to the entered email.
+4. Soon after an activation link will be sent to the entered email.
 5. Activate your account using the link in the email address. Without activating you will be unable to recieve $OST or create your BT economy.
-6. Plan your BT economy in the 3 easy steps by following the provided instructions. FAQs and support articles will be provided on the page.
-7. Once you have registered, staked $OST and minted BT, the airdrop process will begin to Air-drop the requested amount of BT into your account, which you can distribute to users once they have been created following the process below.  
+6. Plan your BT economy in the 3 easy steps by following the provided instructions. FAQs and support articles will be provided on the page at each sub-step.
+7. Once you have registered, staked $OST and minted BT, the Air-drop process will begin to allocate the amount of BT into your account, this can distribute to end-users once they have been created following the process below.  
 
-You can proceed through the rest of the tutorial ones who have created andminted your branded token using ostKIT alpha. Follow the steps to create users, create transaction kind and execute a trasacation using the APIs provided below. 
+Please proceed through the rest of the tutorial once you have created and minted your branded token using OST KIT alpha. Follow the steps here to create users, Air-drop branded tokens, create transaction kinds and execute a transaction using the APIs provided below and in the detailed [reference](https://dev.stagingost.com/ostkit-restful-api/docs/user.html).
 
 
 
-### 1. Create Users API
-The user in OST KIT alpha, is the individual or the end-user accessing and interacting with your application. OST KIT provides an easy way to process their token transfers as this example will illustrate. For onboarding your end-users to participate in your branded token economy enabled application, you need to create users with this API.
 
-This tutorial assumes you’ve created an API signature using steps given in [authentication]() and are aware of the [errors]() that may arise in the process. 
 
-#### POST - endpoint 
+### 1. Create Users 
+The user in OST KIT alpha, is the individual or the end-user accessing and interacting with your application. OST KIT provides an easy way to process their token transfers, as this example will illustrate. For onboarding your end-users to participate in your branded token economy enabled application, you need to create users with this API.
+
+This tutorial assumes you’ve created an API signature using steps given in [authentication](https://dev.stagingost.com/ostkit-restful-api/docs/authentication.html) and are aware of the [errors](https://dev.stagingost.com/ostkit-restful-api/docs/error.html) that may arise in the process. 
+
+#### API Endpoint - POST 
 ```url
 {{saas_api_url}}/addresses/create
 ```
@@ -59,17 +63,56 @@ curl --request POST \
 ```
 
 #### Returns
-A user object if the call is successful. The returned object will have information about the tokens given to him by you as a company via [Airdrop](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#4-initiate-air-drop-api), if this is the case. It also has the information about the [branded token balance](). Along with these, the response will have the attribute **_id_** which you should save in your database. This **_id_** will be used to update or retrieve information about the user. 
+A user object if the call is successful. The returned object will have information about the tokens given to him by you as a company via [Air-drop](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#4-initiate-air-drop-api), if this is the case. It also has the information about the branded token balance. Along with these, the response will have the attribute **_id_** which you should save in your database. This **_id_** will be used to update or retrieve information about the user. 
 
-Once you create a user, store the _uuid_ value in your own database for later reference, it is advised to store this with the user’s name or email id for making a cross reference.
-
-
+Once you create a user, store the _uuid_ value in your own database for later reference, it is advised to store this with the user’s name or email id to make a cross reference your application.
 
 
-### 2. Create Transaction API
+
+
+
+### 2. Initiate Airdrop 
+For awarding branded tokens to end-users in your application. This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy. 
+
+#### API Endpoint - POST
+```url
+{{saas_api_url}}/users/airdrop-tokens
+```
+
+#### Parameters 
+| Parameter | Type    | Value                                    |
+|-----------|---------|------------------------------------------|
+| _token_symbol_   | String | The symbol of the branded token that should be airdropped to end-users. Example:PK |
+| _amount_   | Float | The amount of BT that needs to be air-dropped to the selected end-users.  Example:10 |
+| [_list_type_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#list-type-sub-attributes)   | String | The list type of end-users that need to be air-dropped tokens. Example:all|
+
+
+#### Sample Code | Curl 
+```bash
+curl --request POST \
+--url 'http://{{saas_api_url}}/users/airdrop-tokens' \
+--header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+--form token_symbol=PK \
+--form amount=10 \
+--form list_type=all
+```
+
+#### Response
+```javascript
+{success: true, data: { airdrop_uuid: '026d9aba-270b-4ca6-8089-bd2f47a0ecec' }}
+```
+
+#### Returns
+Returns a true or false response on the success of the air-drop of the branded tokens for your application. 
+
+
+
+
+
+### 3. Create Transaction Kind
 Creating transactions requires evaluating core user actions on your application and filtering out for the ones that you want to trigger branded token exchanges. Once you have decided the core actions you should start with creating a transaction for each of them. While setting up these transactions you should decide the type of the transaction, associate a value to it and also (if required) set a commission on it. An “Upvote” for example would be setup as a _user-to-user_ transaction, whereas something like “Rewards”  would be setup as a _company-to-user_ transaction. The value for a transaction can be set in two ways. One in the fiat value system: USD - US dollars and second in the tokenized value system: BT - your branded token.
 
-#### POST 
+#### API Endpoing - POST 
 ```url
 {{saas_api_url}}/transaction/kind/create
 ```
@@ -85,14 +128,14 @@ Creating transactions requires evaluating core user actions on your application 
 | _value_in_usd_        | Float  | Positive number that represents amount in dollars (USD) to be set as transaction value.               |
 
 
-#### _kind_ Sub-Attributes
+#### _kind_ 
 | Parameter       | Type   | Definition                                                                                    |
 |-----------------|--------|-----------------------------------------------------------------------------------------------|
 | _user_to_user_    | String | Value transfer from one end-user to another. Example: "Upvote" or "like".                                         |
 | _user_to_company_ | String | Value transfer from an end-user to you (the application service provider). Example: “API call”. |
 | _company_to_user_ | String | Value transfer from the application service provider to an end-user. Example: “Rewards”.    |
 
-#### _value_currency_type_ Sub-Attributes
+#### _value_currency_type_ 
 | Parameter | Type   | Definition                                                                                                        |
 |-----------|--------|-------------------------------------------------------------------------------------------------------------------|
 | _usd_       | String | Fiat currency that the transaction is valued in.                                                                |
@@ -135,10 +178,10 @@ Returns a transaction object if there were no initial errors with the transactio
 
 
 
-### 3. Execute Transaction API
+### 4. Execute Transaction 
 To execute a transaction between one end-user to another end-user, an action can be utlizied to crete a branded token exchange. This can be done by specifying the from end-user _uuid_ to another end-user _uuid_ and the transaction [kind](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind). 
 
-#### POST 
+#### API Endpoint - POST 
 ```url
 {{saas_api_url}}/transaction/execute
 ```
@@ -179,4 +222,4 @@ Returns a transaction object with information on various parameters such as the 
 
 
 ### Next Steps
-Congrats! You’ve run a transaction in your branded token ecosystem. You may want to learn how to setup transactions , add users and run specific transactions in more detail in the next steps.
+Congrats! You’ve run a transaction in your branded token ecosystem. You may want to learn how to setup more transactions, add multiple end-users and run specific transactions in more detail, in the next steps.

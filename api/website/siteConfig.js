@@ -24,8 +24,6 @@ const siteConfig = {
   headerLinks: [
     {doc: 'started', label: 'Docs'},
     {doc: 'user', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
   ],
   users,
   /* path to images for header/footer */

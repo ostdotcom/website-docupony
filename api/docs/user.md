@@ -1,11 +1,11 @@
 ---
 id: user
-title: User API 
-sidebar_label:User API 
+title: User APIs 
+sidebar_label:User 
 ---
 
 
-The user in ostKIT alpha, is the individual or the end-user accessing and interacting with your application. The objective is to tokenize the end-user’s actions so that it enables token exchanges within your application. The user object allows you to edit user names, track balances associated with the end-user. The User APIs allow you to create, update and list your end-users with their parameters.
+The user in OST KIT alpha, is the individual or the end-user accessing and interacting with your application. The objective is to tokenize the end-user’s actions so that it enables token exchanges within your application. The user object allows you to edit user names, track balances associated with the end-user. The User APIs allow you to create, update and list your end-users with their parameters.
 
 ### User Object
 | Parameter               | Type   | Description                                                                                   |
@@ -40,10 +40,10 @@ The user in ostKIT alpha, is the individual or the end-user accessing and intera
 
 
 
-### 1. Create User API  
+### 1. Create User 
 For onboarding your end-users to participate in your branded token economy enabled application, you need to create users with this API.
 
-#### POST - endpoint 
+#### API Endpoint - POST 
 ```url
 {{saas_api_url}}/addresses/create
 ```
@@ -75,10 +75,10 @@ A user object if the call is successful. The returned object will have informati
 
 
 
-### 2. Update User API 
+### 2. Update User 
 For updating the specified end-user by setting new values to user object parameters. Use the **_uuid_** that is returned while executing the [Create User API](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#1-create-user-api) to make changes to the selected end-user. Any parameter not provided, will not be affected.
 
-#### POST - endpoint
+#### API endpoint - POST
 ```url
 {{saas_api_url}}/addresses/create
 ```
@@ -111,10 +111,10 @@ Returns the updated customer object, if the update succeeds. Returns an [error](
 
 
 
-### 3. List Users API
+### 3. List Users 
 For viewing the list of end-users and all their parameters, as last updated. The users are returned sorted by creation date, with the most recent users appearing first.
 
-#### GET - endpoint
+#### API Endpoint - GET
 ```url
 {{saas_api_url}}/users/list?page_no=1&filter=new&sort_by=creation_time
 ```
@@ -161,10 +161,10 @@ If no there are no more users available, the resulting response will have the me
 
 
 
-### 4. Initiate Airdrop API
+### 4. Initiate Airdrop 
 For awarding branded tokens to end-users in your application. This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy. 
 
-#### POST - endpoint
+#### API Endpoint - POST
 ```url
 {{saas_api_url}}/users/airdrop-tokens
 ```
@@ -199,10 +199,10 @@ Returns a true or false response on the success of the air-drop of the branded t
 
 
 
-### 5. Get Airdrop Status API
+### 5. Airdrop Status 
 For getting the status on the status of the airdropped branded tokens. This API can be used to understand which stage the processing of airdropping the tokens are going through.  
 
-#### GET - endpoint
+#### API Endpoint - GET
 ```url
 {{saas_api_url}}/users/airdrop
 ```
@@ -233,6 +233,8 @@ current_status: 'complete', steps_complete: [ 'user_identified', 'tokens_transfe
 
 #### Returns
 Returns a true or false response on the success of the airdrop of the branded tokens for your application with the [_current_status_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#current-status-sub-attributes). 
+
+
 
 
 

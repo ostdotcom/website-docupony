@@ -71,7 +71,7 @@ article p img, article iframe {
 }
 
 a {
-  color: #2E8555;
+  color: #34445B;
   text-decoration: none;
 }
 
@@ -117,7 +117,7 @@ blockquote {
 h1, h2, h3, h4 {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
   font-weight: 300;
-  color: #2E8555;
+  color: #34445B;
 }
 
 h4 {
@@ -131,7 +131,7 @@ header h2 {
 
 .homeContainer {
   background: #fff;
-  color: #2E8555;
+  color: #34445B;
   text-align: center;
 }
 
@@ -235,7 +235,7 @@ header h2 {
   text-align: left;
 }
 .container .wrapper h2 {
-  color: #2E8555;
+  color: #34445B;
   font-size: 22px;
   line-height: 1em;
   margin-top: 20px;
@@ -249,13 +249,13 @@ header h2 {
   padding: 10px 0;
 }
 .container .wrapper h3 {
-  color: #2E8555;
+  color: #34445B;
   font-size: 18px;
   margin-top: 10px;
   padding: 10px 0;
 }
 .container .wrapper h4 {
-  color: #2E8555;
+  color: #34445B;
   font-size: 16px;
   font-weight: 300;
   margin: 0;
@@ -342,7 +342,7 @@ header h2 {
   padding-top: 1em;
 }
 .mainContainer .wrapper .post .docPagination {
-  background: #2E8555;
+  background: #34445B;
   bottom: 0px;
   left: 0px;
   position: absolute;
@@ -515,7 +515,7 @@ header h2 {
 }
 .fixedHeaderContainer {
   box-sizing: border-box;
-  background: #2E8555;
+  background: #34445B;
   color: #fff;
   min-height: 50px;
   padding: 9px 0;
@@ -599,9 +599,9 @@ header h2 {
 }
 .button {
   margin: 4px;
-  border: 1px solid #2E8555;
+  border: 1px solid #34445B;
   border-radius: 3px;
-  color: #2E8555;
+  color: #34445B;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
@@ -612,7 +612,7 @@ header h2 {
   transition: background 0.3s, color 0.3s;
 }
 .button:hover {
-  background: #2E8555;
+  background: #34445B;
   color: #fff;
 }
 
@@ -669,19 +669,19 @@ input[type="search"] {
   right: 0 !important;
 }
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--category-header {
-  background: #2E8555;
+  background: #34445B;
   color: white;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight {
-  background-color: #2E8555;
+  background-color: #34445B;
   color: #fff;
 }
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--title .algolia-docsearch-suggestion--highlight,
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--subcategory-column .algolia-docsearch-suggestion--highlight {
-  color: #2E8555;
+  color: #34445B;
 }
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion__secondary,
 .navSearchWrapper .aa-dropdown-menu .algolia-docsearch-suggestion--subcategory-column {
@@ -728,10 +728,10 @@ input::placeholder {
 
 code {
   padding: 2px 0;
-  background-color: rgba(46, 133, 85, 0.07);
+  background-color: rgba(52, 68, 91, 0.07);
   /* box-shadow acts as padding around inline code snippets
    * while not adding any extra spacing between words. */
-  box-shadow: 2px 0 rgba(46, 133, 85, 0.07), -2px 0 rgba(46, 133, 85, 0.07);
+  box-shadow: 2px 0 rgba(52, 68, 91, 0.07), -2px 0 rgba(52, 68, 91, 0.07);
   color: inherit;
   border-radius: .3em;
   font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace;
@@ -743,7 +743,7 @@ pre code {
   display:block;
   margin: 20px 0;
   padding:0.5em;
-  border-left: 4px solid #2E8555;
+  border-left: 4px solid #34445B;
   font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace;
   font-size: 13px;
   overflow-x:auto;
@@ -995,7 +995,7 @@ pre code {
   margin: 0;
 }
 .navigationSlider .slidingNav ul li a {
-  color: #2E8555;
+  color: #34445B;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1010,7 +1010,7 @@ pre code {
 }
 .navigationSlider .slidingNav ul li a:focus,
 .navigationSlider .slidingNav ul li a:hover {
-  background: #2E8555;
+  background: #34445B;
 }
 
 .languages-icon {
@@ -1030,7 +1030,7 @@ pre code {
 }
 ul#languages-dropdown-items {
   display: flex;
-  background-color: #2E8555;
+  background-color: #34445B;
   flex-direction: column;
   min-width: 120px;
   pointer-events: all;
@@ -1112,7 +1112,7 @@ ul#languages li {
     width: 100%;
   }
   .reactNavSearchWrapper input#search_input_react:focus, .reactNavSearchWrapper input#search_input_react:active {
-    background-color: #2E8555;
+    background-color: #34445B;
     color: #fff;
   }
   .reactNavSearchWrapper .algolia-docsearch-suggestion--subcategory-inline {
@@ -1144,7 +1144,7 @@ ul#languages li {
 
   ul#languages-dropdown-items {
     display: flex;
-    background-color: #2E8555;
+    background-color: #34445B;
     flex-direction: row;
   }
 }
@@ -1267,7 +1267,6 @@ ul#languages li {
 }
 nav.toc {
   width: 240px;
-  position: fixed;
 }
 nav.toc section {
   padding: 0px;
@@ -1382,10 +1381,10 @@ nav.toc .toggleNav .navGroup h3 i:not(:empty) {
   transition: color 0.2s;
 }
 nav.toc .toggleNav .navGroup h3:hover {
-  color: #2E8555;
+  color: #34445B;
 }
 nav.toc .toggleNav .navGroup h3:hover i:not(:empty) {
-  color: #2E8555;
+  color: #34445B;
 }
 nav.toc .toggleNav .navGroup.navGroupActive {
   background: #e0e0e0;
@@ -1397,7 +1396,7 @@ nav.toc .toggleNav .navGroup.navGroupActive ul {
   padding-top: 10px;
 }
 nav.toc .toggleNav .navGroup.navGroupActive h3 {
-  background: #2E8555;
+  background: #34445B;
   color: #fff;
 }
 nav.toc .toggleNav ul {
@@ -1420,10 +1419,10 @@ nav.toc .toggleNav ul li a {
   transition: color 0.3s;
 }
 nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
-  color: #2E8555;
+  color: #34445B;
 }
 nav.toc .toggleNav ul li a.navItemActive {
-  color: #2E8555;
+  color: #34445B;
 }
 .docsSliderActive nav.toc .navBreadcrumb {
   background: #c6c6c6;
@@ -1642,7 +1641,7 @@ h6:hover .header-link {
   padding-bottom: 80px;
 }
 .productShowcaseSection h2 {
-  color: #2E8555;
+  color: #34445B;
   font-size: 30px;
   line-height: 1em;
   margin-top: 20px;
@@ -1686,7 +1685,7 @@ h6:hover .header-link {
   margin: 0 auto;
 }
 .showcaseSection .prose h1 {
-  color: #2E8555;
+  color: #34445B;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
   text-align: center;
   padding: 1.4em 0 0.4em;
@@ -1836,4 +1835,93 @@ footer .copyright {
 }
 
 @media only screen and (min-width: 1500px) {
+}
+
+
+.mainContainer .wrapper .post .postHeader h1 {
+    font-size: 250%;
+    font-weight: 500;
+    color: #438CAD !important;
+  }
+
+
+nav.toc {
+	position: fixed;
+}
+
+nav.toc .toggleNav ul li a {
+  border: none;
+  color: #34445B !important;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.1em;
+  margin: 2px 10px 5px;
+  padding: 5px 0 2px;
+  transition: color 0.3s;
+}
+nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
+  color: #438CAD !important;
+}
+
+nav.toc .toggleNav ul li a.navItemActive {
+  color: #34445B !important;
+  font-weight: bold;
+}
+
+
+.container .wrapper h3 {
+  color: #438CAD;
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.mainContainer .wrapper .post h2 {
+  font-size: 130%;
+  color: #438CAD;
+}
+.mainContainer .wrapper .post h3 {
+  font-size: 110%;
+  color: #438CAD;
+}
+.mainContainer .wrapper .post h5 {
+  font-weight: 300;
+  color: #438CAD;
+  font-style: italic;
+}
+
+.navigationSlider .slidingNav ul li a {
+    border: 0;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.2em;
+    padding: 6px 10px;
+    height: 32px;
+    font-size: 1em;
+  }
+  .navigationSlider .slidingNav ul li a:hover {
+    color: #fff;
+  }
+
+ 
+
+
+.fixedHeaderContainer header h2 {
+  display: block;
+  color: #34445B !important;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+  line-height: 0px !important;
+  position: relative;
+  z-index: 9999;
+}
+.fixedHeaderContainer header h3 {
+  text-decoration: underline;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+  color: white;
+  margin-left: 10px;
+  font-size: 16px;
 }

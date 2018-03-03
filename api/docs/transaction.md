@@ -1,7 +1,7 @@
 ---
 id: transaction
-title:Transaction API
-sidebar_label:Transaction API 
+title:Transaction APIs
+sidebar_label:Transaction
 ---
 
 Transactions are executed when tokens are moved between accounts. These can be between _user_ to another _user_ or _company_ to _user_ and vice versa. In ostKIT a transaction represents a core action or event in your application, as examples, a "like", "share", "purchase", "monthly winner" or a "birthday event". You can associate a value with each transaction. Once you create such transactions for your application and assign value to each of them, they become opportunities for your end-users to "Earn" and "Spend" Branded Tokens (BT) in your application. This exchange of tokens represents a branded token economy.
@@ -17,11 +17,11 @@ So an important aspect of setting up a branded token economy is to setup transac
 | [_value_currency_type_](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#value-currency-type-sub-attributes)| String | The currency type in which the value of the transaction has been set. The transaction value can either be set in USD or in branded tokens (BT). Example: you can set value of an "Upvote" transaction to be 20 cents or 10 of your branded tokens. If the value is set in USD, the string used should be _usd_ and if the value is set in branded tokens the string used should be _bt_ .|
 | _value_in_bt_         | Float  | The amount in branded tokens (BT) to be set as transaction value.|
 | _commission_percent_  | Float  | As the company, you can set a fee on _user_to_user_ transactions. Example: If a user buys a service on your platform from another user, you can set a fee on these 'buy' transactions.  This fee is set in percentage of the total value of the transaction and is not additional to the transaction value. |
-| _token_erc20_address_        | String  | The erc20 token address on the utility chain. |
-| _token_uuid_        | String  | |
-| _conversion_rate_        | Float  | |
-| _created_at_        | String  | |
-| _updated_at_        | String  | |
+| _token_erc20_address_        | String  | The [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md) token address on the OST utility chain. |
+| _token_uuid_        | String  | The unique identifier for the branded token.|
+| _conversion_rate_        | Float  | The conversion rate set between the branded token and us dollars.|
+| _created_at_        | String  | The creation time of the transaction object|
+| _updated_at_        | String  | The last updated time of the transaction object.|
 ### Transaction Object Sub-Attributes
 
 #### _kind_  
@@ -38,10 +38,10 @@ So an important aspect of setting up a branded token economy is to setup transac
 | _bt_        | String | Branded tokens that the transaction is valued in.  |
 
 
-### 1. Create Transaction API
+### 1. Create Transaction Kind
 Creating transactions requires evaluating core user actions on your application and filtering out for the ones that you want to trigger branded token exchanges. Once you have decided the core actions you should start with creating a transaction for each of them. While setting up these transactions you should decide the type of the transaction, associate a value to it and also (if required) set a commission on it. An “Upvote” for example would be setup as a _user-to-user_ transaction, whereas something like “Rewards”  would be setup as a _company-to-user_ transaction. The value for a transaction can be set in two ways. One in the fiat value system: USD - US dollars and second in the tokenized value system: BT - your branded token.
 
-#### POST 
+#### API Endpoing - POST 
 ```url
 {{saas_api_url}}/transaction/kind/create
 ```
@@ -94,10 +94,12 @@ Returns a transaction object if there were no initial errors with the transactio
 
 
 
-### 2. Update Transaction API
+
+
+### 2. Update Transaction Kind
 Updates the specified transaction by setting the values of the parameters passed. Any parameter not provided will be left unchanged. Individual keys can be unset by posting an empty value to them. 
 
-#### POST 
+#### API Endpoint - POST 
 ```url
 {{saas_api_url}}/transaction/kind/edit
 ```
@@ -146,10 +148,10 @@ Returns a transaction object if the update is successful. This call will return 
 
 
 
-### 3. List transaction kind API
+### 3. List Transaction Kind 
 Returns a list of all existing transactions created. The transactions are returned in creation order, with the transcations created first, appearing at the top. 
 
-#### GET 
+#### API Endpoing - GET 
 ```url
 {{saas_api_url}}/transaction/kind/get-all?page_no=1
 ```
@@ -210,10 +212,10 @@ If no more transactions are available, the resulting hash will have the meta par
 
 
 
-### 4. Execute Transaction API
+### 4. Execute Transaction 
 To execute a transaction between one end-user to another end-user, an action can be utlizied to crete a branded token exchange. This can be done by specifying the from end-user _uuid_ to another end-user _uuid_ and the transaction [kind](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind). 
 
-#### POST 
+#### API Endpoint - POST 
 ```url
 {{saas_api_url}}/transaction/execute
 ```
@@ -256,10 +258,10 @@ Returns a transaction object with information on various parameters such as the 
 
 
 
-### 5. List Transactions API
+### 5. List Transactions 
 To get a list of all trasacations that have been initiated and exectued between one end-user and another end-user using your tokenized application.    
 
-#### POST 
+#### API Endpoint - POST 
 ```url
 {{saas_api_url}}/transaction/list?page_no=1
 ```
@@ -305,6 +307,38 @@ curl --request GET \
 
 #### Returns
 Returns the list of all transactions ([kinds](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind)) with information on various parameters such as the value of the transaction, the commission to you, conversion rates, token addresses, gas values, uuids, status of the transactions, last updated information and the branded token currency type. 
+
+
+
+
+### 6. Status of Transaction 
+To get the status of the on-going transcation between one end-user to another end-user.
+
+#### API Endpoint - GET
+```url
+{{saas_api_url}}/transaction/status?transaction_uuid=5f79063f-e22a-4d28-99d7-dd095f02c72e&transaction_hash=0xdd87f64cf98e1bce666509995284019ac23ad76bf7498c6fe804fa0fedb9948c
+```
+
+#### Parameters 
+| Parameter           | Type   | Value                                               |
+|---------------------|--------|-----------------------------------------------------|
+| _transaction_uuid_ | String | The unique identifier for the transaction type that has to be looked up. This is generated when a transcation is executed between two branded token holders. Example:5f79063f-e22a-4d28-99d7-dd095f02c72e                             |
+
+#### Sample Code | Curl 
+```bash
+curl --request GET \
+  --url 'http://{{saas_api_url}}/transaction/status?transaction_uuid=5f79063f-e22a-4d28-99d7-dd095f02c72e&transaction_hash=0xdd87f64cf98e1bce666509995284019ac23ad76bf7498c6fe804fa0fedb9948c'-4a14-a176-29bc4d117867 \
+  --form transaction_kind=Upvote
+```
+
+
+#### Response
+```javascript
+Respone TBD
+```
+
+#### Returns
+Returns a transaction object with information on various parameters such as the value of the transaction, the commission to you, conversion rates, token address, uuids, last updated information and the branded token currency type.
 
 
 
