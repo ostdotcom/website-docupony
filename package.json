@@ -1,0 +1,9 @@
+{
+  "name": "@openstfoundation/website-docupony",
+  "version": "1.0.0-beta.1",
+  "description": "Docupony is where ponies go to find documentation",
+  "dependencies": {
+  },
+  "author": "OST.com Ltd.",
+  "license": "Apache v2.0"
+}
