@@ -6,14 +6,14 @@ sidebar_label: Starting Overview
 The API documentation for the $OST powered complete blockchain toolkit for businesses. 
 
 
-OST KIT alpha gives you the power to launch, manage and monitor your branded token economy powered by $OST. Great OST KIT alpha use cases include projects with P2P micro-payments, encouraging content creation, end-user interaction, enabling transparent incentives, rewards for your platform users, monetizing API calls to third parties, low cost cross-border payments and much [more](https://simpletoken.org/partners).
+OST KIT alpha gives you the power to launch, manage and monitor your branded token economy powered by $OST. Great OST KIT alpha use cases include projects with P2P micro-payments, encouraging content creation, enabling transparent incentives, rewards for your platform users, monetizing API calls to third parties, low cost cross-border payments and much [more](https://simpletoken.org/partners).
 
 OST also provides a [ruby sdk](https://github.com/OpenSTFoundation/ost-sdk-ruby) with three modules at the moment. A Transaction Kind module that allows one to create new transaction [kinds](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#kind) and maintain them. An Address module that allows one to fetch balances on $OST, OST'(transaction fees), Ether (ETH), Branded Tokens (BT) and US dollards (USD). A [User](https://dev.stagingost.com/ostkit-restful-api/docs/user.html) module that allows for the creation and maintainance of end-users and their _address_uuid_ in your application, utilizing the OST enabled branded token economy. 
 
 The SDK itself directly bridges the [OpenST-Platform](https://github.com/OpenSTFoundation/openst-platform) under the hood of the OST KIT alpha. Thus also giving an insight into the operations of the [OpenST-Protocol](https://github.com/OpenSTFoundation/openst-protocol). Find more documentation on the ost-ruby-SDK [here](https://github.com/OpenSTFoundation/ost-sdk-ruby/blob/master/README.md).
 
 ## Create your Branded Tokens 
-OST KIT alpha enables you to design, create and manage your branded token (BT) economy. You may want to set just one branded token for your company or a few, depending upon your business model, range of services and product variations you offer. We request you to utilize the OST [FAQ](https://ostkit.com/faq) section and the developer forums on [gitter](https://gitter.im/OpenSTFoundation/SimpleToken) to ask us development related questions directly. You can also drop us a [mail](pranay@ost.com). This will help you understand the right approach towards achieveing a blooming and fully functional branded token economy and also help us better understand on how to serve your tokenized business requirements. 
+OST KIT alpha enables you to design, create and manage your branded token (BT) economy. You may want to set just one branded token for your company or a few, depending upon your business model, range of services and product variations you offer. We request you to utilize the OST [FAQ](https://kit.stagingost.com/) section and the developer forums on [gitter](https://gitter.im/OpenSTFoundation/SimpleToken) to ask us development related questions. You can also drop us a [mail](pranay@ost.com). This will help you understand the right approach towards achieveing a blooming and fully functional branded token economy and also help us understand on how to serve your tokenized business requirements better. 
 
 ### Staking $OST and Minting Branded Tokens
 
@@ -24,9 +24,9 @@ A simple 7 Step process to staking and minting your branded tokens using the [OS
 4. Soon after an activation link will be sent to the entered email.
 5. Activate your account using the link in the email address. Without activating you will be unable to recieve $OST or create your BT economy.
 6. Plan your BT economy in the 3 easy steps by following the provided instructions. FAQs and support articles will be provided on the page at each sub-step.
-7. Once you have registered, staked $OST and minted BT, the Air-drop process will begin to allocate the amount of BT into your account, this can distribute to end-users once they have been created following the process below.  
+7. Once you have registered, staked $OST and minted BT, the Air-drop process will begin to allocate the amount of BT into your account, this can be distributed to end-users once they have been created following the process below.  
 
-Please proceed through the rest of the tutorial once you have created and minted your branded token using OST KIT alpha. Follow the steps here to create users, Air-drop branded tokens, create transaction kinds and execute a transaction using the APIs provided below and in the detailed [reference](https://dev.stagingost.com/ostkit-restful-api/docs/user.html).
+Please proceed through the rest of the tutorial once you have constructed your BT economy and minted your BTs using OST KIT alpha. Follow the steps here to create [Users](https://dev.stagingost.com/ostkit-restful-api/docs/started.html#1-create-users), [Air-drop](https://dev.stagingost.com/ostkit-restful-api/docs/started.html#2-initiate-airdrop) BTs, Create transaction [kinds](https://dev.stagingost.com/ostkit-restful-api/docs/started.html#3-create-transaction-kind) and execute a [transaction](https://dev.stagingost.com/ostkit-restful-api/docs/started.html#4-execute-transaction) using the APIs provided below. Find more in the detailed [reference](https://dev.stagingost.com/ostkit-restful-api/docs/user.html).
 
 
 
