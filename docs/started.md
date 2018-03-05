@@ -39,7 +39,7 @@ This tutorial assumes you’ve created an API signature using steps given in [au
 
 #### API Endpoint - POST 
 ```url
-{{saas_api_url}}/addresses/create
+{{saas_api_url}}/users/create
 ```
 
 #### Parameters
@@ -50,16 +50,18 @@ This tutorial assumes you’ve created an API signature using steps given in [au
 #### Sample Code | Curl 
 ```bash
 curl --request POST \
---url 'http://{{saas_api_url}}/addresses/create' \
---data name=Puneet%20
+  --url 'http://{{saas_api_url}}/users/create' \
+  --data name=Puneet%20
 ```
 
 #### Response 
+Success
 ```javascript
-{"result_type"=>"economy_users", "economy_users"=> 
-[{"id"=>160, "uuid"=>"4697a3c8-7aa8-47c7-8192-6df7b90f1e7f", 
-"name"=>"Puneet", "total_airdropped_tokens"=>0, "token_balance"=>0}], 
-"meta"=>{"next_page_payload"=>{}}}
+{:success=>true, :data=>{"result_type"=>"economy_users", "economy_users"=>[{"uuid"=>"2da863e6-c8a5-4ecf-b625-aac00080baf9", "name"=>"test test", "total_airdropped_tokens"=>0, "token_balance"=>0}], "meta"=>{"next_page_payload"=>{}}}}
+```
+Failure
+```javascript
+{:success=>false, :err=>{:code=>"companyRestFulApi(s_a_g_1:Hy00otFOG)", :msg=>"invalid params", :display_text=>"", :display_heading=>"", :error_data=>[{"name"=>"User name should contain btw 3 - 25 characters."}]}, :data=>{}}
 ```
 
 #### Returns

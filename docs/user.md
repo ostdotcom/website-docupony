@@ -33,77 +33,100 @@ The user in OST KIT alpha, is the individual or the end-user accessing and inter
 | _all_   | String | All the end-users that have been previously air-dropped tokens. |
 | _new_   | String | All the end-users that have **_not_** been previously any air-dropped tokens. |
 
-#### **_sort_by_** 
+#### **_order_by_** 
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _creation_time_   | String | The method to list end-users by the time of end-user creation. |
+| _name_   | String | The method to list end-users by their end-user name. |
 
-
+#### **_order_** 
+| Attribute | Type    | Description                                   |
+|-----------|---------|------------------------------------------|
+| _ASC_  | String | The method to list selected attribute in ascending order. |
+| _DESC_   | String | The method to list selected attribute in descending order. |
 
 ### 1. Create User 
 For onboarding your end-users to participate in your branded token economy enabled application, you need to create users with this API.
 
 #### API Endpoint - POST 
 ```url
-{{saas_api_url}}/addresses/create
+{{saas_api_url}}/users/create
 ```
 
 #### Parameters
 | Parameter | Type   | Value  |
 |-----------|--------|--------|
-| _name_      | String | String representing the name of the user. Example : Puneet |
+| _name_      | String | String representing the name of the user. Example: Puneet |
 
 #### Sample Code | Curl 
 ```bash
 curl --request POST \
---url 'http://{{saas_api_url}}/addresses/create' \
---data name=Puneet%20
+  --url 'http://{{saas_api_url}}/users/create' \
+  --data name=Puneet%20
 ```
 
-#### Response 
+#### Success Response 
 ```javascript
-{"result_type"=>"economy_users", "economy_users"=> 
-[{"id"=>160, "uuid"=>"4697a3c8-7aa8-47c7-8192-6df7b90f1e7f", 
-"name"=>"Puneet", "total_airdropped_tokens"=>0, "token_balance"=>0}], 
-"meta"=>{"next_page_payload"=>{}}}
+{:success=>true, :data=>{"result_type"=>"economy_users",
+"economy_users"=>[{"uuid"=>"2da863e6-c8a5-4ecf-b625-aac00080baf9",
+"name"=>"Puneet", "total_airdropped_tokens"=>0, "token_balance"=>
+0}], "meta"=>{"next_page_payload"=>{}}}}
 ```
+
+#### Failure Response 
+```javascript
+{:success=>false, :err=>{:code=>"companyRestFulApi(s_a_g_1:Hy00otFOG)",
+:msg=>"invalid params", :display_text=>"", :display_heading=>"",
+:error_data=>[{"name"=>"User name should contain btw 3 - 25 characters."}]},
+:data=>{}}
+```
+
 
 #### Returns
-A user object if the call is successful. The returned object will have information about the tokens given to him by you as a company via [Airdrop](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#4-initiate-air-drop-api), if this is the case. It also has the information about the [branded token balance](). Along with these, the response will have the attribute **_id_** which you should save in your database. This **_id_** will be used to update or retrieve information about the user.
+A user object if the call is successful. The returned object will have information about the tokens given to end-user by you as a company via [Air-drop](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#4-initiate-air-drop-api), if this is the case. It also has the information about the BT balance. Along with these, the response will have the attribute _uuid_ which you should save in your database. This _uuid_ will be used to update or retrieve information about the end-user.
 
 
 
 
 
 ### 2. Update User 
-For updating the specified end-user by setting new values to user object parameters. Use the **_uuid_** that is returned while executing the [Create User API](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#1-create-user-api) to make changes to the selected end-user. Any parameter not provided, will not be affected.
+For updating the specified end-user by setting new values to user object parameters. Use the _uuid_ that is returned while executing the [Create User](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#1-create-user-api) API to make changes to the selected end-user. Any parameter not provided, will not be affected.
 
 #### API endpoint - POST
 ```url
-{{saas_api_url}}/addresses/create
+{{saas_api_url}}/users/update
 ```
 
 #### Parameters 
 | Parameter    | Type   | Value                                           |
 |--------------|--------|-------------------------------------------------|
 | _name_         | String | String representing the name of the user. Example: Pranay.                                |
-| _uuid_ | String | The unique identifier of your application’s end-user returned in the response when the user was created. Example : 8599825b-76ca-405c-ade3-b1a2cad73a75 |
+| _uuid_ | String | The unique identifier of your application’s end-user returned in the response when the user was created. Example: 007fe541-8766-4308-97d6-5d133ef4a282. |
 
 
 #### Sample Code | Curl 
 ```bash
 curl --request POST \
---url 'http://{{saas_api_url}}/users/update' \
---data 'name=Pranay%20&uuid=8599825b-76ca-405c-ade3-b1a2cad73a75'
+  --url 'http://{{saas_api_url}}/users/update' \
+  --data 'name=Pranay%20&uuid=007fe541-8766-4308-97d6-5d133ef4a282'
 ```
 
-#### Response
+#### Success Response 
 ```javascript
-{"result_type"=>"economy_users", "economy_users"=> 
-[{"uuid"=>"8599825b-76ca-405c-ade3-b1a2cad73a75", 
-"name"=>"Pranay", "total_airdropped_tokens"=>0, "token_balance"=>0}], 
-"meta"=>{"next_page_payload"=>{}}}}
+{:success=>true, :data=>{"result_type"=>"economy_users",
+"economy_users"=>[{"uuid"=>"007fe541-8766-4308-97d6-5d133ef4a282",
+"name"=>"test 123", "total_airdropped_tokens"=>"0", "token_balance"=>"0"}],
+"meta"=>{"next_page_payload"=>{}}}} 
 ```
+
+#### Failure Response 
+```javascript
+{:success=>false, :err=>{:code=>"companyRestFulApi(s_cu_eu_2:H1Hobct_f)",
+:msg=>"invalid params", :display_text=>"", :display_heading=>"",
+:error_data=>[{"name"=>"User name should contain btw 3 - 25 characters."}]}, 
+:data=>{}}
+```
+
 #### Returns
 Returns the updated customer object, if the update succeeds. Returns an [error](https://dev.stagingost.com/ostkit-restful-api/docs/error.html) if update parameters are invalid.
 
@@ -112,50 +135,63 @@ Returns the updated customer object, if the update succeeds. Returns an [error](
 
 
 ### 3. List Users 
-For viewing the list of end-users and all their parameters, as last updated. The users are returned sorted by creation date, with the most recent users appearing first.
+For viewing the list of end-users and all their parameters, as last updated. The users are returned sorted by creation time, with the most recent users appearing first.
 
 #### API Endpoint - GET
 ```url
-{{saas_api_url}}/users/list?page_no=1&filter=new&sort_by=creation_time
+{{saas_api_url}}/users/list?page_no=1&filter=new&order_by=creation_time&order=ASC
 ```
 
 #### Parameters 
 | Parameter | Type    | Value                                    |
 |-----------|---------|------------------------------------------|
-| _page_no_   | Integer | The page number of which the data is to be fetched. Example:1 |
+| _page_no_   | Integer | The page number of which the data is to be fetched. Example: 1 |
 | [_filter_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#filter-sub-attributes)   | String | The filter method to be used. Example: new.  |
-| [_sort_by_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#sort-by-sub-attributes)  | String | The sorting method to be used. Example: creation_time.  |
+| [_order_by_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#order-by-sub-attributes)  | String | The sorting method to be used. Example: creation_time.  |
+| _order_   | String | The order in which the end-users should be listed. Example: ASC |
 
 #### Sample Code | Curl 
 ```bash
 curl --request GET \
---url 'http://{{saas_api_url}}/users/list?page_no=1&filter=new&sort_by=creation_time'
+  --url 'http://{{saas_api_url}}/users/
+  list?page_no=1&filter=new&order_by=creation_time&order=ASC'
 ```
 
-#### Response
+#### Success Response
 ```javascript
-{"result_type"=>"economy_users", "economy_users"=> [{"id"=>"91", "name"=>"User 0",
-"uuid"=>"897261f7-abe4-4d01-82ee-9f129f6fe600", "total_airdropped_tokens"=>0,
-"token_balance"=>0}, {"id"=>"92", "name"=>"User 2",
+{:success=>true, :data=>{"result_type"=>"economy_users", 
+"economy_users"=>[{"name"=>"User 4", "uuid"=>"91af390d-843d-44eb-b554-5ad01f874eba", "total_airdropped_tokens"=>"1", "token_balance"=>"1"}, 
+{"name"=>"User 0", "uuid"=>"08cd0e56-f3f4-4ab5-8cde-3f778d9c2326", 
+"total_airdropped_tokens"=>"1", "token_balance"=>"1"}, 
 .
 .
 .
 .
-"uuid"=>"a010438e-6de1-465f-8c24-e8e922b300f2", "total_airdropped_tokens"=>0,
-"token_balance"=>0}, {"id"=>"114", "name"=>"User 23",
-"uuid"=>"cd3374bd-b801-4395-8b68-ea435c8b8345", "total_airdropped_tokens"=>0,
-"token_balance"=>0}], "meta"=>{"next_page_payload"=>{"page_no"=>2}}}
+{"name"=>"User 20", "uuid"=>"786b0175-d289-4408-844b-3ada570a7fb9", 
+"total_airdropped_tokens"=>"1", "token_balance"=>"1"}, 
+{"name"=>"User 21", "uuid"=>"a6201cc2-8c5b-466a-a367-6e7ae962ae83", 
+"total_airdropped_tokens"=>"1", "token_balance"=>"1"}], 
+"meta"=>{"next_page_payload"=>{"page_no"=>2}}}}
 ```
 
-#### Returns
-Returns a hash with a key **_result-type_**. The value of **_result-type_** is in-turn a key. Example: "economy_users" for the case above which points to end-user type. This is pointer to an array limited to 25 users and their parameters. For the sake of simplicity not all of the end-user entries are displayed here.
+#### Failure Response
+
+```javascript
+{:success=>false, :err=>{:code=>"companyRestFulApi(s_cu_eu_2:H1Hobct_f)", 
+:msg=>"invalid params", :display_text=>"", :display_heading=>"", 
+:error_data=>[{"order_by"=>"Unsupported value for order_by"}]}, :data=>{}}
+```
 
 #### Pagination
 ```javascript
 "meta"=>{"next_page_payload"=>{"page_no"=>2}}
 ```
-Each entry in the array is a separate user object with its latest update. If there are subsequently more users the resulting response will come with the a meta parameter _next_page_payload_ as shown above. 
-If no there are no more users available, the resulting response will have the meta parameter with an empty value of _next_page_payload_.
+Each entry in the array is a separate user object with its latest update. If there are subsequently more users the resulting response will come with the a meta parameter _next_page_payload_ as shown above. If no there are no more users available, the resulting response will have the meta parameter with an empty value of _next_page_payload_.
+
+#### Returns
+Returns a hash with a key _result-type_. The value of _result-type_ is in-turn a key. Example: _economy_users_ for the case above which points to end-users, that the request was made for. This is pointer to an array limited to 25 users and their parameters. For the sake of simplicity not all of the end-user entries are displayed here.
+
+
 
 
 
