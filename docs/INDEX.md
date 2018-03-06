@@ -25,7 +25,9 @@ INDEX - notes file
 
 ## Transaction-types - create
 ## Transaction-types - edit
-## Transaction-types - ...
+## Transaction-types - list
+## Transaction-types - execute
+## Transaction-types - status
 
 # OST SDK
 

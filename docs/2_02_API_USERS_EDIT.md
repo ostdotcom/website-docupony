@@ -8,13 +8,13 @@ For updating the specified end-user by setting new values to user object paramet
 
 #### API endpoint - POST
 ```url
-{{saas_api_url}}/users/update
+{{saas_api_url}}/users/edit
 ```
 
 #### Parameters 
 | Parameter    | Type   | Value                                           |
 |--------------|--------|-------------------------------------------------|
-| _name_         | String | String representing the name of the user. Example: Pranay.                                |
+| _name_         | String | String representing the name of the user. Example: Pranay.   |
 | _uuid_ | String | The unique identifier of your application’s end-user returned in the response when the user was created. Example: 007fe541-8766-4308-97d6-5d133ef4a282. |
 
 
@@ -26,7 +26,7 @@ curl --request POST \
 ```
 
 #### Success Response 
-```javascript
+```
 {:success=>true, :data=>{"result_type"=>"economy_users",
 "economy_users"=>[{"uuid"=>"007fe541-8766-4308-97d6-5d133ef4a282",
 "name"=>"test 123", "total_airdropped_tokens"=>"0", "token_balance"=>"0"}],
@@ -34,7 +34,7 @@ curl --request POST \
 ```
 
 #### Failure Response 
-```javascript
+```
 {:success=>false, :err=>{:code=>"companyRestFulApi(s_cu_eu_2:H1Hobct_f)",
 :msg=>"invalid params", :display_text=>"", :display_heading=>"",
 :error_data=>[{"name"=>"User name should contain btw 3 - 25 characters."}]}, 
