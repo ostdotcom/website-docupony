@@ -16,19 +16,19 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Developers' /* title for your website */,
-  tagline: 'Developers Documentation',
-  url: 'https://ost.com' /* your website url */,
-  baseUrl: '/ostkit-restful-api/' /* base url for your project */,
-  projectName: 'ostkit-restful-api',
+  title: 'OST DEV' /* title for your website */,
+  tagline: 'Developer Documentation',
+  url: 'https://dev.ost.com' /* your website url */,
+  baseUrl: '/reference/' /* base url for your project */,
+  projectName: 'OST KIT alpha',
   headerLinks: [
-    {doc: 'started', label: 'Docs'},
+    {doc: 'simpletoken', label: 'Reference'},
     {doc: 'user', label: 'API'},
   ],
   users,
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'img/favicon.svg',
+  footerIcon: 'img/favicon.svg',
   favicon: 'img/favicon.png',
   /* colors for website */
   colors: {
@@ -59,7 +59,7 @@ const siteConfig = {
   },
   scripts: ['https://buttons.github.io/buttons.js'],
   // You may provide arbitrary config keys to be used as needed by your template.
-  repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/openstfoundation',
 };
 
 module.exports = siteConfig;

@@ -1,9 +1,7 @@
 {
   "docs": {
-    "Getting Started": ["started","authentication","error"],
-    "API Reference": ["user", "transaction"] 
-  },
-  "docs-other": {
-    "First Category": ["doc5"]
+    "Getting Started": ["simpletoken", "tokenize", "alpha"],
+    "OST KIT": ["kit"],
+    "REST API": ["api", "api_users_create"]
   }
 }
