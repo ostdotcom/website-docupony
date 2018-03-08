@@ -1,6 +1,6 @@
 ---
-id: api_airdrop
-title: OST KIT API Airdrop 
+id: api_airdrop_drop
+title: OST KIT API Airdrop
 sidebar_label: Airdrop
 ---
 For awarding branded tokens to end-users in your application. This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy.

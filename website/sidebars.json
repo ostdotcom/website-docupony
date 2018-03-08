@@ -11,12 +11,12 @@
     	"api_users_create",
     	"api_users_edit",
     	"api_users_list",
-    	"api_airdrop",
-    	"api_airdrop_status",
     	"api_transaction-types_create",
     	"api_transaction-types_edit",
     	"api_transaction-types_list",
     	"api_transaction-types_execute",
-    	"api_transaction-types_status"]
+    	"api_transaction-types_status",
+      "api_airdrop_drop",
+      "api_airdrop_status"]
   }
 }
