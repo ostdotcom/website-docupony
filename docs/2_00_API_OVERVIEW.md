@@ -8,20 +8,27 @@ OST KIT&#945; hosts RESTful APIs to help you manage your token economy on the Op
 
 A `user` is an object that owns branded token balance on the utility chain, while meta-data and caching information are kept off-chain to preserve user privacy and guarantee instant response times.  The end-user can exchange branded tokens with other users or the company through interactions within the application.  The end-user can always redeem their branded tokens for the equivalent amount of $OST through the OpenST protocol.
 
-Within OST KIT&#945; you can set up `transaction-types` to define advanced payments to tokenize your application. A transaction type is of a certain kind: `user_to_user`, `user_to_company`, or `company_to_user`. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT&#945; runs on a testnet and tokens have no market value.  For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer.  Lastly for user to user payments the company can set a transaction fee to earn on each user to user payments.
+Within OST KIT&#945; you can set up `transaction-types` to define advanced payments to tokenize your application. A transaction type is of a certain kind: `user_to_user`, `user_to_company`, or `company_to_user`. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT&#945; runs on a testnet and tokens have no market value.  For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer.  Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
-When you create a new `user` through the API a `uuid` is returned that represents the user object.  The user uuid can be provided in requests to interact with the users.
+When you create a new `user` through the API a `uuid` is returned that represents the user object.  The user uuid can be provided in requests to interact with the users when executing transaction types.
 
-| users   | transaction-types | airdrop        |
-|---------|-------------------|----------------|
-| create  | create            |                |
-| edit    | edit              |                |
-| list    | list              |                |
-|         |                   | airdrop-tokens     | --> /airdrop/drop
-|         |                   | airdrop/get-status | --> /airdrop/status
+| users          | transaction-types         |
+|----------------|---------------------------|
+| [/users/create](api_users_create.html)  | [/transaction-types/create](api_transaction-types_create.html)   |
+| [/users/edit](api_users_edit.html)      | [/transaction-types/edit](api_transaction-types_edit.html)       |
+| [/users/list](api_users_list.html)      | [/transaction-types/list](api_transaction-types_list.html)       |
+|                                         |                                                                  |
+|                                         | [/transaction-types/execute](api_transaction-types_execute.html) |
+|                                         | [/transaction-types/status](api_transaction-types_status.html)   |                          
 
+To incentivise new or existing users they can be airdropped tokens to get them started in the economy.  Airdropped tokens remain under ownership of the company, but the user has them available to spend within the application under token rules.  Airdropped tokens cannot be redeemed for $OST before they have been spent (at least once) within the economy.
 
-NOTE: for OST KIT&#945; users are represented by managed accounts (i.e. OST KIT&#945; stores the encrypted private keys) for the created users as it concerns test-$OST on Ropsten testnet.  OpenST and OST KIT will support a decentralised key managenent solution to keep key- and token-ownership with
+| airdrop        |
+|----------------|
+| [/airdrop/drop](api_airdrop_drop.html)     |
+| [/airdrop/status](api_airdrop_status.html) |
+
+NOTE: for OST KIT&#945; users are represented by managed accounts (i.e. OST KIT&#945; stores the encrypted private keys) for the created users as it concerns test-$OST on Ropsten testnet.  OpenST and OST KIT supports an advanced decentralised key managenent solution to keep key- and token-ownership with the end-users for financial self-sovereignty of the end-users.
 
 >_last updated 6 March 2018_; for support see [help.ost.com](help.ost.com)
 >
