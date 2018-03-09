@@ -36,8 +36,7 @@ so that the full request uri and form reads
 | _err_      | object | (optional) describing error if not successful |
 
 For api calls to `/users` the `data.result_type` is the string "economy_users"
-and the key `data.economy_users` is an array of the returned `user` objects (25 users per page).
-The field `data.meta.next_page_payload` contains the filter and order information and the `page_no` number for the next page; or is empty for the last page of the list.
+and the key `data.economy_users` is an array of the returned `user` objects (25 users per page). The field `data.meta.next_page_payload` contains the filter and order information and the `page_no` number for the next page; or is empty for the last page of the list.
 
 ### User Object Attributes:
 
@@ -50,7 +49,6 @@ The field `data.meta.next_page_payload` contains the filter and order informatio
 | _token_balance_           | number | balance of the user         |
 
 ### Example Success Response
-
 ```json
 {
   "success": true,
