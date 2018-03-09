@@ -1,6 +1,6 @@
 ---
 id: api_transaction-types_create
-title: OST KIT API | Create
+title: OST KIT API | Create A Transaction Type
 sidebar_label: /transaction-types/create
 ---
 
