@@ -28,7 +28,7 @@ To incentivise new or existing users they can be airdropped tokens to get them s
 | [/airdrop/drop](api_airdrop_drop.html)     |
 | [/airdrop/status](api_airdrop_status.html) |
 
-NOTE: for OST KIT&#945; users are represented by managed accounts (i.e. OST KIT&#945; stores the encrypted private keys) for the created users as it concerns test-$OST on Ropsten testnet.  OpenST and OST KIT supports an advanced decentralised key managenent solution to keep key- and token-ownership with the end-users for financial self-sovereignty of the end-users.
+NOTE: for OST KIT&#945; users are represented by managed accounts (i.e. OST KIT&#945; stores the encrypted private keys) for the created users as it concerns test-$OST on Ropsten testnet.  OpenST and OST KIT supports an advanced decentralised key management solution to keep key- and token-ownership with the end-users for financial self-sovereignty of the end-users.
 
 >_last updated 6 March 2018_; for support see [help.ost.com](help.ost.com)
 >
