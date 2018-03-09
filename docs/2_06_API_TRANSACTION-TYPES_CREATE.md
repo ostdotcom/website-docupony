@@ -14,7 +14,7 @@ Post to `/trasaction-types/create` to create a new `transaction-type` and obtain
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
 | _name_              | string    | name of the transaction |
 | _kind_              | string    | type of transaction dependent on the owners involved in the token exchange|
-| _currency_type_     | string    | type of currency the transaction is valued in. Possible values are `usd` or `bt`   |
+| _currency_type_     | string    | type of currency the transaction is valued in. Possible values are `USD` or `BT`   |
 | _currency_value_    | float     | positive value of the currency with respect to _currency_type_|
 | _commission_percent_| float     | percentage of transaction value that you set as a service provider on a transaction. Can be set for only _user_to_user_ transaction type. |
 
@@ -45,7 +45,7 @@ On successful creation of the transaction type, `transaction-types` contains the
 | _client_id_         | string | unique identifier for the created transaction type
 | _name_              | string | name of the transaction |
 | _kind_              | string | type of transaction dependent on the owners involved in the token exchange|
-| _currency_type_     | string | type of currency the transaction is valued in. Possible values are `usd` or `bt`   |
+| _currency_type_     | string | type of currency the transaction is valued in. Possible values are `USD` or `BT`   |
 | _currency_value_    | float  | positive value of the currency with respect to _currency_type_|
 | _commission_percent_| float  | percentage of transaction value that you set as a service provider on a transaction. Possible only for _user_to_user_ transaction type. |
 
