@@ -124,12 +124,10 @@ however when a request is invalid the response is returned with status code 200 
 
 
 
-
-
 #### Sample Code | Curl 
 ```bash
 curl --request POST \
-  --url 'http://{{saas_api_url}}/transaction/kind/edit' \
+  --url 'https://playgroundapi.ost.com/transaction-types/create' \
   --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
   --form client_id=20373 \
   --form kind=user_to_user \
