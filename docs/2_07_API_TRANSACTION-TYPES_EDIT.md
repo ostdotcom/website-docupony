@@ -26,9 +26,9 @@ where the signature is derived from the API secret key and the string to sign is
 
 `/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP`
 
-so that the full request uri and form reads
+so that the full request query reads
 
-> POST - https://playgroundapi.ost.com/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE&&
+> GET - https://playgroundapi.ost.com/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE
 
 ### JSON Response Object
 
@@ -38,8 +38,7 @@ so that the full request uri and form reads
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/transaction-types` the `data.result_type` is the string "transactions" and the key `data.transactions` is an array of `transactions` objects.
-On successful editing of the transaction type, `transactions` contains the edited transaction type as a single element with only the attributes as passed in the request.
+On calling `/transaction-types/edit` the `data.result_type` is the string "transactions" and the key `data.transactions` is an array containing the edited transaction type object with the parameters changed.
 
 ### Transaction-types Object Attributes
 
@@ -50,7 +49,7 @@ On successful editing of the transaction type, `transactions` contains the edite
 | _name_              | string    | (optional) change to new name for the transaction-type |
 | _kind_              | string    | (optional) change transaction type which can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company. |
 | _currency_type_     | string    | (optional) change the type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle. |
-| _currency_value_    | float  | (optional) change the value of the transaction set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
+| _currency_value_    | float  | (optional) change the value of the transaction set in "USD" (min USD 0.01, max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
 | _commission_percent_ | float  | (optional) inclusive percentage of the value that is paid to the company. Possible only for "user_to_user" transaction kind. (min 0%, max 100%) |
 | _uts_               | number | unix timestamp in  milliseconds |
 

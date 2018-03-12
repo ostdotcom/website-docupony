@@ -36,8 +36,7 @@ so that the full request uri and form reads
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/transaction-types` the `data.result_type` is the string "transactions" and the key `data.transactions` is an array of `transactions` objects.
-On successful creation of the transaction type, `transaction` contains the created transaction type as a single element.
+On calling `/transaction-types/create` the `data.result_type` is the string "transactions" and the key `data.transactions` is an array containing the created transaction type object.
 
 ### Transaction-types Object Attributes
 
@@ -46,9 +45,9 @@ On successful creation of the transaction type, `transaction` contains the creat
 | _id_                | number | identifier for the created transaction type|
 | _client_id_         | number | identifier of the authorised client |
 | _name_              | string | name of the transaction type |
-| _kind_              | string    | transaction types can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company.  On user to user transfers the company can ask a transaction fee.  |
+| _kind_              | string | transaction types can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company.  On user to user transfers the company can ask a transaction fee. |
 | _currency_type_     | string    | type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle.  A transaction fails if the price point is outside of the accepted margins set by the company (API not yet exposed). For OST KIT alpha price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
-| _currency_value_    | float  | value of the transaction set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer.  If the transaction type is between users and a commission percentage is set then the commission is inclusive in this value and the complement goes to the beneficiary user. |
+| _currency_value_    | float  | value of the transaction set in "USD" (min USD 0.01, max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer.  If the transaction type is between users and a commission percentage is set then the commission is inclusive in this value and the complement goes to the beneficiary user. |
 | _commission_percent_| float  | inclusive percentage of the value that is paid to the company. Possible only for "user_to_user" transaction kind. (min 0%, max 100%) |
 | _status_            | string | status of the create transaction-type (default: "active") |
 | _uts_               | number | unix timestamp in  milliseconds|
