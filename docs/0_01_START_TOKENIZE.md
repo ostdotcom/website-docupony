@@ -4,7 +4,7 @@ title: Tokenize your application
 sidebar_label: Tokens
 ---
 
-An important aspect while setting up a branded token economy is to list all core user actions in your application. Then filter the actions for which you want to trigger the branded token exchange.  For example "like," "share", "purchase" ,”download," "reward," "monthly winner" or "birthday event"  are actions or events that can be setup as transactions. Once you create such transactions in OST KIT α and assign value to each of them, they become opportunities for your end-users to “Earn” and “Spend” your branded tokens. This exchange of tokens represents a token economy.
+An important aspect while setting up a branded token economy is to list all core user actions in your application. Then filter the actions for which you want to trigger the branded token exchange.  For example "like," "share", "purchase" ,”download," "reward," "monthly winner" or "birthday event"  are actions/events that can be setup as transactions. Once you create such transactions in OST KIT α and assign value to each of them, they become opportunities for your end-users to “Earn” and “Spend” your branded tokens. This exchange of tokens represents a token economy.
 
 We want to enable you to easily and safely create your own Branded Tokens on highly scalable OpenST Side Blockchains. These side blockchains are one of our key innovations. We use the OpenST technology protocol to create Branded Tokens on side blockchains by staking OST on the pubilic Ethereum blockchain.  [Know more about OpenST protocol](https://github.com/OpenSTFoundation/openst-platform/blob/master/CHANGELOG.md)
 
