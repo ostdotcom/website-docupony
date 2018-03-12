@@ -1,7 +1,7 @@
 ---
 id: api_airdrop_status
 title: OST KIT API Aidrop Status
-sidebar_label: Airdrop - status
+sidebar_label: /users/airdrop/status
 ---
 
 For getting the status on the status of the airdropped branded tokens. This API can be used to understand which stage the processing of airdropping the tokens are going through.  

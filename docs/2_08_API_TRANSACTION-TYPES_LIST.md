@@ -1,13 +1,14 @@
 ---
 id: api_transaction-types_list
-title: OST KIT API | List All Transaction Types 
+title: OST KIT API | List All Transaction Types
 sidebar_label: /transaction-types/list
 ---
 
-Send a GET request on `/transaction-types/` to receive a paginated and ordered array of transaction types previously created. The transactions-types are returned in creation order, with the transaction types created first, appearing at the top. 
+Send a GET request on `/transaction-types/` to receive a paginated and ordered array of transaction types previously created. The transactions-types are returned in creation order, with the transaction types created first, appearing at the top.
 
-  
-#### Input Parameters 
+Within OST KITα you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KITα runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
+
+#### Input Parameters
 | Parameter | Type | Value                                         |
 |-----------|------|-----------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |

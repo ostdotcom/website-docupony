@@ -4,7 +4,9 @@ title: OST KIT API | Edit A User
 sidebar_label: /users/edit
 ---
 
-Post to `/users/edit` to edit an existing `user` for a given unique identifier.
+Post to `/users/edit` to edit an existing `user` for a given unique identifier within the application.
+
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
@@ -16,7 +18,7 @@ Post to `/users/edit` to edit an existing `user` for a given unique identifier.
 | _uuid_              | uuid      | mandatory uuid of the user to edit |
 | _name_              | string    | new name of the user |
 
-where the signature is derived from the API secret key and the string to sign is
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted
 
 `/users/edit?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC&uuid=UUID`
 
@@ -43,8 +45,8 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
 | _name_    | string | name of the user  |
 | _id_      | string | (uuid copy, deprecated) |
 | _uuid_    | string | unique identifier for the user  |
-| _total_airdropped_tokens_ | number | airdrop balance of the user |
-| _token_balance_           | number | balance of the user         |
+| _total_airdropped_tokens_ | number | cumulative amount airdropped to the user |
+| _token_balance_           | number | balance of the user (including current airdrop budget)  |
 
 ### Example Success Response
 

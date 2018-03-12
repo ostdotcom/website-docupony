@@ -6,8 +6,9 @@ sidebar_label: /transaction-types/edit
 
 Send a POST request to `/transaction-types/edit` to edit an exisiting `transaction-type` for a given unique identifier that was returned during the creation of a new [transaction type](api_transaction-types_create.html). This updates the specified transaction type by setting the values of the parameters passed. Any parameter not provided will be left unchanged. Individual keys can be unset by posting an empty value to them. 
 
+Within OST KITα you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KITα runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
-### Input Parameters 
+### Input Parameters
 | Parameter           | Type   | Value                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
@@ -110,7 +111,7 @@ however when a request is invalid the response is returned with status code 200 
 
 
 
-### Sample Code | Curl 
+### Sample Code | Curl
 ```bash
 curl --request POST \
   --url 'https://playgroundapi.ost.com/transaction-types/create' \

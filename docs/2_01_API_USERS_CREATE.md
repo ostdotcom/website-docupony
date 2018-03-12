@@ -6,7 +6,7 @@ sidebar_label: /users/create
 
 Post to `/users/create` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
 
-A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy. {Link to further documentation on airdrop}
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
@@ -44,8 +44,8 @@ On successful creation of the user, `economy_users` contains the created user as
 | _name_    | string | name of the user  |
 | _id_      | string | (uuid copy, deprecated) |
 | _uuid_    | string | unique identifier for the user  |
-| _total_airdropped_tokens_ | number | airdrop balance of the user |
-| _token_balance_           | number | balance of the user         |
+| _total_airdropped_tokens_ | number | cumulative amount airdropped to the user |
+| _token_balance_           | number | balance of the user (including current airdrop budget)  |
 
 ### Example Success Response
 
@@ -71,7 +71,7 @@ On successful creation of the user, `economy_users` contains the created user as
 ```
 
 ### Example Failure Responses
-For a failed authentication the response is returned with status code 401 and the body can look like this,
+On a failed authentication the response is returned with status code 401 and the body will look like this,
 
 ```json
 {
@@ -83,7 +83,7 @@ For a failed authentication the response is returned with status code 401 and th
   }
 }
 ```
-however when a request is invalid the response is returned with status code 200 and the message and error data contain further information.
+however when a request is invalid the response is returned with successful status code 200, but `success = false` and the `err.msg` and `err.error_data` contain further information.
 ```json
 {
   "success": false,
