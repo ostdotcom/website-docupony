@@ -13,7 +13,7 @@ Successfully integrating the SDK requires having Ruby installed on your system: 
 To use the SDK, developers will need to:
 
 1. Sign-up on [https://kit.ost.com](https://kit.ost.com).
-2. Launch a branded token economy with OST KIT alpha. You can see a step by step [guide here]
+2. Launch a branded token economy with OST KIT⍺. You can see a step by step [guide here](1_00_KIT_OVERVIEW.md).
 3. Obtain an API Key and API Secret from [screenshot]
 
 ### Install ost-sdk-ruby
@@ -102,26 +102,28 @@ ostTransactionKindObject.create(name: 'Like', kind: 'user_to_user', currency_typ
 
 ### Alice Likes Bob
 
-Now that you've created a Like transaction type and funded Alice and Bob airdropped tokens, you can execute a Like transaction from Alice to Bob.
+Now that you've created a Like transaction type and funded Alice and Bob with airdropped tokens, you can execute a Like transaction from Alice to Bob.
 
 To execute the Like transaction, you will need Alice and Bob's UUIDs. They were returned when you created Alice and Bob. However, you can get them again by retrieving and filtering the list of users:
 
 ```ruby
 users_names = ["Alice", "Bob"] # make an array for filtering convenience
 users_list_object = ostUsersObject.list() # returns an object that includes the list of users
-users_list = users_list_object.data["economy_users"] # sets users_list to the list of users from the returned object
+users_list = users_list_object.data["economy_users"] # sets users_list to the array of users from the returned object
 users_list.select { |u| users_names.include? u["name"] }.map { |r| {name: r["name"], uuid: r["uuid"] }} # filters for Alice and Bob
 => [{:name=>"Alice", :uuid=>"1234-1928-1081dsds-djhksjd"}, {:name=>"Bob", :uuid=>"1081xyz-1928-1234-1223232"}] # your UUIDs for Alice and Bob will differ
 ```
+_Note: OST KIT⍺ does not place a uniqueness constraint on user names._
 
 And now, use those UUIDs to execute a Like transaction between Alice and Bob:
 
 ```ruby
-ostTransactionKindObject.execute(from_uuid: '1234-1928-1081dsds-djhksjd', to_uuid: '1081xyz-1928-1234-1223232', transaction_kind: 'Purchase')
+ostTransactionKindObject.execute(from_uuid: '1234-1928-1081dsds-djhksjd', to_uuid: '1081xyz-1928-1234-1223232', transaction_kind: 'Like')
 => # returns object with uuid of executed transaction
 ```
+_Note: `transaction_kind` is the `name` of the transaction type._
 
-And you can verify the status of the executed transaction in a couple of ways.
+The UUID of the executed transaction signals that worst-case scenario checks that the transaction will be completed have been performed and you can assume the transaction will be successfully mined. However, you can additionally confirm the status of the executed transaction in a couple of ways.
 
 You can get the status of the specific transaction:
 
@@ -135,4 +137,4 @@ Or you can get the list of users again and see that Alice's branded token balanc
 ostUsersObject.list()
 ```
 
-And with a little time and a lot of ease, your branded token economy is up and running!
+And with just a little time and a lot of ease, your branded token economy is up and running!
