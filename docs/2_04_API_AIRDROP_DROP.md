@@ -1,16 +1,16 @@
 ---
-id: api_airdrop
-title: OST KIT API Aidrop 
-sidebar_label: Airdrop
+id: api_airdrop_drop
+title: OST KIT API Airdrop
+sidebar_label: /users/airdrop/drop
 ---
-For awarding branded tokens to end-users in your application. This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy. 
+For awarding branded tokens to end-users in your application. This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy.
 
 #### API Endpoint - POST
 ```url
 {{saas_api_url}}/users/airdrop-tokens
 ```
 
-#### Parameters 
+#### Parameters
 | Parameter | Type    | Value                                    |
 |-----------|---------|------------------------------------------|
 | _token_symbol_   | String | The symbol of the branded token that should be airdropped to end-users. Example:PK |
@@ -28,7 +28,7 @@ For awarding branded tokens to end-users in your application. This API allows en
 | _never_airdropped_   | String | All the end-users that have **never** been previously any airdropped tokens. |
 
 
-#### Sample Code | Curl 
+#### Sample Code | Curl
 ```bash
 curl --request POST \
   --url 'http://{{saas_api_url}}/users/airdrop-tokens' \
@@ -49,4 +49,4 @@ curl --request POST \
 ```
 
 #### Returns
-Returns a true or false response on the success of the air-drop of the branded tokens for your application. 
+Returns a true or false response on the success of the air-drop of the branded tokens for your application.

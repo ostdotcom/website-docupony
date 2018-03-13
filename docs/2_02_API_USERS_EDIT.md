@@ -1,46 +1,97 @@
 ---
 id: api_users_edit
-title: OST KIT API Edit Users
-sidebar_label: Users - edit
+title: OST KIT API | Edit A User
+sidebar_label: /users/edit
 ---
 
-For updating the specified end-user by setting new values to user object parameters. Use the _uuid_ that is returned while executing the [Create User](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#1-create-user-api) API to make changes to the selected end-user. Any parameter not provided, will not be affected.
+Post to `/users/edit` to edit an existing `user` for a given unique identifier within the application.
 
-#### API endpoint - POST
-```url
-{{saas_api_url}}/users/edit
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy.
+
+### Input Parameters
+
+| Parameter           | Type      | Value  |
+|---------------------|-----------|--------|
+| _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
+| _signature_         | hexstring | mandatory [signature generated]() for current request |
+| _uuid_              | uuid      | mandatory uuid of the user to edit |
+| _name_              | string    | new name of the user |
+
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+
+`/users/edit?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC&uuid=UUID`
+
+so that the full request uri and form reads
+
+> POST - https://playgroundapi.ost.com/users/edit?api_key=API_KEY&name=NAME&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE&uuid=UUID
+
+### JSON Response Object
+
+| Key        | Type   | Value      |
+|------------|--------|------------|
+| _success_  | bool   | post successful |
+| _data_     | object | (optional) data object describing result if successful   |
+| _err_      | object | (optional) describing error if not successful |
+
+For api calls to `/users` the `data.result_type` is the string "economy_users"
+and the key `data.economy_users` is an array of `user` objects.
+On successful edit of a user, `economy_users` contains the edited user as a single element.
+
+### User Object Attributes:
+
+| Parameter | Type   | Value  |
+|-----------|--------|--------|
+| _name_    | string | name of the user  |
+| _id_      | string | (uuid copy, deprecated) |
+| _uuid_    | string | unique identifier for the user  |
+| _total_airdropped_tokens_ | number | cumulative amount airdropped to the user |
+| _token_balance_           | number | balance of the user (including current airdrop budget)  |
+
+### Example Success Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "economy_users",
+    "economy_users": [
+      {
+        "id": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
+        "uuid": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
+        "name": "NAME",
+        "total_airdropped_tokens": "0",
+        "token_balance": "0"
+      }
+    ],
+    "meta": {
+      "next_page_payload": {}
+    }
+  }
+}
 ```
 
-#### Parameters 
-| Parameter    | Type   | Value                                           |
-|--------------|--------|-------------------------------------------------|
-| _name_         | String | String representing the name of the user. Example: Pranay.   |
-| _uuid_ | String | The unique identifier of your application’s end-user returned in the response when the user was created. Example: 007fe541-8766-4308-97d6-5d133ef4a282. |
+### Example Failure Responses
 
+```json
+{
+  "success": false,
+  "err": {
+    "code": "companyRestFulApi(s_cu_eu_2.1:rJOpl4JtG)",
+    "msg": "User not found",
+    "error_data": {}
+  }
+}
+```
 
-#### Sample Code | Curl 
+### Sample Code | Curl
 ```bash
 curl --request POST \
-  --url 'http://{{saas_api_url}}/users/update' \
-  --data 'name=Pranay%20&uuid=007fe541-8766-4308-97d6-5d133ef4a282'
+  --url 'https://playgroundapi.ost.com/users/edit' \
+  --data name=NAME api_key=API_KEY signature=SIGNATURE \
+         request_timestamp=EPOCH_TIME_SEC uuid=UUID
 ```
 
-#### Success Response 
-```
-{:success=>true, :data=>{"result_type"=>"economy_users",
-"economy_users"=>[{"uuid"=>"007fe541-8766-4308-97d6-5d133ef4a282",
-"name"=>"test 123", "total_airdropped_tokens"=>"0", "token_balance"=>"0"}],
-"meta"=>{"next_page_payload"=>{}}}} 
-```
-
-#### Failure Response 
-```
-{:success=>false, :err=>{:code=>"companyRestFulApi(s_cu_eu_2:H1Hobct_f)",
-:msg=>"invalid params", :display_text=>"", :display_heading=>"",
-:error_data=>[{"name"=>"User name should contain btw 3 - 25 characters."}]}, 
-:data=>{}}
-```
-
-#### Returns
-Returns the updated customer object, if the update succeeds. Returns an [error](https://dev.stagingost.com/ostkit-restful-api/docs/error.html) if update parameters are invalid.
-
+>_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>
+> OST KIT alpha v1 | OpenST Platform v0.9.2

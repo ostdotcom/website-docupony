@@ -1,85 +1,90 @@
 ---
 id: api_users_list
-title: OST KIT API List Users
-sidebar_label: Users - list
+title: OST KIT API | List Users
+sidebar_label: /users/list
 ---
 
-For viewing the list of end-users and all their parameters, as last updated. The users are returned sorted by creation time, with the most recent users appearing first.
+Send a GET request on `/users/edit` to receive a paginated - optionally filtered - ordered array of users within the economy.
 
-#### API Endpoint - GET
-```url
-{{saas_api_url}}/users/list?page_no=1&filter=new&order_by=creation_time&order=ASC
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy.
+
+### Input Parameters
+
+| Parameter           | Type      | Value  |
+|---------------------|-----------|--------|
+| _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
+| _signature_         | hexstring | mandatory [signature generated]() for current request |
+| _page_no_           | number    | page number (starts from 1) |
+| _filter_            | string    | (optional) filter to be applied on list. Possible values: 'all' or 'never_airdropped' (default) |
+| _order_by_          | string | (optional) order the list by 'creation_time' or 'name' (default) |
+| _order_             | string | (optional) order users in 'desc' (default) or 'asc' order. |
+
+
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+
+`/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP`
+
+so that the full request query reads
+
+> GET - https://playgroundapi.ost.com/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE
+
+### JSON Response Object
+
+| Key        | Type   | Value      |
+|------------|--------|------------|
+| _success_  | bool   | get successful |
+| _data_     | object | (optional) data object describing result if successful   |
+| _err_      | object | (optional) describing error if not successful |
+
+For api calls to `/users` the `data.result_type` is the string "economy_users"
+and the key `data.economy_users` is an array of the returned `user` objects (25 users per page). The field `data.meta.next_page_payload` contains the filter and order information and the `page_no` number for the next page; or is empty for the last page of the list.
+
+### User Object Attributes:
+
+| Parameter | Type   | Value  |
+|-----------|--------|--------|
+| _name_    | string | name of the user  |
+| _id_      | string | (uuid copy, deprecated) |
+| _uuid_    | string | unique identifier for the user  |
+| _total_airdropped_tokens_ | number | cumulative amount airdropped to the user |
+| _token_balance_           | number | balance of the user (including current airdrop budget)  |
+
+### Example Success Response
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "economy_users",
+    "economy_users": [
+      {
+        "id": "c1e5da9b-787d-4897-aa58-742f2756c71d",
+        "name": "User 1",
+        "uuid": "c1e5da9b-787d-4897-aa58-742f2756c71d",
+        "total_airdropped_tokens": "15",
+        "token_balance": "15"
+      },
+      ...
+      {
+        "id": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
+        "name": "User 25",
+        "uuid": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
+        "total_airdropped_tokens": "15",
+        "token_balance": "15"
+      }
+    ],
+    "meta": {
+      "next_page_payload": {
+        "order_by": "creation_time",
+        "order": "asc",
+        "filter": "all",
+        "page_no": 2
+      }
+    }
+  }
+}
 ```
 
-#### Parameters 
-| Parameter | Type    | Value                                    |
-|-----------|---------|------------------------------------------|
-| _page_no_   | Integer | The page number of which the data is to be fetched. Example: 1 |
-| [_filter_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#filter-sub-attributes)   | String | The filter method to be used. Example: all.  |
-| [_order_by_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#order-by-sub-attributes)  | String | The sorting method to be used. Example: creation_time.  |
-| _order_   | String | The order in which the end-users should be listed. Example: ASC |
-
-### User List Sub-Attributes
-
-#### **_filter_** 
-| Attribute | Type    | Description                                   |
-|-----------|---------|------------------------------------------|
-| _all_   | String | All the end-users that have been previously air-dropped tokens. |
-| _never_airdropped_   | String | All the end-users that have **never** been previously any air-dropped tokens. |
-
-
-#### **_order_by_** 
-| Attribute | Type    | Description                                   |
-|-----------|---------|------------------------------------------|
-| _creation_time_   | String | The method to list end-users by the time of end-user creation. |
-| _name_   | String | The method to list end-users by their end-user name. |
-
-#### **_order_** 
-| Attribute | Type    | Description                                   |
-|-----------|---------|------------------------------------------|
-| _ASC_  | String | The method to list selected attribute in ascending order. |
-| _DESC_   | String | The method to list selected attribute in descending order. |
-
-
-#### Sample Code | Curl 
-```bash
-curl --request GET \
-  --url 'http://{{saas_api_url}}/users/
-  list?page_no=1&filter=new&order_by=creation_time&order=ASC'
-```
-
-#### Success Response
-```
-{:success=>true, :data=>{"result_type"=>"economy_users", 
-"economy_users"=>[{"name"=>"User 4", "uuid"=>"91af390d-843d-44eb-b554-5ad01f874eba", "total_airdropped_tokens"=>"1", "token_balance"=>"1"}, 
-{"name"=>"User 0", "uuid"=>"08cd0e56-f3f4-4ab5-8cde-3f778d9c2326", 
-"total_airdropped_tokens"=>"1", "token_balance"=>"1"}, 
-.
-.
-.
-.
-{"name"=>"User 20", "uuid"=>"786b0175-d289-4408-844b-3ada570a7fb9", 
-"total_airdropped_tokens"=>"1", "token_balance"=>"1"}, 
-{"name"=>"User 21", "uuid"=>"a6201cc2-8c5b-466a-a367-6e7ae962ae83", 
-"total_airdropped_tokens"=>"1", "token_balance"=>"1"}], 
-"meta"=>{"next_page_payload"=>{"page_no"=>2}}}}
-```
-
-#### Failure Response
-
-```
-{:success=>false, :err=>{:code=>"companyRestFulApi(s_cu_eu_2:H1Hobct_f)", 
-:msg=>"invalid params", :display_text=>"", :display_heading=>"", 
-:error_data=>[{"order_by"=>"Unsupported value for order_by"}]}, :data=>{}}
-```
-
-#### Pagination
-```
-"meta"=>{"next_page_payload"=>{"page_no"=>2}}
-```
-Each entry in the array is a separate user object with its latest update. If there are subsequently more users the resulting response will come with the a meta parameter _next_page_payload_ as shown above. If no there are no more users available, the resulting response will have the meta parameter with an empty value of _next_page_payload_.
-
-#### Returns
-Returns a hash with a key _result-type_. The value of _result-type_ is in-turn a key. Example: _economy_users_ for the case above which points to end-users, that the request was made for. This is pointer to an array limited to 25 users and their parameters. For the sake of simplicity not all of the end-user entries are displayed here.
-
-
+>_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>
+> OST KIT alpha v1 | OpenST Platform v0.9.2

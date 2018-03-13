@@ -1,62 +1,81 @@
 ---
 id: api_transaction-types_edit
-title: OST KIT API Transaction-Types Edit 
-sidebar_label: Transaction-types edit
+title: OST KIT API | Edit A Transaction Type
+sidebar_label: /transaction-types/edit
 ---
 
-Updates the specified transaction by setting the values of the parameters passed. Any parameter not provided will be left unchanged. Individual keys can be unset by posting an empty value to them. 
+Send a POST request to `/transaction-types/edit` to edit an exisiting `transaction-type` for a given unique identifier that was returned during the creation of a new [transaction type](api_transaction-types_create.html). This updates the specified transaction type by setting the values of the parameters passed. Any parameter not provided will be left unchanged. Individual keys can be unset by posting an empty value to them.
 
-#### API Endpoint - POST 
-```url
-{{saas_api_url}}/transaction-types/edit
-```
+Within OST KITα you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KITα runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
-#### Parameters 
+### Input Parameters
 | Parameter           | Type   | Value                                               |
 |---------------------|--------|-----------------------------------------------------|
-| _client_transaction_id_ | String | The ID of the transaction that was returned when the transaction was created with the [create transaction API](https://dev.stagingost.com/ostkit-restful-api/docs/transaction.html#1-create-a-new-transaction-api) |
-| _kind_                  | String | The type of transaction based on the owners involved in the token exchange. Example **_user_to_user_**                                                                    |
-| _currency_type_ | String | String representing the currency the transaction is valued in. Two possible values are **_usd_** or **_bt_** .                                 |
-| _currency_value_ | Float  | Positive number that represents amount of branded token or USD to be set as transaction value.                 |
-| _commission_percent_  | Float  | Percentage of transaction value that you set as a service provider on a transaction. Can be set for only _user_to_user_ transaction type. |
+| _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
+| _signature_         | hexstring | mandatory [signature generated]() for current request |
+| _client_transaction_id_ | number | mandatory id for transaction to edit (returned as `id` on `/create` or `/list`) |  
+| _name_              | string    | (optional) change to new name for the transaction-type |
+| _kind_              | string    | (optional) change transaction type which can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company. |
+| _currency_type_     | string    | (optional) change the type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle. |
+| _currency_value_    | float  | (optional) change the value of the transaction set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
+| _commission_percent_ | float  | (optional) inclusive percentage of the value that is paid to the company. Possible only for "user_to_user" transaction kind. (min 0%, max 100%) |
 
-### Transaction-types edit Sub-Attributes
 
-#### _kind_  
-| Parameter       | Type   | Definition  |
-|-----------------|--------|----------------------------------|
-| _user_to_user_    | String | Value transfer from one end-user to another. Example: "Upvote" or "like".  |
-| _user_to_company_ | String | Value transfer from an end-user to you (the application service provider). Example: “API call”. |
-| _company_to_user_ | String | Value transfer from the application service provider to an end-user. Example: “Rewards”.    |
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted
 
-#### _value_currency_type_ 
-| Parameter | Type   | Definition  |
-|-----------|--------|--------------------------------------------------------|
-| _usd_       | String | Fiat currency that the transaction is valued in.   |
-| _bt_        | String | Branded tokens that the transaction is valued in.  |
+`/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP`
 
-#### Sample Code | Curl 
-```bash
-curl --request POST \
-  --url 'http://{{saas_api_url}}/transaction/kind/edit' \
-  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  --form client_transaction_id=20373 \
-  --form kind=user_to_user \
-  --form currency_value=1 \
-  --form commission_percent=10 \
-  --form currency_type=USD
+so that the full request query reads
+
+> GET - https://playgroundapi.ost.com/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE
+
+### JSON Response Object
+
+| Key        | Type   | Value      |
+|------------|--------|------------|
+| _success_  | bool   | post successful |
+| _data_     | object | (optional) data object describing result if successful   |
+| _err_      | object | (optional) describing error if not successful |
+
+On calling `/transaction-types/edit` the `data.result_type` is the string "transactions" and the key `data.transactions` is an array containing the edited transaction type object with the parameters changed.
+
+### Transaction-types Object Attributes
+
+| Parameter           | Type   | Definition  |
+|---------------------|--------|----------------------------------|
+| _id_                | number | identifier for the edited transaction type (identical to `client_transaction_id` in the request) |
+| _client_id_         | number | identifier of the authorised client |
+| _name_              | string    | (optional) change to new name for the transaction-type |
+| _kind_              | string    | (optional) change transaction type which can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company. |
+| _currency_type_     | string    | (optional) change the type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle. |
+| _currency_value_    | float  | (optional) change the value of the transaction set in "USD" (min USD 0.01, max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
+| _commission_percent_ | float  | (optional) inclusive percentage of the value that is paid to the company. Possible only for "user_to_user" transaction kind. (min 0%, max 100%) |
+| _uts_               | number | unix timestamp in  milliseconds |
+
+
+### Example Success Response
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "transactions",
+    "transactions": [
+      {
+        "id": "20198",
+        "client_id": 1018,
+        "name": "Reward",
+        "kind": "company_to_user",
+        "currency_type": "BT",
+        "currency_value": "0.1",
+        "commission_percent": "0",
+        "uts": 1520876285325
+      }
+    ]
+  }
+}
 ```
 
-#### Success Response
-```
-{:success=>true, :data=>{"result_type"=>"transactions", "transactions"=>[{"id"=>"20373", "client_id"=>1124, "client_transaction_id" => 20373, "name"=>"test", "uts"=>1520180383910}]}}
-```
-
-#### Failure Response 
-```
-{:success=>false, :err=>{:code=>"companyRestFulApi(tk_e_2:SystnqFuf)", :msg=>"invalid params", :display_text=>"", :display_heading=>"", :error_data=>[{"name"=>"Tx Kind name should contain btw 3 - 15 aplhabets."}]}, :data=>{}}
-```
-
-
-#### Returns
-Returns a transaction object if the update is successful. This call will return an error if update parameters are invalid. Errors are sent as per specification [here](https://dev.stagingost.com/ostkit-restful-api/docs/error.html).
+>_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>
+> OST KIT alpha v1 | OpenST Platform v0.9.2
