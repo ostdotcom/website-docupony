@@ -1,6 +1,6 @@
 ---
 id: api_airdrop_status
-title: OST KIT API Aidrop Status
+title: OST KIT⍺ API Aidrop Status
 sidebar_label: /users/airdrop/status
 ---
 

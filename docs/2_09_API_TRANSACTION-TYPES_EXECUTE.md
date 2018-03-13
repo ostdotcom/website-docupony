@@ -1,6 +1,6 @@
 ---
 id: api_transaction-types_execute
-title: OST KIT API | Execute A Transaction Type
+title: OST KIT⍺ API | Execute A Transaction Type
 sidebar_label: /transaction-types/execute
 ---
 
@@ -90,4 +90,4 @@ curl --request POST \
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

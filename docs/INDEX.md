@@ -5,7 +5,7 @@ INDEX - notes file
 ## Tokenize Your Application
 ## Alpha roadmap
 
-# OST KIT alpha
+# OST KIT⍺
 ## Propose Branded Token
 ## Stake and Mint
 

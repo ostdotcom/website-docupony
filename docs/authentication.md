@@ -4,7 +4,7 @@ title: Authentication
 sidebar_label:Authentication
 ---
 
-For being able to use and run the API in [getting started](http://localhost:3000/ostkit-restful-api/docs/started.html) provided in this documentation. You will need to authenticate your account by including the API signature in each API request. You can get your API secret-key in the OST KIT alpha developers [page](https://kit.stagingost.com/).  Please be sure to keep your API keys safely. Do not share your secret API keys in publicly accessible areas such as GitHub, Google docs etc. In case you think that your secret key has been compromised please generate a new API secret key as soon as possible from the OST KIT [Dashboard](https://kit.stagingost.com/dashboard).
+For being able to use and run the API in [getting started](http://localhost:3000/ostkit-restful-api/docs/started.html) provided in this documentation. You will need to authenticate your account by including the API signature in each API request. You can get your API secret-key in the OST KIT⍺ developers [page](https://kit.stagingost.com/).  Please be sure to keep your API keys safely. Do not share your secret API keys in publicly accessible areas such as GitHub, Google docs etc. In case you think that your secret key has been compromised please generate a new API secret key as soon as possible from the OST KIT⍺ [Dashboard](https://kit.stagingost.com/dashboard).
 
 To generate the API signature follow the steps below:
 

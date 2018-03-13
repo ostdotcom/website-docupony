@@ -1,6 +1,6 @@
 Getting Started
 - How to tokenize your application
-- Create your Branded Token with OST KIT alpha
+- Create your Branded Token with OST KIT⍺
   - what will happen
   - this a first release of the APIs and they are subject to future updates
   - users, transactions, transaction types
@@ -14,7 +14,7 @@ Tutorials:
 - hosting the OpenST APIs yourself
 
 
-OST KIT alpha APIs
+OST KIT⍺ APIs
 
 - users/create
 

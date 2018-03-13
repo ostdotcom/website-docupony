@@ -1,12 +1,12 @@
 ---
 id: api_users_edit
-title: OST KIT API | Edit A User
+title: OST KIT⍺ API | Edit A User
 sidebar_label: /users/edit
 ---
 
 Post to `/users/edit` to edit an existing `user` for a given unique identifier within the application.
 
-A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy.
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
@@ -94,4 +94,4 @@ curl --request POST \
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2
