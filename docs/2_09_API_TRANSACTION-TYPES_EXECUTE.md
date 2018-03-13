@@ -1,6 +1,6 @@
 ---
 id: api_transaction-types_execute
-title: OST KIT API | Execute A Transaction Type
+title: OST KIT⍺ API | Execute A Transaction Type
 sidebar_label: /transaction-types/execute
 ---
 
@@ -14,8 +14,8 @@ Send a POST request on `/transaction-types/execute` to execute a token exchange 
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
 | _from_uuid_    | string | origin user of the transaction branded token.  |
 | _to_uuid_      | string | destination user of the transaction.           |
-| _transaction_kind_  | string | type of transaction dependent on the owners involved in the token exchange. Possible values are "user_to_user" - token exchange from one user to another user  , "user_to_company" - from a user to you (the application service provider), "company_to_user" - exchange from you (the application service provider) to an end-user  |
-| _token_symbol_ | string | token symbol whose transaction has to be executed. |
+| _transaction_kind_  | string | name of the transaction to be executed. "upvote" etc. |
+
 
 where the signature is derived from the API secret key and the string to sign is alphabetically sorted
 
@@ -23,7 +23,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request uri and form reads
 
-> POST - https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&client_id=CLIENT_ID&from_uuid=FROM_UUID&token_symbol=TOKEN_SYMBOL&to_uuid=TO_UUID&transaction_kind_=TRANSACTION_KIND&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE
+> POST - `https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&client_id=CLIENT_ID&from_uuid=FROM_UUID&request_timestamp=1520960959&to_uuid=796fa0c4-d584-4d56-ba49-1e985f805831&transaction_kind=Upvote`
 
 ### JSON Response Object
 
@@ -44,35 +44,32 @@ For api calls to `/transaction-types/execute` the `data` is an object containing
 | _to_uuid_      | string | destination user of the transaction.           |
 | _transaction_uuid_      | string | id of the transaction type that has been executed|
 | _transaction_hash_ | hexstring | the generated transaction hash |
-| _transaction_kind_  | string | type of transaction dependent on the owners involved in the token exchange. Possible values are "user_to_user" - token exchange from one user to another user  , "user_to_company" - from a user to you (the application service provider), "company_to_user" - exchange from you (the application service provider) to an end-user  |
+| _transaction_kind_  | string | name of the transaction to be executed. "upvote" etc. |
 
 
 ### Sample Success Response
 ```json
 {
-  "success": true,
-  "data": {
-    "transaction_uuid": "49cc3411-7ab3-4478-8fac-beeab09e3ed2",
-    "transaction_hash": "nil",
-    "from_uuid": "1b5039ea-323f-416c-9007-7fe2d068d42d",
-    "to_uuid": "286d2cb9-421b-495d-8a82-034d8e2c96e2",
-    "transaction_kind": "Download"
-  }
+    "success": true,
+    "data": {
+        "transaction_uuid": "978efb00-68ce-418e-a039-10036b7ba451",
+        "transaction_hash": null,
+        "from_uuid": "6d0cae63-0df5-4042-9f16-4ee534770f75",
+        "to_uuid": "796fa0c4-d584-4d56-ba49-1e985f805831",
+        "transaction_kind": "Upvote"
+    }
 }
 ```
 
 ### Sample Failure Response
 ```json
 {
-  "success": false,
-  "err": {
-    "code": "companyRestFulApi(s_t_et_6BJlY1jKuG)",
-    "msg": "Invalid Token Symbol",
-    "display_text": "",
-    "display_heading": "",
-    "error_data": {}
-  },
-  "data": {}
+    "success": false,
+    "err": {
+        "code": "companyRestFulApi(cm_ctt_1:r1MZsYrtz)",
+        "msg": "Not found",
+        "error_data": {}
+    }
 }
 ```
 

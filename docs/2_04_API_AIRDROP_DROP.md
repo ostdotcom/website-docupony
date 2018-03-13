@@ -1,52 +1,64 @@
 ---
 id: api_airdrop_drop
-title: OST KIT API Airdrop
+title: OST KIT⍺ API | Initiate Airdrop
 sidebar_label: /users/airdrop/drop
 ---
-For awarding branded tokens to end-users in your application. This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy.
 
-#### API Endpoint - POST
-```url
-{{saas_api_url}}/users/airdrop-tokens
+Send a POST request on `/users/airdrop/drop` to initiate airdrop of tranded tokens to all the users. This enables the users to participate in the desired token economy for your application. 
+
+
+### Input Parameters
+
+| Parameter           | Type      | Value  |
+|---------------------|-----------|--------|
+| _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
+| _signature_         | hexstring | mandatory [signature generated]() for current request |
+| _client_id_         | number    | (optional) identifier of the authorised client |
+| _amount_            | number    | mandatory amount of branded tokens to award the users |
+| _list_type_         | string    | mandatory list-type of users to award the branded tokens. Two possible values are 'all' and 'never_airdropped'. |
+
+Where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
+
+`/users/airdrop/drop?amount=AMOUNT&api_key=API_KEY&client_id=CLIENT_ID&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC`
+
+so that the full request query reads.
+
+> POST - `/users/airdrop/drop?amount=AMOUNT&api_key=API_KEY&client_id=CLIENT_ID&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE`
+
+
+### JSON Response Object
+
+| Key        | Type   | Value      |
+|------------|--------|------------|
+| _success_  | bool   | get successful |
+| _data_     | object | (optional) data object describing result if successful   |
+| _err_      | object | (optional) describing error if not successful |
+
+For api calls to `/users/airdrop/drop` the json response is the object "data" that contains the unique identifier of the airdrop that has been initiated by you.
+
+### Example Success Response
+
+```json
+{
+    "success": true,
+    "data": {
+        "airdrop_uuid": "5ee64e69-b0f6-46f0-8f22-4a6f8151a9a3"
+}
 ```
-
-#### Parameters
-| Parameter | Type    | Value                                    |
-|-----------|---------|------------------------------------------|
-| _token_symbol_   | String | The symbol of the branded token that should be airdropped to end-users. Example:PK |
-| _amount_   | Float | The amount of BT that needs to be air-dropped to the selected end-users.  Example:10 |
-| [_list_type_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#list-type-sub-attributes)   | String | The list type of end-users that need to be airdropped tokens. Example:all|
-| _total_airdropped_tokens_ | String | The amount of branded tokens (BT) you want to distribute to the user. If this is empty then no BT will be given to the user.                                       |
-| _token_balance_           | String | The current BT balance of the user.                                                  |
-
-### Airdrop Sub-Attributes
-
-#### **_list_type_**
-| Attribute | Type    | Description                                   |
-|-----------|---------|------------------------------------------|
-| _all_   | String | All the end-users that have been previously airdropped tokens. |
-| _never_airdropped_   | String | All the end-users that have **never** been previously any airdropped tokens. |
 
 
 #### Sample Code | Curl
+
 ```bash
 curl --request POST \
-  --url 'http://{{saas_api_url}}/users/airdrop-tokens' \
-  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  --form token_symbol=PK \
-  --form amount=1 \
-  --form list_type=all
+  --url 'https://playgroundapi.ost.com/users/airdrop/drop' \
+  --data amount=AMOUNT api_key=API_KEY client_id=CLIENT_ID \
+  		 list_type=LIST_TYPE request_timestamp=EPOCH_TIME_SEC signature=SIGNATURE\
+
 ```
 
-#### Success Response
-```
-{:success=>true, :data=>{"airdrop_uuid"=>"beb4761a-81a6-419b-a48c-4c5646af17dd", "current_status"=>"pending", "steps_complete"=>["tokens_transfered"]}}
-```
 
-#### Failure Response
-```
-{:success=>false, :err=>{:code=>"companyRestFulApi(s_am_sa_4:SkEPYqFdM)", :msg=>"Airdrop requests are in-process", :display_text=>"", :display_heading=>"", :error_data=>{}}, :data=>{}}
-```
-
-#### Returns
-Returns a true or false response on the success of the air-drop of the branded tokens for your application.
+>_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>
+> OST KIT alpha v1 | OpenST Platform v0.9.2

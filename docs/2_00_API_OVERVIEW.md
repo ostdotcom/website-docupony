@@ -1,7 +1,7 @@
 ---
 id: api
-title: OST KIT API
-sidebar_label: overview
+title: OST KIT⍺ API
+sidebar_label: Overview
 ---
 
 OST KIT&#945; hosts RESTful APIs to help you manage your token economy on the OpenST utility blockchain.  OST KIT&#945; introduces `users` and `transaction-types` to easily integrate the token economy of your application with the blockchain.

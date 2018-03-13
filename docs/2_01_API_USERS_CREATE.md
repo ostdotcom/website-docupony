@@ -1,6 +1,6 @@
 ---
 id: api_users_create
-title: OST KIT API | Create A User
+title: OST KIT⍺ API | Create A User
 sidebar_label: /users/create
 ---
 
@@ -17,13 +17,13 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
 | _name_              | string    | name of the user |
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+Where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/users/create?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 
-so that the full request uri and form reads
+so that the full request uri and form reads,
 
-> POST - https://playgroundapi.ost.com/users/create?api_key=API_KEY&name=NAME&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE
+> POST - `https://playgroundapi.ost.com/users/create?api_key=API_KEY&name=NAME&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE`
 
 ### JSON Response Object
 
@@ -37,7 +37,7 @@ For api calls to `/users` the `data.result_type` is the string "economy_users"
 and the key `data.economy_users` is an array of `user` objects.
 On successful creation of the user, `economy_users` contains the created user as a single element.
 
-### User Object Attributes:
+### User Object Attributes
 
 | Parameter | Type   | Value  |
 |-----------|--------|--------|
@@ -70,7 +70,8 @@ On successful creation of the user, `economy_users` contains the created user as
 }
 ```
 
-### Example Failure Responses
+### Example Failure Response
+
 On a failed authentication the response is returned with status code 401 and the body will look like this,
 
 ```json
@@ -83,7 +84,7 @@ On a failed authentication the response is returned with status code 401 and the
   }
 }
 ```
-however when a request is invalid the response is returned with successful status code 200, but `success = false` and the `err.msg` and `err.error_data` contain further information.
+However when a request is invalid the response is returned with successful status code 200, but `success = false` and the `err.msg` and `err.error_data` contain further information.
 ```json
 {
   "success": false,
@@ -100,6 +101,7 @@ however when a request is invalid the response is returned with successful statu
 ```
 
 ### Sample Code | Curl
+
 ```bash
 curl --request POST \
   --url 'https://playgroundapi.ost.com/users/create' \

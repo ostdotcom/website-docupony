@@ -1,7 +1,7 @@
 ---
 id: kit
-title: OST KIT alpha overview
-sidebar_label: overview
+title: OST KIT⍺ Overview
+sidebar_label: Overview
 ---
 
 ###  1. Create an account

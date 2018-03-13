@@ -23,7 +23,7 @@ const siteConfig = {
   projectName: 'OST KIT alpha',
   headerLinks: [
     {doc: 'simpletoken', label: 'Reference'},
-    {doc: 'user', label: 'API'},
+    {doc: 'kit', label: 'API'},
   ],
   users,
   /* path to images for header/footer */

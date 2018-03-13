@@ -1,10 +1,10 @@
 ---
 id: api_users_list
-title: OST KIT API | List Users
+title: OST KIT⍺ API | List Users
 sidebar_label: /users/list
 ---
 
-Send a GET request on `/users/edit` to receive a paginated - optionally filtered - ordered array of users within the economy.
+Send a POST request on `/users/list` to receive a paginated - optionally filtered - ordered array of users within the economy.
 
 A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy.
 
@@ -21,13 +21,13 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _order_             | string | (optional) order users in 'desc' (default) or 'asc' order. |
 
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+Where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
-`/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP`
+`/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=EPOCH_TIME_SEC`
 
 so that the full request query reads
 
-> GET - https://playgroundapi.ost.com/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE
+> POST - `https://playgroundapi.ost.com/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE`
 
 ### JSON Response Object
 
@@ -40,7 +40,7 @@ so that the full request query reads
 For api calls to `/users` the `data.result_type` is the string "economy_users"
 and the key `data.economy_users` is an array of the returned `user` objects (25 users per page). The field `data.meta.next_page_payload` contains the filter and order information and the `page_no` number for the next page; or is empty for the last page of the list.
 
-### User Object Attributes:
+### User Object Attributes
 
 | Parameter | Type   | Value  |
 |-----------|--------|--------|
@@ -57,21 +57,27 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
   "data": {
     "result_type": "economy_users",
     "economy_users": [
-      {
-        "id": "c1e5da9b-787d-4897-aa58-742f2756c71d",
-        "name": "User 1",
-        "uuid": "c1e5da9b-787d-4897-aa58-742f2756c71d",
-        "total_airdropped_tokens": "15",
-        "token_balance": "15"
-      },
-      ...
-      {
-        "id": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
-        "name": "User 25",
-        "uuid": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
-        "total_airdropped_tokens": "15",
-        "token_balance": "15"
-      }
+            {
+                "id": "38e55c8c-9d74-4ff4-b2b2-970d37af2ab8",
+                "name": "User 2",
+                "uuid": "38e55c8c-9d74-4ff4-b2b2-970d37af2ab8",
+                "total_airdropped_tokens": "11",
+                "token_balance": "15.672930292535913679"
+            },
+            {
+                "id": "013a153e-9dca-4469-90d0-0cb952232462",
+                "name": "User 0",
+                "uuid": "013a153e-9dca-4469-90d0-0cb952232462",
+                "total_airdropped_tokens": "11",
+                "token_balance": "7.235361237159729792"
+            },
+            {
+                "id": "914db0a3-72a0-4e71-8d4e-777fc97bae59",
+                "name": "User 1",
+                "uuid": "914db0a3-72a0-4e71-8d4e-777fc97bae59",
+                "total_airdropped_tokens": "11",
+                "token_balance": "10.925001587479912272"
+            }
     ],
     "meta": {
       "next_page_payload": {
