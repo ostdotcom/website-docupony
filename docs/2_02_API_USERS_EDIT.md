@@ -1,6 +1,6 @@
 ---
 id: api_users_edit
-title: OST KIT API | Edit A User
+title: OST KIT⍺ API | Edit A User
 sidebar_label: /users/edit
 ---
 
@@ -15,16 +15,16 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
-| _uuid_              | uuid      | mandatory uuid of the user to edit |
+| _uuid_              | uuid      | mandatory uuid of the user required to edit |
 | _name_              | string    | new name of the user |
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+Where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/users/edit?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC&uuid=UUID`
 
-so that the full request uri and form reads
+so that the full request uri and form reads,
 
-> POST - https://playgroundapi.ost.com/users/edit?api_key=API_KEY&name=NAME&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE&uuid=UUID
+> POST - `https://playgroundapi.ost.com/users/edit?api_key=API_KEY&name=NAME&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE&uuid=UUID`
 
 ### JSON Response Object
 
@@ -38,7 +38,7 @@ For api calls to `/users` the `data.result_type` is the string "economy_users"
 and the key `data.economy_users` is an array of `user` objects.
 On successful edit of a user, `economy_users` contains the edited user as a single element.
 
-### User Object Attributes:
+### User Object Attributes
 
 | Parameter | Type   | Value  |
 |-----------|--------|--------|
@@ -71,7 +71,7 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
 }
 ```
 
-### Example Failure Responses
+### Example Failure Response
 
 ```json
 {
@@ -84,7 +84,9 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
 }
 ```
 
+
 ### Sample Code | Curl
+
 ```bash
 curl --request POST \
   --url 'https://playgroundapi.ost.com/users/edit' \

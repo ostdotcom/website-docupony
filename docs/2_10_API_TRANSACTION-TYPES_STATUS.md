@@ -1,6 +1,6 @@
 ---
 id: api_transaction-types_status
-title: OST KIT API | Query Transaction Status 
+title: OST KIT⍺ API | Query Transaction Status 
 sidebar_label: /transaction-types/status
 ---
 
@@ -20,7 +20,7 @@ where the signature is derived from the API secret key and the string to sign is
 `/transaction-types/status?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 so that the full request uri and form reads
 
-> GET - https://playgroundapi.ost.com/transaction-types/status?api_key=API_KEY&transaction_uuid=TRANSACTION_UUID&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE
+> GET - `https://playgroundapi.ost.com/transaction-types/status?api_key=API_KEY&transaction_uuid=TRANSACTION_UUID&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE`
 
 ### JSON Response Object
 
@@ -48,7 +48,7 @@ For api calls to `/transaction-types/status` the `result_type` is a string "tran
 
 
 
-#### Sample Success Response
+### Sample Success Response
 ```json
 {
   "success": true,
@@ -113,10 +113,6 @@ For api calls to `/transaction-types/status` the `result_type` is a string "tran
 }
 ```
 
-### Failure Response
-```
-TBD
-```
 
 ### Sample Code | Curl 
 ```bash

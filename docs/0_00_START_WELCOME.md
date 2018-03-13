@@ -4,7 +4,7 @@ title: OST | Simple Token
 sidebar_label: Simple Token
 ---
 
-OST stands for "Open Simple Token".The OST software platform helps you gain competitive advantage with blockchain. Our signature product, OST KIT, enables you to launch your own Branded Tokens backed by OST.
+OST stands for "Open Simple Token". The OST software platform helps you gain competitive advantage with blockchain. Our signature product, OST KIT, enables you to launch your own Branded Tokens backed by OST.
 
 
 OST KIT is built on OpenST protocol. The OpenST protocol allows for the staking of $OST on Ethereum mainnet against minting branded tokens on the OpenST network of side blockchains. You can learn more about the [OpenST Protocol here](https://openst.org)
