@@ -3,7 +3,8 @@
     "Getting Started": [
     	"simpletoken",
     	"tokenize",
-    	"alpha"],
+    	"alpha",
+      "sdks_overview"],
     "OST KIT": [
     	"kit"],
     "REST API": [
