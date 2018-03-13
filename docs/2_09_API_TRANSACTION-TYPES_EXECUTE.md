@@ -1,18 +1,17 @@
 ---
 id: api_transaction-types_execute
-title: OST KIT API | Execute A Transaction Type 
+title: OST KIT API | Execute A Transaction Type
 sidebar_label: /transaction-types/execute
 ---
 
-Send a POST request on `/transaction-types/execute` to execute a token exchange of a transaction type between any two branded token holders. 
+Send a POST request on `/transaction-types/execute` to execute a token exchange of a transaction type between any two branded token holders.
 
-#### Input Parameters 
+#### Input Parameters
 | Parameter           | Type   | Value                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
-| _client_id_     | Integer | id of client who is performing the transaction |
 | _from_uuid_    | string | origin user of the transaction branded token.  |
 | _to_uuid_      | string | destination user of the transaction.           |
 | _transaction_kind_  | string | type of transaction dependent on the owners involved in the token exchange. Possible values are "user_to_user" - token exchange from one user to another user  , "user_to_company" - from a user to you (the application service provider), "company_to_user" - exchange from you (the application service provider) to an end-user  |
@@ -34,7 +33,7 @@ so that the full request uri and form reads
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/transaction-types/execute` the `data` is an object containing the attributes described below. 
+For api calls to `/transaction-types/execute` the `data` is an object containing the attributes described below.
 
 
 ### Executed Transaction Object Attributes
@@ -77,7 +76,7 @@ For api calls to `/transaction-types/execute` the `data` is an object containing
 }
 ```
 
-### Sample Code | Curl 
+### Sample Code | Curl
 ```bash
 curl --request POST \
   --url 'https://playgroundapi.ost.com/transaction-types/execute' \

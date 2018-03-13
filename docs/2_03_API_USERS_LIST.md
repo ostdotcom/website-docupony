@@ -4,7 +4,9 @@ title: OST KIT API | List Users
 sidebar_label: /users/list
 ---
 
-Send a GET request on `/users/edit` to receive a paginated - optionally filtered - ordered array of users with the economy.
+Send a GET request on `/users/edit` to receive a paginated - optionally filtered - ordered array of users within the economy.
+
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
@@ -23,7 +25,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 `/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP`
 
-so that the full request uri and form reads
+so that the full request query reads
 
 > GET - https://playgroundapi.ost.com/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE
 
@@ -31,7 +33,7 @@ so that the full request uri and form reads
 
 | Key        | Type   | Value      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | get successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
@@ -45,8 +47,8 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
 | _name_    | string | name of the user  |
 | _id_      | string | (uuid copy, deprecated) |
 | _uuid_    | string | unique identifier for the user  |
-| _total_airdropped_tokens_ | number | airdrop balance of the user |
-| _token_balance_           | number | balance of the user         |
+| _total_airdropped_tokens_ | number | cumulative amount airdropped to the user |
+| _token_balance_           | number | balance of the user (including current airdrop budget)  |
 
 ### Example Success Response
 ```json
@@ -57,14 +59,15 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
     "economy_users": [
       {
         "id": "c1e5da9b-787d-4897-aa58-742f2756c71d",
-        "name": "User 4",
+        "name": "User 1",
         "uuid": "c1e5da9b-787d-4897-aa58-742f2756c71d",
         "total_airdropped_tokens": "15",
         "token_balance": "15"
       },
+      ...
       {
         "id": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
-        "name": "User 21",
+        "name": "User 25",
         "uuid": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
         "total_airdropped_tokens": "15",
         "token_balance": "15"
@@ -80,17 +83,6 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
     }
   }
 }
-```
-
-### Example Failure Responses
-
-```json
-TODO
-```
-
-### Sample Code | Curl
-```bash
-TODO
 ```
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
