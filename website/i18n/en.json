@@ -35,10 +35,14 @@
     "/transaction-types/status": "/transaction-types/status",
     "api_authentication": "OST KIT API | Authentication",
     "Authentication": "Authentication",
+<<<<<<< HEAD
     "sdks_overview": "SDKs Overview",
     "SDKs": "SDKs",
     "sdk_ruby": "Ruby SDK Quick Start Guide",
     "Ruby SDK Quick Start Guide": "Ruby SDK Quick Start Guide",
+=======
+    "sdk_overview": "SDK",
+>>>>>>> Config: fix baseUrl, remove default user, point "API" to API Overview.
     "npm_overview": "OpenST Platform",
     "authentication": "Authentication",
     "error": "Error Handling",
