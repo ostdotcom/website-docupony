@@ -8,13 +8,13 @@ The OST Ruby SDK is a Ruby gem that wraps the OST Developers API. This Quick Sta
 
 ### Prerequisites
 
-Successfully integrating the SDK requires having Ruby installed on your system: https://www.ruby-lang.org/en/documentation/installation/
+Successfully integrating the SDK requires having Ruby installed on your system: [<u>https://www.ruby-lang.org/en/documentation/installation/</u>](https://www.ruby-lang.org/en/documentation/installation/)
 
 To use the SDK, developers will need to:
 
-1. Sign-up on [https://kit.ost.com](https://kit.ost.com).
-2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [here](1_00_KIT_OVERVIEW.md).
-3. Obtain an API Key and API Secret from the OST KIT⍺ [Developer API Console](https://kit.ost.com/developer-api-console):
+1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
+2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](1_00_KIT_OVERVIEW.md).
+3. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer API Console</u>](https://kit.ost.com/developer-api-console):
 
 ![API Credentials](assets/Developer_section.jpg)
 
