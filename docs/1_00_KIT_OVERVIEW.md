@@ -9,12 +9,12 @@ The first thing you need to get started with OST KIT⍺ is to [<u>sign up for a 
 
 ![Register](assets/Register.jpg)
 
-###  3. Set Conversion Rate
+###  2. Set Conversion Rate
 For creating your Branded Tokens you need to set the conversion rate between your Branded Token and OST⍺. The simplest way to set your conversion rate is to consider how much $USD you would like 1 of your Branded Tokens to initially be worth.
 
 ![setconversion](assets/SetConversionRate.jpg)
 
-###  2. Install MetaMask
+###  3. Install MetaMask
 MetaMask is required to participate in OST KIT⍺. You will receive an initial allotment of OST⍺ into your MetaMask account and you will also use MetaMask to sign for token creation transactions on Ropsten Test Network.  OST⍺ is a test version of the OST cryptocurrency that tracks the public market value of OST for the purpose of testing. OST⍺ has no real value.
 
 ![MetaMaskInstalled](assets/metamask_installed-1.jpg)
