@@ -35,19 +35,12 @@
     "/transaction-types/status": "/transaction-types/status",
     "api_authentication": "OST KIT⍺ API | Authentication",
     "Authentication": "Authentication",
-<<<<<<< HEAD
     "sdks_overview": "SDKs Overview",
     "SDKs": "SDKs",
     "sdk_ruby": "Ruby SDK Quick Start Guide",
     "Ruby SDK Quick Start Guide": "Ruby SDK Quick Start Guide",
-=======
-    "sdk_overview": "SDK",
-<<<<<<< HEAD
->>>>>>> Config: fix baseUrl, remove default user, point "API" to API Overview.
-=======
-    "overview": "overview",
->>>>>>> Sundry edits.
     "npm_overview": "OpenST Platform",
+    "overview": "overview",
     "authentication": "Authentication",
     "error": "Error Handling",
     "Error Handling": "Error Handling",
