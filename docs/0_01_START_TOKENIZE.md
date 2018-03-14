@@ -4,7 +4,7 @@ title: Tokenize your application
 sidebar_label: Tokens
 ---
 
-We want to enable you to easily and safely create your own Branded Tokens on highly scalable OpenST Side Blockchains. These side blockchains are one of our key innovations. We use the OpenST technology protocol to create Branded Tokens on side blockchains by staking OST⍺ on the public Ropsten Ethereum blockchain. [Learn more about the OpenST protocol](https://github.com/OpenSTFoundation/openst-platform/blob/master/CHANGELOG.md).
+We want to enable you to easily and safely create your own Branded Tokens on highly scalable OpenST Side Blockchains. These side blockchains are one of our key innovations. We use the OpenST technology protocol to create Branded Tokens on side blockchains by staking OST⍺ on the public Ropsten Ethereum blockchain. [<u>Learn more about the OpenST protocol</u>](https://github.com/OpenSTFoundation/openst-platform/blob/master/CHANGELOG.md).
 
 OST KIT⍺ provides you tools to design, plan, mint, and manage a branded token economy backed by OST⍺.
 
