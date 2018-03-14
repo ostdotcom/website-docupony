@@ -1,12 +1,12 @@
 ---
 id: api_transaction-types_list
-title: OST KIT API | List All Transaction Types
+title: OST KIT⍺ API | List All Transaction Types
 sidebar_label: /transaction-types/list
 ---
 
 Send a GET request on `/transaction-types/` to receive a all transaction types. In addition `client_id`, `price_points`, and `client_tokens` are returned.
 
-Within OST KITα you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KITα runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
+Within OST KIT⍺ you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
 #### Input Parameters
 | Parameter | Type | Value                                         |
@@ -70,7 +70,7 @@ For api calls to `/transaction-types` the `data.result_type` is the string "tran
 | _conversion_factor_ | float  | conversion factor of the branded token to OST |
 | _token_erc20_address | address | prefixed hexstring address of the branded token erc20 contract on the utility chain |
 | _airdrop_contract_addr_ | address | prefixed hexstring address of the airdrop / pricer contract that regulates payments of branded tokens with transaction types |
-| _simple_stake_contract_addr_ | address | prefixed hexstring address of the simple stake contract which holds the OST alpha on Ethereum Ropsten testnet which has been staked to mint branded tokens |
+| _simple_stake_contract_addr_ | address | prefixed hexstring address of the simple stake contract which holds the OST⍺ on Ethereum Ropsten testnet which has been staked to mint branded tokens |
 
 ### Example Success Response
 ```json
@@ -125,6 +125,6 @@ For api calls to `/transaction-types` the `data.result_type` is the string "tran
 ```
 
 
->_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

@@ -4,7 +4,7 @@ title: Error Handling
 sidebar_label:Error Handling
 ---
 
-OST KIT alpha uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the 2xx range indicate successes, codes in the 4xx range indicate errors, with the error information provided and codes in the 5xx range indicate an error with OST's servers while these are rare. The codes are used internally, for debugging purposes.
+OST KIT⍺ uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the 2xx range indicate successes, codes in the 4xx range indicate errors, with the error information provided and codes in the 5xx range indicate an error with OST's servers while these are rare. The codes are used internally, for debugging purposes.
 
 
 ## HTTP Status Codes

@@ -6,24 +6,17 @@
  */
 
 /* List of projects/orgs using your project for the users page */
-const users = [
-  {
-    caption: 'User1',
-    image: '/test-site/img/docusaurus.svg',
-    infoLink: 'https://www.facebook.com',
-    pinned: true,
-  },
-];
+const users = [];
 
 const siteConfig = {
   title: 'OST DEV' /* title for your website */,
   tagline: 'Developer Documentation',
   url: 'https://dev.ost.com' /* your website url */,
-  baseUrl: '/reference/' /* base url for your project */,
+  baseUrl: '/' /* base url for your project */,
   projectName: 'OST KIT alpha',
   headerLinks: [
     {doc: 'simpletoken', label: 'Reference'},
-    {doc: 'user', label: 'API'},
+    {doc: 'api', label: 'API'},
   ],
   users,
   /* path to images for header/footer */

@@ -1,6 +1,6 @@
 ---
 id: api_airdrop_drop
-title: OST KIT API Airdrop
+title: OST KIT⍺ API Airdrop
 sidebar_label: /users/airdrop/drop
 ---
 For awarding branded tokens to end-users in your application. This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy.
@@ -15,7 +15,7 @@ For awarding branded tokens to end-users in your application. This API allows en
 |-----------|---------|------------------------------------------|
 | _token_symbol_   | String | The symbol of the branded token that should be airdropped to end-users. Example:PK |
 | _amount_   | Float | The amount of BT that needs to be air-dropped to the selected end-users.  Example:10 |
-| [_list_type_](https://dev.stagingost.com/ostkit-restful-api/docs/user.html#list-type-sub-attributes)   | String | The list type of end-users that need to be airdropped tokens. Example:all|
+| [_list_type_](https://dev.ost.com/ostkit-restful-api/docs/user.html#list-type-sub-attributes)   | String | The list type of end-users that need to be airdropped tokens. Example:all|
 | _total_airdropped_tokens_ | String | The amount of branded tokens (BT) you want to distribute to the user. If this is empty then no BT will be given to the user.                                       |
 | _token_balance_           | String | The current BT balance of the user.                                                  |
 

@@ -1,12 +1,12 @@
 ---
 id: api_transaction-types_edit
-title: OST KIT API | Edit A Transaction Type
+title: OST KIT⍺ API | Edit A Transaction Type
 sidebar_label: /transaction-types/edit
 ---
 
 Send a POST request to `/transaction-types/edit` to edit an exisiting `transaction-type` for a given unique identifier that was returned during the creation of a new [transaction type](api_transaction-types_create.html). This updates the specified transaction type by setting the values of the parameters passed. Any parameter not provided will be left unchanged. Individual keys can be unset by posting an empty value to them.
 
-Within OST KITα you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KITα runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
+Within OST KIT⍺ you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
 ### Input Parameters
 | Parameter           | Type   | Value                                               |
@@ -76,6 +76,6 @@ On calling `/transaction-types/edit` the `data.result_type` is the string "trans
 }
 ```
 
->_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

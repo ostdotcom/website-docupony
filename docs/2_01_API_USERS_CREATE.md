@@ -1,12 +1,12 @@
 ---
 id: api_users_create
-title: OST KIT API | Create A User
+title: OST KIT⍺ API | Create A User
 sidebar_label: /users/create
 ---
 
 Post to `/users/create` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
 
-A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance which are tokens the company awards to the user to spend within the economy.
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
@@ -107,6 +107,6 @@ curl --request POST \
          request_timestamp=EPOCH_TIME_SEC
 ```
 
->_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2
