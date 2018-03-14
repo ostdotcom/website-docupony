@@ -21,4 +21,6 @@ OST KIT provides you with tools for designing, planning, minting, and managing y
 
 ## Quick Start Guide
 
+To get started quickly, try the [Ruby SDK Quick Start Guide](3_01_SDK_RUBY.md).
+
 
