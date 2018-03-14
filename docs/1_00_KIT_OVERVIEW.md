@@ -1,11 +1,11 @@
 ---
 id: kit
-title: OST KIT alpha overview
-sidebar_label: overview
+title: OST KIT⍺ overview
+sidebar_label: Overview
 ---
 
 ###  1. Create an account
-The first thing you need to get started with OST KIT⍺ is [sign up for a free account](https://www.kit.stagingost.com) . During registration you will setup your Token name and select a short name Token Symbol for your token. You will have to activate your account using the activation link sent to you upon registration.
+The first thing you need to get started with OST KIT⍺ is [<u>sign up for a free account</u>](https://kit.ost.com/sign-up) . During registration you will setup your Token name and select a short name Token Symbol for your token. You will have to activate your account using the activation link sent to you upon registration.
 
 ![Register](assets/Register.jpg)
 
@@ -32,7 +32,7 @@ When you send tokens, interact with a smart contract, or do anything else on the
 ![stakeNmint](assets/Stake&Mint.jpg)
  
 ### 6. What NEXT
-Having minted your Tokens. On the Simulator Page, we've created an environment that models how transactions would run in your application. You can also execute multiple transactions via our APIs. [__**OST KIT⍺ API**__](2_00_API_OVERVIEW.md) allow you to :     
+Having minted your Tokens. On the Simulator Page, we've created an environment that models how transactions would run in your application. You can also execute multiple transactions via our APIs. [<u>OST KIT⍺ API</u>](2_00_API_OVERVIEW.md) allow you to :     
 * Programmatically add or update users to participate in your token economy.
 * Setup core actions in your application as transactions
 * Airdrop tokens to users
