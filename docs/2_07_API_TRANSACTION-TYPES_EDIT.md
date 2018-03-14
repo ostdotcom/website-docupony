@@ -76,6 +76,6 @@ On calling `/transaction-types/edit` the `data.result_type` is the string "trans
 }
 ```
 
->_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2

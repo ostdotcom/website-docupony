@@ -125,6 +125,6 @@ curl --request GET \
   --data 'transaction_uuids[]=5f79063f-e22a-4d28-99d7-dd095f02c72e'
 ```
 
->_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2
