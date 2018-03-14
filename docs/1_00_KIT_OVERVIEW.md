@@ -32,10 +32,12 @@ When you send tokens, interact with a smart contract, or do anything else on the
 ![stakeNmint](assets/Stake&Mint.jpg)
  
 ### 6. What NEXT
-Having minted your Tokens, you should visit the Simulator Page. There, you'll see we've created an environment that models how transactions would run in your application. You can also execute multiple transactions via our APIs. [<u>OST KIT⍺ API</u>](2_00_API_OVERVIEW.md) allows you to:     
+Having minted your Tokens, you should visit the Simulator Page. There, you'll see we've created an environment that models how transactions would run in your application. You can also execute multiple transactions via our APIs. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer Section</u>](https://kit.ost.com/developer-api-console):
+
+OST KIT⍺ API allows you to:     
 * Programmatically add or update users to participate in your token economy
 * Setup core actions in your application as transactions
 * Airdrop tokens to users
 * Execute token transfers between users
-	
+
 ![simulator](assets/Simulator.jpg)                                
