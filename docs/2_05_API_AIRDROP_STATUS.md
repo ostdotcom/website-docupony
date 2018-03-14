@@ -18,7 +18,7 @@ Send a GET request on `/users/airdrop/status` to query for the status of the cli
 | _airdrop_uuid_      | string    | mandatory identifier of the client initiated airdrop |
 
 
-Where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/users/airdrop/status?airdrop_uuid=AIRDROP_UUID&api_key=API_KEY&client_id=CLIENT_ID&request_timestamp=EPOCH_TIME_SEC`
 
@@ -70,4 +70,4 @@ curl --request POST \
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

@@ -21,7 +21,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _order_             | string | (optional) order users in 'desc' (default) or 'asc' order. |
 
 
-Where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=EPOCH_TIME_SEC`
 
@@ -93,4 +93,4 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

@@ -20,10 +20,10 @@ const siteConfig = {
   tagline: 'Developer Documentation',
   url: 'https://dev.ost.com' /* your website url */,
   baseUrl: '/reference/' /* base url for your project */,
-  projectName: 'OST KIT alpha',
+  projectName: 'OST KIT⍺',
   headerLinks: [
     {doc: 'simpletoken', label: 'Reference'},
-    {doc: 'kit', label: 'API'},
+    {doc: 'api', label: 'API'},
   ],
   users,
   /* path to images for header/footer */

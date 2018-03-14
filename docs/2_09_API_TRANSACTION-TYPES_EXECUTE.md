@@ -17,7 +17,7 @@ Send a POST request on `/transaction-types/execute` to execute a token exchange 
 | _transaction_kind_  | string | name of the transaction to be executed. "upvote" etc. |
 
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/transaction-types/execute?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 
@@ -87,4 +87,4 @@ curl --request POST \
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

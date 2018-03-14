@@ -22,7 +22,7 @@ Within OST KITα you can set up transaction-types to define advanced payments to
 | _commission_percent_ | float  | (optional) inclusive percentage of the value that is paid to the company. Possible only for "user_to_user" transaction kind. (min 0%, max 100%) |
 
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP`
 
@@ -78,4 +78,4 @@ On calling `/transaction-types/edit` the `data.result_type` is the string "trans
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

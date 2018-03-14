@@ -16,11 +16,11 @@ Within OST KITα you can set up transaction-types to define advanced payments to
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
 | _name_              | string    | name of the transaction type |
 | _kind_              | string    | transaction types can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company.  On user to user transfers the company can ask a transaction fee.  |
-| _currency_type_     | string    | type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle.  A transaction fails if the price point is outside of the accepted margins set by the company (API not yet exposed). For OST KIT alpha price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com |
+| _currency_type_     | string    | type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle.  A transaction fails if the price point is outside of the accepted margins set by the company (API not yet exposed). For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com |
 | _currency_value_    | float  | value of the transaction set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer.  If the transaction type is between users and a commission percentage is set then the commission is inclusive in this value and the complement goes to the beneficiary user |
 | _commission_percent_| float  | inclusive percentage of the value that is sent to company. Possible only for "user_to_user" transaction kind. (min 0%, max 100%) |
 
-Where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/transaction-types/create?api_key=API_KEY&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 
@@ -46,7 +46,7 @@ On calling `/transaction-types/create` the `data.result_type` is the string "tra
 | _client_id_         | number | identifier of the authorised client |
 | _name_              | string | name of the transaction type |
 | _kind_              | string | transaction types can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company.  On user to user transfers the company can ask a transaction fee. |
-| _currency_type_     | string    | type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle.  A transaction fails if the price point is outside of the accepted margins set by the company (API not yet exposed). For OST KIT alpha price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
+| _currency_type_     | string    | type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle.  A transaction fails if the price point is outside of the accepted margins set by the company (API not yet exposed). For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
 | _currency_value_    | float  | value of the transaction set in "USD" (min USD 0.01, max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer.  If the transaction type is between users and a commission percentage is set then the commission is inclusive in this value and the complement goes to the beneficiary user. |
 | _commission_percent_| float  | inclusive percentage of the value that is paid to the company. Possible only for "user_to_user" transaction kind. (min 0%, max 100%) |
 | _status_            | string | status of the create transaction-type (default: "active") |
@@ -121,4 +121,4 @@ curl --request POST \
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

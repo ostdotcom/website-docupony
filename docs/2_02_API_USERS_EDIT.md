@@ -18,7 +18,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _uuid_              | uuid      | mandatory uuid of the user required to edit |
 | _name_              | string    | new name of the user |
 
-Where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/users/edit?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC&uuid=UUID`
 
@@ -96,4 +96,4 @@ curl --request POST \
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

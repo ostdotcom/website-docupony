@@ -15,7 +15,7 @@ Send a GET request on `/transaction-types/status` to query the status of a token
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
 | _transaction_uuid_ | string | unique identifier for the transaction executed between two branded token holders |
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/transaction-types/status?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 so that the full request uri and form reads
@@ -123,4 +123,4 @@ curl --request GET \
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2

@@ -152,7 +152,7 @@ const Description = props => (
   <Block background="dark">
     {[
       {
-        content: 'OST KIT alpha is the complete blockchain toolkit for business.',
+        content: 'OST KIT⍺ is the complete blockchain toolkit for business.',
         imageAlign: 'right',
         title: 'Description',
       },

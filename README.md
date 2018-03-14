@@ -1,7 +1,7 @@
 ## Docupony - where ponies go to understand APIs
 Hosted API and code documentation
 
-Instructions to host the OST KIT alpha API documentation 
+Instructions to host the OST KIT⍺ API documentation 
 
 requires nodejs; see [installation instructions here](https://nodejs.org/en/download/current/).
 

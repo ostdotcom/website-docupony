@@ -5,7 +5,7 @@ sidebar_label:User
 ---
 
 
-The user in OST KIT alpha, is the individual or the end-user accessing and interacting with your application. The objective is to tokenize the end-user’s actions so that it enables token exchanges within your application. The user object allows you to edit user names, track balances associated with the end-user. The User APIs allow you to create, update and list your end-users with their parameters.
+The user in OST KIT⍺, is the individual or the end-user accessing and interacting with your application. The objective is to tokenize the end-user’s actions so that it enables token exchanges within your application. The user object allows you to edit user names, track balances associated with the end-user. The User APIs allow you to create, update and list your end-users with their parameters.
 
 ### User Object
 | Parameter               | Type   | Description                                                                                   |

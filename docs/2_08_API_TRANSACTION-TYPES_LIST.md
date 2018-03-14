@@ -16,7 +16,7 @@ Within OST KITα you can set up transaction-types to define advanced payments to
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
 
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
 `/transaction-types/list?api_key=API_KEY&request_timestamp=REQUEST_TIMESTAMP`
 
@@ -127,4 +127,4 @@ For api calls to `/transaction-types` the `data.result_type` is the string "tran
 
 >_last updated 8 March 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT alpha v1 | OpenST Platform v0.9.2
+> OST KIT⍺ v1 | OpenST Platform v0.9.2
