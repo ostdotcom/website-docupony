@@ -22,7 +22,7 @@ For awarding branded tokens to end-users in your application. This API allows en
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _all_   | String | All the end-users that have been previously airdropped tokens. |
-| _never_airdropped_   | String | All the end-users that have **never** been previously airdropped. |
+| _never_airdropped_   | String | All the end-users that have **never** been previously airdropped tokens. |
 
 
 #### Sample Code | Curl
