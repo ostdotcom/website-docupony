@@ -36,13 +36,13 @@ curl --request POST \
 
 #### Success Response
 ```
-{:success=>true, :data=>{"airdrop_uuid"=>"beb4761a-81a6-419b-a48c-4c5646af17dd", "current_status"=>"pending", "steps_complete"=>["tokens_transfered"]}}
+{:success=>true, :data=>{"airdrop_uuid"=>"5412c48e-2bec-4224-9305-56be99174f54"}}
 ```
 
 #### Failure Response
 ```
-{:success=>false, :err=>{:code=>"companyRestFulApi(s_am_sa_4:SkEPYqFdM)", :msg=>"Airdrop requests are in-process", :display_text=>"", :display_heading=>"", :error_data=>{}}, :data=>{}}
+{:success=>false, :err=>{:code=>"companyRestFulApi(s_am_sa_7:r1OeAavKz)", :msg=>"Insufficient funds to airdrop users", :display_text=>"", :display_heading=>"", :error_data=>[{"amount"=>"Available token amount is insufficient. Please mint more tokens or reduce the amount to complete the process."}]}, :data=>{}}
 ```
 
 #### Returns
-Returns a true or false response on the success of the air-drop of the branded tokens for your application.
+Returns a true or false response on the success when the request is accepted and the processing in the background has started. Now it will be possible to check the airdrop status using the AIRDROP STATUS API endpoint.
