@@ -31,15 +31,23 @@ so that the full request uri and form reads
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-On calling `/users/airdrop/status` the `data.airdrop_uuid` is a string containing the airdrop reference id.
+On calling `/users/airdrop/status` the `data.airdrop_uuid` is a string containing the airdrop reference id. `data.current_status` is a string containing the present status of the airdrop request. `data.steps_complete` is an array explaining the steps which have been completed for the airdrop at the specific point in time of the API request.
+
+#### _current status_
+| Attribute | Type    | Description                                   |
+|-----------|---------|------------------------------------------|
+| _pending_   | String | The string to represent that airdrop is still in process.
+| _failed_  | String | The string to represent that the airdrop has failed.
+| _complete_   | String | The string to represent that the airdrop process is complete.|
 
 
-#### _current_status_
+#### _steps complete_
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _user_identified_   | String | The string to represent identification of the end-user for airdropping branded tokens.
-| _tokens_transferred_  | String | The string to represent that the branded tokens are tranferred to the end-user.
-| _complete_   | String | The string to represent that the airdrop process is complete.|
+| _tokens_transferred_  | String | The string to represent that the branded tokens are tranferred to the airdrop budget holder address.
+| _contract_approved_   | String | The string to represent that the airdrop budget holder address has approved the airdrop  contract.|
+| _allocation_done_   | String | The string to represent that the airdrop process is complete.|
 
 
 #### Example Success Response
@@ -74,16 +82,28 @@ For a failed authentication the response is returned with status code 401 and th
 ```
 
 however when a request is invalid the response is returned with status code 200 and the message and error data contain further information.
+```{
+ "success": false,
+ "err": {
+   "code": "companyRestFulApi(s_am_gas_1:SJy641uFG)",
+   "msg": "Invalid Airdrop Request Id.",
+   "display_text": "",
+   "display_heading": "",
+   "error_data": {
+   }
+ },
+ "data": {
+ }
+}
 ```
-{:success=>false, :err=>{:code=>"companyRestFulApi(s_cu_eu_2:H1Hobct_f)", :msg=>"invalid params", :display_text=>"", :display_heading=>"", :error_data=>[{"airdrop_uuid"=>"Invalid airdrop_uuid"}]}, :data=>{}}
-```
-
-
-#### Returns
-Returns a true or false response on the success of the airdrop of the branded tokens for your application with the [_current_status_](https://dev.ost.com/ostkit-restful-api/docs/user.html#current-status-sub-attributes).
 
 #### Sample Code | Curl
 ```bash
-curl --request GET \
---url 'http://{{saas_api_url}}/users/airdrop/get-status?airdrop_uuid=026d9aba-270b-4ca6-8089-bd2f47a0ecec%0A%0A%0A'
+curl -i \ 
+-H "Accept: application/json" \ 
+-d 'request_timestamp=EPOCH_TIME_SEC' \ 
+-d 'signature=SIGNATURE' \ 
+-d 'api_key=API_KEY' \ 
+-d 'airdrop_uuid=AIRDROP_UUID' \ 
+-X GET https://playgroundapi.ost.com/users/airdrop/status
 ```
