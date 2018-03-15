@@ -18,7 +18,7 @@ This API allows end-users to receive or be awarded a selected amount of branded 
 ### Airdrop Sub-Attributes
 
 #### **_list_type_**
-| Attribute | Type    | Description                                   |
+| Values | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _all_   | String | All the end-users that have been previously airdropped tokens. |
 | _never_airdropped_   | String | All the end-users that have **never** been previously airdropped tokens. |
