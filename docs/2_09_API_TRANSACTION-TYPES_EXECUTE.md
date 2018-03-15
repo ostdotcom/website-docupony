@@ -89,7 +89,6 @@ curl -i \
   -X POST https://playgroundapi.ost.com/transaction-types/execute
 ```
 
-
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2

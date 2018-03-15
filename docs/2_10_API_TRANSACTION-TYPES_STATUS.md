@@ -131,6 +131,7 @@ curl -i \
 -d 'transaction_uuids[]=TRANSACTION_UUID' \
 -X POST https://playgroundapi.ost.com/transaction-types/status
 ```
+
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2

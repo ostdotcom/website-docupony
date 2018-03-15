@@ -24,7 +24,7 @@ Within OST KIT⍺ you can set up transaction-types to define advanced payments t
 
 where the signature is derived from the API secret key and the string to sign is alphabetically sorted
 
-`/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP`
+`/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 
 so that the full request query reads
 
@@ -74,6 +74,22 @@ On calling `/transaction-types/edit` the `data.result_type` is the string "trans
     ]
   }
 }
+```
+
+### Sample Code | Curl
+```bash
+curl -i \
+-H "Accept: application/json" \
+-d 'request_timestamp=EPOCH_TIME_SEC' \
+-d 'signature=SIGNATURE' \
+-d 'api_key=API_KEY' \
+-d 'client_transaction_id=CLIENT_TRANSACTION_ID' \
+-d 'commission_percent=COMMISSION_PERCENT' \
+-d 'currency_type=CURRENCY_TYPE' \
+-d 'currency_value=CURRENCY_VALUE' \
+-d 'kind=KIND' \
+-d 'name=NAME' \
+-X POST https://playgroundapi.ost.com/transaction-types/edit
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
