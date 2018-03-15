@@ -93,7 +93,7 @@ curl -i \
 -d 'request_timestamp=EPOCH_TIME_SEC' \ 
 -d 'signature=SIGNATURE' \ 
 -d 'api_key=API_KEY' \ 
--d 'amount=10' \ 
--d 'list_type=all' \ 
+-d 'amount=AMOUNT' \ 
+-d 'list_type=LIST_TYPE' \ 
 -X POST https://playgroundapi.ost.com/users/airdrop/drop
 ```
