@@ -3,10 +3,12 @@
     "Getting Started": [
     	"simpletoken",
     	"tokenize",
-    	"alpha",
-      "sdks_overview"],
+    	"alpha"],
     "OST KIT": [
     	"kit"],
+    "SDK": [
+      "sdks_overview",
+      "sdk_ruby"],
     "REST API": [
     	"api",
       "api_authentication",
