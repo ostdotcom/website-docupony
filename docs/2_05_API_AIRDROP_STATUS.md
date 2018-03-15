@@ -104,6 +104,6 @@ curl -i \
 -d 'request_timestamp=EPOCH_TIME_SEC' \ 
 -d 'signature=SIGNATURE' \ 
 -d 'api_key=API_KEY' \ 
--d 'airdrop_uuid=AIRDROP_UUID' \ 
+-d 'airdrop_uuid=5412c48e-2bec-4224-9305-56be99174f54' \ 
 -X GET https://playgroundapi.ost.com/users/airdrop/status
 ```
