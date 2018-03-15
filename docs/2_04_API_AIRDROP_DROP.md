@@ -8,10 +8,6 @@ Post to `/users/airdrop/drop` to request an airdrop of a certain amount of brand
 
 This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy.
 
-#### API Endpoint - POST
-```url
-{{saas_api_url}}/users/airdrop/drop
-```
 
 ### Input Parameters
 | Parameter | Type    | Value                                    |
