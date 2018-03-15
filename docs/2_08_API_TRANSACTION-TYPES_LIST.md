@@ -22,7 +22,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request query reads
 
-> GET - https://playgroundapi.ost.com/transaction-types/list?api_key=API_KEY&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE
+> GET - `https://playgroundapi.ost.com/transaction-types/list?api_key=API_KEY&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE`
 
 ### JSON Response Object
 
