@@ -4,7 +4,7 @@ title: OST KIT⍺ API | List All Transaction Types
 sidebar_label: /transaction-types/list
 ---
 
-Send a GET request on `/transaction-types/` to receive a all transaction types. In addition `client_id`, `price_points`, and `client_tokens` are returned.
+Send a GET request on `/transaction-types/list` to receive a list of all transaction types. In addition `client_id`, `price_points`, and `client_tokens` are returned.
 
 Within OST KIT⍺ you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
@@ -124,7 +124,15 @@ For api calls to `/transaction-types` the `data.result_type` is the string "tran
 }
 ```
 
-
+### Sample Code | Curl
+```bash
+curl -i \
+-H "Accept: application/json" \
+-d 'request_timestamp=EPOCH_TIME_SEC' \
+-d 'signature=SIGNATURE' \
+-d 'api_key=API_KEY' \
+-X GET https://playgroundapi.ost.com/transaction-types/list
+```
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2
