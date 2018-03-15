@@ -14,7 +14,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 |---------------------|-----------|--------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [signature generated]() for current request |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _page_no_           | number    | page number (starts from 1) |
 | _filter_            | string    | (optional) filter to be applied on list. Possible values: 'all' or 'never_airdropped' (default) |
 | _order_by_          | string | (optional) order the list by 'creation_time' or 'name' (default) |
