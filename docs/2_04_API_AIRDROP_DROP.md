@@ -22,13 +22,13 @@ For awarding branded tokens to end-users in your application. This API allows en
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _all_   | String | All the end-users that have been previously airdropped tokens. |
-| _never_airdropped_   | String | All the end-users that have **never** been previously any airdropped tokens. |
+| _never_airdropped_   | String | All the end-users that have **never** been previously airdropped. |
 
 
 #### Sample Code | Curl
 ```bash
 curl --request POST \
-  --url 'http://{{saas_api_url}}/users/airdrop-tokens' \
+  --url 'http://{{saas_api_url}}/users/airdrop/drop' \
   --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
   --form token_symbol=PK \
   --form amount=1 \
