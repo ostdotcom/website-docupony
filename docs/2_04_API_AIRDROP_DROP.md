@@ -27,11 +27,14 @@ For awarding branded tokens to end-users in your application. This API allows en
 
 #### Sample Code | Curl
 ```bash
-curl --request POST \
-  --url 'http://{{saas_api_url}}/users/airdrop/drop' \
-  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  --form amount=1 \
-  --form list_type=all
+curl -i \ 
+-H "Accept: application/json" \ 
+-d 'request_timestamp=EPOCH_TIME_SEC' \ 
+-d 'signature=SIGNATURE' \ 
+-d 'api_key=API_KEY' \ 
+-d 'amount=10' \ 
+-d 'list_type=all' \ 
+-X POST https://playgroundapi.ost.com/users/airdrop/drop
 ```
 
 #### Success Response
