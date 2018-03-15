@@ -1,7 +1,7 @@
 ---
 id: sdks_overview
 title: SDKs Overview
-sidebar_label: SDKs
+sidebar_label: Overview
 ---
 
 OST provides a Ruby SDK to facilitate use of the OST Developers API in Ruby and other applications:
