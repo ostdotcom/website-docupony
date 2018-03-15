@@ -34,7 +34,7 @@ so that the full request uri and form reads
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/users` the `data.result_type` is the string "economy_users"
+For api calls to `/users/edit` the `data.result_type` is the string "economy_users"
 and the key `data.economy_users` is an array of `user` objects.
 On successful edit of a user, `economy_users` contains the edited user as a single element.
 
