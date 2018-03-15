@@ -25,7 +25,7 @@ where the inputs must include `api_key` and `request_timestamp` and the function
 "/users/create?api_key=4b66f566d7596e2b733b&name=Alice+Anderson&request_timestamp=1521073147"
 ```
 
-and all the inputs must alphabetically sorted on the keys.  The keys are lower-case, snake case as documented for each API endpoint.  Spaces in input values are replaced with plus sign `+`.
+and all the inputs must be alphabetically sorted on the keys.  The keys are lower-case, snake case as documented for each API endpoint.  Spaces in input values are replaced with plus sign `+`.
 
 When using the [<u>Ruby SDK</u>](3_01_SDK_RUBY.md) authentication is handled for you.  In other languages you can implement the signature generation by computing the `sha256` digest of the API secret and the query string.  The resulting signature must be then included in the request.
 
