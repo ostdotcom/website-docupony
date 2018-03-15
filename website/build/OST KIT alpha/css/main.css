@@ -1840,9 +1840,6 @@ footer .copyright {
 
 /** Side Nav Fixes **/
 
-nav.toc {
-	position: fixed;
-}
 
 nav.toc .toggleNav ul li a {
   border: none;

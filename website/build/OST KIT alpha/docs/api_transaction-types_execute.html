@@ -1,0 +1,93 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>OST KIT⍺ API | Execute A Transaction Type · OST DEV</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="OST KIT⍺ API | Execute A Transaction Type · OST DEV"/><meta property="og:type" content="website"/><meta property="og:url" content="https://dev.ost.com/index.html"/><meta property="og:description" content="Send a POST request on `/transaction-types/execute` to execute a defined transaction type between users and/or the company."/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/docusaurus.svg"/><h2 class="headerTitle">OST DEV</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/simpletoken.html" target="_self">Reference</a></li><li><a href="/docs/api.html" target="_self">API</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>REST API</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/simpletoken.html">Simple Token</a></li><li class="navListItem"><a class="navItem" href="/docs/tokenize.html">Tokens</a></li><li class="navListItem"><a class="navItem" href="/docs/alpha.html">Alpha</a></li></ul></div><div class="navGroup navGroupActive"><h3>OST KIT</h3><ul><li class="navListItem"><a class="navItem" href="/docs/kit.html">Overview</a></li></ul></div><div class="navGroup navGroupActive"><h3>SDK</h3><ul><li class="navListItem"><a class="navItem" href="/docs/sdks_overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/sdk_ruby.html">Ruby SDK Quick Start Guide</a></li></ul></div><div class="navGroup navGroupActive"><h3>REST API</h3><ul><li class="navListItem"><a class="navItem" href="/docs/api.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/api_authentication.html">Authentication</a></li><li class="navListItem"><a class="navItem" href="/docs/api_users_create.html">/users/create</a></li><li class="navListItem"><a class="navItem" href="/docs/api_users_edit.html">/users/edit</a></li><li class="navListItem"><a class="navItem" href="/docs/api_users_list.html">/users/list</a></li><li class="navListItem"><a class="navItem" href="/docs/api_airdrop_drop.html">/users/airdrop/drop</a></li><li class="navListItem"><a class="navItem" href="/docs/api_airdrop_status.html">/users/airdrop/status</a></li><li class="navListItem"><a class="navItem" href="/docs/api_transaction-types_create.html">/transaction-types/create</a></li><li class="navListItem"><a class="navItem" href="/docs/api_transaction-types_edit.html">/transaction-types/edit</a></li><li class="navListItem"><a class="navItem" href="/docs/api_transaction-types_list.html">/transaction-types/list</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/api_transaction-types_execute.html">/transaction-types/execute</a></li><li class="navListItem"><a class="navItem" href="/docs/api_transaction-types_status.html">/transaction-types/status</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>OST KIT⍺ API | Execute A Transaction Type</h1></header><article><div><span><p>Send a POST request on <code>/transaction-types/execute</code> to execute a defined transaction type between users and/or the company.</p>
+<p>Within OST KIT⍺ you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.</p>
+<h4><a class="anchor" aria-hidden="true" name="input-parameters"></a><a href="#input-parameters" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Input Parameters</h4>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><em>api_key</em></td><td>string</td><td>mandatory API key obtained from <a href="https://kit.ost.com">kit.ost.com</a></td></tr>
+<tr><td><em>request_timestamp</em></td><td>number</td><td>mandatory epoch time in seconds of current time</td></tr>
+<tr><td><em>signature</em></td><td>hexstring</td><td>mandatory <a href="/docs/api_authentication.html"><u>signature generated</u></a> for current request</td></tr>
+<tr><td><em>from_uuid</em></td><td>string</td><td>user or company from whom to send the funds</td></tr>
+<tr><td><em>to_uuid</em></td><td>string</td><td>user or company to whom to send the funds</td></tr>
+<tr><td><em>transaction_kind</em></td><td>string</td><td>name of the transaction type to be executed, e.g. &quot;Upvote&quot; (note that the parameter is a misnomer currently)</td></tr>
+</tbody>
+</table>
+<p>where the signature is derived from the API secret key and the string to sign is alphabetically sorted</p>
+<p><code>/transaction-types/execute?api_key=API_KEY&amp;from_uuid=FROM_UUID&amp;request_timestamp=EPOCH_TIME_SEC&amp;to_uuid=TO_UUID&amp;transaction_kind=NAME</code></p>
+<p>so that the full request uri and form reads</p>
+<blockquote>
+<p>POST - <a href="https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&amp;from_uuid=FROM_UUID&amp;request_timestamp=EPOCH_TIME_SEC&amp;to_uuid=TO_UUID&amp;transaction_kind=NAME&amp;signature=SIGNATURE">https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&amp;from_uuid=FROM_UUID&amp;request_timestamp=EPOCH_TIME_SEC&amp;to_uuid=TO_UUID&amp;transaction_kind=NAME&amp;signature=SIGNATURE</a></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" name="json-response-object"></a><a href="#json-response-object" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON Response Object</h3>
+<table>
+<thead>
+<tr><th>Key</th><th>Type</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td><em>success</em></td><td>bool</td><td>post successful</td></tr>
+<tr><td><em>data</em></td><td>object</td><td>(optional) data object describing result if successful</td></tr>
+<tr><td><em>err</em></td><td>object</td><td>(optional) describing error if not successful</td></tr>
+</tbody>
+</table>
+<p>For api calls to <code>/transaction-types/execute</code> the <code>data</code> is an object containing the attributes described below.  A success response acknowledges that the request is successfully queued and a transaction uuid is returned.</p>
+<p>For the alpha release we have disabled pessimistic concurrency control to ensure that no false positives are returned. As a result you must query <code>transaction-types/status</code> for successful completion of the transaction.</p>
+<h3><a class="anchor" aria-hidden="true" name="data-object-attributes"></a><a href="#data-object-attributes" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data Object Attributes</h3>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Type</th><th>Definition</th></tr>
+</thead>
+<tbody>
+<tr><td><em>from_uuid</em></td><td>string</td><td>user or company from whom to send the funds</td></tr>
+<tr><td><em>to_uuid</em></td><td>string</td><td>user or company to whom to send the funds</td></tr>
+<tr><td><em>transaction_uuid</em></td><td>string</td><td>uuid of the transaction type that has been executed</td></tr>
+<tr><td><em>transaction_hash</em></td><td>hexstring</td><td>initially returned as null before the transaction is formed</td></tr>
+<tr><td><em>transaction_kind</em></td><td>string</td><td>name of the transaction type to be executed, e.g. &quot;Upvote&quot; (note that the parameter is a misnomer currently)</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" name="sample-success-response"></a><a href="#sample-success-response" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Success Response</h3>
+<p>On a successful acknowledgement the transaction uuid must be queried on <code>/transaction-types/status</code> for completion of the transaction.</p>
+<pre><code class="hljs css json">{
+  <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"transaction_uuid"</span>: <span class="hljs-string">"49cc3411-7ab3-4478-8fac-beeab09e3ed2"</span>,
+    <span class="hljs-attr">"transaction_hash"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"from_uuid"</span>: <span class="hljs-string">"1b5039ea-323f-416c-9007-7fe2d068d42d"</span>,
+    <span class="hljs-attr">"to_uuid"</span>: <span class="hljs-string">"286d2cb9-421b-495d-8a82-034d8e2c96e2"</span>,
+    <span class="hljs-attr">"transaction_kind"</span>: <span class="hljs-string">"Download"</span>
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="sample-failure-response"></a><a href="#sample-failure-response" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Failure Response</h3>
+<pre><code class="hljs css json">{
+  <span class="hljs-attr">"success"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"err"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-string">"companyRestFulApi(s_t_et_7:ByqHgCPKM)"</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Invalid From user"</span>,
+    <span class="hljs-attr">"error_data"</span>: {}
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="sample-code-curl"></a><a href="#sample-code-curl" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Code | Curl</h3>
+<pre><code class="hljs css bash">curl -i \
+  --header <span class="hljs-string">"Accept: application/json"</span>
+  --data api_key=API_KEY \
+  --data request_timestamp=EPOCH_TIME_SEC \
+  --data signature=SIGNATURE \
+  --data from_uuid=FROM_UUID \
+  --data to_uuid=TO_UUID \
+  --data transaction_kind=NAME \
+  -X POST https://playgroundapi.ost.com/transaction-types/execute
+</code></pre>
+<blockquote>
+<p><em>last updated 14 March 2018</em>; for support see <a href="help.ost.com">help.ost.com</a></p>
+<p>OST KIT⍺ v1 | OpenST Platform v0.9.2</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="api_transaction-types_list.html">← OST KIT⍺ API | List All Transaction Types</a><a class="docs-next button" href="api_transaction-types_status.html">OST KIT⍺ API | Query Transaction Status →</a></div></div></div></div><footer class="nav-footer" id="footer"><a href="https://ost.com/" target="_blank" class="fbOpenSource"><img src="/img/ost.png" alt="Simple Token" width="100"/></a><section class="copyright">Copyright © 2018 Simple Token. All Rights Reserved.</section></footer></div></body></html>
