@@ -13,7 +13,7 @@ Within OST KIT⍺ you can set up transaction-types to define advanced payments t
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [signature generated]() for current request |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _client_transaction_id_ | number | mandatory id for transaction to edit (returned as `id` on `/create` or `/list`) |  
 | _name_              | string    | (optional) change to new name for the transaction-type |
 | _kind_              | string    | (optional) change transaction type which can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company. |

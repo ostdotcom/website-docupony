@@ -12,6 +12,9 @@ This API allows end-users to receive or be awarded a selected amount of branded 
 ### Input Parameters
 | Parameter | Type    | Value                                    |
 |-----------|---------|------------------------------------------|
+| _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _amount_   | Float | The amount of BT that needs to be air-dropped to the selected end-users.  Example:10 |
 | [_list_type_](https://dev.ost.com/ostkit-restful-api/docs/user.html#list-type-sub-attributes)   | String | The list type of end-users that need to be airdropped tokens. Example:all|
 
@@ -88,13 +91,13 @@ however when a request is invalid the response is returned with status code 200 
 
 #### Sample Code | Curl
 ```bash
-curl -i \ 
--H "Accept: application/json" \ 
--d 'request_timestamp=EPOCH_TIME_SEC' \ 
--d 'signature=SIGNATURE' \ 
--d 'api_key=API_KEY' \ 
--d 'amount=AMOUNT' \ 
--d 'list_type=LIST_TYPE' \ 
+curl -i \
+-H "Accept: application/json" \
+-d 'request_timestamp=EPOCH_TIME_SEC' \
+-d 'signature=SIGNATURE' \
+-d 'api_key=API_KEY' \
+-d 'amount=AMOUNT' \
+-d 'list_type=LIST_TYPE' \
 -X POST https://playgroundapi.ost.com/users/airdrop/drop
 ```
 

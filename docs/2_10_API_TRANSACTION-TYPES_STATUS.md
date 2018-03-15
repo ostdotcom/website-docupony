@@ -1,17 +1,17 @@
 ---
 id: api_transaction-types_status
-title: OST KIT⍺ API | Query Transaction Status 
+title: OST KIT⍺ API | Query Transaction Status
 sidebar_label: /transaction-types/status
 ---
 
 Send a POST request on `/transaction-types/status` to query the status of executed transactions. Multiple uuids can be passed in a single request to receive the status of all.
 
-### Input Parameters 
+### Input Parameters
 | Parameter           | Type   | Value                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [signature generated]() for current request |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _transaction_uuids[]_ | string | unique identifier for an executed transaction that is part of an array |
 
 where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
@@ -121,14 +121,14 @@ For API calls to `/transaction-types/status` the `result_type` is a string "tran
 }
 ```
 
-### Sample Code | Curl 
+### Sample Code | Curl
 ```bash
-curl -i \ 
--H "Accept: application/json" \ 
--d 'request_timestamp=EPOCH_TIME_SEC' \ 
--d 'signature=SIGNATURE' \ 
--d 'api_key=API_KEY' \ 
--d 'transaction_uuids[]=TRANSACTION_UUID' \ 
+curl -i \
+-H "Accept: application/json" \
+-d 'request_timestamp=EPOCH_TIME_SEC' \
+-d 'signature=SIGNATURE' \
+-d 'api_key=API_KEY' \
+-d 'transaction_uuids[]=TRANSACTION_UUID' \
 -X POST https://playgroundapi.ost.com/transaction-types/status
 ```
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)

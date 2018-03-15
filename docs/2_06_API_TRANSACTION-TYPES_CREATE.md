@@ -13,7 +13,7 @@ Within OST KIT⍺ you can set up transaction-types to define advanced payments t
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [signature generated]() for current request |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _name_              | string    | name of the transaction type |
 | _kind_              | string    | transaction types can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company.  On user to user transfers the company can ask a transaction fee.  |
 | _currency_type_     | string    | type of currency the transaction is valued in. Possible values are "USD" (fixed) or "BT" (floating).  When a transaction type is set in fiat value the equivalent amount of branded tokens are calculated on-chain over a price oracle.  A transaction fails if the price point is outside of the accepted margins set by the company (API not yet exposed). For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
