@@ -4,7 +4,7 @@ title: OST KIT⍺ API | Query Transaction Status
 sidebar_label: /transaction-types/status
 ---
 
-Send a POST request on `/transaction-types/status` to query the status of executed transactions. 
+Send a POST request on `/transaction-types/status` to query the status of executed transactions. Multiple uuids can be passed in a single request to receive the status of all.
 
 ### Input Parameters 
 | Parameter           | Type   | Value                                               |
@@ -41,7 +41,7 @@ For API calls to `/transaction-types/status` the `result_type` is a string "tran
 | _transaction_uuid_| string | id of the executed transaction type|
 | _client_token_id_ | number | id of the branded token |
 | _transaction_hash_ | hexstring | the generated transaction hash |
-| _status_ | string | the execution status of the transaction type |
+| _status_ | string | the execution status of the transaction type: "processing", "failed" or "complete" |
 | _gas_price_ | string | value of the gas utilized for the transaction |
 | _transaction_timestamp_  |string| universal time stamp value of execution of the transaction in milliseconds|
 | _uts_  |number | universal time stamp value in  milliseconds|
