@@ -3,14 +3,17 @@ id: api_airdrop_drop
 title: OST KIT⍺ API Airdrop
 sidebar_label: /users/airdrop/drop
 ---
-For awarding branded tokens to end-users in your application. This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy.
+
+Post to `/users/airdrop/drop` to request an airdrop of a certain amount of branded tokens to a set of `users`.
+
+This API allows end-users to receive or be awarded a selected amount of branded tokens to be able participate in the branded token economy.
 
 #### API Endpoint - POST
 ```url
 {{saas_api_url}}/users/airdrop/drop
 ```
 
-#### Parameters
+### Input Parameters
 | Parameter | Type    | Value                                    |
 |-----------|---------|------------------------------------------|
 | _amount_   | Float | The amount of BT that needs to be air-dropped to the selected end-users.  Example:10 |
@@ -39,12 +42,32 @@ curl -i \
 
 #### Success Response
 ```
-{:success=>true, :data=>{"airdrop_uuid"=>"5412c48e-2bec-4224-9305-56be99174f54"}}
+{
+ "success": true,
+ "data": {
+   "airdrop_uuid": "cbc20092-7326-4517-b851-ec211e3ced7d"
+ }
+}
 ```
 
 #### Failure Response
 ```
-{:success=>false, :err=>{:code=>"companyRestFulApi(s_am_sa_7:r1OeAavKz)", :msg=>"Insufficient funds to airdrop users", :display_text=>"", :display_heading=>"", :error_data=>[{"amount"=>"Available token amount is insufficient. Please mint more tokens or reduce the amount to complete the process."}]}, :data=>{}}
+{
+ "success": false,
+ "err": {
+   "code": "companyRestFulApi(s_am_sa_7:HypBvRPFM)",
+   "msg": "Insufficient funds to airdrop users",
+   "display_text": "",
+   "display_heading": "",
+   "error_data": [
+     {
+       "amount": "Available token amount is insufficient. Please mint more tokens or reduce the amount to complete the process."
+     }
+   ]
+ },
+ "data": {
+ }
+}
 ```
 
 #### Returns
