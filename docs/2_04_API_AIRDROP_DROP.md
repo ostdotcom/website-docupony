@@ -28,19 +28,26 @@ This API allows end-users to receive or be awarded a selected amount of branded 
 | _never_airdropped_   | String | All the end-users that have **never** been previously airdropped tokens. |
 
 
-#### Sample Code | Curl
-```bash
-curl -i \ 
--H "Accept: application/json" \ 
--d 'request_timestamp=EPOCH_TIME_SEC' \ 
--d 'signature=SIGNATURE' \ 
--d 'api_key=API_KEY' \ 
--d 'amount=10' \ 
--d 'list_type=all' \ 
--X POST https://playgroundapi.ost.com/users/airdrop/drop
-```
+where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
 
-#### Success Response
+`/users/airdrop/drop?amount=AMOUNT&api_key=API_KEY&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC`
+
+so that the full request uri and form reads
+
+> POST - `https://playgroundapi.ost.com/users/airdrop/drop?amount=AMOUNT&api_key=API_KEY&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE`
+
+### JSON Response Object
+
+| Key        | Type   | Value      |
+|------------|--------|------------|
+| _success_  | bool   | post successful |
+| _data_     | object | (optional) data object describing result if successful   |
+| _err_      | object | (optional) describing error if not successful |
+
+On calling `/users/airdrop/drop` the `data.airdrop_uuid` is a string containing the airdrop reference id, that can be used to check the airdrop status using the AIRDROP STATUS API endpoint.
+
+
+#### Example Success Response
 ```
 {
  "success": true,
@@ -50,7 +57,19 @@ curl -i \
 }
 ```
 
-#### Failure Response
+#### Example Failure Response
+For a failed authentication the response is returned with status code 401 and the body can look like this,
+```json
+{
+  "success": false,
+  "err": {
+    "code": "companyRestFulApi(401:HJg2HK0A_f)",
+    "msg": "Unauthorized",
+    "error_data": {}
+  }
+}
+```
+however when a request is invalid the response is returned with status code 200 and the message and error data contain further information.
 ```
 {
  "success": false,
@@ -70,5 +89,15 @@ curl -i \
 }
 ```
 
-#### Returns
-Returns a true or false response on the success when the request is accepted and the processing in the background has started. Now it will be possible to check the airdrop status using the AIRDROP STATUS API endpoint.
+
+#### Sample Code | Curl
+```bash
+curl -i \ 
+-H "Accept: application/json" \ 
+-d 'request_timestamp=EPOCH_TIME_SEC' \ 
+-d 'signature=SIGNATURE' \ 
+-d 'api_key=API_KEY' \ 
+-d 'amount=10' \ 
+-d 'list_type=all' \ 
+-X POST https://playgroundapi.ost.com/users/airdrop/drop
+```
