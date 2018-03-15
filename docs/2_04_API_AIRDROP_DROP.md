@@ -15,8 +15,6 @@ For awarding branded tokens to end-users in your application. This API allows en
 |-----------|---------|------------------------------------------|
 | _amount_   | Float | The amount of BT that needs to be air-dropped to the selected end-users.  Example:10 |
 | [_list_type_](https://dev.ost.com/ostkit-restful-api/docs/user.html#list-type-sub-attributes)   | String | The list type of end-users that need to be airdropped tokens. Example:all|
-| _total_airdropped_tokens_ | String | The amount of branded tokens (BT) you want to distribute to the user. If this is empty then no BT will be given to the user.                                       |
-| _token_balance_           | String | The current BT balance of the user.                                                  |
 
 ### Airdrop Sub-Attributes
 
