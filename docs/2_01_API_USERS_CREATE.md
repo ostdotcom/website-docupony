@@ -23,7 +23,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request uri and form reads
 
-> POST - https://playgroundapi.ost.com/users/create?api_key=API_KEY&name=NAME&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE
+> POST - `https://playgroundapi.ost.com/users/create?api_key=API_KEY&name=NAME&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE`
 
 ### JSON Response Object
 
