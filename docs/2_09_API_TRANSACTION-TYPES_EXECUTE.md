@@ -4,7 +4,9 @@ title: OST KIT⍺ API | Execute A Transaction Type
 sidebar_label: /transaction-types/execute
 ---
 
-Send a POST request on `/transaction-types/execute` to execute a token exchange of a transaction type between any two branded token holders.
+Send a POST request on `/transaction-types/execute` to execute a defined transaction type between users and/or the company.
+
+Within OST KIT⍺ you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
 #### Input Parameters
 | Parameter           | Type   | Value                                               |
@@ -12,18 +14,17 @@ Send a POST request on `/transaction-types/execute` to execute a token exchange 
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
 | _signature_         | hexstring | mandatory [signature generated]() for current request |
-| _from_uuid_    | string | origin user of the transaction branded token.  |
-| _to_uuid_      | string | destination user of the transaction.           |
-| _transaction_kind_  | string | type of transaction dependent on the owners involved in the token exchange. Possible values are "user_to_user" - token exchange from one user to another user  , "user_to_company" - from a user to you (the application service provider), "company_to_user" - exchange from you (the application service provider) to an end-user  |
-| _token_symbol_ | string | token symbol whose transaction has to be executed. |
+| _from_uuid_    | string | user or company from whom to send the funds |
+| _to_uuid_      | string | user or company to whom to send the funds |
+| _transaction_kind_  | string | name of the transaction type to be executed, e.g. "Upvote" (note that the parameter is a misnomer currently) |
 
 where the signature is derived from the API secret key and the string to sign is alphabetically sorted
 
-`/transaction-types/execute?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
+`/transaction-types/execute?api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_UUID&transaction_kind=NAME`
 
 so that the full request uri and form reads
 
-> POST - https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&client_id=CLIENT_ID&from_uuid=FROM_UUID&token_symbol=TOKEN_SYMBOL&to_uuid=TO_UUID&transaction_kind_=TRANSACTION_KIND&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE
+> POST - https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_UUID&transaction_kind=NAME&signature=SIGNATURE
 
 ### JSON Response Object
 
@@ -33,27 +34,29 @@ so that the full request uri and form reads
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/transaction-types/execute` the `data` is an object containing the attributes described below.
+For api calls to `/transaction-types/execute` the `data` is an object containing the attributes described below.  A success response acknowledges that the request is successfully queued and a transaction uuid is returned.
 
+For the alpha release we have disabled pessimistic concurrency control to ensure that no false positives are returned. As a result you must query `transaction-types/status` for successful completion of the transaction.  
 
-### Executed Transaction Object Attributes
+### Data Object Attributes
 
 | Parameter           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
-| _from_uuid_    | string | origin user of the transaction branded token.  |
-| _to_uuid_      | string | destination user of the transaction.           |
-| _transaction_uuid_      | string | id of the transaction type that has been executed|
-| _transaction_hash_ | hexstring | the generated transaction hash |
-| _transaction_kind_  | string | type of transaction dependent on the owners involved in the token exchange. Possible values are "user_to_user" - token exchange from one user to another user  , "user_to_company" - from a user to you (the application service provider), "company_to_user" - exchange from you (the application service provider) to an end-user  |
+| _from_uuid_    | string | user or company from whom to send the funds |
+| _to_uuid_      | string | user or company to whom to send the funds |
+| _transaction_uuid_ | string | uuid of the transaction type that has been executed|
+| _transaction_hash_ | hexstring | initially returned as null before the transaction is formed |
+| _transaction_kind_  | string | name of the transaction type to be executed, e.g. "Upvote" (note that the parameter is a misnomer currently) |
 
 
 ### Sample Success Response
+On a successful acknowledgement the transaction uuid must be queried on `/transaction-types/status` for completion of the transaction.
 ```json
 {
   "success": true,
   "data": {
     "transaction_uuid": "49cc3411-7ab3-4478-8fac-beeab09e3ed2",
-    "transaction_hash": "nil",
+    "transaction_hash": null,
     "from_uuid": "1b5039ea-323f-416c-9007-7fe2d068d42d",
     "to_uuid": "286d2cb9-421b-495d-8a82-034d8e2c96e2",
     "transaction_kind": "Download"
@@ -66,25 +69,24 @@ For api calls to `/transaction-types/execute` the `data` is an object containing
 {
   "success": false,
   "err": {
-    "code": "companyRestFulApi(s_t_et_6BJlY1jKuG)",
-    "msg": "Invalid Token Symbol",
-    "display_text": "",
-    "display_heading": "",
+    "code": "companyRestFulApi(s_t_et_7:ByqHgCPKM)",
+    "msg": "Invalid From user",
     "error_data": {}
-  },
-  "data": {}
+  }
 }
 ```
 
 ### Sample Code | Curl
 ```bash
-curl --request POST \
-  --url 'https://playgroundapi.ost.com/transaction-types/execute' \
-  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  --form from_uuid=1b5039ea-323f-416c-9007-7fe2d068d42d \
-  --form to_uuid=286d2cb9-421b-495d-8a82-034d8e2c96e2 \
-  --form transaction_kind=Download \
-  --form token_symbol=aMnN
+curl -i \
+  --header "Accept: application/json"
+  --data api_key=API_KEY \
+  --data request_timestamp=EPOCH_TIME_SEC \
+  --data signature=SIGNATURE \
+  --data from_uuid=FROM_UUID \
+  --data to_uuid=TO_UUID \
+  --data transaction_kind=NAME \
+  -X POST https://playgroundapi.ost.com/transaction-types/execute
 ```
 
 
