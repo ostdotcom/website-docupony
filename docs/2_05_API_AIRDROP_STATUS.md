@@ -7,7 +7,7 @@ sidebar_label: /users/airdrop/status
 
 Send a GET request to `/users/airdrop/status` to receive the airdrop status.
  
-This retrieves the status of the airdrop of branded tokens. This API can be used to understand which stage the processing of airdropping the tokens are going through.  
+Get the status of the airdrop of branded tokens. This API can be used to understand which stage the processing of airdropping the tokens are going through.  
 
 
 ### Input Parameters
