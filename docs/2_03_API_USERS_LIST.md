@@ -27,7 +27,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request query reads
 
-> GET - https://playgroundapi.ost.com/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE
+> GET - `https://playgroundapi.ost.com/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE`
 
 ### JSON Response Object
 
