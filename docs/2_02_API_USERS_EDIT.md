@@ -86,14 +86,14 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
 
 ### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--d 'name=NAME' \
--d 'uuid=UUID' \
--X POST https://playgroundapi.ost.com/users/edit
+curl --request POST \
+--url 'https://playgroundapi.ost.com/users/edit' \
+--header 'Accept: application/json' \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
+--form name=NAME \
+--form uuid=UUID \
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
