@@ -5,7 +5,7 @@ sidebar_label: /users/airdrop/status
 ---
 
 
-Send a POST request to `/users/airdrop/status` to receive the airdrop status.
+Send a GET request to `/users/airdrop/status` to receive the airdrop status.
  
 This retrieves the status of the airdrop of branded tokens. This API can be used to understand which stage the processing of airdropping the tokens are going through.  
 
@@ -24,7 +24,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request uri and form reads
 
-> POST - https://playgroundapi.ost.com/users/airdrop/status?airdrop_uuid=AIRDROP_UUID&api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE
+> GET - https://playgroundapi.ost.com/users/airdrop/status?airdrop_uuid=AIRDROP_UUID&api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE
 
 ### JSON Response Object
 
