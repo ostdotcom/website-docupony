@@ -8,7 +8,7 @@ Send a POST request on `/transaction-types/execute` to execute a defined transac
 
 Within OST KIT⍺ you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
-#### Input Parameters
+### Input Parameters
 | Parameter           | Type   | Value                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
@@ -24,7 +24,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request uri and form reads
 
-> POST - `https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_UUID&transaction_kind=NAME&signature=SIGNATURE`
+> POST - https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_UUID&transaction_kind=NAME&signature=SIGNATURE
 
 ### JSON Response Object
 

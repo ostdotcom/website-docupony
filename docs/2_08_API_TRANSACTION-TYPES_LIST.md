@@ -8,7 +8,7 @@ Send a GET request on `/transaction-types/list` to receive a list of all transac
 
 Within OST KIT⍺ you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
-#### Input Parameters
+### Input Parameters
 | Parameter | Type | Value                                         |
 |-----------|------|-----------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
@@ -22,7 +22,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request query reads
 
-> GET - `https://playgroundapi.ost.com/transaction-types/list?api_key=API_KEY&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE`
+> GET - https://playgroundapi.ost.com/transaction-types/list?api_key=API_KEY&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE
 
 ### JSON Response Object
 
@@ -68,7 +68,7 @@ For api calls to `/transaction-types` the `data.result_type` is the string "tran
 | _symbol_            | string | name of the symbol |
 | _symbol_icon_       | string | icon reference |
 | _conversion_factor_ | float  | conversion factor of the branded token to OST |
-| _token_erc20_address | address | prefixed hexstring address of the branded token erc20 contract on the utility chain |
+| _token_erc20_address_ | address | prefixed hexstring address of the branded token erc20 contract on the utility chain |
 | _airdrop_contract_addr_ | address | prefixed hexstring address of the airdrop / pricer contract that regulates payments of branded tokens with transaction types |
 | _simple_stake_contract_addr_ | address | prefixed hexstring address of the simple stake contract which holds the OST⍺ on Ethereum Ropsten testnet which has been staked to mint branded tokens |
 

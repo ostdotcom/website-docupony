@@ -38,7 +38,7 @@ For api calls to `/users/edit` the `data.result_type` is the string "economy_use
 and the key `data.economy_users` is an array of `user` objects.
 On successful edit of a user, `economy_users` contains the edited user as a single element.
 
-### User Object Attributes:
+### User Object Attributes
 
 | Parameter | Type   | Value  |
 |-----------|--------|--------|

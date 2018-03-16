@@ -29,7 +29,7 @@ and all the inputs must be alphabetically sorted on the keys.  The keys are lowe
 
 When using the [<u>Ruby SDK</u>](3_01_SDK_RUBY.md) authentication is handled for you.  In other languages you can implement the signature generation by computing the `sha256` digest of the API secret and the query string.  The resulting signature must be then included in the request.
 
-### NodeJS Authentication Example
+### Node.js Authentication Example
 
 An example code snippet to generate the API signature given the API key and the API shared secret for a request can be implemented as follows:
 
