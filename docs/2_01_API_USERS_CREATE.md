@@ -101,13 +101,13 @@ however when a request is invalid the response is returned with successful statu
 
 ### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--d 'name=NAME' \
--X POST https://playgroundapi.ost.com/users/create
+curl --request POST \
+--url 'https://playgroundapi.ost.com/users/create' \
+--header 'Accept: application/json' \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
+--form name=NAME \
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)

@@ -87,16 +87,16 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
 
 ### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--d 'filter=FILTER' \
--d 'order=ORDER' \
--d 'order_by=ORDER_BY' \
--d 'page_no=PAGE_NO' \
--X GET https://playgroundapi.ost.com/users/list
+curl --request GET \
+--url 'https://playgroundapi.ost.com/users/list'
+--header "Accept: application/json" \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
+--form filter=FILTER \
+--form order=ORDER \
+--form order_by=ORDER_BY \
+--form page_no=PAGE_NO \
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
