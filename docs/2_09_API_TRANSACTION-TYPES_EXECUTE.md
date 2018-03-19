@@ -78,15 +78,15 @@ On a successful acknowledgement the transaction uuid must be queried on `/transa
 
 ### Sample Code | Curl
 ```bash
-curl -i \
-  --header "Accept: application/json"
-  --data api_key=API_KEY \
-  --data request_timestamp=EPOCH_TIME_SEC \
-  --data signature=SIGNATURE \
-  --data from_uuid=FROM_UUID \
-  --data to_uuid=TO_UUID \
-  --data transaction_kind=NAME \
-  -X POST https://playgroundapi.ost.com/transaction-types/execute
+curl --request POST \
+--url 'https://playgroundapi.ost.com/transaction-types/execute'
+--header "Accept: application/json"
+--data api_key=API_KEY \
+--data request_timestamp=EPOCH_TIME_SEC \
+--data signature=SIGNATURE \
+--data from_uuid=FROM_UUID \
+--data to_uuid=TO_UUID \
+--data transaction_kind=NAME \
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)

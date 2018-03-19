@@ -126,12 +126,12 @@ For api calls to `/transaction-types` the `data.result_type` is the string "tran
 
 ### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--X GET https://playgroundapi.ost.com/transaction-types/list
+curl --request GET \
+--url 'https://playgroundapi.ost.com/transaction-types/list' \
+--header "Accept: application/json" \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
