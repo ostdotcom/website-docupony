@@ -93,7 +93,7 @@ however when a request is invalid the response is returned with status code 200 
 ```bash
 curl --request POST \
 --url 'https://playgroundapi.ost.com/users/airdrop/drop'
---header'Accept: application/json" \
+--header 'Accept: application/json' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
 --form api_key=API_KEY \
