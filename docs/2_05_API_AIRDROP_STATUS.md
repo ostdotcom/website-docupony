@@ -103,7 +103,7 @@ however when a request is invalid the response is returned with status code 200 
 ### Sample Code | Curl
 ```bash
 curl --request GET \
--url 'https://playgroundapi.ost.com/users/airdrop/status'
+--url 'https://playgroundapi.ost.com/users/airdrop/status'
 --header "Accept: application/json" \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
