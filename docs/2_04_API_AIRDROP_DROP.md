@@ -20,7 +20,7 @@ This API allows end-users to receive or be awarded a selected amount of branded 
 
 ### Airdrop Sub-Attributes
 
-### _list_type_
+#### **_list_type_**
 | Values | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _all_   | String | All the end-users that have been previously airdropped tokens. |
@@ -33,7 +33,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request uri and form reads
 
-> POST - https://playgroundapi.ost.com/users/airdrop/drop?amount=AMOUNT&api_key=API_KEY&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE
+> POST - `https://playgroundapi.ost.com/users/airdrop/drop?amount=AMOUNT&api_key=API_KEY&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE`
 
 ### JSON Response Object
 
