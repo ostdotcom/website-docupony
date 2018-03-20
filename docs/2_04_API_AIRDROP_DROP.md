@@ -1,6 +1,6 @@
 ---
 id: api_airdrop_drop
-title: OST KIT⍺ API | Airdrop
+title: OST KIT⍺ API Airdrop
 sidebar_label: /users/airdrop/drop
 ---
 

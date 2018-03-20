@@ -1,6 +1,6 @@
 ---
 id: api_airdrop_status
-title: OST KIT⍺ API | Airdrop Status
+title: OST KIT⍺ API Aidrop Status
 sidebar_label: /users/airdrop/status
 ---
 
@@ -36,7 +36,7 @@ so that the full request uri and form reads
 
 On calling `/users/airdrop/status` the `data.airdrop_uuid` is a string containing the airdrop reference id. `data.current_status` is a string containing the present status of the airdrop request. `data.steps_complete` is an array explaining the steps which have been completed for the airdrop at the specific point in time of the API request.
 
-### _current status_
+#### **_current status_**
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _pending_   | String | The string to represent that airdrop is still in process.
@@ -44,7 +44,7 @@ On calling `/users/airdrop/status` the `data.airdrop_uuid` is a string containin
 | _complete_   | String | The string to represent that the airdrop process is complete.|
 
 
-### _steps complete_
+#### **_steps complete_**
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _user_identified_   | String | The string to represent identification of the end-user for airdropping branded tokens.
