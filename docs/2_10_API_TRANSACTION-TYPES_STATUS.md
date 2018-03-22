@@ -123,13 +123,13 @@ For API calls to `/transaction-types/status` the `result_type` is a string "tran
 
 ### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--d 'transaction_uuids[]=TRANSACTION_UUID' \
--X POST https://playgroundapi.ost.com/transaction-types/status
+curl --request POST \
+--url 'https://playgroundapi.ost.com/transaction-types/status'
+--header "Accept: application/json" \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
+--form transaction_uuids[]=TRANSACTION_UUID \
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)

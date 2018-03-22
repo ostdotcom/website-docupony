@@ -78,20 +78,20 @@ On calling `/transaction-types/edit` the `data.result_type` is the string "trans
 
 ### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--d 'client_transaction_id=CLIENT_TRANSACTION_ID' \
--d 'commission_percent=COMMISSION_PERCENT' \
--d 'currency_type=CURRENCY_TYPE' \
--d 'currency_value=CURRENCY_VALUE' \
--d 'kind=KIND' \
--d 'name=NAME' \
--X POST https://playgroundapi.ost.com/transaction-types/edit
+curl --request POST \
+--url 'https://playgroundapi.ost.com/transaction-types/edit' \
+--header 'Accept: application/json' \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
+--form client_transaction_id=CLIENT_TRANSACTION_ID \
+--form commission_percent=COMMISSION_PERCENT \
+--form currency_type=CURRENCY_TYPE \
+--form currency_value=CURRENCY_VALUE \
+--form kind=KIND \
+--form name=NAME \
 ```
 
->_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 19 March 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2

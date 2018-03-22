@@ -110,13 +110,13 @@ however when a request is invalid the response is returned with status code 200 
 ### Sample Code | Curl
 ```bash
 curl --request POST \
-  --url 'https://playgroundapi.ost.com/transaction-types/create' \
-  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  --form name=Upvote \
-  --form kind=user_to_user \
-  --form currency_type=USD \
-  --form currency_value=0.2 \
-  --form commission_percent=0.1
+--url 'https://playgroundapi.ost.com/transaction-types/create' \
+--header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+--form name=Upvote \
+--form kind=user_to_user \
+--form currency_type=USD \
+--form currency_value=0.2 \
+--form commission_percent=0.1
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)

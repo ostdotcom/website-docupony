@@ -91,14 +91,14 @@ however when a request is invalid the response is returned with status code 200 
 
 ### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--d 'amount=AMOUNT' \
--d 'list_type=LIST_TYPE' \
--X POST https://playgroundapi.ost.com/users/airdrop/drop
+curl --request POST \
+--url 'https://playgroundapi.ost.com/users/airdrop/drop'
+--header 'Accept: application/json' \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
+--form amount=AMOUNT \
+--form list_type=LIST_TYPE \
 ```
 
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
