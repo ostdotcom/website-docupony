@@ -28,7 +28,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request query reads
 
-> GET - `https://playgroundapi.ost.com/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE`
+> POST - `https://playgroundapi.ost.com/transaction-types/edit?api_key=API_KEY&client_transaction_id=CLIENT_TRANSACTION_ID&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE`
 
 ### JSON Response Object
 
