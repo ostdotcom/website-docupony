@@ -1,6 +1,6 @@
 ---
 id: api_airdrop_drop
-title: OST KIT⍺ API Airdrop
+title: OST KIT⍺ | API Airdrop
 sidebar_label: /users/airdrop/drop
 ---
 
@@ -46,7 +46,7 @@ so that the full request uri and form reads
 On calling `/users/airdrop/drop` the `data.airdrop_uuid` is a string containing the airdrop reference id, that can be used to check the airdrop status using the AIRDROP STATUS API endpoint.
 
 
-#### Example Success Response
+### Example Success Response
 ```
 {
  "success": true,
@@ -56,7 +56,7 @@ On calling `/users/airdrop/drop` the `data.airdrop_uuid` is a string containing 
 }
 ```
 
-#### Example Failure Response
+### Example Failure Response
 For a failed authentication the response is returned with status code 401 and the body can look like this,
 ```json
 {
@@ -89,7 +89,7 @@ however when a request is invalid the response is returned with status code 200 
 ```
 
 
-#### Sample Code | Curl
+### Sample Code | Curl
 ```bash
 curl -i \
 -H "Accept: application/json" \

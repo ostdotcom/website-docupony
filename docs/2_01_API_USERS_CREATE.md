@@ -37,7 +37,7 @@ For api calls to `/users/create` the `data.result_type` is the string "economy_u
 and the key `data.economy_users` is an array of `user` objects.
 On successful creation of the user, `economy_users` contains the created user as a single element.
 
-### User Object Attributes:
+### User Object Attributes
 
 | Parameter | Type   | Value  |
 |-----------|--------|--------|

@@ -40,7 +40,7 @@ so that the full request query reads
 For api calls to `/users/list` the `data.result_type` is the string "economy_users"
 and the key `data.economy_users` is an array of the returned `user` objects (25 users per page). The field `data.meta.next_page_payload` contains the filter and order information and the `page_no` number for the next page; or is empty for the last page of the list.
 
-### User Object Attributes:
+### User Object Attributes
 
 | Parameter | Type   | Value  |
 |-----------|--------|--------|
