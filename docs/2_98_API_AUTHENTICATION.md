@@ -63,13 +63,13 @@ function generateQueryString(inputParams) {
   const stringToSign = endpoint + '?' + queryParamsString;
   return stringToSign;
 }
-function creatTimeString() {
+function createTimeString() {
 	var d = new Date();
 	var t = d.getTime();
 	var o = t + "";
 	return o.substring(0, 10);
 }
-var requestParams = {api_key: apiKey, request_timestamp: creatTimeString(), name: 'NAME'};
+var requestParams = {api_key: apiKey, request_timestamp: createTimeString(), name: 'NAME'};
 var stringToSign = generateQueryString(requestParams);
 ```
 
