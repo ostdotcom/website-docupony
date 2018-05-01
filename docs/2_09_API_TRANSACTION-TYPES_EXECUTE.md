@@ -1,4 +1,4 @@
-﻿---
+---
 id: api_transaction-types_execute
 title: OST KIT⍺ API | Execute A Transaction Type
 sidebar_label: /transaction-types/execute
@@ -29,12 +29,12 @@ The request url of this post request reads as
 and the parameters are sent in the request body.
 ```json
 {
-	"api_key": "API_KEY",
-	"from_uuid": "FROM_UUID",
-	"request_timestamp": "EPOCH_TIME_SEC",
-	"to_uuid": "TO_UUID",
-	"transaction_kind": "NAME",
-	"signature": "SIGNATURE"
+        "api_key": API_KEY,
+        "from_uuid": FROM_UUID,
+        "request_timestamp": EPOCH_TIME_SEC,
+        "to_uuid": TO_UUID,
+        "transaction_kind": NAME,
+        "signature": SIGNATURE
 }
 ```
 
@@ -101,6 +101,6 @@ curl --request POST \
 --form transaction_kind=NAME \
 ```
 
->_last updated 30 April 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 30th April 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2
