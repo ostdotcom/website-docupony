@@ -1,4 +1,4 @@
----
+﻿---
 id: api_transaction-types_execute
 title: OST KIT⍺ API | Execute A Transaction Type
 sidebar_label: /transaction-types/execute
@@ -8,7 +8,7 @@ Send a POST request on `/transaction-types/execute` to execute a defined transac
 
 Within OST KIT⍺ you can set up transaction-types to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
-#### Input Parameters
+### Input Parameters
 | Parameter           | Type   | Value                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
@@ -18,13 +18,25 @@ Within OST KIT⍺ you can set up transaction-types to define advanced payments t
 | _to_uuid_      | string | user or company to whom to send the funds |
 | _transaction_kind_  | string | name of the transaction type to be executed, e.g. "Upvote" (note that the parameter is a misnomer currently) |
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
 
 `/transaction-types/execute?api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_UUID&transaction_kind=NAME`
 
-so that the full request uri and form reads
+The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/transaction-types/execute?api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_UUID&transaction_kind=NAME&signature=SIGNATURE`
+> POST - `https://playgroundapi.ost.com/transaction-types/execute`
+
+and the parameters are sent in the request body.
+```json
+{
+	"api_key": "API_KEY",
+	"from_uuid": "FROM_UUID",
+	"request_timestamp": "EPOCH_TIME_SEC",
+	"to_uuid": "TO_UUID",
+	"transaction_kind": "NAME",
+	"signature": "SIGNATURE"
+}
+```
 
 ### JSON Response Object
 
@@ -78,17 +90,17 @@ On a successful acknowledgement the transaction uuid must be queried on `/transa
 
 ### Sample Code | Curl
 ```bash
-curl -i \
-  --header "Accept: application/json"
-  --data api_key=API_KEY \
-  --data request_timestamp=EPOCH_TIME_SEC \
-  --data signature=SIGNATURE \
-  --data from_uuid=FROM_UUID \
-  --data to_uuid=TO_UUID \
-  --data transaction_kind=NAME \
-  -X POST https://playgroundapi.ost.com/transaction-types/execute
+curl --request POST \
+--url 'https://playgroundapi.ost.com/transaction-types/execute'
+--header "Accept: application/json"
+--form api_key=API_KEY \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form from_uuid=FROM_UUID \
+--form to_uuid=TO_UUID \
+--form transaction_kind=NAME \
 ```
 
->_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 30 April 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2

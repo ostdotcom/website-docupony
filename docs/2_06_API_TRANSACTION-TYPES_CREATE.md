@@ -1,4 +1,4 @@
----
+﻿---
 id: api_transaction-types_create
 title: OST KIT⍺ API | Create A Transaction Type
 sidebar_label: /transaction-types/create
@@ -20,13 +20,26 @@ Within OST KIT⍺ you can set up transaction-types to define advanced payments t
 | _currency_value_    | float  | value of the transaction set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and for fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer.  If the transaction type is between users and a commission percentage is set then the commission is inclusive in this value and the complement goes to the beneficiary user. |
 | _commission_percent_| float  | inclusive percentage of the value that is sent to company. Possible only for "user_to_user" transaction kind. (min 0%, max 100%) |
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
 
 `/transaction-types/create?api_key=API_KEY&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP`
 
-so that the full request uri and form reads
+The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/transaction-types/create?api_key=API_KEY&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE`
+> POST - `https://playgroundapi.ost.com/transaction-types/create`
+
+and the parameters are sent in the request body.
+```json
+{
+	"api_key": "API_KEY",
+	"currency_type": "CURRENCY_TYPE",
+	"currency_value": "CURRENCY_VALUE",
+	"kind": "KIND",
+	"name": "NAME",
+	"request_timestamp": "EPOCH_TIME_SEC",
+	"signature": "SIGNATURE"
+}
+```
 
 ### JSON Response Object
 
@@ -110,15 +123,15 @@ however when a request is invalid the response is returned with status code 200 
 ### Sample Code | Curl
 ```bash
 curl --request POST \
-  --url 'https://playgroundapi.ost.com/transaction-types/create' \
-  --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  --form name=Upvote \
-  --form kind=user_to_user \
-  --form currency_type=USD \
-  --form currency_value=0.2 \
-  --form commission_percent=0.1
+--url 'https://playgroundapi.ost.com/transaction-types/create' \
+--header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+--form name=Upvote \
+--form kind=user_to_user \
+--form currency_type=USD \
+--form currency_value=0.2 \
+--form commission_percent=0.1
 ```
 
->_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 30 April 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2
