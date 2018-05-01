@@ -67,10 +67,10 @@ function generateQueryString(inputParams) {
   return stringToSign;
 }
 function createTimeString() {
-        var d = new Date();
-        var t = d.getTime();
-        var o = t + "";
-        return o.substring(0, 10);
+	var d = new Date();
+	var t = d.getTime();
+	var o = t + "";
+	return o.substring(0, 10);
 }
 var requestParams = {api_key: apiKey, request_timestamp: createTimeString(), name: 'NAME'};
 var stringToSign = generateQueryString(requestParams);
