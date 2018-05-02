@@ -118,7 +118,7 @@ requestParams.signature = generateApiSignature(stringToSign, apiSecret);
 
 request.post(
     endpoint,
-    { json: requestParams },
+    { form: requestParams },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body);
