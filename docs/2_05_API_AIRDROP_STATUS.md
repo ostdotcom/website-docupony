@@ -24,7 +24,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request uri and form reads
 
-> GET - https://playgroundapi.ost.com/users/airdrop/status?airdrop_uuid=AIRDROP_UUID&api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE
+> GET - `https://playgroundapi.ost.com/users/airdrop/status?airdrop_uuid=AIRDROP_UUID&api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE`
 
 ### JSON Response Object
 
