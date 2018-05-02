@@ -28,17 +28,13 @@ The request url of this post request reads as
 
 > POST - `https://playgroundapi.ost.com/transaction-types/create`
 
-and the parameters are sent in the request body.
-```json
-{
-        "api_key": API_KEY,
-        "currency_type": CURRENCY_TYPE,
-        "currency_value": CURRENCY_VALUE,
-        "kind": KIND,
-        "name": NAME,
-        "request_timestamp": EPOCH_TIME_SEC,
-        "signature": SIGNATURE
-}
+and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
+
+```
+Content-Type: application/x-www-form-urlencoded
+
+api_key=API_KEY&commission_percent=COMMISSION_PERCENT&currency_type=CURRENCY_TYPE&currency_value=CURRENCY_VALUE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE        
+
 ```
 ### JSON Response Object
 
