@@ -26,14 +26,4 @@
 <url> <loc>https://dev.ost.com/docs/api_authentication.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/api_authentication.html" /> </url>
 <url> <loc>https://dev.ost.com/docs/sdks_overview.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/sdks_overview.html" /> </url>
 <url> <loc>https://dev.ost.com/docs/sdk_ruby.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/sdk_ruby.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/npm_overview.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/npm_overview.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/authentication.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/authentication.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/error.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/error.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/INDEX.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/INDEX.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/introduction.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/introduction.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/upvote.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/upvote.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/overviewnotes.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/overviewnotes.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/started.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/started.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/transaction.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/transaction.html" /> </url>
-<url> <loc>https://dev.ost.com/docs/user.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://dev.ost.com/docs/user.html" /> </url>
 </urlset>

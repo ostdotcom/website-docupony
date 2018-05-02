@@ -1,6 +1,6 @@
 ---
 id: api_airdrop_drop
-title: OST KIT⍺ API Airdrop
+title: OST KIT⍺ | API Airdrop
 sidebar_label: /users/airdrop/drop
 ---
 
@@ -27,14 +27,25 @@ This API allows end-users to receive or be awarded a selected amount of branded 
 | _never_airdropped_   | String | All the end-users that have **never** been previously airdropped tokens. |
 
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
+where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
 `/users/airdrop/drop?amount=AMOUNT&api_key=API_KEY&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC`
 
-so that the full request uri and form reads
+The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/users/airdrop/drop?amount=AMOUNT&api_key=API_KEY&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE`
+> POST - `https://playgroundapi.ost.com/users/airdrop/drop`
 
+and the parameters are sent in the request body.
+
+```json
+{
+        "amount": AMOUNT,
+        "api_key": API_KEY,
+        "list_type": LIST_TYPE,
+        "request_timestamp": EPOCH_TIME_SEC,
+        "signature": SIGNATURE
+}
+```
 ### JSON Response Object
 
 | Key        | Type   | Value      |
@@ -46,7 +57,7 @@ so that the full request uri and form reads
 On calling `/users/airdrop/drop` the `data.airdrop_uuid` is a string containing the airdrop reference id, that can be used to check the airdrop status using the AIRDROP STATUS API endpoint.
 
 
-#### Example Success Response
+### Example Success Response
 ```
 {
  "success": true,
@@ -56,7 +67,7 @@ On calling `/users/airdrop/drop` the `data.airdrop_uuid` is a string containing 
 }
 ```
 
-#### Example Failure Response
+### Example Failure Response
 For a failed authentication the response is returned with status code 401 and the body can look like this,
 ```json
 {
@@ -89,18 +100,18 @@ however when a request is invalid the response is returned with status code 200 
 ```
 
 
-#### Sample Code | Curl
+### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--d 'amount=AMOUNT' \
--d 'list_type=LIST_TYPE' \
--X POST https://playgroundapi.ost.com/users/airdrop/drop
+curl --request POST \
+--url 'https://playgroundapi.ost.com/users/airdrop/drop'
+--header 'Accept: application/json' \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
+--form amount=AMOUNT \
+--form list_type=LIST_TYPE \
 ```
 
->_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 30th April 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2

@@ -1,12 +1,12 @@
 ---
 id: api_airdrop_status
-title: OST KIT⍺ API Aidrop Status
+title: OST KIT⍺ API | Airdrop Status
 sidebar_label: /users/airdrop/status
 ---
 
 
-Get from `/users/airdrop/status` to receive the airdrop status.
-
+Send a GET request to `/users/airdrop/status` to receive the airdrop status.
+ 
 Get the status of the airdrop of branded tokens. This API can be used to understand which stage the processing of airdropping the tokens are going through.  
 
 
@@ -24,7 +24,7 @@ where the signature is derived from the API secret key and the string to sign is
 
 so that the full request uri and form reads
 
-> POST - `https://playgroundapi.ost.com/users/airdrop/status?airdrop_uuid=AIRDROP_UUID&api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE`
+> GET - https://playgroundapi.ost.com/users/airdrop/status?airdrop_uuid=AIRDROP_UUID&api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE
 
 ### JSON Response Object
 
@@ -36,7 +36,7 @@ so that the full request uri and form reads
 
 On calling `/users/airdrop/status` the `data.airdrop_uuid` is a string containing the airdrop reference id. `data.current_status` is a string containing the present status of the airdrop request. `data.steps_complete` is an array explaining the steps which have been completed for the airdrop at the specific point in time of the API request.
 
-#### _current status_
+#### **_current status_**
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _pending_   | String | The string to represent that airdrop is still in process.
@@ -44,7 +44,7 @@ On calling `/users/airdrop/status` the `data.airdrop_uuid` is a string containin
 | _complete_   | String | The string to represent that the airdrop process is complete.|
 
 
-#### _steps complete_
+#### **_steps complete_**
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
 | _user_identified_   | String | The string to represent identification of the end-user for airdropping branded tokens.
@@ -53,7 +53,7 @@ On calling `/users/airdrop/status` the `data.airdrop_uuid` is a string containin
 | _allocation_done_   | String | The string to represent that the airdrop process is complete.|
 
 
-#### Example Success Response
+### Example Success Response
 ```
 {
  "success": true,
@@ -70,7 +70,7 @@ On calling `/users/airdrop/status` the `data.airdrop_uuid` is a string containin
 }
 ```
 
-#### Example Failure Response
+### Example Failure Response
 For a failed authentication the response is returned with status code 401 and the body can look like this,
 
 ```
@@ -100,15 +100,16 @@ however when a request is invalid the response is returned with status code 200 
 }
 ```
 
-#### Sample Code | Curl
+### Sample Code | Curl
 ```bash
-curl -i \
--H "Accept: application/json" \
--d 'request_timestamp=EPOCH_TIME_SEC' \
--d 'signature=SIGNATURE' \
--d 'api_key=API_KEY' \
--d 'airdrop_uuid=AIRDROP_UUID' \
--X GET https://playgroundapi.ost.com/users/airdrop/status
+curl --request GET \
+--url 'https://playgroundapi.ost.com/users/airdrop/status'
+--header "Accept: application/json" \
+--form request_timestamp=EPOCH_TIME_SEC \
+--form signature=SIGNATURE \
+--form api_key=API_KEY \
+--form airdrop_uuid=AIRDROP_UUID \
+
 ```
 >_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
 >
