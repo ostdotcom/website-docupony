@@ -17,7 +17,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _name_              | string    | name of the user |
 
-where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
+where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
 
 `/users/create?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 
