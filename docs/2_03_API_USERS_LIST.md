@@ -1,48 +1,50 @@
 ---
 id: api_users_list
 title: OST KIT⍺ API | List Users
-sidebar_label: /users/list
+sidebar_label: List Users
 ---
 
-Send a GET request on `/users/list` to receive a paginated - optionally filtered - ordered array of users within the economy.
+Send a GET request on `/users` to receive a paginated - optionally filtered - ordered array of users within the economy.
 
 A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
-| Parameter           | Type      | Value  |
+| Parameter           | Type      | Mandatory | Description  |
 |---------------------|-----------|--------|
-| _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
-| _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
-| _page_no_           | number    | page number (starts from 1) |
-| _filter_            | string    | (optional) filter to be applied on list. Possible values: 'all' or 'never_airdropped' (default) |
-| _order_by_          | string | (optional) order the list by 'creation_time' or 'name' (default) |
-| _order_             | string | (optional) order users in 'desc' (default) or 'asc' order. |
+| _api_key_           | string    | yes | API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    |yes | epoch time in seconds of current time |
+| _signature_         | hexstring | yes |[<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _page_no_           | number    | no |page number (starts from 1) |
+| [X GET /users/{id} response filter parameter]            | string    | no | X corresponds to each filter parameter for the resource and the type is a (comma-separated) string, e.g., 'name="Junisha, Frankie"' |
+| _airdropped_ | boolean | no | true == users who have been airdropped tokens, false == users who have not been airdropped tokens
+| _order_by_          | string |no |(optional) order the list by 'creation_time' or 'name' (default) |
+| _order_             | string |no |(optional) order users in 'desc' (default) or 'asc' order |
+| _limit_ | number | no | min. 1, max. 100, default 10 |
 
 
 where the signature is derived from the API secret key and the string to sign is alphabetically sorted
 
-`/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP`
+`/users?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP`
 
 so that the full request query reads
 
-> GET - `https://playgroundapi.ost.com/users/list?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE`
+> GET - `https://playgroundapi.ost.com/users?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE`
 
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Description      |
 |------------|--------|------------|
 | _success_  | bool   | get successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/users/list` the `data.result_type` is the string "economy_users"
-and the key `data.economy_users` is an array of the returned `user` objects (25 users per page). The field `data.meta.next_page_payload` contains the filter and order information and the `page_no` number for the next page; or is empty for the last page of the list.
+For api calls to `/users` the `data.result_type` is the string "users"
+and the key `data.users` is an array of the returned `user` objects (25 users per page). The field `data.meta.next_page_payload` contains the filter and order information and the `page_no` number for the next page; or is empty for the last page of the list.
 
 ### User Object Attributes
 
-| Parameter | Type   | Value  |
+| Parameter | Type   | Description  |
 |-----------|--------|--------|
 | _name_    | string | name of the user  |
 | _id_      | string | (uuid copy, deprecated) |
@@ -55,7 +57,7 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
 {
   "success": true,
   "data": {
-    "result_type": "economy_users",
+    "result_type": "users",
     "economy_users": [
       {
         "id": "c1e5da9b-787d-4897-aa58-742f2756c71d",
@@ -88,7 +90,7 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
 ### Sample Code | Curl
 ```bash
 curl --request GET \
---url 'https://playgroundapi.ost.com/users/list'
+--url 'https://playgroundapi.ost.com/users'
 --header "Accept: application/json" \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \

@@ -1,30 +1,30 @@
 ---
 id: api_users_edit
-title: OST KIT⍺ API | Edit A User
-sidebar_label: /users/edit
+title: OST KIT⍺ API | Update A User
+sidebar_label: Update A User
 ---
 
-Post to `/users/edit` to edit an existing `user` for a given unique identifier within the application.
+Post to `/users/{id}` to edit an existing `user` for a given unique identifier within the application.
 
 A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
-| Parameter           | Type      | Value  |
+| Parameter           | Type      | Mandatory| Description  |
 |---------------------|-----------|--------|
-| _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
-| _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
-| _uuid_              | uuid      | mandatory uuid of the user to edit |
-| _name_              | string    | new name of the user |
+| _api_key_           | string    | yes | API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    | yes| epoch time in seconds of current time |
+| _signature_         | hexstring | yes | [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _uuid_              | uuid      | yes| uuid of the user to edit |
+| _name_              | string    | no |new name of the user (not unique) |
 
 where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
-`/users/edit?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC&uuid=UUID`
+`/users/{id}?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC&uuid=UUID`
 
 The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/users/edit`
+> POST - `https://playgroundapi.ost.com/users/{id}`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
@@ -36,19 +36,19 @@ api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE&u
 ```
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Description      |
 |------------|--------|------------|
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/users/edit` the `data.result_type` is the string "economy_users"
-and the key `data.economy_users` is an array of `user` objects.
-On successful edit of a user, `economy_users` contains the edited user as a single element.
+For api calls to `/users/{id}` the `data.result_type` is the string "users"
+and the key `data.users` is an array of `user` objects.
+On successful edit of a user, `users` contains the edited user as a single element.
 
 ### User Object Attributes
 
-| Parameter | Type   | Value  |
+| Parameter | Type   | Description  |
 |-----------|--------|--------|
 | _name_    | string | name of the user  |
 | _id_      | string | (uuid copy, deprecated) |
@@ -62,7 +62,7 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
 {
   "success": true,
   "data": {
-    "result_type": "economy_users",
+    "result_type": "users",
     "economy_users": [
       {
         "id": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
@@ -95,7 +95,7 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
 ### Sample Code | Curl
 ```bash
 curl --request POST \
---url 'https://playgroundapi.ost.com/users/edit' \
+--url 'https://playgroundapi.ost.com/users/{id}' \
 --header 'Accept: application/json' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
