@@ -50,11 +50,11 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 
 | Parameter | Type   | Description  |
 |-----------|--------|--------|
-| _name_    | string | name of the user  |
 | _id_      | string | user id |
 | _addresses_    | array | [(chain id, address),(chain id, address)]  |
-| _total_airdropped_tokens_ | number | cumulative amount airdropped to the user |
-| _token_balance_           | number | balance of the user (including current airdrop budget)  |
+| _name_    | string | name of the user (not unique)  |
+| _airdropped_tokens_ | string [number] | 	total amount of airdropped tokens to the user |
+| _token_balance_           | string [number] | current balance of the user |
 
 ### Example Success Response
 
@@ -63,7 +63,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
   "success": true,
   "data": {
     "result_type": "users",
-    "economy_users": [
+    "users": [
       {
         "id": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
         "uuid": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
@@ -71,10 +71,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
         "total_airdropped_tokens": "0",
         "token_balance": "0"
       }
-    ],
-    "meta": {
-      "next_page_payload": {}
-    }
+    ]
   }
 }
 ```
