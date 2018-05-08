@@ -12,9 +12,6 @@ A user can own branded tokens within your branded token economy.  Users can exch
 
 | Parameter           | Type      | Mandatory | Description  |
 |---------------------|-----------|--------|
-| _api_key_           | string    | yes | API key obtained from [kit.ost.com](https://kit.ost.com) |
-| _request_timestamp_ | number    |yes | epoch time in seconds of current time |
-| _signature_         | hexstring | yes |[<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _page_no_           | number    | no |page number (starts from 1) |
 | [X GET /users/{id} response filter parameter]            | string    | no | X corresponds to each filter parameter for the resource and the type is a (comma-separated) string, e.g., 'name="Junisha, Frankie"' |
 | _airdropped_ | boolean | no | true == users who have been airdropped tokens, false == users who have not been airdropped tokens
@@ -46,11 +43,11 @@ and the key `data.users` is an array of the returned `user` objects (25 users pe
 
 | Parameter | Type   | Description  |
 |-----------|--------|--------|
-| _name_    | string | name of the user  |
-| _id_      | string | (uuid copy, deprecated) |
-| _uuid_    | string | unique identifier for the user  |
-| _total_airdropped_tokens_ | number | cumulative amount airdropped to the user |
-| _token_balance_           | number | balance of the user (including current airdrop budget)  |
+| _id_      | string | user id |
+| _addresses_    | array | [(chain id, address),(chain id, address)]  |
+| _name_    | string | name of the user (not unique)  |
+| _airdropped_tokens_ | string [number] | 	total amount of airdropped tokens to the user |
+| _token_balance_           | string [number] | current balance of the user |
 
 ### Example Success Response
 ```json
@@ -58,7 +55,7 @@ and the key `data.users` is an array of the returned `user` objects (25 users pe
   "success": true,
   "data": {
     "result_type": "users",
-    "economy_users": [
+    "users": [
       {
         "id": "c1e5da9b-787d-4897-aa58-742f2756c71d",
         "name": "User 1",
@@ -80,12 +77,15 @@ and the key `data.users` is an array of the returned `user` objects (25 users pe
         "order_by": "creation_time",
         "order": "asc",
         "filter": "all",
-        "page_no": 2
+        "page_no": 2,
       }
     }
   }
 }
 ```
+
+[WIP: Implement the below later]
+b. a new element in "meta" shall be "total_no" with total number of users  
 
 ### Sample Code | Curl
 ```bash

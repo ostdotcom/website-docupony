@@ -49,11 +49,11 @@ On successful creation of the user, `users` contains the created user as a singl
 
 | Parameter | Type   | Filter   | Description  |
 |-----------|--------|--------|
-| _name_    | string | no |name of the user (not unique)  |
 | _id_      | string | yes | user id (uuid copy, deprecated) |
 | _addresses_    | array | no| [(chain id, address),(chain id, address)]  |
-| _total_airdropped_tokens_| string <number> | no | total amount of airdropped tokens to the user |
-| _token_balance_           | string <number>| no |current balance of the user  |
+| _name_    | string | no |name of the user (not unique)  |
+| _airdropped_tokens_| string [number] | no | total amount of airdropped tokens to the user |
+| _token_balance_           | string [number]| no |current balance of the user  |
 
 ### Example Success Response
 
@@ -62,7 +62,7 @@ On successful creation of the user, `users` contains the created user as a singl
   "success": true,
   "data": {
     "result_type": "users",
-    "economy_users": [
+    "users": [
       {
         "id": "574b456d-5da6-4353-ad7c-9b70893e757b",
         "uuid": "574b456d-5da6-4353-ad7c-9b70893e757b",
@@ -71,9 +71,6 @@ On successful creation of the user, `users` contains the created user as a singl
         "token_balance": 0
       }
     ],
-    "meta": {
-      "next_page_payload": {}
-    }
   }
 }
 ```
@@ -110,7 +107,7 @@ however when a request is invalid the response is returned with successful statu
 ### Sample Code | Curl
 ```bash
 curl --request POST \
---url 'https://playgroundapi.ost.com/users/create' \
+--url 'https://playgroundapi.ost.com/users' \
 --header 'Accept: application/json' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
