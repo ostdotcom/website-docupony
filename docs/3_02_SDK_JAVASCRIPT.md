@@ -1,6 +1,6 @@
 ---
 id: sdk_javascript
-title: JAVASCRIPT SDK Quick Start Guide
+title: JavaScript SDK Quick Start Guide
 sidebar_label: JavaScript SDK Quick Start Guide
 ---
 
