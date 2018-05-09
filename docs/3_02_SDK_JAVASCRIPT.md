@@ -43,7 +43,7 @@ Require the module to use it in your application, we require it in node:
 Set the following variables for convenience:
 
 ```javascript
-apiEndpoint = 'https://playgroundapi.ost.com';  // possible values sandbox / main
+apiEndpoint = 'https://playgroundapi.ost.com';  
 api_key = '2c48e6cc16716e620138'; // replace with the API Key you obtained earlier
 api_secret = '5af763facaf8222e93aa1b537af1b12b179d21670fd15f0b7780752d6027189d'; // replace with the API Secret you obtained earlier
 const ostObj = new OSTSDK({apiKey: api_key, apiSecret: api_secret, apiEndpoint: apiEndpoint});
