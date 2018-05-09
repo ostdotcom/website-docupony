@@ -18,7 +18,7 @@ To use the SDK, developers will need to:
 
 ### Install ost-sdk-js
 
-Make sure Node.js and NPM are installed to run javascript commands from Terminal. Once the installation is done and the API Key and Secret are obtained, install the npm module.
+Make sure Node.js and NPM are installed to run javascript commands from the Terminal. Once the installation is done and the API Key and Secret are obtained, install the npm module.
 
 From your terminal window, enter:
 
