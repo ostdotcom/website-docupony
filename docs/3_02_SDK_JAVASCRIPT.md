@@ -23,7 +23,7 @@ Make sure Node.js and NPM are installed to run javascript commands from the Term
 From your terminal window, enter:
 
 ```bash
-> npm install @ostdotcom/ost-sdk # installs the npm module
+> npm install @ostdotcom/ost-sdk-js # installs the npm module
 ```
 
 If you would like to work with the npm module directly, use node, the interactive environment for javascript:
@@ -35,7 +35,7 @@ If you would like to work with the npm module directly, use node, the interactiv
 Require the module to use it in your application, we require it in node:
 
 ```javascript
-> OSTSDK = require('@ostdotcom/ost-sdk');
+> OSTSDK = require('@ostdotcom/ost-sdk-js');
 ```
 
 ### Set Variables
