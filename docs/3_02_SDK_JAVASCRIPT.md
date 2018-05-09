@@ -1,10 +1,10 @@
 ---
 id: sdk_javascript
 title: JAVASCRIPT SDK Quick Start Guide
-sidebar_label: Javascript SDK Quick Start Guide
+sidebar_label: JavaScript SDK Quick Start Guide
 ---
 
-The OST JAVASCRIPT SDK is a javascript node module that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST Javascript SDK to create users, airdrop tokens to those users, create types of transactions, and execute one of those transaction types between two users.
+The OST JavaScript SDK is a JavaScript node module that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST JavaScript SDK to create users, airdrop tokens to those users, create types of transactions, and execute one of those transaction types between two users.
 
 ### Prerequisites
 
@@ -23,7 +23,7 @@ Make sure Node.js and NPM are installed to run javascript commands from Terminal
 From your terminal window, enter:
 
 ```bash
-> npm install ost-sdk-js # installs the npm module
+> npm install @ostdotcom/ost-sdk # installs the npm module
 ```
 
 If you would like to work with the npm module directly, use node, the interactive environment for javascript:
@@ -35,7 +35,7 @@ If you would like to work with the npm module directly, use node, the interactiv
 Require the module to use it in your application, we require it in node:
 
 ```javascript
-> OSTSDK = require('ost-sdk-js');
+> OSTSDK = require('@ostdotcom/ost-sdk');
 ```
 
 ### Set Variables
