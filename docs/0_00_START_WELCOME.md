@@ -19,6 +19,6 @@ OST KIT⍺ provides you with tools for designing, planning, minting, and managin
 
 ## Quick Start Guide
 
-To get started quickly, try the [<u>Ruby SDK Quick Start Guide</u>](3_01_SDK_RUBY.md).
+To get started quickly, try the [<u>Ruby SDK Quick Start Guide</u>](3_01_SDK_RUBY.md) or the [<u>JavaScript SDK Quick Start Guide</u>](3_02_SDK_JAVASCRIPT.md).
 
 
