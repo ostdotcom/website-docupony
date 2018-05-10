@@ -1,10 +1,10 @@
 ---
 id: sdk_javascript
-title: JAVASCRIPT SDK Quick Start Guide
-sidebar_label: Javascript SDK Quick Start Guide
+title: JavaScript SDK Quick Start Guide
+sidebar_label: JavaScript SDK Quick Start Guide
 ---
 
-The OST JAVASCRIPT SDK is a javascript node module that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST Javascript SDK to create users, airdrop tokens to those users, create types of transactions, and execute one of those transaction types between two users.
+The OST JavaScript SDK is a JavaScript node module that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST JavaScript SDK to create users, airdrop tokens to those users, create types of transactions, and execute one of those transaction types between two users.
 
 ### Prerequisites
 
@@ -18,12 +18,12 @@ To use the SDK, developers will need to:
 
 ### Install ost-sdk-js
 
-Make sure Node.js and NPM are installed to run javascript commands from Terminal. Once the installation is done and the API Key and Secret are obtained, install the npm module.
+Make sure Node.js and NPM are installed to run javascript commands from the Terminal. Once the installation is done and the API Key and Secret are obtained, install the npm module.
 
 From your terminal window, enter:
 
 ```bash
-> npm install ost-sdk-js # installs the npm module
+> npm install @ostdotcom/ost-sdk-js # installs the npm module
 ```
 
 If you would like to work with the npm module directly, use node, the interactive environment for javascript:
@@ -35,7 +35,7 @@ If you would like to work with the npm module directly, use node, the interactiv
 Require the module to use it in your application, we require it in node:
 
 ```javascript
-> OSTSDK = require('ost-sdk-js');
+> OSTSDK = require('@ostdotcom/ost-sdk-js');
 ```
 
 ### Set Variables
@@ -43,7 +43,7 @@ Require the module to use it in your application, we require it in node:
 Set the following variables for convenience:
 
 ```javascript
-apiEndpoint = 'https://playgroundapi.ost.com';  // possible values sandbox / main
+apiEndpoint = 'https://playgroundapi.ost.com';  
 api_key = '2c48e6cc16716e620138'; // replace with the API Key you obtained earlier
 api_secret = '5af763facaf8222e93aa1b537af1b12b179d21670fd15f0b7780752d6027189d'; // replace with the API Secret you obtained earlier
 const ostObj = new OSTSDK({apiKey: api_key, apiSecret: api_secret, apiEndpoint: apiEndpoint});
