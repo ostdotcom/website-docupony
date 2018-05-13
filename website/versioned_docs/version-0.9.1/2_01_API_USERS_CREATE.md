@@ -1,11 +1,11 @@
 ---
-id: version-1.0.0-api_users_edit
-title: OST KIT⍺ API | Edit A User
-sidebar_label: /users/edit
-original_id: api_users_edit
+id: version-0.9.1-api_users_create
+title: OST KIT⍺ API | Create A User
+sidebar_label: /users/create
+original_id: api_users_create
 ---
 
-Post to `/users/edit` to edit an existing `user` for a given unique identifier within the application.
+Post to `/users/create` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
 
 A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
 
@@ -16,23 +16,22 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
 | _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
-| _uuid_              | uuid      | mandatory uuid of the user to edit |
-| _name_              | string    | new name of the user |
+| _name_              | string    | name of the user |
 
 where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
-`/users/edit?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC&uuid=UUID`
+`/users/create?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 
 The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/users/edit`
+> POST - `https://playgroundapi.ost.com/users/create`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
 ```
 Content-Type: application/x-www-form-urlencoded
 
-api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE&uuid=UUID
+api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE
 
 ```
 ### JSON Response Object
@@ -43,9 +42,9 @@ api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE&u
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/users/edit` the `data.result_type` is the string "economy_users"
+For api calls to `/users/create` the `data.result_type` is the string "economy_users"
 and the key `data.economy_users` is an array of `user` objects.
-On successful edit of a user, `economy_users` contains the edited user as a single element.
+On successful creation of the user, `economy_users` contains the created user as a single element.
 
 ### User Object Attributes
 
@@ -66,11 +65,11 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
     "result_type": "economy_users",
     "economy_users": [
       {
-        "id": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
-        "uuid": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
+        "id": "574b456d-5da6-4353-ad7c-9b70893e757b",
+        "uuid": "574b456d-5da6-4353-ad7c-9b70893e757b",
         "name": "NAME",
-        "total_airdropped_tokens": "0",
-        "token_balance": "0"
+        "total_airdropped_tokens": 0,
+        "token_balance": 0
       }
     ],
     "meta": {
@@ -81,14 +80,30 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
 ```
 
 ### Example Failure Responses
+On a failed authentication the response is returned with status code 401 and the body will look like this,
 
 ```json
 {
   "success": false,
   "err": {
-    "code": "companyRestFulApi(s_cu_eu_2.1:rJOpl4JtG)",
-    "msg": "User not found",
+    "code": "companyRestFulApi(401:HJg2HK0A_f)",
+    "msg": "Unauthorized",
     "error_data": {}
+  }
+}
+```
+however when a request is invalid the response is returned with successful status code 200, but `success = false` and the `err.msg` and `err.error_data` contain further information.
+```json
+{
+  "success": false,
+  "err": {
+    "code": "companyRestFulApi(s_a_g_1:rJndQJkYG)",
+    "msg": "invalid params",
+    "error_data": [
+      {
+        "name": "Only letters, numbers and spaces allowed. (Max 20 characters)"
+      }
+    ]
   }
 }
 ```
@@ -96,13 +111,12 @@ On successful edit of a user, `economy_users` contains the edited user as a sing
 ### Sample Code | Curl
 ```bash
 curl --request POST \
---url 'https://playgroundapi.ost.com/users/edit' \
+--url 'https://playgroundapi.ost.com/users/create' \
 --header 'Accept: application/json' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
 --form api_key=API_KEY \
 --form name=NAME \
---form uuid=UUID \
 ```
 
 >_last updated 30th April 2018_; for support see [help.ost.com](help.ost.com)

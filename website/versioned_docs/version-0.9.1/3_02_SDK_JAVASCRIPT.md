@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-sdk_javascript
+id: version-0.9.1-sdk_javascript
 title: JavaScript SDK Quick Start Guide
 sidebar_label: JavaScript SDK Quick Start Guide
 original_id: sdk_javascript

@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-sdk_ruby
+id: version-0.9.1-sdk_ruby
 title: Ruby SDK Quick Start Guide
 sidebar_label: Ruby SDK Quick Start Guide
 original_id: sdk_ruby

@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-api_airdrop_drop
+id: version-0.9.1-api_airdrop_drop
 title: OST KIT⍺ | API Airdrop
 sidebar_label: /users/airdrop/drop
 original_id: api_airdrop_drop

@@ -1,0 +1,40 @@
+{
+  "version-0.0.9-docs": {
+    "Getting Started": [
+      "version-0.0.9-simpletoken",
+      "version-0.0.9-tokenize",
+      "version-0.0.9-alpha",
+      "version-0.0.9-changelog"
+    ],
+    "OST KIT": [
+      "version-0.0.9-kit"
+    ],
+    "SDK": [
+      "version-0.0.9-sdks_overview",
+      "version-0.0.9-sdk_ruby",
+      "version-0.0.9-sdk_javascript"
+    ],
+    "REST API": [
+      "version-0.0.9-api",
+      "version-0.0.9-api_authentication"
+    ],
+    "USER": [
+      "version-0.0.9-api_users_create",
+      "version-0.0.9-api_users_edit",
+      "version-0.0.9-api_users_list"
+    ],
+    "AIRDROP": [
+      "version-0.0.9-api_airdrop_drop",
+      "version-0.0.9-api_airdrop_status"
+    ],
+    "ACTION": [
+      "version-0.0.9-api_transaction-types_create",
+      "version-0.0.9-api_transaction-types_edit",
+      "version-0.0.9-api_transaction-types_list"
+    ],
+    "TRANSACTION": [
+      "version-0.0.9-api_transaction-types_execute",
+      "version-0.0.9-api_transaction-types_status"
+    ]
+  }
+}

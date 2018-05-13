@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-api_transaction-types_edit
+id: version-0.9.1-api_transaction-types_edit
 title: OST KIT⍺ API | Edit A Transaction Type
 sidebar_label: /transaction-types/edit
 original_id: api_transaction-types_edit

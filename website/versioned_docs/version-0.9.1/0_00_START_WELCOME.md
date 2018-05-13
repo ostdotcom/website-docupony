@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-simpletoken
+id: version-0.9.1-simpletoken
 title: OST | Simple Token
 sidebar_label: Simple Token
 original_id: simpletoken

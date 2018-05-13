@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-api_transaction-types_status
+id: version-0.9.1-api_transaction-types_status
 title: OST KIT⍺ API | Query Transaction Status
 sidebar_label: /transaction-types/status
 original_id: api_transaction-types_status

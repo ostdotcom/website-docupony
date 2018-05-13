@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-api_transaction-types_list
+id: version-0.9.1-api_transaction-types_list
 title: OST KIT⍺ API | List All Transaction Types
 sidebar_label: /transaction-types/list
 original_id: api_transaction-types_list

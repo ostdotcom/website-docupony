@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-api_authentication
+id: version-0.9.1-api_authentication
 title: OST KIT⍺ API | Authenticate
 sidebar_label: authentication
 original_id: api_authentication
