@@ -28,7 +28,7 @@
       "version-1.0.0-api_airdrop_status"
     ],
     "ACTION": [
-      "version-1.0.0-api_transaction-types_create",
+      "version-1.0.0-api_actions_create",
       "version-1.0.0-api_transaction-types_edit",
       "version-1.0.0-api_transaction-types_list"
     ],
