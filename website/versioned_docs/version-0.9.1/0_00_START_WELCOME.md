@@ -1,7 +1,8 @@
 ---
-id: simpletoken
+id: version-0.9.1-simpletoken
 title: OST | Simple Token
 sidebar_label: Simple Token
+original_id: simpletoken
 ---
 
 OST stands for "Open Simple Token". The OST software platform helps you gain competitive advantage with blockchain. Our signature product, [<u>OST KIT⍺</u>](https://kit.ost.com), enables you to launch your own Branded Tokens backed by OST⍺ (also referred to as "$OST⍺").

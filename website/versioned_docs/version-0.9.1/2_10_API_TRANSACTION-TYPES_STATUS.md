@@ -1,7 +1,8 @@
 ---
-id: api_transaction-types_status
+id: version-0.9.1-api_transaction-types_status
 title: OST KIT⍺ API | Query Transaction Status
 sidebar_label: /transaction-types/status
+original_id: api_transaction-types_status
 ---
 
 Send a POST request on `/transaction-types/status` to query the status of executed transactions. Multiple uuids can be passed in a single request to receive the status of all.

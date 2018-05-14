@@ -9,7 +9,8 @@
     	"kit"],
     "SDK": [
       "sdks_overview",
-      "sdk_ruby"],
+			"sdk_ruby",
+		  "sdk_javascript"],
     "REST API": [
     	"api",
       "api_authentication"],

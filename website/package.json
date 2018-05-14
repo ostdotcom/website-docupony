@@ -10,5 +10,11 @@
   },
   "devDependencies": {
     "docusaurus": "^1.0.7"
-  }
+  },
+  "name": "website",
+  "version": "1.0.0",
+  "description": "first version of OST KIT API Documentation",
+  "main": "index.js",
+  "repository": "https://github.com/OpenSTFoundation/website-docupony.git",
+  "license": "MIT"
 }
