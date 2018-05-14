@@ -3,6 +3,66 @@ id: changelog
 title: Changelog
 sidebar_label: Changelog
 ---
+### OST KIT⍺ - 17 May 2018
+
+One of our overall goals is to make blockchain technology and access simpler for everyone. As we took a look at our current API code base as well as feedback from our community, we decided that in order to grow while keeping the platform accessible, we needed to make the code structure simpler and easier to use. As such, we revised most of our structure to be more intuitive and will hopefully be easier to add to as we scale. The following enhancements are introduced based on the feedback from the community, broadly: 
+
+ * Allow users to execute transactions with arbitrary value
+ * Allow arbitrary transfers of OSTa on the utility chain in order to deploy and interact with other contracts on the utility chain
+ * Improve existing APIs logic based on feedback
+
+Specifically:
+
+- Revised API code
+	- Improved existing API logic and structure across all APIs
+	- Documents standardized error responses
+
+- Javascript SDK documentation
+	- Release of official OST javascript SDK
+	- Modules for `user` and `transaction-types` APIs v0.9.2
+
+- Updated user API
+	- POST to `/users/create` updated to `/users` creates a user
+	- POST to `/users/edit` updated to `/users/{id}` updates a user with `{id}`
+	- GET to `/users/list` updated to, 
+		a. `/users/{id}` gets a user with `{id}`
+		b. `/users` gets users with enhanced filtering features that makes sorting easier
+
+- New action API 
+	- POST to `transaction-types/create` updated to `/actions` creates an action
+	- POST to `transaction-types/edit` updated to `/actions/{id}` updates an action with `{id}`
+	- GET to `/transaction-types/list` updated to,
+		a. `/actions/{id}` gets the action with `{id}`
+		b. `/actions` gets actions
+
+- Updated transaction-types API
+	- POST to `/transaction-types/execute` updated to `/transactions` creates new transaction
+	- GET to `/transaction-types/status` updated to, 
+		a. `/transactions/{id}` retrieves the transaction with `{id}`
+		b. `/transactions` retrieves all transactions
+	- Allows users to execute transactions with arbitrary value
+	- Allows arbitrary transfers of OST⍺ on the utility chain in order to deploy and interact with other contracts on the utility chain			
+
+- Updated airdrops API
+	- POST to `/users/airdrop/drop` updated to `/airdrops` initiates an airdrop
+	- GET to `/users/airdrop/status` updated to, 
+		a. `/airdrops/{id}` gets an airdrop with `{id}`
+		b. `/airdrops` get airdrops
+
+- New transfers API
+	- POST to `/transfers` executes an OST⍺' fund
+	- GET to `/transfers/{id}` gets OST⍺' fund with `{id}`
+	- GET to `/transfers` gets OST⍺' funds
+
+- New Token API
+	- GET to `token` gets the branded token economy information
+
+
+### OST KIT⍺ - 30 April 2018
+- Revised authentication documentation 
+	- Clearer authentication signature generation steps. 
+	- Node.js authentication code snippets for POST and GET requests.
+
 
 ### OST KIT⍺ - 19 March 2018
 
