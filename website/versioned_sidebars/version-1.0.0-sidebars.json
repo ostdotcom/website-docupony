@@ -18,21 +18,21 @@
       "version-1.0.0-api",
       "version-1.0.0-api_authentication"
     ],
-    "USER": [
+    "USERS": [
       "version-1.0.0-api_users_create",
       "version-1.0.0-api_users_edit",
       "version-1.0.0-api_users_list"
     ],
-    "AIRDROP": [
+    "AIRDROPS": [
       "version-1.0.0-api_airdrop_drop",
       "version-1.0.0-api_airdrop_status"
     ],
-    "ACTION": [
+    "ACTIONS": [
       "version-1.0.0-api_actions_create",
       "version-1.0.0-api_actions_update",
       "version-1.0.0-api_actions_list"
     ],
-    "TRANSACTION": [
+    "TRANSACTIONS": [
       "version-1.0.0-api_transaction-types_execute",
       "version-1.0.0-api_transaction-types_status"
     ]
