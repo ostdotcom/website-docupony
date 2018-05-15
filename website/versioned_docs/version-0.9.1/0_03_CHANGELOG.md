@@ -15,7 +15,7 @@ One of our overall goals is to make blockchain technology and access simpler for
 Specifically:
 
 - Revised API code
-	- Improved existing API logic and structure across all APIs
+	- Improved existing logic and structure across all APIs
 	- Standardized error responses
 
 - Released a JavaScript [SDK](https://www.npmjs.com/package/@ostdotcom/ost-sdk) and added a JavaScript SDK Quick Start [Guide](3_02_SDK_JAVASCRIPT.md)
@@ -34,7 +34,7 @@ Specifically:
 
 - Added Transactions API
 	- POST to `/transaction-types/execute` updated to `/transactions`, creates new transaction
-	- POST to `/transaction-types/status` updated to, GET to `/transactions/{id}`, retrieves the identified transaction
+	- POST to `/transaction-types/status` updated to, GET to `/transactions/{id}`, gets the identified transaction
 	- GET to `/transactions` added, gets the list of transactions
 
 - Updated Airdrops API
@@ -45,7 +45,7 @@ Specifically:
 - New Transfers API
 	- POST to `/transfers`, transfers OST⍺ Prime to an arbitrary address on the utility chain
 	- GET to `/transfers/{id},` gets the identified transfer
-	- GET to `/transfers`, gets a list of transfers
+	- GET to `/transfers`, gets the list of transfers
 
 - New Token API
 	- GET to `/token`, gets the branded token economy information
@@ -53,7 +53,7 @@ Specifically:
 
 ### OST KIT⍺ - 30 April 2018
 - Revised authentication documentation 
-	- Clearified authentication signature generation steps. 
+	- Clarified authentication signature generation steps. 
 	- Added Node.js authentication code snippets for POST and GET requests.
 
 
