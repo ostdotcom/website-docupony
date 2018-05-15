@@ -5,11 +5,11 @@ sidebar_label: List Actions
 original_id: api_actions_list
 ---
 
-Send a GET request on `/actions` to receive a list of all actions. 
+Send a GET request on `/actions` to receive a list of actions. 
 
 Within OST KIT⍺ you can set up actions to define advanced payments to tokenize your application. An action's amount can be set in branded tokens ($BT) or in fiat ($USD). This amount represents how much the action is worth each time one of your customers execute that action. 
 
-An action is of a certain kind: user_to_user, user_to_company, or company_to_user. For user_to_user kind of actions the company has the provision to set a transaction fee on that action when its executed.
+An action is of a certain kind: user_to_user, user_to_company, or company_to_user. For user_to_user kind of actions the company has the option to set a transaction fee on that action when it's executed.
 
 
 ### Input Parameters
@@ -22,20 +22,20 @@ An action is of a certain kind: user_to_user, user_to_company, or company_to_use
 | _order_by_          | string    | order the list by when the action was created (default) . Can also order by the 'name' of the action |
 | _order_             | string    | orders the list in 'desc' (default). Accepts value 'asc' to order in ascending order. |
 | _limit_             | number    | limits the number of action objects to be sent in one request. Possible Values Min 1, Max 100, Default 10.     
-
+| _optional__filters_  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below.|
 
 ### Filters on Action List
-When you send a GET to `/actions` , all actions with default input parameters mentioned above are listed. You can use filters to further refine your list. The more items you provide in your list query the fewer the number of results. Use filters so they apply to specific fields within the action object.  
+When you send a GET to `/actions` , actions with default input parameters mentioned above are listed. The resource instances up to the limit based on the offset are sent in one response. You can use filters to further refine your list. The more items you provide in your list query the fewer the number of results. Use filters so they apply to specific fields within the action object.  
 
 Each filter parameter type is a comma-separated string.
 
-|List Filters| Description                                | Example                             |
+|List Filter | Description                                | Example                             |
 |------------|--------------------------------------------|-------------------------------------|
-| _id_          | Action Id                                  | 'id="ID1, ID2"'                     |
-| _name_        | name of the action                         | 'name="Like, Upvote"'               |
-| _kind_        | the kind of the action was set during the [<u>creation of the action</u>](2_06_API_ACTIONS_CREATE.md) | 'kind="user_to_user"'|
-| _arbitrary_amount_ |  actions where the amount is set during creation or just before execution  | 'arbitrary_amount=False'|
-| _arbitrary_commission_ | actions where the commission on a user_to_user action is set during creation or just before execution | 'arbitrary_commission=True' | 
+| _id_          | Action ids                                 | 'id="ID1, ID2"'                     |
+| _name_        | names of the action                         | 'name="Like, Upvote"'               |
+| _kind_        | the kind of the action set during the [<u>creation of the action</u>](2_06_API_ACTIONS_CREATE.md) | 'kind="user_to_user"'|
+| _arbitrary_amount_ |  actions where the amount is set during creation or provided at execution  | 'arbitrary_amount= false'|
+| _arbitrary_commission_ | user_to_user actions where the commission is set during creation or provided at execution | 'arbitrary_commission=true' | 
 
 
 where the signature is derived from the API secret key and the string to sign is alphabetically sorted
