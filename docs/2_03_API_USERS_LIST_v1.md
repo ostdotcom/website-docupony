@@ -22,7 +22,11 @@ A user can own branded tokens within your branded token economy.  Users can exch
 
 where the signature is derived from the API secret key and the string to sign is alphabetically sorted
 
+<<<<<<< HEAD
 `/users/?api_key=ed0787e817d4946c7e76&request_timestamp=1526395328`
+=======
+`/users?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP`
+>>>>>>> fb64223729883a0734380f8b8cb84ef950f697f6
 
 so that the full request query reads
 
@@ -52,6 +56,7 @@ and the key `data.users` is an array of the returned `user` objects (25 users pe
 ### Example Success Response
 ```json
 {
+<<<<<<< HEAD
    "success": true,
    "data": {
       "result_type": "users",
@@ -89,6 +94,42 @@ and the key `data.users` is an array of the returned `user` objects (25 users pe
 }
 ```
 
+=======
+  "success": true,
+  "data": {
+    "result_type": "users",
+    "users": [
+      {
+        "id": "c1e5da9b-787d-4897-aa58-742f2756c71d",
+        "name": "User 1",
+        "uuid": "c1e5da9b-787d-4897-aa58-742f2756c71d",
+        "total_airdropped_tokens": "15",
+        "token_balance": "15"
+      },
+      ...
+      {
+        "id": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
+        "name": "User 25",
+        "uuid": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
+        "total_airdropped_tokens": "15",
+        "token_balance": "15"
+      }
+    ],
+    "meta": {
+      "next_page_payload": {
+        "order_by": "creation_time",
+        "order": "asc",
+        "filter": "all",
+        "page_no": 2,
+      }
+    }
+  }
+}
+```
+
+[WIP: Implement the below later]
+b. a new element in "meta" shall be "total_no" with total number of users  
+>>>>>>> fb64223729883a0734380f8b8cb84ef950f697f6
 
 ### Sample Code | Curl
 ```bash

@@ -20,7 +20,11 @@ A user can own branded tokens within your branded token economy.  Users can exch
 
 where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
+<<<<<<< HEAD
 `/users/69cc4fcd-39ca-4499-8948-c402dd83fcd8?api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526394008`
+=======
+`/users/{id}?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC&uuid=UUID`
+>>>>>>> fb64223729883a0734380f8b8cb84ef950f697f6
 
 The request url of this post request reads as
 
@@ -60,6 +64,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 
 ```json
 {
+<<<<<<< HEAD
    "success": true,
    "data": {
       "result_type": "user",
@@ -76,6 +81,21 @@ On successful edit of a user, `users` contains the edited user as a single eleme
          "token_balance": "0"
       }
    }
+=======
+  "success": true,
+  "data": {
+    "result_type": "users",
+    "users": [
+      {
+        "id": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
+        "uuid": "2f5f6388-fb0e-4812-929f-f37e5ebbfd50",
+        "name": "NAME",
+        "total_airdropped_tokens": "0",
+        "token_balance": "0"
+      }
+    ]
+  }
+>>>>>>> fb64223729883a0734380f8b8cb84ef950f697f6
 }
 ```
 
@@ -83,6 +103,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 
 ```json
 {
+<<<<<<< HEAD
  "success": false,
  "err": {
     "code": "NOT_FOUND",
@@ -90,6 +111,14 @@ On successful edit of a user, `users` contains the edited user as a single eleme
     "error_data": [],
     "internal_id": "s_cu_eu_2.1"
  }
+=======
+  "success": false,
+  "err": {
+    "code": "companyRestFulApi(s_cu_eu_2.1:rJOpl4JtG)",
+    "msg": "User not found",
+    "error_data": {}
+  }
+>>>>>>> fb64223729883a0734380f8b8cb84ef950f697f6
 }
 ```
 
