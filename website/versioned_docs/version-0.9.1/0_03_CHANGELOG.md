@@ -16,53 +16,45 @@ Specifically:
 
 - Revised API code
 	- Improved existing API logic and structure across all APIs
-	- Documents standardized error responses
+	- Standardized error responses
 
-- Javascript SDK documentation
-	- Release of official OST javascript SDK
-	- Modules for `user` and `transaction-types` APIs v0.9.2
+- Released a JavaScript [SDK](https://www.npmjs.com/package/@ostdotcom/ost-sdk) and added a JavaScript SDK Quick Start [Guide](3_02_SDK_JAVASCRIPT.md)
 
-- Updated user API
-	- POST to `/users/create` updated to `/users` creates a user
-	- POST to `/users/edit` updated to `/users/{id}` updates a user with `{id}`
-	- GET to `/users/list` updated to, 
-		a. `/users/{id}` gets a user with `{id}`
-		b. `/users` gets users with enhanced filtering features that makes sorting easier
+- Updated Users API
+	- POST to `/users/create` updated to `/users`, creates a user
+	- POST to `/users/edit` updated to `/users/{id}`, updates the identified user 
+	- GET to `/users/list` updated to `/users`, gets a list of users 
+	- GET to `/users/{id}` added, gets the identified user
 
-- New action API 
-	- POST to `transaction-types/create` updated to `/actions` creates an action
-	- POST to `transaction-types/edit` updated to `/actions/{id}` updates an action with `{id}`
-	- GET to `/transaction-types/list` updated to,
-		a. `/actions/{id}` gets the action with `{id}`
-		b. `/actions` gets actions
+- Replaced Transaction Types with Actions API 
+	- POST to `/transaction-types/create` updated to `/actions`, creates an action
+	- POST to `/transaction-types/edit` updated to `/actions/{id}`, updates the identified action
+	- GET to `/transaction-types/list` updated to`/actions/{id}`, gets the identified action
+	- GET to `/actions` added, gets the list of actions
 
-- Updated transaction-types API
-	- POST to `/transaction-types/execute` updated to `/transactions` creates new transaction
-	- GET to `/transaction-types/status` updated to, 
-		a. `/transactions/{id}` retrieves the transaction with `{id}`
-		b. `/transactions` retrieves all transactions
-	- Allows users to execute transactions with arbitrary value
-	- Allows arbitrary transfers of OST⍺ on the utility chain in order to deploy and interact with other contracts on the utility chain			
+- Added Transactions API
+	- POST to `/transaction-types/execute` updated to `/transactions`, creates new transaction
+	- POST to `/transaction-types/status` updated to, GET to `/transactions/{id}`, retrieves the identified transaction
+	- GET to `/transactions` added, gets the list of transactions
 
-- Updated airdrops API
-	- POST to `/users/airdrop/drop` updated to `/airdrops` initiates an airdrop
-	- GET to `/users/airdrop/status` updated to, 
-		a. `/airdrops/{id}` gets an airdrop with `{id}`
-		b. `/airdrops` get airdrops
+- Updated Airdrops API
+	- POST to `/users/airdrop/drop` updated to `/airdrops`, initiates an airdrop
+	- GET to `/users/airdrop/status` updated to `/airdrops/{id}`, gets the identified airdrop
+	- GET to `/airdrops` added, get the list of airdrops
 
-- New transfers API
-	- POST to `/transfers` executes an OST⍺' fund
-	- GET to `/transfers/{id}` gets OST⍺' fund with `{id}`
-	- GET to `/transfers` gets OST⍺' funds
+- New Transfers API
+	- POST to `/transfers`, transfers OST⍺ Prime to an arbitrary address on the utility chain
+	- GET to `/transfers/{id},` gets the identified transfer
+	- GET to `/transfers`, gets a list of transfers
 
 - New Token API
-	- GET to `token` gets the branded token economy information
+	- GET to `/token`, gets the branded token economy information
 
 
 ### OST KIT⍺ - 30 April 2018
 - Revised authentication documentation 
-	- Clearer authentication signature generation steps. 
-	- Node.js authentication code snippets for POST and GET requests.
+	- Clearified authentication signature generation steps. 
+	- Added Node.js authentication code snippets for POST and GET requests.
 
 
 ### OST KIT⍺ - 19 March 2018
