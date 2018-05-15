@@ -1,8 +1,9 @@
----
-id: changelog
+ ---
+id: version-0.9.1-changelog
 title: Changelog
 sidebar_label: Changelog
----
+original_id: changelog	
+ ---
 
 ### OST KIT⍺ - 17 May 2018
 
