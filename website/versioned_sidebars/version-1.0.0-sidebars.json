@@ -30,7 +30,8 @@
     "ACTIONS": [
       "version-1.0.0-api_actions_create",
       "version-1.0.0-api_actions_update",
-      "version-1.0.0-api_actions_list"
+      "version-1.0.0-api_actions_list",
+      "version-1.0.0-api_actions_retrieve"
     ],
     "TRANSACTIONS": [
       "version-1.0.0-api_transaction-types_execute",
