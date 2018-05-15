@@ -31,22 +31,22 @@ Specifically:
 	- POST to `/transaction-types/create` updated to `/actions`, creates an action
 	- POST to `/transaction-types/edit` updated to `/actions/{id}`, updates the identified action
 	- GET to `/transaction-types/list` updated to`/actions/{id}`, gets the identified action
-	- GET to `/actions` added, gets the list of actions
+	- GET to `/actions` added, gets a list of actions
 
 - Added Transactions API
 	- POST to `/transaction-types/execute` updated to `/transactions`, creates new transaction
 	- POST to `/transaction-types/status` updated to, GET to `/transactions/{id}`, gets the identified transaction
-	- GET to `/transactions` added, gets the list of transactions
+	- GET to `/transactions` added, gets a list of transactions
 
 - Updated Airdrops API
 	- POST to `/users/airdrop/drop` updated to `/airdrops`, initiates an airdrop
 	- GET to `/users/airdrop/status` updated to `/airdrops/{id}`, gets the identified airdrop
-	- GET to `/airdrops` added, get the list of airdrops
+	- GET to `/airdrops` added, get a list of airdrops
 
-- New Transfers API
+- Added Transfers API
 	- POST to `/transfers`, transfers OST⍺ Prime to an arbitrary address on the utility chain
 	- GET to `/transfers/{id},` gets the identified transfer
-	- GET to `/transfers`, gets the list of transfers
+	- GET to `/transfers`, gets a list of transfers
 
 - New Token API
 	- GET to `/token`, gets the branded token economy information
