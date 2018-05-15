@@ -31,20 +31,22 @@ Each filter parameter type is a comma-separated string.
 
 |List Filter | Description                                | Example                             |
 |------------|--------------------------------------------|-------------------------------------|
-| _id_          | Action ids                                 | 'id="ID1, ID2"'                     |
+| _id_          | Action ids                                 | 'id="20346, 20346"'                     |
 | _name_        | names of the action                         | 'name="Like, Upvote"'               |
 | _kind_        | the kind of the action set during the [<u>creation of the action</u>](2_06_API_ACTIONS_CREATE.md) | 'kind="user_to_user"'|
 | _arbitrary_amount_ |  actions where the amount is set during creation or provided at execution  | 'arbitrary_amount= false'|
 | _arbitrary_commission_ | user_to_user actions where the commission is set during creation or provided at execution | 'arbitrary_commission=true' | 
 
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted
+The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
-` ** to work on **`
+As an example
+
+`/actions/?api_key=6078017455d8be7d9f07&kind=user_to_user%2Cuser_to_company&request_timestamp=1526322094`
 
 so that the full request query reads
 
-> GET - `** to work on ** `
+> GET - `https://playgroundapi.ost.com/v1/actions/?api_key=6078017455d8be7d9f07&kind=user_to_user%2Cuser_to_company&request_timestamp=1526322094&signature=76256ec37e6a8567095be3e222c97edc9ff3ca4464b070c4d11b35aa84b86420`
 
 ### JSON Response Object
 
@@ -54,13 +56,7 @@ so that the full request query reads
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/transaction-types` the `data.result_type` is the string "transactions_types" and the key `data.transactions_types` is an array of all `transaction_types` objects. In addition `client_id`, `price_points`, and `client_tokens` are returned.   ** TO TEST FIRST AND THEN PUT IN **
-
-### Data Object attributes
-
-| Parameter           | Type   | Definition  |
-|---------------------|--------|-------------------------------------|
-|| | ** TO TEST FIRST AND THEN PUT IN ** |
+On calling `/actions` the `data.result_type` is the string "action" and the key `data.action` is an array containing the requested action objects.
 
 
 ### Action Object Attributes
@@ -68,70 +64,77 @@ For api calls to `/transaction-types` the `data.result_type` is the string "tran
 | Parameter           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_                | number | identifier for the created action|
-| _name_              | string    | (mandatory) name of the action, unique |
-| _kind_              | string    | an action can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company. |
-| _currency_          | string    | (mandatory) type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle.  The action creation fails if the price point is outside of the accepted margins set by the company. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
-| _arbitrary_amount_  | boolean   | (mandatory) True/False. You can choose to set the amount of the action either at the time of creating the action or set it just before the action is executed each time. A 'True' value considers that the amount is to be set before the action is executed each time. And a 'False' means the action has a static amount that is set at the time of creation.  | 
+| _name_              | string    | name of the action, unique |
+| _kind_              | string    | Cannot update an action kind.  |
+| _currency_          | string    | type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle.  The action creation fails if the price point is outside of the accepted margins set by the company. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
+| _arbitrary_amount_  | boolean   | true/false. You have an option to set a static amount for the action either at the time of creating or updating the action or you can be provide the amount dynamically during execution. A 'true' value considers that the amount is to be provided during execution dynamically. And a 'false' means the action has a static amount that is to be updated with update request.  | 
 | _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
-| _arbitrary_commission_ |boolean | True/False. Like '_arbitrary_amount_' you can also choose to set the commission of the action either at the time of creating a user_to_user action or set it just before the user_to_user action is executed each time. |
+| _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' you also have an option to set the commission on the action either static at the time of creating or updating a user_to_user action or provide it dynamically during execution. |
 | _commission_percent_| string<float>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
 
-### Client Tokens Object Attributes
-
-| Parameter           | Type   | Definition  |
-|---------------------|--------|----------------------------------|
-| | | ** TO TEST FIRST AND THEN PUT IN ** |
 
 ### Example Success Response
 ```json
 {
-  // ** TO TEST FIRST AND THEN PUT IN THE CORRECT ONE ** //
-  "success": true,
-  "data": {
-    "client_id": 1018,
-    "result_type": "transaction_types",
-    "transaction_types": [
-      {
-        "id": "20216",
-        "client_transaction_id": "20216",
-        "name": "Upvote",
-        "kind": "user_to_user",
-        "currency_type": "USD",
-        "currency_value": "0.20000",
-        "commission_percent": "0.1",
-        "status": "active"
-      },
-      ...
-      {
-        "id": "20221",
-        "client_transaction_id": "20221",
-        "name": "Download",
-        "kind": "user_to_company",
-        "currency_type": "USD",
-        "currency_value": "0.10000",
-        "commission_percent": "0",
-        "status": "active"
+   "success": true,
+   "data": {
+      "result_type": "actions",
+      "actions": [
+         {
+            "id": "20350",
+            "name": "TWITTER HANDLE",
+            "kind": "user_to_company",
+            "currency": "BT",
+            "amount": "100",
+            "arbitrary_amount": false,
+            "commission_percent": NULL,
+            "arbitrary_commission": false
+         },
+         {
+            "id": "20349",
+            "name": "TWITTER",
+            "kind": "user_to_company",
+            "currency": "BT",
+            "amount": "100",
+            "arbitrary_amount": false,
+            "commission_percent": NULL,
+            "arbitrary_commission": false
+         },
+         {
+            "id": "20037",
+            "name": "Like",
+            "kind": "user_to_user",
+            "currency": "USD",
+            "amount": "0.01000",
+            "arbitrary_amount": false,
+            "commission_percent": "12.00",
+            "arbitrary_commission": false
+         },
+         {
+            "id": "20023",
+            "name": "Purchase",
+            "kind": "user_to_user",
+            "currency": "USD",
+            "amount": "1.00000",
+            "arbitrary_amount": false,
+            "commission_percent": "1.00",
+            "arbitrary_commission": false
+         },
+         {
+            "id": "20021",
+            "name": "HEY WORLD",
+            "kind": "user_to_company",
+            "currency": "BT",
+            "amount": "1",
+            "arbitrary_amount": false,
+            "commission_percent": NULL,
+            "arbitrary_commission": false
+         }
+      ],
+      "meta": {
+         "next_page_payload": {}
       }
-    ],
-    "meta": {
-      "next_page_payload": {}
-    },
-    "price_points": {
-      "OST": {
-        "USD": "0.197007"
-      }
-    },
-    "client_tokens": {
-      "client_id": 1018,
-      "name": "ACME",
-      "symbol": "ACM",
-      "symbol_icon": "token_icon_6",
-      "conversion_factor": "0.21326",
-      "token_erc20_address": "0xEa1c45D934d287fec813C74021A5d692278bE5e9",
-      "airdrop_contract_addr": "0xaA5460105E39184B5e43a925bf8Da17EED64BE68",
-      "simple_stake_contract_addr": "0xf892f80567A97C54b2852316c0F2cA5eb186a0AD"
-    }
-  }
+   }
 }
 ```
 

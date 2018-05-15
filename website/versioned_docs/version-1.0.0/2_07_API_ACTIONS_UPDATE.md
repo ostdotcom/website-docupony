@@ -75,7 +75,7 @@ api_key=6078017455d8be7d9f07&currency=BT&name=MissionComplete&request_timestamp=
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-On calling `/actions` the `data.result_type` is the string "action" and the key `data.action` is an array containing the created action object.
+On calling `/actions` the `data.result_type` is the string "action" and the key `data.action` is an array containing the updated action object.
 
 ### Action Object Attributes
 
