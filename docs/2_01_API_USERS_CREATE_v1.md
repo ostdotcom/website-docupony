@@ -19,7 +19,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 
 where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
 
-`/users?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
+`/users/?api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526388800`
 
 The request url of this post request reads as
 
@@ -59,19 +59,22 @@ On successful creation of the user, `users` contains the created user as a singl
 
 ```json
 {
-  "success": true,
-  "data": {
-    "result_type": "users",
-    "users": [
-      {
-        "id": "574b456d-5da6-4353-ad7c-9b70893e757b",
-        "uuid": "574b456d-5da6-4353-ad7c-9b70893e757b",
-        "name": "NAME",
-        "total_airdropped_tokens": 0,
-        "token_balance": 0
+   "success": true,
+   "data": {
+      "result_type": "user",
+      "user": {
+         "id": "d9c97f83-85d5-46b5-a4fb-c73011cbd803",
+         "addresses": [
+            [
+               "198",
+               "0x9352880A2A4c05c41eC1962980Bb1a0bA4176182"
+            ]
+         ],
+         "name": "Alice",
+         "airdropped_tokens": 0,
+         "token_balance": 0
       }
-    ],
-  }
+   }
 }
 ```
 
@@ -82,8 +85,9 @@ On a failed authentication the response is returned with status code 401 and the
 {
   "success": false,
   "err": {
-    "code": "companyRestFulApi(401:HJg2HK0A_f)",
-    "msg": "Unauthorized",
+    "code": "Unauthorized",
+    "msg": "Authentication Failure",
+    "internal_id" : "companyRestFulApi(401:HJg2HK0A_f)",
     "error_data": {}
   }
 }
@@ -91,16 +95,18 @@ On a failed authentication the response is returned with status code 401 and the
 however when a request is invalid the response is returned with successful status code 200, but `success = false` and the `err.msg` and `err.error_data` contain further information.
 ```json
 {
-  "success": false,
-  "err": {
-    "code": "companyRestFulApi(s_a_g_1:rJndQJkYG)",
-    "msg": "invalid params",
-    "error_data": [
-      {
-        "name": "Only letters, numbers and spaces allowed. (Max 20 characters)"
-      }
-    ]
-  }
+   "success": false,
+   "err": {
+      "code": "invalid_request",
+      "msg": "At least one parameter is invalid or missing. See err.error_data for more details.",
+      "error_data": [
+         {
+            "parameter": "name",
+            "msg": "Must be a minimum of 3 characters, a maximum of 20 characters, and can contain only letters, numbers, and spaces, along with other common sense limitations."
+         }
+      ],
+      "internal_id": "s_a_g_2"
+   }
 }
 ```
 

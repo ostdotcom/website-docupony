@@ -22,7 +22,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 
 where the signature is derived from the API secret key and the string to sign is alphabetically sorted
 
-`/users?api_key=API_KEY&filter=FILTER&order=ORDER&order_by=ORDER_BY&page_no=PAGE_NO&request_timestamp=REQUEST_TIMESTAMP`
+`/users/?api_key=ed0787e817d4946c7e76&request_timestamp=1526395328`
 
 so that the full request query reads
 
@@ -52,40 +52,43 @@ and the key `data.users` is an array of the returned `user` objects (25 users pe
 ### Example Success Response
 ```json
 {
-  "success": true,
-  "data": {
-    "result_type": "users",
-    "users": [
-      {
-        "id": "c1e5da9b-787d-4897-aa58-742f2756c71d",
-        "name": "User 1",
-        "uuid": "c1e5da9b-787d-4897-aa58-742f2756c71d",
-        "total_airdropped_tokens": "15",
-        "token_balance": "15"
-      },
-      ...
-      {
-        "id": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
-        "name": "User 25",
-        "uuid": "461c10ea-2b6c-42e8-9fea-b997995cdf8b",
-        "total_airdropped_tokens": "15",
-        "token_balance": "15"
+   "success": true,
+   "data": {
+      "result_type": "users",
+      "users": [
+         {
+            "id": "3b679b8b-b56d-48e5-bbbe-7397899c8ca6",
+            "addresses": [
+               [
+                  "198",
+                  "0x0d6fE7995175198bd7ad4242fCa4CA8539b509c7"
+               ]
+            ],
+            "name": "Alice",
+            "airdropped_tokens": "0",
+            "token_balance": "0"
+         },
+         {
+            "id": "d1c0be68-30bd-4b06-af73-7da110dc62da",
+            "addresses": [
+               [
+                  "198",
+                  "0x7b01d73494eb5D2B073eeafB5f8c779CE45853f1"
+               ]
+            ],
+            "name": "Bob",
+            "airdropped_tokens": "0",
+            "token_balance": "0"
+         }
+      ],
+      "meta": {
+         "next_page_payload": {},
+         "total_no": 2
       }
-    ],
-    "meta": {
-      "next_page_payload": {
-        "order_by": "creation_time",
-        "order": "asc",
-        "filter": "all",
-        "page_no": 2,
-      }
-    }
-  }
+   }
 }
 ```
 
-[WIP: Implement the below later]
-b. a new element in "meta" shall be "total_no" with total number of users  
 
 ### Sample Code | Curl
 ```bash
