@@ -11,7 +11,6 @@ Within OST KIT⍺ you can set up actions to define advanced payments to tokenize
 
 Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer.
 
-An action is of a certain kind: user_to_user, user_to_company, or company_to_user. For user_to_user kind of actions the company has the option to set a commission on that action when its executed.
 
 ### Input Parameters
 | Parameter           | Type   | Definitions                                               |
@@ -24,7 +23,7 @@ An action is of a certain kind: user_to_user, user_to_company, or company_to_use
 | _currency_          | string    | (mandatory) type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
 | _arbitrary_amount_  | boolean   | (mandatory) true/false. Indicates whether amount (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction).  | 
 | _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
-| _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_'  indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction). |
+| _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' this attribute indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction). |
 | _commission_percent_| string<float>  | for user_to_user action you have an option to set commission percentage. The commission is inclusive in the _amount_ and the percentage of the amount goes to the OST partner company. Possible values (min 0%, max 100%) |
 
 ### Interdependency of Parameters
@@ -86,7 +85,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 | _currency_          | string    | (mandatory) type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
 | _arbitrary_amount_  | boolean   | (mandatory) true/false. Indicates whether amount (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction). | 
 | _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
-| _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_'  indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction).  |
+| _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' this attribute indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction).  |
 | _commission_percent_| string<float>  | for user_to_user action you have an option to set commission percentage. The commission is inclusive in the _amount_ and the complement goes to the OST partner company. Possible values (min 0%, max 100%) |
 
 
