@@ -11,7 +11,7 @@ Within OST KIT⍺ you can set up actions to define advanced payments to tokenize
 
 Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer.
 
-An action is of a certain kind: user_to_user, user_to_company, or company_to_user. For user_to_user kind of actions the company has the provision to set a transaction fee on that action when its executed.
+An action is of a certain kind: user_to_user, user_to_company, or company_to_user. For user_to_user kind of actions the company has the option to set a commission on that action when its executed.
 
 ### Input Parameters
 | Parameter           | Type   | Value                                               |
@@ -21,26 +21,49 @@ An action is of a certain kind: user_to_user, user_to_company, or company_to_use
 | _signature_         | hexstring | (mandatory) [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _name_              | string    | (mandatory) name of the action, unique |
 | _kind_              | string    | an action can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company. |
-| _currency_          | string    | (mandatory) type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle.  The action creation fails if the price point is outside of the accepted margins set by the company. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
-| _arbitrary_amount_  | boolean   | (mandatory) True/False. You can choose to set the amount of the action either at the time of creating the action or set it just before the action is executed each time. A 'True' value considers that the amount is to be set before the action is executed each time. And a 'False' means the action has a static amount that is set at the time of creation.  | 
+| _currency_          | string    | (mandatory) type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
+| _arbitrary_amount_  | boolean   | (mandatory) true/false. You have an option to set a static amount for the action either at the time of creating or updating the action or to provided it dynamically during execution. A 'true' value considers that the amount is to be provided during execution. And a 'false' means the action has a static amount that is set at the time of creation of the action.  | 
 | _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
-| _arbitrary_commission_ |boolean | True/False. Like '_arbitrary_amount_' you can also choose to set the commission of the action either at the time of creating a user_to_user action or set it just before the user_to_user action is executed each time. |
-| _commission_percent_| string<float>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
+| _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' you also have an option to set the commission on the action either static at the time of creating or updating a user_to_user action or provide it dynamically during execution. |
+| _commission_percent_| string<float>  | for user_to_user action you have an option to set commission percentage. The commission is inclusive in the _amount_ and the percentage of the amount goes to the OST partner company. Possible values (min 0%, max 100%) |
 
-where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
+### Interdependency of Parameters
+Truth Table showing the 'amount'  and 'arbitrary_amount' interdependency and expected behaviors
 
-`/actions/?api_key=API_KEY&arbitrary_amount=FALSE&arbitrary_commission=FALSE&amount=AMOUNT&commission_percent=COMMISSION_PERCENT&currency=CURRENCY_TYPE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP`
+| Value in arbitrary_amount | Value in amount  |  Expected Behaviors               |
+|---------------------|--------|-----------------------------------------------------|
+|  true    |  specified     |   Throws Validation Error  (Error Handling Doc)  |
+|  true    |  not specified |  Successfully creates action, amount will be expected during execution |
+|  false   |  not specified | Throws Validation Error   (Error Handling Doc)   |
+|  false   |  specified     |  Successfully creates action, amount will be static set at the time creation or updation. |
+
+Truth Table showing the 'kind' , 'commission_percent'  and 'arbitrary_commission' interdependency and expected behaviors
+
+| Value in kind | Value in arbitrary_commission | Value in commission_percent  |  Expected Behaviors               |
+|---------------------|--------|--------------------------|---------------------------|
+|   user_to_user  | true    |  specified     |   Throws Validation Error  (Error Handling Doc)  |
+|  user_to_user | true    |  not specified |  Successfully creates action, comission will be expected during execution. |
+|  user_to_user | false   |  not specified |  Successfully creates action. And since setting commission for an action is optional. These settings say the respective action has no commission set on it. |
+|  user_to_user | false   |  specified     |  Successfully creates action, commission will be static set at the time creation or updation. |
+
+
+The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
+
+As an example
+
+`/actions/?api_key=6078017455d8be7d9f07&arbitrary_amount=true&currency=BT&kind=company_to_user&name=Collect&request_timestamp=1526309259`
+
 
 The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/actions`
+> POST - `https://playgroundapi.ost.com/v1/actions`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
 ```
 Content-Type: application/x-www-form-urlencoded
 
-api_key=API_KEY&arbitrary_amount=FALSE&arbitrary_commission=FALSE&amount=AMOUNT&commission_percent=COMMISSION_PERCENT&currency=CURRENCY_TYPE&kind=KIND&name=NAME&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE        
+api_key=6078017455d8be7d9f07&arbitrary_amount=true&currency=BT&kind=company_to_user&name=Collect&request_timestamp=1526309259&signature=db94792fa24de9f87cf7669e3766ad5eae4cf622f6d08df85ce522fed2c83feb       
 
 ```
 ### JSON Response Object
@@ -51,60 +74,67 @@ api_key=API_KEY&arbitrary_amount=FALSE&arbitrary_commission=FALSE&amount=AMOUNT&
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-**To check and change** On calling `/actions` the `data.result_type` is the string "transactions" and the key `data.transactions` is an array containing the created transaction type object.
+On calling `/actions` the `data.result_type` is the string "action" and the key `data.action` is an array containing the created action object.
 
 ### Action Object Attributes
 
-| Parameter           | Type   | Definition  |
+| Parameter           | Type   | Definitions  |
 |---------------------|--------|----------------------------------|
 | _id_                | number | identifier for the created action|
 | _name_              | string    | (mandatory) name of the action, unique |
-| _kind_              | string    | an action can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company" to clearly determine whether value flows within the application or from or to the company. |
-| _currency_          | string    | (mandatory) type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle.  The action creation fails if the price point is outside of the accepted margins set by the company. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
-| _arbitrary_amount_  | boolean   | (mandatory) True/False. You can choose to set the amount of the action either at the time of creating the action or set it just before the action is executed each time. A 'True' value considers that the amount is to be set before the action is executed each time. And a 'False' means the action has a static amount that is set at the time of creation.  | 
+| _kind_              | string    | an action can be one of three kinds:  "user_to_user", "company_to_user", or "user_to_company"  |
+| _currency_          | string    | (mandatory) type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
+| _arbitrary_amount_  | boolean   | (mandatory) true/false. The amount of the action either at the time of creating the action or is provided each time at the execution. A 'true' value considers that the amount is to be provided at the execution. And a 'false' means the action has a static amount that is set at the time of creation of the action  | 
 | _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
-| _arbitrary_commission_ |boolean | True/False. Like '_arbitrary_amount_' you can also choose to set the commission of the action either at the time of creating a user_to_user action or set it just before the user_to_user action is executed each time. |
-| _commission_percent_| string<float>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
-
+| _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' you can also choose to set the commission of the action either at the time of creating a user_to_user action or it can be provided at the execution each time. |
+| _commission_percent_| string<float>  | for user_to_user action you have an option to set commission percentage. The commission is inclusive in the _amount_ and the complement goes to the OST partner company. Possible values (min 0%, max 100%) |
 
 
 ### Example Success Response
 ```json
 {
-  "success": true,
-  "data": {
-    "result_type": "transactions",
-    "transactions": [
-      {
-        "id": 10170,
-       
+   "success": true,
+   "data": {
+      "result_type": "action",
+      "action": {
+         "id": 20831,
+         "name": "Collect",
+         "kind": "company_to_user",
+         "currency": "BT",
+         "arbitrary_amount": "true",
       }
-    ]
-  }
+   }
 }
-
 ```
-
+### Parameter Dependent Validations
 
 ### Example Failure Response
-
-**  Conflict or validation errors in case of dependent parameters and their values. To include in tabular format!? ** 
-For a failed authentication the response is returned with status code 401 and the body can look like this,
 ```json
 {
   "success": false,
   "err": {
-    // ** to work on **
+    "code": "Unauthorized",
+    "msg": "Authentication Failure",
+    "internal_id" : "companyRestFulApi(401:HJg2HK0A_f)",
+    "error_data": {}
   }
 }
 ```
 however when a request is invalid the response is returned with status code 200 and the message and error data contain further information.
 ```json
 {
-  "success": false,
-  "err": {
-    // ** to work on **
-  }
+   "success": false,
+   "err": {
+      "code": "invalid_request",
+      "msg": "At least one parameter is invalid or missing. See err.error_data for more details.",
+      "internal_id" : "companyRestFulApi(401:HJg2HK0A_f)",
+      "error_data": [
+         {
+            "parameter": "name",
+            "msg": "An action with that name already exists."
+         }
+      ]
+   }
 }
 ```
 
@@ -114,6 +144,6 @@ curl --request
 # ** to work on **
 ```
 
->_last updated 13th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 15th May 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v2 | OpenST Platform v0.9.2
