@@ -10,7 +10,7 @@ Send a GET request to `/transactions` to get a list of executed transactions.
 Within OST KIT⍺ you can set up actions to define advanced payments to tokenize your application. And when your end-users perform these actions in your application tokens are transfered between two entities. These  token transfers are listed via `/transactions` API and can happen between users or company_to_user or user_to_company.
 
 ### Input Parameters
-| Parameter           | Type   | Value                                               |
+| Parameter           | Type   | Definitions                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
@@ -53,7 +53,7 @@ For API calls to `/transactions` the `result_type` is a string "transactions", t
 
 ### Response Transaction Object Attributes
 
-| Parameter           | Type   | Definition  |
+| Parameter           | Type   | Definitions  |
 |---------------------|--------|----------------------------------|
 | _id_| string | id of the transaction |
 | _from_user_id_    | string | origin user of the branded token transaction   |
