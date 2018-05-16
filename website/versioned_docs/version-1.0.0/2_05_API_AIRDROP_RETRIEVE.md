@@ -26,7 +26,7 @@ As an example
 
 so that the full request uri and form reads
 
-> GET - `https://sandboxapi.ost.com/v1//airdrops/bc6dc9e1-6e62-4032-8862-6f664d8d7541?api_key=6078017455d8be7d9f07&request_timestamp=1526356757&signature=da0ae03280c789e2c07a414013e7c166ba9ddea50b7b03c6fbb40026572590df`
+> GET - `https://sandboxapi.ost.com/v1/airdrops/bc6dc9e1-6e62-4032-8862-6f664d8d7541?api_key=6078017455d8be7d9f07&request_timestamp=1526356757&signature=da0ae03280c789e2c07a414013e7c166ba9ddea50b7b03c6fbb40026572590df`
 
 ### JSON Response Object
 
@@ -49,6 +49,7 @@ On calling `/airdrops/{id}` the `data.result_type` is a string "airdrop" and the
 #### **_current status_**
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
+| _incomplete_ | String | The string to represent that the airdrop is still to be queued for processing. |
 | _pending_   | String | The string to represent that airdrop is still in process.
 | _failed_  | String | The string to represent that the airdrop has failed.
 | _complete_   | String | The string to represent that the airdrop process is complete.|
@@ -86,18 +87,18 @@ On calling `/airdrops/{id}` the `data.result_type` is a string "airdrop" and the
 ### Example Failure Response
 ```json
 {
-   "success": false,
-   "err": {
-      "code": "invalid_request",
-      "msg": "At least one parameter is invalid or missing. See err.error_data for more details.",
+  "code": "401",
+  "body": {
+    "success": false,
+    "err": {
+      "code": "UNAUTHORIZED",
+      "msg": "We could not authenticate the request. Please review your credentials and authentication method.",
       "error_data": [
-         {
-             "parameter": "id",
-             "msg": "The airdrop Id is not valid. Please check your Id and re-send the request."
-         }
+
       ],
-      "internal_id": "s_am_gas_2"
-   }
+      "internal_id": "a_1"
+    }
+  }
 }
 ```
 

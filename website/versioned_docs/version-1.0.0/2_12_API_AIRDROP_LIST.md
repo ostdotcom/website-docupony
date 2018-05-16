@@ -6,7 +6,7 @@ original_id: api_airdrop_list
 ---
 
 
-Send a GET request to `/airdrops` to receive a list airdrop.
+Send a GET request to `/airdrops` to receive a list airdrops.
 
 Gets a paginated list of airdrops executed. This API can also be used to understand the status of multiple airdrops in a single request incases when you execute multiple airdrops simultaneouly.
 
@@ -51,7 +51,7 @@ so that the full request uri and form reads
 | _err_      | object | (optional) describing error if not successful |
 
 
-On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key `data.airdrop` is an array containing the requested airdrop objects.
+On calling `/airdrops` the `data.result_type` is a string "airdrops" and the key `data.airdrops` is an array containing the requested airdrop objects.
 
 ### Airdrop Object Attributes
 | Attributes           | Type   | Definitions  |
@@ -63,6 +63,7 @@ On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key 
 #### **_current status_**
 | Attribute | Type    | Description                                   |
 |-----------|---------|------------------------------------------|
+| _incomplete_ | String | The string to represent that the airdrop is still to be queued for processing. |
 | _pending_   | String | The string to represent that airdrop is still in process.
 | _failed_  | String | The string to represent that the airdrop has failed.
 | _complete_   | String | The string to represent that the airdrop process is complete.|

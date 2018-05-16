@@ -11,7 +11,7 @@ You can use this API to send or reward your end-users a selected amount of brand
 
 
 ### Input Parameters
-| Parameter | Type    | Value                                    |
+| Parameter | Type    | Definitions                                    |
 |-----------|---------|------------------------------------------|
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
@@ -27,7 +27,7 @@ Truth Table showing 'airdropped' and 'user_ids' interdependency and expected beh
 |-----------|---------|------------------------------------------|
 | true  | comma-separated list of user ids| Extracts a list of all users you have been airdropped tokens at least once.  Further refines the list to specific user ids passed in parameter 'user_ids'. This refined list is sent the tokens specified in the 'amount' parameter. |
 | true | _user_ids_ are not sent in the api request | Extracts a list of all users you have been airdropped tokens at least once. This list is sent the tokens specified in the 'amount' parameter. |
-| false | comma-separated list of user ids | Extracts a list of all users you have never been airdropped tokens further refines the list to specific user ids passed in parameter 'user_ids'. This refined list is sent the tokens specified in the 'amount' parameter. |
+| false | comma-separated list of user ids | Extracts a list of all users you have **never** been airdropped tokens further refines the list to specific user ids passed in parameter 'user_ids'. This refined list is sent the tokens specified in the 'amount' parameter. |
 | false | _user_ids_ are not sent in the api request | Extracts a list of all users you have **never** been airdropped tokens. This list is sent the tokens specified in the 'amount' parameter. |
 | _airdropped_ value is not set | comma-separated list of user ids | The list to specific user ids is sent the tokens specified in the 'amount' parameter. | 
 | _airdropped_ value is not set | _user_ids_ are not sent in the api request | **ALL** users are sent the  tokens specified in the 'amount' parameter. |
@@ -61,7 +61,7 @@ amount=10&api_key=6078017455d8be7d9f07&request_timestamp=1526356651&user_ids=f6e
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key `data.airdrop` is an object containing the attributes of the airdrop. The 'id' in this object can be used to check the airdrop status using the RETRIEVE AN AIRDROP API endpoint.
+On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key `data.airdrop` is an object containing the attributes of the airdrop. The 'id' in this object can be used to check the airdrop status using the [<u>retrieve an airdrop</u>](/docs/api_airdrop_retrieve.html) API endpoint.
 
 
 ### Example Success Response
@@ -84,10 +84,15 @@ On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key 
 {
    "success": false,
    "err": {
-      "code": "no_users_found_for_this_list_type",
-      "msg": "No users found to airdrop for this list type",
-      "error_data": [],
-      "internal_id": "l_aa_sa_10"
+      "code": "BAD_REQUEST",
+      "msg": "At least one parameter is invalid or missing. See \"err.error_data\" array for more details.",
+      "error_data": [
+         {
+            "parameter": "id",
+            "msg": "Invalid airdrop id"
+         }
+      ],
+      "internal_id": "s_am_gas_3"
    }
 }
 ```
