@@ -25,7 +25,7 @@
     ],
     "AIRDROPS": [
       "version-1.0.0-api_airdrop_execute",
-      "version-1.0.0-api_airdrop_status"
+      "version-1.0.0-api_airdrop_retrieve"
     ],
     "ACTIONS": [
       "version-1.0.0-api_actions_create",
