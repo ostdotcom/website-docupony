@@ -4,19 +4,20 @@ title: OST KIT⍺ API | Update A User
 sidebar_label: Update A User
 ---
 
-Post to `/users/{id}` to edit an existing `user` for a given unique identifier within the application.
+Send a POST-request to `/users/{id}` to update an existing `user`. The {id} within the API endpoint is a unique identifier, which is returned during the creation of a user or is returned as `id` when a GET-request is sent to `/users`.
 
-A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
+This API updates the specified `user` by setting the values of the parameters passed. Any parameter not provided will be left unchanged.
+
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens by performing the respective actions you defined.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
-| Parameter           | Type      | Mandatory| Description  |
+| Parameter           | Type      | Definition  |
 |---------------------|-----------|--------|
-| _api_key_           | string    | yes | API key obtained from [kit.ost.com](https://kit.ost.com) |
-| _request_timestamp_ | number    | yes| epoch time in seconds of current time |
-| _signature_         | hexstring | yes | [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
-| _uuid_              | uuid      | yes| uuid of the user to edit |
-| _name_              | string    | no |new name of the user (not unique) |
+| _api_key_           | string     | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
+| _signature_         | hexstring  |(mandatory) [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _name_              | string    |new name of the user (not unique) |
 
 where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
@@ -25,14 +26,14 @@ where the signature is derived from the API secret key and the string to sign.Th
 
 The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/users/{id}`
+> POST - `https://sandboxapi.ost.com/v1//users/{id}`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
 ```
 Content-Type: application/x-www-form-urlencoded
 
-api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE&uuid=UUID
+api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526394008
 
 ```
 ### JSON Response Object
@@ -52,7 +53,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 | Parameter | Type   | Description  |
 |-----------|--------|--------|
 | _id_      | string | user id |
-| _addresses_    | array | [(chain id, address),(chain id, address)]  |
+| _addresses_    | array | [(chain id, address),(chain id, address)], e.g. [(1409, 0x21bFfb1c7910e9D0393E3f655E921FB47F70ab56), 1409, 0x45tFfb1c7910e9F0393E3f655E921FB47F98ab56)]  |
 | _name_    | string | name of the user (not unique)  |
 | _airdropped_tokens_ | string [number] | 	total amount of airdropped tokens to the user |
 | _token_balance_           | string [number] | current balance of the user |
@@ -97,7 +98,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 ### Sample Code | Curl
 ```bash
 curl --request POST \
---url 'https://playgroundapi.ost.com/users/{id}' \
+--url 'https://sandboxapi.ost.com/v1//users/{id}' \
 --header 'Accept: application/json' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \

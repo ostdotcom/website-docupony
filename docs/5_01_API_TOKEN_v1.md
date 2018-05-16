@@ -13,13 +13,13 @@ This `Branded Token` will be used by your token economy's users and your company
 The information you receive by performing this request also includes your `Simple Stake Contract Address`. A situation, in which this information could be relevant, would be if you want to find out your current OST⍺ balance available for transfers to non-OST KIT accounts on the utility chain. This could be the case if you have the intention to deploy your own smart contracts.
 
 
-### Input Parameters [WIP]
+### Input Parameters
 
-| Parameter           | Type      | Mandatory| Description  |
+| Parameter           | Type      | Definition  |
 |---------------------|-----------|--------|
-| _api_key_           | string    | yes | API key obtained from [kit.ost.com](https://kit.ost.com) |
-| _request_timestamp_ | number    | yes| epoch time in seconds of current time |
-| _signature_         | hexstring | yes | [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _api_key_           | string     | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number   | (mandatory) epoch time in seconds of current time |
+| _signature_         | hexstring | (mandatory) [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 
 where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
@@ -28,14 +28,14 @@ where the signature is derived from the API secret key and the string to sign.Th
 
 The request url of this post request reads as
 
-> GET - `https://playgroundapi.ost.com/token`
+> GET - `https://sandboxapi.ost.com/v1/token`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
 ```
 Content-Type: application/x-www-form-urlencoded
 
-api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE&uuid=UUID
+api_key=ed0787e817d4946c7e76&request_timestamp=1526462863
 
 ```
 ### JSON Response Object
@@ -61,10 +61,10 @@ For api calls to `/token` the `data.result_type` is the string "token".
 | _token_erc20_address_    | address | prefixed hexstring address of the branded token erc20 contract on the utility chain  |
 | _airdrop_contract_address_    | address | prefixed hexstring address of the airdrop / pricer contract that regulates payments of branded tokens with actions  |
 | _simple_stake_contract_address_    | address | prefixed hexstring address of the simple stake contract which holds the OST⍺ on Ethereum Ropsten testnet which has been staked to mint branded tokens  |
-| _total_supply_    | string [number] | Total supply of BTs|
+| _total_supply_    | string [number] | Total supply of Branded Tokens|
 | _ost_value_balance_    | string [number] | OST⍺ amount ropsten  |
 | _ost_utility_balance_    | array | OST⍺ on utility chains with chain IDs and amounts as an array of tuples (3, amount)  |
-| _price_points_    | object | Contains the OST price point in USD and the BT price point in USD  |
+| _price_points_    | object | Contains the OST price point in USD and the Branded Tokens price point in USD  |
 
 
 ### Example Success Response
@@ -113,11 +113,11 @@ For api calls to `/token` the `data.result_type` is the string "token".
 }
 ```
 
-### Sample Code | Curl [MISSING]
+### Sample Code | Curl
 
 ```bash
 curl --request GET \
---url 'https://playgroundapi.ost.com/users/{id}' \
+--url 'https://sandboxapi.ost.com/v1/token' \
 --header 'Accept: application/json' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \

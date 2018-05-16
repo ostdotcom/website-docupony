@@ -6,16 +6,16 @@ sidebar_label: Create A User
 
 Post to `/users` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
 
-A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens by performing the respective actions you defined.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
-| Parameter           | Type      | Mandatory  | Description |
-|---------------------|-----------|--------|---------------
-| _api_key_           | string    | yes    | API key obtained from [kit.ost.com](https://kit.ost.com)|
-| _request_timestamp_ | number    | yes| epoch time in seconds of current time |
-| _signature_         | hexstring | yes | [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
-| _name_              | string    | no | name of the user (not unique) |
+| Parameter           | Type        | Definition |
+|---------------------|-----------|---------------
+| _api_key_           | string      | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com)|
+| _request_timestamp_ | number     | (mandatory) epoch time in seconds of current time |
+| _signature_         | hexstring  | (mandatory) [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _name_              | string     | name of the user (not unique) |
 
 where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
 
@@ -25,14 +25,14 @@ where the signature is derived from the API secret key and the string to sign. T
 
 The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/users`
+> POST - ` https://sandboxapi.ost.com/v1/users`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
 ```
 Content-Type: application/x-www-form-urlencoded
 
-api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE
+api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526388800
 
 ```
 ### JSON Response Object
@@ -43,19 +43,19 @@ api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/users` the `data.result_type` is the string "economy_users"
+For api calls to `/users` the `data.result_type` is the string "users"
 and the key `data.users` is an array of `user` objects.
 On successful creation of the user, `users` contains the created user as a single element.
 
 ### User Object Attributes
 
-| Parameter | Type   | Filter   | Description  |
+| Parameter | Type      | Description  |
 |-----------|--------|--------|
-| _id_      | string | yes | user id (uuid copy, deprecated) |
-| _addresses_    | array | no| [(chain id, address),(chain id, address)]  |
-| _name_    | string | no |name of the user (not unique)  |
-| _airdropped_tokens_| string [number] | no | total amount of airdropped tokens to the user |
-| _token_balance_           | string [number]| no |current balance of the user  |
+| _id_      | string  | user id (uuid copy, deprecated) |
+| _addresses_    | array | [(chain id, address),(chain id, address)], e.g. [(1409, 0x21bFfb1c7910e9D0393E3f655E921FB47F70ab56), 1409, 0x45tFfb1c7910e9F0393E3f655E921FB47F98ab56)]  |
+| _name_    | string |name of the user (not unique)  |
+| _airdropped_tokens_| string [number] | total amount of airdropped tokens to the user |
+| _token_balance_           | string [number] |current balance of the user  |
 
 ### Example Success Response
 
@@ -87,10 +87,10 @@ On a failed authentication the response is returned with status code 401 and the
 {
   "success": false,
   "err": {
-    "code": "Unauthorized",
-    "msg": "Authentication Failure",
-    "internal_id" : "companyRestFulApi(401:HJg2HK0A_f)",
-    "error_data": {}
+    "code": "UNAUTHORIZED",
+    "msg": "We could not authenticate the request. Please review your credentials and authentication method.",
+    "error_data": [ ],
+    "internal_id": "a_1"
   }
 }
 ```
@@ -115,7 +115,7 @@ however when a request is invalid the response is returned with successful statu
 ### Sample Code | Curl
 ```bash
 curl --request POST \
---url 'https://playgroundapi.ost.com/users' \
+--url 'https://sandboxapi.ost.com/v1/users' \
 --header 'Accept: application/json' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
