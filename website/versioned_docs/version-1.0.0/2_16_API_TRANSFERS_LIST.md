@@ -17,7 +17,7 @@ OST KIT⍺ only knows about transfers of OST⍺ Prime made via the OST KIT⍺ Tr
 |-----------|------|-----------------------------------------------|
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
-| _signature_         | hexstring | (mandatory) [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _signature_         | hexstring | (mandatory) [<u>signature generated</u>](/docs/api_authentication.html) for current request |
 |_page_no_            | number    | page number (starts from 1)|
 | _order_by_          | string    | order the list by when the transfer was created (default) |
 | _order_             | string    | orders the list in 'desc' (default). Accepts value 'asc' to order in ascending order. |
@@ -71,7 +71,7 @@ On calling `/transfers`, `data.result_type` is the string "transfers" and `data.
 | _block_number_      | string\<number\> | (optional) the block on the chain in which the  was included (`null`, initially) |
 | _chain_id_          | string\<number\> | the identifier of the chain to which the transaction was sent |
 
-### Example Success Response
+### Example Success Response Body
 
 ```json
 {
@@ -119,7 +119,7 @@ On calling `/transfers`, `data.result_type` is the string "transfers" and `data.
 
 ```
 
-### Example Failure Responses
+### Example Failure Response Body
 
 On a failed authentication, the response will have a `code` 401 and there will be an `err` object that contains further information. The body will look like this,
 
@@ -127,11 +127,13 @@ On a failed authentication, the response will have a `code` 401 and there will b
 {
   "success": false,
   "err": {
-    "internal_id": "companyRestFulApi(401:HJg2HK0A_f)",
     "code": "UNAUTHORIZED",
     "msg": "We could not authenticate the request. Please review your credentials and authentication method.",
-    "error_data": {}
-  },
+    "error_data": [
+
+    ],
+    "internal_id": "a_1"
+  }
 }
 ```
 
@@ -146,6 +148,6 @@ curl --request GET \
 --form limit=2 \
 ```
 
->_last updated 17th May 2018_; for support see [<u>help.ost.com</u>](help.ost.com)
+>_last updated 17th May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

@@ -15,7 +15,7 @@ OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST
 |---------------------|-----------|--------|
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
-| _signature_         | hexstring | (mandatory) [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _signature_         | hexstring | (mandatory) [<u>signature generated</u>](/docs/api_authentication.html) for current request |
 | _to_address_        | hexstring | (mandatory) public address to which to transfer OST⍺ Prime |
 | _amount_            | number    | (mandatory) amount of OST⍺ Prime to transfer _in Wei_; should be between 0 and 10^20, exclusive |
 
@@ -115,13 +115,15 @@ On a failed authentication, the response will have a `code` 401. The body will l
   "err": {
     "code": "UNAUTHORIZED",
     "msg": "We could not authenticate the request. Please review your credentials and authentication method.",
-    "error_data": [ ],
+    "error_data": [
+
+    ],
     "internal_id": "a_1"
   }
 }
 ```
 
-The OST⍺ Prime balance for a token economy can be retrieved by making a [<u>GET request to /tokens</u>](2_99_API_TOKENS.md). More OST⍺ Prime can be obtained through the [<u>OST KIT⍺ dashboard</u>](https://kit.ost.com).
+The OST⍺ Prime balance for a token economy can be retrieved by making a [<u>GET request to /tokens</u>](/docs/api_token_retrieve.html). More OST⍺ Prime can be obtained through the [<u>OST KIT⍺ dashboard</u>](https://kit.ost.com).
 
 ### Sample Code | Curl
 ```bash
@@ -135,6 +137,6 @@ curl --request POST \
 --form amount=1 \
 ```
 
->_last updated 17th May 2018_; for support see [<u>help.ost.com</u>](help.ost.com)
+>_last updated 17th May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
