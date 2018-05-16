@@ -20,7 +20,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
 
 
-`/users/?api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526388800`
+`/users/?api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526388800&signature=1370bc4398eb5f6811f4713d6fd79ddf8230a64258b7cd4b4a29482ff8ccf7a2`
 
 
 The request url of this post request reads as
@@ -32,7 +32,7 @@ and the parameters are sent in the request body with default `application/x-www-
 ```
 Content-Type: application/x-www-form-urlencoded
 
-api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526388800
+api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526388800&signature=1370bc4398eb5f6811f4713d6fd79ddf8230a64258b7cd4b4a29482ff8ccf7a2
 
 ```
 ### JSON Response Object
@@ -52,7 +52,7 @@ On successful creation of the user, `users` contains the created user as a singl
 | Parameter | Type      | Description  |
 |-----------|--------|--------|
 | _id_      | string  | user id (uuid copy, deprecated) |
-| _addresses_    | array | [(chain id, address),(chain id, address)], e.g. [(1409, 0x21bFfb1c7910e9D0393E3f655E921FB47F70ab56), 1409, 0x45tFfb1c7910e9F0393E3f655E921FB47F98ab56)]  |
+| _addresses_    | array | [(chain id, address)], e.g. [(1409, 0x21bFfb1c7910e9D0393E3f655E921FB47F70ab56)]  |
 | _name_    | string |name of the user (not unique)  |
 | _airdropped_tokens_| string [number] | total amount of airdropped tokens to the user |
 | _token_balance_           | string [number] |current balance of the user  |
