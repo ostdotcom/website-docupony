@@ -38,7 +38,8 @@
       "version-1.0.0-api_transaction-types_status"
     ],
     "TRANSFERS": [
-      "version-1.0.0-api_transfers_create"
+      "version-1.0.0-api_transfers_create",
+      "version-1.0.0-api_transfers_list"
     ]
   }
 }
