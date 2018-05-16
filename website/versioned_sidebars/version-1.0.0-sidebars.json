@@ -25,8 +25,9 @@
       "version-1.0.0-api_users_list"
     ],
     "AIRDROPS": [
-      "version-1.0.0-api_airdrop_drop",
-      "version-1.0.0-api_airdrop_status"
+      "version-1.0.0-api_airdrop_execute",
+      "version-1.0.0-api_airdrop_retrieve",
+      "version-1.0.0-api_airdrop_list"
     ],
     "ACTIONS": [
       "version-1.0.0-api_actions_create",
