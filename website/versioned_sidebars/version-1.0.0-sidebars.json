@@ -34,7 +34,7 @@
       "version-1.0.0-api_actions_retrieve"
     ],
     "TRANSACTIONS": [
-      "version-1.0.0-api_transaction-types_execute",
+      "version-1.0.0-api_transaction_list",
       "version-1.0.0-api_transaction-types_status"
     ],
     "TRANSFERS": [
