@@ -39,7 +39,8 @@
     ],
     "TRANSFERS": [
       "version-1.0.0-api_transfers_create",
-      "version-1.0.0-api_transfers_list"
+      "version-1.0.0-api_transfers_list",
+      "version-1.0.0-api_transfers_retrieve"
     ]
   }
 }
