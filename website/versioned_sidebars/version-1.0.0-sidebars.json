@@ -17,7 +17,7 @@
     "REST API": [
       "version-1.0.0-api",
       "version-1.0.0-api_authentication",
-      "version-1.0.0-error-handling"
+      "version-1.0.0-api_error_handling"
     ],
     "USERS": [
       "version-1.0.0-api_users_create",
@@ -38,7 +38,6 @@
       "version-1.0.0-api_action_execute",
       "version-1.0.0-api_transaction_list",
       "version-1.0.0-api_transaction_retrieve"
-      "version-1.0.0-api_transaction-types_status"
     ],
     "TRANSFERS": [
       "version-1.0.0-api_transfers_create",

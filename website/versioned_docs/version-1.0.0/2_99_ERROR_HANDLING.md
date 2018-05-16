@@ -1,8 +1,8 @@
 ---
-id: version-1.0.0-error-handling
-title: OST | Error Handling
+id: version-1.0.0-api_error_handling
+title: OST KIT⍺ API | Error Handling
 sidebar_label: Error Handling
-original_id: error-handling
+original_id: api_error_handling
 ---
 
 We use HTTP response status codes to indicate the success or failure of an API request. OST returns `4xx` or `5xx` status codes.
@@ -40,3 +40,8 @@ codes corresponding HTTP response status codes along with error messages to help
 | 422 | INSUFFICIENT_FUNDS | The account executing the transaction or transfer does not have sufficient funds to complete the transaction or transfer. |  Reduce the amount to transfer and execute the request again. | 
 |     | UNPROCESSABLE_ENTITY | An error occurred while processing the request.  | Check the information provided and try again.|
 | 500 | INTERNAL_SERVER_ERROR | Something went wrong | This is usually a temporary error, when the endpoint is temporarily having issues. Check in the gitter forums in case others are having similar issues or try again later. If the problem persists log a ticket on [help.ost.com](help.ost.com) | 
+
+
+>_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
