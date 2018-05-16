@@ -16,7 +16,8 @@
     ],
     "REST API": [
       "version-1.0.0-api",
-      "version-1.0.0-api_authentication"
+      "version-1.0.0-api_authentication",
+      "version-1.0.0-error-handling"
     ],
     "USERS": [
       "version-1.0.0-api_users_create",

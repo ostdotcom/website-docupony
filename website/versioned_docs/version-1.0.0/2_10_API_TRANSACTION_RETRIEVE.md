@@ -63,8 +63,8 @@ For API calls to `/transactions/{id}` the `result_type` is a string "transaction
 | _gas_used_ | string | (optional) hexadecimal value of the gas used to execute the tranaction
 | _transaction_fee_ | string | (optional) the value of the gas used at the gas price
 | _block_number_ | number | (optional) the block on the chain in which the transaction was included
-| _amount_ | string | (optional) the amount of branded tokens transferred to the destination user  **AMOUNT IN currency specified for that action**|
-| _commission_amount_ | string | (optional) the amount of branded tokens transferred to the company **AMOUNT IN currency specified for that action**|
+| _amount_ | string | (optional) the amount of branded tokens transferred to the destination user  |
+| _commission_amount_ | string | (optional) the amount of branded tokens transferred to the company |
 
 
 ### Sample Success Response
