@@ -7,7 +7,7 @@ original_id: api_transfers_list
 
 To retrieve a list of OST⍺ Prime transfers, send a GET request to `/transfers`.
 
-OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST KIT⍺. The fees for transactions performed through OST KIT⍺ on a utility chain are paid for with OST⍺ Prime; in the same way, to deploy and interact with contracts separate from OST KIT⍺ on a utility chain, an account must have a sufficient balance of OST⍺ Prime to cover the attendant transaction fees.
+OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST KIT⍺. The fees for transactions performed through OST KIT⍺ on a utility chain are paid for with OST⍺ Prime; in the same way, to deploy contracts and interact with them on a utility chain, an account must have a sufficient balance of OST⍺ Prime to cover transaction fees.
 
 OST KIT⍺ only knows about transfers of OST⍺ Prime made via the OST KIT⍺ Transfer API. If transfers are effected through other means, that information cannot be retrieved by sending a GET request to `/transfers`.
 
@@ -26,7 +26,7 @@ OST KIT⍺ only knows about transfers of OST⍺ Prime made via the OST KIT⍺ Tr
 
 
 ### Filters on Transfers List
-When you send a GET to `/Transfers`, a paginated response listing the transfers is sent. You can use filters to further refine your list.
+When you send a GET to `/transfers`, a paginated response listing the transfers is sent. You can use filters to further refine your list.
 
 Each filter parameter type is a comma-separated string.
 
@@ -42,7 +42,7 @@ As an example
 
 The request url of this GET request reads as
 
-> GET - `https://sandboxapi.ost.com/v1/transactions/?api_key=6078017455d8be7d9f07&limit=2&request_timestamp=1526452463&signature=b6edbce2f37ef5fa50818bbdd2e1eeb3a877d555b928b0b9665a367c9a02fa00`
+> GET - `https://sandboxapi.ost.com/v1/transfers/?api_key=6078017455d8be7d9f07&limit=2&request_timestamp=1526452463&signature=b6edbce2f37ef5fa50818bbdd2e1eeb3a877d555b928b0b9665a367c9a02fa00`
 
 ### JSON Response Object
 
@@ -60,16 +60,16 @@ On calling `/transfers`, `data.result_type` is the string "transfers" and `data.
 | Parameter | Type   | Definition  |
 |-----------|--------|--------|
 | _id_                | string | identifier for the transfer object |
-| _from_address_      | string | token economy reserve address from which OST⍺ Prime is transferred |
+| _from_address_      | string | token economy reserve address that is controlled by OST KIT⍺ from which OST⍺ Prime is transferred |
 | _to_address_        | string | address to which to transfer OST⍺ Prime |
 | _amount_            | string\<number\> | amount of OST⍺ Prime to transfer *in Wei* |
 | _transaction_hash_  | string | the generated transaction hash (`null`, initially) |
 | _timestamp_         | number | epoch time in milliseconds of current time |
-| _status_            | string | the execution status of the transaction type: "processing", "failed" or "complete" |
-| _gas_price_         | string\<number\> | value of the gas utilized for the transaction |
-| _gas_used_          | string | (optional) hexadecimal value of the gas used to execute the transaction (`null`, initially) |
-| _block_number_      | string\<number\> | (optional) the block on the chain in which the  was included (`null`, initially) |
-| _chain_id_          | string\<number\> | the identifier of the chain to which the transaction was sent |
+| _status_            | string | the execution status of the transfer: "processing", "failed" or "complete" |
+| _gas_price_         | string\<number\> | value of the gas utilized for the transfer |
+| _gas_used_          | string | (optional) hexadecimal value of the gas used to execute the transfer (`null`, initially) |
+| _block_number_      | string\<number\> | (optional) the block on the chain in which the transfer was included (`null`, initially) |
+| _chain_id_          | string\<number\> | the identifier of the chain to which the transfer transaction was sent |
 
 ### Example Success Response Body
 

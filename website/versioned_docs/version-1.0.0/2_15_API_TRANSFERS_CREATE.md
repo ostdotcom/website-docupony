@@ -7,7 +7,7 @@ original_id: api_transfers_create
 
 To transfer OST⍺ Prime to an account outside of your branded token economy, send a POST request to `/transfers`.
 
-OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST KIT⍺. The fees for transactions performed through OST KIT⍺ on a utility chain are paid for with OST⍺ Prime; in the same way, to deploy and interact with contracts separate from OST KIT⍺ on a utility chain, an account must have a sufficient balance of OST⍺ Prime to cover the attendant transaction fees.
+OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST KIT⍺. The fees for transactions performed through OST KIT⍺ on a utility chain are paid for with OST⍺ Prime; in the same way, to deploy contracts and interact with them on a utility chain, an account must have a sufficient balance of OST⍺ Prime to cover transaction fees.
 
 ### Input Parameters
 
@@ -21,7 +21,7 @@ OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST
 
 #### **`to_address`**
 
-The private keys used to perform OST KIT⍺ token economy transactions are controlled by OST KIT⍺. In order to send a transaction to a utility chain separate from OST KIT⍺, such as a transaction that deploys a smart contract, the transaction will need to be signed by a private key that is not controlled by OST KIT⍺ and for which the account has a sufficient OST⍺ Prime balance to pay for the transaction fee.
+In order to deploy a smart contract on a utility chain, you will have to send a transaction to it. This transaction needs to be signed by a private key that you control. To pay for this transaction your account should have a sufficient OST⍺ Prime balance.
 
 In order to fund an account with OST⍺ Prime by sending a POST request to `/transfers`, provide the public address for the private key of that account as the `to_address`. The `to_address` for an OST⍺ Prime transfer should be a public Ethereum address for which you have control over the private key.
 
@@ -54,7 +54,7 @@ amount=1&api_key=ed0787e817d4946c7e77&request_timestamp=1526461383&to_address=0x
 
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
 | _success_  | bool   | post successfulness |
 | _data_     | object | (optional) data object describing result if successful   |
@@ -65,19 +65,19 @@ For calls to `/transfers`, `data.result_type` is the string "transfer" and `data
 
 ### Transfer Object Attributes
 
-| Parameter | Type   | Value  |
+| Parameter | Type   | Definition  |
 |-----------|--------|--------|
 | _id_                | string | identifier for the transfer object |
-| _from_address_      | string | token economy reserve address from which OST⍺ Prime is transferred |
+| _from_address_      | string | token economy reserve address that is controlled by OST KIT⍺ from which OST⍺ Prime is transferred |
 | _to_address_        | string | address to which to transfer OST⍺ Prime |
 | _amount_            | string\<number\> | amount of OST⍺ Prime to transfer *in Wei* |
 | _transaction_hash_  | string | the generated transaction hash (`null`, initially) |
 | _timestamp_         | number | epoch time in milliseconds of current time |
-| _status_            | string | the execution status of the transaction type: "processing", "failed" or "complete" |
-| _gas_price_         | string\<number\> | value of the gas utilized for the transaction |
-| _gas_used_          | string | (optional) hexadecimal value of the gas used to execute the transaction (`null`, initially) |
-| _block_number_      | string\<number\> | (optional) the block on the chain in which the  was included (`null`, initially) |
-| _chain_id_          | string\<number\> | the identifier of the chain to which the transaction was sent |
+| _status_            | string | the execution status of the transfer: "processing", "failed" or "complete" |
+| _gas_price_         | string\<number\> | value of the gas utilized for the transfer |
+| _gas_used_          | string | (optional) hexadecimal value of the gas used to execute the transfer (`null`, initially) |
+| _block_number_      | string\<number\> | (optional) the block on the chain in which the transfer was included (`null`, initially) |
+| _chain_id_          | string\<number\> | the identifier of the chain to which the transfer transaction was sent |
 
 
 ### Example Success Response Body

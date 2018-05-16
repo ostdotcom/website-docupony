@@ -5,9 +5,9 @@ sidebar_label: Retrieve a Transfer
 original_id: api_transfers_retrieve
 ---
 
-To retrieve a specific OST⍺ Prime transfer, send a GET request to `/transfers/{id}`. The `{id}` in the API endpoint is a unique identifier that is returned during the [<u>creation of the transfer</u>](/docs/api_transfers_create.html). 
+To retrieve a specific OST⍺ Prime transfer, send a GET request to `/transfers/{id}`. The `{id}` in the API endpoint is a unique identifier that is returned during the [<u>creation of the transfer</u>](/docs/api_transfers_create.html).
 
-OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST KIT⍺. The fees for transactions performed through OST KIT⍺ on a utility chain are paid for with OST⍺ Prime; in the same way, to deploy and interact with contracts separate from OST KIT⍺ on a utility chain, an account must have a sufficient balance of OST⍺ Prime to cover the attendant transaction fees.
+OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST KIT⍺. The fees for transactions performed through OST KIT⍺ on a utility chain are paid for with OST⍺ Prime; in the same way, to deploy contracts and interact with them on a utility chain, an account must have a sufficient balance of OST⍺ Prime to cover transaction fees.
 
 ### Input Parameters
 The retrieve API only takes the mandatory authentication parameters as inputs.
@@ -44,16 +44,16 @@ For calls to `/transfers/{id}`, `data.result_type` is the string "transfer" and 
 | Parameter | Type   | Definition  |
 |-----------|--------|--------|
 | _id_                | string | identifier for the transfer object |
-| _from_address_      | string | token economy reserve address from which OST⍺ Prime is transferred |
+| _from_address_      | string | token economy reserve address that is controlled by OST KIT⍺ from which OST⍺ Prime is transferred |
 | _to_address_        | string | address to which to transfer OST⍺ Prime |
 | _amount_            | string\<number\> | amount of OST⍺ Prime to transfer *in Wei* |
 | _transaction_hash_  | string | the generated transaction hash (`null`, initially) |
 | _timestamp_         | number | epoch time in milliseconds of current time |
-| _status_            | string | the execution status of the transaction type: "processing", "failed" or "complete" |
-| _gas_price_         | string\<number\> | value of the gas utilized for the transaction |
-| _gas_used_          | string | (optional) hexadecimal value of the gas used to execute the transaction (`null`, initially) |
-| _block_number_      | string\<number\> | (optional) the block on the chain in which the  was included (`null`, initially) |
-| _chain_id_          | string\<number\> | the identifier of the chain to which the transaction was sent |
+| _status_            | string | the execution status of the transfer: "processing", "failed" or "complete" |
+| _gas_price_         | string\<number\> | value of the gas utilized for the transfer |
+| _gas_used_          | string | (optional) hexadecimal value of the gas used to execute the transfer (`null`, initially) |
+| _block_number_      | string\<number\> | (optional) the block on the chain in which the transfer was included (`null`, initially) |
+| _chain_id_          | string\<number\> | the identifier of the chain to which the transfer transaction was sent |
 
 
 ### Example Success Response Body
