@@ -41,7 +41,7 @@ The the signature is derived from the API secret key and the string to sign is a
 
 so that the full request query reads
 
-> GET - `https://sandboxapi.ost.com/v1/users`
+> GET - `https://sandboxapi.ost.com/v1/users?api_key=ed0787e817d4946c7e76&request_timestamp=1526395328&signature=1370bc4398eb5f6811f4713d6fd79ddf8230a64258b7cd4b4a29482ff8ccf7a2`
 
 ### JSON Response Object
 
@@ -59,7 +59,7 @@ and the key `data.users` is an array of the returned `user` objects (10 users pe
 | Parameter | Type   | Description  |
 |-----------|--------|--------|
 | _id_      | string | user id |
-| _addresses_    | array | [(chain id, address),(chain id, address)]  |
+| _addresses_    | array | [(chain id, address)], e.g. [(1409, 0x21bFfb1c7910e9D0393E3f655E921FB47F70ab56)]  |
 | _name_    | string | name of the user (not unique)  |
 | _airdropped_tokens_ | string [number] | 	total amount of airdropped tokens to the user |
 | _token_balance_           | string [number] | current balance of the user |
@@ -136,4 +136,4 @@ curl --request GET \
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT⍺ v1 | OpenST Platform v0.9.2
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

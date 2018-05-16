@@ -28,7 +28,7 @@ where the signature is derived from the API secret key and the string to sign.Th
 
 The request url of this post request reads as
 
-> GET - `https://sandboxapi.ost.com/v1/token`
+> GET - `https://sandboxapi.ost.com/v1/token?api_key=ed0787e817d4946c7e76&request_timestamp=1526395328&signature=1370bc4398eb5f6811f4713d6fd79ddf8230a64258b7cd4b4a29482ff8ccf7a2`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
@@ -128,4 +128,4 @@ curl --request GET \
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
 >
-> OST KIT⍺ v1 | OpenST Platform v0.9.2
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
