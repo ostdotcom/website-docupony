@@ -5,7 +5,7 @@ sidebar_label: Create a Transfer
 original_id: api_transfers_create
 ---
 
-To transfer OST⍺ Prime to an account outside of your token economy, send a POST request to `/transfers`.
+To transfer OST⍺ Prime to an account outside of your branded token economy, send a POST request to `/transfers`.
 
 OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST KIT⍺. The fees for transactions performed through OST KIT⍺ on a utility chain are paid for with OST⍺ Prime; in the same way, to deploy and interact with contracts separate from OST KIT⍺ on a utility chain, an account must have a sufficient balance of OST⍺ Prime to cover the attendant transaction fees.
 
@@ -16,8 +16,8 @@ OST⍺ Prime is the base token on the OpenST-Protocol utility chains used by OST
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
 | _signature_         | hexstring | (mandatory) [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
-| _to_address_        | hexstring | public address to which to transfer OST⍺ Prime |
-| _amount_            | number    | amount of OST⍺ Prime to transfer _in Wei_; should be between 0 and 10^20, exclusive |
+| _to_address_        | hexstring | (mandatory) public address to which to transfer OST⍺ Prime |
+| _amount_            | number    | (mandatory) amount of OST⍺ Prime to transfer _in Wei_; should be between 0 and 10^20, exclusive |
 
 #### **`to_address`**
 
