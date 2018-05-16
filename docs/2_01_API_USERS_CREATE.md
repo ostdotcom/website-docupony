@@ -1,29 +1,29 @@
 ---
 id: api_users_create
 title: OST KIT⍺ API | Create A User
-sidebar_label: Create A User
+sidebar_label: /users/create
 ---
 
-Post to `/users` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
+Post to `/users/create` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
 
 A user can own branded tokens within your branded token economy.  Users can exchange branded tokens within your application through transaction types.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy.
 
 ### Input Parameters
 
-| Parameter           | Type      | Mandatory  | Description |
-|---------------------|-----------|--------|---------------
-| _api_key_           | string    | yes    | API key obtained from [kit.ost.com](https://kit.ost.com)|
-| _request_timestamp_ | number    | yes| epoch time in seconds of current time |
-| _signature_         | hexstring | yes | [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
-| _name_              | string    | no | name of the user (not unique) |
+| Parameter           | Type      | Value  |
+|---------------------|-----------|--------|
+| _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
+| _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _name_              | string    | name of the user |
 
-where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
+where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
-`/users?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
+`/users/create?api_key=API_KEY&name=NAME&request_timestamp=EPOCH_TIME_SEC`
 
 The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/users`
+> POST - `https://playgroundapi.ost.com/users/create`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
@@ -35,25 +35,25 @@ api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE
 ```
 ### JSON Response Object
 
-| Key        | Type   | Description      |
+| Key        | Type   | Value      |
 |------------|--------|------------|
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/users` the `data.result_type` is the string "economy_users"
-and the key `data.users` is an array of `user` objects.
-On successful creation of the user, `users` contains the created user as a single element.
+For api calls to `/users/create` the `data.result_type` is the string "economy_users"
+and the key `data.economy_users` is an array of `user` objects.
+On successful creation of the user, `economy_users` contains the created user as a single element.
 
 ### User Object Attributes
 
-| Parameter | Type   | Filter   | Description  |
+| Parameter | Type   | Value  |
 |-----------|--------|--------|
-| _name_    | string | no |name of the user (not unique)  |
-| _id_      | string | yes | user id (uuid copy, deprecated) |
-| _addresses_    | array | no| [(chain id, address),(chain id, address)]  |
-| _total_airdropped_tokens_| string <number> | no | total amount of airdropped tokens to the user |
-| _token_balance_           | string <number>| no |current balance of the user  |
+| _name_    | string | name of the user  |
+| _id_      | string | (uuid copy, deprecated) |
+| _uuid_    | string | unique identifier for the user  |
+| _total_airdropped_tokens_ | number | cumulative amount airdropped to the user |
+| _token_balance_           | number | balance of the user (including current airdrop budget)  |
 
 ### Example Success Response
 
@@ -61,7 +61,7 @@ On successful creation of the user, `users` contains the created user as a singl
 {
   "success": true,
   "data": {
-    "result_type": "users",
+    "result_type": "economy_users",
     "economy_users": [
       {
         "id": "574b456d-5da6-4353-ad7c-9b70893e757b",
