@@ -7,7 +7,7 @@ original_id: api_action_execute
 
 Send a POST request on `/transactions` to execute an action.
 
-Within OST KIT⍺ you can [<u>set up actions</u>](2_06_API_ACTIONS_CREATE.md) to define advanced payments to tokenize your application. When your end-users perform these actions in your application tokens need to be transfered between two entities. To  transfers your branded tokens POST request to `/transactions` is sent. These transfers can happen between users or company_to_user or user_to_company.
+Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html) to define advanced payments to tokenize your application. When your end-users perform these actions in your application tokens need to be transfered between two entities. To  transfers your branded tokens POST request to `/transactions` is sent. These transfers can happen between users or company_to_user or user_to_company.
 
 
 ### Input Parameters
@@ -19,8 +19,8 @@ Within OST KIT⍺ you can [<u>set up actions</u>](2_06_API_ACTIONS_CREATE.md) to
 | _from_uuid_    | string | user or company from whom to send the funds |
 | _to_uuid_      | string | user or company to whom to send the funds |
 | _action_id_ | number | id of the action that is to be executed. |
-| _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100). _amount_ is set at execution when parameter  _arbitrary_amount_ is set to true while  [<u>defining the action</u>](2_06_API_ACTIONS_CREATE.md) specified in _action_id_ .    |
-| _commission_percent_| string<float>  | for a user_to_user action commission percentage is set at execution when parameter _arbitrary_commission_ is set to true while  [<u>defining the action</u>](2_06_API_ACTIONS_CREATE.md) specified in _action_id_ . The commission is inclusive in the _amount_ and the percentage commission goes to the OST partner company. Possible values (min 0%, max 100%) |
+| _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100). _amount_ is set at execution when parameter  _arbitrary_amount_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ .    |
+| _commission_percent_| string<float>  | for a user_to_user action commission percentage is set at execution when parameter _arbitrary_commission_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ . The commission is inclusive in the _amount_ and the percentage commission goes to the OST partner company. Possible values (min 0%, max 100%) |
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 

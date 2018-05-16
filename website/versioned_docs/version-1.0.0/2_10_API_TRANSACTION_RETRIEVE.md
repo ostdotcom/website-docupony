@@ -5,9 +5,9 @@ sidebar_label: Retrieve a Transaction
 original_id: api_transaction_retrieve
 ---
 
-Send a POST request on `/transactions/{id}` to get a specific transaction executed. The {id} in the API endpoint is a unique identifier that is returned during the [<u>execution of the action</u>](2_09_API_ACTION_EXECUTE.md)
+Send a POST request on `/transactions/{id}` to get a specific transaction executed. The {id} in the API endpoint is a unique identifier that is returned during the [<u>execution of the action</u>](/docs/api_action_execute.html)
 
-Within OST KIT⍺ you can [<u>set up actions</u>](2_06_API_ACTIONS_CREATE.md). When your end-users perform these defined actions in your application tokens are transfered between two entities. If you want to know status of a specific token transfer `/transactions/{id}` API can be used.
+Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html). When your end-users perform these defined actions in your application tokens are transfered between two entities. If you want to know status of a specific token transfer `/transactions/{id}` API can be used.
 
 
 ### Input Parameters
