@@ -18,7 +18,7 @@ Within OST KIT⍺ you can set up actions to define advanced payments to tokenize
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
-| _signature_         | hexstring | (mandatory) [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request | 
+| _signature_         | hexstring | (mandatory) [<u>signature generated</u>](api_authentication.html) for current request | 
 | _name_              | string    | unique name of the action |
 | _kind_              | string    | Cannot update an action kind.  |
 | _currency_          | string    | type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle.  The action creation fails if the price point is outside of the accepted margins set by the company. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |

@@ -14,7 +14,7 @@ Successfully integrating the SDK requires having Ruby installed on your system: 
 To use the SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
-2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](1_00_KIT_OVERVIEW.md).
+2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](kit_overview.html).
 3. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer API Console</u>](https://kit.ost.com/developer-api-console):
 
 ![API Credentials](assets/Developer_section.jpg)
