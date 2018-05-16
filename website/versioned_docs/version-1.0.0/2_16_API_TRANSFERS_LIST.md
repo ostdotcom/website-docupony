@@ -57,7 +57,7 @@ On calling `/transfers`, `data.result_type` is the string "transfers" and `data.
 
 ### Transfer Object Attributes
 
-| Parameter | Type   | Value  |
+| Parameter | Type   | Definition  |
 |-----------|--------|--------|
 | _id_                | string | identifier for the transfer object |
 | _from_address_      | string | token economy reserve address from which OST⍺ Prime is transferred |
@@ -138,7 +138,7 @@ On a failed authentication, the response will have a `code` 401 and there will b
 ### Sample Code | Curl
 ```bash
 curl --request GET \
---url 'https://sandboxapi.ost.com/v1.0/transfers' \
+--url 'https://sandboxapi.ost.com/v1/transfers' \
 --header 'Accept: application/json' \
 --form request_timestamp=1526452463 \
 --form signature=b6edbce2f37ef5fa50818bbdd2e1eeb3a877d555b928b0b9665a367c9a02fa00 \
