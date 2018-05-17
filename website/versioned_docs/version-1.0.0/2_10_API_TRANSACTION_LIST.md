@@ -61,14 +61,14 @@ For API calls to `/transactions` the `result_type` is a string "transactions", t
 | _to_user_id_      | string | destination user of the branded token transaction  |
 | _transaction_hash_ | hexstring | the generated transaction hash |
 | _action_id_ | number | id of the action that was executed. |
-| _timestamp_  |string| universal time stamp value of execution of the transaction in milliseconds|
+| _timestamp_  | number | universal time stamp value of execution of the transaction in milliseconds|
 | _status_ | string | the execution status of the transaction: "processing", "failed" or "complete" |
 | _gas_price_ | string\<number\> | value of the gas utilized for the transaction |
-| _gas_used_ | string | (optional) hexadecimal value of the gas used to execute the tranaction
-| _transaction_fee_ | string | (optional) the value of the gas used at the gas price
-| _block_number_ | number | (optional) the block on the chain in which the transaction was included
-| _amount_ | string | (optional) the amount of branded tokens transferred to the destination user |
-| _commission_amount_ | string | (optional) the amount of branded tokens transferred to the company |
+| _gas_used_ | number | (optional) hexadecimal value of the gas used to execute the tranaction
+| _transaction_fee_ | string\<float\> | (optional) the value of the gas used at the gas price
+| _block_number_ | string\<number\> | (optional) the block on the chain in which the transaction was included
+| _amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the destination user |
+| _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company |
 
 
 ### Sample Success Response

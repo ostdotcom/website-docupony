@@ -16,7 +16,7 @@ You can use this API to send or reward your end-users a selected amount of brand
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
 | _signature_         | hexstring | (mandatory) [<u>signature generated</u>](/docs/api_authentication.html) for current request |
-| _amount_   | Float | (mandatory) The amount of BT that needs to be air-dropped to the selected end-users.  Example:10 |
+| _amount_   | float | (mandatory) The amount of BT that needs to be air-dropped to the selected end-users.  Example:10 |
 | _airdropped_ | boolean | true/false. Indicates whether to airdrop tokens to end-users who have been airdropped some tokens **at least once** or to end-users who have **never** been airdropped tokens. |
 | _user_ids_ | string |  a comma-separated list of user_ids specifies selected users in the token economy to be air-dropped tokens to. |
 
