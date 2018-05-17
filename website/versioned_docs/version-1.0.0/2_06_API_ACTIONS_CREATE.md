@@ -90,7 +90,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 | _commission_percent_| string<float>  | for user_to_user action you have an option to set commission percentage. The commission is inclusive in the _amount_ and the complement goes to the OST partner company. Possible values (min 0%, max 100%) |
 
 
-### Example Success Response
+### Example Success Response Body
 ```json
 {
    "success": true,
@@ -108,7 +108,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 ```
 ### Parameter Dependent Validations
 
-### Example Failure Response
+### Example Failure Response Body
 ```json
 {
   "success": false,

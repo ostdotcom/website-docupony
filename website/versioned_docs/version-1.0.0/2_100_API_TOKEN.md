@@ -61,7 +61,7 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
 | _price_points_    | object | Contains the OST price point in USD and the Branded Tokens price point in USD  |
 
 
-### Example Success Response
+### Example Success Response Body
 
 ```json
 {
@@ -93,7 +93,7 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
 }
 ```
 
-### Example Failure Response
+### Example Failure Response Body
 
 ```json
 {

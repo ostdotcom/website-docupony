@@ -59,7 +59,7 @@ On successful creation of the user, `users` contains the created user as a singl
 | _airdropped_tokens_| string\<number\> | total amount of airdropped tokens to the user |
 | _token_balance_           | string\<number\> |current balance of the user  |
 
-### Example Success Response
+### Example Success Response Body
 
 ```json
 {
@@ -82,7 +82,7 @@ On successful creation of the user, `users` contains the created user as a singl
 }
 ```
 
-### Example Failure Responses
+### Example Failure Response Bodies
 On a failed authentication the response is returned with status code 401 and the body will look like this,
 
 ```json

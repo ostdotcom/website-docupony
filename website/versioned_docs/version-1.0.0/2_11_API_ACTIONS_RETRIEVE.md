@@ -57,7 +57,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 
 
 
-### Example Success Response
+### Example Success Response Body
 ```json
 {
    "success": true,

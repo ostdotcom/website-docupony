@@ -65,7 +65,7 @@ On calling `/airdrops/{id}` the `data.result_type` is a string "airdrop" and the
 | _allocation_done_   | String | The string to represent that the airdrop process is complete.|
 
 
-### Example Success Response
+### Example Success Response Body
 ```json
 {
    "success": true,
@@ -85,7 +85,7 @@ On calling `/airdrops/{id}` the `data.result_type` is a string "airdrop" and the
 }
 ```
 
-### Example Failure Response
+### Example Failure Response Body
 ```json
 {
   "code": "401",

@@ -74,7 +74,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 | _commission_percent_| string<float>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
 
 
-### Example Success Response
+### Example Success Response Body
 ```json
 {
    "success": true,
