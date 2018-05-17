@@ -142,6 +142,6 @@ curl --request POST \
 --form transaction_uuids[]=TRANSACTION_UUID \
 ```
 
->_last updated 9th May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2
