@@ -52,7 +52,6 @@ The request url of this GET request reads as
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
-| _code_     | number | HTTP status code |
 
 On calling `/transfers`, `data.result_type` is the string "transfers" and `data.transfers` is an object containing an array of `transfer` objects.
 
