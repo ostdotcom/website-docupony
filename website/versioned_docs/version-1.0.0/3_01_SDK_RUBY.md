@@ -78,7 +78,6 @@ ost_users_object.create(name: 'Alice')
 
 ost_users_object.create(name: 'Bob')
  # returns object containing Bob's ID, among other information, which you will need later
-
 ```
 
 ### Airdrop Tokens to Alice and Bob
