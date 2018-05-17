@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_airdrop_execute
-title: OST KIT⍺ | Execute an Airdrop
+title: OST KIT⍺ API | Execute an Airdrop
 sidebar_label: Execute an Airdrop
 original_id: api_airdrop_execute
 ---
