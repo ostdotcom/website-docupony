@@ -82,6 +82,6 @@ curl --request GET \
 #** TO TEST FIRST AND THEN PUT IN **
 ```
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17th May 2018_; for support see [help.ost.com](https://help.ost.com/support/home)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

@@ -14,6 +14,6 @@ It starts with setting up a conversion rate for your Branded Token. For example,
 Once you create these actions in OST KIT⍺ and set amount for each of them, they become opportunities for your end-users to earn and spend your branded tokens. The amount of the action represents how much it is worth each time one of your customers perform that action. This exchange of tokens represents a token economy; defining actions thus works towards shaping your branded token economy and tokenizing your application.
 
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17th May 2018_; for support see [help.ost.com](https://help.ost.com/support/home)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

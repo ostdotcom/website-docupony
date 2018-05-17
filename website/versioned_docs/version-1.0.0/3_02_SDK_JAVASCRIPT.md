@@ -154,6 +154,6 @@ transactionService.list({page_no: 1, limit: 10}).then(function(res) { console.lo
 
 And with just a little time and a lot of ease, your branded token economy is up and running!
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17th May 2018_; for support see [help.ost.com](https://help.ost.com/support/home)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

@@ -60,6 +60,6 @@ To transfer OST⍺ Prime to an account outside of your branded token economy `/t
 | [Token Details](/docs/api_token.html)|
 
 
->_last updated 17 May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [help.ost.com](https://help.ost.com/support/home)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
