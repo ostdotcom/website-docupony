@@ -16,7 +16,8 @@
     ],
     "REST API": [
       "version-1.0.0-api",
-      "version-1.0.0-api_authentication"
+      "version-1.0.0-api_authentication",
+      "version-1.0.0-api_error_handling"
     ],
     "USERS": [
       "version-1.0.0-api_users_create",
@@ -24,8 +25,9 @@
       "version-1.0.0-api_users_list"
     ],
     "AIRDROPS": [
-      "version-1.0.0-api_airdrop_drop",
-      "version-1.0.0-api_airdrop_status"
+      "version-1.0.0-api_airdrop_execute",
+      "version-1.0.0-api_airdrop_retrieve",
+      "version-1.0.0-api_airdrop_list"
     ],
     "ACTIONS": [
       "version-1.0.0-api_actions_create",
@@ -34,8 +36,14 @@
       "version-1.0.0-api_actions_retrieve"
     ],
     "TRANSACTIONS": [
-      "version-1.0.0-api_transaction-types_execute",
-      "version-1.0.0-api_transaction-types_status"
+      "version-1.0.0-api_action_execute",
+      "version-1.0.0-api_transaction_list",
+      "version-1.0.0-api_transaction_retrieve"
+    ],
+    "TRANSFERS": [
+      "version-1.0.0-api_transfers_create",
+      "version-1.0.0-api_transfers_list",
+      "version-1.0.0-api_transfers_retrieve"
     ]
   }
 }

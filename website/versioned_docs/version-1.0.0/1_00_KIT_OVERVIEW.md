@@ -6,12 +6,12 @@ original_id: kit
 ---
 
 ###  1. Create an Account
-The first thing you need to get started with OST KIT⍺ is to [<u>sign up for a free account</u>](https://kit.ost.com/sign-up). During registration, you will setup your Token Name (Only letters, numbers, spaces allowed, at max 20 characters and 3 words) and select a short name Token Symbol (3 to 4 letters or numbers, at min 1 letter required, no special characters allowed) for your token. You will have to activate your account using the activation link sent to you upon registration.
+The first thing you need to get started with OST KIT⍺ is to [<u>sign up for a free account</u>](https://kit.ost.com/sign-up). During registration, you will setup your Token Name (Only letters, numbers, spaces allowed, at max 20 characters and 3 words) and select a short name Token Symbol (At max 4 letters or numbers, at min 1 letter required, no special characters allowed) for your token. You will have to activate your account using the activation link sent to you upon registration.
 
 ![Register](assets/Register.jpg)
 
 ###  2. Set Conversion Rate
-For creating your Branded Tokens you need to set the conversion rate between your Branded Token and OST⍺. The simplest way to set your conversion rate is to consider how much $USD you would like 1 of your Branded Tokens to initially be worth. The latest conversion rate for $OST to $USD is available in the Economy Planne
+For creating your Branded Tokens you need to set the conversion rate between your Branded Token and OST⍺. The simplest way to set your conversion rate is to consider how much $USD you would like 1 of your Branded Tokens to initially be worth. The latest conversion rate for $OST to $USD is available in the Economy Planner
 
 ![setconversion](assets/SetConversionRate.jpg)
 
@@ -24,6 +24,7 @@ MetaMask is required to participate in OST KIT⍺. You will receive an initial a
 The next step is defining Actions. An action represents a core action or event for your business, for example, a "like", "share", "purchase", "API call", "view", "download", "reward", "monthly winner", or "birthday event".  We have created 4 sample actions for you. We encourage you to try various actions in OST KIT⍺. You can create as many actions as you like and you can name them as best fits the economic drivers of your business.
 
 ![setupActions](assets/Setup_Action.jpg)
+
 
 ###  5. Mint Tokens & Reserve Gas
 OST KIT⍺ enables you to easily and safely create your own Branded Tokens on highly scalable OpenST Side Blockchains. The OpenST technology protocol enables Branded Tokens to be created, or "minted", on sidechains by staking OST⍺ on the public Ropsten Ethereum blockchain.

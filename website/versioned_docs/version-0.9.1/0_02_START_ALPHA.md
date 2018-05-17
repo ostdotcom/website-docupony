@@ -15,7 +15,7 @@ For developers, OST KIT⍺ offers a robust set of APIs so that developers can in
 * Design & Plan your Branded Token Economy 
 * Choose your token name, token symbol, and icon
 * Use our Token Economy Planner to set the value of your token and to decide how many tokens to mint
-* Define action types you want people to earn and spend your token on, such as user-to-user, company-to-user and user-to-company
+* Define actions you want people to earn and spend your token on, whether such as user-to-user, company-to-user, or user-to-company
 * Setup users and airdrop tokens to selected users
 * Mint your tokens
 * Simulate and execute transactions 
