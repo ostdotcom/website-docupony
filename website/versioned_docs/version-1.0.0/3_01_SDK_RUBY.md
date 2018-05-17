@@ -5,7 +5,9 @@ sidebar_label: Ruby SDK Quick Start Guide
 original_id: sdk_ruby
 ---
 
+
 The OST Ruby SDK is a Ruby gem that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST Ruby SDK to create users, airdrop tokens to those users, create actions, and execute one of those action types between two users.
+
 
 ### Prerequisites
 
@@ -14,7 +16,9 @@ Successfully integrating the SDK requires having Ruby installed on your system: 
 To use the SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
-2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](kit_overview.html).
+
+2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](/docs/kit_overview.html).
+
 3. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer API Console</u>](https://kit.ost.com/developer-api-console):
 
 ![API Credentials](assets/Developer_section.jpg)
@@ -46,10 +50,14 @@ Require the gem to use it in your application or in irb:
 Set the following variables for convenience:
 
 ```ruby
-environment = 'sandbox'  # possible values sandbox / main
-api_key = 'abcdef0123456789abcd' # replace with the API Key you obtained earlier
-api_secret = 'aaa123bbb456ccc789def000aaa123bbb456ccc789def000aaa123bbb456ccc7' # replace with the API Secret you obtained earlier
-credentials = OSTSdk::Util::APICredentials.new(api_key, api_secret)
+
+api_base_url = 'https://sandboxapi.ost.com/v1'  
+api_key = '6078017455d8be7d9f07' # replace with the API Key you obtained earlier
+api_secret = 'f32a333d82ba73a9db406afb4dbcfdc51cd36ccb742770276d6c4155783ca8d0' # replace with the API Secret you obtained earlier
+
+# Initialize SDK object
+ost_sdk = OSTSdk::Saas::Services.new({api_key: api_key, api_secret: api_secret, api_base_url: api_base_url})
+
 ```
 
 ### Create Alice and Bob
@@ -57,87 +65,79 @@ credentials = OSTSdk::Util::APICredentials.new(api_key, api_secret)
 Initialize a Users object to perform user specific actions, like creating users:
 
 ```ruby
-ostUsersObject = OSTSdk::Saas::Users.new(environment, credentials)
+
+ost_users_object = ost_sdk.manifest.users
+
 ```
 
 Create users:
 
 ```ruby
-ostUsersObject.create(name: 'Alice')
-=> # returns object containing Alice's UUID, among other information, which you will need later
+ost_users_object.create(name: 'Alice')
+ # returns object containing Alice's ID, among other information, which you will need later
 
-ostUsersObject.create(name: 'Bob')
-=> # returns object containing Bob's UUID, among other information, which you will need later
+ost_users_object.create(name: 'Bob')
+ # returns object containing Bob's ID, among other information, which you will need later
 ```
 
 ### Airdrop Tokens to Alice and Bob
 
 Newly created users do not have any tokens; but you can airdrop tokens to them so that they can participate in your branded token economy.
 
+
+Initialize an Airdrop object to execute airdrop
+
 ```ruby
-ostUsersObject.airdrop_tokens(amount: 100, list_type: 'all') # airdrops 100 branded tokens to all of your economy's users
-=> # returns object containing the UUID of the airdrop transaction, among other information, which you will need later
+ost_airdrop_object = ost_sdk.manifest.airdrops
 ```
 
-Airdropping involves several asynchronous steps and you can use the UUID of the airdrop transaction to check its status:
-
 ```ruby
-ostUsersObject.get_airdrop_status(airdrop_uuid: 'abc1928-1234-1081dsds-djhksjd') # actual airdrop UUID will differ
-=> # returns object with "steps_complete"=>["users_identified"]
-
-ostUsersObject.get_airdrop_status(airdrop_uuid: 'abc1928-1234-1081dsds-djhksjd') # actual airdrop UUID will differ
-=> # returns object with "steps_complete"=>["users_identified", "tokens_transfered", "contract_approved", "allocation_done"]
-
-ostUsersObject.get_airdrop_status(airdrop_uuid: 'abc1928-1234-1081dsds-djhksjd') # actual airdrop UUID will differ
-=> # returns object with "steps_complete"=>["users_identified", "tokens_transfered", "contract_approved", "allocation_done"]
+ost_airdrop_object.execute({amount: 10, user_ids: 'd66a40d0-b2fa-4915-b6d2-46bbe644278a, df7153f1-c1cf-4ae2-b980-f04df1e68bb3'})  # airdrops 10 branded tokens to two users whoes IDs have been specified.
+# returns object containing the airdrop ID of the airdrop transaction, among other information, which you will need later
 ```
 
-### Create a Like Transaction
-
-You can create named transaction types with defined values that are between users or between a user and your company.
-
-For instance, to make a "Like" transaction for your branded token that is priced in USD:
+Airdropping involves several asynchronous steps and you can use the Id of the airdrop transaction to check its status:
 
 ```ruby
-ostTransactionKindObject = OSTSdk::Saas::TransactionKind.new(environment, credentials) # initializes a TransactionKind object
-ostTransactionKindObject.create(name: 'Like', kind: 'user_to_user', currency_type: 'usd', currency_value: '1.25', commission_percent: '12')
+ost_airdrop_object.get({id: 'ef98395d-e999-463b-a875-84bdd0740b31'}) # actual airdrop ID will differ
+
+# # returns object with "steps_complete"=>["users_identified", "tokens_transfered", "contract_approved", "allocation_done"]
+# try a few times till  steps_complete shows all steps mentioned above.
+```
+
+### Create a Like Action
+
+You can create named an action with defined values that are between users or between a user and your company.
+
+For instance, to make a "Like" action for your branded token that is priced in USD:
+
+```ruby
+ost_action_object = ost_sdk.manifest.actions # initializes action object
+
+ost_action_object.create({name: 'Like', kind: 'user_to_user', currency: 'USD', arbitrary_amount: false, amount: 1.01, arbitrary_commission: false, commission_percent: 10})
 ```
 
 ### Alice Likes Bob
 
-Now that you've created a Like transaction type and funded Alice and Bob with airdropped tokens, you can execute a Like transaction from Alice to Bob.
 
-To execute the Like transaction, you will need Alice and Bob's UUIDs. They were returned when you created Alice and Bob. However, you can get them again by retrieving and filtering the list of users:
+Now that you've created a Like action and funded Alice and Bob with airdropped tokens, you can execute a Like action from Alice to Bob.
 
-```ruby
-users_names = ["Alice", "Bob"] # make an array for filtering convenience
-users_list_object = ostUsersObject.list() # returns an object that includes the list of users
-users_list = users_list_object.data["economy_users"] # sets users_list to the array of users from the returned object
-users_list.select { |u| users_names.include? u["name"] }.map { |r| {name: r["name"], uuid: r["uuid"] }} # filters for Alice and Bob
-=> [{:name=>"Alice", :uuid=>"1234-1928-1081dsds-djhksjd"}, {:name=>"Bob", :uuid=>"1081xyz-1928-1234-1223232"}] # your UUIDs for Alice and Bob will differ
-```
-_Note: OST KIT⍺ does not place a uniqueness constraint on user names._
-
-And now, use those UUIDs to execute a Like transaction between Alice and Bob:
+To execute the Like action, you will need Alice and Bob's IDs. They were returned when you created Alice and Bob. You can alternatively get them by retrieving and filtering the list of users.  And you would need the action ID that was returned when you created the action. 
 
 ```ruby
-ostTransactionKindObject.execute(from_uuid: '1234-1928-1081dsds-djhksjd', to_uuid: '1081xyz-1928-1234-1223232', transaction_kind: 'Like')
-=> # returns object with uuid of executed transaction
+ost_transaction_object = ost_sdk.manifest.transactions  #initializes transaction module.
+
+ost_transaction_object.execute({from_user_id:'d66a40d0-b2fa-4915-b6d2-46bbe644278a', to_user_id:'df7153f1-c1cf-4ae2-b980-f04df1e68bb3', action_id:'22613'})
+ # returns object with ID of executed transaction
 ```
-_Note: `transaction_kind` is the `name` of the transaction type._
-
-The UUID of the executed transaction signals that worst-case scenario checks that the transaction will be completed have been performed and you can assume the transaction will be successfully mined. However, you can additionally confirm the status of the executed transaction in a couple of ways.
-
-You can get the status of the specific transaction:
+ 
+ You can confirm the status of the executed transaction by retrieving the specific transaction using transaction retrieve API:
 
 ```ruby
-ostTransactionKindObject.status(transaction_uuids: ['5f79063f-e-dd095f02c72e']) # the UUID of your executed transaction will differ
+ost_transaction_object.get({id: 'dfd74991-cc10-4547-be84-aece2e4d9a06'}) # the ID of your executed transaction will differ
 ```
 
-Or you can get the list of users again and see that Alice's branded token balance went down and Bob's branded token balance went up (which Bob is probably happy about):
 
-```ruby
-ostUsersObject.list()
-```
-
-And with just a little time and a lot of ease, your branded token economy is up and running!
+>_last updated 17th May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

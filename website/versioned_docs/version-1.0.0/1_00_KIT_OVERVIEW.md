@@ -42,3 +42,7 @@ OST KIT⍺ API allows you to:
 * Execute token transfers between users
 
 ![simulator](assets/Simulator.jpg)                                
+
+>_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
