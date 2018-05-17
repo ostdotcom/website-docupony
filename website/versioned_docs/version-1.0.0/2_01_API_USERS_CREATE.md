@@ -117,7 +117,7 @@ however when a request is invalid the response is returned with successful statu
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/users/' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=1526548630 \
 --form signature=e502252993cfa289390ec5d85ee2322e90e4e1fa0fad08376b1dfd2c775413da \
 --form api_key=7cad25e082390a90114e \

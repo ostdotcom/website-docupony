@@ -90,7 +90,7 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
 ```bash
 curl --request GET \
 --url 'https://playgroundapi.ost.com/users/list'
---header "Accept: application/json" \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
 --form api_key=API_KEY \

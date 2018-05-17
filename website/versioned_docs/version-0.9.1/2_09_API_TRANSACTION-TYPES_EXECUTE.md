@@ -90,7 +90,7 @@ On a successful acknowledgement the transaction uuid must be queried on `/transa
 ```bash
 curl --request POST \
 --url 'https://playgroundapi.ost.com/transaction-types/execute'
---header "Accept: application/json"
+--header 'Accept: application/x-www-form-urlencoded'
 --form api_key=API_KEY \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \

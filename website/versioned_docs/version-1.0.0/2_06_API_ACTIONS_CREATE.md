@@ -141,7 +141,7 @@ however when a request is invalid the response is returned with status code 200 
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/actions/' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=1526550240 \
 --form signature=ecb9367903f87b9d26fb97d5c31a71c6586022ff521e9c89dfc9f1e0d2d0fd11 \
 --form api_key=7cad25e082390a90114e \

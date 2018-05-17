@@ -102,7 +102,7 @@ On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key 
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/airdrops/' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=1526549096 \
 --form signature=54c488b8f603e614ed45feb3c4a6dc33442b82b8640645a7cd6a80764a381f36 \
 --form api_key=7cad25e082390a90114e \

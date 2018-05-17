@@ -124,7 +124,7 @@ On a failed authentication the response is returned with status code 401 and the
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/users/' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=1526548992 \
 --form signature=2a14f9e07dd98db62388f5d6ed36dc7a4533896fd7954438b479dcdaece2c8d4 \
 --form api_key=7cad25e082390a90114e \

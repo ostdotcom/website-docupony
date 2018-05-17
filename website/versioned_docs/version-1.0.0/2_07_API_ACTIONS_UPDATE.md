@@ -129,7 +129,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/actions/1234' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=1526550284 \
 --form signature=14c5cb254a7eb6f7aa894560fc38f264051c31fc07e2476963a29378f313e681 \
 --form api_key=7cad25e082390a90114e \

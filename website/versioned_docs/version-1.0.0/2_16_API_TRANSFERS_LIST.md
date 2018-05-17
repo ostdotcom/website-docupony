@@ -141,7 +141,7 @@ On a failed authentication, the response will have a `code` 401 and there will b
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/transfers/' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=1526550788 \
 --form signature=ac001b71043e055d7350d92963df6ed0164f74e0fff96b3256b1e8ad27fa9d9e \
 --form api_key=7cad25e082390a90114e \

@@ -111,7 +111,7 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/token/' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=1526549977 \
 --form signature=1dac77ed77c1f4b19a23d9af13ded49c7775e44c006b4e8f9515a7314b4de76f \
 --form api_key=7cad25e082390a90114e \

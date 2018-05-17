@@ -90,7 +90,7 @@ On a failed authentication the response is returned with status code 401 and the
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/users'
---header "Accept: application/json" \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
 --form api_key=API_KEY \

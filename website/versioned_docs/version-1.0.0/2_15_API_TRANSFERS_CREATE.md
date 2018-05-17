@@ -129,7 +129,7 @@ The OST⍺ Prime balance for a token economy can be retrieved by making a [<u>GE
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/transfers/' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=1526550706 \
 --form signature=ce1adf523e03ad697475e12f36bd958441c867c1968a8b9a16a7c446bcb711fe \
 --form api_key=7cad25e082390a90114e \

@@ -90,7 +90,7 @@ On calling `/transaction-types/edit` the `data.result_type` is the string "trans
 ```bash
 curl --request POST \
 --url 'https://playgroundapi.ost.com/transaction-types/edit' \
---header 'Accept: application/json' \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
 --form api_key=API_KEY \
