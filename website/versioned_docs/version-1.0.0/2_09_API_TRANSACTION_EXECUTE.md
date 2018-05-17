@@ -14,7 +14,7 @@ Within OST KIT⍺ you can set up actions to define advanced payments to tokenize
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](/docs/api_authentication.html) for current request |
 | _from_uuid_    | string | user or company from whom to send the funds |
 | _to_uuid_      | string | user or company to whom to send the funds |
 | _transaction_kind_  | string | name of the transaction type to be executed, e.g. "Upvote" (note that the parameter is a misnomer currently) |

@@ -15,7 +15,7 @@ Gets a paginated list of airdrops executed. This API can also be used to underst
 |-----------|---------|------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](/docs/api_authentication.html) for current request |
 |_page_no_            | number    | page number (starts from 1)|
 | _order_by_          | string    | order the list by when the airdrop was executed (default). Can only order by execution date. |
 | _order_             | string    | orders the list in 'desc' (default). Accepts value 'asc' to order in ascending order. |
