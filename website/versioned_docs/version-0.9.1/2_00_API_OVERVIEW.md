@@ -39,6 +39,6 @@ To incentivize new or existing users, you can airdrop tokens to get them started
 
 NOTE: For OST KIT⍺, users are represented by managed accounts for the created users i.e. OST KIT⍺ stores the encrypted private keys. In the future, we will support an on-chain decentralised key management solution to keep end-users self-sovereign owners of their tokens while allowing easy and secure integration of transfers within the application.
 
->_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2
