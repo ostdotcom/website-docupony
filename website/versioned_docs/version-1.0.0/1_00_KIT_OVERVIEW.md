@@ -30,7 +30,7 @@ OST KIT⍺ enables you to easily and safely create your own Branded Tokens on hi
 
 When you send tokens, interact with a smart contract, or do anything else on the blockchain, you must pay for the computation done to validate the action. The common term for the costs of the computations is "gas". In OST KIT⍺ your company pays the gas for each transaction. In the future, your company could also choose to have your customers pay for some of the gas. Because your company pays the gas charges, we require you to set aside a small amount of OST⍺ to cover future transaction simulations. 
        
-![stakeNmint](assets/Stake&Mint.jpg)
+![stakeNmint](assets/Stake_Mint.jpg)
  
 ### 6. Simulation
 Having minted your Tokens, you should visit the Simulator Page. There, you'll see we've created an environment that models how transactions would run in your application. You can also execute multiple transactions via our APIs. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer Section</u>](https://kit.ost.com/developer-api-console) of the dashboard.
