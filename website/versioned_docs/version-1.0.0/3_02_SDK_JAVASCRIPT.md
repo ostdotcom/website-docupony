@@ -44,7 +44,7 @@ Require the module to use it in your application, we require it in node:
 Set the following variables for convenience:
 
 ```javascript
-apiEndpoint = 'https://playgroundapi.ost.com/v1/';  
+apiEndpoint = 'https://sandboxapi.ost.com/v1/';  
 api_key = '2c48e6cc16716e620138'; // replace with the API Key you obtained earlier
 api_secret = '5af763facaf8222e93aa1b537af1b12b179d21670fd15f0b7780752d6027189d'; // replace with the API Secret you obtained earlier
 const ostObj = new OSTSDK({apiKey: api_key, apiSecret: api_secret, apiEndpoint: apiEndpoint});
@@ -61,8 +61,8 @@ Initialize a Users object to perform user specific actions, like creating users:
 Create users:
 
 ```javascript
-userService.create({name: 'Alice'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log); //  returns object containing Alice's UUID, among other information, which you will need later
-userService.create({name: 'Bob'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log);  // returns object containing Bob's UUID, among other information, which you will need later
+userService.create({name: 'Alice'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log); //  returns object containing Alice's id, among other information, which you will need later
+userService.create({name: 'Bob'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log);  // returns object containing Bob's id, among other information, which you will need later
 ```
 
 ### Airdrop Tokens to Alice and Bob
