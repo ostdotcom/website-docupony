@@ -7,6 +7,7 @@ original_id: sdk_javascript
 
 The [OST JavaScript SDK](https://github.com/OpenSTFoundation/ost-sdk-js/tree/release-1.0) is a JavaScript node module that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST JavaScript SDK to create users, airdrop tokens to those users, create actions, and execute one of those actions.
 
+
 ### Prerequisites
 
 To use the SDK, developers will need to:

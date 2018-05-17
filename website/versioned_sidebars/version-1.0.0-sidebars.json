@@ -22,12 +22,13 @@
     "USERS": [
       "version-1.0.0-api_users_create",
       "version-1.0.0-api_users_edit",
-      "version-1.0.0-api_users_list"
+      "version-1.0.0-api_users_list",
+      "version-1.0.0-api_users_retrieve"
     ],
     "AIRDROPS": [
       "version-1.0.0-api_airdrop_execute",
-      "version-1.0.0-api_airdrop_retrieve",
-      "version-1.0.0-api_airdrop_list"
+      "version-1.0.0-api_airdrop_list",
+      "version-1.0.0-api_airdrop_retrieve"
     ],
     "ACTIONS": [
       "version-1.0.0-api_actions_create",
@@ -44,6 +45,8 @@
       "version-1.0.0-api_transfers_create",
       "version-1.0.0-api_transfers_list",
       "version-1.0.0-api_transfers_retrieve"
-    ]
+    ],
+    "TOKEN" : [
+      "version-1.0.0-api_token"]
   }
 }
