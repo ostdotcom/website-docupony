@@ -66,7 +66,7 @@ Initialize a Users object to perform user specific actions, like creating users:
 
 ```ruby
 
-ost_users_object = ost_sdk.manifest.users
+ost_users_object = ost_sdk.services.users
 
 ```
 
@@ -88,7 +88,7 @@ Newly created users do not have any tokens; but you can airdrop tokens to them s
 Initialize an Airdrop object to execute airdrop
 
 ```ruby
-ost_airdrop_object = ost_sdk.manifest.airdrops
+ost_airdrop_object = ost_sdk.services.airdrops
 ```
 
 ```ruby
@@ -112,7 +112,7 @@ You can create named an action with defined values that are between users or bet
 For instance, to make a "Like" action for your branded token that is priced in USD:
 
 ```ruby
-ost_action_object = ost_sdk.manifest.actions # initializes action object
+ost_action_object = ost_sdk.services.actions # initializes action object
 
 ost_action_object.create({name: 'Like', kind: 'user_to_user', currency: 'USD', arbitrary_amount: false, amount: 1.01, arbitrary_commission: false, commission_percent: 10})
 ```
@@ -125,7 +125,7 @@ Now that you've created a Like action and funded Alice and Bob with airdropped t
 To execute the Like action, you will need Alice and Bob's IDs. They were returned when you created Alice and Bob. You can alternatively get them by retrieving and filtering the list of users.  And you would need the action ID that was returned when you created the action. 
 
 ```ruby
-ost_transaction_object = ost_sdk.manifest.transactions  #initializes transaction module.
+ost_transaction_object = ost_sdk.services.transactions  #initializes transaction module.
 
 ost_transaction_object.execute({from_user_id:'d66a40d0-b2fa-4915-b6d2-46bbe644278a', to_user_id:'df7153f1-c1cf-4ae2-b980-f04df1e68bb3', action_id:'22613'})
  # returns object with ID of executed transaction
