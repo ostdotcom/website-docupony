@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api
-title: OST KIT⍺ API Overview
+title: OST KIT⍺ API | Overview
 sidebar_label: Overview
 original_id: api
 ---
@@ -17,18 +17,18 @@ When you create a new `user` through the API, an `id` is returned that represent
 
 | Users          | Actions         |
 |----------------|---------------------------|
-| [Create a User](api_users_create.html)  | [Create an Action](api_actions_create.html)   |
-| [Update a User](api_users_edit.html)      | [Update an Action](api_actions_edit.html)       |
-| [List Users](api_users_list.html)      | [List Actions](api_actions_list.html)       |
-| [Retrieve a User](api_users_retrieve.html) | [Retrieve an Action](api_actions_retrieve.html) |
+| [Create a User](/docs/api_users_create.html)  | [Create an Action](/docs/api_actions_create.html)   |
+| [Update a User](/docs/api_users_edit.html)      | [Update an Action](/docs/api_actions_update.html)       |
+| [List Users](/docs/api_users_list.html)      | [List Actions](/docs/api_actions_list.html)       |
+| [Retrieve a User](/docs/api_users_list.html) | [Retrieve an Action](/docs/api_actions_retrieve.html) |
 
 ### Transactions - Executing Actions
 
 | Transactions       |
 |---------------------------|
-| [Execute an Action](api_actions_execute.html) |
-| [List Transactions](api_transaction_list)   |
-| [Retrieve a Transaction](api_transaction_retrieve) |
+| [Execute an Action](/docs/api_action_execute.html) |
+| [List Transactions](/docs/api_transaction_list.html)   |
+| [Retrieve a Transaction](/docs/api_transaction_retrieve.html) |
 
 ### Awarding airdrop tokens to users
 
@@ -36,9 +36,9 @@ To incentivize new or existing users, you can airdrop tokens to get them started
 
 | Airdrop        |
 |----------------|
-| [Execute an Airdrop](api_airdrop_execute.html)     |
-| [Retrieve an Airdrop](api_airdrop_retrieve.html)   |
-| [List Airdrops](api_airdrop_list.html)   |
+| [Execute an Airdrop](/docs/api_airdrop_execute.html)     |
+| [Retrieve an Airdrop](/docs/api_airdrop_retrieve.html)   |
+| [List Airdrops](/docs/api_airdrop_list.html)   |
 
 NOTE: For OST KIT⍺, users are represented by managed accounts for the created users i.e. OST KIT⍺ stores the encrypted private keys. In the future, we will support an on-chain decentralised key management solution to keep end-users self-sovereign owners of their tokens while allowing easy and secure integration of transfers within the application.
 
@@ -50,14 +50,14 @@ To transfer OST⍺ Prime to an account outside of your branded token economy `/t
 
 |Transfers |
 |---------------|
-| [Create a Transfer](api_transfers_create) |
-| [List Transfers](api_transfers_list) |
-| [Retrieve a Transfers](api_transfers_retrieve) |
+| [Create a Transfer](/docs/api_transfers_create.html) |
+| [List Transfers](/docs/api_transfers_list.html) |
+| [Retrieve a Transfers](/docs/api_transfers_retrieve.html) |
 
 ### Fetching branded token details
 | Token Details |
 |----------------|
-| [Token Details](api_token.html)|
+| [Token Details](/docs/api_token.html)|
 
 
 >_last updated 17 May 2018_; for support see [help.ost.com](help.ost.com)

@@ -16,7 +16,7 @@ OST KIT⍺ provides you with tools for designing, planning, minting, and managin
 * [<u>Enable your company to collect fees</u>](/docs/api_actions_create.html) for certain transactions
 * [<u>Create Users</u>](/docs/api_users_create.html) 
 * [<u>Airdrop</u>](/docs/api_airdrop_execute.html) Branded Tokens to selected users
-* [<u>Execute transactions</u>](/docs/api_trannsactions_execute.html) 
+* [<u>Execute Actions</u>](/docs/api_action_execute.html)
 * [<u>Transfer Funds</u>](/docs/api_transfers_create.html) to an account outside of your branded token economy. This enables you to deploy contracts on the OpenST network of side blockchains.
 * [<u>Get Token Details</u>](/docs/api_token.html) about the Branded Token you created for your token economy.
 
