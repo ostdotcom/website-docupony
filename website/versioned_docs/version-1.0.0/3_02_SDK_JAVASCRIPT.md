@@ -5,14 +5,15 @@ sidebar_label: JavaScript SDK Quick Start Guide
 original_id: sdk_javascript
 ---
 
-The OST JavaScript SDK is a JavaScript node module that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST JavaScript SDK to create users, airdrop tokens to those users, create types of transactions, and execute one of those transaction types between two users.
+The [OST JavaScript SDK](https://github.com/OpenSTFoundation/ost-sdk-js/tree/release-1.0) is a JavaScript node module that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST JavaScript SDK to create users, airdrop tokens to those users, create actions, and execute one of those actions.
+
 
 ### Prerequisites
 
 To use the SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
-2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](kit_overview.html).
+2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](/docs/kit_overview.html).
 3. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer API Console</u>](https://kit.ost.com/developer-api-console):
 
 ![API Credentials](assets/Developer_section.jpg)
@@ -44,7 +45,7 @@ Require the module to use it in your application, we require it in node:
 Set the following variables for convenience:
 
 ```javascript
-apiEndpoint = 'https://playgroundapi.ost.com';  
+apiEndpoint = 'https://sandboxapi.ost.com/v1/';  
 api_key = '2c48e6cc16716e620138'; // replace with the API Key you obtained earlier
 api_secret = '5af763facaf8222e93aa1b537af1b12b179d21670fd15f0b7780752d6027189d'; // replace with the API Secret you obtained earlier
 const ostObj = new OSTSDK({apiKey: api_key, apiSecret: api_secret, apiEndpoint: apiEndpoint});
@@ -61,76 +62,98 @@ Initialize a Users object to perform user specific actions, like creating users:
 Create users:
 
 ```javascript
-userService.create({name: 'Alice'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log); //  returns object containing Alice's UUID, among other information, which you will need later
-userService.create({name: 'Bob'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log);  // returns object containing Bob's UUID, among other information, which you will need later
+userService.create({name: 'Alice'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log); //  returns object containing Alice's id, among other information, which you will need later
+userService.create({name: 'Bob'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log);  // returns object containing Bob's id, among other information, which you will need later
 ```
 
 ### Airdrop Tokens to Alice and Bob
 
 Newly created users do not have any tokens; but you can airdrop tokens to them so that they can participate in your branded token economy.
 
+Initialize an Airdrop Object to execute an airdrop, get airdrop status and list airdrops.  
+
 ```javascript
-userService.airdropTokens({amount: 10, list_type: 'all'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log); // airdrops 10 branded tokens to all of your economy's users
-// returns object containing the UUID of the airdrop transaction, among other information, which you will need later
+const airdropService = ostObj.services.airdrops;
 ```
 
-Airdropping involves several asynchronous steps and you can use the UUID of the airdrop transaction to check its status:
+Execute an airdrop to one or many users, by using their user ids returned when creating users.
 
 ```javascript
-userService.airdropStatus({airdrop_uuid: 'beea3a5a-49da-48ff-a9df-1ebcd7c92dc4'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log); 
-// actual airdrop UUID will differ
+airdropService.execute({amount: 1, user_ids: 'f87346e4-61f6-4d55-8cb8-234c65437b01'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); //airdrops 1 BT to the selected user id.
+```
+
+Airdropping involves several asynchronous steps and you can use the ids of the returned airdrop object to check its status:
+
+```javascript
+airdropService.get({id: 'ecd9b0b2-a0f4-422c-95a4-f25f8fc88334'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
+// the airdrop id will differ
 // returns object with "steps_complete"=>["users_identified", "tokens_transfered", "contract_approved", "allocation_done"]
 ```
 
-### Create a Like Transaction
+### Create a Like Action
 
-You can create named transaction types with defined values that are between users or between a user and your company.
-
-For instance, to make a "Like" transaction for your branded token that is priced in USD:
+You can create named actions with defined values that are between users or between a user and your company. For instance, to make a "Like" action for your branded token between users, that is priced in USD. First Initialize an action object:
 
 ```javascript
-const transactionKindService = ostObj.services.transactionKind; // initializes a TransactionKind object
-transactionKindService.create({name: 'Like', kind: 'user_to_user', currency_type: 'usd', currency_value: '1.25', commission_percent: '12'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log);
+const actionService = ostObj.services.actions; // initializes an action object
+
 ```
+Now create a new action called 'Like':
+
+```javascript
+actionService.create({name: 'Like', kind: 'user_to_user', currency: 'USD', arbitrary_amount: false, amount: 1.01, commission_percent: 1}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); 
+```
+To understand more about how to use arbitrary amounts for action checkout the [action documentation.](/docs/api_actions_create.html) 
 
 ### Alice Likes Bob
 
-Now that you've created a Like transaction type and funded Alice and Bob with airdropped tokens, you can execute a Like transaction from Alice to Bob.
+Now that you've created a Like action, funded Alice and Bob with airdropped tokens, you can execute a Like action from Alice to Bob.
 
-To execute the Like transaction, you will need Alice and Bob's UUIDs. They were returned when you created Alice and Bob. However, you can get them again by retrieving and filtering the list of users:
+To execute the Like action, you will need Alice and Bob's ids and the action id. The user id are returned when you created Alice and Bob. However, you can get them again by retrieving and filtering the list of users:
 
 ```javascript
-users_list_object = userService.list().then(function(a){console.log(JSON.stringify(a))}).catch(console.log); 
-// # returns object that includes the list of users
-// fetch UUIDs for Alice and Bob
+userService.list({}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
+// returns object that includes the list of users
+// fetch ids for Alice and Bob
 ```
-_Note: OST KIT⍺ does not place a uniqueness constraint on user names._
+_Note: OST KIT⍺ does not place a uniqueness constraint on user names_
 
-And now, use those UUIDs to execute a Like transaction between Alice and Bob:
-
-```javascript
-transactionKindService.execute({from_uuid: 'd6342d31-ebbd-4cca-9436-be6308fd74f6', to_uuid: 'e24f6e23-4f8d-4fe3-b9ab-30cd475b39f8', transaction_kind: 'Likes'}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log); 
-// returns object with uuid of executed transaction
-//  your UUIDs for Alice and Bob will differ
-```
-_Note: `transaction_kind` is the `name` of the transaction type._
-
-The UUID of the executed transaction signals that worst-case scenario checks that the transaction will be completed have been performed and you can assume the transaction will be successfully mined. However, you can additionally confirm the status of the executed transaction in a couple of ways.
-
-You can get the status of the specific transaction:
+To retrieve the action id, list the actions object as follows:
 
 ```javascript
-transactionKindService.status({transaction_uuids: ['69d048bc-3da9-48ad-a00b-a37cfc64dc3b']}).then(function(a){console.log(JSON.stringify(a))}).catch(console.log); // the UUID of your executed transaction will differ
+actionService.list({}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); 
 ```
 
-Or you can get the list of users again and see that Alice's branded token balance went down and Bob's branded token balance went up (which Bob is probably happy about):
+And now inititalize a transactions object to execute transactions:
 
 ```javascript
-userService.list().then(function(a){console.log(JSON.stringify(a))}).catch(console.log); 
+const transactionService = ostObj.services.transactions;
+```
+
+To execute a Like action between Alice and Bob, use the users ids and the action id as follows:
+
+```javascript
+transactionService.execute({from_user_id:'0a201640-77a7-49c8-b289-b6b5d7325323', to_user_id:'24580db2-bf29-4d73-bf5a-e1d0cf8c8928', action_id:'22599'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
+// returns object with id of executed transaction
+// the ids of your Alice and Bob users and the "Upvote" action type will differ
+```
+
+You can query for the status of the executed transaction in a couple of ways.
+You can get the status of the specific transaction with its id:
+
+```javascript
+transactionService.get({id: '84d97848-074f-4a9a-a214-19076cfe9dd1'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
+// the id of your executed transaction will differ 
+```
+
+Or you can get the list of all transactions:
+
+```javascript
+transactionService.list({page_no: 1, limit: 10}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
 ```
 
 And with just a little time and a lot of ease, your branded token economy is up and running!
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17th May 2018_; for support see [help.ost.com](https://help.ost.com/support/home)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

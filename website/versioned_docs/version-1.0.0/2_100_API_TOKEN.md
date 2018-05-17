@@ -117,6 +117,6 @@ curl --request GET \
 --form api_key=7cad25e082390a90114e \
 ```
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17th May 2018_; for support see [help.ost.com](https://help.ost.com/support/home)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

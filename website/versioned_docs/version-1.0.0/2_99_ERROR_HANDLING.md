@@ -41,6 +41,6 @@ We return following HTTP status codes and corresponding short string codes for f
 | 500 | INTERNAL_SERVER_ERROR | Something went wrong | This is usually a temporary error, when the endpoint is temporarily having issues. Check in the gitter forums in case others are having similar issues or try again later. If the problem persists log a ticket on [help.ost.com](help.ost.com) | 
 
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17th May 2018_; for support see [help.ost.com](https://help.ost.com/support/home)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
