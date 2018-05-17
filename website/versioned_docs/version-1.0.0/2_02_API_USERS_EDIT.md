@@ -71,7 +71,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
          "id": "69cc4fcd-39ca-4499-8948-c402dd83fcd8",
          "addresses": [
             [
-               "198",
+               "1409",
                "0x0A302b902Ed27c27c90027A104e6E589261a1987"
             ]
          ],

@@ -98,7 +98,7 @@ For calls to `/transfers`, `data.result_type` is the string "transfer" and `data
       "gas_price": "5000000000",
       "gas_used": null,
       "block_number": null,
-      "chain_id": "198"
+      "chain_id": "1409"
     }
   }
 }

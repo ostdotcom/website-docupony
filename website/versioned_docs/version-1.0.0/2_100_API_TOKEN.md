@@ -79,7 +79,7 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
       "total_supply": "92701.9999941",
       "ost_utility_balance": [
         [
-          "198",
+          "1409",
           "87.982677084999999996"
         ]
       ]
