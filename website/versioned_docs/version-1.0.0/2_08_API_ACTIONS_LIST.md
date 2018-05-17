@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_actions_list
-title: OST KIT⍺ API | List All Actions
+title: OST KIT⍺ API | List all Actions
 sidebar_label: List Actions
 original_id: api_actions_list
 ---
@@ -141,7 +141,12 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 ### Sample Code | Curl
 ```bash
 curl --request GET \
-#** TO TEST FIRST AND THEN PUT IN **
+--url 'https://sandboxapi.ost.com/v1/actions/' \
+--header 'Accept: application/json' \
+--form request_timestamp=1526550366 \
+--form signature=84cbc8562b9c684d046323817a0d2ef4db8949f048eb3f96727cdb57b6dc07be \
+--form api_key=7cad25e082390a90114e \
+--form page_no=1 \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)

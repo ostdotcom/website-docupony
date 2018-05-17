@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_transaction_execute
-title: OST KIT⍺ API | Execute An Action
+title: OST KIT⍺ API | Execute an Action
 sidebar_label: Execute an Action
 original_id: api_transaction_execute
 ---

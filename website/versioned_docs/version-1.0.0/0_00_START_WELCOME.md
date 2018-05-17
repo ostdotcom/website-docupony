@@ -29,3 +29,7 @@ To get started quickly, try the [<u>Ruby SDK Quick Start Guide</u>](/docs/sdk_ru
 ## Previous Version of API Documentation
 
 To get to the documentation of the previous version, see [<u>OST API v0 Documentation</u>](https://dev.stagingost.com/docs/0.9.1/simpletoken.html)
+
+>_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

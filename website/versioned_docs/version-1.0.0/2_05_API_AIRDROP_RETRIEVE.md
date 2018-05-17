@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_airdrop_retrieve
-title: OST KIT⍺ API | Retrieve An Airdrop
+title: OST KIT⍺ API | Retrieve an Airdrop
 sidebar_label: Retrieve an Airdrop
 original_id: api_airdrop_retrieve
 ---
@@ -105,8 +105,11 @@ On calling `/airdrops/{id}` the `data.result_type` is a string "airdrop" and the
 ### Sample Code | Curl
 ```bash
 curl --request GET \
-#** to work on**
-
+--url 'https://sandboxapi.ost.com/v1/airdrops/ecd9b0b2-a0f4-422c-95a4-f25f8fc88334' \
+--header 'Accept: application/json' \
+--form request_timestamp=1526549305 \
+--form signature=801f5c9416ce0a82f74e5a2be0ad8c7c0a421dc1df71085a45461a783f61affc \
+--form api_key=7cad25e082390a90114e \
 ```
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
 >

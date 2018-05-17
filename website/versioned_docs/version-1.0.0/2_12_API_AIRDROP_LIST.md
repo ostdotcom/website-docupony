@@ -174,9 +174,16 @@ On calling `/airdrops` the `data.result_type` is a string "airdrops" and the key
 ### Sample Code | Curl
 ```bash
 curl --request GET \
-#** to work on**
-
+--url 'https://sandboxapi.ost.com/v1/airdrops/' \
+--header 'Accept: application/json' \
+--form request_timestamp=1526549354 \
+--form signature=500f11a4d953c61c927e6b2b489ce5a2e27ef99699f74ab3d4a0d9d030344512 \
+--form api_key=7cad25e082390a90114e \
+--form page_no=1 \
+--form limit=50 \
+--form current_status=processing%2Ccomplete \
 ```
+
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

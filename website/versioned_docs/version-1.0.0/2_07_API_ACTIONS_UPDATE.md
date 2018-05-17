@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_actions_update
-title: OST KIT⍺ API | Update An Action
+title: OST KIT⍺ API | Update an Action
 sidebar_label: Update an Action
 original_id: api_actions_update
 ---
@@ -127,8 +127,13 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 
 ### Sample Code | Curl
 ```bash
-curl --request 
-## to be worked on **
+curl --request POST \
+--url 'https://sandboxapi.ost.com/v1/actions/1234' \
+--header 'Accept: application/json' \
+--form request_timestamp=1526550284 \
+--form signature=14c5cb254a7eb6f7aa894560fc38f264051c31fc07e2476963a29378f313e681 \
+--form api_key=7cad25e082390a90114e \
+--form amount=2 \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)

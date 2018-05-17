@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_actions_retrieve
-title: OST KIT⍺ API | Retrieve An Action
+title: OST KIT⍺ API | Retrieve an Action
 sidebar_label: Retrieve an Action
 original_id: api_actions_retrieve
 ---
@@ -79,7 +79,11 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 ### Sample Code | Curl
 ```bash
 curl --request GET \
-#** TO TEST FIRST AND THEN PUT IN **
+--url 'https://sandboxapi.ost.com/v1/actions/1234' \
+--header 'Accept: application/json' \
+--form request_timestamp=1526550325 \
+--form signature=0e0d27f5ce713a6a42e9b1494f667c2ebc4e208fa28334d6782e5e51f319235c \
+--form api_key=7cad25e082390a90114e \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)

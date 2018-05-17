@@ -33,8 +33,9 @@
     "ACTIONS": [
       "version-1.0.0-api_actions_create",
       "version-1.0.0-api_actions_update",
-      "version-1.0.0-api_actions_list",
-      "version-1.0.0-api_actions_retrieve"
+      "version-1.0.0-api_actions_retrieve",
+      "version-1.0.0-api_actions_list"
+      
     ],
     "TRANSACTIONS": [
       "version-1.0.0-api_action_execute",
@@ -47,6 +48,7 @@
       "version-1.0.0-api_transfers_retrieve"
     ],
     "TOKEN" : [
-      "version-1.0.0-api_token"]
+      "version-1.0.0-api_token"
+    ]
   }
 }
