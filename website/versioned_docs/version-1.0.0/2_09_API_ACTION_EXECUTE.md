@@ -15,7 +15,7 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
-| _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
+| _signature_         | hexstring | mandatory [<u>signature generated</u>](/docs/api_authentication.html) for current request |
 | _from_uuid_    | string | user or company from whom to send the funds |
 | _to_uuid_      | string | user or company to whom to send the funds |
 | _action_id_ | number | id of the action that is to be executed. |
