@@ -123,15 +123,13 @@ On a failed authentication the response is returned with status code 401 and the
 ### Sample Code | Curl
 ```bash
 curl --request GET \
---url 'https://sandboxapi.ost.com/v1/users'
---header "Accept: application/json" \
---form request_timestamp=EPOCH_TIME_SEC \
---form signature=SIGNATURE \
---form api_key=API_KEY \
---form filter=FILTER \
---form order=ORDER \
---form order_by=ORDER_BY \
---form page_no=PAGE_NO \
+--url 'https://sandboxapi.ost.com/v1/users/' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526548992 \
+--form signature=2a14f9e07dd98db62388f5d6ed36dc7a4533896fd7954438b479dcdaece2c8d4 \
+--form api_key=7cad25e082390a90114e \
+--form page_no=1 \
+--form limit=5 \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)

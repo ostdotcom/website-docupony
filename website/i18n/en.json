@@ -63,7 +63,8 @@
     "AIRDROPS": "AIRDROPS",
     "ACTIONS": "ACTIONS",
     "TRANSACTIONS": "TRANSACTIONS",
-    "TRANSFERS": "TRANSFERS"
+    "TRANSFERS": "TRANSFERS",
+    "TOKEN": "TOKEN"
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

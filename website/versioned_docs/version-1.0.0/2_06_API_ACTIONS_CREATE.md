@@ -1,7 +1,7 @@
 ---
 id: version-1.0.0-api_actions_create
-title: OST KIT⍺ API | Create An Action
-sidebar_label: Create An Action
+title: OST KIT⍺ API | Create an Action
+sidebar_label: Create an Action
 original_id: api_actions_create
 ---
 
@@ -139,8 +139,18 @@ however when a request is invalid the response is returned with status code 200 
 
 ### Sample Code | Curl
 ```bash
-curl --request 
-# ** to work on **
+curl --request POST \
+--url 'https://sandboxapi.ost.com/v1/actions/' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526550240 \
+--form signature=ecb9367903f87b9d26fb97d5c31a71c6586022ff521e9c89dfc9f1e0d2d0fd11 \
+--form api_key=7cad25e082390a90114e \
+--form name=Test \
+--form kind=user_to_user \
+--form currency=USD \
+--form arbitrary_amount=false \
+--form amount=1.01 \
+--form arbitrary_commission=true \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)

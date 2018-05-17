@@ -1,7 +1,7 @@
 ---
 id: version-1.0.0-api_users_edit
-title: OST KIT⍺ API | Update A User
-sidebar_label: Update A User
+title: OST KIT⍺ API | Update a User
+sidebar_label: Update a User
 original_id: api_users_edit
 ---
 
@@ -99,13 +99,12 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 ### Sample Code | Curl
 ```bash
 curl --request POST \
---url 'https://sandboxapi.ost.com/v1//users/{id}' \
---header 'Accept: application/json' \
---form request_timestamp=EPOCH_TIME_SEC \
---form signature=SIGNATURE \
---form api_key=API_KEY \
---form name=NAME \
---form uuid=UUID \
+--url 'https://sandboxapi.ost.com/v1/users/e55feef0-26e6-438a-9f1a-f348ce2e3c44' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526548857 \
+--form signature=a9192914215ce492bc099034a70ad33ec6da32b68126e36358bcfa1c19eafaa3 \
+--form api_key=7cad25e082390a90114e \
+--form name=Bob \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)

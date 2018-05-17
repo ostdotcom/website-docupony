@@ -167,8 +167,14 @@ For API calls to `/transactions` the `result_type` is a string "transactions", t
 
 ### Sample Code | Curl
 ```bash
-curl --request POST \
-# ** to work on **
+curl --request GET \
+--url 'https://sandboxapi.ost.com/v1/transactions/' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526550545 \
+--form signature=47c3ffc5aa919ae3d61113bcb96d4be0bbdc3bb559dbc48e8567f08ca3d655ef \
+--form api_key=7cad25e082390a90114e \
+--form page_no=1 \
+--form limit=50 \
 ```
 
 >_last updated 17 May 2018_; for support see [help.ost.com](help.ost.com)

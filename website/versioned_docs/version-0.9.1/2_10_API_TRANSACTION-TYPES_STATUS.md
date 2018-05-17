@@ -135,7 +135,7 @@ For API calls to `/transaction-types/status` the `result_type` is a string "tran
 ```bash
 curl --request POST \
 --url 'https://playgroundapi.ost.com/transaction-types/status'
---header "Accept: application/json" \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
 --form api_key=API_KEY \

@@ -140,12 +140,11 @@ On a failed authentication, the response will have a `code` 401 and there will b
 ### Sample Code | Curl
 ```bash
 curl --request GET \
---url 'https://sandboxapi.ost.com/v1/transfers' \
---header 'Accept: application/json' \
---form request_timestamp=1526452463 \
---form signature=b6edbce2f37ef5fa50818bbdd2e1eeb3a877d555b928b0b9665a367c9a02fa00 \
---form api_key=ed0787e817d4946c7e77 \
---form limit=2 \
+--url 'https://sandboxapi.ost.com/v1/transfers/' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526550788 \
+--form signature=ac001b71043e055d7350d92963df6ed0164f74e0fff96b3256b1e8ad27fa9d9e \
+--form api_key=7cad25e082390a90114e \
 ```
 
 >_last updated 17th May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)

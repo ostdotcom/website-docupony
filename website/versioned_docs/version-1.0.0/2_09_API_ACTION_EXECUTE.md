@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_action_execute
-title: OST KIT⍺ API | Execute An Action
+title: OST KIT⍺ API | Execute an Action
 sidebar_label: Execute an Action
 original_id: api_action_execute
 ---
@@ -114,7 +114,15 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 ### Sample Code | Curl
 ```bash
 curl --request POST \
-## to work on##
+--url 'https://sandboxapi.ost.com/v1/transactions/' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526550459 \
+--form signature=9bb8ac9e4d1fa366cd938c192c96ecc60a5a55f2ad4f54d4ebb21309f3f79212 \
+--form api_key=7cad25e082390a90114e \
+--form from_user_id=f87346e4-61f6-4d55-8cb8-234c65437b01 \
+--form to_user_id=c07bd853-e893-4400-b7e8-c358cfa05d85 \
+--form action_id=20145 \
+
 ```
 
 >_last updated 17 May 2018_; for support see [help.ost.com](help.ost.com)

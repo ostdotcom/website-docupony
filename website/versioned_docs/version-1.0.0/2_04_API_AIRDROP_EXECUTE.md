@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_airdrop_execute
-title: OST KIT⍺ | Execute An Airdrop
+title: OST KIT⍺ | Execute an Airdrop
 sidebar_label: Execute an Airdrop
 original_id: api_airdrop_execute
 ---
@@ -24,7 +24,7 @@ You can use this API to send or reward your end-users a selected amount of brand
 Truth Table showing 'airdropped' and 'user_ids' interdependency and expected behaviors
 
 | Value in airdropped | Value in user_ids    | Expected Behavior                                   |
-|-----------|---------|------------------------------------------|
+|--------------|---------------------------|------------------------------------------|
 | true  | comma-separated list of user ids| Extracts a list of all users you have been airdropped tokens at least once.  Further refines the list to specific user ids passed in parameter 'user_ids'. This refined list is sent the tokens specified in the 'amount' parameter. |
 | true | _user_ids_ are not sent in the api request | Extracts a list of all users you have been airdropped tokens at least once. This list is sent the tokens specified in the 'amount' parameter. |
 | false | comma-separated list of user ids | Extracts a list of all users you have **never** been airdropped tokens further refines the list to specific user ids passed in parameter 'user_ids'. This refined list is sent the tokens specified in the 'amount' parameter. |
@@ -101,7 +101,13 @@ On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key 
 ### Sample Code | Curl
 ```bash
 curl --request POST \
-#** to work on**
+--url 'https://sandboxapi.ost.com/v1/airdrops/' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526549096 \
+--form signature=54c488b8f603e614ed45feb3c4a6dc33442b82b8640645a7cd6a80764a381f36 \
+--form api_key=7cad25e082390a90114e \
+--form amount=1 \
+--form user_ids=e55feef0-26e6-438a-9f1a-f348ce2e3c44 \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)

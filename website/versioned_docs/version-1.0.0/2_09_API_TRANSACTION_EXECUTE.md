@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_transaction_execute
-title: OST KIT⍺ API | Execute An Action
+title: OST KIT⍺ API | Execute an Action
 sidebar_label: Execute an Action
 original_id: api_transaction_execute
 ---
@@ -90,7 +90,7 @@ On a successful acknowledgement the transaction uuid must be queried on `/transa
 ```bash
 curl --request POST \
 --url 'https://playgroundapi.ost.com/transaction-types/execute'
---header "Accept: application/json"
+--header 'Accept: application/x-www-form-urlencoded'
 --form api_key=API_KEY \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \

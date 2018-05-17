@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_transaction_retrieve
-title: OST KIT⍺ API | Retrieve A Transaction
+title: OST KIT⍺ API | Retrieve a Transaction
 sidebar_label: Retrieve a Transaction
 original_id: api_transaction_retrieve
 ---
@@ -24,18 +24,10 @@ As an example
 
 `/transactions/41138190-80ea-43a9-8ddb-5cb3132a8ba2?api_key=6078017455d8be7d9f07&request_timestamp=1526362759`
 
-The request url of this post request reads as
+The request url of this GET request reads as
 
-> POST - `https://sandboxapi.ost.com/v1/transactions/41138190-80ea-43a9-8ddb-5cb3132a8ba2`
+> GET - `https://sandboxapi.ost.com/v1/transactions/41138190-80ea-43a9-8ddb-5cb3132a8ba2?api_key=6078017455d8be7d9f07&request_timestamp=1526362759&signature=347ba9531100e86ba4199468bdc3ef14d99a8e0b45cd36a48fa45a05de694376`
 
-and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
-
-```
-Content-Type: application/x-www-form-urlencoded
-
-api_key=6078017455d8be7d9f07&request_timestamp=1526362759&signature=347ba9531100e86ba4199468bdc3ef14d99a8e0b45cd36a48fa45a05de694376
-
-```
 
 ### JSON Response Object
 
@@ -94,8 +86,12 @@ For API calls to `/transactions/{id}` the `result_type` is a string "transaction
 
 ### Sample Code | Curl
 ```bash
-curl --request POST \
-#** to work on **
+curl --request GET \
+--url 'https://sandboxapi.ost.com/v1/transactions/0ab712ec-dc41-4e31-ac31-c93bc148bbb9' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526550517 \
+--form signature=f6f12004842a480f96d88e00901a3b7f02603267ced8d9f5a3d257c18afadc8d \
+--form api_key=7cad25e082390a90114e \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
