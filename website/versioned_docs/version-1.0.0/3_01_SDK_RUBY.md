@@ -5,7 +5,9 @@ sidebar_label: Ruby SDK Quick Start Guide
 original_id: sdk_ruby
 ---
 
-The OST Ruby SDK is a Ruby gem that wraps the OST Developers API v1. This Quick Start Guide will show you how to use the OST Ruby SDK to create users, airdrop tokens to those users, create types of transactions, and execute one of those transaction types between two users.
+
+The OST Ruby SDK is a Ruby gem that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST Ruby SDK to create users, airdrop tokens to those users, create actions, and execute one of those action types between two users.
+
 
 ### Prerequisites
 
@@ -14,7 +16,9 @@ Successfully integrating the SDK requires having Ruby installed on your system: 
 To use the SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
+
 2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](/docs/kit/html).
+
 3. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer API Console</u>](https://kit.ost.com/developer-api-console):
 
 ![API Credentials](assets/Developer_section.jpg)
@@ -46,12 +50,14 @@ Require the gem to use it in your application or in irb:
 Set the following variables for convenience:
 
 ```ruby
+
 api_base_url = 'https://sandboxapi.ost.com/v1'  
 api_key = '6078017455d8be7d9f07' # replace with the API Key you obtained earlier
 api_secret = 'f32a333d82ba73a9db406afb4dbcfdc51cd36ccb742770276d6c4155783ca8d0' # replace with the API Secret you obtained earlier
 
 # Initialize SDK object
 ost_sdk = OSTSdk::Saas::Services.new({api_key: api_key, api_secret: api_secret, api_base_url: api_base_url})
+
 ```
 
 ### Create Alice and Bob
@@ -59,7 +65,9 @@ ost_sdk = OSTSdk::Saas::Services.new({api_key: api_key, api_secret: api_secret, 
 Initialize a Users object to perform user specific actions, like creating users:
 
 ```ruby
+
 ost_users_object = ost_sdk.manifest.users
+
 ```
 
 Create users:
@@ -70,13 +78,15 @@ ost_users_object.create(name: 'Alice')
 
 ost_users_object.create(name: 'Bob')
  # returns object containing Bob's Id, among other information, which you will need later
+
 ```
 
 ### Airdrop Tokens to Alice and Bob
 
 Newly created users do not have any tokens; but you can airdrop tokens to them so that they can participate in your branded token economy.
 
-Initialize aa Airdrop object to execute airdrop
+
+Initialize an Airdrop object to execute airdrop
 
 ```ruby
 ost_airdrop_object = ost_sdk.manifest.airdrops
@@ -109,6 +119,7 @@ ost_action_object.create({name: 'Like', kind: 'user_to_user', currency: 'USD', a
 ```
 
 ### Alice Likes Bob
+
 
 Now that you've created a Like action and funded Alice and Bob with airdropped tokens, you can execute a Like action from Alice to Bob.
 

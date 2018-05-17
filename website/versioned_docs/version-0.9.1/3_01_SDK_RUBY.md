@@ -6,7 +6,6 @@ original_id: sdk_ruby
 ---
 
 The OST Ruby SDK is a Ruby gem that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST Ruby SDK to create users, airdrop tokens to those users, create types of transactions, and execute one of those transaction types between two users.
-
 ### Prerequisites
 
 Successfully integrating the SDK requires having Ruby installed on your system: [<u>https://www.ruby-lang.org/en/documentation/installation/</u>](https://www.ruby-lang.org/en/documentation/installation/)
