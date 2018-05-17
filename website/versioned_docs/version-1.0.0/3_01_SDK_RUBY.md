@@ -1,11 +1,12 @@
 ---
-id: version-0.9.1-sdk_ruby
+id: version-1.0.0-sdk_ruby
 title: Ruby SDK Quick Start Guide
 sidebar_label: Ruby SDK Quick Start Guide
 original_id: sdk_ruby
 ---
 
-The OST Ruby SDK is a Ruby gem that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST Ruby SDK to create users, airdrop tokens to those users, create types of transactions, and execute one of those transaction types between two users.
+The OST Ruby SDK is a Ruby gem that wraps the OST Developers API. This Quick Start Guide will show you how to use the OST Ruby SDK to create users, airdrop tokens to those users, create actions, and execute one of those action types between two users.
+
 ### Prerequisites
 
 Successfully integrating the SDK requires having Ruby installed on your system: [<u>https://www.ruby-lang.org/en/documentation/installation/</u>](https://www.ruby-lang.org/en/documentation/installation/)
@@ -13,7 +14,7 @@ Successfully integrating the SDK requires having Ruby installed on your system: 
 To use the SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
-2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](1_00_KIT_OVERVIEW.md).
+2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](kit_overview.html).
 3. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer API Console</u>](https://kit.ost.com/developer-api-console):
 
 ![API Credentials](assets/Developer_section.jpg)
