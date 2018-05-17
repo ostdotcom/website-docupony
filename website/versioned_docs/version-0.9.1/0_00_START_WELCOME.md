@@ -24,4 +24,4 @@ To get started quickly, try the [<u>Ruby SDK Quick Start Guide</u>](3_01_SDK_RUB
 
 ## Latest Version of API Documentation
 
-To get to the documentation of the lastest version, see [<u>OST API v1 Documentation</u>](https://dev.stagingost.com/docs/1.0.0/simpletoken.html)
+To get to the documentation of the lastest version, see [<u>OST API v1 Documentation</u>](https://dev.ost.com/docs/simpletoken.html)
