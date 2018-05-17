@@ -26,16 +26,13 @@ The request url of this post request reads as
 
 > POST - `https://playgroundapi.ost.com/transaction-types/execute`
 
-and the parameters are sent in the request body.
-```json
-{
-        "api_key": API_KEY,
-        "from_uuid": FROM_UUID,
-        "request_timestamp": EPOCH_TIME_SEC,
-        "to_uuid": TO_UUID,
-        "transaction_kind": NAME,
-        "signature": SIGNATURE
-}
+and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
+
+```
+Content-Type: application/x-www-form-urlencoded
+
+api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_UUID&transaction_kind=NAME&signature=SIGNATURE
+
 ```
 
 ### JSON Response Object

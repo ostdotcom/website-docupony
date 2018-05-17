@@ -9,18 +9,23 @@
     	"kit"],
     "SDK": [
       "sdks_overview",
-      "sdk_ruby"],
+			"sdk_ruby",
+		  "sdk_javascript"],
     "REST API": [
     	"api",
-      "api_authentication",
+      "api_authentication"],
+    "USER" : [
     	"api_users_create",
     	"api_users_edit",
-    	"api_users_list",
+    	"api_users_list"],
+    "AIRDROP" : [
       "api_airdrop_drop",
-      "api_airdrop_status",
+      "api_airdrop_status"],
+    "ACTION" : [
     	"api_transaction-types_create",
     	"api_transaction-types_edit",
-    	"api_transaction-types_list",
+    	"api_transaction-types_list"],
+    "TRANSACTION" : [
     	"api_transaction-types_execute",
     	"api_transaction-types_status"]
   }

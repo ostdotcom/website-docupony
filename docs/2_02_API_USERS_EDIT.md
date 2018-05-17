@@ -26,16 +26,13 @@ The request url of this post request reads as
 
 > POST - `https://playgroundapi.ost.com/users/edit`
 
-and the parameters are sent in the request body.
+and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
-```json
-{
-        "api_key": API_KEY,
-        "request_timestamp": EPOCH_TIME_SEC,
-        "name": NAME,
-        "signature": SIGNATURE,
-        "uuid": UUID
-}
+```
+Content-Type: application/x-www-form-urlencoded
+
+api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&name=NAME&signature=SIGNATURE&uuid=UUID
+
 ```
 ### JSON Response Object
 

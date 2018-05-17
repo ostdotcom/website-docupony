@@ -35,16 +35,13 @@ The request url of this post request reads as
 
 > POST - `https://playgroundapi.ost.com/users/airdrop/drop`
 
-and the parameters are sent in the request body.
+and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
-```json
-{
-        "amount": AMOUNT,
-        "api_key": API_KEY,
-        "list_type": LIST_TYPE,
-        "request_timestamp": EPOCH_TIME_SEC,
-        "signature": SIGNATURE
-}
+```
+Content-Type: application/x-www-form-urlencoded
+        
+amount=AMOUNT&api_key=API_KEY&list_type=LIST_TYPE&request_timestamp=EPOCH_TIME_SEC&signature=SIGNATURE
+
 ```
 ### JSON Response Object
 

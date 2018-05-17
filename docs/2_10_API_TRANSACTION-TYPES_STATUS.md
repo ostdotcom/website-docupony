@@ -14,13 +14,22 @@ Send a POST request on `/transaction-types/status` to query the status of execut
 | _signature_         | hexstring | mandatory [<u>signature generated</u>](2_98_API_AUTHENTICATION.md) for current request |
 | _transaction_uuids[]_ | string | unique identifier for an executed transaction that is part of an array |
 
-where the signature is derived from the API secret key and the string to sign is alphabetically sorted,
+where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below,
 
-`/transaction-types/status?api_key=API_KEY&transaction_uuids[]=TRANSACTION_UUID&request_timestamp=EPOCH_TIME_SEC`
+`/transaction-types/status?api_key=API_KEY&request_timestamp=EPOCH_TIME_SEC&transaction_uuids[]=TRANSACTION_UUID`
 
-so that the full request uri and form reads
+The request url of this post request reads as
 
-> POST - `https://playgroundapi.ost.com/transaction-types/status?api_key=API_KEY&transaction_uuids[]=TRANSACTION_UUID&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE`
+> POST - `https://playgroundapi.ost.com/transaction-types/status`
+
+and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
+
+```
+Content-Type: application/x-www-form-urlencoded
+
+api_key=API_KEY&request_timepstamp=EPOCH_TIME_SEC&signature=SIGNATURE&transaction_uuids[]=TRANSACTION_UUID
+
+```
 
 ### JSON Response Object
 
@@ -132,6 +141,6 @@ curl --request POST \
 --form transaction_uuids[]=TRANSACTION_UUID \
 ```
 
->_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 9th May 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2
