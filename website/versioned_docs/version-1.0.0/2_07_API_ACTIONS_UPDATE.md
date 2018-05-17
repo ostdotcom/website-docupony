@@ -14,7 +14,7 @@ Within OST KIT⍺ you can set up actions to define advanced payments to tokenize
 
 
 ### Input Parameters
-| Parameter           | Type   | Definitions                                           |
+| Parameter           | Type   | Definition                                           |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
@@ -23,9 +23,9 @@ Within OST KIT⍺ you can set up actions to define advanced payments to tokenize
 | _kind_              | string    | Cannot update an action kind.  |
 | _currency_          | string    | type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle.  The action creation fails if the price point is outside of the accepted margins set by the company. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
 | _arbitrary_amount_  | boolean   | true/false. Indicates whether amount (described below) is set in the action during update, or whether it will be provided at the time of execution (i.e., when creating a transaction).  | 
-| _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
+| _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
 | _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' this attribute indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction). |
-| _commission_percent_| string<float>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the percentage of the amount goes to the OST partner company. Possible values (min 0%, max 100%) |
+| _commission_percent_| string\<float\>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the percentage of the amount goes to the OST partner company. Possible values (min 0%, max 100%) |
 
 ### Interdependency of Parameters
 Truth Table showing the 'amount'  and 'arbitrary_amount' interdependency and expected behaviors
@@ -69,29 +69,30 @@ api_key=6078017455d8be7d9f07&currency=BT&name=MissionComplete&request_timestamp=
 
 ### JSON Response Object
 
-| Key        | Type   | Definitions      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 On calling `/actions` the `data.result_type` is the string "action" and the key `data.action` is an object containing the attributes of the action.
 
 ### Action Object Attributes
 
-| Attributes           | Type   | Definitions  |
+| Attributes           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_                | number | identifier for the created action|
 | _name_              | string    | unique name of the action |
 | _kind_              | string    | action kind cannot be changed or updated. Like '_id_' this attribute always remains what it is set to be during action creation.  |
 | _currency_          | string    | type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  When an action is set in fiat the equivalent amount of branded tokens are calculated on-chain over a price oracle.  The action creation fails if the price point is outside of the accepted margins set by the company. For OST KIT⍺ price points are calculated by and taken from coinmarketcap.com and published to the contract by OST.com. |
 | _arbitrary_amount_  | boolean   | true/false. Indicates whether amount (described below) is set in the action during update, or whether it will be provided at the time of execution (i.e., when creating a transaction).  | 
-| _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
+| _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  The transfer on-chain always occurs in branded token and fiat value is calculated to the equivalent amount of branded tokens at the moment of transfer. |
 | _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' this attribute indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction).|
-| _commission_percent_| string<float>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
+| _commission_percent_| string\<float\>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
 
 
-### Example Success Response
+### Example Success Response Body
 ```json
 {
    "success": true,
@@ -107,7 +108,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
    }
 }
 ```
-### Example Failure Response
+### Example Failure Response Body
 ```json
 {
    "success": false,
@@ -136,6 +137,6 @@ curl --request POST \
 --form amount=2 \
 ```
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

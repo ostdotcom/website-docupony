@@ -100,6 +100,6 @@ curl --request GET \
 --form page_no=PAGE_NO \
 ```
 
->_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2

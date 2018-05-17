@@ -11,7 +11,7 @@ Send a GET request to `/airdrops` to receive a list airdrops.
 Gets a paginated list of airdrops executed. This API can also be used to understand the status of multiple airdrops in a single request incases when you execute multiple airdrops simultaneouly.
 
 ### Input Parameters
-| Parameter | Type    | Value                                    |
+| Parameter | Type    | Definition                                    |
 |-----------|---------|------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
@@ -44,17 +44,18 @@ so that the full request uri and form reads
 
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 
 On calling `/airdrops` the `data.result_type` is a string "airdrops" and the key `data.airdrops` is an array containing the requested airdrop objects.
 
 ### Airdrop Object Attributes
-| Attributes           | Type   | Definitions  |
+| Attributes           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_                | number | identifier for the airdrop.    |
 | _current_status_ | string    | indicates the stage at which the executed airdrop is in at the specific point in time of the API request. Please refer the **_current status_** table below for possible values and corresponding description.|
@@ -78,7 +79,7 @@ On calling `/airdrops` the `data.result_type` is a string "airdrops" and the key
 | _allocation_done_   | String | The string to represent that the airdrop process is complete.|
 
 
-### Example Success Response
+### Example Success Response Body
 ```json
 {
    "success": true,
@@ -153,7 +154,7 @@ On calling `/airdrops` the `data.result_type` is a string "airdrops" and the key
 }
 ```
 
-### Example Failure Response
+### Example Failure Response Body
 ```json
 {
    "success": false,
@@ -184,6 +185,6 @@ curl --request GET \
 --form current_status=processing%2Ccomplete \
 ```
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

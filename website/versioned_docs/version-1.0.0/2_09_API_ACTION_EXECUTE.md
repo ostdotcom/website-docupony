@@ -11,7 +11,7 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 
 
 ### Input Parameters
-| Parameter           | Type   | Definitions                                               |
+| Parameter           | Type   | Definition                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
@@ -19,8 +19,8 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 | _from_uuid_    | string | user or company from whom to send the funds |
 | _to_uuid_      | string | user or company to whom to send the funds |
 | _action_id_ | number | id of the action that is to be executed. |
-| _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100). _amount_ is set at execution when parameter  _arbitrary_amount_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ .    |
-| _commission_percent_| string<float>  | for a user_to_user action commission percentage is set at execution when parameter _arbitrary_commission_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ . The commission is inclusive in the _amount_ and the percentage commission goes to the OST partner company. Possible values (min 0%, max 100%) |
+| _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100). _amount_ is set at execution when parameter  _arbitrary_amount_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ .    |
+| _commission_percent_| string\<float\>  | for a user_to_user action commission percentage is set at execution when parameter _arbitrary_commission_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ . The commission is inclusive in the _amount_ and the percentage commission goes to the OST partner company. Possible values (min 0%, max 100%) |
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
@@ -43,32 +43,33 @@ Content-Type: application/x-www-form-urlencoded
 
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For API calls to `/transactions` the `result_type` is a string "transaction" and the key `data.transaction` is an object containing the attributes of the transaction.
 
 We have disabled pessimistic concurrency control to ensure that no false positives are returned. As a result you must query `/transactions/{id}` for successful completion of the transaction.  
 
 ### Transaction Object Attributes
-| Parameter           | Type   | Definitions  |
+| Parameter           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_| string | id of the transaction |
 | _from_user_id_    | string | origin user of the branded token transaction   |
 | _to_user_id_      | string | destination user of the branded token transaction  |
 | _transaction_hash_ | hexstring | the generated transaction hash |
 | _action_id_ | number | id of the action that was executed. |
-| _timestamp_  |string| universal time stamp value of execution of the transaction in milliseconds|
+| _timestamp_  | number | universal time stamp value of execution of the transaction in milliseconds|
 | _status_ | string | the execution status of the transaction: "processing", "failed" or "complete" |
-| _gas_price_ | string | value of the gas utilized for the transaction |
-| _gas_used_ | string | (optional) hexadecimal value of the gas used to execute the tranaction
-| _transaction_fee_ | string | (optional) the value of the gas used at the gas price
-| _block_number_ | number | (optional) the block on the chain in which the transaction was included
-| _amount_ | string | (optional) the amount of branded tokens transferred to the destination user  |
-| _commission_amount_ | string | (optional) the amount of branded tokens transferred to the company |
+| _gas_price_ | string\<number\> | value of the gas utilized for the transaction |
+| _gas_used_ | number | (optional) hexadecimal value of the gas used to execute the tranaction
+| _transaction_fee_ | string\<float\> | (optional) the value of the gas used at the gas price
+| _block_number_ | string\<number\> | (optional) the block on the chain in which the transaction was included
+| _amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the destination user  |
+| _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company |
 
 
 
@@ -125,6 +126,6 @@ curl --request POST \
 
 ```
 
->_last updated 17 May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

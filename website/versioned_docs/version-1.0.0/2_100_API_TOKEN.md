@@ -37,9 +37,10 @@ so the full query reads as
 
 | Key        | Type   | Description      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For api calls to `/token` the `data.result_type` is the string "token" and `data.token` is an object containing the attributes of your token economy.
 
@@ -60,7 +61,7 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
 | _price_points_    | object | Contains the OST price point in USD and the Branded Tokens price point in USD  |
 
 
-### Example Success Response
+### Example Success Response Body
 
 ```json
 {
@@ -92,7 +93,7 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
 }
 ```
 
-### Example Failure Response
+### Example Failure Response Body
 
 ```json
 {
@@ -117,6 +118,6 @@ curl --request GET \
 --form api_key=7cad25e082390a90114e \
 ```
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

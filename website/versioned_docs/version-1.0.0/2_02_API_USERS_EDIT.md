@@ -41,9 +41,10 @@ api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526394008&signature=1
 
 | Key        | Type   | Description      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For api calls to `/users/{id}` the `data.result_type` is the string "users"
 and the key `data.users` is an array of `user` objects.
@@ -59,7 +60,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 | _airdropped_tokens_ | string\<number\> | 	total amount of airdropped tokens to the user |
 | _token_balance_           | string\<number\> | current balance of the user |
 
-### Example Success Response
+### Example Success Response Body
 
 ```json
 {
@@ -82,7 +83,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 }
 ```
 
-### Example Failure Responses
+### Example Failure Response Bodies
 
 ```json
 {
@@ -107,6 +108,6 @@ curl --request POST \
 --form name=Bob \
 ```
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
