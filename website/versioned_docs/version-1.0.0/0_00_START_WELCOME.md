@@ -7,7 +7,7 @@ original_id: simpletoken
 
 OST stands for "Open Simple Token". OST aims to be the blockchain technology partner of choice for businesses of all sizes and levels of technical sophistication, enabling any business to create, launch, and manage their own branded digital token economy powered by OpenST protocols and OST blockchain management software. Our signature product, [<u>OST KIT⍺</u>](https://kit.ost.com), enables you to launch your own Branded Tokens backed by OST⍺ (also referred to as "$OST⍺").
 
-OST KIT⍺ is built on the OpenST protocol. The OpenST protocol allows for the staking of $OST⍺ on Ropsten Ethereum against minting branded tokens on the OpenST network of side blockchains. You can learn more about the OpenST Protocol [<u>here</u>](https://openst.org).
+OST KIT⍺ is built on the OpenST protocol. The OpenST protocol allows for the staking of $OST⍺ on Ropsten Ethereum that enables Branded Tokens to be created, or "minted" on the OpenST network of sidechains. You can learn more about the OpenST Protocol [<u>here</u>](https://openst.org).
 
 OST KIT⍺ provides you with tools for designing, planning, minting, and managing your branded token economy. With our recent release of OST KIT⍺, along with other features, developers will be able to do the following with APIs: 
 
@@ -18,7 +18,7 @@ OST KIT⍺ provides you with tools for designing, planning, minting, and managin
 * [<u>Airdrop</u>](/docs/api_airdrop_execute.html) Branded Tokens to selected users
 * [<u>Execute transactions</u>](/docs/api_trannsactions_execute.html) 
 * [<u>Transfer Funds</u>](/docs/api_transfers_create.html) to an account outside of your branded token economy. This enables you to deploy contracts on the OpenST network of side blockchains.
-* [<u>Get Token Details</u>](/docs/api_token.html) about the `Branded Token` you created for your token economy.
+* [<u>Get Token Details</u>](/docs/api_token.html) about the Branded Token you created for your token economy.
 
 
 ## Quick Start Guide
