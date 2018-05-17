@@ -101,4 +101,4 @@ curl --request POST \
 
 >_last updated 30th April 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
-> OST KIT⍺ v1 | OpenST Platform v0.9.2
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
