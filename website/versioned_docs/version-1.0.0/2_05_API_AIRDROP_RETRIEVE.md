@@ -6,7 +6,7 @@ original_id: api_airdrop_retrieve
 ---
 
 
-Send a GET request to `/airdrops/{id}` to receive the airdrop status. {id} in this API endpoint is the unique identifier of the airdrop that is returned on [<u>executing an airdrop</u>](2_04_API_AIRDROP_EXECUTE.md).
+Send a GET request to `/airdrops/{id}` to receive the airdrop status. {id} in this API endpoint is the unique identifier of the airdrop that is returned on [<u>executing an airdrop</u>](/docs/api_airdrop_execute.html).
  
 Get the status of the airdrop of branded tokens. This API can be used to understand which stage the processing of airdropping the tokens are going through.  
 

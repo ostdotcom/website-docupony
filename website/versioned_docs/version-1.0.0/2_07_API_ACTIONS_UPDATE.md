@@ -5,7 +5,7 @@ sidebar_label: Update an Action
 original_id: api_actions_update
 ---
 
-Send a POST request to `/actions/{id}` to update an exisiting `action`. The {id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the action</u>](2_06_API_ACTIONS_CREATE.md) OR is returned as `id` when a GET is sent to [<u>`/actions`</u>](2_08_API_ACTIONS_LIST.md). 
+Send a POST request to `/actions/{id}` to update an exisiting `action`. The {id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the action</u>](/docs/api_actions_create.html) OR is returned as `id` when a GET is sent to [<u>`/actions`</u>](/docs/api_actions_list.html).
 
 This API updates the specified action by setting the values of the parameters passed. Any parameter not provided will be left unchanged. Individual keys 'cannot' be unset by posting an empty value to them. 
 
