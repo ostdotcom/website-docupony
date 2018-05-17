@@ -17,7 +17,7 @@ To use the SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
 
-2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](/docs/kit/html).
+2. Launch a branded token economy with OST KIT⍺. You can see a step by step guide [<u>here</u>](/docs/kit_overview.html).
 
 3. Obtain an API Key and API Secret from the OST KIT⍺ [<u>Developer API Console</u>](https://kit.ost.com/developer-api-console):
 
@@ -74,10 +74,10 @@ Create users:
 
 ```ruby
 ost_users_object.create(name: 'Alice')
- # returns object containing Alice's Id, among other information, which you will need later
+ # returns object containing Alice's ID, among other information, which you will need later
 
 ost_users_object.create(name: 'Bob')
- # returns object containing Bob's Id, among other information, which you will need later
+ # returns object containing Bob's ID, among other information, which you will need later
 
 ```
 
@@ -93,14 +93,14 @@ ost_airdrop_object = ost_sdk.manifest.airdrops
 ```
 
 ```ruby
-ost_airdrop_object.execute({amount: 10, user_ids: 'd66a40d0-b2fa-4915-b6d2-46bbe644278a, df7153f1-c1cf-4ae2-b980-f04df1e68bb3'})  # airdrops 10 branded tokens to two users whoes Ids have been specified.
-# returns object containing the airdrop Id of the airdrop transaction, among other information, which you will need later
+ost_airdrop_object.execute({amount: 10, user_ids: 'd66a40d0-b2fa-4915-b6d2-46bbe644278a, df7153f1-c1cf-4ae2-b980-f04df1e68bb3'})  # airdrops 10 branded tokens to two users whoes IDs have been specified.
+# returns object containing the airdrop ID of the airdrop transaction, among other information, which you will need later
 ```
 
 Airdropping involves several asynchronous steps and you can use the Id of the airdrop transaction to check its status:
 
 ```ruby
-ost_airdrop_object.get({id: 'ef98395d-e999-463b-a875-84bdd0740b31'}) # actual airdrop Id will differ
+ost_airdrop_object.get({id: 'ef98395d-e999-463b-a875-84bdd0740b31'}) # actual airdrop ID will differ
 
 # # returns object with "steps_complete"=>["users_identified", "tokens_transfered", "contract_approved", "allocation_done"]
 # try a few times till  steps_complete shows all steps mentioned above.
@@ -123,21 +123,19 @@ ost_action_object.create({name: 'Like', kind: 'user_to_user', currency: 'USD', a
 
 Now that you've created a Like action and funded Alice and Bob with airdropped tokens, you can execute a Like action from Alice to Bob.
 
-To execute the Like action, you will need Alice and Bob's Ids. They were returned when you created Alice and Bob. You can alternatively get them by retrieving and filtering the list of users.  And you would need the action id that was returned when you created the action. 
+To execute the Like action, you will need Alice and Bob's IDs. They were returned when you created Alice and Bob. You can alternatively get them by retrieving and filtering the list of users.  And you would need the action ID that was returned when you created the action. 
 
 ```ruby
 ost_transaction_object = ost_sdk.manifest.transactions  #initializes transaction module.
 
 ost_transaction_object.execute({from_user_id:'d66a40d0-b2fa-4915-b6d2-46bbe644278a', to_user_id:'df7153f1-c1cf-4ae2-b980-f04df1e68bb3', action_id:'22613'})
- # returns object with id of executed transaction
+ # returns object with ID of executed transaction
 ```
-
-The Id of the executed transaction signals that worst-case scenario checks that the transaction will be completed have been performed and you can assume the transaction will be successfully mined. However, you can additionally confirm the status of the executed transaction in a couple of ways.
-
-You can retrieve the specific transaction:
+ 
+ You can confirm the status of the executed transaction by retrieving the specific transaction using transaction retrieve API:
 
 ```ruby
-ost_transaction_object.get({id: 'dfd74991-cc10-4547-be84-aece2e4d9a06'}) # the Id of your executed transaction will differ
+ost_transaction_object.get({id: 'dfd74991-cc10-4547-be84-aece2e4d9a06'}) # the ID of your executed transaction will differ
 ```
 
 
