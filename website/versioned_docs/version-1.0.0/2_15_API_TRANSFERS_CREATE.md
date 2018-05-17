@@ -56,7 +56,7 @@ amount=1&api_key=ed0787e817d4946c7e77&request_timestamp=1526461383&to_address=0x
 
 | Key        | Type   | Definition      |
 |------------|--------|------------|
-| _success_  | bool   | post successfulness |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |

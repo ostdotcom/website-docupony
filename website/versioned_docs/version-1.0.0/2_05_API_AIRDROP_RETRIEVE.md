@@ -32,7 +32,7 @@ so that the full request uri and form reads
 
 | Key        | Type   | Definition      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
