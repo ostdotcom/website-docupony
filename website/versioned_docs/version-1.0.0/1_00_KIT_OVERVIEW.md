@@ -21,9 +21,10 @@ MetaMask is required to participate in OST KIT⍺. You will receive an initial a
 ![MetaMaskInstalled](assets/metamask_installed-1.jpg)
 
 ###  4. Setup Actions
-The next step is defining actions. An action represents a core action or event for your business, for example, a "like", "share", "purchase", "API call", "view", "download", "reward", "monthly winner", or "birthday event".  We have created 4 sample actions for you. We encourage you to try various actions in OST KIT⍺. You can create as many actions as you like and you can name them as best fits the economic drivers of your business.
+The next step is defining Actions. An action represents a core action or event for your business, for example, a "like", "share", "purchase", "API call", "view", "download", "reward", "monthly winner", or "birthday event".  We have created 4 sample actions for you. We encourage you to try various actions in OST KIT⍺. You can create as many actions as you like and you can name them as best fits the economic drivers of your business.
 
-![setupTransactions](assets/Setup_Transactions.jpg)
+![setupActions](assets/Setup_Action.jpg)
+
 
 ###  5. Mint Tokens & Reserve Gas
 OST KIT⍺ enables you to easily and safely create your own Branded Tokens on highly scalable OpenST Side Blockchains. The OpenST technology protocol enables Branded Tokens to be created, or "minted", on sidechains by staking OST⍺ on the public Ropsten Ethereum blockchain.
