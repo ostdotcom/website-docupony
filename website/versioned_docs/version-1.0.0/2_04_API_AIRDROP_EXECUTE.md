@@ -60,6 +60,7 @@ amount=10&api_key=6078017455d8be7d9f07&request_timestamp=1526356651&user_ids=f6e
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key `data.airdrop` is an object containing the attributes of the airdrop. The 'id' in this object can be used to check the airdrop status using the [<u>retrieve an airdrop</u>](/docs/api_airdrop_retrieve.html) API endpoint.
 

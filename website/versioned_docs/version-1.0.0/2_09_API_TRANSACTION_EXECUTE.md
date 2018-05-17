@@ -43,6 +43,7 @@ api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For api calls to `/transaction-types/execute` the `data` is an object containing the attributes described below.  A success response acknowledges that the request is successfully queued and a transaction uuid is returned.
 

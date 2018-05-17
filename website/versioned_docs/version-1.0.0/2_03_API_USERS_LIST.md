@@ -51,6 +51,7 @@ so that the full request query reads
 | _success_  | bool   | get successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For api calls to `/users` the `data.result_type` is the string "users"
 and the key `data.users` is an array of the returned `user` objects (10 users per page). The field `data.meta.next_page_payload` contains the filter and order information and the `page_no` number for the next page; or is empty for the last page of the list.

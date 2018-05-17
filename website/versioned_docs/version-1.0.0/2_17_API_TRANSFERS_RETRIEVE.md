@@ -36,6 +36,7 @@ so that the full request query reads
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
+| _code_     | number | HTTP status code |
 
 For calls to `/transfers/{id}`, `data.result_type` is the string "transfer" and `data.transfer` is an object containing the attributes of the specified `transfer`.
 

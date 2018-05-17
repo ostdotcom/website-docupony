@@ -60,6 +60,7 @@ amount=1&api_key=ed0787e817d4946c7e77&request_timestamp=1526461383&to_address=0x
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
+| _code_     | number | HTTP status code |
 
 For calls to `/transfers`, `data.result_type` is the string "transfer" and `data.transfer` is an object containing the attributes of the `transfer`.
 

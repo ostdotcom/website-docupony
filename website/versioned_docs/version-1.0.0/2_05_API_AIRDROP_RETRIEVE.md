@@ -35,6 +35,7 @@ so that the full request uri and form reads
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 
 On calling `/airdrops/{id}` the `data.result_type` is a string "airdrop" and the key `data.airdrop` is an object containing the attributes of the airdrop. 

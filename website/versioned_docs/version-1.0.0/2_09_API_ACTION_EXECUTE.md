@@ -48,6 +48,7 @@ Content-Type: application/x-www-form-urlencoded
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For API calls to `/transactions` the `result_type` is a string "transaction" and the key `data.transaction` is an object containing the attributes of the transaction.
 

@@ -34,6 +34,7 @@ so that the full request query reads
 | _success_  | bool   | get successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For api calls to `/users/{id}` the `data.result_type` is the string "user"
 and the key `data.user` is an array of the returned `user` object. 

@@ -43,6 +43,7 @@ api_key=ed0787e817d4946c7e76&name=Alice&request_timestamp=1526388800&signature=1
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For api calls to `/users` the `data.result_type` is the string "users"
 and the key `data.users` is an array of `user` objects.
