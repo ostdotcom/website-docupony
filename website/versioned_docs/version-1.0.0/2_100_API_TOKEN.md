@@ -52,10 +52,10 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
 | _name_    | string | name of the token  |
 | _symbol_    | string | name of the symbol |
 | _symbol_icon_ | string | icon reference |
-| _conversion_factor_           | string <float\> | conversion factor of the branded token to OST  |
+| _conversion_factor_           | string\<float\> | conversion factor of the branded token to OST  |
 | _token_erc20_address_    | address | prefixed hexstring address of the branded token erc20 contract on the utility chain  |
 | _simple_stake_contract_address_    | address | prefixed hexstring address of the simple stake contract which holds the OST⍺ on Ethereum Ropsten testnet which has been staked to mint branded tokens  |
-| _total_supply_    | string <number\> | Total supply of Branded Tokens|
+| _total_supply_    | string\<number\> | Total supply of Branded Tokens|
 | _ost_utility_balance_    | array | OST⍺ on utility chains with chain IDs and amounts as an array of tuples (3, amount)  |
 | _price_points_    | object | Contains the OST price point in USD and the Branded Tokens price point in USD  |
 

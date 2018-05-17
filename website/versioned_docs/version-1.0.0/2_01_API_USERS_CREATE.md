@@ -55,8 +55,8 @@ On successful creation of the user, `users` contains the created user as a singl
 | _id_      | string  | user id (uuid copy, deprecated) |
 | _addresses_    | array | [(chain id, address)], e.g. [(1409, 0x21bFfb1c7910e9D0393E3f655E921FB47F70ab56)]  |
 | _name_    | string |name of the user (not unique)  |
-| _airdropped_tokens_| string <number\> | total amount of airdropped tokens to the user |
-| _token_balance_           | string <number\> |current balance of the user  |
+| _airdropped_tokens_| string\<number\> | total amount of airdropped tokens to the user |
+| _token_balance_           | string\<number\> |current balance of the user  |
 
 ### Example Success Response
 

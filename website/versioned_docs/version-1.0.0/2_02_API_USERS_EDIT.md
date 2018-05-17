@@ -56,8 +56,8 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 | _id_      | string | user id |
 | _addresses_    | array | [(chain id, address)], e.g. [(1409, 0x21bFfb1c7910e9D0393E3f655E921FB47F70ab56)]    |
 | _name_    | string | name of the user (not unique)  |
-| _airdropped_tokens_ | string <number\> | 	total amount of airdropped tokens to the user |
-| _token_balance_           | string <number\> | current balance of the user |
+| _airdropped_tokens_ | string\<number\> | 	total amount of airdropped tokens to the user |
+| _token_balance_           | string\<number\> | current balance of the user |
 
 ### Example Success Response
 
