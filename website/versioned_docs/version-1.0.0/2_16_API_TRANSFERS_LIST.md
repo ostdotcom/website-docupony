@@ -137,7 +137,7 @@ On a failed authentication, the response will have a `code` 401 and there will b
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/transfers/' \

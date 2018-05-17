@@ -114,7 +114,7 @@ however when a request is invalid the response is returned with successful statu
   }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/users/' \

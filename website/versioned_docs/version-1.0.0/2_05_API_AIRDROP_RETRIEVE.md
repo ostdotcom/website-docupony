@@ -103,7 +103,7 @@ On calling `/airdrops/{id}` the `data.result_type` is a string "airdrop" and the
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/airdrops/ecd9b0b2-a0f4-422c-95a4-f25f8fc88334' \

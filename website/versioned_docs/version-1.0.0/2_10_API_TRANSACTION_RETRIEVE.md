@@ -60,7 +60,7 @@ For API calls to `/transactions/{id}` the `result_type` is a string "transaction
 | _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company |
 
 
-### Sample Success Response
+### Example Success Response Body
 ```json
 {
    "success": true,
@@ -85,7 +85,7 @@ For API calls to `/transactions/{id}` the `result_type` is a string "transaction
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/transactions/0ab712ec-dc41-4e31-ac31-c93bc148bbb9' \

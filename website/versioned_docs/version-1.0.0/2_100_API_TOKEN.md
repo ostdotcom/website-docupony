@@ -107,7 +107,7 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 
 ```bash
 curl --request GET \

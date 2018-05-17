@@ -139,7 +139,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/actions/' \

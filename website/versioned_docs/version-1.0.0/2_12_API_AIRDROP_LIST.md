@@ -172,7 +172,7 @@ On calling `/airdrops` the `data.result_type` is a string "airdrops" and the key
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/airdrops/' \

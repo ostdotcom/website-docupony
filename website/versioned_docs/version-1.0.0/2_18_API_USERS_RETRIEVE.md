@@ -87,7 +87,7 @@ On a failed authentication the response is returned with status code 401 and the
 ```
 
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/users/e55feef0-26e6-438a-9f1a-f348ce2e3c44' \

@@ -97,7 +97,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/users/e55feef0-26e6-438a-9f1a-f348ce2e3c44' \

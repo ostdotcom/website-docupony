@@ -99,7 +99,7 @@ On a failed authentication, the response will have a `code` 401. The body will l
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/transfers/d0589dc5-d0a0-4996-b9f8-847295fd2c3b' \
