@@ -1,5 +1,5 @@
 ---
-id: version-0.9.1-kit
+id: version-1.0.0-kit
 title: OST KIT⍺ Overview
 sidebar_label: Overview
 original_id: kit
@@ -20,8 +20,8 @@ MetaMask is required to participate in OST KIT⍺. You will receive an initial a
 
 ![MetaMaskInstalled](assets/metamask_installed-1.jpg)
 
-###  4. Setup Transactions
-The next step is defining Transactions. A transaction represents a core action or event for your business, for example, a "like", "share", "purchase", "API call", "view", "download", "reward", "monthly winner", or "birthday event".  We have created 4 sample transaction types for you. We encourage you to try various transaction types in OST KIT⍺. You can create as many transaction types as you like and you can name them as best fits the economic drivers of your business.
+###  4. Setup Actions
+The next step is defining actions. An action represents a core action or event for your business, for example, a "like", "share", "purchase", "API call", "view", "download", "reward", "monthly winner", or "birthday event".  We have created 4 sample actions for you. We encourage you to try various actions in OST KIT⍺. You can create as many actions as you like and you can name them as best fits the economic drivers of your business.
 
 ![setupTransactions](assets/Setup_Transactions.jpg)
 

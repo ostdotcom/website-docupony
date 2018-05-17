@@ -5,7 +5,7 @@ sidebar_label: Simple Token
 original_id: simpletoken
 ---
 
-OST stands for "Open Simple Token". OST stands for "Open Simple Token". OST aims to be the blockchain technology partner of choice for businesses of all sizes and levels of technical sophistication, enabling any business to create, launch, and manage their own branded digital token economy powered by OpenST protocols and OST blockchain management software. Our signature product, [<u>OST KIT⍺</u>](https://kit.ost.com), enables you to launch your own Branded Tokens backed by OST⍺ (also referred to as "$OST⍺").
+OST stands for "Open Simple Token". OST aims to be the blockchain technology partner of choice for businesses of all sizes and levels of technical sophistication, enabling any business to create, launch, and manage their own branded digital token economy powered by OpenST protocols and OST blockchain management software. Our signature product, [<u>OST KIT⍺</u>](https://kit.ost.com), enables you to launch your own Branded Tokens backed by OST⍺ (also referred to as "$OST⍺").
 
 OST KIT⍺ is built on the OpenST protocol. The OpenST protocol allows for the staking of $OST⍺ on Ropsten Ethereum against minting branded tokens on the OpenST network of side blockchains. You can learn more about the OpenST Protocol [<u>here</u>](https://openst.org).
 
