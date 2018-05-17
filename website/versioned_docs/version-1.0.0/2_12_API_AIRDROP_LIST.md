@@ -11,7 +11,7 @@ Send a GET request to `/airdrops` to receive a list airdrops.
 Gets a paginated list of airdrops executed. This API can also be used to understand the status of multiple airdrops in a single request incases when you execute multiple airdrops simultaneouly.
 
 ### Input Parameters
-| Parameter | Type    | Value                                    |
+| Parameter | Type    | Definition                                    |
 |-----------|---------|------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
@@ -44,7 +44,7 @@ so that the full request uri and form reads
 
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
@@ -55,7 +55,7 @@ so that the full request uri and form reads
 On calling `/airdrops` the `data.result_type` is a string "airdrops" and the key `data.airdrops` is an array containing the requested airdrop objects.
 
 ### Airdrop Object Attributes
-| Attributes           | Type   | Definitions  |
+| Attributes           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_                | number | identifier for the airdrop.    |
 | _current_status_ | string    | indicates the stage at which the executed airdrop is in at the specific point in time of the API request. Please refer the **_current status_** table below for possible values and corresponding description.|

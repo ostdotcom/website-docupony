@@ -15,7 +15,7 @@ An action is of a certain kind: user_to_user, user_to_company, or company_to_use
 ### Input Parameters
 The retrieve API doesn't takes any additional input parameter except for the mandatory ones which are common across all APIs
 
-| Parameter           | Type   | Definitions                                               |
+| Parameter           | Type   | Definition                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
@@ -34,7 +34,7 @@ so that the full request query reads
 
 ### JSON Response Object
 
-| Key        | Type   | Definitions      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
@@ -44,7 +44,7 @@ so that the full request query reads
 On calling `/actions` the `data.result_type` is the string "action" and the key `data.action` is an object containing the attributes of the action.
 
 ### Action Object Attributes
-| Attributes           | Type   | Definitions  |
+| Attributes           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_                | number | identifier for the created action|
 | _name_              | string    | unique name of the action |

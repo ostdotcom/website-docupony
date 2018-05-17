@@ -11,7 +11,7 @@ You can use this API to send or reward your end-users a selected amount of brand
 
 
 ### Input Parameters
-| Parameter | Type    | Definitions                                    |
+| Parameter | Type    | Definition                                    |
 |-----------|---------|------------------------------------------|
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
@@ -55,7 +55,7 @@ amount=10&api_key=6078017455d8be7d9f07&request_timestamp=1526356651&user_ids=f6e
 ```
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |

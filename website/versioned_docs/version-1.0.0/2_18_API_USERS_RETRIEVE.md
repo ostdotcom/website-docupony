@@ -11,7 +11,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 
 ### Input Parameters
 
-| Parameter           | Type       | Definitions  |
+| Parameter           | Type       | Definition  |
 |---------------------|-----------|--------|
 | _api_key_           | string      | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com)|
 | _request_timestamp_ | number     | (mandatory) epoch time in seconds of current time |

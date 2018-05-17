@@ -12,7 +12,7 @@ Get the status of the airdrop of branded tokens. This API can be used to underst
 
 
 ### Input Parameters
-| Parameter | Type    | Value                                    |
+| Parameter | Type    | Definition                                    |
 |-----------|---------|------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
@@ -30,7 +30,7 @@ so that the full request uri and form reads
 
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
@@ -41,7 +41,7 @@ so that the full request uri and form reads
 On calling `/airdrops/{id}` the `data.result_type` is a string "airdrop" and the key `data.airdrop` is an object containing the attributes of the airdrop. 
 
 ### Airdrop Object Attributes
-| Attributes           | Type   | Definitions  |
+| Attributes           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_                | number | identifier for the airdrop.    |
 | _current status_ | string    | indicates the stage at which the executed airdrop is in at the specific point in time of the API request. Please refer the **_current status_** table below for possible values and corresponding description.|

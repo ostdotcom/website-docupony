@@ -11,7 +11,7 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 
 
 ### Input Parameters
-| Parameter           | Type   | Definitions                                               |
+| Parameter           | Type   | Definition                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
@@ -43,7 +43,7 @@ Content-Type: application/x-www-form-urlencoded
 
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
 | _success_  | bool   | post successful |
 | _data_     | object | (optional) data object describing result if successful   |
@@ -55,7 +55,7 @@ For API calls to `/transactions` the `result_type` is a string "transaction" and
 We have disabled pessimistic concurrency control to ensure that no false positives are returned. As a result you must query `/transactions/{id}` for successful completion of the transaction.  
 
 ### Transaction Object Attributes
-| Parameter           | Type   | Definitions  |
+| Parameter           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_| string | id of the transaction |
 | _from_user_id_    | string | origin user of the branded token transaction   |
@@ -64,7 +64,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 | _action_id_ | number | id of the action that was executed. |
 | _timestamp_  |string| universal time stamp value of execution of the transaction in milliseconds|
 | _status_ | string | the execution status of the transaction: "processing", "failed" or "complete" |
-| _gas_price_ | string | value of the gas utilized for the transaction |
+| _gas_price_ | string\<number\> | value of the gas utilized for the transaction |
 | _gas_used_ | string | (optional) hexadecimal value of the gas used to execute the tranaction
 | _transaction_fee_ | string | (optional) the value of the gas used at the gas price
 | _block_number_ | number | (optional) the block on the chain in which the transaction was included
