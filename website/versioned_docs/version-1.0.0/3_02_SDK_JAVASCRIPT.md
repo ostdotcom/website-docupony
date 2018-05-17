@@ -85,39 +85,40 @@ Airdropping involves several asynchronous steps and you can use the ids of the r
 
 ```javascript
 airdropService.get({id: 'ecd9b0b2-a0f4-422c-95a4-f25f8fc88334'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
-// actual airdrop id will differ
+// the airdrop id will differ
 // returns object with "steps_complete"=>["users_identified", "tokens_transfered", "contract_approved", "allocation_done"]
 ```
 
 ### Create a Like Action
 
-You can create named actions with defined values that are between users or between a user and your company.
-
-For instance, to make a "Like" action for your branded token between users, that is priced in USD:
+You can create named actions with defined values that are between users or between a user and your company. For instance, to make a "Like" action for your branded token between users, that is priced in USD. First Initialize an action object:
 
 ```javascript
 const actionService = ostObj.services.actions; // initializes an action object
 
-actionService.create({name: 'Like', kind: 'user_to_user', currency: 'USD', arbitrary_amount: false, amount: 1.01, commission_percent: 1}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); 
+```
+Now create a new action called 'Like':
 
+```javascript
+actionService.create({name: 'Like', kind: 'user_to_user', currency: 'USD', arbitrary_amount: false, amount: 1.01, commission_percent: 1}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); 
 ```
 To understand more about how to use arbitrary amounts for action checkout the [action documentation.](/docs/api_actions_create.html) 
 
 ### Alice Likes Bob
 
-Now that you've created a Like action and funded Alice and Bob with airdropped tokens, you can execute a Like action from Alice to Bob.
+Now that you've created a Like action, funded Alice and Bob with airdropped tokens, you can execute a Like action from Alice to Bob.
 
 To execute the Like action, you will need Alice and Bob's ids and the action id. The user id are returned when you created Alice and Bob. However, you can get them again by retrieving and filtering the list of users:
 
 ```javascript
 userService.list({}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
-
-// # returns object that includes the list of users
-// fetch UUIDs for Alice and Bob
+// returns object that includes the list of users
+// fetch ids for Alice and Bob
 ```
-_Note: OST KIT⍺ does not place a uniqueness constraint on user names._
+_Note: OST KIT⍺ does not place a uniqueness constraint on user names_
 
 To retrieve the action id, list the actions object as follows:
+
 ```javascript
 actionService.list({}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); 
 ```
@@ -132,7 +133,6 @@ To execute a Like action between Alice and Bob, use the users ids and the action
 
 ```javascript
 transactionService.execute({from_user_id:'0a201640-77a7-49c8-b289-b6b5d7325323', to_user_id:'24580db2-bf29-4d73-bf5a-e1d0cf8c8928', action_id:'22599'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
-
 // returns object with id of executed transaction
 // the ids of your Alice and Bob users and the "Upvote" action type will differ
 ```
@@ -142,7 +142,7 @@ You can get the status of the specific transaction with its id:
 
 ```javascript
 transactionService.get({id: '84d97848-074f-4a9a-a214-19076cfe9dd1'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
- // the id of your executed transaction will differ
+// the id of your executed transaction will differ 
 ```
 
 Or you can get the list of all transactions:
