@@ -32,7 +32,7 @@ so that the full request query reads
 
 | Key        | Type   | Definition      |
 |------------|--------|------------|
-| _success_  | bool   | post successfulness |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
@@ -102,13 +102,13 @@ On a failed authentication, the response will have a `code` 401. The body will l
 ### Sample Code | Curl
 ```bash
 curl --request GET \
---url 'https://sandboxapi.ost.com/v1/transfers/2c66960e-0380-4f7b-8f41-c344d44ab3d4' \
---header 'Accept: application/json' \
---form request_timestamp=1526467650 \
---form signature=b6edbce2f37ef5fa50818bbdd2e1eeb3a877d555b928b0b9665a367c9a02fa00 \
---form api_key=6078017455d8be7d9f07 \
+--url 'https://sandboxapi.ost.com/v1/transfers/d0589dc5-d0a0-4996-b9f8-847295fd2c3b' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526550753 \
+--form signature=c709eaf7489e54d2e6baa61d18441bcfbe343e2b2c6217e9c29a125cdf4fb674 \
+--form api_key=7cad25e082390a90114e \
 ```
 
->_last updated 17th May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

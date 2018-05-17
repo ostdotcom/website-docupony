@@ -105,13 +105,13 @@ however when a request is invalid the response is returned with status code 200 
 ```bash
 curl --request GET \
 --url 'https://playgroundapi.ost.com/users/airdrop/status'
---header "Accept: application/json" \
+--header 'Accept: application/x-www-form-urlencoded' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
 --form api_key=API_KEY \
 --form airdrop_uuid=AIRDROP_UUID \
 
 ```
->_last updated 14 March 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2

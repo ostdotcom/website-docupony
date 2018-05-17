@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_actions_list
-title: OST KIT⍺ API | List All Actions
+title: OST KIT⍺ API | List all Actions
 sidebar_label: List Actions
 original_id: api_actions_list
 ---
@@ -13,7 +13,7 @@ An action is of a certain kind: user_to_user, user_to_company, or company_to_use
 
 
 ### Input Parameters
-| Parameter | Type | Definitions                                         |
+| Parameter | Type | Definition                                         |
 |-----------|------|-----------------------------------------------|
 | _api_key_           | string    | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
@@ -50,30 +50,31 @@ so that the full request query reads
 
 ### JSON Response Object
 
-| Key        | Type   | Definitions      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 On calling `/actions` the `data.result_type` is the string "action" and the key `data.action` is an array containing the requested action objects.
 
 
 ### Action Object Attributes
 
-| Attributes           | Type   | Definitions  |
+| Attributes           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_                | number | identifier for the created action|
 | _name_              | string    | unique name of the action |
 | _kind_              | string    | Cannot update an action kind.  |
 | _currency_          | string    | type of currency the action amount is specified in. Possible values are "USD" (fixed) or "BT" (floating).  |
 | _arbitrary_amount_  | boolean   | true/false. Indicates whether amount (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction).  | 
-| _amount_            | string<float>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).   |
+| _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).   |
 | _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' this attribute indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction). |
-| _commission_percent_| string<float>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
+| _commission_percent_| string\<float\>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
 
 
-### Example Success Response
+### Example Success Response Body
 ```json
 {
    "success": true,
@@ -141,9 +142,14 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 ### Sample Code | Curl
 ```bash
 curl --request GET \
-#** TO TEST FIRST AND THEN PUT IN **
+--url 'https://sandboxapi.ost.com/v1/actions/' \
+--header 'Accept: application/x-www-form-urlencoded' \
+--form request_timestamp=1526550366 \
+--form signature=84cbc8562b9c684d046323817a0d2ef4db8949f048eb3f96727cdb57b6dc07be \
+--form api_key=7cad25e082390a90114e \
+--form page_no=1 \
 ```
 
->_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

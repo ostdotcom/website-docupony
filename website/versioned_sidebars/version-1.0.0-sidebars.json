@@ -50,6 +50,7 @@
       "version-1.0.0-api_transfers_list"
     ],
     "TOKEN" : [
-      "version-1.0.0-api_token"]
+      "version-1.0.0-api_token"
+    ]
   }
 }

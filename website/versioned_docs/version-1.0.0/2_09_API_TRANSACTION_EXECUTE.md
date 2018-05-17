@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_transaction_execute
-title: OST KIT⍺ API | Execute An Action
+title: OST KIT⍺ API | Execute an Action
 sidebar_label: Execute an Action
 original_id: api_transaction_execute
 ---
@@ -10,7 +10,7 @@ Send a POST request on `/transaction-types/execute` to get a list of executed tr
 Within OST KIT⍺ you can set up actions to define advanced payments to tokenize your application. A transaction type is of a certain kind: user_to_user, user_to_company, or company_to_user. A transaction type's value is set in branded tokens ($BT) or in fiat ($USD). Note that OST KIT⍺ runs on a testnet and tokens have no market value. For fiat payments a price oracle is consulted on-chain to calculate the equivalent amount of branded tokens to transfer. Lastly for user to user payments the company can set a transaction fee to earn on a user-to-user payment.
 
 ### Input Parameters
-| Parameter           | Type   | Value                                               |
+| Parameter           | Type   | Definition                                               |
 |---------------------|--------|-----------------------------------------------------|
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
@@ -38,11 +38,12 @@ api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_
 
 ### JSON Response Object
 
-| Key        | Type   | Value      |
+| Key        | Type   | Definition      |
 |------------|--------|------------|
-| _success_  | bool   | post successful |
+| _success_  | bool   | whether successful |
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
+| _code_     | number | HTTP status code |
 
 For api calls to `/transaction-types/execute` the `data` is an object containing the attributes described below.  A success response acknowledges that the request is successfully queued and a transaction uuid is returned.
 
@@ -90,7 +91,7 @@ On a successful acknowledgement the transaction uuid must be queried on `/transa
 ```bash
 curl --request POST \
 --url 'https://playgroundapi.ost.com/transaction-types/execute'
---header "Accept: application/json"
+--header 'Accept: application/x-www-form-urlencoded'
 --form api_key=API_KEY \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
@@ -99,6 +100,6 @@ curl --request POST \
 --form transaction_kind=NAME \
 ```
 
->_last updated 30th April 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
-> OST KIT⍺ v1 | OpenST Platform v0.9.2
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
