@@ -5,13 +5,13 @@ sidebar_label: Token Details
 original_id: api_token
 ---
 
-Send a GET-request to `/token` to receive information about the `Branded Token` you created for your token economy.
+Send a GET-request to `/token` to receive information about the Branded Token you created for your token economy.
 
-The `Branded Token` you minted within your token economy setup process serves as your token economy's currency. As a part of that process you define a conversion rate of OST to your `Branded Token`, which will be fixed once you've set it up.
+The Branded Token you minted within your token economy setup process serves as your token economy's currency. As a part of that process you define a conversion rate of OST to your Branded Token, which will be fixed once you've set it up.
 
-This `Branded Token` will be used by your token economy's users and your company to perform the transactions that have been defined, e.g. tokens can be airdropped to all or specific users or users can spend tokens to use certain services within an application.
+This Branded Token will be used by your token economy's users and your company to perform the actions that have been defined, e.g. users can spend tokens to use certain services within an application such as likes or upvotes.
 
-The information you receive by performing this request also includes your `Simple Stake Contract Address`. A situation, in which this information could be relevant, would be if you want to find out your current OST⍺ balance available for transfers to non-OST KIT accounts on the utility chain. This could be the case if you have the intention to deploy your own smart contracts.
+The information you receive by performing this request also includes your Simple Stake Contract Address. A situation, in which this information could be relevant, would be if you want to find out your current OST⍺ Prime balance available for transfers to non-OST KIT accounts on the utility chain. This could be the case if you have the intention to deploy your own smart contracts.
 
 
 ### Input Parameters
@@ -22,23 +22,17 @@ The information you receive by performing this request also includes your `Simpl
 | _request_timestamp_ | number   | (mandatory) epoch time in seconds of current time |
 | _signature_         | hexstring | (mandatory) [<u>signature generated</u>](/docs/api_authentication.html) for current request |
 
-where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
+The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
+As an example
 
 `/token/?api_key=ed0787e817d4946c7e76&request_timestamp=1526462863`
 
-The request url of this post request reads as
+so the full query reads as
 
 > GET - `https://sandboxapi.ost.com/v1/token?api_key=ed0787e817d4946c7e76&request_timestamp=1526395328&signature=1370bc4398eb5f6811f4713d6fd79ddf8230a64258b7cd4b4a29482ff8ccf7a2`
 
-and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
-```
-Content-Type: application/x-www-form-urlencoded
-
-api_key=ed0787e817d4946c7e76&request_timestamp=1526462863
-
-```
 ### JSON Response Object
 
 | Key        | Type   | Description      |
@@ -47,7 +41,7 @@ api_key=ed0787e817d4946c7e76&request_timestamp=1526462863
 | _data_     | object | (optional) data object describing result if successful   |
 | _err_      | object | (optional) describing error if not successful |
 
-For api calls to `/token` the `data.result_type` is the string "token".
+For api calls to `/token` the `data.result_type` is the string "token" and `data.token` is an object containing the attributes of your token economy.
 
 
 ### Token Object Attributes
@@ -58,12 +52,10 @@ For api calls to `/token` the `data.result_type` is the string "token".
 | _name_    | string | name of the token  |
 | _symbol_    | string | name of the symbol |
 | _symbol_icon_ | string | icon reference |
-| _conversion_factor_           | string [float] | conversion factor of the branded token to OST  |
+| _conversion_factor_           | string <float\> | conversion factor of the branded token to OST  |
 | _token_erc20_address_    | address | prefixed hexstring address of the branded token erc20 contract on the utility chain  |
-| _airdrop_contract_address_    | address | prefixed hexstring address of the airdrop / pricer contract that regulates payments of branded tokens with actions  |
 | _simple_stake_contract_address_    | address | prefixed hexstring address of the simple stake contract which holds the OST⍺ on Ethereum Ropsten testnet which has been staked to mint branded tokens  |
-| _total_supply_    | string [number] | Total supply of Branded Tokens|
-| _ost_value_balance_    | string [number] | OST⍺ amount ropsten  |
+| _total_supply_    | string <number\> | Total supply of Branded Tokens|
 | _ost_utility_balance_    | array | OST⍺ on utility chains with chain IDs and amounts as an array of tuples (3, amount)  |
 | _price_points_    | object | Contains the OST price point in USD and the Branded Tokens price point in USD  |
 
@@ -118,13 +110,11 @@ For api calls to `/token` the `data.result_type` is the string "token".
 
 ```bash
 curl --request GET \
---url 'https://sandboxapi.ost.com/v1/token' \
+--url 'https://sandboxapi.ost.com/v1/token/' \
 --header 'Accept: application/json' \
---form request_timestamp=EPOCH_TIME_SEC \
---form signature=SIGNATURE \
---form api_key=API_KEY \
---form name=NAME \
---form uuid=UUID \
+--form request_timestamp=1526549977 \
+--form signature=1dac77ed77c1f4b19a23d9af13ded49c7775e44c006b4e8f9515a7314b4de76f \
+--form api_key=7cad25e082390a90114e \
 ```
 
 >_last updated 17th May 2018_; for support see [help.ost.com](help.ost.com)

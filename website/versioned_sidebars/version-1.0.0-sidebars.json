@@ -17,8 +17,7 @@
     "REST API": [
       "version-1.0.0-api",
       "version-1.0.0-api_authentication",
-      "version-1.0.0-api_error_handling",
-      "version-1.0.0-api_token"
+      "version-1.0.0-api_error_handling"
     ],
     "USERS": [
       "version-1.0.0-api_users_create",
@@ -46,6 +45,8 @@
       "version-1.0.0-api_transfers_create",
       "version-1.0.0-api_transfers_list",
       "version-1.0.0-api_transfers_retrieve"
-    ]
+    ],
+    "TOKEN" : [
+      "version-1.0.0-api_token"]
   }
 }
