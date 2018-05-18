@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_airdrop_execute
-title: OST KIT⍺ | Execute an Airdrop
+title: OST KIT⍺ API | Execute an Airdrop
 sidebar_label: Execute an Airdrop
 original_id: api_airdrop_execute
 ---
@@ -99,7 +99,7 @@ On calling `/airdrops` the `data.result_type` is a string "airdrop" and the key 
 ```
 
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/airdrops/' \

@@ -90,7 +90,7 @@ On calling `/transfers`, `data.result_type` is the string "transfers" and `data.
         "gas_price": "5000000000",
         "gas_used": null,
         "block_number": "2327073",
-        "chain_id": "198"
+        "chain_id": "1409"
       },
       {
         "id": "cee672d6-bd9f-4f41-a18c-81b651ea9393",
@@ -103,7 +103,7 @@ On calling `/transfers`, `data.result_type` is the string "transfers" and `data.
         "gas_price": "5000000000",
         "gas_used": null,
         "block_number": "2326190",
-        "chain_id": "198"
+        "chain_id": "1409"
       }
     ],
     "meta": {
@@ -137,7 +137,7 @@ On a failed authentication, the response will have a `code` 401 and there will b
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/transfers/' \

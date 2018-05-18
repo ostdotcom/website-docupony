@@ -77,7 +77,7 @@ and the key `data.users` is an array of the returned `user` objects (10 users pe
             "id": "3b679b8b-b56d-48e5-bbbe-7397899c8ca6",
             "addresses": [
                [
-                  "198",
+                  "1409",
                   "0x0d6fE7995175198bd7ad4242fCa4CA8539b509c7"
                ]
             ],
@@ -89,7 +89,7 @@ and the key `data.users` is an array of the returned `user` objects (10 users pe
             "id": "d1c0be68-30bd-4b06-af73-7da110dc62da",
             "addresses": [
                [
-                  "198",
+                  "1409",
                   "0x7b01d73494eb5D2B073eeafB5f8c779CE45853f1"
                ]
             ],
@@ -121,7 +121,7 @@ On a failed authentication the response is returned with status code 401 and the
 ```
 
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/users/' \

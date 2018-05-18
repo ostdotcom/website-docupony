@@ -5,7 +5,7 @@ sidebar_label: Retrieve an Action
 original_id: api_actions_retrieve
 ---
 
-Send a GET request on `/actions/{id}` to receive a specific action. The {id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the action</u>](2_06_API_ACTIONS_CREATE.md) OR is returned as `id` when a GET is sent to [<u>`/actions`</u>](2_08_API_ACTIONS_LIST.md). 
+Send a GET request on `/actions/{id}` to receive a specific action. The {id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the action</u>](/docs/api_actions_create.html) OR is returned as `id` when a GET is sent to [<u>`/actions`</u>](/docs/api_actions_list.html). 
 
 Within OST KIT⍺ you can set up actions to define advanced payments to tokenize your application. An action's amount can be set in branded tokens ($BT) or in fiat ($USD). This amount represents how much the action is worth each time one of your customers execute that action. 
 
@@ -77,7 +77,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/actions/1234' \

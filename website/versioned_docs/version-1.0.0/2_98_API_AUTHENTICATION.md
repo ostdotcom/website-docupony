@@ -8,7 +8,7 @@ original_id: api_authentication
 Every API request on `https://sandboxapi.ost.com/v1` requires hash-based message authentication.  You can obtain your API key and shared API secret for your branded token from the OST KIT⍺ Developers API console at [<u>kit.ost.com/developer-api-console</u>](https://kit.ost.com/developer-api-console).
 
 Every request has three mandatory parameters that must be included:
-- `api_key`, the API key as provided from [<u>OST KIT⍺</u>](kit.ost.com/developer-api-console)
+- `api_key`, the API key as provided from [<u>OST KIT⍺</u>](https://kit.ost.com/developer-api-console)
 - `request_timestamp`, the current unix timestamp in seconds.
 - `signature`, the signature as the sha256 digest of the shared API secret and the correctly formatted query string as described below.
 

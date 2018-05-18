@@ -17,8 +17,8 @@ A user can own branded tokens within your branded token economy.  Users can exch
 |---------------------|-----------|--------|
 | _api_key_           | string     | (mandatory) API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | (mandatory) epoch time in seconds of current time |
-| _signature_         | hexstring  |(mandatory) [<u>signature generated</u>](/docs/api_authentication.htmls) for current request |
-| _name_              | string    |new name of the user (not unique) |
+| _signature_         | hexstring  | (mandatory) [<u>signature generated</u>](/docs/api_authentication.html) for current request |
+| _name_              | string    | new name of the user (not unique) |
 
 where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
@@ -71,7 +71,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
          "id": "69cc4fcd-39ca-4499-8948-c402dd83fcd8",
          "addresses": [
             [
-               "198",
+               "1409",
                "0x0A302b902Ed27c27c90027A104e6E589261a1987"
             ]
          ],
@@ -97,7 +97,7 @@ On successful edit of a user, `users` contains the edited user as a single eleme
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/users/e55feef0-26e6-438a-9f1a-f348ce2e3c44' \

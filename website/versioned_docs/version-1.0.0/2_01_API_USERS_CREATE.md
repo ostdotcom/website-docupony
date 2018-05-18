@@ -70,7 +70,7 @@ On successful creation of the user, `users` contains the created user as a singl
          "id": "d9c97f83-85d5-46b5-a4fb-c73011cbd803",
          "addresses": [
             [
-               "198",
+               "1409",
                "0x9352880A2A4c05c41eC1962980Bb1a0bA4176182"
             ]
          ],
@@ -114,7 +114,7 @@ however when a request is invalid the response is returned with successful statu
   }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/users/' \

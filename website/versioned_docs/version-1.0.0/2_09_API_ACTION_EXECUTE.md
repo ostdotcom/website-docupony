@@ -73,7 +73,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 
 
 
-### Sample Success Response
+### Example Success Response Body
 
 ```json
 {
@@ -99,7 +99,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 }
 ```
 
-### Sample Failure Response   -  TO PUT AFTER BUGFIX
+### Example Failure Response Body
 ```json
 {
    "success": false,
@@ -112,7 +112,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/transactions/' \
