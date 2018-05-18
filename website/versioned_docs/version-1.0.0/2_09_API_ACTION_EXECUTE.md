@@ -16,7 +16,7 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
 | _signature_         | hexstring | mandatory [<u>signature generated</u>](/docs/api_authentication.html) for current request |
-| _from_uuid_    | string | user or company from whom to send the funds |
+| _from_user_id_    | string | user or company from whom to send the funds |
 | _to_uuid_      | string | user or company to whom to send the funds |
 | _action_id_ | number | id of the action that is to be executed. |
 | _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100). _amount_ is set at execution when parameter  _arbitrary_amount_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ .    |
