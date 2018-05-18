@@ -58,7 +58,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 | Parameter           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_| string | id of the transaction |
-| _from_user_id_    | string | origin user of the branded token transaction   |
+| _from_user_id_    | string | origin user of the branded token transaction.   |
 | _to_user_id_      | string | destination user of the branded token transaction  |
 | _transaction_hash_ | hexstring | the generated transaction hash |
 | _action_id_ | number | id of the action that was executed. |
@@ -72,6 +72,10 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 | _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company |
 
 
+### _from_user_id_ & _to_user_id_
+While executing a company_to_user or user_to_company action, Company UUID is passed as a parameter in the respective _from_user_id_ or _to_user_id_. You can get your Company UUID from [<u>Developers Tab in OST KIT⍺</u>](https://kit.ost.com/developer-api-console). 
+
+order to execute transactions between the company and users using APIs.
 
 ### Example Success Response Body
 
