@@ -24,7 +24,7 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 
 **_from_user_id_ & _to_user_id_**
 
-While executing a company_to_user or user_to_company action, Company UUID is passed as a parameter in the respective _from_user_id_ or _to_user_id_ field. You can retrieve your Company UUID by making a [<u>GET request to /tokens</u>](/docs/api_token.html)  or from [<u>Developers Tab in OST KIT⍺</u>](https://kit.ost.com/developer-api-console). 
+While executing a company_to_user or user_to_company action, Company UUID is passed as a parameter in the respective _from_user_id_ or _to_user_id_ field. You can retrieve your Company UUID by making a [<u>GET request to /token</u>](/docs/api_token.html)  or from [<u>Developers Tab in OST KIT⍺</u>](https://kit.ost.com/developer-api-console). 
 
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
