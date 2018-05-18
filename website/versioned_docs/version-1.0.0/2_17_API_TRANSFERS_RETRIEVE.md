@@ -103,12 +103,12 @@ On a failed authentication, the response will have a `code` 401. The body will l
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/transfers/d0589dc5-d0a0-4996-b9f8-847295fd2c3b' \
---header 'Accept: application/x-www-form-urlencoded' \
+--header 'Accept: application/json' \
 --form request_timestamp=1526550753 \
 --form signature=c709eaf7489e54d2e6baa61d18441bcfbe343e2b2c6217e9c29a125cdf4fb674 \
 --form api_key=7cad25e082390a90114e \
 ```
 
->_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 22 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
