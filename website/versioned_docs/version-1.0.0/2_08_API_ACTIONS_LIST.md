@@ -1,6 +1,6 @@
 ---
 id: version-1.0.0-api_actions_list
-title: OST KIT⍺ API | List all Actions
+title: OST KIT⍺ API | List Actions
 sidebar_label: List Actions
 original_id: api_actions_list
 ---
@@ -33,7 +33,7 @@ Each filter parameter type is a comma-separated string.
 |------------|--------------------------------------------|-------------------------------------|
 | _id_          | Action ids                                 | 'id="20346, 20346"'                     |
 | _name_        | names of the action                         | 'name="Like, Upvote"'               |
-| _kind_        | the kind of the action set during the [<u>creation of the action</u>](2_06_API_ACTIONS_CREATE.md) | 'kind="user_to_user"'|
+| _kind_        | the kind of the action set during the [<u>creation of the action</u>](/docs/api_actions_create.html) | 'kind="user_to_user"'|
 | _arbitrary_amount_ |  actions where the amount is set during creation or provided at execution  | 'arbitrary_amount= false'|
 | _arbitrary_commission_ | user_to_user actions where the commission is set during creation or provided at execution | 'arbitrary_commission=true' | 
 
@@ -139,7 +139,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/actions/' \

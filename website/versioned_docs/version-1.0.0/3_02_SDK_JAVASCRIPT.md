@@ -56,7 +56,7 @@ const ostObj = new OSTSDK({apiKey: api_key, apiSecret: api_secret, apiEndpoint: 
 Initialize a Users object to perform user specific actions, like creating users:
 
 ```javascript
-> const userService = ostObj.services.user;
+> const userService = ostObj.services.users;
 ```
 
 Create users:

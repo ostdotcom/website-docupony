@@ -74,7 +74,7 @@ For calls to `/transfers/{id}`, `data.result_type` is the string "transfer" and 
         "gas_price": "5000000000",
         "gas_used": null,
         "block_number": "2327073",
-        "chain_id": "198"
+        "chain_id": "1409"
     }
   }
 }
@@ -99,7 +99,7 @@ On a failed authentication, the response will have a `code` 401. The body will l
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/transfers/d0589dc5-d0a0-4996-b9f8-847295fd2c3b' \

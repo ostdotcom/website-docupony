@@ -16,11 +16,16 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 | _api_key_           | string    | mandatory API key obtained from [kit.ost.com](https://kit.ost.com) |
 | _request_timestamp_ | number    | mandatory epoch time in seconds of current time |
 | _signature_         | hexstring | mandatory [<u>signature generated</u>](/docs/api_authentication.html) for current request |
-| _from_uuid_    | string | user or company from whom to send the funds |
-| _to_uuid_      | string | user or company to whom to send the funds |
+| _from_user_id_    | string | user or company from whom to send the funds |
+| _to_user_id_      | string | user or company to whom to send the funds |
 | _action_id_ | number | id of the action that is to be executed. |
 | _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100). _amount_ is set at execution when parameter  _arbitrary_amount_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ .    |
 | _commission_percent_| string\<float\>  | for a user_to_user action commission percentage is set at execution when parameter _arbitrary_commission_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ . The commission is inclusive in the _amount_ and the percentage commission goes to the OST partner company. Possible values (min 0%, max 100%) |
+
+**_from_user_id_ & _to_user_id_**
+
+While executing a company_to_user or user_to_company action, Company UUID is passed as a parameter in the respective _from_user_id_ or _to_user_id_ field. You can retrieve your Company UUID by making a [<u>GET request to /token</u>](/docs/api_token.html)  or from [<u>Developers Tab in OST KIT⍺</u>](https://kit.ost.com/developer-api-console). 
+
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
@@ -58,7 +63,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 | Parameter           | Type   | Definition  |
 |---------------------|--------|----------------------------------|
 | _id_| string | id of the transaction |
-| _from_user_id_    | string | origin user of the branded token transaction   |
+| _from_user_id_    | string | origin user of the branded token transaction.   |
 | _to_user_id_      | string | destination user of the branded token transaction  |
 | _transaction_hash_ | hexstring | the generated transaction hash |
 | _action_id_ | number | id of the action that was executed. |
@@ -73,7 +78,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 
 
 
-### Sample Success Response
+### Example Success Response Body
 
 ```json
 {
@@ -99,7 +104,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 }
 ```
 
-### Sample Failure Response   -  TO PUT AFTER BUGFIX
+### Example Failure Response Body
 ```json
 {
    "success": false,
@@ -112,7 +117,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/transactions/' \

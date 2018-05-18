@@ -46,8 +46,8 @@ and the key `data.user` is an array of the returned `user` object.
 | _id_      | string | user id |
 | _addresses_    | array | [(chain id, address)], e.g. [(1409, 0x21bFfb1c7910e9D0393E3f655E921FB47F70ab56)]  |
 | _name_    | string | name of the user (not unique)  |
-| _airdropped_tokens_ | string [number] | 	total amount of airdropped tokens to the user |
-| _token_balance_           | string [number] | current balance of the user |
+| _airdropped_tokens_ | string\<number\> | 	total amount of airdropped tokens to the user |
+| _token_balance_           | string\<number\> | current balance of the user |
 
 ### Example Success Response Body
 ```json
@@ -59,7 +59,7 @@ and the key `data.user` is an array of the returned `user` object.
          "id": "e2f14afd-dac1-4657-9cff-32be1f330263",
          "addresses": [
             [
-               "198",
+               "1409",
                "0xe26aA749269C09ABF947b86361DCDEfC1A3e620A"
             ]
          ],
@@ -87,7 +87,7 @@ On a failed authentication the response is returned with status code 401 and the
 ```
 
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/users/e55feef0-26e6-438a-9f1a-f348ce2e3c44' \

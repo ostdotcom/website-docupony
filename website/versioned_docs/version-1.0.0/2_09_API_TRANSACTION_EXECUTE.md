@@ -60,7 +60,7 @@ For the alpha release we have disabled pessimistic concurrency control to ensure
 | _transaction_kind_  | string | name of the transaction type to be executed, e.g. "Upvote" (note that the parameter is a misnomer currently) |
 
 
-### Sample Success Response
+### Example Success Response Body
 On a successful acknowledgement the transaction uuid must be queried on `/transaction-types/status` for completion of the transaction.
 ```json
 {
@@ -75,7 +75,7 @@ On a successful acknowledgement the transaction uuid must be queried on `/transa
 }
 ```
 
-### Sample Failure Response
+### Example Failure Response Body
 ```json
 {
   "success": false,
@@ -87,7 +87,7 @@ On a successful acknowledgement the transaction uuid must be queried on `/transa
 }
 ```
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://playgroundapi.ost.com/transaction-types/execute'

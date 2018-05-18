@@ -98,7 +98,7 @@ For calls to `/transfers`, `data.result_type` is the string "transfer" and `data
       "gas_price": "5000000000",
       "gas_used": null,
       "block_number": null,
-      "chain_id": "198"
+      "chain_id": "1409"
     }
   }
 }
@@ -125,7 +125,7 @@ On a failed authentication, the response will have a `code` 401. The body will l
 
 The OST⍺ Prime balance for a token economy can be retrieved by making a [<u>GET request to /tokens</u>](/docs/api_token.html). More OST⍺ Prime can be obtained through the [<u>OST KIT⍺ dashboard</u>](https://kit.ost.com).
 
-### Sample Code | Curl
+### Example Code | Curl
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/transfers/' \
