@@ -22,8 +22,10 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 | _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100). _amount_ is set at execution when parameter  _arbitrary_amount_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ .    |
 | _commission_percent_| string\<float\>  | for a user_to_user action commission percentage is set at execution when parameter _arbitrary_commission_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ . The commission is inclusive in the _amount_ and the percentage commission goes to the OST partner company. Possible values (min 0%, max 100%) |
 
-### _from_user_id_ & _to_user_id_
-While executing a company_to_user or user_to_company action, Company UUID is passed as a parameter in the respective _from_user_id_ or _to_user_id_. You can retrieve your Company UUID by making a [<u>GET request to /tokens</u>](/docs/api_token.html)  Or from [<u>Developers Tab in OST KIT⍺</u>](https://kit.ost.com/developer-api-console). 
+**_from_user_id_ & _to_user_id_**
+
+While executing a company_to_user or user_to_company action, Company UUID is passed as a parameter in the respective _from_user_id_ or _to_user_id_ field. You can retrieve your Company UUID by making a [<u>GET request to /tokens</u>](/docs/api_token.html)  or from [<u>Developers Tab in OST KIT⍺</u>](https://kit.ost.com/developer-api-console). 
+
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
