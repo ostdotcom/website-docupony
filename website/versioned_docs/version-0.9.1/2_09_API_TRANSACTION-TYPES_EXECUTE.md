@@ -19,7 +19,11 @@ Within OST KIT⍺ you can set up transaction-types to define advanced payments t
 | _to_uuid_      | string | user or company to whom to send the funds |
 | _transaction_kind_  | string | name of the transaction type to be executed, e.g. "Upvote" (note that the parameter is a misnomer currently) |
 
-where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
+**_from_uuid_ & _to_uuid_**
+
+While executing a company_to_user or user_to_company action, Company UUID is passed as a parameter in the respective _from_uuid_ or _to_uuid_ field. You can retrieve your Company UUID from [<u>Developers Tab in OST KIT⍺</u>](https://kit.ost.com/developer-api-console). 
+
+The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
 
 `/transaction-types/execute?api_key=API_KEY&from_uuid=FROM_UUID&request_timestamp=EPOCH_TIME_SEC&to_uuid=TO_UUID&transaction_kind=NAME`
 
