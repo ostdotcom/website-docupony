@@ -69,7 +69,7 @@ For api calls to `/token` the `data.result_type` is the string "token" and `data
   "data": {
     "result_type": "token",
     "token": {
-      "company_uuid": 1028,
+      "company_uuid": "ab95e922-26de-44ec-9e5a-9b832c388113",
       "name": "Sample Token",
       "symbol": "SCO",
       "symbol_icon": "token_icon_1",
