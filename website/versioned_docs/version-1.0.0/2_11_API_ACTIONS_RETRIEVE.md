@@ -53,7 +53,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 | _arbitrary_amount_  | boolean   | true/false. Indicates whether amount (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction). | 
 | _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).  |
 | _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' this attribute indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction). |
-| _commission_percent_| string\<float\>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
+| _commission_percent_| string\<float\>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%). |
 
 
 
@@ -81,12 +81,12 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/actions/1234' \
---header 'Accept: application/x-www-form-urlencoded' \
+--header 'Accept: application/json' \
 --form request_timestamp=1526550325 \
 --form signature=0e0d27f5ce713a6a42e9b1494f667c2ebc4e208fa28334d6782e5e51f319235c \
 --form api_key=7cad25e082390a90114e \
 ```
 
->_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 22 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

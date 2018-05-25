@@ -118,13 +118,13 @@ however when a request is invalid the response is returned with successful statu
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/users/' \
---header 'Accept: application/x-www-form-urlencoded' \
+--header 'Accept: application/json' \
 --form request_timestamp=1526548630 \
 --form signature=e502252993cfa289390ec5d85ee2322e90e4e1fa0fad08376b1dfd2c775413da \
 --form api_key=7cad25e082390a90114e \
 --form name=Alice \
 ```
 
->_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 22 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

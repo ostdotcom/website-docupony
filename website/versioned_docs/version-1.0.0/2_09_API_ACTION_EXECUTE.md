@@ -20,12 +20,13 @@ Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html)
 | _to_user_id_      | string | user or company to whom to send the funds |
 | _action_id_ | number | id of the action that is to be executed. |
 | _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100). _amount_ is set at execution when parameter  _arbitrary_amount_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ .    |
-| _commission_percent_| string\<float\>  | for a user_to_user action commission percentage is set at execution when parameter _arbitrary_commission_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ . The commission is inclusive in the _amount_ and the percentage commission goes to the OST partner company. Possible values (min 0%, max 100%) |
+| _commission_percent_| string\<float\>  | for a user_to_user action commission percentage is set at execution when parameter _arbitrary_commission_ is set to true while  [<u>defining the action</u>](/docs/api_actions_create.html) specified in _action_id_ . The commission is inclusive in the _amount_ and the percentage commission goes to the OST partner company. Possible values (min 0%, max 100%).|
 
 **_from_user_id_ & _to_user_id_**
 
 While executing a company_to_user or user_to_company action, Company UUID is passed as a parameter in the respective _from_user_id_ or _to_user_id_ field. You can retrieve your Company UUID by making a [<u>GET request to /token</u>](/docs/api_token.html)  or from [<u>Developers Tab in OST KIT⍺</u>](https://kit.ost.com/developer-api-console). 
 
+Including _arbitrary_commission_ or _commission_percent_ for either _user_to_company_ or _company_to_user_ action types will result in an error. 
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
@@ -121,7 +122,7 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 ```bash
 curl --request POST \
 --url 'https://sandboxapi.ost.com/v1/transactions/' \
---header 'Accept: application/x-www-form-urlencoded' \
+--header 'Accept: application/json' \
 --form request_timestamp=1526550459 \
 --form signature=9bb8ac9e4d1fa366cd938c192c96ecc60a5a55f2ad4f54d4ebb21309f3f79212 \
 --form api_key=7cad25e082390a90114e \
@@ -131,6 +132,6 @@ curl --request POST \
 
 ```
 
->_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 22 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

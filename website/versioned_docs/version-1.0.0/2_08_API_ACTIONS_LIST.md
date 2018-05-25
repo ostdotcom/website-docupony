@@ -35,7 +35,6 @@ Each filter parameter type is a comma-separated string.
 | _name_        | names of the action                         | 'name="Like, Upvote"'               |
 | _kind_        | the kind of the action set during the [<u>creation of the action</u>](/docs/api_actions_create.html) | 'kind="user_to_user"'|
 | _arbitrary_amount_ |  actions where the amount is set during creation or provided at execution  | 'arbitrary_amount= false'|
-| _arbitrary_commission_ | user_to_user actions where the commission is set during creation or provided at execution | 'arbitrary_commission=true' | 
 
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
@@ -71,7 +70,7 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 | _arbitrary_amount_  | boolean   | true/false. Indicates whether amount (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction).  | 
 | _amount_            | string\<float\>  | amount of the action set in "USD" (min USD 0.01 , max USD 100) or branded token "BT" (min BT 0.00001, max BT 100).   |
 | _arbitrary_commission_ |boolean | true/false. Like '_arbitrary_amount_' this attribute indicates whether commission_percent (described below) is set in the action, or whether it will be provided at the time of execution (i.e., when creating a transaction). |
-| _commission_percent_| string\<float\>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%) |
+| _commission_percent_| string\<float\>  | If the action kind is user_to_user and a commission percentage is set then the commission is inclusive in the _amount_ and the complement goes to the company. Possible values (min 0%, max 100%). |
 
 
 ### Example Success Response Body
@@ -143,13 +142,13 @@ On calling `/actions` the `data.result_type` is the string "action" and the key 
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1/actions/' \
---header 'Accept: application/x-www-form-urlencoded' \
+--header 'Accept: application/json' \
 --form request_timestamp=1526550366 \
 --form signature=84cbc8562b9c684d046323817a0d2ef4db8949f048eb3f96727cdb57b6dc07be \
 --form api_key=7cad25e082390a90114e \
 --form page_no=1 \
 ```
 
->_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 22 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2

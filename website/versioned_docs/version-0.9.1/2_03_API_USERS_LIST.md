@@ -90,7 +90,7 @@ and the key `data.economy_users` is an array of the returned `user` objects (25 
 ```bash
 curl --request GET \
 --url 'https://playgroundapi.ost.com/users/list'
---header 'Accept: application/x-www-form-urlencoded' \
+--header 'Accept: application/json' \
 --form request_timestamp=EPOCH_TIME_SEC \
 --form signature=SIGNATURE \
 --form api_key=API_KEY \
@@ -100,6 +100,6 @@ curl --request GET \
 --form page_no=PAGE_NO \
 ```
 
->_last updated 17 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 22 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ v1 | OpenST Platform v0.9.2
