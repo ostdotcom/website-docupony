@@ -12,7 +12,8 @@
     "SDK": [
       "version-1.0.0-sdks_overview",
       "version-1.0.0-sdk_ruby",
-      "version-1.0.0-sdk_javascript"
+      "version-1.0.0-sdk_javascript",
+      "version-1.0.0-sdk_php"
     ],
     "REST API": [
       "version-1.0.0-api",
