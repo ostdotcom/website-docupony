@@ -73,7 +73,7 @@ var_dump($response);
 
 // following code returns object containing Jack's id , among other information, which you will need later
 $createUserParams = array();
-$createUserParams['name'] = 'Jack1';
+$createUserParams['name'] = 'Jack';
 $response = $userService->create($createUserParams)->wait();
 var_dump($response);
 ```
@@ -82,13 +82,13 @@ var_dump($response);
 
 Newly created users do not have any tokens; but you can airdrop tokens to them so that they can participate in your branded token economy.
 
-Initialize an Airdrop Object to execute an airdrop, get airdrop status and list airdrops.  
+Initialize an Airdrop Object to execute an airdrop, get airdrop status and list airdrops:  
 
 ```php
 $airdropService = $ostObj->services->airdrops;
 ```
 
-Execute an airdrop to one or many users, by using their user ids returned when creating users.
+Execute an airdrop to one or many users, by using their user ids returned when creating users:
 
 ```php
 //airdrops 5 BT to the both the users passed in user_ids field.
