@@ -125,7 +125,7 @@ Now create a new action called 'Purchase'. We've opted to set 'arbitrary_amount'
 $createParams = array();
 $createParams['name'] = 'Purchase';
 $createParams['kind'] = 'user_to_user';
-$createParams['currency'] = 'TEST';
+$createParams['currency'] = 'BT';
 $createParams['arbitrary_amount'] = 'true';
 $createParams['commission_percent'] = '5';
 $response = $actionService->create($createParams)->wait();
