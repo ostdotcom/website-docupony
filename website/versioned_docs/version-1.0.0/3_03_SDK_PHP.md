@@ -5,7 +5,7 @@ sidebar_label: PHP SDK Quick Start Guide
 original_id: sdk_php
 ---
 
-The [<u>OST PHP SDK</u>](https://github.com/OpenSTFoundation/ost-sdk-php/tree/v1.0.0) is a PHP wrapper for the OST Developers API. This Quick Start Guide will show you how to use the OST PHP SDK to create users, airdrop tokens to those users, create actions, and execute one of those actions.
+The [<u>OST PHP SDK</u>](https://github.com/OpenSTFoundation/ost-sdk-php/tree/V1.0.0) is a PHP wrapper for the OST Developers API. This Quick Start Guide will show you how to use the OST PHP SDK to create users, airdrop tokens to those users, create actions, and execute one of those actions.
 
 
 ### Prerequisites
