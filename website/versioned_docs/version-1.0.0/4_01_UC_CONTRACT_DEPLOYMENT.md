@@ -36,14 +36,14 @@ mkdir uc_smart_contract
 cd uc_smart_contract
 git clone https://gist.github.com/6e0eb979c911bf465896d49cf08e86da.git 
 ```
-4. cd into the `6e0eb979c911bf465896d49cf08e86da` directory and take a look at the files here:
+4. cd into the `6e0eb979c911bf465896d49cf08e86da` directory and take a look at the files here
 
 ```bash
 cd 6e0eb979c911bf465896d49cf08e86da
 ls -l
 ```
 
-5. `setup_utility_chain_1409` is the bash script we are going to run in the current console to sync with the uc, but first we must edit the rights on this file to be able to excute it:
+5. `setup_utility_chain_1409` is the bash script we are going to run in the current console to sync with the uc, but first we must edit the rights on this file to be able to excute it
 
 ```bash
 chmod 755 setup_utility_chain_1409
@@ -58,7 +58,7 @@ here `chmod 755` is equal to `chmod u=rwx,go=rx` which means that the user can r
 ```
 press enter to accept all the params, look further into the code to see what it [means](https://gist.github.com/benjaminbollen/6e0eb979c911bf465896d49cf08e86da)
 
-7. copy the `ipc` path displayed as the geth node sync starts up with the UC, this is the (local) path to geth node we will later need to deploy our contract to. learn more about [ipc](https://en.wikipedia.org/wiki/Inter-process_communication)
+7. copy the `ipc` path displayed as the geth node sync starts up with the UC, this is the (local) path to geth node from which we will later need to deploy our contracts. learn more about [ipc](https://en.wikipedia.org/wiki/Inter-process_communication) 
 
 ```
 INFO [05-28|19:20:07] Maximum peer count                       ETH=25 LES=0 total=25
@@ -87,13 +87,13 @@ INFO [05-28|19:20:10] HTTP endpoint opened                     url=http://127.0.
 INFO [05-28|19:20:10] WebSocket endpoint opened                url=ws://127.0.0.1:8546
 ```
 
-7. now open up a new console, lets start writing our contracts, create an empty file called Storage.sol, and open it up
+7. now open up a new console and start writing our contracts, create an empty file called `Storage.sol`, and open it up
 
 ```bash
 touch Storage.sol
 nano Storage.sol
 ```
-8. copy and paste the following code into your console 
+8. copy and paste the following solidity code into your console 
 
 ```solidity
 pragma solidity ^0.4.10;
@@ -111,7 +111,7 @@ save it using `ctrl+O` -> `return` -> `ctrl+x` (note its `O` not `0`)
 
 the contracts name is `Storage`, it has two functions 1. `set`, sets the data you wanna store in the contract, 2. `get`, gets the saved data you have already stored, since every call in etheruem is a transaction we will execute txns to save/store the data. Get will get this data. 
 
-9. to compile this contract we will put it into a `json` format and assign a JavaScript variable and save it to the presetn working directory, then we send it to an output file. check if you have the files, before moving forward.
+9. to compile this contract we will put it into a `json` format and assign a JavaScript variable and save it to the present working directory as the `storage.js` file, then we send it to an output file. check if you have the files, before moving forward
 
 ```bash
 echo "var storageOutput=`solc --optimize --combined-json abi,bin,interface Storage.sol`" > storage.js
@@ -120,7 +120,7 @@ cat storage.js
 
 ls -l 
 ```
-10. open up a new console (yes, a third one) and connect to the geth node with the `ipc` path we saved before:
+10. open up a new console (yes, a third one) and attach a geth node with the `ipc` path saved before while starting the sync (also check in the older console if syncing)
 
 ```bash
 geth attach /Users/noslav/uc_node_1409/geth.ipc //the path will be different in your case 
@@ -141,20 +141,20 @@ Repeat passphrase:
 ```
 copy the account address displayed here
 
-13. now we need some funds (ost alpha prime) or `gas` to deploy our contract with geth for working in the Etherum like paradigm, for this you should use the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html):
+13. now we need some funds (OST ⍺ prime) or `gas` to deploy our contract with geth for working in the Etherum like paradigm, for this you should use the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
 make sure to transfer (using the [ost-sdk-ruby](https://github.com/OpenSTFoundation/ost-sdk-ruby/) or [ost-sdk-js](https://github.com/OpenSTFoundation/ost-sdk-js) ) to the coinbase address you have copied above:
 
-In a separate console spin up an sdk and execute the function similar to the one below:
+In a separate console spin up an ost-kit sdk and execute the function analogous to the one below
 
 ```javascript
 const transferService = ostObj.services.transfers; // transfer object creation 
-transferService.execute({to_address:'0xd2b789293674faEE51bEb2d0338d15401dEbfdE3', amount:1000000000000000000}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); //here the address will be the coinbase address you copied, the amount can stay the same [taken from dev.ost.com documentation] as it is Wei, this is equal to 1 OST alpha'
+transferService.execute({to_address:'0xd2b789293674faEE51bEb2d0338d15401dEbfdE3', amount:1000000000000000000}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); //here the address will be the coinbase address you copied, the amount can stay the same [taken from dev.ost.com documentation] as it is Wei, this is equal to 1 OST ⍺'
 
 ```
 
-alternatively - if you have no OSTKIT account with OST alpha '
+alternatively - if you have no OSTKIT account with OST ⍺ '
 
-send the address to pranay@ost.com with sub "need ost alpha prime" and this should fund you account, wait for a confirmation from pranay@ost.com
+send the address to pranay@ost.com with sub "need OST ⍺'" and this should fund you account, wait for a confirmation from pranay@ost.com
 
 
 14. check if you have the funds in your account, in the last console you were using (with geth attached to the uc)
