@@ -25,7 +25,7 @@ brew update
 brew upgrade
 brew tap ethereum/ethereum
 brew install solidity
-brew linkapps solidity
+brew install ethereum
 brew install git
 brew install wget
 ```
