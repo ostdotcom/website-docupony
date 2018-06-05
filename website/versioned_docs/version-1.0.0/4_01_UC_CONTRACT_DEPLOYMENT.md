@@ -44,14 +44,14 @@ cd 6e0eb979c911bf465896d49cf08e86da
 ls -l
 ```
 This gist contains the bash script `setup_utility_chain_1409` required to do the following -
-> Check if `geth` is installed
-> Create a directory where the `chaindata` would be store
-> Connect geth to listen on the Network listening port (default: 30303)
-> Connect geth to listen on the HTTP-RPC server listening port (default: 8545)
-> Connect geth to listen on the WS-RPC server listening port (default: 8546)
-> Download the Bootnode files
-> Download the Genesis file
-> Finally combine all the requirements together and inititalize `geth` with the above parameters in the following command.
+* Check if `geth` is installed
+* Create a directory where the `chaindata` would be store
+* Connect geth to listen on the Network listening port (default: 30303)
+* Connect geth to listen on the HTTP-RPC server listening port (default: 8545)
+* Connect geth to listen on the WS-RPC server listening port (default: 8546)
+* Download the Bootnode files
+* Download the Genesis file
+* Finally combine all the requirements together and inititalize `geth` with the above parameters in the following command.
 
 ```bash
 $GETH_EXEC --networkid $networkid --datadir $datadir --port $port --rpc --rpcapi eth,net,web3,personal --rpcport $rpcport --ws --wsport $wsport --bootnodes $bootNodes $extraArgs;
@@ -141,8 +141,8 @@ contract StorageTest {
 }
 ```
 The contracts is called `StorageTest` and it has two functions
-> Fn `set`, sets the data you want to store in the contract
-> Fn `get`, gets the saved data you have already stored
+* Fn `set`, sets the data you want to store in the contract
+* Fn `get`, gets the saved data you have already stored
 
 Since every call to ethereum storage is a transaction (txn) requiring gas we will execute txns to save/store the data. `get` will get this data without costing gas, see steps 4 of section _Contract Deployment and testing on the UC_ to know what is `gas` and how to get it for the UC.
 
@@ -184,9 +184,9 @@ make sure to transfer (using the [ost-sdk-ruby](https://github.com/OpenSTFoundat
 For executing this step you will need to [register for OST KIT⍺](https://dev.ost.com/docs/kit.html). Complete the steps in this tutorial.
 
 5. In a separate console spin up an official OST KIT⍺ sdk and execute the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
-> javascript - https://github.com/OpenSTFoundation/ost-sdk-js
-> ruby - https://github.com/OpenSTFoundation/ost-sdk-ruby
-> php - https://github.com/OpenSTFoundation/ost-sdk-php
+* javascript - https://github.com/OpenSTFoundation/ost-sdk-js
+* ruby - https://github.com/OpenSTFoundation/ost-sdk-ruby
+* php - https://github.com/OpenSTFoundation/ost-sdk-php
 
 Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously, the amount required can be understood [from dev.ost.com documentation](https://dev.ost.com/docs/api_transfers_create.html#amount)
 
