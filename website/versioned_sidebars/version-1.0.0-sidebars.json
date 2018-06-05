@@ -54,7 +54,7 @@
       "version-1.0.0-api_token"
     ],
     "CONTRACTS" : [
-      "version-1.0.0-uc_contract_deploy"
+      "version-1.0.0-uc_sync_deploy_usg"
     ]
   }
 }

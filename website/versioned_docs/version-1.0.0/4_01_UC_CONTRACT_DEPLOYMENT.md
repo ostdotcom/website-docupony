@@ -1,11 +1,11 @@
 ---
-id: version-1.0.0-uc_contract_deploy
-title: UC Contract Deployment Guide
-sidebar_label: UC Contract Deployment Guide
-original_id: uc_contract_deploy
+id: version-1.0.0-uc_sync_deploy_usg
+title: OpenST Utility Chain Sync and Contract Deployment Guide
+sidebar_label: UC Sync and Contract Deployment Guide
+original_id: uc_sync_deploy_usg
 ---
 
-# Deploying smart contracts on the OpenST Utility Chain
+# OpenST Utility Chain Sync and Contract Deployment Guide
 
 ## OpenSTProtocol and Utility Chains
 
