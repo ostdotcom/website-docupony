@@ -5,20 +5,22 @@ sidebar_label: UC Contract Deployment Guide
 original_id: uc_contract_deploy
 ---
 
-# Deploying smart contracts on the utility blockchain
+# Deploying smart contracts on the OpenST Utility Chain
 
-## Goal of this document
+## OpenSTProtocol and Utility Chains 
 
-To help anyone get started with writing a smart contract and deploying them to the openSTUtility chain, to be able to interact with them
+The OpenST protocol allows for the staking of $OST⍺ on Ropsten Ethereum that enables Branded Tokens to be created, or "minted" on the OpenST network of sidechains. You can learn more about the OpenST Protocol [here.](https://openst.org/)
 
-## Turorial
+The following tutorial will help anyone to get started with writing smart-contracts, deploying them to the OpenST Utility sidechain and be able to interact with it.
 
-1. make sure you have brew for mac, if not use:
+## Prerequisites
+
+1. Make sure you have brew for mac, if not use:
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-2. if you already have brew, update it, install go-ethereum (geth), the solidity compiler (solc), git and wget
+2. If you already have brew, update it, install go-ethereum (geth), the solidity compiler (solc), git and wget
 
 ```bash
 brew update
@@ -29,36 +31,54 @@ brew install solidity
 brew install git
 brew install wget
 ```
-3. go ahead and make a new dir to store all the code you will be using, and let's start with cloning Ben's [gist](https://gist.github.com/benjaminbollen/6e0eb979c911bf465896d49cf08e86da) to sync with the UC
+
+## Syncing with the OpenST Utility Chain
+
+1. To be able to sync the OpenST Utility chain (UC) you need to start with cloning Benjamin Bollen's [gist](https://gist.github.com/benjaminbollen/6e0eb979c911bf465896d49cf08e86da) to a new directory, cd into the `6e0eb979c911bf465896d49cf08e86da` directory and take a look at the files here.
 
 ```bash
 mkdir uc_smart_contract
 cd uc_smart_contract
 git clone https://gist.github.com/6e0eb979c911bf465896d49cf08e86da.git 
-```
-4. cd into the `6e0eb979c911bf465896d49cf08e86da` directory and take a look at the files here
-
-```bash
 cd 6e0eb979c911bf465896d49cf08e86da
 ls -l
 ```
+This gist contains the bash script `setup_utility_chain_1409` required to do the following - 
+a. Check if `geth` is installed
+b. Create a directory where the `chaindata` would be store
+c. Connect geth to listen on the Network listening port (default: 30303) 
+d. Connect geth to listen on the HTTP-RPC server listening port (default: 8545)
+e. Connect geth to listen on the WS-RPC server listening port (default: 8546)
+f. Download the Bootnode files 
+g. Download the Genesis file
+h. Finally combine all the requirements together and inititalize `geth` with the above parameters in the following command.
 
-5. `setup_utility_chain_1409` is the bash script we are going to run in the current console to sync with the uc, but first we must edit the rights on this file to be able to excute it
+```bash
+$GETH_EXEC --networkid $networkid --datadir $datadir --port $port --rpc --rpcapi eth,net,web3,personal --rpcport $rpcport --ws --wsport $wsport --bootnodes $bootNodes $extraArgs;
+```
+Some of the essential parameters for geth would be found at the top of the bash script.
+
+```bash
+networkid=1409;
+environment=sandbox;
+assetPath="https://s3.amazonaws.com/assets.simpletoken.com/utility_chain/$environment";
+```
+
+2. You must first modify the rights to be able to execute the Bash script `setup_utility_chain_1409`
 
 ```bash
 chmod 755 setup_utility_chain_1409
 
 ```
-here `chmod 755` is equal to `chmod u=rwx,go=rx` which means that the user can read, write and execute
+Here `chmod 755` is equal to `chmod u=rwx,go=rx` which means that the user can read, write and execute this script.
 
-6. execute the bash script and allow your node to sync
+3. Execute the bash script by pressing `return` to pass all the params, look further into the code to see what it [means](https://gist.github.com/benjaminbollen/6e0eb979c911bf465896d49cf08e86da) and allow your geth node to sync. 
 
 ```bash
 ./setup_utility_chain_1409
 ```
-press enter to accept all the params, look further into the code to see what it [means](https://gist.github.com/benjaminbollen/6e0eb979c911bf465896d49cf08e86da)
 
-7. copy the `ipc` path displayed as the geth node sync starts up with the UC, this is the (local) path to geth node from which we will later need to deploy our contracts. learn more about [ipc](https://en.wikipedia.org/wiki/Inter-process_communication) you will find the path beside `IPC endpoint opened` in the console
+Copy the `ipc` path displayed as the script starts the geth node sync starts up with the UC, this is the (local) path to geth node from which you will later need to deploy our contracts. Learn more about [ipc](https://en.wikipedia.org/wiki/Inter-process_communication) you will find the path beside `IPC endpoint opened` in the console.
 
 ```
 INFO [05-28|19:20:07] Maximum peer count                       ETH=25 LES=0 total=25
@@ -82,53 +102,65 @@ INFO [05-28|19:20:08] Regenerated local transaction journal    transactions=0 ac
 INFO [05-28|19:20:08] Starting P2P networking
 INFO [05-28|19:20:10] UDP listener up                          self=enode://12c784bd9fc1a53b2fea73452de3c163ad83617a7b906f6bdc3fadee3a6a70ef16be1346ebc7356906fb3977157abb1f4c7c1d36e6b7f2cec96f56cbf3603b49@[::]:30303
 INFO [05-28|19:20:10] RLPx listener up                         self=enode://12c784bd9fc1a53b2fea73452de3c163ad83617a7b906f6bdc3fadee3a6a70ef16be1346ebc7356906fb3977157abb1f4c7c1d36e6b7f2cec96f56cbf3603b49@[::]:30303
--><copy this line> INFO [05-28|19:20:10] IPC endpoint opened                      url=/Users/noslav/uc_node_1409/geth.ipc
+INFO [05-28|19:20:10] IPC endpoint opened                      url=/Users/noslav/uc_node_1409/geth.ipc <- Copy this path
 INFO [05-28|19:20:10] HTTP endpoint opened                     url=http://127.0.0.1:8545               cors= vhosts=localhost
 INFO [05-28|19:20:10] WebSocket endpoint opened                url=ws://127.0.0.1:8546
 ```
 
-8. now open up a new console and start writing our contracts, create an empty file called `Storage.sol`, and open it up
+The sync may take anywhere from 3 hours to 12, depending on your internet connection. Check for the `chaindata` directory size to know if your node is in sync with the latest blocks (and transactions).
 
 ```bash
-touch Storage.sol
-nano Storage.sol
+cd ~/uc_node_1409/geth
+ls -l 
 ```
-9. copy and paste the following solidity code into your console 
+At the time of writing this tutorial, the `chaindata` size was approximately 6.1 GB.
+
+
+## Composing a simple sample smart-contract 
+
+1. Open up a new console and start composing our sample contract, create an empty file called `StorageTest.sol`, open it up, add our solidity code and save the file.
+
+```bash
+touch StorageTest.sol
+nano StorageTest.sol
+
+```
 
 ```solidity
-pragma solidity ^0.4.10;
-contract Storage {
+pragma solidity ^0.4.23;
+contract StorageTest {
   uint256 storedData;
-  function set(uint256 data) {
+  function set(uint256 data) public {
     storedData = data;
   }
-  function get() constant returns (uint256) {
+  function get() public view returns (uint256) {
     return storedData;
   }
 }
 ```
-save it using `ctrl+O` -> `return` -> `ctrl+x` (note its `O` not `0`)
+The contracts is called `StorageTest` and it has two functions 
+a. Fn `set`, sets the data you want to store in the contract
+b. Fn `get`, gets the saved data you have already stored
 
-the contracts name is `Storage`, it has two functions 1. `set`, sets the data you wanna store in the contract, 2. `get`, gets the saved data you have already stored, since every call in etheruem is a transaction we will execute txns to save/store the data. Get will get this data. 
+Since every call to ethereum storage is a transaction (txn) requiring gas we will execute txns to save/store the data. `get` will get this data without costing gas, see steps 4 of section _Contract Deployment and testing on the UC_ to know what is `gas` and how to get it for the UC. 
 
-10. to compile this contract we will put it into a `json` format and assign a JavaScript variable and save it to the present working directory as the `storage.js` file, then we send it to an output file. check if you have the files, before moving forward
-
-```bash
-echo "var storageOutput=`solc --optimize --combined-json abi,bin,interface Storage.sol`" > storage.js
-
-cat storage.js
-
-ls -l 
-```
-if you get errors regarding functions not being declared explicitly, ignore for now and move forward.
-
-11. open up a new console (yes, a third one) and attach a geth node with the `ipc` path saved before while starting the sync (also check in the older console if syncing)
+2. Compile this contract by parsing it into a `json` format and assigning it to a JavaScript variable `storageTestOutput`. Save this to the present working directory as the `storageTest.js` file. Check if you have the files (and its contents), before moving forward.
 
 ```bash
-geth attach /Users/noslav/uc_node_1409/geth.ipc //the path will be different in your case 
+echo "var storageTestOutput=`solc --optimize --combined-json abi,bin,interface StorageTest.sol`" > storageTest.js
+
+cat storageTest.js 
 ```
 
-12. create a new account from which we will deploy our contract and also be able call functions on our deployed contract for which you have the private keys, enter an easy password so we can use it frequently (& fast), to know about the list of available commands for geth look [here](https://ethereum.stackexchange.com/questions/28703/full-list-of-geth-terminal-commands)
+## Account Creation and Obtaining Gas
+
+1. Open up a new console (yes, a third one) and attach a geth node to the `ipc` path saved from step 3 of the _Syncing with the OpenST Utility Chain_ section.
+
+```bash
+geth attach /Users/noslav/uc_node_1409/geth.ipc //this path will be different in your case 
+```
+
+2. Create a new account for which you have the private keys,from which you will deploy your sample smart-contract and be able call the functions in your deployed contract. Enter an easy passphrase so you can use it frequently (& fast), to know about the list of available commands for geth look [here](https://ethereum.stackexchange.com/questions/28703/full-list-of-geth-terminal-commands)
 
 ```bash
 > personal.newAccount()
@@ -136,135 +168,140 @@ Passphrase:
 Repeat passphrase:
 ```
 
-13. this account created is your coinbase (base account) for which you have the private key and the passphrase (remember the passphrase), check for the account and then take a look at the balance
+3. This newly created account should be your coinbase (if you haven't already previously created an account) for which you have the private key and the passphrase, check for the coinbase account address and make sure its the same as above, then take a look at your account's balance (this should be 0).
+
 ```bash
 > eth.coinbase
 > eth.getBalance(eth.coinbase)
 ```
-copy the account address displayed here
+Copy the account address displayed here.
 
-14. now we need some funds (OST ⍺ prime) or `gas` to deploy our contract with geth for working in the Etherum like paradigm, for this you should use the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
-make sure to transfer (using the [ost-sdk-ruby](https://github.com/OpenSTFoundation/ost-sdk-ruby/) or [ost-sdk-js](https://github.com/OpenSTFoundation/ost-sdk-js) ) to the coinbase address you have copied above:
+4. Now you need some funds - OST⍺' or `gas` to deploy your sample contract with geth for. You should use the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
+make sure to transfer (using the [ost-sdk-ruby](https://github.com/OpenSTFoundation/ost-sdk-ruby/) or [ost-sdk-js](https://github.com/OpenSTFoundation/ost-sdk-js) ) to the coinbase address you have copied above.
 
-In a separate console spin up an ost-kit sdk and execute the function analogous to the one below
+For executing this step you will need to [register for OST KIT⍺](https://dev.ost.com/docs/kit.html). Complete the steps in this tutorial. 
+
+5. In a separate console spin up an official OST KIT⍺ sdk and execute the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
+a. javascript - https://github.com/OpenSTFoundation/ost-sdk-js
+b. ruby - https://github.com/OpenSTFoundation/ost-sdk-ruby
+c. php - https://github.com/OpenSTFoundation/ost-sdk-php
+
+Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously, the amount required can be understood [from dev.ost.com documentation](https://dev.ost.com/docs/api_transfers_create.html#amount)
 
 ```javascript
 const transferService = ostObj.services.transfers; // transfer object creation 
-transferService.execute({to_address:'0xd2b789293674faEE51bEb2d0338d15401dEbfdE3', amount:1000000000000000000}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); //here the address will be the coinbase address you copied, the amount can stay the same [taken from dev.ost.com documentation] as it is Wei, this is equal to 1 OST ⍺'
+transferService.execute({to_address:'0xd2b789293674faEE51bEb2d0338d15401dEbfdE3', amount:1000000000000000000}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); //here the address will be the coinbase address you copied, the amount is in Wei,hence equal to 1 OST ⍺'
 
 ```
 
-alternatively - if you have no OSTKIT account with OST ⍺ '
+## Contract Deployment on the UC
 
-send the address to pranay@ost.com with sub "need OST ⍺'" and this should fund you account, wait for a confirmation from pranay@ost.com
-
-
-15. check if you have the funds in your account, in the last console you were using (with geth attached to the uc)
+1. Check if you have the funds in your account (also make sure you are in sync with the UC), in the console you used in section _Syncing with the OpenST Utility Chain_.
 
 ```bash
 > eth.getBalance(eth.coinbase)
 ```
 
-if you have the balance you requested this should show up as `1000000000000000000`
+If you have the balance you requested (as per the above example) this should show up as `1000000000000000000`
 
-16. if this shows up the funds you requested for, proceed with loading the contract scripts into geth, check for the key-pair values with `storageOutput`, this would display the `abi` - application binary interface and `bin` - binary file which you will need in the coming steps
 
-```bash
-> loadScript('storage.js')
-> storageOutput
-```
-
-17. get the contract's `abi` from storageOutput and store it into a variable (var) called `storageContractAbi`
+2. If this shows up the funds you requested for, proceed with loading the contract scripts into geth, check for the key-pair values in `storageTestOutput`, this would display the `abi` - application binary interface and `bin` - binary file which you will need.
 
 ```bash
-> var storageContractAbi = storageOutput.contracts['Storage.sol:Storage'].abi
+> loadScript('storageTest.js')
+> storageTestOutput
 ```
 
-18. store the contract's `abi` into a variable called `storageContract` by passing it as an argument to the `eth.contract` function
+3. Get the contract's `abi` from storageTestOutput and store it into a variable (var) called `storageTestContractAbi` and check out its contents.
 
 ```bash
-> var storageContract = eth.contract(JSON.parse(storageContractAbi))
+> var storageTestContractAbi = storageTestOutput.contracts['StorageTest.sol:StorageTest'].abi
+> storageTestContractAbi
 ```
 
-19. store the contract's `bin` into a variable called `storageBinCode` and concatenate it with the hexadecimal prefix `0x` so it is callable in a transaction 
+4. Store the contract's `abi` into a variable called `storageTestContract` by passing it as an argument to the `eth.contract` function.
 
 ```bash
-> var storageBinCode = "0x" + storageOutput.contracts['Storage.sol:Storage'].bin
+> var storageTestContract = eth.contract(JSON.parse(storageTestContractAbi))
 ```
 
-20. check out the contents of the variable by calling the stored variables:
+5. Store the contract's `bin` into a variable called `storageTestBinCode` and concatenate it with the hexadecimal prefix `0x` so it is callable in a transaction. Check out its contents. 
 
 ```bash
-> storageContractAbi
-> storageBinCode
+> var storageTestBinCode = "0x" + storageTestOutput.contracts['StorageTest.sol:StorageTest'].bin
+> storageTestBinCode
 ```
-21. unlock your account to start the deployment process and give in the passphare (simple and easy to remember) you used to create the account
+
+6. Unlock your coinbase account (with OST⍺') to start the deployment process and give in the passphrase you used to create the account.
 
 ```bash
 > personal.unlockAccount(eth.accounts[0])
+> Passphrase:
 ```
 
-anytime in the following steps if you get a `Error: authentication needed: password or unlock`
-use this command to unlock your account
+Anytime in the following steps if you get a `Error: authentication needed: password or unlock`
+use this command to unlock your account.
 
-22. store the deployable transaction object into a variable called `deployTransactionObject` using the `storageBinCode`
+7. Store the deployable transaction object into a variable called `deployTransactionObject` using the `storageTestBinCode` as data and set the gas value to `1000000` for the sample contract.
 
 ```bash
-> var deployTransactionObject = { from: eth.accounts[0], data: storageBinCode, gas: 1000000 };
+> var deployTransactionObject = { from: eth.accounts[0], data: storageTestBinCode, gas: 1000000 };
 ```
 
-23. store the storage contract instance in a variable called `storageInstance` by using the deployable transaction object, 
+8. Store the storageTest contract instance in a variable called `storageTestInstance` by using the deployable transaction object as its argument. Deploy the contract by calling the transaction object `storageTestInstance`
 
 ```bash 
-> var storageInstance = storageContract.new(deployTransationObject)
+> var storageTestInstance = storageTestContract.new(deployTransactionObject)
+> storageTestInstance
 ```
 
-24. deploy the contract by calling the transaction object by calling `storageInstance`
+The contract sent a transaction for deployment and this returned a web3 contract instance, which unfortunately lacks an address until it is mined. 
+
+9. Grab the transaction receipt of your deployed contract using the `getTransactionReceipt` function.
 
 ```bash
-> storageInstance
+> eth.getTransactionReceipt(storageTestInstance.transactionHash);
+```
+The address returned here is the unique, immutable address of the contract, it is calculated from the hash of the sender address and the transaction nonce. When you interact with this contract instance you need to mention this address.
+
+10. Store the address of the deployed contract into the a `storageTestAddress` variable 
+
+```bash
+> var storageTestAddress = eth.getTransactionReceipt(storageTestInstance.transactionHash).contractAddress
 ```
 
-the contract sent a transaction to deploy an instance and which returned a web3 contract instance, which unfortunately lacks an address. It should know the address but it did not because it was not mined yet.
+## Contract Interaction on the UC
 
-25. grab the transaction receipt of your deployed contract
-
-```bash
-> eth.getTransactionReceipt(storageInstance.transactionHash);
-```
-the address returned is the unique, immutable address of the contract, it is calculated from the hash of the sender address and the transaction nonce. When you interact with this contract instance you need to mention this address.
-
-26. store the address of the deployed contract into the `storageAddress` variable 
+1. Interact with the contract by storing the `storageTestAddress` saved above in a `storage` variable and checkout its contents. 
 
 ```bash
-> var storageAddress = eth.getTransactionReceipt(storageInstance.transactionHash).contractAddress
-```
-
-27. interact with the contract by storing the `storageAddress` saved above in a `storage` variable 
-
-```bash
-> var storage = storageContract.at(storageAddress);
+> var storage = storageTestContract.at(storageTestAddress);
 > storage
 ```
-28. call the get storage function of the deployed contract
+2. Call the `get` storage value function of the deployed contract
 
 ```bash
 > storage.get.call()
 ```
-this should return `0` as nothing is stored here at the moment
+This should return `0` as nothing is stored here at the moment.
 
-29. call the set function of the deployed conrtact as a transaction, if you get an `error`, employ step no 20. 
+3. Call the `set` storage value public function of the deployed conrtact as a transaction, if you get an `error`, employ step no 20 and since this step is writing to the contract data storage it will cost gas.
 
 ```bash
 > storage.set.sendTransaction(1001, {from: eth.accounts[0], gas: 1000000})
 ```
 
-30. call the get function for the updated value (give some time for the tx to be mined)
+4. Call the `get` storage value function for the updated value, give some time for the transaction to be mined.
 
 ```bash
 > storage.get.call()
 ```
-this should return `1001` or the value you chose
+This should return `1001` or the value you chose to pass in the `sendTransaction` function. 
+This completes the objective of this tutorial.
 
-31. Completes the tutorail, next try to deploy a contract that can set and get different kinds of data!  
+>_last updated 5 June 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>
+> OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
+
+
 
