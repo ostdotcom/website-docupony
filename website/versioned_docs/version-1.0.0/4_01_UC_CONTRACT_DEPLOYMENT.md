@@ -118,7 +118,7 @@ ls -l
 At the time of writing this tutorial, the `chaindata` size was approximately 6.1 GB.
 
 
-## Composing a simple sample smart-contract
+## Composing a Sample Smart-Contract
 
 1. Open up a new console and start composing our sample contract, create an empty file called `StorageTest.sol`, open it up, add our solidity code and save the file.
 
@@ -146,7 +146,7 @@ The contracts is called `StorageTest` and it has two functions
 
 Since every call to ethereum storage is a transaction (txn) requiring gas we will execute txns to save/store the data. `get` will get this data without costing gas, see steps 4 of section _Contract Deployment and testing on the UC_ to know what is `gas` and how to get it for the UC.
 
-2. Compile this contract by parsing it into a `json` format and assigning it to a JavaScript variable `storageTestOutput`. Save this to the present working directory as the `storageTest.js` file. Check if you have the files (and its contents), before moving forward.
+2. Compile this contract using `solc` the solidity compiler, by parsing it into a `json` format and assigning it to a JavaScript variable `storageTestOutput` with the flags --optimize and --combined-json. Save this to the present working directory as the `storageTest.js` file. Check if you have the files (and its contents), before moving forward.
 
 ```bash
 echo "var storageTestOutput=`solc --optimize --combined-json abi,bin,interface StorageTest.sol`" > storageTest.js
@@ -178,17 +178,17 @@ Repeat passphrase:
 ```
 Copy the account address displayed here.
 
-4. Now you need some funds - OST⍺' or `gas` to deploy your sample contract with geth for. You should use the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
-make sure to transfer (using the [ost-sdk-ruby](https://github.com/OpenSTFoundation/ost-sdk-ruby/) or [ost-sdk-js](https://github.com/OpenSTFoundation/ost-sdk-js) ) to the coinbase address you have copied above.
+4. Now you need some funds - OST⍺' or gas to deploy your sample contract with geth for. You should use the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
+make sure to transfer to the coinbase address you have copied above.
 
-For executing this step you will need to [register for OST KIT⍺](https://dev.ost.com/docs/kit.html). Complete the steps in this tutorial.
+For executing this step you will need to [register for OST KIT⍺](https://dev.ost.com/docs/kit.html). Complete the steps in this tutorial before moving forward if you have not already.
 
-5. In a separate console spin up an official OST KIT⍺ sdk and execute the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
+5. In a separate console spin up an official OST KIT⍺ sdk and execute the new [transfers api.](https://dev.ost.com/docs/api_transfers_create.html)
 * javascript - https://github.com/OpenSTFoundation/ost-sdk-js
 * ruby - https://github.com/OpenSTFoundation/ost-sdk-ruby
 * php - https://github.com/OpenSTFoundation/ost-sdk-php
 
-Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously, the amount required can be understood [from dev.ost.com documentation](https://dev.ost.com/docs/api_transfers_create.html#amount)
+Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously, the amount required can be understood [ transfers api documentation](https://dev.ost.com/docs/api_transfers_create.html#amount)
 
 ```javascript
 const transferService = ostObj.services.transfers; // transfer object creation
