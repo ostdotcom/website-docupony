@@ -6,7 +6,7 @@ original_id: uc_sync_deploy_usg
 ---
 
 
-## OpenSTProtocol and Utility Chains
+## OpenSTProtocol 
 
 The OpenST protocol allows for the staking of $OST⍺ on Ropsten Ethereum that enables Branded Tokens to be created, or "minted" on the OpenST network of sidechains. You can learn more about the OpenST Protocol [here.](https://openst.org/)
 
@@ -44,7 +44,7 @@ ls -l
 ```
 This gist contains the bash script `setup_utility_chain_1409` required to do the following -
 * Check if `geth` is installed
-* Create a directory where the `chaindata` would be store
+* Create a directory where the `chaindata` would be stored
 * Connect geth to listen on the Network listening port (default: 30303)
 * Connect geth to listen on the HTTP-RPC server listening port (default: 8545)
 * Connect geth to listen on the WS-RPC server listening port (default: 8546)
@@ -77,7 +77,7 @@ Here `chmod 755` is equal to `chmod u=rwx,go=rx` which means that the user can r
 ./setup_utility_chain_1409
 ```
 
-Copy the `ipc` path displayed as the script starts the geth node sync starts up with the UC, this is the (local) path to geth node from which you will later need to deploy our contracts. Learn more about [ipc](https://en.wikipedia.org/wiki/Inter-process_communication) you will find the path beside `IPC endpoint opened` in the console.
+Copy the `ipc` path displayed as the script starts the geth node sync starts up with the UC, this is the (local) path to geth node from which you will later need to deploy our contracts. Learn more about [ipc](https://en.wikipedia.org/wiki/Inter-process_communication). You will find the IPC endpoint path besides `IPC endpoint opened` in the console, copy the `URL` path.
 
 ```
 INFO [05-28|19:20:07] Maximum peer count                       ETH=25 LES=0 total=25
@@ -143,7 +143,7 @@ The contracts is called `StorageTest` and it has two functions
 * Fn `set`, sets the data you want to store in the contract
 * Fn `get`, gets the saved data you have already stored
 
-Since every call to ethereum storage is a transaction (txn) requiring gas we will execute txns to save/store the data. `get` will get this data without costing gas, see steps 4 of section _Contract Deployment and testing on the UC_ to know what is `gas` and how to get it for the UC.
+Since every call to ethereum storage is a transaction requiring gas we will execute txns to save/store the data. `get` will get this data without costing gas, see steps 4 of section _Contract Deployment and testing on the UC_ to know what is `gas` and how to get it for the UC.
 
 2. Compile this contract using `solc` the solidity compiler, by parsing it into a `json` format and assigning it to a JavaScript variable `storageTestOutput` with the flags --optimize and --combined-json. Save this to the present working directory as the `storageTest.js` file. Check if you have the files (and its contents), before moving forward.
 
@@ -161,7 +161,7 @@ cat storageTest.js
 geth attach /Users/noslav/uc_node_1409/geth.ipc //this path will be different in your case
 ```
 
-2. Create a new account for which you have the private keys,from which you will deploy your sample smart-contract and be able call the functions in your deployed contract. Enter an easy passphrase so you can use it frequently (& fast), to know about the list of available commands for geth look [here](https://ethereum.stackexchange.com/questions/28703/full-list-of-geth-terminal-commands)
+2. Create a new account for which you have the private keys, from which you will deploy your sample smart-contract and be able call the functions in your deployed contract. Enter an easy passphrase so you can use it frequently (& fast), to know about the list of available commands for geth look [here](https://ethereum.stackexchange.com/questions/28703/full-list-of-geth-terminal-commands)
 
 ```bash
 > personal.newAccount()
@@ -187,7 +187,7 @@ For executing this step you will need to [register for OST KIT⍺](https://dev.o
 * ruby - https://github.com/OpenSTFoundation/ost-sdk-ruby
 * php - https://github.com/OpenSTFoundation/ost-sdk-php
 
-Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously, the amount required can be understood [ transfers api documentation](https://dev.ost.com/docs/api_transfers_create.html#amount)
+Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously, the amount required can be understood [ transfers api documentation.](https://dev.ost.com/docs/api_transfers_create.html#amount)
 
 ```javascript
 const transferService = ostObj.services.transfers; // transfer object creation
@@ -286,7 +286,7 @@ The address returned here is the unique, immutable address of the contract, it i
 ```
 This should return `0` as nothing is stored here at the moment.
 
-3. Call the `set` storage value public function of the deployed conrtact as a transaction, if you get an `error`, employ step no 20 and since this step is writing to the contract data storage it will cost gas.
+3. Call the `set` storage value public function of the deployed conrtact as a transaction, if you get an `error`, employ step no 6 from the _Contract Deployment on the UC_ section and since this step is writing to the contract data storage it will cost gas.
 
 ```bash
 > storage.set.sendTransaction(1001, {from: eth.accounts[0], gas: 1000000})
