@@ -5,7 +5,6 @@ sidebar_label: UC Sync and Contract Deployment Guide
 original_id: uc_sync_deploy_usg
 ---
 
-# OpenST Utility Chain Sync and Contract Deployment Guide
 
 ## OpenSTProtocol and Utility Chains
 
