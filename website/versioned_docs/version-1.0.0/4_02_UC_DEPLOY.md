@@ -1,14 +1,14 @@
 ---
 id: version-1.0.0-uc_deploy
 title: OpenST Utility Chain Contracts Deployment 
-sidebar_label: OpenST Utility Chain Contracts Deployment
+sidebar_label: Contracts Deployment
 original_id: uc_deploy
 ---
 
-1. Open up a new console and start composing our sample contract, create an empty file called `StorageTest.sol` and open it up.
+1. Open up a new console and start composing our sample contract, create an empty file called `BasicContract.sol` and open it up.
 
 ```bash
-touch StorageTest.sol
+touch BasicContract.sol
 ```
 Add our sample smart contract solidity code and save this file. 
 
@@ -20,12 +20,12 @@ contract BasicContract {
 ```
 The contract is named `BasicContract` and it contains a public constant, "BasicContract".
 
-2. Compile the above contract using `solc` the solidity compiler, by parsing it into a `json` format and assigning it to a JavaScript variable `storageTestOutput` with the flags `--optimize` and `--combined-json`. Save this to the present working directory as `storageTest.js`. Check if you have the files (and its contents), before moving forward.
+2. Compile the above contract using `solc` the solidity compiler, by parsing it into a `json` format and assigning it to a JavaScript variable `basicContractOutput` with the flags `--optimize` and `--combined-json`. Save this to the present working directory as `basicContract.js`. Check if you have the files (and its contents), before moving forward.
 
 ```bash
-echo "var storageTestOutput=`solc --optimize --combined-json abi,bin,interface StorageTest.sol`" > storageTest.js
+echo "var basicContractOutput=`solc --optimize --combined-json abi,bin,interface BasicContract.sol`" > basicContract.js
 
-cat storageTest.js
+cat basicContract.js
 ```
 
 ## Account Creation and Obtaining Gas
@@ -62,7 +62,7 @@ For executing this step you will need to [register for OST KIT⍺](https://dev.o
 * ruby - https://dev.ost.com/docs/sdk_ruby.html
 * php - https://dev.ost.com/docs/sdk_php.html
 
-Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously. The amount to be sent to this address can be understood from the [Transfers API documentation.](https://dev.ost.com/docs/api_transfers_create.html#amount)
+Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously. The amount to be sent to this address can be understood from the [Transfers API documentation.](https://dev.ost.com/docs/api_transfers_create.html#amount). Please note that you can transfer only as much OST OST⍺ Prime as you have available after the staking and minting. If you need more, you will have to stake and mint the required amound via the OST KIT⍺ dashboard. 
 
 ```javascript
 const transferService = ostObj.services.transfers; // transfer object creation
@@ -72,108 +72,86 @@ transferService.execute({to_address:'0xd2b789293674faEE51bEb2d0338d15401dEbfdE3'
 
 ## Contract Deployment on the UC
 
-1. Check if you have the funds in your account (also make sure you are in sync with the UC), in the console you used in _OpenST Utility Chain Sync_.
+1. Provide some time for the balance to show up as transactions are mined and included into blocks by `geth` nodes. One way to check the status of the transfer would be to use the [List Transfers API.](https://dev.ost.com/docs/api_transfers_list.html) alternative you can check using the following command in the `geth` console.
 
 ```bash
 > eth.getBalance(eth.coinbase)
 ```
+Also, make sure you are in sync with the UC (using step 4 of the _OpenST Utility Chain Sync_ document) so that you are reading from the latest blocks. If you have the balance you requested with the Transfers API, proceed to the next steps. 
 
-If you have the balance you requested (as per the above example) this should show up as `1000000000000000000`
 
-
-2. If this shows up the funds you requested for, proceed with loading the contract scripts into geth, check for the key-pair values in `storageTestOutput`, this would display the `abi` - application binary interface and `bin` - binary file which you will need.
-
-```bash
-> loadScript('storageTest.js')
-> storageTestOutput
-```
-
-3. Get the contract's `abi` from storageTestOutput and store it into a variable (var) called `storageTestContractAbi` and check out its contents.
+2. When the funds you requested appear in your account, proceed with loading the contract scripts into `geth`, check for the key-pair values in `basicContractOutput`, this would display the `abi` - application binary interface and `bin` - binary file, which you will need.
 
 ```bash
-> var storageTestContractAbi = storageTestOutput.contracts['StorageTest.sol:StorageTest'].abi
-> storageTestContractAbi
+> loadScript('basicContract.js')
+> basicContractOutput
 ```
 
-4. Store the contract's `abi` into a variable called `storageTestContract` by passing it as an argument to the `eth.contract` function.
+3. Get the contract's `abi` from basicContractOutput and store it into a variable (var) called `basicContractAbi` and check out its contents.
 
 ```bash
-> var storageTestContract = eth.contract(JSON.parse(storageTestContractAbi))
+> var basicContractAbi = basicContractOutput.contracts['BasicContract.sol:BasicContract'].abi
+> basicContractAbi
 ```
 
-5. Store the contract's `bin` into a variable called `storageTestBinCode` and concatenate it with the hexadecimal prefix `0x` so it is callable in a transaction. Check out its contents.
+4. Store the contract's `abi` into a variable called `basicContract` by passing it as an argument to the `eth.contract` function.
 
 ```bash
-> var storageTestBinCode = "0x" + storageTestOutput.contracts['StorageTest.sol:StorageTest'].bin
-> storageTestBinCode
+> var basicContract = eth.contract(JSON.parse(basicContractAbi))
 ```
 
-6. Unlock your coinbase account (with OST⍺') to start the deployment process and give in the passphrase you used to create the account.
+5. Store the contract's `bin` into a variable called `basicContractBinCode` and concatenate it with the hexadecimal prefix `0x` so it is callable in a transaction. Check out its contents.
+
+```bash
+> var basicContractBinCode = "0x" + basicContractOutput.contracts['BasicContract.sol:BasicContract'].bin
+> basicContractBinCode
+```
+
+6. Unlock your coinbase account (with OST⍺ Prime) to start the deployment process and give in the passphrase you used to create the account.
 
 ```bash
 > personal.unlockAccount(eth.accounts[0])
 > Passphrase:
 ```
 
-Anytime in the following steps if you get a `Error: authentication needed: password or unlock`
-use this command to unlock your account.
+Anytime in the following steps if you get an `Error: authentication needed: password or unlock`, use the above command to unlock your account.
 
-7. Store the deployable transaction object into a variable called `deployTransactionObject` using the `storageTestBinCode` as data and set the gas value to `1000000` for the sample contract.
-
-```bash
-> var deployTransactionObject = { from: eth.accounts[0], data: storageTestBinCode, gas: 1000000 };
-```
-
-8. Store the storageTest contract instance in a variable called `storageTestInstance` by using the deployable transaction object as its argument. Deploy the contract by calling the transaction object `storageTestInstance`
+7. Store the deployable transaction object into a variable called `deployTransactionObject` using the `basicContractBinCode` as data and set the gas value to `1000000` for deploying the sample contract.
 
 ```bash
-> var storageTestInstance = storageTestContract.new(deployTransactionObject)
-> storageTestInstance
+> var deployTransactionObject = { from: eth.accounts[0], data: basicContractBinCode, gas: 200000 }
 ```
 
-The contract sent a transaction for deployment and this returned a web3 contract instance, which unfortunately lacks an address until it is mined.
+8. Store the `basicContract` instance in a variable called `basicContractInstance` by using the deployable transaction object as its argument. Deploy the contract by calling the transaction object `basicContractInstance`
+
+```bash
+> var basicContractInstance = basicContract.new(deployTransactionObject)
+> basicContractInstance
+```
+
+A transaction is executed for deploying `BasicContract` on the UC, returning a web3 contract instance, this lacks an address until it is mined by the `geth` nodes.
 
 9. Grab the transaction receipt of your deployed contract using the `getTransactionReceipt` function.
 
 ```bash
-> eth.getTransactionReceipt(storageTestInstance.transactionHash);
+> eth.getTransactionReceipt(basicContractInstance.transactionHash)
 ```
-The address returned here is the unique, immutable address of the contract, it is calculated from the hash of the sender address and the transaction nonce. When you interact with this contract instance you need to mention this address.
+The address returned here is the unique, immutable address of the contract; it is calculated from the hash of the sender address and the transaction nonce. When you interact with this contract instance you need to mention this address.
 
-10. Store the address of the deployed contract into the a `storageTestAddress` variable
+10. Store the address of the deployed contract into a `basicContractAddress` variable.
 
 ```bash
-> var storageTestAddress = eth.getTransactionReceipt(storageTestInstance.transactionHash).contractAddress
+> var basicContractAddress = eth.getTransactionReceipt(basicContractInstance.transactionHash).contractAddress
 ```
 
-## Contract Interaction on the UC
-
-1. Interact with the contract by storing the `storageTestAddress` saved above in a `storage` variable and checkout its contents.
+11. Store the `basicContractAddress` variable in a `storage` variable and check out its contents.
 
 ```bash
-> var storage = storageTestContract.at(storageTestAddress);
+> var storage = basicContract.at(basicContractAddress)
 > storage
 ```
-2. Call the `get` storage value function of the deployed contract
 
-```bash
-> storage.get.call()
-```
-This should return `0` as nothing is stored here at the moment.
-
-3. Call the `set` storage value public function of the deployed conrtact as a transaction, if you get an `error`, employ step no 6 from the _Contract Deployment on the UC_ section and since this step is writing to the contract data storage it will cost gas.
-
-```bash
-> storage.set.sendTransaction(1001, {from: eth.accounts[0], gas: 1000000})
-```
-
-4. Call the `get` storage value function for the updated value, give some time for the transaction to be mined.
-
-```bash
-> storage.get.call()
-```
-This should return `1001` or the value you chose to pass in the `sendTransaction` function.
-This completes the objective of this tutorial.
+You have successfully deployed this sample smart contract on the UC. This completes the objective of this tutorial.
 
 >_last updated 5 June 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >

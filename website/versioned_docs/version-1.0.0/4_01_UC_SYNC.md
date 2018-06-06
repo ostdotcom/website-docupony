@@ -1,7 +1,7 @@
 ---
 id: version-1.0.0-uc_sync
 title: OpenST Utility Chain Sync 
-sidebar_label: OpenST Utility Chain Sync 
+sidebar_label: Chain Sync 
 original_id: uc_sync
 ---
 
@@ -12,9 +12,9 @@ networkid=1409;
 environment=sandbox;
 assetPath="https://s3.amazonaws.com/assets.simpletoken.com/utility_chain/$environment";
 ```
-Proceed with the following. 
+Proceed with the steps below.
 
-1. Copy the following bash script entirely and save it to a new file with the filename `setup_utility_chain_1409`
+1. Copy the following bash script and save it to a new file with the filename `setup_utility_chain_1409`
 
 ```bash
 #!/bin/bash
@@ -146,7 +146,7 @@ WS-RPC server listening port (default: 8546)
 Extra Args if any:
 ```
 
-As the script starts the geth node sync with the UC, copy the inter-process communication (`IPC`) path displayed. Learn more about [inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication). You will find the `IPC` endpoint path beside `IPC endpoint opened` in the console; copy-paste the `URL` path, so that we can use it later for contract deployment. The `URL` path is the (local) path to attach a geth node from which you will later deploy sample contract on the UC. 
+As the script starts the geth node sync with the UC, copy the inter-process communication (`IPC`) path displayed. Learn more about [inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication). You will find the `IPC` endpoint path beside `IPC endpoint opened` in the console; copy the `URL` path, so that we can use it later for contract deployment. The `URL` path is the (local) path to attach a geth node from which you will later deploy sample contract on the UC. 
 
 The details below are specific to the `user` executing the script. 
 
