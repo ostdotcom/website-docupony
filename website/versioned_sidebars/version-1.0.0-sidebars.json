@@ -53,8 +53,10 @@
     "TOKEN" : [
       "version-1.0.0-api_token"
     ],
-    "CONTRACTS" : [
-      "version-1.0.0-uc_sync_deploy_usg"
+    "UTILITY CHAIN" : [
+      "version-1.0.0-uc_overview",
+      "version-1.0.0-uc_sync",
+      "version-1.0.0-uc_deploy"
     ]
   }
 }
