@@ -36,7 +36,7 @@ cat basicContract.js
 geth attach ~/uc_node_1409/geth.ipc //this path will be different in your case
 ```
 
-2. Create a new account, for this you will own the private key. So you can deploy your sample smart contract from this account. Enter a passphrase with which only you can access the account. To know about the list of available commands for geth look [here](https://ethereum.stackexchange.com/questions/28703/full-list-of-geth-terminal-commands)
+2. Create a new account, for this you will own the private key. So you can deploy your sample smart contract from this account. Enter a passphrase with which only you can access the account. To know about the list of available commands for geth look [<u>here</u>](https://ethereum.stackexchange.com/questions/28703/full-list-of-geth-terminal-commands)
 
 ```bash
 > personal.newAccount()
@@ -44,7 +44,7 @@ Passphrase:
 Repeat passphrase:
 ```
 
-3. This newly created account should be your [coinbase](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethcoinbase) account (if you haven't already previously created an account). Please note this does not have any relation whatsoever to coinbase.com. Check for the coinbase account address and make sure its the same as the one created above, then take a look at your account's balance (this should be 0).
+3. This newly created account should be your [<u>coinbase</u>](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethcoinbase) account (if you haven't already previously created an account). Please note this does not have any relation whatsoever to coinbase.com. Check for the coinbase account address and make sure its the same as the one created above, then take a look at your account's balance (this should be 0).
 
 ```bash
 > eth.coinbase
@@ -52,27 +52,26 @@ Repeat passphrase:
 ```
 Copy-paste (save) the account address displayed here for the upcoming steps.
 
-4. Now you need some funds - OST⍺ Prime to deploy your sample contract with `geth`. You should use the new [transfers api](https://dev.ost.com/docs/api_transfers_create.html)
+4. Now you need some funds - OST⍺ Prime to deploy your sample contract with `geth`. You should use the new [<u>transfers api</u>](https://dev.ost.com/docs/api_transfers_create.html)
 make sure to transfer to the coinbase address you have copied above.
 
-For executing this step you will need to [register for OST KIT⍺](https://dev.ost.com/docs/kit.html). Complete the steps in this tutorial before moving forward if you have not already.
+For executing this step you will need to [<u>register for OST KIT⍺</u>](https://dev.ost.com/docs/kit.html). Complete the steps in this tutorial before moving forward if you have not already.
 
-5. In a separate console spin up an official OST KIT⍺ SDK and execute the new [Transfers API.](https://dev.ost.com/docs/api_transfers_create.html)
-* javascript - https://dev.ost.com/docs/sdk_ruby.html
-* ruby - https://dev.ost.com/docs/sdk_ruby.html
-* php - https://dev.ost.com/docs/sdk_php.html
+5. In a separate console spin up an official OST KIT⍺ SDK and execute the new [<u>Transfers API.</u>](https://dev.ost.com/docs/api_transfers_create.html)
+* [<u>javascript</u>](https://dev.ost.com/docs/sdk_ruby.html)
+* [<u>ruby</u>](https://dev.ost.com/docs/sdk_ruby.html)
+* [<u>php</u>](https://dev.ost.com/docs/sdk_php.html)
 
-Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously. The amount to be sent to this address can be understood from the [Transfers API documentation.](https://dev.ost.com/docs/api_transfers_create.html#amount). Please note that you can transfer only as much OST OST⍺ Prime as you have available after the staking and minting. If you need more, you will have to stake and mint the required amound via the OST KIT⍺ dashboard. 
+Here we show the example of the JavaScript SDK. Make sure that the `to_address` is the coinbase address you copied previously. The amount to be sent to this address can be understood from the [<u>Transfers API documentation.</u>](https://dev.ost.com/docs/api_transfers_create.html#amount) Please note that you can transfer only as much OST OST⍺ Prime as you have available after staking and minting. If you need more, you will have to stake and mint the required amount via the OST KIT⍺ dashboard. 
 
 ```javascript
 const transferService = ostObj.services.transfers; // transfer object creation
 transferService.execute({to_address:'0xd2b789293674faEE51bEb2d0338d15401dEbfdE3', amount:1000000000000000000}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); }); //here the address will be the coinbase address you copied.
-
 ```
 
 ## Contract Deployment on the UC
 
-1. Provide some time for the balance to show up as transactions are mined and included into blocks by `geth` nodes. One way to check the status of the transfer would be to use the [List Transfers API.](https://dev.ost.com/docs/api_transfers_list.html) alternative you can check using the following command in the `geth` console.
+1. Provide some time for the balance to show up as transactions are mined and included into blocks by `geth` nodes. One way to check the status of the transfer would be to use the [<u>List Transfers API.</u>](https://dev.ost.com/docs/api_transfers_list.html) alternative you can check using the following command in the `geth` console.
 
 ```bash
 > eth.getBalance(eth.coinbase)

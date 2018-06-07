@@ -124,7 +124,7 @@ The scripts in `setup_utility_chain_1409` do the following -
 ```bash
 $GETH_EXEC --networkid $networkid --datadir $datadir --port $port --rpc --rpcapi eth,net,web3,personal --rpcport $rpcport --ws --wsport $wsport --bootnodes $bootNodes $extraArgs;
 ```
-Executing this script will sycn your geth node and store the UC `chaindata` locally at `~/uc_node_1409/geth`
+Executing this script will sycn your geth node and store the UC `chaindata` locally at `~/uc_node_1409/geth`. This might be different in your case depending on how you decide to set it up. 
 
 
 2. To execute the `setup_utility_chain_1409` bash script you must first modify the rights.
@@ -146,7 +146,7 @@ WS-RPC server listening port (default: 8546)
 Extra Args if any:
 ```
 
-As the script starts the geth node sync with the UC, copy the inter-process communication (`IPC`) path displayed. Learn more about [inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication). You will find the `IPC` endpoint path beside `IPC endpoint opened` in the console; copy the `URL` path, so that we can use it later for contract deployment. The `URL` path is the (local) path to attach a geth node from which you will later deploy sample contract on the UC. 
+As the script starts the geth node sync with the UC, copy the inter-process communication (`IPC`) path displayed. Learn more about [<u>inter-process communication</u>](https://en.wikipedia.org/wiki/Inter-process_communication). You will find the `IPC` endpoint path beside `IPC endpoint opened` in the console; copy the `URL` path, so that we can use it later for contract deployment. The `URL` path is the (local) path to attach a geth node from which you will later deploy sample contract on the UC. 
 
 The details below are specific to the `user` executing the script. 
 
@@ -187,17 +187,15 @@ geth attach ~/uc_node_1409/geth.ipc // the IPC URL may be different in your case
 
 > eth.syncing
 {
-  currentBlock: 4279201,
-  highestBlock: 5009971,
-  knownStates: 3167,
-  pulledStates: 2651,
-  startingBlock: 4276705
+   startingBlock: 300,
+   currentBlock: 312,
+   highestBlock: 512
 }
 
 > eth.blockNumber
 3628737
 ```
-The responses give the required information on the status of node's sync with the UC. Make sure you are in sync with the latest blocks before proceeding with deploying contracts on the UC.
+ Take a look at [<u>eth.syncing</u>](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsyncing) and [<u>eth.blockNumber</u>](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsyncing) to know what they mean. The responses give the required information on the status of node's sync with the UC. Make sure you are in sync with the latest blocks before proceeding with deploying contracts on the UC. 
 
 
 
