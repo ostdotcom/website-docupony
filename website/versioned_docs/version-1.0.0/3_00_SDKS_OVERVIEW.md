@@ -13,9 +13,11 @@ OST provides a Ruby SDK to facilitate use of the OST Developers API in Ruby and 
 * [<u>JavaScript SDK on GitHub</u>](https://github.com/OpenSTFoundation/ost-sdk-js/tree/release-1.0)
 * [<u>PHP SDK Quick Start Guide</u>](/docs/sdk_php.html)
 * [<u>PHP SDK on GitHub</u>](https://github.com/OpenSTFoundation/ost-sdk-php/tree/V1.0.0)
+* [<u>JAVA SDK Quick Start Guide</u>](/docs/sdk_java.html)
+* [<u>JAVA SDK on GitHub</u>](https://github.com/OpenSTFoundation/ost-sdk-java/tree/v1.0.0)
 
 
->_last updated 30 May 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 8th June 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
 

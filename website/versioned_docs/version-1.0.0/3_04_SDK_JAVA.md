@@ -29,7 +29,7 @@ The dependency typically looks like this for Maven:
        <dependency>
            <groupId>com.ost</groupId>
            <artifactId>ost-sdk-java</artifactId>
-           <version>0.9.0-beta-1</version>
+           <version>1.0.0</version>
        </dependency>
    </dependencies>
 ```
@@ -102,7 +102,7 @@ Initialize an airdrop object and execute an airdrop to transfer tokens to both t
         System.out.println("response: " + response.toString() );  
 ```
 
-Airdropping involves several asynchronous steps and you can use the Id of the airdrop transaction to check its status:
+Airdropping involves several asynchronous steps and you can use the ID of the airdrop transaction to check its status:
 
 ```java
         // returns object with "steps_complete"=>["users_identified", "tokens_transfered", "contract_approved", "allocation_done"]
@@ -116,7 +116,7 @@ Airdropping involves several asynchronous steps and you can use the Id of the ai
 
 ### Create a Like Action
 
-You can create named action with defined values that are between users or between a user and your company.
+You can create named actions with defined values that are between users or between a user and your company.
 
 For instance, to make a "Like" action for your branded token that is priced in your token:
 
@@ -138,7 +138,7 @@ For instance, to make a "Like" action for your branded token that is priced in y
 ### Alice Likes Bob
 Now that you've created a Like action and funded Alice and Bob with airdropped tokens, you can execute a Like action from Alice to Bob.
 
-To execute the Like action, you will need Alice and Bob's IDs. They were returned when you created Alice and Bob. You can alternatively get them by retrieving and filtering the list of users.  And you would need the action ID that was returned when you created the action. 
+To execute the Like action, you will need Alice and Bob's IDs. They were returned when you created Alice and Bob. You can alternatively get them by retrieving and filtering the list of users. You would also need the action ID that was returned when you created the action. 
 
 ```java
         //initializes transaction module.
@@ -174,6 +174,6 @@ Or you can get the list of all transactions. For all APIs that list resources yo
 
 There is much more that you can do with OST KIT APIs. Read through the detailed API Reference [<u>here</u>](/docs/api.html).
 
->_last updated 7th June 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 8th June 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1 | OpenST Platform v0.9.2
