@@ -1,5 +1,5 @@
 ---
-id: version-1.0.0-api_airdrop_retrieve
+id: version-1.1.0-api_airdrop_retrieve
 title: OST KIT⍺ API | Retrieve an Airdrop
 sidebar_label: Retrieve an Airdrop
 original_id: api_airdrop_retrieve
