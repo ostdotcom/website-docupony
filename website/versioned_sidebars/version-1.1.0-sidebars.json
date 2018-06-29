@@ -47,7 +47,8 @@
       
     ],
     "WALLET": [
-      "version-1.1.0-api_balance"
+      "version-1.1.0-api_balance",
+      "version-1.1.0-api_ledger"
     ],
     "TRANSFERS": [
       "version-1.1.0-api_transfers_create",
