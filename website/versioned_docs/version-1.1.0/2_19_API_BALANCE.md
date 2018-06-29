@@ -1,7 +1,7 @@
 ---
 id: version-1.1.0-api_balance
-title: OST KIT⍺ API | Create a User
-sidebar_label: Create a User
+title: OST KIT⍺ API | Retrieve User Balance
+sidebar_label: Retrieve User Balance
 original_id: api_balance
 ---
 
