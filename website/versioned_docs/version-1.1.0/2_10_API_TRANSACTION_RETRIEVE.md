@@ -22,11 +22,11 @@ The signature for this API is derived from the API secret key and the string to 
 
 As an example
 
-`/transactions/41138190-80ea-43a9-8ddb-5cb3132a8ba2?api_key=6078017455d8be7d9f07&request_timestamp=1526362759`
+`/transactions/fd145a92-c97c-422b-9e51-552e1c2c2723?api_key=6078017455d8be7d9f07&request_timestamp=1526362759`
 
 The request url of this GET request reads as
 
-> GET - `https://sandboxapi.ost.com/v1.1/transactions/41138190-80ea-43a9-8ddb-5cb3132a8ba2?api_key=6078017455d8be7d9f07&request_timestamp=1526362759&signature=347ba9531100e86ba4199468bdc3ef14d99a8e0b45cd36a48fa45a05de694376`
+> GET - `https://sandboxapi.ost.com/v1.1/transactions/fd145a92-c97c-422b-9e51-552e1c2c2723?api_key=6078017455d8be7d9f07&request_timestamp=1526362759&signature=347ba9531100e86ba4199468bdc3ef14d99a8e0b45cd36a48fa45a05de694376`
 
 
 ### JSON Response Object
@@ -71,8 +71,27 @@ Specifically in a case when airdrop balance of a user is not sufficient while ex
 ### Example Success Response Body
 ```json
 {
-  "To add new transactions object list"
-}
+"success": true,
+   "data": {
+      "result_type": "transactions",
+      "transactions": {
+            "id": "fd145a92-c97c-422b-9e51-552e1c2c2723",
+            "from_user_id": "70c17e7e-1801-471c-9276-c2d9286f1cdb",
+            "to_user_id": "bc23ee11-bbda-41ee-8c4f-6153b4f391df",
+            "transaction_hash": "0x38a7d88d0259ceb16b527e9f1f4558412887144e62572fe422fb8ed8216fe616",
+            "action_id": 20608,
+            "timestamp": 1530256818851,
+            "status": "complete",
+            "gas_price": "1000000000",
+            "gas_used": "119742",
+            "transaction_fee": "0.000119742",
+            "block_number": 38552,
+            "amount": "4.999281063583474048",
+            "commission_amount": "0.04999281063583474",
+            "airdropped_amount": "5.049273874219308788"
+         }
+    }
+}   
 ```
 
 ### Example Code | Curl

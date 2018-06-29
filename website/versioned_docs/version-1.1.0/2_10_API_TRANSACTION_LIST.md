@@ -82,7 +82,79 @@ Specifically in a case when airdrop balance of a user is not sufficient while ex
 ### Example Success Response Body
 ```json
 {
-  "To add new transactions object list"
+   "success": true,
+   "data": {
+      "result_type": "transactions",
+      "meta": {
+         "next_page_payload": {}
+      },
+      "transactions": [
+         {
+            "id": "fd145a92-c97c-422b-9e51-552e1c2c2723",
+            "from_user_id": "70c17e7e-1801-471c-9276-c2d9286f1cdb",
+            "to_user_id": "bc23ee11-bbda-41ee-8c4f-6153b4f391df",
+            "transaction_hash": "0x38a7d88d0259ceb16b527e9f1f4558412887144e62572fe422fb8ed8216fe616",
+            "action_id": 20608,
+            "timestamp": 1530256818851,
+            "status": "complete",
+            "gas_price": "1000000000",
+            "gas_used": "119742",
+            "transaction_fee": "0.000119742",
+            "block_number": 38552,
+            "amount": "4.999281063583474048",
+            "commission_amount": "0.04999281063583474",
+            "airdropped_amount": "5.049273874219308788"
+         },
+         {
+            "id": "4d852cec-03fa-44bf-971e-6aba8c3b7672",
+            "from_user_id": "3df56927-7357-4844-98ce-601b578004f5",
+            "to_user_id": "1d6e0017-d2bd-49e7-8214-5dd9496ccdb6",
+            "transaction_hash": "0xcc3460918d2b0e02f3e0b6249e1e86007b382673302ce655b4b6f10c1bcea96e",
+            "action_id": 20609,
+            "timestamp": 1530256809966,
+            "status": "complete",
+            "gas_price": "1000000000",
+            "gas_used": "92150",
+            "transaction_fee": "0.00009215",
+            "block_number": 38547,
+            "amount": "2",
+            "commission_amount": "0",
+            "airdropped_amount": "0"
+         },
+         {
+            "id": "010a9587-62a7-4a30-9825-e33fa6d4e5b6",
+            "from_user_id": "3df56927-7357-4844-98ce-601b578004f5",
+            "to_user_id": "313c62fa-af73-4da1-bd31-c80a2f7f369d",
+            "transaction_hash": "0xec034c218b96835fea29b469576c0eeeb99872ade92e186fe7be4cf1cec7eb4f",
+            "action_id": 20609,
+            "timestamp": 1530256809014,
+            "status": "complete",
+            "gas_price": "1000000000",
+            "gas_used": "92150",
+            "transaction_fee": "0.00009215",
+            "block_number": 38547,
+            "amount": "2",
+            "commission_amount": "0",
+            "airdropped_amount": "0"
+         },
+         {
+            "id": "2d80753d-08f7-4869-8789-ca3b8e1bd494",
+            "from_user_id": "3df56927-7357-4844-98ce-601b578004f5",
+            "to_user_id": "af503170-63d5-40b8-a143-fc42681ca420",
+            "transaction_hash": "0xde4bac5c3aba5aa7ee4c160deca59e314a724ab59c02b38aaf2ca06bdc87cc91",
+            "action_id": 20609,
+            "timestamp": 1530256803548,
+            "status": "complete",
+            "gas_price": "1000000000",
+            "gas_used": "92150",
+            "transaction_fee": "0.00009215",
+            "block_number": 38544,
+            "amount": "2",
+            "commission_amount": "0",
+            "airdropped_amount": "0"
+         }
+      ]
+   }
 }
 ```
 
