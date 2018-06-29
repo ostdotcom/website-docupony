@@ -13,6 +13,8 @@ Our new set of APIs allow you to create interfaces for your users to view the re
 	- GET to `/balance/{user_id},` fetches the user's balance
 - Added Ledger API
 	- GET to `/ledger/{user_id}` gets all the inbound and outbound transactions of a user.
+- Added a new parameter in Transaction Object
+	- '_airdropped_amount_' gives the amount of branded tokens that were deducted from user's airdrop balance while executing a transaction.
 
 - Released a [<u>User Guide</u>](/docs/guide_wallet_setup.html) that walks you through a basic wallet setup.
 

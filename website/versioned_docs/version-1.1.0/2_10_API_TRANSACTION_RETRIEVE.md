@@ -5,7 +5,7 @@ sidebar_label: Retrieve a Transaction
 original_id: api_transaction_retrieve
 ---
 
-Send a POST request on `/transactions/{id}` to get a specific transaction executed. The {id} in the API endpoint is a unique identifier that is returned during the [<u>execution of the action</u>](/docs/api_action_execute.html)
+Send a GET request on `/transactions/{id}` to get a specific transaction executed. The {id} in the API endpoint is a unique identifier that is returned during the [<u>execution of the action</u>](/docs/api_action_execute.html)
 
 Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html). When your end-users perform these defined actions in your application tokens are transfered between two entities. If you want to know status of a specific token transfer `/transactions/{id}` API can be used.
 
@@ -56,9 +56,17 @@ For API calls to `/transactions/{id}` the `result_type` is a string "transaction
 | _gas_used_ | number | (optional) hexadecimal value of the gas used to execute the tranaction
 | _transaction_fee_ | string\<float\> | (optional) the value of the gas used at the gas price
 | _block_number_ | string\<number\> | (optional) the block on the chain in which the transaction was included
-| _amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the destination user  |
-| _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company |
+| _amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the destination user in BT |
+| _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company in BT |
+| _airdropped_amount_ | string\<float\> | the amount of branded tokens that were deducted from airdrop balance while executing the transaction. |
 
+#### ** amount **
+A user at one point in time can have two types of balances,
+  a.  token balance : tokens that were earned by performing defined actions and 
+  b.  airdrop balance : tokens the company awards to the user to spend within the economy.
+In such a case, while executing a transaction the _amount_ for the transaction is first picked from user's airdrop balance. If the airdrop balance is not sufficient the remaning amount is picked from user's token balance to complete the execution. User's balance information can be fetched with the help of [<u>balance API</u>.](/docs/api_balance.html)
+
+Specifically in a case when airdrop balance of a user is not sufficient while executing a commissioned transaction:  _amount_ = available airdropped tokens + commission amount set for the action + remaining no. of tokens to be picked from token_balance.
 
 ### Example Success Response Body
 ```json

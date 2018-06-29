@@ -67,9 +67,17 @@ For API calls to `/transactions` the `result_type` is a string "transactions", t
 | _gas_used_ | number | (optional) hexadecimal value of the gas used to execute the tranaction
 | _transaction_fee_ | string\<float\> | (optional) the value of the gas used at the gas price
 | _block_number_ | string\<number\> | (optional) the block on the chain in which the transaction was included
-| _amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the destination user |
-| _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company |
+| _amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the destination user in BT |
+| _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company in BT |
+| _airdropped_amount_ | string\<float\> | the amount of branded tokens that were deducted from airdrop balance while executing the transaction. |
 
+#### ** amount **
+A user at one point in time can have two types of balances,
+  a.  token balance : tokens that were earned by performing defined actions and 
+  b.  airdrop balance : tokens the company awards to the user to spend within the economy.
+In such a case, while executing a transaction the _amount_ for the transaction is first picked from user's airdrop balance. If the airdrop balance is not sufficient the remaning amount is picked from user's token balance to complete the execution. User's balance information can be fetched with the help of [<u>balance API</u>.](/docs/api_balance.html)
+
+Specifically in a case when airdrop balance of a user is not sufficient while executing a commissioned transaction:  _amount_ = available airdropped tokens + commission amount set for the action + remaining no. of tokens to be picked from token_balance.
 
 ### Example Success Response Body
 ```json
