@@ -5,9 +5,9 @@ sidebar_label: List User Transactions
 original_id: api_ledger
 ---
 
-Send a GET request to `/ledger/{user_id}` to get a list of transactions a user has done in a token economy. 
+Send a GET request to `/ledger/{user_id}` to get a list of transactions a user has been either the sender or a recipient of tokens .
 
-Within OST KIT⍺ you can set up actions to define advanced payments to tokenize your application. And when your end-users perform these actions in your application tokens are transfered between two entities. To view all token transfers a user in your economy did `/ledger/{user_id}` API should be used.
+Within OST KIT⍺ you can set up actions to define advanced actions to tokenize your application. And when your end-users perform these actions in your application tokens are transferred between two entities. To view all transactions a user in your economy was involved in, `/ledger/{user_id}` API should be used.
 
 ### Input Parameters
 | Parameter           | Type   | Definition                                               |
@@ -64,10 +64,10 @@ For API calls to `/ledger/{user_id}` the `result_type` is a string "transactions
 | _airdropped_amount_ | string\<float\> | the amount of branded tokens that were deducted from airdrop balance while executing the transaction. |
 
 #### ** amount **
-A user at one point in time can have two types of balances,
-  a.  token balance : tokens that were earned by performing defined actions and 
-  b.  airdrop balance : tokens the company awards to the user to spend within the economy.
-In such a case, while executing a transaction the _amount_ for the transaction is first picked from user's airdrop balance. If the airdrop balance is not sufficient the remaning amount is picked from user's token balance to complete the execution. User's balance information can be fetched with the help of [<u>balance API</u>.](/docs/api_balance.html)
+A user at any point in time can have two types of balances:<br />
+  a.  token balance : tokens that were earned by performing defined actions and <br />
+  b.  airdrop balance : tokens the company awards to the user to spend within the economy.<br />
+While executing a transaction of _amount_ the airdop balance is first used. If the airdrop balance is not sufficient, then the user's token balance is used. <br /> User's balance information can be fetched with the help of [<u>balance API</u>.](/docs/api_balance.html)
 
 Specifically in a case when airdrop balance of a user is not sufficient while executing a commissioned transaction:  _amount_ = available airdropped tokens + commission amount set for the action + remaining no. of tokens to be picked from token_balance.
 
