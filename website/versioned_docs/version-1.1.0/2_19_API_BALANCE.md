@@ -43,9 +43,9 @@ and the key `data.balance` has a single element of the `balance` object with bal
 
 | Parameter | Type      | Description  |
 |-----------|--------|--------|
-| _available_balance_    | string\<float\> |current available balance of the user (airdropped_balance + token_balance) |
-| _airdropped_balance_| string\<float\> | current balance of tokens that were airdropped to the user |
-| _token_balance_           | string\<float\> | current balance of tokens that users have earned within your branded token economy by performing the respective actions you defined. |
+| _available_balance_    | string\<float\> |current available balance of the user in BT (airdropped_balance + token_balance) |
+| _airdropped_balance_| string\<float\> | current balance of tokens that were airdropped to the user in BT |
+| _token_balance_           | string\<float\> | current balance of tokens in BT that users have earned within your branded token economy by performing the respective actions you defined. |
 
 ### Example Success Response Body
 

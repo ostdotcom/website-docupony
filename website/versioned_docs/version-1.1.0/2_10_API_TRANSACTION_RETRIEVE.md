@@ -71,25 +71,7 @@ Specifically in a case when airdrop balance of a user is not sufficient while ex
 ### Example Success Response Body
 ```json
 {
-   "success": true,
-   "data": {
-      "result_type": "transaction",
-      "transaction": {
-         "id": "41138190-80ea-43a9-8ddb-5cb3132a8ba2",
-         "from_user_id": "e58ab3d9-16d9-453c-be7f-1e010b5c1b4c",
-         "to_user_id": "66e4d7a0-9fd0-4032-8e00-99c128ceffeb",
-         "transaction_hash": "0x56019408cbd2b9f21d543edeb79935062bc108413ab0d283fdc3fcef52ad9db9",
-         "action_id": "20023",
-         "timestamp": 1524827126000,
-         "status": "complete",
-         "gas_price": "5000000000",
-         "gas_used": 105208,
-         "transaction_fee": "0.00052604",
-         "block_number": "1508693",
-         "amount": "4.635750605767636029",
-        "commission_amount": "0.04635750605767636"
-      }
-   }
+  "To add new transactions object list"
 }
 ```
 

@@ -74,34 +74,24 @@ We have disabled pessimistic concurrency control to ensure that no false positiv
 | _gas_used_ | number | (optional) hexadecimal value of the gas used to execute the tranaction
 | _transaction_fee_ | string\<float\> | (optional) the value of the gas used at the gas price
 | _block_number_ | string\<number\> | (optional) the block on the chain in which the transaction was included
-| _amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the destination user  |
-| _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company |
+| _amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the destination user in BT |
+| _commission_amount_ | string\<float\> | (optional) the amount of branded tokens transferred to the company in BT |
+| _airdropped_amount_ | string\<float\> | the amount of branded tokens that were deducted from airdrop balance while executing the transaction. |
 
+#### ** amount **
+A user at one point in time can have two types of balances,
+  a.  token balance : tokens that were earned by performing defined actions and 
+  b.  airdrop balance : tokens the company awards to the user to spend within the economy.
+In such a case, while executing a transaction the _amount_ for the transaction is first picked from user's airdrop balance. If the airdrop balance is not sufficient the remaning amount is picked from user's token balance to complete the execution. User's balance information can be fetched with the help of [<u>balance API</u>.](/docs/api_balance.html)
+
+Specifically in a case when airdrop balance of a user is not sufficient while executing a commissioned transaction:  _amount_ = available airdropped tokens + commission amount set for the action + remaining no. of tokens to be picked from token_balance.
 
 
 ### Example Success Response Body
 
 ```json
 {
-   "success": true,
-   "data": {
-      "result_type": "transaction",
-      "transaction": {
-         "id": "7a02d0be-802d-45aa-a17b-99d5147427b8",
-         "from_user_id": "f6e750a3-3c20-47b5-b3cc-fd72471efa52",
-         "to_user_id": "4505bb67-16d8-48bc-8de3-e4313b172e3e",
-         "transaction_hash": null,
-         "action_id": "20346",
-         "timestamp": 1526456925000,
-         "status": "processing",
-         "gas_price": "5000000000",
-         "gas_used": null,
-         "transaction_fee": null,
-         "block_number": null,
-         "amount": null,
-         "commission_amount": null
-      }
-   }
+   "New Transaction object"
 }
 ```
 

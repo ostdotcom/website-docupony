@@ -1,13 +1,13 @@
 ---
-id: version-1.1.0-api_transaction_list
-title: OST KIT⍺ API | List Transactions
-sidebar_label: List Transactions
-original_id: api_transaction_list
+id: version-1.1.0-api_ledger
+title: OST KIT⍺ API | List User Transactions
+sidebar_label: List User Transactions
+original_id: api_ledger
 ---
 
-Send a GET request to `/transactions` to get a list of executed transactions. 
+Send a GET request to `/ledger/{user_id}` to get a list of transactions a user has done in a token economy. 
 
-Within OST KIT⍺ you can set up actions to define advanced payments to tokenize your application. And when your end-users perform these actions in your application tokens are transfered between two entities. These  token transfers are listed via `/transactions` API and can happen between users or company_to_user or user_to_company.
+Within OST KIT⍺ you can set up actions to define advanced payments to tokenize your application. And when your end-users perform these actions in your application tokens are transfered between two entities. To view all token transfers a user in your economy did `/ledger/{user_id}` API should be used.
 
 ### Input Parameters
 | Parameter           | Type   | Definition                                               |
@@ -21,24 +21,16 @@ Within OST KIT⍺ you can set up actions to define advanced payments to tokenize
 | _limit_             | number    | limits the number of transaction objects to be sent in one request. Possible Values Min 1, Max 100, Default 10.     
 | _optional__filters_  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below.|
 
-### Filters on Transaction List
-When you send a GET to `/transactions` , a paginated response listing the transaction instanaces is sent. You can use filters to further refine your list.  The more items you provide in your list query the fewer the number of results. 
-
-Each filter parameter type is a comma-separated string.
-
-|List Filter | Description                                | Example                             |
-|------------|--------------------------------------------|-------------------------------------|
-| _id_          | Transaction ids                                 | 'id="e1f95fcb-5853-453a-a9b3-d4f7a38d5beb, e7800825-fd24-4574-b7a6-06472ca1ef9d"'                     |
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
 As an example
 
-`/transactions/?api_key=6078017455d8be7d9f07&limit=5&page_no=1&request_timestamp=1526452463`
+`/ledger/54a4648d-5959-4b44-8d28-86b85428e785?api_key=6078017455d8be7d9f07&limit=5&page_no=1&request_timestamp=1526452463`
 
 The request url of this GET request reads as
 
-> GET - `https://sandboxapi.ost.com/v1.1/transactions/?api_key=6078017455d8be7d9f07&limit=5&page_no=1&request_timestamp=1526452463&signature=b6edbce2f37ef5fa50818bbdd2e1eeb3a877d555b928b0b9665a367c9a02fa00`
+> GET - `https://sandboxapi.ost.com/v1.1/ledger/54a4648d-5959-4b44-8d28-86b85428e785?api_key=6078017455d8be7d9f07&limit=5&page_no=1&request_timestamp=1526452463&signature=b6edbce2f37ef5fa50818bbdd2e1eeb3a877d555b928b0b9665a367c9a02fa00`
 
 
 ### JSON Response Object
@@ -50,7 +42,7 @@ The request url of this GET request reads as
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
 
-For API calls to `/transactions` the `result_type` is a string "transactions", that is an array containing objects each with the attributes described below, which are the details of the executed transaction.
+For API calls to `/ledger/{user_id}` the `result_type` is a string "transactions", that is an array containing objects each with the attributes described below, which are the details of all transactions a user did.
 
 ### Response Transaction Object Attributes
 
@@ -82,14 +74,70 @@ Specifically in a case when airdrop balance of a user is not sufficient while ex
 ### Example Success Response Body
 ```json
 {
-  "To add new transactions object list"
+   "success": true,
+   "data": {
+      "result_type": "transactions",
+      "meta": {
+         "next_page_payload": {}
+      },
+      "transactions": [
+         {
+            "id": "24f6476d-fdec-4b79-b6ac-9b56c14baa1d",
+            "from_user_id": "54a4648d-5959-4b44-8d28-86b85428e785",
+            "to_user_id": "f5f9b061-b784-4ecd-b599-bc263860f539",
+            "transaction_hash": "0x5a78704ec17647f3cf1b024de9fa368edc52b07ed635fe462bfef7f4771da91e",
+            "action_id": 22613,
+            "timestamp": 1530107114601,
+            "status": "complete",
+            "gas_price": "1000000000",
+            "gas_used": "119952",
+            "transaction_fee": "0.000119952",
+            "block_number": 4142744,
+            "amount": "4.052205306455120373",
+            "commission_amount": "0.040522053064551203",
+            "airdropped_amount": "4.092727359519671576"
+         },
+         {
+            "id": "562d48f8-7261-4896-b804-6893f79ff1a9",
+            "from_user_id": "f5f9b061-b784-4ecd-b599-bc263860f539",
+            "to_user_id": "54a4648d-5959-4b44-8d28-86b85428e785",
+            "transaction_hash": "0x71b2545f3c81e93f021ac2cf0311840ecaf2ec00411fca76587aeb2bffb93484",
+            "action_id": 22613,
+            "timestamp": 1530107078785,
+            "status": "complete",
+            "gas_price": "1000000000",
+            "gas_used": "105080",
+            "transaction_fee": "0.00010508",
+            "block_number": 4142726,
+            "amount": "4.052205306455120373",
+            "commission_amount": "0.040522053064551203",
+            "airdropped_amount": "4.092727359519671576"
+         },
+         {
+            "id": "dfbf803e-a1ba-4410-a597-8ef846d69821",
+            "from_user_id": "f5f9b061-b784-4ecd-b599-bc263860f539",
+            "to_user_id": "54a4648d-5959-4b44-8d28-86b85428e785",
+            "transaction_hash": "0xea3dbf9639762522c95a0c7a8824f56ced22e737a02c594b9491d78a7158a311",
+            "action_id": 22613,
+            "timestamp": 1530107072130,
+            "status": "complete",
+            "gas_price": "1000000000",
+            "gas_used": "119952",
+            "transaction_fee": "0.000119952",
+            "block_number": 4142723,
+            "amount": "4.052205306455120373",
+            "commission_amount": "0.040522053064551203",
+            "airdropped_amount": "4.092727359519671576"
+         }
+      ]
+   }
 }
 ```
 
 ### Example Code | Curl
 ```bash
 curl --request GET \
---url 'https://sandboxapi.ost.com/v1.1/transactions/' \
+--url 'https://sandboxapi.ost.com/v1.1/ledger/54a4648d-5959-4b44-8d28-86b85428e785' \
 --header 'Accept: application/json' \
 --form request_timestamp=1526550545 \
 --form signature=47c3ffc5aa919ae3d61113bcb96d4be0bbdc3bb559dbc48e8567f08ca3d655ef \
