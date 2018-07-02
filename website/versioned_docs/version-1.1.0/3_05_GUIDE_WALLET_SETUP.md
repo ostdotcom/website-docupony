@@ -5,7 +5,7 @@ sidebar_label: Basic Wallet Setup Guide
 original_id: guide_wallet_setup
 ---
 
-The Embedded Wallet is an important part of our solutions that allows us to bridge blockchain with consumers and businesses of all sizes, without the need for skilled blockchain developers. As a main tool for communication, it provides end-users the possibility to understand and interact with your application’s branded token economy by allowing them to view their current balance and transactions history.
+ A basic wallet-like interface or account page provides end-users the possibility to understand and interact with your application’s branded token economy by allowing them to view their current balance and transactions history.
 
 With the Ledger and Balance APIs, you can build end-user Wallet-like interfaces. This typically works best if you already have an economy with end-users logging in and executing the respective actions you defined in your economy.
 
@@ -115,7 +115,7 @@ ost_balance_object = ost_sdk.services.balances # initializes the balance object
 ost_balance_object.get({id: 'd66a40d0-b2fa-4915-b6d2-46bbe644278a'}).to_json   # Fetch the user's balance
 ``` 
 
-This API returns a balance object. The balance details in the object are in (BT) your Branded Tokens. 
+This API returns a balance object. The balance details in the object are in (BT) your Branded Tokens.
 
 #### Example Response Body
 
@@ -182,7 +182,7 @@ Multiplying the result with price_points will give you the USD equivalent value.
 In order to retrieve a user's transaction ledger, you can use the Ledger API. 
 
 ```ruby
-ost_ledger_object = ost_sdk.services.ledger  #initialize the ledger object 
+ost_ledger_object = ost_sdk.services.ledger  #initialize the ledger object
 ost_ledger_object.get({id: 'd66a40d0-b2fa-4915-b6d2-46bbe644278a'}).to_json  # Get all the transactions a particular user did in the economy.
 ```
 
@@ -201,7 +201,7 @@ What can you tell your users about this action now? Here is the simplest way you
 ![walletuserflow](assets/WalletFlow.jpg)
 
 
-To execute the Like action, you will need Alice and Jason's IDs. They were returned when you created Alice and Jason.  And you would need the action ID that was returned when you created the action. 
+To execute the Like action, you will need Alice and Jason's IDs. They were returned when you created Alice and Jason.  And you would need the action ID that was returned when you created the action.
 
 ```ruby
 ost_transaction_object = ost_sdk.services.transactions  #initializes transaction module.
