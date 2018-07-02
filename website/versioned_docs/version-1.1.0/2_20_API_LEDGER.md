@@ -1,7 +1,7 @@
 ---
 id: version-1.1.0-api_ledger
-title: OST KIT⍺ API | List User Transactions
-sidebar_label: List User Transactions
+title: OST KIT⍺ API | List User's Transactions
+sidebar_label: List User's Transactions
 original_id: api_ledger
 ---
 
@@ -20,7 +20,6 @@ Within OST KIT⍺ you can set up actions to define advanced actions to tokenize 
 | _order_             | string    | orders the list in 'desc' (default). Accepts value 'asc' to order in ascending order. |
 | _limit_             | number    | limits the number of transaction objects to be sent in one request. Possible Values Min 1, Max 100, Default 10.     
 | _optional__filters_  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below.|
-
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
@@ -42,7 +41,9 @@ The request url of this GET request reads as
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
 
-For API calls to `/ledger/{user_id}` the `result_type` is a string "transactions", that is an array containing objects each with the attributes described below, which are the details of all transactions a user did.
+For API calls to `/ledger/{user_id}` the `result_type` is a string "transactions", and the key `data.transactions` is an array containing the transaction objects in which the selected user is either the sender or the recipient of an action.
+
+The attributes of the transaction object are described below :
 
 ### Response Transaction Object Attributes
 
@@ -65,11 +66,20 @@ For API calls to `/ledger/{user_id}` the `result_type` is a string "transactions
 
 #### ** amount **
 A user at any point in time can have two types of balances:<br />
-  a.  token balance : tokens that were earned by performing defined actions and <br />
-  b.  airdrop balance : tokens the company awards to the user to spend within the economy.<br />
+*  token balance : tokens that were earned by performing defined actions and <br />
+*  airdrop balance : tokens the company awards to the user to spend within the economy.<br />
 While executing a transaction of _amount_ the airdop balance is first used. If the airdrop balance is not sufficient, then the user's token balance is used. <br /> User's balance information can be fetched with the help of [<u>balance API</u>.](/docs/api_balance.html)
 
 Specifically in a case when airdrop balance of a user is not sufficient while executing a commissioned transaction:  _amount_ = available airdropped tokens + commission amount set for the action + remaining no. of tokens to be picked from token_balance.
+
+### Filters in Ledger API
+When you send a GET to `/ledger/{user_id}`, a paginated response listing the transaction instanaces is sent. You can use filters to further refine your list.  
+
+Each filter parameter type is a comma-separated string.
+
+| Filter | Description                                | Example                             |
+|------------|--------------------------------------------|-------------------------------------|
+| _status_          | the execution status of the transaction: "processing", "failed" or "complete" |'status="complete"'  |
 
 ### Example Success Response Body
 ```json
@@ -138,12 +148,12 @@ Specifically in a case when airdrop balance of a user is not sufficient while ex
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1.1/ledger/54a4648d-5959-4b44-8d28-86b85428e785' \
---header 'Accept: application/json' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
 --form request_timestamp=1526550545 \
 --form signature=47c3ffc5aa919ae3d61113bcb96d4be0bbdc3bb559dbc48e8567f08ca3d655ef \
 --form api_key=7cad25e082390a90114e \
 --form page_no=1 \
---form limit=50 \
+--form limit=5 \
 ```
 
 >_last updated 2nd July 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)

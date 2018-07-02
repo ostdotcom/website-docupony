@@ -7,7 +7,7 @@ original_id: changelog
 
 ### OST KIT⍺ - 2nd July 2018
 #### API v1.1
-Our new set of APIs allow you to create interfaces for your users to view the results of their interactions with your application. You now have the option to create an interface for your users to view their balances and transactions and analyze earning and spending activity. The APIs do not support key-management, signing of transactions or buy-in and cash-out at this point in time.
+Our new set of APIs allow you to create interfaces for your users to view the results of their interactions within your application. You now have the option to create an interface for your users to view their balances and transactions and analyze earning and spending activity. The APIs do not support key-management, signing of transactions or buy-in and cash-out at this point in time.
 
 - Added Balance API
 	- GET to `/balance/{user_id},` fetches the user's balance

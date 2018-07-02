@@ -50,7 +50,9 @@ The request url of this GET request reads as
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
 
-For API calls to `/transactions` the `result_type` is a string "transactions", that is an array containing objects each with the attributes described below, which are the details of the executed transaction.
+For API calls to `/transactions` the `result_type` is a string "transactions", and the key `data.transactions` is an array containing the transaction objects.
+
+The attributes of the transaction object are described below :
 
 ### Response Transaction Object Attributes
 

@@ -47,8 +47,10 @@
       "version-1.1.0-api_transaction_list"
       
     ],
-    "WALLET": [
-      "version-1.1.0-api_balance",
+    "BALANCE": [
+      "version-1.1.0-api_balance"
+    ],
+    "LEDGER": [
       "version-1.1.0-api_ledger"
     ],
     "TRANSFERS": [

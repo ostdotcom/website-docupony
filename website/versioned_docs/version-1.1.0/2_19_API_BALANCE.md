@@ -1,13 +1,13 @@
 ---
 id: version-1.1.0-api_balance
-title: OST KIT⍺ API | Retrieve User Balance
-sidebar_label: Retrieve User Balance
+title: OST KIT⍺ API | Get Balance
+sidebar_label:  Get Balance
 original_id: api_balance
 ---
 
-GET to `/balance/{user_id}` to get balance information about a specific user. The {user_id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the user</u>](/docs/api_users_create.html) OR is returned as `id` when a GET is sent to [<u>`/users`</u>](/docs/api_users_list.html).
+GET to `/balance/{user_id}` to get balance information about a specific user. The {user_id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the user</u>](/docs/api_users_create.html) OR is returned as `id` when a GET is sent to [<u>`/users`</u>](/docs/api_users_list.html). 
 
-A user can own branded tokens within your branded token economy.  Users can earn and spend branded tokens by based on the actions  the defined in your economy. Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy. The `/balance/{user_id}` API returns a user's token balances that are available to the user to use.
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens by performing the respective actions you defined.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy. The `/balance/{user_id}` API returns a user's token balances that are available to the user to use.
 
 ### Input Parameters
 
@@ -45,7 +45,7 @@ and the key `data.balance` has a single element of the `balance` object with bal
 |-----------|--------|--------|
 | _available_balance_    | string\<float\> |current available balance of the user in BT (airdropped_balance + token_balance) |
 | _airdropped_balance_| string\<float\> | current balance of tokens that were airdropped to the user in BT |
-| _token_balance_           | string\<float\> | current balance of tokens in BT that users have earned within your branded token economy. |
+| _token_balance_           | string\<float\> | current balance of tokens in BT that users have earned within your branded token economy by performing the respective actions you defined. |
 
 ### Example Success Response Body
 
@@ -85,7 +85,7 @@ however when the user ID passed in the URL invalid the response is returned with
      "success": false,
      "err": {
         "code": "NOT_FOUND",
-        "msg": "A user matching the id could not be located.",
+        "msg": "Resource matching the id could not be located.",
         "internal_id": "s_a_g_2"
      }
   }
@@ -95,7 +95,7 @@ however when the user ID passed in the URL invalid the response is returned with
 ```bash
 curl --request GET \
 --url 'https://sandboxapi.ost.com/v1.1/balance/f5f9b061-b784-4ecd-b599-bc263860f539' \
---header 'Accept: application/json' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
 --form request_timestamp=1526548630 \
 --form signature=e502252993cfa289390ec5d85ee2322e90e4e1fa0fad08376b1dfd2c775413da \
 --form api_key=7cad25e082390a90114e \

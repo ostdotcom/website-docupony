@@ -5,16 +5,18 @@ sidebar_label: Basic Wallet Setup Guide
 original_id: guide_wallet_setup
 ---
 
- A basic wallet-like interface or account page provides end-users the possibility to understand and interact with your application’s branded token economy by allowing them to view their current balance and transactions history.
+ As an important tool of communication, the wallet interface can provide end-users the possibility to understand and interact with your application’s branded token economy. 
 
-With the Ledger and Balance APIs, you can build end-user Wallet-like interfaces. This typically works best if you already have an economy with end-users logging in and executing the respective actions you defined in your economy.
+With the Ledger and Balance APIs, you can build wallet-like interfaces where users can view their current balance and transactions history. This typically works best if you already have an economy with end-users logging in and executing the respective actions you defined in your economy. 
 
-Prerequisites: 
-This guide uses Ruby SDK to help you create a basic Wallet-like interface. Successfully using the Ruby SDK requires having Ruby installed on your system: [<u>https://www.ruby-lang.org/en/documentation/installation/</u>](https://www.ruby-lang.org/en/documentation/installation/)
+Please note the APIs do not support key-management, signing of transactions or buy-in and cash-out at this point in time. 
 
-If you wish to use other SDKs please visit one of the QuickStartGuides or SDKs overview section to [<u>learn more</u>.](/docs/sdks_overview.html)
+### Prerequisites 
+This guide uses Ruby SDK to walk through the steps of creating a basic wallet interface. Successfully using the Ruby SDK requires having Ruby installed on your system: [<u>https://www.ruby-lang.org/en/documentation/installation/</u>](https://www.ruby-lang.org/en/documentation/installation/)
 
-To use the SDK, developers will need to:
+If you wish to use other SDKs please visit one of the Quick Start Guides or SDKs' overview section to [<u>learn more</u>.](/docs/sdks_overview.html)
+
+To use any SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
 
@@ -107,7 +109,7 @@ ost_airdrop_object.get({id: 'ef98395d-e999-463b-a875-84bdd0740b31'}) # actual ai
 ```
 
 ### Getting User Balances
-To get a user's balance, you can use the Balances API.
+To get a user's balance, you can use the `/balance/{user_id}` API.
 
 ```ruby
 ost_balance_object = ost_sdk.services.balances # initializes the balance object
@@ -115,9 +117,9 @@ ost_balance_object = ost_sdk.services.balances # initializes the balance object
 ost_balance_object.get({id: 'd66a40d0-b2fa-4915-b6d2-46bbe644278a'}).to_json   # Fetch the user's balance
 ``` 
 
-This API returns a balance object. The balance details in the object are in (BT) your Branded Tokens.
+This API returns a balance object. The balance details in the object are in (BT) your Branded Tokens. 
 
-#### Example Response Body
+#### Example Balance Response Body
 
 ```json
 {
@@ -130,11 +132,10 @@ This API returns a balance object. The balance details in the object are in (BT)
          "token_balance": "660.011683253390568746"
       }
    }
-
 }
 ```
 
-### Fiat and OST Equivalents
+#### Fiat and OST Equivalents
 In order to display OST and USD equivalent of these Branded Tokens, you can use the Token Details API. 
 
 ```ruby
@@ -144,9 +145,9 @@ ost_token_object.get({}).to_json    # fetches the token economy details
 
 The conversion_factor in response to a GET to `/token` refers to the factor you chose at the time of the Token Economy set up in OST KIT. Multiplying this number with the available_balance in balance object will give you the OST equivalents values of the Token balances. 
 
-Multiplying the result with price_points will give you the USD equivalent value.
+Multiplying the result with price_points that we get in `/token` response will give you the USD equivalent value.
 
-### Example Token Response Body
+#### Example Token Response Body
 ```json
 {
   "success": true,
@@ -177,31 +178,8 @@ Multiplying the result with price_points will give you the USD equivalent value.
 }
 ```
 
-
-### Getting The Transaction Ledger
-In order to retrieve a user's transaction ledger, you can use the Ledger API. 
-
-```ruby
-ost_ledger_object = ost_sdk.services.ledger  #initialize the ledger object
-ost_ledger_object.get({id: 'd66a40d0-b2fa-4915-b6d2-46bbe644278a'}).to_json  # Get all the transactions a particular user did in the economy.
-```
-
-This Ledger API filters transactions in which the selected user is either the sender or the recipient of an action. As such it returns an action-id but not the action name. In order to display action names there are two options:
-*  A simple way is to store a mapping of action-id to action name on your side and refresh it when you add action     types.
-*  Send a GET request on `/actions/{id}` 
-
-```ruby
-ost_action_object = ost_sdk.services.actions #initializes action object
-ost_action_object.get(id: 22613).to_json   # fetches an action
-```
-
 #### Alice Likes Jason
-What can you tell your users about this action now? Here is the simplest way you could think of a user-flow. 
-
-![walletuserflow](assets/WalletFlow.jpg)
-
-
-To execute the Like action, you will need Alice and Jason's IDs. They were returned when you created Alice and Jason.  And you would need the action ID that was returned when you created the action.
+To execute the Like action, you will need Alice and Jason's IDs. They were returned when you created Alice and Jason.  And you would need the action ID that was returned when you created the action. 
 
 ```ruby
 ost_transaction_object = ost_sdk.services.transactions  #initializes transaction module.
@@ -210,9 +188,29 @@ ost_transaction_object.execute({from_user_id:'d66a40d0-b2fa-4915-b6d2-46bbe64427
  # returns object with ID of executed transaction
 ```
 
-Now if Alice wants to view her updated balance you can call the balance object again just like you did earlier- using her user_id. 
+What can you tell your users about this action now? Here is the simplest way you could think of a user-flow. 
 
-If she wants to see all her transactions you can also call the ledger API with her user_id. 
+![walletuserflow](assets/WalletFlow.jpg)
+
+
+Now if Alice wants to view her updated balance you can call the balance object again just like you did earlier- using her user_id.  
+
+### Getting The Transaction Ledger
+If Alice wants to see all her transactions, you can use the Ledger API.
+
+```ruby
+ost_ledger_object = ost_sdk.services.ledger  #initialize the ledger object 
+ost_ledger_object.get({id: 'd66a40d0-b2fa-4915-b6d2-46bbe644278a'}).to_json  # Get all the transactions a particular user did in the economy.
+```
+
+This Ledger API filters transactions in which the selected user is either the sender or the recipient of an action. As such the response returns the action-id but not the action name. In order to display action names there are two options:
+*  A simple way is to store a mapping of action-id to action name on your side and refresh it when you add action     types.
+*  Send a GET request on `/actions/{id}` 
+
+```ruby
+ost_action_object = ost_sdk.services.actions #initializes action object
+ost_action_object.get(id: 22613).to_json   # fetches an action
+```
 
 A Basic user-interface for Alice could look like this: 
 
