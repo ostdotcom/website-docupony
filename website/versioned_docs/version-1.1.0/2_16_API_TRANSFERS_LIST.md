@@ -22,10 +22,10 @@ OST KIT⍺ only knows about transfers of OST⍺ Prime made via the OST KIT⍺ Tr
 | _order_by_          | string    | order the list by when the transfer was created (default) |
 | _order_             | string    | orders the list in 'desc' (default). Accepts value 'asc' to order in ascending order. |
 | _limit_             | number    | limits the number of transfer objects to be sent in one request. Possible Values Min 1, Max 100, Default 10.     
-| _optional__filters_  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below.|
+| optional filters  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below. (Note: To be specific, name of the filter is not 'optional filters'.)|
 
 
-### Filters on Transfers List
+### Optional Filters on Transfers List
 When you send a GET to `/transfers`, a paginated response listing the transfers is sent. You can use filters to further refine your list.
 
 Each filter parameter type is a comma-separated string.
