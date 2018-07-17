@@ -1,12 +1,12 @@
 ---
 id: version-1.1.0-api_users_retrieve
 title: OST KIT⍺ API | Retrieve A User
-sidebar_label: Retrieve a user
+sidebar_label: Retrieve a User
 original_id: api_users_retrieve
 ---
 > Deprecation Warning for two parameters in the User Object. 
 > In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' will be deprecated from User's Object in 3 months, on 2nd October 2018.
-> We now provide the balance information via a separate endpoint `/balance/{user_id}`
+> We now provide the balance information via a separate endpoint `/balances/{user_id}`
 
 Send a GET request on `/users/{id}` to get information about a specific user. The {id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the user</u>](/docs/api_users_create.html) OR is returned as `id` when a GET is sent to [<u>`/users`</u>](/docs/api_users_list.html). 
 

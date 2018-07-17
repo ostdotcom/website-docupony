@@ -19,7 +19,16 @@ Within OST KIT⍺ you can set up actions to define advanced actions to tokenize 
 | _order_by_          | string    | order the list by when the transaction was created (default) . Can only be ordered by transaction creation date. |
 | _order_             | string    | orders the list in 'desc' (default). Accepts value 'asc' to order in ascending order. |
 | _limit_             | number    | limits the number of transaction objects to be sent in one request. Possible Values Min 1, Max 100, Default 10.     
-| _optional__filters_  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below.|
+| optional filters  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below. (Note: To be specific, name of the filter is not 'optional filters'.)|
+
+### Optional Filters in Ledger API
+When you send a GET to `/ledger/{user_id}`, a paginated response listing the transaction instanaces is sent. You can use filters to further refine your list.  
+
+Each filter parameter type is a comma-separated string.
+
+| Filter | Description                                | Example                             |
+|------------|--------------------------------------------|-------------------------------------|
+| _status_   | the execution status of the transaction: "processing", "failed" or "complete" |'status="complete"'  |
 
 The signature for this API is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted.
 
@@ -71,15 +80,6 @@ A user at any point in time can have two types of balances:<br />
 While executing a transaction of _amount_ the airdop balance is first used. If the airdrop balance is not sufficient, then the user's token balance is used. <br /> User's balance information can be fetched with the help of [<u>balance API</u>.](/docs/api_balance.html)
 
 Specifically in a case when airdrop balance of a user is not sufficient while executing a commissioned transaction:  _amount_ = available airdropped tokens + commission amount set for the action + remaining no. of tokens to be picked from token_balance.
-
-### Filters in Ledger API
-When you send a GET to `/ledger/{user_id}`, a paginated response listing the transaction instanaces is sent. You can use filters to further refine your list.  
-
-Each filter parameter type is a comma-separated string.
-
-| Filter | Description                                | Example                             |
-|------------|--------------------------------------------|-------------------------------------|
-| _status_          | the execution status of the transaction: "processing", "failed" or "complete" |'status="complete"'  |
 
 ### Example Success Response Body
 ```json

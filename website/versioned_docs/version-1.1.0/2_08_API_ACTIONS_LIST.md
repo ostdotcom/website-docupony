@@ -22,9 +22,9 @@ An action is of a certain kind: user_to_user, user_to_company, or company_to_use
 | _order_by_          | string    | order the list by when the action was created (default) . Can also order by the 'name' of the action |
 | _order_             | string    | orders the list in 'desc' (default). Accepts value 'asc' to order in ascending order. |
 | _limit_             | number    | limits the number of action objects to be sent in one request. Possible Values Min 1, Max 100, Default 10.     
-| _optional__filters_  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below.|
+| optional filters  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below. (Note: To be specific, name of the filter is not 'optional filters'.)|
 
-### Filters on Action List
+### Optional Filters on Action List
 When you send a GET to `/actions` , actions with default input parameters mentioned above are listed. The resource instances up to the limit based on the offset are sent in one response. You can use filters to further refine your list. The more items you provide in your list query the fewer the number of results. Use filters so they apply to specific fields within the action object.  
 
 Each filter parameter type is a comma-separated string.

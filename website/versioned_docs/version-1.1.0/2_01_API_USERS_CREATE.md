@@ -6,7 +6,7 @@ original_id: api_users_create
 ---
 > Deprecation Warning for two parameters in the User Object. 
 > In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' will be deprecated from User's Object in 3 months, on 2nd October 2018.
-> We now provide the balance information via a separate endpoint `/balance/{user_id}`
+> We now provide the balance information via a separate endpoint `/balances/{user_id}`
 
 Post to `/users` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
 
