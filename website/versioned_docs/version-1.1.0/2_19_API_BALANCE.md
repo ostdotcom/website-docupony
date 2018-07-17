@@ -5,9 +5,9 @@ sidebar_label:  Get Balance
 original_id: api_balance
 ---
 
-GET to `/balance/{user_id}` to get balance information about a specific user. The {user_id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the user</u>](/docs/api_users_create.html) OR is returned as `id` when a GET is sent to [<u>`/users`</u>](/docs/api_users_list.html). 
+GET to `/balances/{user_id}` to get balance information about a specific user. The {user_id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the user</u>](/docs/api_users_create.html) OR is returned as `id` when a GET is sent to [<u>`/users`</u>](/docs/api_users_list.html). 
 
-A user can own branded tokens within your branded token economy.  Users can exchange branded tokens by performing the respective actions you defined.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy. The `/balance/{user_id}` API returns a user's token balances that are available to the user to use.
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens by performing the respective actions you defined.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy. The `/balances/{user_id}` API returns a user's token balances that are available to the user to use.
 
 ### Input Parameters
 
@@ -25,7 +25,7 @@ where the signature is derived from the API secret key and the string to sign. T
 
 so that the full request query reads
 
-> GET - `https://sandboxapi.ost.com/v1.1/balance/f5f9b061-b784-4ecd-b599-bc263860f539?api_key=6078017455d8be7d9f07&request_timestamp=1526525211&signature=651c9e8214f4a69f293027dcaf19f1130c153397e4fa3c60bddace920ff1145a`
+> GET - `https://sandboxapi.ost.com/v1.1/balances/f5f9b061-b784-4ecd-b599-bc263860f539?api_key=6078017455d8be7d9f07&request_timestamp=1526525211&signature=651c9e8214f4a69f293027dcaf19f1130c153397e4fa3c60bddace920ff1145a`
 
 ### JSON Response Object
 
@@ -36,7 +36,7 @@ so that the full request query reads
 | _err_      | object | (optional) describing error if not successful |
 | _code_     | number | HTTP status code |
 
-For api calls to `/balance/{user_id}` the `data.result_type` is the string "balance"
+For api calls to `/balances/{user_id}` the `data.result_type` is the string "balance"
 and the key `data.balance` has a single element of the `balance` object with balance details of the user.
 
 ### Balance Object Attributes
@@ -94,7 +94,7 @@ however when the user ID passed in the URL invalid the response is returned with
 ### Example Code | Curl
 ```bash
 curl --request GET \
---url 'https://sandboxapi.ost.com/v1.1/balance/f5f9b061-b784-4ecd-b599-bc263860f539' \
+--url 'https://sandboxapi.ost.com/v1.1/balances/f5f9b061-b784-4ecd-b599-bc263860f539' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --form request_timestamp=1526548630 \
 --form signature=e502252993cfa289390ec5d85ee2322e90e4e1fa0fad08376b1dfd2c775413da \

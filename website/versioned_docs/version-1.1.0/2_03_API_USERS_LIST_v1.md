@@ -6,7 +6,7 @@ original_id: api_users_list
 ---
 > Deprecation Warning for two parameters in the User Object. 
 > In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' will be deprecated from User's Object in 3 months, on 2nd October 2018.
-> We now provide the balance information via a separate endpoint `/balance/{user_id}`
+> We now provide the balance information via a separate endpoint `/balances/{user_id}`
 
 Send a GET request on `/users` to receive a paginated - optionally filtered - ordered array of users within the economy.
 
@@ -24,10 +24,10 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _order_by_          | string |(optional) order the list by 'creation_time' or 'name' (default) |
 | _order_             | string  |(optional) order users in 'desc' (default) or 'asc' order |
 | _limit_ | number  | limits the number of user objects to be sent in one request(min. 1, max. 100, default 10) |
-|optional__filters|string| filters can be used to refine your list, the parameters on which filters are supported are detailed in the table below|
+|optional filters |string| filters can be used to refine your list, the parameters on which filters are supported are detailed in the table below. (Note: To be specific, name of the filter is not 'optional filters'.)|
 
 
-### Filters on User Lists
+### Optional Filters on User List
 
 
 When you send a GET to `/users` , `users` with default input parameters mentioned above are listed. The resource instances up to the limit based on the offset are sent in one response. You can use filters to further refine your list. The more items you provide in your list query the fewer the number of results. Use filters so they apply to specific fields within the user object.
@@ -101,8 +101,7 @@ and the key `data.users` is an array of the returned `user` objects (10 users pe
          }
       ],
       "meta": {
-         "next_page_payload": {},
-         "total_no": 2
+         "next_page_payload": {}
       }
    }
 }

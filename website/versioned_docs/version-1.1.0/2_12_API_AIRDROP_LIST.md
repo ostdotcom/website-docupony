@@ -20,9 +20,9 @@ Gets a paginated list of airdrops executed. This API can also be used to underst
 | _order_by_          | string    | order the list by when the airdrop was executed (default). Can only order by execution date. |
 | _order_             | string    | orders the list in 'desc' (default). Accepts value 'asc' to order in ascending order. |
 | _limit_             | number    | limits the number of airdrop objects to be sent in one request. Possible Values Min 1, Max 100, Default 10.     
-| _optional__filters_  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below.|
+| optional filters  | string    | filters can be used to refine your list. The Parameters on which filters are supported are detailed in the table below. (Note: To be specific, name of the filter is not 'optional filters'.)|
 
-### Filters on Airdrop List
+### Optional Filters on Airdrop List
 When you send a GET to `/airdrops` , a paginated response is sent listing the airdrops instance. You can use filters to further refine your list. The more items you provide in your list query the fewer the number of results. 
 
 The filter parameter type is a comma-separated string.
