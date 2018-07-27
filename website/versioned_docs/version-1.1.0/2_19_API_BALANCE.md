@@ -7,7 +7,7 @@ original_id: api_balance
 
 GET to `/balances/{user_id}` to get balance information about a specific user. The {user_id} in the API endpoint is a unique identifier that is returned during the [<u>creation of the user</u>](/docs/api_users_create.html) OR is returned as `id` when a GET is sent to [<u>`/users`</u>](/docs/api_users_list.html). 
 
-A user can own branded tokens within your branded token economy.  Users can exchange branded tokens by performing the respective actions you defined.  Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy. The `/balances/{user_id}` API returns a user's token balances that are available to the user to use.
+A user can own branded tokens within your branded token economy.  Users can exchange branded tokens by performing the respective actions you defined. Users also hold an airdrop token balance, which consists of tokens the company awards to the user to spend within the economy. The `/balances/{user_id}` API returns a user's token balances that are available to the user to use.
 
 ### Input Parameters
 
@@ -20,7 +20,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 where the signature is derived from the API secret key and the string to sign. The string to sign is formed with API parameters alphabetically sorted as below.
 
 
-`/balance/f5f9b061-b784-4ecd-b599-bc263860f539?api_key=ed0787e817d4946c7e76&request_timestamp=1526388800&`
+`/balances/f5f9b061-b784-4ecd-b599-bc263860f539?api_key=ed0787e817d4946c7e76&request_timestamp=1526388800&`
 
 
 so that the full request query reads
@@ -101,6 +101,6 @@ curl --request GET \
 --form api_key=7cad25e082390a90114e \
 ```
 
->_last updated 2nd July 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 27th July 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1.1 | OpenST Platform v0.9.2
