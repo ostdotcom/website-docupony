@@ -6,7 +6,7 @@ original_id: api_users_create
 ---
 > Deprecation Warning for two parameters in the User Object. 
 > In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' will be deprecated from User's Object in 3 months, on 2nd October 2018.
-> We now provide the balance information via a separate endpoint `/balances/{user_id}`
+> Its advicied that *these values should not to be relied upon*. We now provide this information and more via a separate endpoint `/balances/{user_id}` 
 
 Post to `/users` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
 
@@ -29,7 +29,7 @@ where the signature is derived from the API secret key and the string to sign. T
 
 The request url of this post request reads as
 
-> POST - ` https://sandboxapi.ost.com/v1/users`
+> POST - ` https://sandboxapi.ost.com/v1.1/users`
 
 and the parameters are sent in the request body with default `application/x-www-form-urlencoded` content-type so the request body uses the same format as the query string:
 
@@ -128,6 +128,6 @@ curl --request POST \
 --form name=NAME \
 ```
 
->_last updated 2nd July 2018_; for support see [help.ost.com](help.ost.com)
+>_last updated 27th July 2018_; for support see [help.ost.com](help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1.1 | OpenST Platform v0.9.2

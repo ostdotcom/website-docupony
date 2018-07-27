@@ -64,7 +64,7 @@ The attributes of the transaction object are described below :
 | _transaction_hash_ | hexstring | the generated transaction hash |
 | _action_id_ | number | id of the action that was executed. |
 | _timestamp_  | number | universal time stamp value of execution of the transaction in milliseconds|
-| _status_ | string | the execution status of the transaction: "processing", "failed" or "complete" |
+| _status_ | string | the execution status of the transaction: "processing", "failed", "waiting_for_mining" or "complete" |
 | _gas_price_ | string\<number\> | value of the gas utilized for the transaction |
 | _gas_used_ | number | (optional) hexadecimal value of the gas used to execute the tranaction
 | _transaction_fee_ | string\<float\> | (optional) the value of the gas used at the gas price

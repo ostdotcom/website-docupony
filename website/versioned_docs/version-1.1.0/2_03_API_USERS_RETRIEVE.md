@@ -6,7 +6,7 @@ original_id: api_users_retrieve
 ---
 > Deprecation Warning for two parameters in the User Object. 
 > In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' will be deprecated from User's Object in 3 months, on 2nd October 2018.
-> We now provide the balance information via a separate endpoint `/balances/{user_id}`
+> Its advicied that *these values should not to be relied upon*. We now provide this information and more via a separate endpoint `/balances/{user_id}`
 
 Send a POST-request to `/users/{id}` to retrieve an existing `user` for a given unique identifier within the application. The {id} within the API endpoint is a unique identifier, which is returned during the creation of a user or is returned as `id` when a GET-request is sent to `/users`.
 
