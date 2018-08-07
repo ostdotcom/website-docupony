@@ -1,3 +1,4 @@
+---
 id: version-1.1.0-guide_buy_in
 title: Integrating Payment Processors to Simulate Buy-In
 sidebar_label: Simulating Buy-In Using Payment Processors
