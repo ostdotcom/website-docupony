@@ -24,7 +24,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 where the signature is derived from the API secret key and the string to sign.The string to sign is formed with API parameters alphabetically sorted as below.
 
 
-`/users/69cc4fcd-39ca-4499-8948-c402dd83fcd8?api_key=ed0787e817d4946c7e76&request_timestamp=1526394768&signature=1370bc4398eb5f6811f4713d6fd79ddf8230a64258b7cd4b4a29482ff8ccf7a2`
+`/users/69cc4fcd-39ca-4499-8948-c402dd83fcd8?api_key=ed0787e817d4946c7e76&request_timestamp=1526394768`
 
 The request url of this post request reads as
 
