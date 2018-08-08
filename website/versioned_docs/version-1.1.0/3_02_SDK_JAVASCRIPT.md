@@ -10,6 +10,8 @@ The [OST JavaScript SDK](https://github.com/OpenSTFoundation/ost-sdk-js/tree/rel
 
 ### Prerequisites
 
+[<u>JavaScript SDK on GitHub</u>](https://github.com/OpenSTFoundation/ost-sdk-js/releases/tag/v1.1.0)
+
 To use the SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
