@@ -5,7 +5,7 @@ sidebar_label: Simple Token
 original_id: simpletoken
 ---
 
-OST stands for "Open Simple Token". OST aims to be the blockchain technology partner of choice for businesses of all sizes and levels of technical sophistication, enabling any business to create, launch, and manage their own branded digital token economy powered by OpenST protocols and OST blockchain management software. Our signature product, [<u>OST KIT⍺</u>](https://kit.ost.com), enables you to launch your own Branded Tokens backed by OST⍺ (also referred to as "$OST⍺").
+OST stands for "Open Simple Token". OST aims to be the blockchain technology partner of choice for businesses of all sizes and levels of technical sophistication, enabling any business to create, launch, and manage their own branded digital token economy powered by OpenST protocols and OST blockchain management software. Our signature product, [<u>OST KIT⍺</u>](https://kit.ost.com), enables you to launch your own Branded Tokens backed by OST⍺.
 
 OST KIT⍺ is built on the OpenST protocol. The OpenST protocol allows for the staking of $OST⍺ on Ropsten Ethereum that enables Branded Tokens to be created, or "minted" on the OpenST network of sidechains. You can learn more about the OpenST Protocol [<u>here</u>](https://openst.org).
 
@@ -18,7 +18,7 @@ OST KIT⍺ provides you with tools for designing, planning, minting, and managin
 * [<u>Airdrop</u>](/docs/api_airdrop_execute.html) Branded Tokens to selected users
 * [<u>Execute Actions</u>](/docs/api_action_execute.html)
 * [<u>Get User's Balance</u>](/docs/api_balance.html)
-* [<u>Get the list of transactions a user was involved in</u>](/docs/api_ledger.html)
+* [<u>Get Legder</u>](/docs/api_ledger.html). Ledger is the list of transactions a user was involved in.
 * [<u>Transfer Funds</u>](/docs/api_transfers_create.html) to an account outside of your branded token economy. This enables you to deploy contracts on the OpenST network of side blockchains.
 * [<u>Get Token Details</u>](/docs/api_token.html) about the Branded Token you created for your token economy.
 

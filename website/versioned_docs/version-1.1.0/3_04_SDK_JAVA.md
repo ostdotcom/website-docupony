@@ -11,6 +11,8 @@ original_id: sdk_java
 
 Successfully integrating the SDK requires having a suitable Java Development Environment installed on your system. Java version 8 or above is recommended for use.
 
+[<u>Java SDK on GitHub</u>](https://github.com/OpenSTFoundation/ost-sdk-java/tree/release-1.1)
+
 To use the SDK, developers will need to:
 
 1. Sign-up on [<u>https://kit.ost.com</u>](https://kit.ost.com).
@@ -46,7 +48,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class QuickStartMain {
-    private static com.ost.services.v1.Manifest services;
+    private static com.ost.services.v1_1.Manifest services;
 
     public static void main(String[] args) throws IOException, OSTAPIService.MissingParameter {
         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
@@ -56,7 +58,7 @@ public class QuickStartMain {
 
         // Initialize SDK object
         OSTSDK ostObj = new OSTSDK(sdkConfig);
-        services = (com.ost.services.v1.Manifest) ostObj.services;
+        services = (com.ost.services.v1_1.Manifest) ostObj.services;
     }
 }    
 ```
@@ -66,7 +68,7 @@ public class QuickStartMain {
 Initialize a Users object to perform user specific actions, like creating users:
 
 ```java
-       com.ost.services.v1.Users userService = services.users;
+       com.ost.services.v1_1.Users userService = services.users;
 ```
 
 Create users:
@@ -93,7 +95,7 @@ Initialize an airdrop object and execute an airdrop to transfer tokens to both t
 
 ```java
         // Initialize airdrop object
-        com.ost.services.v1.AirDrops airdropService = services.airdrops;
+        com.ost.services.v1_1.AirDrops airdropService = services.airdrops;
         // returns object containing the airdrop ID of the airdrop transaction, among other information, which you will need later
         HashMap <String,Object> params = new HashMap<String,Object>();
         params.put("amount", "10"); // airdrops 10 branded tokens to two users whoes IDs have been specified.
@@ -121,7 +123,7 @@ You can create named actions with defined values that are between users or betwe
 For instance, to make a "Like" action for your branded token that is priced in your token:
 
 ```java
-        com.ost.services.v1.Actions actionService = services.actions;  // initializes action object
+        com.ost.services.v1_1.Actions actionService = services.actions;  // initializes action object
 
         HashMap <String,Object> params = new HashMap<String,Object>();
         params.put("name", "Like");
@@ -142,7 +144,7 @@ To execute the Like action, you will need Alice and Bob's IDs. They were returne
 
 ```java
         //initializes transaction module.
-        com.ost.services.v1.Transactions transactionService = services.transactions;
+        com.ost.services.v1_1.Transactions transactionService = services.transactions;
 
         // returns object with ID of executed transaction
         HashMap <String,Object> params = new HashMap<String,Object>();
@@ -174,6 +176,6 @@ Or you can get the list of all transactions. For all APIs that list resources yo
 
 There is much more that you can do with OST KIT APIs. Read through the detailed API Reference [<u>here</u>](/docs/api.html).
 
->_last updated 2nd June 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
+>_last updated 8th Aug 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
 > OST KIT⍺ sandboxapi v1.1 | OpenST Platform v0.9.2

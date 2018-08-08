@@ -1,11 +1,11 @@
 ---
 id: version-1.1.0-api_action_execute
-title: OST KIT⍺ API | Execute an Action
-sidebar_label: Execute an Action
+title: OST KIT⍺ API | Execute a Transaction
+sidebar_label: Execute a Transaction
 original_id: api_action_execute
 ---
 
-Send a POST request on `/transactions` to execute an action.
+Send a POST request on `/transactions` to execute a transaction.
 
 Within OST KIT⍺ you can [<u>set up actions</u>](/docs/api_actions_create.html) to define advanced payments to tokenize your application. When your end-users perform these actions in your application tokens need to be transfered between two entities. To  transfers your branded tokens POST request to `/transactions` is sent. These transfers can happen between users or company_to_user or user_to_company.
 

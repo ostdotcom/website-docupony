@@ -24,7 +24,7 @@ A user can own branded tokens within your branded token economy.  Users can exch
 | _order_by_          | string |(optional) order the list by 'creation_time' or 'name' (default) |
 | _order_             | string  |(optional) order users in 'desc' (default) or 'asc' order |
 | _limit_ | number  | limits the number of user objects to be sent in one request(min. 1, max. 100, default 10) |
-|optional filters |string| filters can be used to refine your list, the parameters on which filters are supported are detailed in the table below. (Note: To be specific, name of the filter is not 'optional filters'.)|
+|optional filters |string| filters can be used to refine your list, the parameters on which filters are supported are detailed in the table below.  _(Note: To be specific, name of the filter is not 'optional filters'.)_|
 
 
 ### Optional Filters on User List
@@ -35,7 +35,6 @@ When you send a GET to `/users` , `users` with default input parameters mentione
 | List Filter           | Description       | Definition  |
 |---------------------|-----------|--------|
 |id|user ids|'id="3b679b8b-b56d-48e5-bbbe-7397899c8ca6, d1c0be68-30bd-4b06-af73-7da110dc62da"'|
-|name|specific user names|'name="Alice, Bob"'|
 
 
 The the signature is derived from the API secret key and the string to sign is alphabetically sorted
