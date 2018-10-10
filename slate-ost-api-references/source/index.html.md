@@ -39,23 +39,18 @@ require 'openssl'
 require 'net/http'
 require 'rails'
 
-var custom_params = 'sample_email'
-var api_key = 'API_KEY';  # Make sure to replace `API_KEY` with your API key.
-var api_secret = 'API_SECRET'; # Make sure to replace `API_SECRET` with your API secret key.
-var api_base_url = 'https://kyc.ost.com';
-var version = 'v2';
 
 # Generate Signature
 def generate_signature(string_to_sign)
   digest = OpenSSL::Digest.new('sha256')
   puts "--------string_to_sign=>#{string_to_sign}-----"
-  OpenSSL::HMAC.hexdigest(digest, @api_secret, string_to_sign)
+  OpenSSL::HMAC.hexdigest(digest, 'API_SECRET', string_to_sign) # Make sure to replace `API_SECRET` with your API secret key.
 end
 
 # Create Base Parameters
 def base_params(endpoint, custom_params = {})
   request_time = Time.now.to_i
-  request_params = custom_params.merge("request_timestamp" => request_time, "api_key" => @api_key)
+  request_params = custom_params.merge("request_timestamp" => request_time, "api_key" => 'API_KEY') # Make sure to replace `API_KEY` with your API key.
   query_param = request_params.to_query.gsub(/^&/, '')
   str = "#{endpoint}?#{query_param}"
   signature = generate_signature(str)
@@ -63,8 +58,10 @@ def base_params(endpoint, custom_params = {})
   request_params
 end
 
-var endpoint = "/api/#{@version}/users"
-var request_params = base_params(endpoint, custom_params);
+custom_params = {email: 'custom_email'}
+endpoint = "/api/v2/users"
+
+request_params = base_params(endpoint, custom_params)
 ```
 Every API request on https://kyc.ost.com/v2 requires hash-based message authentication. Every request has three mandatory parameters that must be included:
 
@@ -100,33 +97,27 @@ For a Post request,the parameters are sent in the request body with default appl
 > To create a user, use this code:
 
 ```ruby
-# Post API URI object
-def post_api_uri(endpoint)
-  URI(@api_base_url + endpoint)
-end
-# Handle With Exception
-def handle_with_exception(uri)
-  begin
-    Timeout.timeout(5) do
-    http = setup_request(uri)
-    result = yield(http)
-      parse_api_response(result)
-    end
+# setup http request
+  def setup_request(uri)
+     http = Net::HTTP.new(uri.host, uri.port)
+     http.use_ssl = true
+     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+     http
   end
-end
+    
 # Make a Post Request
 def make_post_request(endpoint, custom_params = {})
   request_params = base_params(endpoint, custom_params)
-  uri = post_api_uri(endpoint)
-  result = handle_with_exception(uri) do |http|
-    http.post(uri.path, request_params.to_query)
-  end
+  uri = URI('https://kyc.ost.com' + endpoint)
+  http = setup_request(uri)
+  result = http.post(uri.path, request_params.to_query)
   result
 end  
 # create user
 def create_user(custom_params = {})
-  endpoint = "/api/#{@version}/users"
-  make_post_request(endpoint, custom_params)
+  endpoint = "/api/v2/users"
+  res = make_post_request(endpoint, custom_params)
+  JSON.parse(res.body)
 end
 ```
 
