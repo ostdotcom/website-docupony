@@ -2,239 +2,166 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell: cURL
   - ruby: Ruby
-  - php: PHP 
-  - javascript: JavaScript
-  - java: Java
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
-includes:
-  - errors
-
 search: true
 ---
 
-# Introduction
+# OST KYC
+OST KYC is the first plug-and-play KYC/AML management solution for token sales to process
+thousands of applicants smoothly and securely. Once you sign up for the KYC services and an OST KYC client account is activated, the following details are provided :
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+|Account Activation | Elements |
+-------------------|----------
+| |<img width=1200/>|
+|<u>**Account Details**</u>| Link to KYC Dashboard <br> Login Credentials for KYC Dashboard <br> Link to Cynopsis Environment <br>
+Login credentials to Cynopsis Environment |
+|<u>**API Access:​**</u> API access is authorized using secret key. Please share the key with trusted entities only. | API Key <br> API Secret Key |
+|<u>**Whitelisting Address:​**</u> This is the address which will be communicating to the Sale contract to whitelist registered Eth addresses. This is also known as Verified Operator Address | Whitelisting Address |
+|<u>**DNS records for domain verification:**</u>It is required to add the DNS records for the domain authentication in the DNS provider in order to start sending emails.| DNS records will be provided in the form of a CSV file. |
+|<u>**Participating Countries:**</u> ​This is the list of countries and nationalities in yml file format to be used in the submission formfor API validation. This list shall be adjusted by the client based on his specific requirements. |List of Countries and Nationalities. |
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+As part of the complete solution one of the product offerings is the robust set of OST KYC APIs. They allow access to several functionality used for KYC/AML verification. Here are the APIs that we deliver through OST KYC -
 
-# Authentication
+## Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
+> To authorize, you can use this sample code:
 
 ```ruby
-require 'kittn'
+require 'uri'
+require 'open-uri'
+require 'openssl'
+require 'net/http'
+require 'rails'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+var custom_params = 'sample_email'
+var api_key = 'API_KEY';  # Make sure to replace `API_KEY` with your API key.
+var api_secret = 'API_SECRET'; # Make sure to replace `API_SECRET` with your API secret key.
+var api_base_url = 'https://kyc.ost.com';
+var version = 'v2';
+
+# Generate Signature
+def generate_signature(string_to_sign)
+  digest = OpenSSL::Digest.new('sha256')
+  puts "--------string_to_sign=>#{string_to_sign}-----"
+  OpenSSL::HMAC.hexdigest(digest, @api_secret, string_to_sign)
+end
+
+# Create Base Parameters
+def base_params(endpoint, custom_params = {})
+  request_time = Time.now.to_i
+  request_params = custom_params.merge("request_timestamp" => request_time, "api_key" => @api_key)
+  query_param = request_params.to_query.gsub(/^&/, '')
+  str = "#{endpoint}?#{query_param}"
+  signature = generate_signature(str)
+  request_params.merge!("signature" => signature)
+  request_params
+end
+
+var endpoint = "/api/#{@version}/users"
+var request_params = base_params(endpoint, custom_params);
 ```
+Every API request on https://kyc.ost.com/v2 requires hash-based message authentication. Every request has three mandatory parameters that must be included:
 
-```python
-import kittn
+* api_key, the API key as provided post KYC client account activation.
+* request_timestamp, the current unix timestamp in seconds.
+* signature, the signature as the sha256 digest of the API secret and the correctly formatted query string as described below.
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+<aside class="warning">The request timestamp will be valid for up to ten seconds. Your computer clock must therefore be synchronised for authentication to succeed.</aside>
 
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
+You can implement the signature generation by computing the HMAC sha256digest of the API secret and the query string. The resulting signature must be then included in the request.
 
-```javascript
-const kittn = require('kittn');
+### 1. Creating the string to sign.
+To generate the signature you must first form the string to sign. This string to sign can be formed by concatenation of the following elements
+* API endpoint
+* api_key, the API key as provided from OST KIT⍺
+* request_timestamp, the current unix timestamp in seconds.
+* API parameters.
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
+<aside class="warning">Note all the inputs must be alphabetically sorted on the keys.ss</aside>
 
-> The above command returns JSON structured like this:
+### 2. Generating a signature.
+The signature is the sha256 digest of the shared API secret and the correctly formatted query string
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
+generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, api-secret)
 
-This endpoint retrieves all kittens.
+<aside class="warning">Please ensure that the final URL is encoded while making the API request.</aside>
 
-### HTTP Request
+For a Post request,the parameters are sent in the request body with default application/x-www-form-urlencoded content-type so the request body uses the same format as the query string.
+ 
 
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
+## Users
+### Add a User
+> To create a user, use this code:
 
 ```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
+# Post API URI object
+def post_api_uri(endpoint)
+  URI(@api_base_url + endpoint)
+end
+# Handle With Exception
+def handle_with_exception(uri)
+  begin
+    Timeout.timeout(5) do
+    http = setup_request(uri)
+    result = yield(http)
+      parse_api_response(result)
+    end
+  end
+end
+# Make a Post Request
+def make_post_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  uri = post_api_uri(endpoint)
+  result = handle_with_exception(uri) do |http|
+    http.post(uri.path, request_params.to_query)
+  end
+  result
+end  
+# create user
+def create_user(custom_params = {})
+  endpoint = "/api/#{@version}/users"
+  make_post_request(endpoint, custom_params)
+end
 ```
 
-```python
-import kittn
+A POST to `kyc.ost.com/api/v2/users` will create an entry for the user in OST KYC database.
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+Input Parameters
 
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|email | string | yes | A <u>unique</u> email id of the user whose KYC enrty has to be made|
 
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
+For api calls to /users the data.result_type is the string "user" and the key data.user is an array of user objects. On successful creation of the user, user contains the created user as a single element.
 
-> The above command returns JSON structured like this:
+> For above request following response is sent
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+   "success": true,
+   "data": {
+      "result_type": "user",
+      "user": {
+         "id": 11428,
+         "email": "kycuser@ost.com",
+         "properties": [],
+         "created_at": 1539163614
+      }
+   }
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+### User Object Attributes
+|PARAMETER|TYPE|DESCRIPTION|
+----------|----|------------
+|id|string| unique identifier for the user |
+|email| string | Email Id of the user|
+|properties|array<strings>|Properties of the user: "kyc_submitted", "double_optin_mail_sent", "double_optin_done" . Remains empty when the user is created. |
+|created_at| timestamp |timestamp at which user was created. (epoc time in sec? millisecond?)|
