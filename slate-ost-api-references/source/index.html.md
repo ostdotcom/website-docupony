@@ -139,7 +139,7 @@ def create_user(custom_params = {})
 end
 ```
 
-A POST to `kyc.ost.com/api/v2/users` creates a new user object for the user in OST KYC database.
+A POST to `kyc.ost.com/api/v2/users` creates a new user object for the user in OST KYC database. Only user's signup information is sent via this endpoint. For sending user's KYC details a POST request to a different endpoint `/users-kyc/{{user_id}}` has to be sent.
 
 <u>**Input Parameters**</u>
 
@@ -150,7 +150,7 @@ A POST to `kyc.ost.com/api/v2/users` creates a new user object for the user in O
 <aside class="warning">Information about - this API would be useful to only API clients!!??</aside>
 
 <u>**Returns**</u><br>
-For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of user objects. On successful creation of the user, user contains the created user as a single element. The returned user object will return an ID that can be used to fetch the full source details when retrieving the user.
+For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of user objects. On successful creation of the user, user contains the created user as a single element. The returned user object will return an ID in it that can be used to fetch the user information using the retrieve user endpoint.
 
 > Example Response
 
@@ -197,7 +197,7 @@ def get_user(user_id, custom_params = {})
       make_get_request(endpoint, custom_params)
 end
 ```
-A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the details of an existing user. You need to supply the identifier that was returned upon user creation.
+A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the information of an existing user. You need to supply the identifier that was returned upon user creation.
 
 <u>**Input Parameters**</u>
 
@@ -270,7 +270,7 @@ def get_user_list(custom_params = nil)
   make_get_request(endpoint, custom_params)
 end
 ```
-A GET to `kyc.ost.com/api/v2/users` returns a list of your KYC users. The users are returned sorted by creation date, with the most recent users appearing first.
+A GET to `kyc.ost.com/api/v2/users` returns a list of all users who have signed up. This doesn't imply that all these users have submitted their required KYC details. The users are returned sorted by creation date, with the most recent users appearing first. 
 
 <u>**Input Parameters**</u>
 
@@ -385,11 +385,127 @@ A GET to `kyc.ost.com/api/v2/users` returns a list of your KYC users. The users 
 }
 ```
 
-For api calls to `/users` the data.result_type is the string "users" and the key data.users is an array of the returned user objects (10 users per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
+For api calls to `/users` the data.result\_type is the string "users" and the key data.users is an array of the returned user objects (10 users per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
 
 Passing an optional email will result in filtering to users with only that exact email address. Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
 
-# Users KYC
+# Users KYC Details
+## The User KYC Details Object 
+> Example Response:
+
+```json
+```
+
+|PARAMETER|TYPE|DESCRIPTION|
+----------|----|------------
+|||<img width=1000/>|
+|id|integer| unique identifier of the last submitted kyc of a user. |
+|first_name|string| The user's first name. |
+|last_name| string | The user's last name.|
+|birthdate| string | The user's birthdate in dd/mm/yyyy format.|
+|country|string|The user's country of residence.|
+|nationality|string| The user's nationality.|
+|document\_id\_number| string| The users identification number from their identification document.|
+|document_id_file|string|S3 file url of the document id file. This link expires in 12 hours.|
+|selfie_file|string|S3 file url of the selfile file. This link expires in 12 hours.|
+|residence_proof_file|string| S3 file url of the residence proof file. This link expires in 12 hours.|
+|investor_proof_files|array\<string\>| An array of S3 file urls of investor proof files. These links expire in 12 hours|
+|ethereum_address|string|Ethereum address from where the user intends to transfer Eth to company to buy tokens|
+|estimated_participation_amount|float|Estimated participation amount that user intends to invest during the token sale|
+|street_address|string|The user's current address|
+|city|string|the user's current city of residence|
+|state|string|The user's state|
+|postal\_code|string|postal_code|
+|submitted_at|timestamp|timestamp at which kyc was submitted. (epoc time in sec? millisecond?)|
+
+
+
+## Add or Update User KYC Details
+> Example Request code :
+
+```ruby
+# setup http request
+  def setup_request(uri)
+     http = Net::HTTP.new(uri.host, uri.port)
+     http.use_ssl = true
+     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+     http
+  end
+    
+# Make a Post Request
+def make_post_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  uri = URI('https://kyc.ost.com' + endpoint)
+  http = setup_request(uri)
+  result = http.post(uri.path, request_params.to_query)
+  result
+end  
+
+# Submit KYC details request
+def submit_kyc(user_id, custom_params = nil)
+  default_params = {}
+  endpoint = "/api/#{@version}/users-kyc/#{user_id}"
+  custom_params = custom_params || default_params
+  make_post_request(endpoint, custom_params)
+end
+```
+
+A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new user kyc details object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. And all mandatory parameters need to be send in an update request as well. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+||||<img width=1000/>|
+|first_name|string| yes | The user's first name. |
+|last_name| string | yes| The user's last name.|
+|birthdate| string | yes |The user's birthdate in dd/mm/yyyy format.|
+|country|string| yes |The user's country of residence.|
+|nationality|string| yes |The user's nationality.|
+|document\_id\_number| string| yes| The users identification number from their identification document.|
+|document_id_file|string| yes | S3 file url of the document id file. This link expires in 12 hours.|
+|selfie_file|string| yes |S3 file url of the selfile file. This link expires in 12 hours.|
+|residence_proof_file|string|no | S3 file url of the residence proof file. This link expires in 12 hours.|
+|investor_proof_files|array\<string\>|no| An array of S3 file urls of investor proof files. These links expire in 12 hours|
+|ethereum_address|string|yes|Ethereum address from where the user intends to transfer Eth to company to buy tokens|
+|estimated_participation_amount|float|yes|Estimated participation amount that user intends to invest during the token sale|
+|street_address|string|yes|The user's current address|
+|city|string|yes|the user's current city of residence|
+|state|string|yes|The user's state|
+|postal\_code|yes|string|postal_code|
+
+The Input parameters list all the fields accepted as input. KYC clients should send only those fields which they have selected for their users' kyc.
+
+<br>
+
+<u>**Returns**</u><br>
+> Example Response
+
+```json
+{
+   "success": true,
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "id": 290,
+         "user_kyc_detail_id": 727,
+         "user_id": 11420,
+         "kyc_status": "pending",
+         "admin_status": "unprocessed",
+         "aml_status": "unprocessed",
+         "whitelist_status": "unprocessed",
+         "admin_action_types": [],
+         "submission_count": 7,
+         "last_acted_by": "yogesh4staging",
+         "created_at": 1538995369
+      }
+   }
+}
+```
+For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an array of returned **user-kyc** object if a valid user identifier was provided. A `user-kyc` object provides properties and status related information of the kyc details a user had last submitted.
+ 
+
+# Users KYC Status
 ## The User KYC Object 
 > Example Response:
 
@@ -437,18 +553,19 @@ end
 # Make a Get Request
 def make_get_request(endpoint, custom_params = {})
   request_params = base_params(endpoint, custom_params)
-  uri = URI('https://kyc.ost.com' + endpoint + request_params)
+  query_string = request_params.to_query
+  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
   http = setup_request(uri)
   result = http.get(uri)
   result
-end  
+end   
 # retrieve user kyc for particular user
 def get_user_kyc(id)
   endpoint = "/api/#{@version}/users-kyc/#{id}"
   make_get_request(endpoint)
 end
 ```
-A GET to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves the status information of the last KYC a user had submitted. You need to supply the identifier that was returned upon user creation.
+A GET to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves properties and status related information of the last KYC a user had submitted. This however doesn't returns `kyc data` submitted by users. You need to supply the identifier that was returned upon user creation.
 
 <u>**Input Parameters**</u>
 
@@ -458,8 +575,6 @@ A GET to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves the status informa
 
 <u>**Returns**</u><br>
 For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an array of returned user-kyc object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
-
-
 
 > Example Response
 
