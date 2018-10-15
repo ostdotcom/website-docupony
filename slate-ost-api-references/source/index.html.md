@@ -108,7 +108,7 @@ For a Post request,the parameters are sent in the request body with default appl
 ----------|----|------------
 |id|string| unique identifier for the user |
 |email| string | Email Id of the user|
-|properties|array<strings>|Properties of the user: "kyc_submitted", "double_optin_mail_sent", "double_optin_done" . Remains empty when the user is created. |
+|properties|array<strings>|Properties of the user:<br> "kyc_submitted",<br> "double_optin_mail_sent",<br> "double_optin_done".<br> Remains empty when the user is created. |
 |created_at| timestamp |timestamp at which user was created. (epoc time in sec? millisecond?)|
 
 ## Add a User
@@ -386,3 +386,99 @@ A GET to `kyc.ost.com/api/v2/users` returns a list of your KYC users. The users 
 For api calls to `/users` the data.result_type is the string "users" and the key data.users is an array of the returned user objects (10 users per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
 
 Passing an optional email will result in filtering to users with only that exact email address. Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
+
+# Users KYC
+## The User KYC Object 
+> Example Response:
+
+```json
+{
+   "id": 304,
+   "user_kyc_detail_id": 702,
+   "user_id": 11430,
+   "kyc_status": "pending",
+   "admin_status": "unprocessed",
+   "aml_status": "cleared",
+   "whitelist_status": "unprocessed",
+   "admin_action_types": [],
+   "submission_count": 2,
+   "last_acted_by": "",
+   "created_at": 1539279352
+}
+```
+|PARAMETER|TYPE|DESCRIPTION|
+----------|----|------------
+|id|integer| unique identifier of the last submitted kyc of a user |
+|user\_kyc\_detail\_id| integer | A unique identifier of the kyc submitted of a user|
+|user_id|integer| An unique identifier of the user that is returned upon user creation|
+|kyc_status|string|A kyc status will be `pending` until it has been taken up for processing. If the KYC goes through successfully the status will change to `approved` otherwise `denied` |
+|admin_status|string | Admin status is helpful for actors doing the KYC checks. `unprocessed` admin status indicates that the kyc entry needs to be taken care of. If any one of the admins approves a KYC entry the status changes to `qualified` and in case of a disapproval the status changes to `denied` |
+|aml_status|string |AML status of KYC will be `unprocessed` until it has been taken up for processing. It changes to `pending` while the KYC is being processed. As a result of processing it is either `cleared` or `failed`. If a KYC is cleared via an AML check the admin actor does a manual check and further approves the submission and the status changes to `approved` or rejects the submission which changes the status to `rejected` |
+|whitelist_status| string | Whitelisting status will be `unprocessed` until an approved KYC has been taken up for whitelisting. It changes to `started` while the whitelisting is in progress. Based on the result of whitelisting process the status is `done` if it finishes successfully or the status is `failed` if a technical issue occurs during the process of whitelisting. This is very rare but you will have to contact the OST KYC support team in such situation. |
+|admin\_action\_types |array | An array that shows the different kyc issue emails that are sent to the user. The triggers to send emails are `data_mismatch` , `document_issue ` or an email with custom instructions with action type `other_issue` ] |
+|submission_count | integer | A count of number of time KYC is submitted by a user| 
+|last\_acted\_by | string | Name of the last admin actor who took an action on the KYC. `nil` value indicates the last action was by the ost kyc system or no action has been taken. |
+|created_at | timestamp| timestamp at which user KYC was created. (epoc time in sec? millisecond?)| 
+
+
+## Retrieve the last submitted KYC 
+> Example Request code:
+
+```ruby
+# setup http request
+def setup_request(uri)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+  http
+end
+# Make a Get Request
+def make_get_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  uri = URI('https://kyc.ost.com' + endpoint + request_params)
+  http = setup_request(uri)
+  result = http.get(uri)
+  result
+end  
+# retrieve user kyc for particular user
+def get_user_kyc(id)
+  endpoint = "/api/#{@version}/users-kyc/#{id}"
+  make_get_request(endpoint)
+end
+```
+A GET to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves the status information of the last KYC a user had submitted. You need to supply the identifier that was returned upon user creation.
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|user_id | integer | yes | An unique identifier of the user whose KYC status information is to be retrieved|
+
+<u>**Returns**</u><br>
+For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an array of returned user-kyc object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
+
+
+
+> Example Response
+
+```json
+{
+   "success": true,
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "id": 304,
+         "user_kyc_detail_id": 702,
+         "user_id": 11430,
+         "kyc_status": "pending",
+         "admin_status": "unprocessed",
+         "aml_status": "cleared",
+         "whitelist_status": "unprocessed",
+         "admin_action_types": [],
+         "submission_count": 2,
+         "last_acted_by": "",
+         "created_at": 1539279352
+      }
+   }
+}
+```
