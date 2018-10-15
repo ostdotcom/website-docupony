@@ -92,9 +92,27 @@ generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, api-secret)
 For a Post request,the parameters are sent in the request body with default application/x-www-form-urlencoded content-type so the request body uses the same format as the query string.
  
 
-## Users
-### Add a User
-> To create a user, use this code:
+# Users
+## The User Object 
+> Example Response:
+
+```json
+{
+  "id": 11428,
+  "email": "kycuser@ost.com",
+  "properties": [],
+  "created_at": 1539163614
+}
+```
+|PARAMETER|TYPE|DESCRIPTION|
+----------|----|------------
+|id|string| unique identifier for the user |
+|email| string | Email Id of the user|
+|properties|array<strings>|Properties of the user: "kyc_submitted", "double_optin_mail_sent", "double_optin_done" . Remains empty when the user is created. |
+|created_at| timestamp |timestamp at which user was created. (epoc time in sec? millisecond?)|
+
+## Add a User
+> Example Request code:
 
 ```ruby
 # setup http request
@@ -121,22 +139,24 @@ def create_user(custom_params = {})
 end
 ```
 
-A POST to `kyc.ost.com/api/v2/users` will create an entry for the user in OST KYC database.
+A POST to `kyc.ost.com/api/v2/users` creates a new user object for the user in OST KYC database.
 
-Input Parameters
+<u>**Input Parameters**</u>
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
 |email | string | yes | A <u>unique</u> email id of the user whose KYC enrty has to be made|
 
+<aside class="warning">Information about - this API would be useful to only API clients!!??</aside>
 
-For api calls to /users the data.result_type is the string "user" and the key data.user is an array of user objects. On successful creation of the user, user contains the created user as a single element.
+<u>**Returns**</u><br>
+For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of user objects. On successful creation of the user, user contains the created user as a single element. The returned user object will return an ID that can be used to fetch the full source details when retrieving the user.
 
-> For above request following response is sent
+> Example Response
 
 ```json
 {
-   "success": true,
+  "success": true,
    "data": {
       "result_type": "user",
       "user": {
@@ -149,10 +169,70 @@ For api calls to /users the data.result_type is the string "user" and the key da
 }
 ```
 
-### User Object Attributes
-|PARAMETER|TYPE|DESCRIPTION|
-----------|----|------------
-|id|string| unique identifier for the user |
-|email| string | Email Id of the user|
-|properties|array<strings>|Properties of the user: "kyc_submitted", "double_optin_mail_sent", "double_optin_done" . Remains empty when the user is created. |
-|created_at| timestamp |timestamp at which user was created. (epoc time in sec? millisecond?)|
+
+
+## Retrieve a User
+> Example Request code:
+
+```ruby
+# setup http request
+def setup_request(uri)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+  http
+end
+# Make a Get Request
+def make_get_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  uri = URI('https://kyc.ost.com' + endpoint + request_params)
+  http = setup_request(uri)
+  result = http.get(uri)
+  result
+end  
+# retrieve a user
+def get_user(user_id, custom_params = {})
+      endpoint = "/api/#{@version}/users/#{user_id}"
+      make_get_request(endpoint, custom_params)
+end
+```
+A POST to `kyc.ost.com/api/v2/users/{id}` retrieves the details of an existing user. You need to supply the identifier that was returned upon user creation.
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|id | integer | yes | An unique identifier of the user whose information is to be retrieved|
+
+<u>**Returns**</u><br>
+For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of returned user object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
+
+> Example Response
+
+```json
+{
+  "success": true,
+   "data": {
+    "result_type": "user",
+    "user": {
+         "id": 11428,
+         "email": "kycuser@ost.com",
+         "properties": [],
+         "created_at": 1539163614
+    }
+  }
+}
+```
+
+> Example Error Response
+
+```json
+{
+  "success": false,
+  "err": {
+    "internal_id": "um_u_g_favu_2",
+    "msg": "The requested resource could not be located.",
+    "code": "NOT_FOUND"
+  }
+}
+```
