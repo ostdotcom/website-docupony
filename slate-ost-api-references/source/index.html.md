@@ -196,7 +196,7 @@ def get_user(user_id, custom_params = {})
       make_get_request(endpoint, custom_params)
 end
 ```
-A POST to `kyc.ost.com/api/v2/users/{id}` retrieves the details of an existing user. You need to supply the identifier that was returned upon user creation.
+A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the details of an existing user. You need to supply the identifier that was returned upon user creation.
 
 <u>**Input Parameters**</u>
 
@@ -206,6 +206,9 @@ A POST to `kyc.ost.com/api/v2/users/{id}` retrieves the details of an existing u
 
 <u>**Returns**</u><br>
 For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of returned user object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
+
+<aside class="warning">Information  - Can we deleted a user? what if a deleted user is retrieved?</aside>
+
 
 > Example Response
 
@@ -236,3 +239,150 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
   }
 }
 ```
+
+## List Users
+> Example Request code:
+
+```ruby
+# setup http request
+def setup_request(uri)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+  http
+end
+# Make a Get Request
+def make_get_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  uri = URI('https://kyc.ost.com' + endpoint + request_params)
+  http = setup_request(uri)
+  result = http.get(uri)
+  result
+end  
+# Get user list
+def get_user_list(custom_params = nil)
+# default_params = {page_number: 1, order: 'asc', filters: {}, page_size: 3}
+  default_params = {}
+  endpoint = "/api/#{@version}/users"
+  custom_params = custom_params || default_params
+  make_get_request(endpoint, custom_params)
+end
+```
+A GET to `kyc.ost.com/api/v2/users` returns a list of your KYC users. The users are returned sorted by creation date, with the most recent users appearing first.
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|filters | object | no | A filter on the list based on the object `filter` field. The value can be a boolean or a string |
+|page\_number|integer|no | A field that helps in pagination. page\_number is an integer that defines the page of  the list to fetch. For instance, if you make a list request and receive 100 objects, each page sends 10 objects as default limit is 10. If you want to access 45th object your subsequent call can include page\_number=5 in order to fetch the 5th page of the list|
+|order|string|no| A sort order to be applied based on the user creation time. default is desc ( asc / desc ) |
+|limit|integer|no| A limit on the number of user objects to be sent in one request(min. 1, max. 100, default 10)|
+
+<br>
+<u>**Filter Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|is\_kyc\_submitted| boolean | no | A filter on users list who have submitted there kyc data. (true/false)|
+|is\_doptin\_done|boolean|no| A filter on users list who have done email double opt in.(true/false)|
+|is_doptin_mail_sent|boolean| no | A filter on users list who have been sent the double opt in email. (true/false)| 
+|email| string | no | A filter on the users list based on the user's email field.|
+
+<br>
+<u>**Returns**</u><br>
+> Example Response
+
+```json
+{
+   "success": true,
+   "data": {
+      "result_type": "users",
+      "users": [
+         {
+            "id": 11442,
+            "email": "kycuser10@ost.com",
+            "properties": [],
+            "created_at": 1539339413
+         },
+         {
+            "id": 11430,
+            "email": "kycuser9@ost.com",
+            "properties": [
+               "kyc_submitted"
+            ],
+            "created_at": 1539169109
+         },
+         {
+            "id": 11429,
+            "email": "kycuser8@ost.com",
+            "properties": [],
+            "created_at": 1539169086
+         },
+         {
+            "id": 11428,
+            "email": "kycuser7@ost.com",
+            "properties": [],
+            "created_at": 1539163614
+         },
+         {
+            "id": 11427,
+            "email": "kycuser6@ost.com",
+            "properties": [
+               "kyc_submitted"
+            ],
+            "created_at": 1539154855
+         },
+         {
+            "id": 11426,
+            "email": "kycuser5@ost.com",
+            "properties": [
+               "kyc_submitted"
+            ],
+            "created_at": 1539092212
+         },
+         {
+            "id": 11420,
+            "email": "kycuser4@ost.com",
+            "properties": [
+               "kyc_submitted"
+            ],
+            "created_at": 1538992711
+         },
+         {
+            "id": 11417,
+            "email": "kycuser3@ost.com",
+            "properties": [
+               "kyc_submitted"
+            ],
+            "created_at": 1538979927
+         },
+         {
+            "id": 11414,
+            "email": "kycuser2@ost.com",
+            "properties": [],
+            "created_at": 1538747355
+         },
+         {
+            "id": 11413,
+            "email": "kycuser1@ost.com",
+            "properties": [],
+            "created_at": 1538747119
+         }
+      ],
+      "meta": {
+         "total": 39,
+         "next_page_payload": {
+            "page_number": 2,
+            "filters": {},
+            "order": "desc",
+            "limit": 10
+         }
+      }
+   }
+}
+```
+
+For api calls to `/users` the data.result_type is the string "users" and the key data.users is an array of the returned user objects (10 users per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
+
+Passing an optional email will result in filtering to users with only that exact email address. Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
