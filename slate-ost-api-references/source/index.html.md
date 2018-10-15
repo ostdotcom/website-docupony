@@ -185,7 +185,8 @@ end
 # Make a Get Request
 def make_get_request(endpoint, custom_params = {})
   request_params = base_params(endpoint, custom_params)
-  uri = URI('https://kyc.ost.com' + endpoint + request_params)
+  query_string = request_params.to_query
+  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
   http = setup_request(uri)
   result = http.get(uri)
   result
@@ -254,11 +255,12 @@ end
 # Make a Get Request
 def make_get_request(endpoint, custom_params = {})
   request_params = base_params(endpoint, custom_params)
-  uri = URI('https://kyc.ost.com' + endpoint + request_params)
+  query_string = request_params.to_query
+  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
   http = setup_request(uri)
   result = http.get(uri)
   result
-end  
+end 
 # Get user list
 def get_user_list(custom_params = nil)
 # default_params = {page_number: 1, order: 'asc', filters: {}, page_size: 3}
