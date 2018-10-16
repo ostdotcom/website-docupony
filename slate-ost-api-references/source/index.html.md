@@ -5,10 +5,12 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - ruby: Ruby
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - Documentation Powered by Slate
 
 search: true
+
+includes: 
+  - errors
 ---
 
 # OST KYC
@@ -757,4 +759,249 @@ Each entry in the array is a separate user object. If no more user are available
 
 ```json
 
+```
+
+## Get Pre-signed URL - PUT
+> Example request code
+
+```ruby
+# setup http request
+def setup_request(uri)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+  http
+end
+# Make a Get Request
+def make_get_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  query_string = request_params.to_query
+  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
+  http = setup_request(uri)
+  result = http.get(uri)
+  result
+end   
+
+def get_presigned_url_put(custom_params = nil)
+# Example Input Parameters :
+# default_params = {
+#     files: {
+#         residence_proof: 'application/pdf',
+#         investor_proof_file1: 'application/pdf',
+#         investor_proof_file2: 'application/pdf',
+#         document_id: 'image/jpeg',
+#         selfie: 'image/jpeg'
+#     }
+# }
+  default_params={}
+      
+  endpoint = "/api/#{@version}/users-kyc/pre-signed-urls/for-post"
+  custom_params = custom_params || default_params
+  make_get_request(endpoint, custom_params)
+end
+```
+
+While filling in KYC details there are identification and other documents that a user submits which are required to be uploaded for verification. The upload functionality is achieved by generating a pre-signed S3 URL. These URLs are used to get temporary access to an otherwise private OST KYC S3 bucket and can be used for putting user documents in that bucket. 
+
+A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-put` will generate the pre-signed URL for uploading the documents which we return in the response. We also show example code for consuming the response this endpoint sends.
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|files | object | yes | A 'files' object. Where data.unique identifier is a key and its content type is a value. <br> Supported content types: <br> 'image/jpeg',<br> 'image/png', <br>'image/jpg',<br>'application/pdf '|
+
+<u>**Returns**</u><br>
+For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is the string "file\_upload\_put" and the key data.file\_upload\_put is an array of returned `file_upload_put` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
+
+> Example Response code
+
+```json
+{
+    "success": "true",
+    "data": {
+        "result_type": "file_upload_put",
+        "file_upload_put": {
+            "document_id": {
+                "url": "https://s3.amazonaws.com/kyc.stagingost.com/3/i/anm15395b85581eab3068cb43ftc0rt1?X-Amz-Algorithm=AWS4..",
+                "fields": {
+                    "key": "3/i/anm15395b85581eab3068cb43ftc0rt1"
+                    }
+                },
+            "selfie": {
+                "url": "https://s3.amazonaws.com/kyc.stagingost.com/3/i/b3vvte895rt5581eab3068cb43ftc0vg?X-Amz-Algorithm=AWS4..",
+                "fields": {
+                    "key": "3/i/b3vvte895rt5581eab3068cb43ftc0vg"
+                    }
+                },
+            "residence_proof": {
+                "url": "https://s3.amazonaws.com/kyc.stagingost.com/3/d/276dv5b85581eab3068cb43ftc0rt1?X-Amz-Algorithm=AWS4..",
+                "fields": {
+                    "key": "3/d/276dv5b85581eab3068cb43ftc0rt1"
+                    }
+                },
+            "investor_proof_file1": {
+                "url": "https://s3.amazonaws.com/kyc.stagingost.com/3/d/anm1539uhu33eab3068cb4c0rt1?X-Amz-Algorithm=AWS4..",
+                "fields": {
+                    "key": "3/d/anm1539uhu33eab3068cb4c0rt1"
+                    }
+                },
+            "investor_proof_file2": {
+                "url": "https://s3.amazonaws.com/kyc.stagingost.com/3/d/bcbeu8558ksoso68cb43ftc0?X-Amz-Algorithm=AWS4..",
+                "fields": {
+                    "key": "3/d/bcbeu8558ksoso68cb43ftc0"
+                    }
+                }
+        }
+    }
+}
+```
+
+> Example reference code on how to consume response to upload files:
+
+```ruby
+file_path = 'Local_File_Path' // path of the file to be uploaded
+pre_signed_url = response['data']['file_upload_put']['document_id'] // pre signed url for document id
+uri = URI.parse(pre_signed_url)
+  
+r = Net::HTTP.start(uri.host, :use_ssl => true) do |http|
+        http.send_request("PUT", uri.request_uri, File.read(file_path), {
+          # This is required, or Net::HTTP will add a default unsigned content-type.
+          "content-type" => content_type
+        }
+```
+
+## Get Pre-signed URL - POST
+> Example request code
+
+```ruby
+# setup http request
+def setup_request(uri)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+  http
+end
+# Make a Get Request
+def make_get_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  query_string = request_params.to_query
+  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
+  http = setup_request(uri)
+  result = http.get(uri)
+  result
+end   
+
+def get_presigned_url_post(custom_params = nil)
+# Example Input Parameters :
+# default_params = {
+#     files: {
+#         document_id: 'image/jpeg',
+#     }
+# }
+  default_params={}
+      
+  endpoint = "/api/#{@version}/users-kyc/pre-signed-urls/for-post"
+  custom_params = custom_params || default_params
+  make_get_request(endpoint, custom_params)
+end
+```
+
+While filling in KYC details there are identification and other documents that a user submits which are required to be uploaded for verification. The upload functionality is achieved by generating a pre-signed S3 URL. These URLs are used to get temporary access to an otherwise private OST KYC S3 bucket and can be used for putting user documents in that bucket. 
+
+A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-post` will generate the pre-signed URL for uploading the documents which we return in the response. It allows to upload documents to S3 directly from browser using a HTML form.
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|files | object | yes | A 'files' object. Where data.unique identifier is a key and its content type is a value. <br> Supported content types: <br> 'image/jpeg',<br> 'image/png', <br>'image/jpg',<br>'application/pdf '|
+
+<u>**Returns**</u><br>
+For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is the string "file\_upload\_post" and the key data.file\_upload\_post is an array of returned `file_upload_post` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
+
+> Example Response code
+
+```json
+{
+    "success": true,
+    "data": {
+        "result_type": "file_upload_post",
+        "file_upload_post": {
+            "document_id": {
+                "url": "https://s3.amazonaws.com/kyc.ost.com",
+                "fields": {
+                    "key": "3/i/b3vvte895rt5581eab3068cb43ftc0vg1",
+                    "x-amz-server-side-encryption": "aws:kms",
+                    "x-amz-server-side-encryption-aws-kms-key-id": "5734c3ab-c4ae-4424-a464-2253ui828296",
+                    "policy": "abcdefghijklmnopqrstuvwxvz",
+                    "x-amz-credential": "akiajudralnurkavs5iq/20180123/us-east-1/s3/aws4_request",
+                    "x-amz-algorithm": "aws4-hmac-sha256",
+                    "x-amz-date": "20180123t091405z",
+                    "x-amz-signature": "34cc2f3925c360ecf0ed2ed5a1074f23537807005ffa21e4bc1ebb5225f9875a"                
+ 
+                }
+            }
+        }
+    }
+}
+```
+
+> Example reference code on how to consume response to upload files:
+
+```ruby
+upload_response = response.data
+upload_value = upload_response['file_upload_post']['document_id']
+ 
+$('#fileupload').fileupload('send', {
+files: "{input file1}",
+paramname: ['file'],
+url: upload_value.url,
+formdata: upload_value.fields
+}
+```
+# Utilities
+## Validate Ethereum Address
+> Example Request code:
+
+```ruby
+# setup http request
+def setup_request(uri)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+  http
+end
+# Make a Get Request
+def make_get_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  query_string = request_params.to_query
+  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
+  http = setup_request(uri)
+  result = http.get(uri)
+  result
+end  
+# Verify ethereum address
+def verify_ethereum_address(custom_params = nil)
+  endpoint = "/api/#{@version}/ethereum-address-validation"
+  make_get_request(endpoint, custom_params)
+end
+```
+A GET to `kyc.ost.com/api/v2/ethereum-address-validation` checks if Ethereum Address format is correct.
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|ethereum_address | string | yes | ethereum address to be validated.|
+
+<u>**Returns**</u><br>
+For api calls to `/ethereum-address-validation` a success `true` is sent if the ethereum address is in correct format. And a `false` in case the format of the ethereum address is in correct.
+
+> Example Response
+
+```json
+{
+  "success": true
+}
 ```
