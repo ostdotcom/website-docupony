@@ -390,7 +390,7 @@ For api calls to `/users` the data.result\_type is the string "users" and the ke
 Passing an optional email will result in filtering to users with only that exact email address. Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
 
 # Users KYC Details
-## The User KYC Details Object 
+## The User KYC Detail Object 
 > Example Response:
 
 ```json
@@ -450,13 +450,12 @@ def submit_kyc(user_id, custom_params = nil)
 end
 ```
 
-A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new user kyc details object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. And all mandatory parameters need to be send in an update request as well. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
+A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
 
 <u>**Input Parameters**</u>
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-||||<img width=1000/>|
 |first_name|string| yes | The user's first name. |
 |last_name| string | yes| The user's last name.|
 |birthdate| string | yes |The user's birthdate in dd/mm/yyyy format.|
@@ -474,7 +473,7 @@ A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new user kyc deta
 |state|string|yes|The user's state|
 |postal\_code|yes|string|postal_code|
 
-The Input parameters list all the fields accepted as input. KYC clients should send only those fields which they have selected for their users' kyc.
+The Input parameters above list all the fields accepted as input. KYC clients should send only those fields which they have selected for their users' kyc.
 
 <br>
 
@@ -502,8 +501,107 @@ The Input parameters list all the fields accepted as input. KYC clients should s
    }
 }
 ```
-For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an array of returned **user-kyc** object if a valid user identifier was provided. A `user-kyc` object provides properties and status related information of the kyc details a user had last submitted.
+For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an array of returned **user-kyc** object if a valid user identifier was provided. A `user-kyc` object provides properties and status related information of the kyc details that a user had last submitted.
  
+## Retrieve User KYC Details
+> Example Request code :
+
+```ruby
+# setup http request
+  def setup_request(uri)
+     http = Net::HTTP.new(uri.host, uri.port)
+     http.use_ssl = true
+     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+     http
+  end
+
+# Make a Get Request
+def make_get_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  query_string = request_params.to_query
+  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
+  http = setup_request(uri)
+  result = http.get(uri)
+  result
+end  
+
+# Get user kyc details for particular id
+def get_user_kyc_detail(id)
+  endpoint = "/api/#{@version}/users-kyc-detail/#{id}"
+  make_get_request(endpoint)
+end
+```
+
+A GET to `kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details of KYC data an existing user has submitted. You need to supply the user identifier that was returned while creating the user. 
+
+<aside class="warning">The kyc data submitted by users is included in the response only based on KYC client's setting in the admin management dashboard. This adds an additional layer of security towards user's data protection.</aside>
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|user_id | integer | yes | A <u>unique</u> identifier of the user that is returned upon user creation.|
+
+
+<u>**Returns**</u><br>
+
+> Example Response 
+
+```json
+# If the setting in admin management dashboard if OFF
+{
+   "success": true,
+   "data": {
+      "result_type": "user_kyc_detail",
+      "user_kyc": {
+         "first_name": "yogesh",
+         "last_name": "sawant",
+         "ethereum_address": "0xEC305b4c269dEd899b6fBA12776fbbDBdC564793",
+         "id": 727,
+         "created_at": 1539622156
+      }
+   }
+}
+
+# If the setting in admin management dashboard if ON
+# All fields in the response are not mandatory. They vary based on fields which KYC clients have selected for their users' kyc.
+{
+    "success": true,
+    "data": {
+        "result_type": "user_kyc_detail",
+        "user_kyc_detail": {
+            "id": 727,
+            "created_at": 1539622156,
+            "first_name": "yogesh",
+            "last_name": "sawant",                 
+            "birthdate": "23/07/1991",
+            "country": "INDIA",
+            "nationality": "INDIAN",
+            "document_id_number": "Ab0bd1234",
+            "document_id_file": "https://s3.amazonaws.com/kyc.stagingost.com/3/i/anm15395b85581eab3068cb43ftc0rt1_ROTATE_0?X-Amz-Algorithm=AWS4-HMAC-SHA256..",
+            "selfie_file": "https://s3.amazonaws.com/kyc.stagingost.com/3/i/b3vvte895rt5581eab3068cb43ftc0vg1_ROTATE_0?X-Amz-Algorithm=AWS4-HMAC-SHA256..",
+            "residence_proof_file": "https://s3.amazonaws.com/kyc.stagingost.com/3/i/bty153op985581eab3068cb43ftcqw21_ROTATE_0?X-Amz..",
+            "investor_proof_files": [
+                "https://s3.amazonaws.com/kyc.stagingost.com/3/i/a3991395b852serab3068cb43ftc0f61_ROTATE_0?X-Amz..",
+                "https://s3.amazonaws.com/kyc.stagingost.com/3/i/a5565395b85581eiop3068cb43ftc0f61_ROTATE_0?X-Amz.."
+            ],
+            "ethereum_address": "0xEC305b4c269dEd899b6fBA12776fbbDBdC564793",
+            "estimated_participation_amount": 1.1,
+            "street_address": "Hadapsar",
+            "city": "pune",
+            "state": "Maharashtra",
+            "postal_code": "411028"
+        }
+    }
+}
+```
+For GET calls to `/users-kyc-detail/{{user_id}}` the data.result\_type is the string "user\_kyc\_detail" and the key in data is dependent on the setting done by the KYC client's in their admin management dashboard. 
+
+If the setting to send KYC data is `ON` then the key data.user\_kyc\_detail is an array of returned **user\_kyc\_detail** object if a valid user identifier was provided.
+
+If the setting to send KYC data is `OFF` then the key data.user\_kyc is an array of returned objects with a few default fields if a valid user identifier was provided.
+
+
 
 # Users KYC Status
 ## The User KYC Object 
@@ -527,7 +625,7 @@ For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
 |id|integer| unique identifier of the last submitted kyc of a user |
-|user\_kyc\_detail\_id| integer | A unique identifier of the kyc submitted of a user|
+|user\_kyc\_detail\_id| integer | A unique identifier of the `user kyc details` object that is returned upon submitting  a user's kyc details|
 |user_id|integer| An unique identifier of the user that is returned upon user creation|
 |kyc_status|string|A kyc status will be `pending` until it has been taken up for processing. If the KYC goes through successfully the status will change to `approved` otherwise `denied` |
 |admin_status|string | Admin status is helpful for actors doing the KYC checks. `unprocessed` admin status indicates that the kyc entry needs to be taken care of. If any one of the admins approves a KYC entry the status changes to `qualified` and in case of a disapproval the status changes to `denied` |
