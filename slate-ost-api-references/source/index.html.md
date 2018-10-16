@@ -637,7 +637,7 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an array
 |created_at | timestamp| timestamp at which user KYC was created. (epoc time in sec? millisecond?)| 
 
 
-## Retrieve the last submitted KYC 
+## Retrieve KYC Status 
 > Example Request code:
 
 ```ruby
@@ -663,7 +663,8 @@ def get_user_kyc(id)
   make_get_request(endpoint)
 end
 ```
-A GET to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves properties and status related information of the last KYC a user had submitted. This however doesn't returns `kyc data` submitted by users. You need to supply the identifier that was returned upon user creation.
+
+A user can submit their KYC details multiple times, a GET to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves some properties and status related information of the last KYC that a user had submitted. This endpoint however doesn't returns `KYC data` submitted by users. You need to supply the identifier that was returned upon user creation for fetching the information.
 
 <u>**Input Parameters**</u>
 
@@ -696,4 +697,64 @@ For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "u
       }
    }
 }
+```
+
+## List KYC Statuses 
+> Example Request code:
+
+```ruby
+# setup http request
+def setup_request(uri)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+  http
+end
+# Make a Get Request
+def make_get_request(endpoint, custom_params = {})
+  request_params = base_params(endpoint, custom_params)
+  query_string = request_params.to_query
+  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
+  http = setup_request(uri)
+  result = http.get(uri)
+  result
+end   
+# list kyc status of users 
+def get_users_kyc_list(custom_params = nil)
+# default_params = {filters: {admin_status: 'unprocessed', aml_status: 'cleared'}}
+  default_params = {}
+  endpoint = "/api/#{@version}/users-kyc"
+  custom_params = custom_params || default_params
+  make_get_request(endpoint, custom_params)
+end
+```
+A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. A `user-kyc` object provides some properties and status related information of the kyc details that a user had last submitted. The `user-kyc` objects are returned sorted by the date when the kyc details were first submitted, with the most recent `user-kyc` object appearing first.
+
+<u>**Input Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|filters | object | no | A filter on the list based on the object `filter` field. The value can be a boolean or a string |
+|page\_number|integer|no | A field that helps in pagination. page\_number is an integer that defines the page of  the list to fetch. For instance, if you make a list request and receive 100 objects, each page sends 10 objects as default limit is 10. If you want to access 45th object your subsequent call can include page\_number=5 in order to fetch the 5th page of the list|
+|order|string|no| A sort order to be applied based on the `user-kyc` entry creation time. default is desc ( asc / desc ) |
+|limit|integer|no| A limit on the number of `user-kyc` objects to be sent in one request(min. 1, max. 100, default 10)|
+
+<br>
+<u>**Filter Parameters**</u>
+
+|Parameter| Type | Mandatory | Description | 
+----------|------|-----------|--------------
+|admin_status| string | no | A filter on `user-kyc` admin status :<br> unprocessed, <br> qualified, <br> denied|
+|aml_status|string|no| A filter on `user-kyc` aml\_status :<br> cleared:approved, <br> unprocessed, <br> pending, <br> cleared, <br> approved, <br> rejected, <br> failed.|
+|whitelist_status|string| no | A filter on `user-kyc` whitelist\_status:<br>unprocessed, <br> started, <br> done, <br> failed.| 
+|admin\_action\_types| string | no | A filter on `user-kyc` admin\_action_types:<br> no\_admin\_action, <br> data\_mismatch, <br> document\_issue, <br> other\_issue|
+
+<br>
+<u>**Returns**</u><br>
+For api calls to `/users-kyc/` the data.result_type is the string "user_kyc" and the key data.user\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
+
+Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
+
+```json
+
 ```
