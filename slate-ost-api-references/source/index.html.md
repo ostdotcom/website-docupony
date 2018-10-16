@@ -753,13 +753,161 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
 
 <br>
 <u>**Returns**</u><br>
+
+> Example Response code
+
+```json
+{
+   "success": true,
+   "data": {
+      "result_type": "users_kyc",
+      "users_kyc": [
+         {
+            "id": 298,
+            "user_kyc_detail_id": 688,
+            "user_id": 11434,
+            "kyc_status": "pending",
+            "admin_status": "unprocessed",
+            "aml_status": "cleared",
+            "whitelist_status": "unprocessed",
+            "admin_action_types": [],
+            "submission_count": 25,
+            "last_acted_by": "yogesh",
+            "created_at": 1539178516
+         },
+         {
+            "id": 297,
+            "user_kyc_detail_id": 663,
+            "user_id": 11333,
+            "kyc_status": "pending",
+            "admin_status": "unprocessed",
+            "aml_status": "cleared",
+            "whitelist_status": "unprocessed",
+            "admin_action_types": [],
+            "submission_count": 2,
+            "last_acted_by": "",
+            "created_at": 1539171237
+         },
+         {
+            "id": 294,
+            "user_kyc_detail_id": 656,
+            "user_id": 11425,
+            "kyc_status": "pending",
+            "admin_status": "unprocessed",
+            "aml_status": "cleared",
+            "whitelist_status": "unprocessed",
+            "admin_action_types": [],
+            "submission_count": 16,
+            "last_acted_by": "",
+            "created_at": 1539093563
+         },
+         {
+            "id": 281,
+            "user_kyc_detail_id": 601,
+            "user_id": 11401,
+            "kyc_status": "approved",
+            "admin_status": "qualified",
+            "aml_status": "cleared",
+            "whitelist_status": "failed",
+            "admin_action_types": [],
+            "submission_count": 1,
+            "last_acted_by": "Pankaj",
+            "created_at": 1538642905
+         },
+         {
+            "id": 279,
+            "user_kyc_detail_id": 598,
+            "user_id": 11399,
+            "kyc_status": "pending",
+            "admin_status": "unprocessed",
+            "aml_status": "cleared",
+            "whitelist_status": "unprocessed",
+            "admin_action_types": [],
+            "submission_count": 1,
+            "last_acted_by": "Pankaj",
+            "created_at": 1538577254
+         },
+         {
+            "id": 238,
+            "user_kyc_detail_id": 509,
+            "user_id": 11341,
+            "kyc_status": "approved",
+            "admin_status": "qualified",
+            "aml_status": "cleared",
+            "whitelist_status": "done",
+            "admin_action_types": [],
+            "submission_count": 1,
+            "last_acted_by": "Pankaj",
+            "created_at": 1537282934
+         },
+         {
+            "id": 232,
+            "user_kyc_detail_id": 502,
+            "user_id": 11332,
+            "kyc_status": "approved",
+            "admin_status": "qualified",
+            "aml_status": "cleared",
+            "whitelist_status": "done",
+            "admin_action_types": [],
+            "submission_count": 2,
+            "last_acted_by": "",
+            "created_at": 1536909857
+         },
+         {
+            "id": 229,
+            "user_kyc_detail_id": 497,
+            "user_id": 11329,
+            "kyc_status": "approved",
+            "admin_status": "qualified",
+            "aml_status": "cleared",
+            "whitelist_status": "done",
+            "admin_action_types": [],
+            "submission_count": 1,
+            "last_acted_by": "yogesh",
+            "created_at": 1536755792
+         },
+         {
+            "id": 228,
+            "user_kyc_detail_id": 496,
+            "user_id": 11327,
+            "kyc_status": "approved",
+            "admin_status": "qualified",
+            "aml_status": "cleared",
+            "whitelist_status": "failed",
+            "admin_action_types": [],
+            "submission_count": 1,
+            "last_acted_by": "yogesh",
+            "created_at": 1536755131
+         },
+         {
+            "id": 225,
+            "user_kyc_detail_id": 493,
+            "user_id": 11322,
+            "kyc_status": "approved",
+            "admin_status": "qualified",
+            "aml_status": "cleared",
+            "whitelist_status": "failed",
+            "admin_action_types": [],
+            "submission_count": 3,
+            "last_acted_by": "yogesh",
+            "created_at": 1536739936
+         }
+      ],
+      "meta": {
+         "total": 13,
+         "next_page_payload": {
+            "page_number": 2,
+            "filters": {},
+            "order": "desc",
+            "limit": 10
+         }
+      }
+   }
+}
+```
 For api calls to `/users-kyc/` the data.result_type is the string "user_kyc" and the key data.user\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
 
 Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
-
-```json
-
-```
 
 ## Get Pre-signed URL - PUT
 > Example request code
