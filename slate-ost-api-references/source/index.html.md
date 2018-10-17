@@ -20,8 +20,7 @@ thousands of applicants smoothly and securely. Once you sign up for the KYC serv
 |Account Activation | Elements |
 -------------------|----------
 | |<img width=1200/>|
-|<u>**Account Details**</u>| Link to KYC Dashboard <br> Login Credentials for KYC Dashboard <br> Link to Cynopsis Environment <br>
-Login credentials to Cynopsis Environment |
+|<u>**Account Details**</u>| Link to KYC Dashboard <br> Login Credentials for KYC Dashboard <br> Link to Cynopsis Environment <br>Login credentials to Cynopsis Environment |
 |<u>**API Access:​**</u> API access is authorized using secret key. Please share the key with trusted entities only. | API Key <br> API Secret Key |
 |<u>**Whitelisting Address:​**</u> This is the address which will be communicating to the Sale contract to whitelist registered Eth addresses. This is also known as Verified Operator Address | Whitelisting Address |
 |<u>**DNS records for domain verification:**</u>It is required to add the DNS records for the domain authentication in the DNS provider in order to start sending emails.| DNS records will be provided in the form of a CSV file. |
@@ -35,20 +34,13 @@ As part of the complete solution one of the product offerings is the robust set 
 > To authorize, you can use this sample code:
 
 ```ruby
-require 'uri'
-require 'open-uri'
-require 'openssl'
-require 'net/http'
 require 'rails'
-
-
 # Generate Signature
 def generate_signature(string_to_sign)
   digest = OpenSSL::Digest.new('sha256')
   puts "--------string_to_sign=>#{string_to_sign}-----"
   OpenSSL::HMAC.hexdigest(digest, 'API_SECRET', string_to_sign) # Make sure to replace `API_SECRET` with your API secret key.
 end
-
 # Create Base Parameters
 def base_params(endpoint, custom_params = {})
   request_time = Time.now.to_i
@@ -59,10 +51,8 @@ def base_params(endpoint, custom_params = {})
   request_params.merge!("signature" => signature)
   request_params
 end
-
-custom_params = {email: 'custom_email'}
+custom_params = {email: 'kyc@ost.com'}
 endpoint = "/api/v2/users"
-
 request_params = base_params(endpoint, custom_params)
 ```
 Every API request on https://kyc.ost.com/v2 requires hash-based message authentication. Every request has three mandatory parameters that must be included:
@@ -71,7 +61,7 @@ Every API request on https://kyc.ost.com/v2 requires hash-based message authenti
 * request_timestamp, the current unix timestamp in seconds.
 * signature, the signature as the sha256 digest of the API secret and the correctly formatted query string as described below.
 
-<aside class="warning">The request timestamp will be valid for up to ten seconds. Your computer clock must therefore be synchronised for authentication to succeed.</aside>
+<aside class="warning">The request timestamp will be valid for up to ten minutes. Your computer clock must therefore be synchronised for authentication to succeed.</aside>
 
 You can implement the signature generation by computing the HMAC sha256digest of the API secret and the query string. The resulting signature must be then included in the request.
 
@@ -82,7 +72,7 @@ To generate the signature you must first form the string to sign. This string to
 * request_timestamp, the current unix timestamp in seconds.
 * API parameters.
 
-<aside class="warning">Note all the inputs must be alphabetically sorted on the keys.ss</aside>
+<aside class="warning">Note all the inputs must be alphabetically sorted on the keys.</aside>
 
 ### 2. Generating a signature.
 The signature is the sha256 digest of the shared API secret and the correctly formatted query string
@@ -96,27 +86,34 @@ For a Post request,the parameters are sent in the request body with default appl
 
 # Users
 ## The User Object 
-> Example Response:
+> Sample User Object :
 
 ```json
 {
   "id": 11428,
   "email": "kycuser@ost.com",
-  "properties": [],
+  "properties": [
+            "kyc_submitted",
+            "doptin_mail_sent",
+            "doptin_done"
+            ],
   "created_at": 1539163614
 }
 ```
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
-|id|string| unique identifier for the user |
+|id|bigint| unique identifier for the user |
 |email| string | Email Id of the user|
-|properties|array<strings>|Properties of the user:<br> "kyc_submitted",<br> "double_optin_mail_sent",<br> "double_optin_done".<br> Remains empty when the user is created. |
-|created_at| timestamp |timestamp at which user was created. (epoc time in sec? millisecond?)|
+|properties|array<strings>|Properties of the user:<br> "kyc_submitted",<br> "doptin_mail_sent",<br> "doptin_done".<br> Remains empty when the user is created. |
+|created_at| timestamp |timestamp at which user was created. (epoc time in seconds)|
 
 ## Add a User
 > Example Request code:
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
 # setup http request
   def setup_request(uri)
      http = Net::HTTP.new(uri.host, uri.port)
@@ -124,7 +121,6 @@ For a Post request,the parameters are sent in the request body with default appl
      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
      http
   end
-    
 # Make a Post Request
 def make_post_request(endpoint, custom_params = {})
   request_params = base_params(endpoint, custom_params)
@@ -136,9 +132,10 @@ end
 # create user
 def create_user(custom_params = {})
   endpoint = "/api/v2/users"
-  res = make_post_request(endpoint, custom_params)
-  JSON.parse(res.body)
+  make_post_request(endpoint, custom_params)
 end
+create_user({email: 'kyc@ost.com'})
+
 ```
 
 A POST to `kyc.ost.com/api/v2/users` creates a new user object for the user in OST KYC database. Only user's signup information is sent via this endpoint. For sending user's KYC details a POST request to a different endpoint `/users-kyc/{{user_id}}` has to be sent.
@@ -147,12 +144,12 @@ A POST to `kyc.ost.com/api/v2/users` creates a new user object for the user in O
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|email | string | yes | A <u>unique</u> email id of the user whose KYC enrty has to be made|
+|email | string | yes | A <u>unique</u> email id of the user whose KYC entry has to be made|
 
-<aside class="warning">Information about - this API would be useful to only API clients!!??</aside>
+<aside class="warning"> This API cannot be used by OST KYC clients who are using OST KYC Frontend solution.</aside>
 
 <u>**Returns**</u><br>
-For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of user objects. On successful creation of the user, user contains the created user as a single element. The returned user object will return an ID in it that can be used to fetch the user information using the retrieve user endpoint.
+For api calls to `/users` the data.result\_type is the string "user" and the key data.user is a user object. On successful creation of the user, user contains the created user as a single element. The returned user object will return an ID in it that can be used to fetch the user information using the retrieve user endpoint.
 
 > Example Response
 
@@ -177,6 +174,9 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 > Example Request code:
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
 # setup http request
 def setup_request(uri)
   http = Net::HTTP.new(uri.host, uri.port)
@@ -194,10 +194,11 @@ def make_get_request(endpoint, custom_params = {})
   result
 end  
 # retrieve a user
-def get_user(user_id, custom_params = {})
-      endpoint = "/api/#{@version}/users/#{user_id}"
-      make_get_request(endpoint, custom_params)
+def get_user(user_id)
+      endpoint = "/api/v2/users/#{user_id}"
+      make_get_request(endpoint)
 end
+get_user(11428)
 ```
 A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the information of an existing user. You need to supply the identifier that was returned upon user creation.
 
@@ -209,9 +210,6 @@ A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the information of an existin
 
 <u>**Returns**</u><br>
 For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of returned user object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
-
-<aside class="warning">Information  - Can we deleted a user? what if a deleted user is retrieved?</aside>
-
 
 > Example Response
 
@@ -247,6 +245,9 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 > Example Request code:
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
 # setup http request
 def setup_request(uri)
   http = Net::HTTP.new(uri.host, uri.port)
@@ -264,13 +265,12 @@ def make_get_request(endpoint, custom_params = {})
   result
 end 
 # Get user list
-def get_user_list(custom_params = nil)
-# default_params = {page_number: 1, order: 'asc', filters: {}, page_size: 3}
-  default_params = {}
-  endpoint = "/api/#{@version}/users"
-  custom_params = custom_params || default_params
+def get_user_list(custom_params = {})
+  endpoint = "/api/v2/users"
   make_get_request(endpoint, custom_params)
 end
+get_user_list({page_number: 1, order: 'desc', filters: {email: "kycuser"}, limit: 10})
+
 ```
 A GET to `kyc.ost.com/api/v2/users` returns a list of all users who have signed up. This doesn't imply that all these users have submitted their required KYC details. The users are returned sorted by creation date, with the most recent users appearing first. 
 
@@ -278,7 +278,7 @@ A GET to `kyc.ost.com/api/v2/users` returns a list of all users who have signed 
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|filters | object | no | A filter on the list based on the object `filter` field. The value can be a boolean or a string |
+|filters | object | no | A filter on the list based on the object `filters` field. The value can be a boolean or a string |
 |page\_number|integer|no | A field that helps in pagination. page\_number is an integer that defines the page of  the list to fetch. For instance, if you make a list request and receive 100 objects, each page sends 10 objects as default limit is 10. If you want to access 45th object your subsequent call can include page\_number=5 in order to fetch the 5th page of the list|
 |order|string|no| A sort order to be applied based on the user creation time. default is desc ( asc / desc ) |
 |limit|integer|no| A limit on the number of user objects to be sent in one request(min. 1, max. 100, default 10)|
@@ -378,7 +378,9 @@ A GET to `kyc.ost.com/api/v2/users` returns a list of all users who have signed 
          "total": 39,
          "next_page_payload": {
             "page_number": 2,
-            "filters": {},
+            "filters": {
+              "email": "kycuser"
+            },
             "order": "desc",
             "limit": 10
          }
@@ -389,19 +391,42 @@ A GET to `kyc.ost.com/api/v2/users` returns a list of all users who have signed 
 
 For api calls to `/users` the data.result\_type is the string "users" and the key data.users is an array of the returned user objects (10 users per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
 
-Passing an optional email will result in filtering to users with only that exact email address. Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
+Passing an optional email will result in filtering of users with that email address. Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
 
 # Users KYC Details
 ## The User KYC Detail Object 
 > Example Response:
 
 ```json
+{
+  "id": 727,
+  "created_at": 1539622156,
+  "first_name": "yogesh",
+  "last_name": "sawant",                 
+  "birthdate": "23/07/1991",
+  "country": "INDIA",
+  "nationality": "INDIAN",
+  "document_id_number": "Ab0bd1234",
+  "document_id_file": "https://s3.amazonaws.com/kyc.stagingost.com/3/i/anm15395b85581eab3068cb43ftc0rt1_ROTATE_0?X-Amz-Algorithm=AWS4-HMAC-SHA256..",
+  "selfie_file": "https://s3.amazonaws.com/kyc.stagingost.com/3/i/b3vvte895rt5581eab3068cb43ftc0vg1_ROTATE_0?X-Amz-Algorithm=AWS4-HMAC-SHA256..",
+  "residence_proof_file": "https://s3.amazonaws.com/kyc.stagingost.com/3/i/bty153op985581eab3068cb43ftcqw21_ROTATE_0?X-Amz..",
+  "investor_proof_files": [
+      "https://s3.amazonaws.com/kyc.stagingost.com/3/i/a3991395b852serab3068cb43ftc0f61_ROTATE_0?X-Amz..",
+      "https://s3.amazonaws.com/kyc.stagingost.com/3/i/a5565395b85581eiop3068cb43ftc0f61_ROTATE_0?X-Amz.."
+  ],
+  "ethereum_address": "0xEC305b4c269dEd899b6fBA12776fbbDBdC564793",
+  "estimated_participation_amount": 1.1,
+  "street_address": "Hadapsar",
+  "city": "pune",
+  "state": "Maharashtra",
+  "postal_code": "411028"
+}
 ```
 
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
 |||<img width=1000/>|
-|id|integer| unique identifier of the last submitted kyc of a user. |
+|id|bigint| unique identifier of the last submitted kyc of a user. |
 |first_name|string| The user's first name. |
 |last_name| string | The user's last name.|
 |birthdate| string | The user's birthdate in dd/mm/yyyy format.|
@@ -418,7 +443,7 @@ Passing an optional email will result in filtering to users with only that exact
 |city|string|the user's current city of residence|
 |state|string|The user's state|
 |postal\_code|string|postal_code|
-|submitted_at|timestamp|timestamp at which kyc was submitted. (epoc time in sec? millisecond?)|
+|submitted_at|timestamp|timestamp at which kyc was submitted. (epoc time in seconds)|
 
 
 
@@ -426,6 +451,9 @@ Passing an optional email will result in filtering to users with only that exact
 > Example Request code :
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
 # setup http request
   def setup_request(uri)
      http = Net::HTTP.new(uri.host, uri.port)
@@ -433,7 +461,6 @@ Passing an optional email will result in filtering to users with only that exact
      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
      http
   end
-    
 # Make a Post Request
 def make_post_request(endpoint, custom_params = {})
   request_params = base_params(endpoint, custom_params)
@@ -442,14 +469,13 @@ def make_post_request(endpoint, custom_params = {})
   result = http.post(uri.path, request_params.to_query)
   result
 end  
-
 # Submit KYC details request
-def submit_kyc(user_id, custom_params = nil)
-  default_params = {}
-  endpoint = "/api/#{@version}/users-kyc/#{user_id}"
-  custom_params = custom_params || default_params
+def submit_kyc(user_id, custom_params={})
+  endpoint = "/api/v2/users-kyc/#{user_id}"
+  custom_params = custom_params
   make_post_request(endpoint, custom_params)
 end
+submit_kyc(11420, {first_name:‘YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'})
 ```
 
 A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
@@ -497,11 +523,12 @@ The Input parameters above list all the fields accepted as input. KYC clients sh
          "whitelist_status": "unprocessed",
          "admin_action_types": [],
          "submission_count": 7,
-         "last_acted_by": "yogesh4staging",
+         "last_acted_by": "Admin Name",
          "created_at": 1538995369
       }
    }
 }
+
 ```
 For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an array of returned **user-kyc** object if a valid user identifier was provided. A `user-kyc` object provides properties and status related information of the kyc details that a user had last submitted.
  
@@ -509,6 +536,9 @@ For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "
 > Example Request code :
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
 # setup http request
   def setup_request(uri)
      http = Net::HTTP.new(uri.host, uri.port)
@@ -516,7 +546,6 @@ For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "
      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
      http
   end
-
 # Make a Get Request
 def make_get_request(endpoint, custom_params = {})
   request_params = base_params(endpoint, custom_params)
@@ -526,12 +555,12 @@ def make_get_request(endpoint, custom_params = {})
   result = http.get(uri)
   result
 end  
-
 # Get user kyc details for particular id
-def get_user_kyc_detail(id)
-  endpoint = "/api/#{@version}/users-kyc-detail/#{id}"
+def get_user_kyc_detail(user_id)
+  endpoint = "/api/v2/users-kyc-detail/#{user_id}"
   make_get_request(endpoint)
 end
+get_user_kyc_detail(11420)
 ```
 
 A GET to `kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details of KYC data an existing user has submitted. You need to supply the user identifier that was returned while creating the user. 
@@ -556,9 +585,6 @@ A GET to `kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details
    "data": {
       "result_type": "user_kyc_detail",
       "user_kyc": {
-         "first_name": "yogesh",
-         "last_name": "sawant",
-         "ethereum_address": "0xEC305b4c269dEd899b6fBA12776fbbDBdC564793",
          "id": 727,
          "created_at": 1539622156
       }
@@ -626,7 +652,7 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an array
 ```
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
-|id|integer| unique identifier of the last submitted kyc of a user |
+|id|bigint| unique identifier of the last submitted kyc of a user |
 |user\_kyc\_detail\_id| integer | A unique identifier of the `user kyc details` object that is returned upon submitting  a user's kyc details|
 |user_id|integer| An unique identifier of the user that is returned upon user creation|
 |kyc_status|string|A kyc status will be `pending` until it has been taken up for processing. If the KYC goes through successfully the status will change to `approved` otherwise `denied` |
@@ -636,13 +662,17 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an array
 |admin\_action\_types |array | An array that shows the different kyc issue emails that are sent to the user. The triggers to send emails are `data_mismatch` , `document_issue ` or an email with custom instructions with action type `other_issue` ] |
 |submission_count | integer | A count of number of time KYC is submitted by a user| 
 |last\_acted\_by | string | Name of the last admin actor who took an action on the KYC. `nil` value indicates the last action was by the ost kyc system or no action has been taken. |
-|created_at | timestamp| timestamp at which user KYC was created. (epoc time in sec? millisecond?)| 
+|created_at | timestamp| timestamp at which user KYC was created. (epoc time in seconds)| 
 
 
 ## Retrieve KYC Status 
 > Example Request code:
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
+
 # setup http request
 def setup_request(uri)
   http = Net::HTTP.new(uri.host, uri.port)
@@ -660,10 +690,12 @@ def make_get_request(endpoint, custom_params = {})
   result
 end   
 # retrieve user kyc for particular user
-def get_user_kyc(id)
-  endpoint = "/api/#{@version}/users-kyc/#{id}"
+def get_user_kyc(user_id)
+  endpoint = "/api/v2/users-kyc/#{user_id}"
   make_get_request(endpoint)
 end
+
+get_user_kyc(11430)
 ```
 
 A user can submit their KYC details multiple times, a GET to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves some properties and status related information of the last KYC that a user had submitted. This endpoint however doesn't returns `KYC data` submitted by users. You need to supply the identifier that was returned upon user creation for fetching the information.
@@ -694,7 +726,7 @@ For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "u
          "whitelist_status": "unprocessed",
          "admin_action_types": [],
          "submission_count": 2,
-         "last_acted_by": "",
+         "last_acted_by": "Admin Name",
          "created_at": 1539279352
       }
    }
@@ -705,6 +737,10 @@ For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "u
 > Example Request code:
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
+
 # setup http request
 def setup_request(uri)
   http = Net::HTTP.new(uri.host, uri.port)
@@ -722,13 +758,12 @@ def make_get_request(endpoint, custom_params = {})
   result
 end   
 # list kyc status of users 
-def get_users_kyc_list(custom_params = nil)
-# default_params = {filters: {admin_status: 'unprocessed', aml_status: 'cleared'}}
-  default_params = {}
-  endpoint = "/api/#{@version}/users-kyc"
-  custom_params = custom_params || default_params
+def get_users_kyc_list(custom_params = {})
+  endpoint = "/api/v2/users-kyc"
   make_get_request(endpoint, custom_params)
 end
+
+get_users_kyc_list()
 ```
 A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. A `user-kyc` object provides some properties and status related information of the kyc details that a user had last submitted. The `user-kyc` objects are returned sorted by the date when the kyc details were first submitted, with the most recent `user-kyc` object appearing first.
 
@@ -736,7 +771,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|filters | object | no | A filter on the list based on the object `filter` field. The value can be a boolean or a string |
+|filters | object | no | A filter on the list based on the object `filters` field. The value can be a boolean or a string |
 |page\_number|integer|no | A field that helps in pagination. page\_number is an integer that defines the page of  the list to fetch. For instance, if you make a list request and receive 100 objects, each page sends 10 objects as default limit is 10. If you want to access 45th object your subsequent call can include page\_number=5 in order to fetch the 5th page of the list|
 |order|string|no| A sort order to be applied based on the `user-kyc` entry creation time. default is desc ( asc / desc ) |
 |limit|integer|no| A limit on the number of `user-kyc` objects to be sent in one request(min. 1, max. 100, default 10)|
@@ -772,7 +807,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
             "whitelist_status": "unprocessed",
             "admin_action_types": [],
             "submission_count": 25,
-            "last_acted_by": "yogesh",
+            "last_acted_by": "Admin Name",
             "created_at": 1539178516
          },
          {
@@ -811,7 +846,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
             "whitelist_status": "failed",
             "admin_action_types": [],
             "submission_count": 1,
-            "last_acted_by": "Pankaj",
+            "last_acted_by": "Admin Name",
             "created_at": 1538642905
          },
          {
@@ -824,7 +859,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
             "whitelist_status": "unprocessed",
             "admin_action_types": [],
             "submission_count": 1,
-            "last_acted_by": "Pankaj",
+            "last_acted_by": "Admin Name",
             "created_at": 1538577254
          },
          {
@@ -837,7 +872,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
             "whitelist_status": "done",
             "admin_action_types": [],
             "submission_count": 1,
-            "last_acted_by": "Pankaj",
+            "last_acted_by": "Admin Name",
             "created_at": 1537282934
          },
          {
@@ -863,7 +898,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
             "whitelist_status": "done",
             "admin_action_types": [],
             "submission_count": 1,
-            "last_acted_by": "yogesh",
+            "last_acted_by": "Admin Name",
             "created_at": 1536755792
          },
          {
@@ -876,7 +911,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
             "whitelist_status": "failed",
             "admin_action_types": [],
             "submission_count": 1,
-            "last_acted_by": "yogesh",
+            "last_acted_by": "Admin Name",
             "created_at": 1536755131
          },
          {
@@ -889,7 +924,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
             "whitelist_status": "failed",
             "admin_action_types": [],
             "submission_count": 3,
-            "last_acted_by": "yogesh",
+            "last_acted_by": "Admin Name",
             "created_at": 1536739936
          }
       ],
@@ -909,10 +944,16 @@ For api calls to `/users-kyc/` the data.result_type is the string "user_kyc" and
 
 Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
 
+
+# Utilities
 ## Get Pre-signed URL - PUT
 > Example request code
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
+
 # setup http request
 def setup_request(uri)
   http = Net::HTTP.new(uri.host, uri.port)
@@ -930,23 +971,22 @@ def make_get_request(endpoint, custom_params = {})
   result
 end   
 
-def get_presigned_url_put(custom_params = nil)
-# Example Input Parameters :
-# default_params = {
-#     files: {
-#         residence_proof: 'application/pdf',
-#         investor_proof_file1: 'application/pdf',
-#         investor_proof_file2: 'application/pdf',
-#         document_id: 'image/jpeg',
-#         selfie: 'image/jpeg'
-#     }
-# }
-  default_params={}
-      
-  endpoint = "/api/#{@version}/users-kyc/pre-signed-urls/for-post"
-  custom_params = custom_params || default_params
+def get_presigned_url_put(custom_params)
+  endpoint = "/api/v2/users-kyc/pre-signed-urls/for-put"
   make_get_request(endpoint, custom_params)
 end
+
+params = {
+    files: {
+        residence_proof: 'application/pdf',
+        investor_proof_file1: 'application/pdf',
+        investor_proof_file2: 'application/pdf',
+        document_id: 'image/jpeg',
+        selfie: 'image/jpeg'
+    }
+}
+
+get_presigned_url_put(params)
 ```
 
 While filling in KYC details there are identification and other documents that a user submits which are required to be uploaded for verification. The upload functionality is achieved by generating a pre-signed S3 URL. These URLs are used to get temporary access to an otherwise private OST KYC S3 bucket and can be used for putting user documents in that bucket. 
@@ -1008,21 +1048,29 @@ For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is t
 > Example reference code on how to consume response to upload files:
 
 ```ruby
-file_path = 'Local_File_Path' // path of the file to be uploaded
-pre_signed_url = response['data']['file_upload_put']['document_id'] // pre signed url for document id
+require 'openssl'
+require 'net/http'
+
+file_path = 'Local_File_Path' # path of the file to be uploaded
+pre_signed_url = response['data']['file_upload_put']['document_id']['url'] # pre signed url for document id
 uri = URI.parse(pre_signed_url)
-  
+
 r = Net::HTTP.start(uri.host, :use_ssl => true) do |http|
         http.send_request("PUT", uri.request_uri, File.read(file_path), {
           # This is required, or Net::HTTP will add a default unsigned content-type.
           "content-type" => content_type
-        }
+        })
+    end
 ```
 
 ## Get Pre-signed URL - POST
 > Example request code
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
+
 # setup http request
 def setup_request(uri)
   http = Net::HTTP.new(uri.host, uri.port)
@@ -1040,30 +1088,30 @@ def make_get_request(endpoint, custom_params = {})
   result
 end   
 
-def get_presigned_url_post(custom_params = nil)
-# Example Input Parameters :
-# default_params = {
-#     files: {
-#         document_id: 'image/jpeg',
-#     }
-# }
-  default_params={}
-      
-  endpoint = "/api/#{@version}/users-kyc/pre-signed-urls/for-post"
-  custom_params = custom_params || default_params
+def get_presigned_url_post(custom_params)
+  endpoint = "/api/v2/users-kyc/pre-signed-urls/for-post"
   make_get_request(endpoint, custom_params)
 end
+
+params = {
+     files: {
+         document_id: 'image/jpeg',
+     }
+ }
+
+get_presigned_url_post(params)
 ```
 
 While filling in KYC details there are identification and other documents that a user submits which are required to be uploaded for verification. The upload functionality is achieved by generating a pre-signed S3 URL. These URLs are used to get temporary access to an otherwise private OST KYC S3 bucket and can be used for putting user documents in that bucket. 
 
-A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-post` will generate the pre-signed URL for uploading the documents which we return in the response. It allows to upload documents to S3 directly from browser using a HTML form.
+A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-post` will generate the pre-signed URL for uploading the documents which we return in the response. It allows to upload documents to S3 directly from browser using an HTML form. 
 
 <u>**Input Parameters**</u>
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
 |files | object | yes | A 'files' object. Where data.unique identifier is a key and its content type is a value. <br> Supported content types: <br> 'image/jpeg',<br> 'image/png', <br>'image/jpg',<br>'application/pdf '|
+
 
 <u>**Returns**</u><br>
 For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is the string "file\_upload\_post" and the key data.file\_upload\_post is an array of returned `file_upload_post` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
@@ -1087,32 +1135,28 @@ For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is 
                     "x-amz-algorithm": "aws4-hmac-sha256",
                     "x-amz-date": "20180123t091405z",
                     "x-amz-signature": "34cc2f3925c360ecf0ed2ed5a1074f23537807005ffa21e4bc1ebb5225f9875a"                
- 
+
                 }
             }
         }
     }
 }
 ```
+For using the pre-signed URL to build an HTML Form it is recommended to use some helper to build the form tag and input tags that properly escapes values. To upload a file to S3 using a browser, you need to create a post form. The key `data.file\_upload\_post.document\_id.url` in the response is the value you should use as the form action.
 
-> Example reference code on how to consume response to upload files:
-
-```ruby
-upload_response = response.data
-upload_value = upload_response['file_upload_post']['document_id']
- 
-$('#fileupload').fileupload('send', {
-files: "{input file1}",
-paramname: ['file'],
-url: upload_value.url,
-formdata: upload_value.fields
-}
-```
-# Utilities
+<aside class="success">
+< form action="<%= @data.file_upload_post.document_id.url %>" method="post" enctype="multipart/form-data">
+ <br> ... <br>
+<\/form>
+</aside>
 ## Validate Ethereum Address
 > Example Request code:
 
 ```ruby
+require 'openssl'
+require 'net/http'
+require 'rails'
+
 # setup http request
 def setup_request(uri)
   http = Net::HTTP.new(uri.host, uri.port)
@@ -1130,10 +1174,11 @@ def make_get_request(endpoint, custom_params = {})
   result
 end  
 # Verify ethereum address
-def verify_ethereum_address(custom_params = nil)
-  endpoint = "/api/#{@version}/ethereum-address-validation"
+def verify_ethereum_address(custom_params)
+  endpoint = "/api/v2/ethereum-address-validation"
   make_get_request(endpoint, custom_params)
 end
+verify_ethereum_address(ethereum_address: "0x81b7e08f65bdf5648606c89998a9cc8164397647")
 ```
 A GET to `kyc.ost.com/api/v2/ethereum-address-validation` checks if Ethereum Address format is correct.
 

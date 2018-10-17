@@ -1,22 +1,35 @@
 # Errors
 
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+We use HTTP response status codes to indicate the success or failure of an API request. OST KIT⍺ returns `4xx` or `5xx` status codes.
 
-The Kittn API uses the following error codes:
+> In reponse to failed requests an error object is included in the response body that includes additional error details in this format : 
 
+```json
+{
+  "success": false,
+  "err": {
+    "code": "SHORT STRING CODE",
+    "msg": "ERROR DESCRIPTION",
+    "internal_id": "internal debug info code",
+    
+    // Some types of errors also include an error_data array 
+    //that gives additiional information at parameter level:
+    "error_data": [
+      {
+        "parameter": "field name",
+        "msg": "problem with the field"
+      }
+      ]
+  }
+}
+```
 
-Error Code | Meaning
----------- | -------
-400 | Bad Request -- Your request is invalid.
-401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The kitten requested is hidden for administrators only.
-404 | Not Found -- The specified kitten could not be found.
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method.
-406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The kitten requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+We return following HTTP status codes and corresponding short string codes for failed requests:
+
+| HTTP status code | String codes | Error messages | Cause and actionable steps |
+|------------------|--------------|---------------|--------------|
+| 400 | BAD_REQUEST  | At least one parameter is invalid or missing. See "err.error_data" array for more details. |  Check the API Documentation for the endpoint to see which values are required. To prevent validation errors, ensure that parameters are of the right type.| 
+| 401 | UNAUTHORIZED | We could not authenticate the request. Please review your credentials and authentication method |   Check <u>Authentication Section</u> to understand the API signature generation steps.
+| 404 | NOT_FOUND    | The requested resource could not be located. | Please check the information provided. The server did not find anything that matches the request URI. Either the URI is incorrect or the resource is not available. For example, in-correct 'id' passed while retrieving a user. |
+| 422 | UNPROCESSABLE_ENTITY | An error occurred while processing the request.  |  The API cannot complete the requested action, might require interaction with processes outside of the current request OR is failing business validations thats not a 400 type of validation. Check the information provided or get in touch on [<u>help.ost.com</u>](https://help.ost.com)|
+| 429 | TOO\_MANY\_REQUESTS | Too many requests recieved.| !!!What could be Cause or actionable steps !!! | 

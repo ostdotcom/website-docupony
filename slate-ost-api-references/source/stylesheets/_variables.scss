@@ -24,18 +24,18 @@ under the License.
 // BACKGROUND COLORS
 ////////////////////
 $nav-bg: #f9fafa;
-$examples-bg: #34445B;
-$code-bg: #34445B;
-$code-annotation-bg: #438BAD !default;
-$nav-subitem-bg: #f1f5f8 !default;
-$nav-active-bg: #438bad !default;
-$nav-active-parent-bg: #438bad !default; // parent links of the current section
+$examples-bg: #2C2C2C;
+$code-bg: #2C2C2C;
+$code-annotation-bg: #4a4a4a;
+$nav-subitem-bg: #f9fafa !default;
+$nav-active-bg: #34445B !default;
+$nav-active-parent-bg: #f9fafa !default; // parent links of the current section
 $lang-select-border: #E4B030 !default;
-$lang-select-bg: #34445B !default;
+$lang-select-bg: #2C2C2c !default;
 $lang-select-active-bg: #E4B030 !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
 $main-bg: #ffffff;
-$aside-notice-bg: #fbd764 !default;
+$aside-notice-bg: rgba(175, 225, 227, 0.5) !default;
 $aside-warning-bg: #f9f8e6 !default;
 $aside-success-bg: #eef8ee !default;
 $search-notice-bg: #e4b030 !default;
@@ -44,9 +44,9 @@ $search-notice-bg: #e4b030 !default;
 // TEXT COLORS
 ////////////////////
 $main-text: #597a84 !default; // main content text color
-$nav-text: #9bafb5 !default;
-$nav-active-text: #fff !default;
-$nav-active-parent-text: #fff !default; // parent links of the current section
+$nav-text: #597a84 !default;
+$nav-active-text: #FFF !default;
+$nav-active-parent-text: #E4B030 !default; // parent links of the current section
 $lang-select-text: #fff !default; // color of unselected language tab text
 $lang-select-active-text: #fff !default; // color of selected language tab text
 $lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
