@@ -2,138 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb13e046-5d4b-4d89-b4d7-0b3ae356e98a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/0_00_START_WELCOME.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/0_01_START_TOKENIZE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/0_02_START_ALPHA.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/0_03_CHANGELOG.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/1_00_KIT_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_00_API_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_01_API_USERS_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_01_API_USERS_CREATE_v1.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_02_API_USERS_EDIT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_02_API_USERS_EDIT_v1.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_03.1_API_USERS_RETRIEVE_v1.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_03_API_USERS_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_03_API_USERS_LIST_v1.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_04_API_AIRDROP_DROP.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_05_API_AIRDROP_STATUS.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_06_API_TRANSACTION-TYPES_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_07_API_TRANSACTION-TYPES_EDIT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_08_API_TRANSACTION-TYPES_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_09_API_TRANSACTION-TYPES_EXECUTE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_10_API_TRANSACTION-TYPES_STATUS.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/2_98_API_AUTHENTICATION.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/3_00_SDKS_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/3_01_SDK_RUBY.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/3_02_SDK_JAVASCRIPT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docs/5_01_API_TOKEN_v1.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/core/Footer.js" afterPath="$PROJECT_DIR$/website/core/Footer.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/0_00_START_WELCOME.md" afterPath="$PROJECT_DIR$/docs/kit/START_WELCOME.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/0_01_START_TOKENIZE.md" afterPath="$PROJECT_DIR$/docs/kit/START_TOKENIZE.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/0_02_START_ALPHA.md" afterPath="$PROJECT_DIR$/docs/kit/START_ALPHA.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/0_03_CHANGELOG.md" afterPath="$PROJECT_DIR$/docs/kit/CHANGELOG.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/1_00_KIT_OVERVIEW.md" afterPath="$PROJECT_DIR$/docs/kit/KIT_OVERVIEW.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/3_00_SDKS_OVERVIEW.md" afterPath="$PROJECT_DIR$/docs/kit/SDKS_OVERVIEW.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/3_01_SDK_RUBY.md" afterPath="$PROJECT_DIR$/docs/kit/SDK_RUBY.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/3_02_SDK_JAVASCRIPT.md" afterPath="$PROJECT_DIR$/docs/kit/SDK_JAVASCRIPT.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kit/kit_index.md" afterPath="$PROJECT_DIR$/docs/kit/kit_index.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_00_API_OVERVIEW.md" afterPath="$PROJECT_DIR$/docs/kyc/API_OVERVIEW.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_02_API_USERS_EDIT.md" afterPath="$PROJECT_DIR$/docs/kyc/API_USERS_EDIT.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_02_API_USERS_EDIT_v1.md" afterPath="$PROJECT_DIR$/docs/kyc/API_USERS_EDIT_v1.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_03.1_API_USERS_RETRIEVE_v1.md" afterPath="$PROJECT_DIR$/docs/kyc/API_USERS_RETRIEVE_v1.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_03_API_USERS_LIST.md" afterPath="$PROJECT_DIR$/docs/kyc/API_USERS_LIST.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_03_API_USERS_LIST_v1.md" afterPath="$PROJECT_DIR$/docs/kyc/API_USERS_LIST_v1.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_04_API_AIRDROP_DROP.md" afterPath="$PROJECT_DIR$/docs/kyc/API_AIRDROP_DROP.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_05_API_AIRDROP_STATUS.md" afterPath="$PROJECT_DIR$/docs/kyc/API_AIRDROP_STATUS.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_06_API_TRANSACTION-TYPES_CREATE.md" afterPath="$PROJECT_DIR$/docs/kyc/API_TRANSACTION-TYPES_CREATE.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_07_API_TRANSACTION-TYPES_EDIT.md" afterPath="$PROJECT_DIR$/docs/kyc/API_TRANSACTION-TYPES_EDIT.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_08_API_TRANSACTION-TYPES_LIST.md" afterPath="$PROJECT_DIR$/docs/kyc/API_TRANSACTION-TYPES_LIST.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_09_API_TRANSACTION-TYPES_EXECUTE.md" afterPath="$PROJECT_DIR$/docs/kyc/API_TRANSACTION-TYPES_EXECUTE.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_10_API_TRANSACTION-TYPES_STATUS.md" afterPath="$PROJECT_DIR$/docs/kyc/API_TRANSACTION-TYPES_STATUS.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/2_98_API_AUTHENTICATION.md" afterPath="$PROJECT_DIR$/docs/kyc/API_AUTHENTICATION.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/5_01_API_TOKEN_v1.md" afterPath="$PROJECT_DIR$/docs/kyc/API_TOKEN_v1.md" />
+      <change beforePath="$PROJECT_DIR$/docs/kyc/kyc_index.md" afterPath="$PROJECT_DIR$/docs/kyc/kyc_index.md" />
       <change beforePath="$PROJECT_DIR$/website/i18n/en.json" afterPath="$PROJECT_DIR$/website/i18n/en.json" />
-      <change beforePath="$PROJECT_DIR$/website/package.json" afterPath="$PROJECT_DIR$/website/package.json" />
-      <change beforePath="$PROJECT_DIR$/website/pages/en/help.js" afterPath="$PROJECT_DIR$/website/pages/en/help.js" />
-      <change beforePath="$PROJECT_DIR$/website/pages/en/index.js" afterPath="$PROJECT_DIR$/website/pages/en/index.js" />
-      <change beforePath="$PROJECT_DIR$/website/pages/en/users.js" afterPath="$PROJECT_DIR$/website/pages/en/users.js" />
-      <change beforePath="$PROJECT_DIR$/website/pages/en/versions.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/sidebars.json" afterPath="$PROJECT_DIR$/website/sidebars.json" />
-      <change beforePath="$PROJECT_DIR$/website/siteConfig.js" afterPath="$PROJECT_DIR$/website/siteConfig.js" />
-      <change beforePath="$PROJECT_DIR$/website/static/css/custom.css" afterPath="$PROJECT_DIR$/website/static/css/custom.css" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/0_00_START_WELCOME.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/0_01_START_TOKENIZE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/0_02_START_ALPHA.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/0_03_CHANGELOG.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/1_00_KIT_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_00_API_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_01_API_USERS_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_02_API_USERS_EDIT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_03_API_USERS_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_04_API_AIRDROP_DROP.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_05_API_AIRDROP_STATUS.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_06_API_TRANSACTION-TYPES_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_07_API_TRANSACTION-TYPES_EDIT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_08_API_TRANSACTION-TYPES_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_09_API_TRANSACTION-TYPES_EXECUTE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_10_API_TRANSACTION-TYPES_STATUS.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/2_98_API_AUTHENTICATION.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/3_00_SDKS_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/3_01_SDK_RUBY.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-0.1.0/3_02_SDK_JAVASCRIPT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/0_00_START_WELCOME.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/0_01_START_TOKENIZE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/0_02_START_ALPHA.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/1_00_KIT_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_00_API_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_01_API_USERS_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_02_API_USERS_EDIT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_03_API_USERS_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_04_API_AIRDROP_EXECUTE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_05_API_AIRDROP_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_06_API_ACTIONS_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_07_API_ACTIONS_UPDATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_08_API_ACTIONS_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_09_API_ACTION_EXECUTE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_09_API_TRANSACTION_EXECUTE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_100_API_TOKEN.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_10_API_TRANSACTION_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_10_API_TRANSACTION_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_11_API_ACTIONS_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_12_API_AIRDROP_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_15_API_TRANSFERS_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_16_API_TRANSFERS_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_17_API_TRANSFERS_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_18_API_USERS_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_98_API_AUTHENTICATION.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/2_99_ERROR_HANDLING.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/3_00_SDKS_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/3_01_SDK_RUBY.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/3_02_SDK_JAVASCRIPT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/3_03_SDK_PHP.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.0.0/3_04_SDK_JAVA.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/0_00_START_WELCOME.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/0_01_START_TOKENIZE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/0_02_START_ALPHA.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/0_03_CHANGELOG.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/1_00_KIT_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_00_API_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_01_API_USERS_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_02_API_USERS_EDIT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_03_API_USERS_LIST_v1.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_03_API_USERS_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_04_API_AIRDROP_EXECUTE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_05_API_AIRDROP_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_06_API_ACTIONS_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_07_API_ACTIONS_UPDATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_08_API_ACTIONS_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_09_API_ACTION_EXECUTE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_100_API_TOKEN.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_10_API_TRANSACTION_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_10_API_TRANSACTION_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_11_API_ACTIONS_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_12_API_AIRDROP_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_15_API_TRANSFERS_CREATE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_16_API_TRANSFERS_LIST.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_17_API_TRANSFERS_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_18_API_USERS_RETRIEVE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_19_API_BALANCE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_20_API_LEDGER.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_98_API_AUTHENTICATION.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/2_99_ERROR_HANDLING.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/3_00_SDKS_OVERVIEW.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/3_01_SDK_RUBY.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/3_02_SDK_JAVASCRIPT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/3_03_SDK_PHP.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/3_04_SDK_JAVA.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/3_05_GUIDE_WALLET_SETUP.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/3_06_GUIDE_BUY_IN.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_docs/version-1.1.0/5_01_API_TOKEN_v1.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_sidebars/version-0.1.0-sidebars.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_sidebars/version-0.9.2-sidebars.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_sidebars/version-1.0.0-sidebars.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versioned_sidebars/version-1.1.0-sidebars.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/website/versions.json" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -144,93 +39,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="0_00_START_WELCOME.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/0_00_START_WELCOME.md">
+      <file leaf-file-name="API_AUTHENTICATION.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/kyc/API_AUTHENTICATION.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="0">
                 <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0_01_START_TOKENIZE.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/0_01_START_TOKENIZE.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0_02_START_ALPHA.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/0_02_START_ALPHA.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0_03_CHANGELOG.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/0_03_CHANGELOG.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="390">
-                <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1_00_KIT_OVERVIEW.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/1_00_KIT_OVERVIEW.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="410">
-                <caret line="33" column="2" lean-forward="false" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="3_00_SDKS_OVERVIEW.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/3_00_SDKS_OVERVIEW.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="3_01_SDK_RUBY.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/3_01_SDK_RUBY.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="5">
-                <caret line="104" column="2" lean-forward="true" selection-start-line="104" selection-start-column="2" selection-end-line="104" selection-end-column="2" />
                 <folding>
-                  <marker date="1539779128000" expanded="true" signature="4747:4785" ph="{ ... }" />
-                  <marker date="1539779128000" expanded="true" signature="4790:4832" ph="{ ... }" />
+                  <marker date="1539778245000" expanded="true" signature="4630:4788" ph="{...}" />
+                  <marker date="1539778245000" expanded="true" signature="4958:5111" ph="{...}" />
+                  <marker date="1539778245000" expanded="true" signature="5010:5052" ph="{...}" />
+                  <marker date="1539778245000" expanded="true" signature="5058:5105" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -238,17 +57,63 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3_02_SDK_JAVASCRIPT.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/3_02_SDK_JAVASCRIPT.md">
+      <file leaf-file-name="kit_index.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/kit/kit_index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1410">
-                <caret line="94" column="2" lean-forward="false" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
+              <first_editor relative-caret-position="75">
+                <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kyc_index.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/kyc/kyc_index.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="75">
+                <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="25" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="API_OVERVIEW.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/kyc/API_OVERVIEW.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2_01_API_USERS_CREATE.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/kyc/2_01_API_USERS_CREATE.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
                 <folding>
-                  <marker date="1539779128000" expanded="true" signature="2788:2965" ph="//..." />
-                  <marker date="1539779128000" expanded="true" signature="3260:3417" ph="//..." />
-                  <marker date="1539779128000" expanded="true" signature="4492:4576" ph="//..." />
-                  <marker date="1539779128000" expanded="true" signature="4977:5073" ph="//..." />
+                  <marker date="1539689016000" expanded="true" signature="2654:3023" ph="{&quot;success&quot;: true...}" />
+                  <marker date="1539689016000" expanded="true" signature="2685:3021" ph="{&quot;result_type&quot;: &quot;economy_users&quot;...}" />
+                  <marker date="1539689016000" expanded="true" signature="2744:2966" ph="[...]" />
+                  <marker date="1539689016000" expanded="true" signature="2752:2960" ph="{&quot;id&quot;: &quot;574b456d-5da6-4353-ad7c-9b70893e757b&quot;...}" />
+                  <marker date="1539689016000" expanded="true" signature="2980:3017" ph="{...}" />
+                  <marker date="1539689016000" expanded="true" signature="3175:3310" ph="{&quot;success&quot;: false...}" />
+                  <marker date="1539689016000" expanded="true" signature="3206:3308" ph="{&quot;code&quot;: &quot;companyRestFulApi(401:HJg2HK0A_f)&quot;...}" />
+                  <marker date="1539689016000" expanded="true" signature="3505:3746" ph="{&quot;success&quot;: false...}" />
+                  <marker date="1539689016000" expanded="true" signature="3536:3744" ph="{&quot;code&quot;: &quot;companyRestFulApi(s_a_g_1:rJndQJkYG)&quot;...}" />
+                  <marker date="1539689016000" expanded="true" signature="3637:3740" ph="[...]" />
+                  <marker date="1539689016000" expanded="true" signature="3645:3734" ph="{&quot;name&quot;: &quot;Only letters, numbers and spaces allowed. (Max 20 characters)&quot;...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -256,25 +121,69 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="API_USERS_LIST.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/kyc/API_USERS_LIST.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding>
+                  <marker date="1539689016000" expanded="true" signature="2878:3604" ph="{&quot;success&quot;: true...}" />
+                  <marker date="1539689016000" expanded="true" signature="2909:3602" ph="{&quot;result_type&quot;: &quot;economy_users&quot;...}" />
+                  <marker date="1539689016000" expanded="true" signature="2968:3433" ph="[...]" />
+                  <marker date="1539689016000" expanded="true" signature="2976:3192" ph="{&quot;id&quot;: &quot;c1e5da9b-787d-4897-aa58-742f2756c71d&quot;...}" />
+                  <marker date="1539689016000" expanded="true" signature="3210:3427" ph="{&quot;id&quot;: &quot;461c10ea-2b6c-42e8-9fea-b997995cdf8b&quot;...}" />
+                  <marker date="1539689016000" expanded="true" signature="3447:3598" ph="{...}" />
+                  <marker date="1539689016000" expanded="true" signature="3476:3592" ph="{&quot;order_by&quot;: &quot;creation_time&quot;...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="START_WELCOME.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/kit/START_WELCOME.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="START_TOKENIZE.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/kit/START_TOKENIZE.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebars.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/sidebars.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kit_index.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/kit/kit_index.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="siteConfig.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/siteConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="673">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -287,6 +196,7 @@
       <find>.wrapper</find>
       <find>wrapper</find>
       <find>organizationName</find>
+      <find>Tokens</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -311,6 +221,8 @@
         <option value="$PROJECT_DIR$/docs/kit/1_00_KIT_OVERVIEW.md" />
         <option value="$PROJECT_DIR$/docs/kit/3_01_SDK_RUBY.md" />
         <option value="$PROJECT_DIR$/docs/kit/3_02_SDK_JAVASCRIPT.md" />
+        <option value="$PROJECT_DIR$/docs/kyc/kyc_index.md" />
+        <option value="$PROJECT_DIR$/docs/kit/kit_index.md" />
       </list>
     </option>
   </component>
@@ -361,6 +273,12 @@
               <item name="docs" type="462c0819:PsiDirectoryNode" />
               <item name="kit" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="website-docupony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website-docupony" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="kyc" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -373,7 +291,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value=".cs&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/website/static/css/custom.css&#10;cus&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/website/static/css/custom.css&#10;cust&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/website/static/css/custom.css&#10;vcs.xml&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/.idea/vcs.xml" />
+    <property name="SearchEverywhereHistoryKey" value="confi&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/website/siteConfig.js&#10;sid&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/website/sidebars.json&#10;.cs&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/website/static/css/custom.css&#10;cus&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/website/static/css/custom.css&#10;cust&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/website/static/css/custom.css&#10;vcs.xml&#9;FILE&#9;file:///Users/mayurpatil/Documents/workspace/website-docupony/.idea/vcs.xml" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -401,18 +319,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539689086939</updated>
-      <workItem from="1539689089004" duration="11680000" />
+      <workItem from="1539689089004" duration="13375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11680000" />
+    <option name="totallyTimeSpent" value="13375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -678,45 +595,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/sidebars.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/siteConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="854">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/0_00_START_WELCOME.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/0_01_START_TOKENIZE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/0_02_START_ALPHA.md">
+    <entry file="file://$PROJECT_DIR$/docs/kit/START_ALPHA.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="180">
@@ -727,7 +606,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/0_03_CHANGELOG.md">
+    <entry file="file://$PROJECT_DIR$/docs/kit/CHANGELOG.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="390">
@@ -738,7 +617,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/1_00_KIT_OVERVIEW.md">
+    <entry file="file://$PROJECT_DIR$/docs/kit/KIT_OVERVIEW.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="410">
@@ -749,7 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/3_00_SDKS_OVERVIEW.md">
+    <entry file="file://$PROJECT_DIR$/docs/kit/SDKS_OVERVIEW.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -760,7 +639,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/3_01_SDK_RUBY.md">
+    <entry file="file://$PROJECT_DIR$/docs/kit/SDK_RUBY.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="5">
@@ -774,18 +653,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/kit_index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/kit/3_02_SDK_JAVASCRIPT.md">
+    <entry file="file://$PROJECT_DIR$/docs/kit/SDK_JAVASCRIPT.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1410">
@@ -806,6 +674,135 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/kyc/API_AUTHENTICATION.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1539778245000" expanded="true" signature="4630:4788" ph="{...}" />
+              <marker date="1539778245000" expanded="true" signature="4958:5111" ph="{...}" />
+              <marker date="1539778245000" expanded="true" signature="5010:5052" ph="{...}" />
+              <marker date="1539778245000" expanded="true" signature="5058:5105" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/siteConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/sidebars.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/kit/START_TOKENIZE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/kit/START_WELCOME.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/kyc/API_USERS_LIST.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1539689016000" expanded="true" signature="2878:3604" ph="{&quot;success&quot;: true...}" />
+              <marker date="1539689016000" expanded="true" signature="2909:3602" ph="{&quot;result_type&quot;: &quot;economy_users&quot;...}" />
+              <marker date="1539689016000" expanded="true" signature="2968:3433" ph="[...]" />
+              <marker date="1539689016000" expanded="true" signature="2976:3192" ph="{&quot;id&quot;: &quot;c1e5da9b-787d-4897-aa58-742f2756c71d&quot;...}" />
+              <marker date="1539689016000" expanded="true" signature="3210:3427" ph="{&quot;id&quot;: &quot;461c10ea-2b6c-42e8-9fea-b997995cdf8b&quot;...}" />
+              <marker date="1539689016000" expanded="true" signature="3447:3598" ph="{...}" />
+              <marker date="1539689016000" expanded="true" signature="3476:3592" ph="{&quot;order_by&quot;: &quot;creation_time&quot;...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/kyc/2_01_API_USERS_CREATE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+            <folding>
+              <marker date="1539689016000" expanded="true" signature="2654:3023" ph="{&quot;success&quot;: true...}" />
+              <marker date="1539689016000" expanded="true" signature="2685:3021" ph="{&quot;result_type&quot;: &quot;economy_users&quot;...}" />
+              <marker date="1539689016000" expanded="true" signature="2744:2966" ph="[...]" />
+              <marker date="1539689016000" expanded="true" signature="2752:2960" ph="{&quot;id&quot;: &quot;574b456d-5da6-4353-ad7c-9b70893e757b&quot;...}" />
+              <marker date="1539689016000" expanded="true" signature="2980:3017" ph="{...}" />
+              <marker date="1539689016000" expanded="true" signature="3175:3310" ph="{&quot;success&quot;: false...}" />
+              <marker date="1539689016000" expanded="true" signature="3206:3308" ph="{&quot;code&quot;: &quot;companyRestFulApi(401:HJg2HK0A_f)&quot;...}" />
+              <marker date="1539689016000" expanded="true" signature="3505:3746" ph="{&quot;success&quot;: false...}" />
+              <marker date="1539689016000" expanded="true" signature="3536:3744" ph="{&quot;code&quot;: &quot;companyRestFulApi(s_a_g_1:rJndQJkYG)&quot;...}" />
+              <marker date="1539689016000" expanded="true" signature="3637:3740" ph="[...]" />
+              <marker date="1539689016000" expanded="true" signature="3645:3734" ph="{&quot;name&quot;: &quot;Only letters, numbers and spaces allowed. (Max 20 characters)&quot;...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/kyc/API_OVERVIEW.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/kyc/kyc_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="25" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/kit/kit_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -8,40 +8,41 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "kit/simpletoken": {
-        "title": "OST | Simple Token",
-        "sidebar_label": "Simple Token"
-      },
-      "kit/tokenize": {
-        "title": "Tokenize your application",
-        "sidebar_label": "Tokens"
-      },
-      "kit/alpha": {
-        "title": "This is an alpha release",
-        "sidebar_label": "Alpha"
-      },
       "kit/changelog": {
         "title": "Changelog",
         "sidebar_label": "Changelog"
+      },
+      "kit/kit_index": {
+        "title": "OST | Simple Token",
+        "sidebar_label": "Simple Token"
       },
       "kit/kit": {
         "title": "OST KIT⍺ Overview",
         "sidebar_label": "Overview"
       },
-      "kit/sdks_overview": {
-        "title": "SDKs Overview",
-        "sidebar_label": "Overview"
+      "kit/sdk_javascript": {
+        "title": "JavaScript SDK Quick Start Guide",
+        "sidebar_label": "JavaScript SDK Quick Start Guide"
       },
       "kit/sdk_ruby": {
         "title": "Ruby SDK Quick Start Guide",
         "sidebar_label": "Ruby SDK Quick Start Guide"
       },
-      "kit/sdk_javascript": {
-        "title": "JavaScript SDK Quick Start Guide",
-        "sidebar_label": "JavaScript SDK Quick Start Guide"
+      "kit/sdks_overview": {
+        "title": "SDKs Overview",
+        "sidebar_label": "Overview"
       },
-      "kit/kit_index": {
-        "title": "kit/kit_index"
+      "kit/alpha": {
+        "title": "This is an alpha release",
+        "sidebar_label": "Alpha"
+      },
+      "kit/tokenize": {
+        "title": "Tokenize your application",
+        "sidebar_label": "Tokens"
+      },
+      "kit/simpletoken": {
+        "title": "OST | Simple Token",
+        "sidebar_label": "Simple Token"
       },
       "kyc/api": {
         "title": "OST KIT⍺ API Overview",
@@ -100,7 +101,8 @@
         "sidebar_label": "Token Details"
       },
       "kyc/kyc_index": {
-        "title": "kyc/kyc_index"
+        "title": "OST | Simple Token",
+        "sidebar_label": "Simple Token"
       }
     },
     "links": {
