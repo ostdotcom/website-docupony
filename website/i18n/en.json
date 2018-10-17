@@ -8,11 +8,15 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
+      "index": {
+        "title": "OST | Simple Token",
+        "sidebar_label": "Simple Token"
+      },
       "kit/changelog": {
         "title": "Changelog",
         "sidebar_label": "Changelog"
       },
-      "kit/kit_index": {
+      "kit/index": {
         "title": "OST | Simple Token",
         "sidebar_label": "Simple Token"
       },
@@ -44,13 +48,49 @@
         "title": "OST | Simple Token",
         "sidebar_label": "Simple Token"
       },
+      "kyc/api_users_create": {
+        "title": "OST KIT⍺ API | Create A User",
+        "sidebar_label": "/users/create"
+      },
+      "kyc/api_airdrop_drop": {
+        "title": "OST KIT⍺ | API Airdrop",
+        "sidebar_label": "/users/airdrop/drop"
+      },
+      "kyc/api_airdrop_status": {
+        "title": "OST KIT⍺ API | Airdrop Status",
+        "sidebar_label": "/users/airdrop/status"
+      },
+      "kyc/api_authentication": {
+        "title": "OST KIT⍺ API | Authenticate",
+        "sidebar_label": "authentication"
+      },
       "kyc/api": {
         "title": "OST KIT⍺ API Overview",
         "sidebar_label": "Overview"
       },
-      "kyc/api_users_create": {
-        "title": "OST KIT⍺ API | Create A User",
-        "sidebar_label": "/users/create"
+      "kyc/api_token": {
+        "title": "OST KIT⍺ API | Token Details",
+        "sidebar_label": "Token Details"
+      },
+      "kyc/api_transaction-types_create": {
+        "title": "OST KIT⍺ API | Create A Transaction Type",
+        "sidebar_label": "/transaction-types/create"
+      },
+      "kyc/api_transaction-types_edit": {
+        "title": "OST KIT⍺ API | Edit A Transaction Type",
+        "sidebar_label": "/transaction-types/edit"
+      },
+      "kyc/api_transaction-types_execute": {
+        "title": "OST KIT⍺ API | Execute A Transaction Type",
+        "sidebar_label": "/transaction-types/execute"
+      },
+      "kyc/api_transaction-types_list": {
+        "title": "OST KIT⍺ API | List All Transaction Types",
+        "sidebar_label": "/transaction-types/list"
+      },
+      "kyc/api_transaction-types_status": {
+        "title": "OST KIT⍺ API | Query Transaction Status",
+        "sidebar_label": "/transaction-types/status"
       },
       "kyc/api_users_edit": {
         "title": "OST KIT⍺ API | Edit A User",
@@ -64,43 +104,7 @@
         "title": "OST KIT⍺ API | Retrieve A User",
         "sidebar_label": "Retrieve A User"
       },
-      "kyc/api_airdrop_drop": {
-        "title": "OST KIT⍺ | API Airdrop",
-        "sidebar_label": "/users/airdrop/drop"
-      },
-      "kyc/api_airdrop_status": {
-        "title": "OST KIT⍺ API | Airdrop Status",
-        "sidebar_label": "/users/airdrop/status"
-      },
-      "kyc/api_transaction-types_create": {
-        "title": "OST KIT⍺ API | Create A Transaction Type",
-        "sidebar_label": "/transaction-types/create"
-      },
-      "kyc/api_transaction-types_edit": {
-        "title": "OST KIT⍺ API | Edit A Transaction Type",
-        "sidebar_label": "/transaction-types/edit"
-      },
-      "kyc/api_transaction-types_list": {
-        "title": "OST KIT⍺ API | List All Transaction Types",
-        "sidebar_label": "/transaction-types/list"
-      },
-      "kyc/api_transaction-types_execute": {
-        "title": "OST KIT⍺ API | Execute A Transaction Type",
-        "sidebar_label": "/transaction-types/execute"
-      },
-      "kyc/api_transaction-types_status": {
-        "title": "OST KIT⍺ API | Query Transaction Status",
-        "sidebar_label": "/transaction-types/status"
-      },
-      "kyc/api_authentication": {
-        "title": "OST KIT⍺ API | Authenticate",
-        "sidebar_label": "authentication"
-      },
-      "kyc/api_token": {
-        "title": "OST KIT⍺ API | Token Details",
-        "sidebar_label": "Token Details"
-      },
-      "kyc/kyc_index": {
+      "kyc/index": {
         "title": "OST | Simple Token",
         "sidebar_label": "Simple Token"
       }

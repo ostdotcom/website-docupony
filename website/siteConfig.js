@@ -40,8 +40,8 @@ const siteConfig = {
   // ],
 
   headerLinks: [
-    {doc: 'kit/kit_index', label: 'KIT'},
-    {doc: 'kyc/kyc_index', label: 'KYC'},
+    {doc: 'kit/index', label: 'KIT'},
+    {doc: 'kyc/index', label: 'KYC'},
     {href: 'http://ost.com', external: true,  label: 'BLOG'}
   ],
 

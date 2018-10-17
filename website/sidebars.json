@@ -1,7 +1,7 @@
 {
   "kit": {
     "Getting Started": [
-      "kit/kit_index",
+      "kit/index",
       "kit/tokenize",
       "kit/alpha",
       "kit/changelog"
@@ -16,7 +16,7 @@
     ]
   },
    "kyc" :{"REST API": [
-      "kyc/kyc_index",
+      "kyc/index",
       "kyc/api_authentication"],
     "USER" : [
       "kyc/api_users_create",
