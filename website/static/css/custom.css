@@ -110,6 +110,31 @@ nav.toc .toggleNav ul li a.navItemActive {
     color: $secondaryColor! important;
 }
 
+.content-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+ .content-block {
+        margin-right: 20px;
+        width: calc(33.33% - 20px);
+        display: grid;
+}
+
+.section-promo {
+    background-color: #f3f3f3;
+    margin-bottom: 30px;
+}
+img.center-block {
+    margin: 20px auto;
+    display: block;
+    max-width: 70%;
+    height: fit-content;
+}
+.text-center{
+    text-align: center;
+
+}
 
 
 
