@@ -4,69 +4,120 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "Developer Documentation",
-    "simpletoken": "OST | Simple Token",
-    "Simple Token": "Simple Token",
-    "tokenize": "Tokenize your application",
-    "Tokens": "Tokens",
-    "alpha": "This is an alpha release",
-    "Alpha": "Alpha",
-    "changelog": "Changelog",
-    "Changelog": "Changelog",
-    "kit": "OST KIT⍺ Overview",
-    "Overview": "Overview",
-    "api": "OST KIT⍺ API Overview",
-    "api_users_create": "OST KIT⍺ API | Create A User",
-    "Create A User": "Create A User",
-    "/users/create": "/users/create",
-    "api_users_edit": "OST KIT⍺ API | Edit A User",
-    "Update A User": "Update A User",
-    "/users/edit": "/users/edit",
-    "api_users_list": "OST KIT⍺ API | List Users",
-    "List Users": "List Users",
-    "/users/list": "/users/list",
-    "api_users_retrieve": "OST KIT⍺ API | Retrieve A User",
-    "Retrieve A User": "Retrieve A User",
-    "api_airdrop_drop": "OST KIT⍺ | API Airdrop",
-    "/users/airdrop/drop": "/users/airdrop/drop",
-    "api_airdrop_status": "OST KIT⍺ API | Airdrop Status",
-    "/users/airdrop/status": "/users/airdrop/status",
-    "api_transaction-types_create": "OST KIT⍺ API | Create A Transaction Type",
-    "/transaction-types/create": "/transaction-types/create",
-    "api_transaction-types_edit": "OST KIT⍺ API | Edit A Transaction Type",
-    "/transaction-types/edit": "/transaction-types/edit",
-    "api_transaction-types_list": "OST KIT⍺ API | List All Transaction Types",
-    "/transaction-types/list": "/transaction-types/list",
-    "api_transaction-types_execute": "OST KIT⍺ API | Execute A Transaction Type",
-    "/transaction-types/execute": "/transaction-types/execute",
-    "api_transaction-types_status": "OST KIT⍺ API | Query Transaction Status",
-    "/transaction-types/status": "/transaction-types/status",
-    "api_authentication": "OST KIT⍺ API | Authenticate",
-    "authentication": "authentication",
-    "sdks_overview": "SDKs Overview",
-    "sdk_ruby": "Ruby SDK Quick Start Guide",
-    "Ruby SDK Quick Start Guide": "Ruby SDK Quick Start Guide",
-    "sdk_javascript": "JavaScript SDK Quick Start Guide",
-    "JavaScript SDK Quick Start Guide": "JavaScript SDK Quick Start Guide",
-    "api_token": "OST KIT⍺ API | Token Details",
-    "Token Details": "Token Details",
-    "Reference": "Reference",
-    "API": "API",
-    "Getting Started": "Getting Started",
-    "OST KIT": "OST KIT",
-    "SDK": "SDK",
-    "REST API": "REST API",
-    "USER": "USER",
-    "AIRDROP": "AIRDROP",
-    "ACTION": "ACTION",
-    "TRANSACTION": "TRANSACTION",
-    "SDKs and GUIDES": "SDKs and GUIDES",
-    "USERS": "USERS",
-    "AIRDROPS": "AIRDROPS",
-    "ACTIONS": "ACTIONS",
-    "TRANSACTIONS": "TRANSACTIONS",
-    "WALLET": "WALLET",
-    "TRANSFERS": "TRANSFERS",
-    "TOKEN": "TOKEN"
+    "docs": {
+      "assets/kit_index": {
+        "title": "assets/kit_index"
+      },
+      "kit/simpletoken": {
+        "title": "OST | Simple Token",
+        "sidebar_label": "Simple Token"
+      },
+      "kit/tokenize": {
+        "title": "Tokenize your application",
+        "sidebar_label": "Tokens"
+      },
+      "kit/alpha": {
+        "title": "This is an alpha release",
+        "sidebar_label": "Alpha"
+      },
+      "kit/changelog": {
+        "title": "Changelog",
+        "sidebar_label": "Changelog"
+      },
+      "kit/kit": {
+        "title": "OST KIT⍺ Overview",
+        "sidebar_label": "Overview"
+      },
+      "kit/sdks_overview": {
+        "title": "SDKs Overview",
+        "sidebar_label": "Overview"
+      },
+      "kit/sdk_ruby": {
+        "title": "Ruby SDK Quick Start Guide",
+        "sidebar_label": "Ruby SDK Quick Start Guide"
+      },
+      "kit/sdk_javascript": {
+        "title": "JavaScript SDK Quick Start Guide",
+        "sidebar_label": "JavaScript SDK Quick Start Guide"
+      },
+      "kit/kit_index": {
+        "title": "kit/kit_index"
+      },
+      "kyc/api": {
+        "title": "OST KIT⍺ API Overview",
+        "sidebar_label": "Overview"
+      },
+      "kyc/api_users_create": {
+        "title": "OST KIT⍺ API | Create A User",
+        "sidebar_label": "/users/create"
+      },
+      "kyc/api_users_edit": {
+        "title": "OST KIT⍺ API | Edit A User",
+        "sidebar_label": "/users/edit"
+      },
+      "kyc/api_users_list": {
+        "title": "OST KIT⍺ API | List Users",
+        "sidebar_label": "/users/list"
+      },
+      "kyc/api_users_retrieve": {
+        "title": "OST KIT⍺ API | Retrieve A User",
+        "sidebar_label": "Retrieve A User"
+      },
+      "kyc/api_airdrop_drop": {
+        "title": "OST KIT⍺ | API Airdrop",
+        "sidebar_label": "/users/airdrop/drop"
+      },
+      "kyc/api_airdrop_status": {
+        "title": "OST KIT⍺ API | Airdrop Status",
+        "sidebar_label": "/users/airdrop/status"
+      },
+      "kyc/api_transaction-types_create": {
+        "title": "OST KIT⍺ API | Create A Transaction Type",
+        "sidebar_label": "/transaction-types/create"
+      },
+      "kyc/api_transaction-types_edit": {
+        "title": "OST KIT⍺ API | Edit A Transaction Type",
+        "sidebar_label": "/transaction-types/edit"
+      },
+      "kyc/api_transaction-types_list": {
+        "title": "OST KIT⍺ API | List All Transaction Types",
+        "sidebar_label": "/transaction-types/list"
+      },
+      "kyc/api_transaction-types_execute": {
+        "title": "OST KIT⍺ API | Execute A Transaction Type",
+        "sidebar_label": "/transaction-types/execute"
+      },
+      "kyc/api_transaction-types_status": {
+        "title": "OST KIT⍺ API | Query Transaction Status",
+        "sidebar_label": "/transaction-types/status"
+      },
+      "kyc/api_authentication": {
+        "title": "OST KIT⍺ API | Authenticate",
+        "sidebar_label": "authentication"
+      },
+      "kyc/api_token": {
+        "title": "OST KIT⍺ API | Token Details",
+        "sidebar_label": "Token Details"
+      },
+      "kyc/kyc_index": {
+        "title": "kyc/kyc_index"
+      }
+    },
+    "links": {
+      "KIT": "KIT",
+      "KYC": "KYC",
+      "BLOG": "BLOG"
+    },
+    "categories": {
+      "Getting Started": "Getting Started",
+      "OST KIT": "OST KIT",
+      "SDK": "SDK",
+      "REST API": "REST API",
+      "USER": "USER",
+      "AIRDROP": "AIRDROP",
+      "ACTION": "ACTION",
+      "TRANSACTION": "TRANSACTION"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",

@@ -1,32 +1,36 @@
 {
-  "docs": {
+  "kit": {
     "Getting Started": [
-    	"simpletoken",
-    	"tokenize",
-    	"alpha",
-      "changelog"],
+      "kit/kit_index",
+      "kit/tokenize",
+      "kit/alpha",
+      "kit/changelog"
+    ],
     "OST KIT": [
-    	"kit"],
+      "kit/kit"
+    ],
     "SDK": [
-      "sdks_overview",
-			"sdk_ruby",
-		  "sdk_javascript"],
-    "REST API": [
-    	"api",
-      "api_authentication"],
+      "kit/sdks_overview",
+      "kit/sdk_ruby",
+      "kit/sdk_javascript"
+    ]
+  },
+   "kyc" :{"REST API": [
+      "kyc/kyc_index",
+      "kyc/api_authentication"],
     "USER" : [
-    	"api_users_create",
-    	"api_users_edit",
-    	"api_users_list"],
+      "kyc/api_users_create",
+      "kyc/api_users_edit",
+      "kyc/api_users_list"],
     "AIRDROP" : [
-      "api_airdrop_drop",
-      "api_airdrop_status"],
+      "kyc/api_airdrop_drop",
+      "kyc/api_airdrop_status"],
     "ACTION" : [
-    	"api_transaction-types_create",
-    	"api_transaction-types_edit",
-    	"api_transaction-types_list"],
+      "kyc/api_transaction-types_create",
+      "kyc/api_transaction-types_edit",
+      "kyc/api_transaction-types_list"],
     "TRANSACTION" : [
-    	"api_transaction-types_execute",
-    	"api_transaction-types_status"]
+      "kyc/api_transaction-types_execute",
+      "kyc/api_transaction-types_status"]
   }
 }

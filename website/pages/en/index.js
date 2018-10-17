@@ -8,22 +8,23 @@
 const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary.js');
+
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
-const siteConfig = require(process.cwd() + '/siteConfig.js');
+const siteConfig = require(`${process.cwd()}/siteConfig.js`);
 
 function imgUrl(img) {
-  return siteConfig.baseUrl + 'img/' + img;
+  return `${siteConfig.baseUrl}img/${img}`;
 }
 
 function docUrl(doc, language) {
-  return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
+  return `${siteConfig.baseUrl}docs/${language ? `${language}/` : ''}${doc}`;
 }
 
 function pageUrl(page, language) {
-  return siteConfig.baseUrl + (language ? language + '/' : '') + page;
+  return siteConfig.baseUrl + (language ? `${language}/` : '') + page;
 }
 
 class Button extends React.Component {
@@ -52,11 +53,11 @@ const SplashContainer = props => (
 
 const Logo = props => (
   <div className="projectLogo">
-    <img src={props.img_src} />
+    <img src={props.img_src} alt="Project Logo" />
   </div>
 );
 
-const ProjectTitle = props => (
+const ProjectTitle = () => (
   <h2 className="projectTitle">
     {siteConfig.title}
     <small>{siteConfig.tagline}</small>
@@ -73,12 +74,17 @@ const PromoSection = props => (
 
 class HomeSplash extends React.Component {
   render() {
-    let language = this.props.language || '';
+    const language = this.props.language || '';
     return (
       <SplashContainer>
-        <Logo img_src={imgUrl('ost.png')} />
+        <Logo img_src={imgUrl('docusaurus.svg')} />
         <div className="inner">
           <ProjectTitle />
+          <PromoSection>
+            <Button href="#try">Try It Out</Button>
+            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
+            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+          </PromoSection>
         </div>
       </SplashContainer>
     );
@@ -94,65 +100,66 @@ const Block = props => (
   </Container>
 );
 
-// const Features = props => (
-//   <Block layout="fourColumn">
-//     {[
-//       {
-//         content: 'This is the content of my feature',
-//         image: imgUrl('ost.png'),
-//         imageAlign: 'top',
-//         title: 'Feature One',
-//       },
-//       {
-//         content: 'The content of my second feature',
-//         image: imgUrl('ost.png'),
-//         imageAlign: 'top',
-//         title: 'Feature Two',
-//       },
-//     ]}
-//   </Block>
-// );
+const Features = () => (
+  <Block layout="fourColumn">
+    {[
+      {
+        content: 'This is the content of my feature',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'top',
+        title: 'Feature One',
+      },
+      {
+        content: 'The content of my second feature',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'top',
+        title: 'Feature Two',
+      },
+    ]}
+  </Block>
+);
 
-// const FeatureCallout = props => (
-//   <div>
-//     // className="productShowcaseSection paddingBottom"
-//     // style={{textAlign: 'center'}}>
-//     // <h2>Feature Callout</h2>
-//     // <MarkdownBlock>These are features of this project</MarkdownBlock>
-//   </div>
-// );
+const FeatureCallout = () => (
+  <div
+    className="productShowcaseSection paddingBottom"
+    style={{textAlign: 'center'}}>
+    <h2>Feature Callout</h2>
+    <MarkdownBlock>These are features of this project</MarkdownBlock>
+  </div>
+);
 
-// const LearnHow = props => (
-//   <Block background="light">
-//     {[
-//       {
-//         content: 'Talk about learning how to use this',
-//         image: imgUrl('docusaurus.svg'),
-//         imageAlign: 'right',
-//         title: 'Learn How',
-//       },
-//     ]}
-//   </Block>
-// );
+const LearnHow = () => (
+  <Block background="light">
+    {[
+      {
+        content: 'Talk about learning how to use this',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'right',
+        title: 'Learn How',
+      },
+    ]}
+  </Block>
+);
 
-// const TryOut = props => (
-//   <Block id="try">
-//     {[
-//       {
-//         content: 'Talk about trying this out',
-//         image: imgUrl('docusaurus.svg'),
-//         imageAlign: 'left',
-//         title: 'Try it Out',
-//       },
-//     ]}
-//   </Block>
-// );
+const TryOut = () => (
+  <Block id="try">
+    {[
+      {
+        content: 'Talk about trying this out',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'left',
+        title: 'Try it Out',
+      },
+    ]}
+  </Block>
+);
 
-const Description = props => (
+const Description = () => (
   <Block background="dark">
     {[
       {
-        content: 'OST KIT alpha is the complete blockchain toolkit for business.',
+        content: 'This is another description of how this project is useful',
+        image: imgUrl('docusaurus.svg'),
         imageAlign: 'right',
         title: 'Description',
       },
@@ -160,45 +167,45 @@ const Description = props => (
   </Block>
 );
 
-// const Showcase = props => {
-//   if ((siteConfig.users || []).length === 0) {
-//     return null;
-//   }
-//   const showcase = siteConfig.users
-//     .filter(user => {
-//       return user.pinned;
-//     })
-//     .map((user, i) => {
-//       return (
-//         <a href={user.infoLink} key={i}>
-//           <img src={user.image} title={user.caption} />
-//         </a>
-//       );
-//     });
+const Showcase = props => {
+  if ((siteConfig.users || []).length === 0) {
+    return null;
+  }
 
-//   return (
-//     <div className="productShowcaseSection paddingBottom">
-//       <h2>{"Who's Using This?"}</h2>
-//       <p>This project is used by all these people</p>
-//       <div className="logos">{showcase}</div>
-//       <div className="more-users">
-//         <a className="button" href={pageUrl('users.html', props.language)}>
-//           More {siteConfig.title} Users
-//         </a>
-//       </div>
-//     </div>
-//   );
-// };
+  const showcase = siteConfig.users.filter(user => user.pinned).map(user => (
+    <a href={user.infoLink} key={user.infoLink}>
+      <img src={user.image} alt={user.caption} title={user.caption} />
+    </a>
+  ));
+
+  return (
+    <div className="productShowcaseSection paddingBottom">
+      <h2>Who is Using This?</h2>
+      <p>This project is used by all these people</p>
+      <div className="logos">{showcase}</div>
+      <div className="more-users">
+        <a className="button" href={pageUrl('users.html', props.language)}>
+          More {siteConfig.title} Users
+        </a>
+      </div>
+    </div>
+  );
+};
 
 class Index extends React.Component {
   render() {
-    let language = this.props.language || '';
+    const language = this.props.language || '';
 
     return (
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
+          <Features />
+          <FeatureCallout />
+          <LearnHow />
+          <TryOut />
           <Description />
+          <Showcase language={language} />
         </div>
       </div>
     );
