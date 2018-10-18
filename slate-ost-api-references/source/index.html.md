@@ -530,7 +530,7 @@ The Input parameters above list all the fields accepted as input. KYC clients sh
 }
 
 ```
-For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an array of returned **user-kyc** object if a valid user identifier was provided. A `user-kyc` object provides properties and status related information of the kyc details that a user had last submitted.
+For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an **user-kyc** object if a valid user identifier was provided. A `user-kyc` object provides properties and status related information of the kyc details that a user had last submitted.
  
 ## Retrieve User KYC Details
 > Example Request code :
@@ -625,9 +625,9 @@ A GET to `kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details
 ```
 For GET calls to `/users-kyc-detail/{{user_id}}` the data.result\_type is the string "user\_kyc\_detail" and the key in data is dependent on the setting done by the KYC client's in their admin management dashboard. 
 
-If the setting to send KYC data is `ON` then the key data.user\_kyc\_detail is an array of returned **user\_kyc\_detail** object if a valid user identifier was provided.
+If the setting to send KYC data is `ON` then the key data.user\_kyc\_detail is an **user\_kyc\_detail** object if a valid user identifier was provided.
 
-If the setting to send KYC data is `OFF` then the key data.user\_kyc is an array of returned objects with a few default fields if a valid user identifier was provided.
+If the setting to send KYC data is `OFF` then the key data.user\_kyc is an object with a few default fields if a valid user identifier was provided.
 
 
 
@@ -707,7 +707,7 @@ A user can submit their KYC details multiple times, a GET to `kyc.ost.com/api/v2
 |user_id | integer | yes | An unique identifier of the user whose KYC status information is to be retrieved|
 
 <u>**Returns**</u><br>
-For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an array of returned user-kyc object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
+For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an user-kyc object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
 
 > Example Response
 
