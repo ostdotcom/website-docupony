@@ -1002,7 +1002,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-put` will generate th
 <u>**Returns**</u><br>
 For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is the string "file\_upload\_put" and the key data.file\_upload_put is an array of returned `file_upload_put` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore. 
 
-For instance, the value in the key `data.file_upload_put.document_id.fields.key` in the response below will be used to set the value of input parameter `document_id_file_path` while adding or updating kyc details for a user using the endpoint `/users-kyc/{{user_id}}`
+For instance, the value in the key `data.file_upload_put.document_id.fields.key` in the response will be used to set the value of input parameter `document_id_file_path` while adding or updating kyc details for a user using the endpoint `/users-kyc/{{user_id}}`
 
 > Example Response code
 
@@ -1144,6 +1144,7 @@ For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is 
     }
 }
 ```
+
 For using the pre-signed URL to build an HTML Form it is recommended to use some helper to build the form tag and input tags that properly escapes values. To upload a file to S3 using a browser, you need to create a post form. The key `data.file\_upload\_post.document\_id.url` in the response is the value you should use as the form action.
 
 <aside class="success">
@@ -1151,6 +1152,10 @@ For using the pre-signed URL to build an HTML Form it is recommended to use some
  <br> ... <br>
 <\/form>
 </aside>
+
+Also the value in the key `data.file_upload_post.document_id.fields.key` in the response will be used to set the value of input parameter `document_id_file_path` while adding or updating kyc details for a user using the endpoint `/users-kyc/{{user_id}}`
+
+
 ## Validate Ethereum Address
 > Example Request code:
 
