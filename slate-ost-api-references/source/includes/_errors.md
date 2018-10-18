@@ -29,7 +29,8 @@ We return following HTTP status codes and corresponding short string codes for f
 | HTTP status code | String codes | Error messages | Cause and actionable steps |
 |------------------|--------------|---------------|--------------|
 | 400 | BAD_REQUEST  | At least one parameter is invalid or missing. See "err.error_data" array for more details. |  Check the API Documentation for the endpoint to see which values are required. To prevent validation errors, ensure that parameters are of the right type.| 
-| 401 | UNAUTHORIZED | We could not authenticate the request. Please review your credentials and authentication method |   Check <u>Authentication Section</u> to understand the API signature generation steps.
+| 401 | UNAUTHORIZED | We could not authenticate the request. Please review your credentials and authentication method. | Check <u>Authentication Section</u> to understand the API signature generation steps. |
+| 403 |FORBIDDEN | Access to the resource is not permitted for some reason besides authentication| Check for permission issues. |
 | 404 | NOT_FOUND    | The requested resource could not be located. | Please check the information provided. The server did not find anything that matches the request URI. Either the URI is incorrect or the resource is not available. For example, in-correct 'id' passed while retrieving a user. |
 | 422 | UNPROCESSABLE_ENTITY | An error occurred while processing the request.  |  The API cannot complete the requested action, might require interaction with processes outside of the current request OR is failing business validations thats not a 400 type of validation. Check the information provided or get in touch on [<u>help.ost.com</u>](https://help.ost.com)|
-| 429 | TOO\_MANY\_REQUESTS | Too many requests recieved.| !!!What could be Cause or actionable steps !!! | 
+| 429 | TOO\_MANY\_REQUESTS | Too many requests recieved.| Too many requests recieved. | 
