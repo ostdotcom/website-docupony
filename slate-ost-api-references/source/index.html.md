@@ -55,7 +55,7 @@ custom_params = {email: 'kyc@ost.com'}
 endpoint = "/api/v2/users"
 request_params = base_params(endpoint, custom_params)
 ```
-Every API request on https://kyc.ost.com/v2 requires hash-based message authentication. Every request has three mandatory parameters that must be included:
+Every API request on https://kyc.ost.com/api/v2 requires hash-based message authentication. Every request has three mandatory parameters that must be included:
 
 * api_key, the API key as provided post KYC client account activation.
 * request_timestamp, the current unix timestamp in seconds.
@@ -433,10 +433,10 @@ Passing an optional email will result in filtering of users with that email addr
 |country|string|The user's country of residence.|
 |nationality|string| The user's nationality.|
 |document\_id\_number| string| The users identification number from their identification document.|
-|document_id_file|string|S3 file url of the document id file. This link expires in 12 hours.|
-|selfie_file|string|S3 file url of the selfile file. This link expires in 12 hours.|
-|residence_proof_file|string| S3 file url of the residence proof file. This link expires in 12 hours.|
-|investor_proof_files|array\<string\>| An array of S3 file urls of investor proof files. These links expire in 12 hours|
+|document_id_file_path|string|File path of the document id file. This link expires in 12 hours.|
+|selfie_file_path|string|S3 File path of the selfile file. This link expires in 12 hours.|
+|residence_proof_file_path|string| File path of the residence proof file. This link expires in 12 hours.|
+|investor_proof_files_path|array\<string\>| An array of file paths of investor proof files. These links expire in 12 hours|
 |ethereum_address|string|Ethereum address from where the user intends to transfer Eth to company to buy tokens|
 |estimated_participation_amount|float|Estimated participation amount that user intends to invest during the token sale|
 |street_address|string|The user's current address|
@@ -475,7 +475,7 @@ def submit_kyc(user_id, custom_params={})
   custom_params = custom_params
   make_post_request(endpoint, custom_params)
 end
-submit_kyc(11420, {first_name:‘YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'})
+submit_kyc(11420, {first_name:'YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'})
 ```
 
 A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
@@ -490,16 +490,16 @@ A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc det
 |country|string| yes |The user's country of residence.|
 |nationality|string| yes |The user's nationality.|
 |document\_id\_number| string| yes| The users identification number from their identification document.|
-|document_id_file|string| yes | S3 file url of the document id file. This link expires in 12 hours.|
-|selfie_file|string| yes |S3 file url of the selfile file. This link expires in 12 hours.|
-|residence_proof_file|string|no | S3 file url of the residence proof file. This link expires in 12 hours.|
-|investor_proof_files|array\<string\>|no| An array of S3 file urls of investor proof files. These links expire in 12 hours|
+|document_id_file_path|string| yes | File path of the document id file. This link expires in 12 hours.|
+|selfie_file_path|string| yes |File path of the selfile file. This link expires in 12 hours.|
+|residence_proof_file_path|string|no | File path of the residence proof file. This link expires in 12 hours.|
+|investor_proof_files_path|array\<string\>|no| An array of file paths of investor proof files. These links expire in 12 hours|
 |ethereum_address|string|yes|Ethereum address from where the user intends to transfer Eth to company to buy tokens|
 |estimated_participation_amount|float|yes|Estimated participation amount that user intends to invest during the token sale|
 |street_address|string|yes|The user's current address|
 |city|string|yes|the user's current city of residence|
 |state|string|yes|The user's state|
-|postal\_code|yes|string|postal_code|
+|postal\_code|string|yes|postal_code|
 
 The Input parameters above list all the fields accepted as input. KYC clients should send only those fields which they have selected for their users' kyc.
 
@@ -765,7 +765,7 @@ end
 
 get_users_kyc_list()
 ```
-A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. A `user-kyc` object provides some properties and status related information of the kyc details that a user had last submitted. The `user-kyc` objects are returned sorted by the date when the kyc details were first submitted, with the most recent `user-kyc` object appearing first.
+A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. A `user-kyc` object provides some properties and status related information of the kyc details that a user had last submitted. The `user-kyc` objects are returned sorted by the time when the latest kyc details were submitted, with the most recent `user-kyc` object appearing first.
 
 <u>**Input Parameters**</u>
 
@@ -1000,7 +1000,9 @@ A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-put` will generate th
 |files | object | yes | A 'files' object. Where data.unique identifier is a key and its content type is a value. <br> Supported content types: <br> 'image/jpeg',<br> 'image/png', <br>'image/jpg',<br>'application/pdf '|
 
 <u>**Returns**</u><br>
-For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is the string "file\_upload\_put" and the key data.file\_upload_put is an array of returned `file_upload_put` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
+For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is the string "file\_upload\_put" and the key data.file\_upload_put is an array of returned `file_upload_put` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore. 
+
+For instance, the value in the key `data.file_upload_put.document_id.fields.key` in the response below will be used to set the value of input parameter `document_id_file_path` while adding or updating kyc details for a user using the endpoint `/users-kyc/{{user_id}}`
 
 > Example Response code
 
