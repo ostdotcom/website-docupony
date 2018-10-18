@@ -443,7 +443,7 @@ Passing an optional email will result in filtering of users with that email addr
 |city|string|the user's current city of residence|
 |state|string|The user's state|
 |postal\_code|string|postal_code|
-|submitted_at|timestamp|timestamp at which kyc was submitted. (epoc time in seconds)|
+|created_at|timestamp|timestamp at which kyc was submitted. (epoc time in seconds)|
 
 
 
@@ -475,7 +475,7 @@ def submit_kyc(user_id, custom_params={})
   custom_params = custom_params
   make_post_request(endpoint, custom_params)
 end
-submit_kyc(11420, {first_name:‘YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'})
+submit_kyc(11420, {first_name:‘YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'})
 ```
 
 A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
@@ -657,7 +657,7 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an array
 |user_id|integer| An unique identifier of the user that is returned upon user creation|
 |kyc_status|string|A kyc status will be `pending` until it has been taken up for processing. If the KYC goes through successfully the status will change to `approved` otherwise `denied` |
 |admin_status|string | Admin status is helpful for actors doing the KYC checks. `unprocessed` admin status indicates that the kyc entry needs to be taken care of. If any one of the admins approves a KYC entry the status changes to `qualified` and in case of a disapproval the status changes to `denied` |
-|aml_status|string |AML status of KYC will be `unprocessed` until it has been taken up for processing. It changes to `pending` while the KYC is being processed. As a result of processing it is either `cleared` or `failed`. If a KYC is cleared via an AML check the admin actor does a manual check and further approves the submission and the status changes to `approved` or rejects the submission which changes the status to `rejected` |
+|aml_status|string |AML status of KYC will be `unprocessed` until it has been taken up for processing. It changes to `pending` while the KYC is being processed. As a result of processing it is either `cleared` or `failed`. If a KYC is cleared via an AML check the admin actor does a manual check and further approves the submission and the status changes to `approved` or rejects the submission which changes the status to `rejected`. `failed` status indicates there was an error in aml processing. |
 |whitelist_status| string | Whitelisting status will be `unprocessed` until an approved KYC has been taken up for whitelisting. It changes to `started` while the whitelisting is in progress. Based on the result of whitelisting process the status is `done` if it finishes successfully or the status is `failed` if a technical issue occurs during the process of whitelisting. This is very rare but you will have to contact the OST KYC support team in such situation. |
 |admin\_action\_types |array | An array that shows the different kyc issue emails that are sent to the user. The triggers to send emails are `data_mismatch` , `document_issue ` or an email with custom instructions with action type `other_issue` ] |
 |submission_count | integer | A count of number of time KYC is submitted by a user| 
@@ -940,9 +940,9 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
    }
 }
 ```
-For api calls to `/users-kyc/` the data.result_type is the string "user_kyc" and the key data.user\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
+For api calls to `/users-kyc/` the data.result_type is the string "users_kyc" and the key data.user\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
 
-Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
+Each entry in the array is a separate user\_kyc object. If no more user are available, the resulting array will be empty without an error thrown.
 
 
 # Utilities
@@ -1000,7 +1000,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-put` will generate th
 |files | object | yes | A 'files' object. Where data.unique identifier is a key and its content type is a value. <br> Supported content types: <br> 'image/jpeg',<br> 'image/png', <br>'image/jpg',<br>'application/pdf '|
 
 <u>**Returns**</u><br>
-For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is the string "file\_upload\_put" and the key data.file\_upload\_put is an array of returned `file_upload_put` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
+For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is the string "file\_upload\_put" and the key data.file\_upload_put is an array of returned `file_upload_put` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
 
 > Example Response code
 
@@ -1114,7 +1114,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-post` will generate t
 
 
 <u>**Returns**</u><br>
-For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is the string "file\_upload\_post" and the key data.file\_upload\_post is an array of returned `file_upload_post` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
+For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is the string "file\_upload\_post" and the key data.file_upload\_post is an array of returned `file_upload_post` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
 
 > Example Response code
 
