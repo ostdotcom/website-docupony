@@ -139,7 +139,7 @@ create_user({email: 'kyc@ost.com'})
 
 ```
 
-A POST to `kyc.ost.com/api/v2/users` creates a new user object for the user in OST KYC database. Only user's signup information is sent via this endpoint. For sending user's KYC details a POST request to a different endpoint `/users-kyc/{{user_id}}` has to be sent.
+A POST to `https://kyc.ost.com/api/v2/users` creates a new user object for the user in OST KYC database. Only user's signup information is sent via this endpoint. For sending user's KYC details a POST request to a different endpoint `/users-kyc/{{user_id}}` has to be sent.
 
 <u>**Input Parameters**</u>
 
@@ -201,7 +201,7 @@ def get_user(user_id)
 end
 get_user(11428)
 ```
-A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the information of an existing user. You need to supply the identifier that was returned upon user creation.
+A GET to `https://kyc.ost.com/api/v2/users/{id}` retrieves the information of an existing user. You need to supply the identifier that was returned upon user creation.
 
 <u>**Input Parameters**</u>
 
@@ -273,7 +273,7 @@ end
 get_user_list({page_number: 1, order: 'desc', filters: {email: "kycuser"}, limit: 10})
 
 ```
-A GET to `kyc.ost.com/api/v2/users` returns a list of all users who have signed up. This doesn't imply that all these users have submitted their required KYC details. The users are returned sorted by creation date, with the most recent users appearing first. 
+A GET to `https://kyc.ost.com/api/v2/users` returns a list of all users who have signed up. This doesn't imply that all these users have submitted their required KYC details. The users are returned sorted by creation date, with the most recent users appearing first. 
 
 <u>**Input Parameters**</u>
 
@@ -479,7 +479,7 @@ end
 submit_kyc(11420, {first_name:'YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'})
 ```
 
-A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
+A POST to `https://kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
 
 <u>**Input Parameters**</u>
 
@@ -564,7 +564,7 @@ end
 get_user_kyc_detail(11420)
 ```
 
-A GET to `kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details of KYC data an existing user has submitted. You need to supply the user identifier that was returned while creating the user. 
+A GET to `https://kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details of KYC data an existing user has submitted. You need to supply the user identifier that was returned while creating the user. 
 
 <aside class="warning">The kyc data submitted by users is included in the response only based on KYC client's setting in the admin management dashboard. This adds an additional layer of security towards user's data protection.</aside>
 
@@ -699,7 +699,7 @@ end
 get_user_kyc(11430)
 ```
 
-A user can submit their KYC details multiple times, a GET to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves some properties and status related information of the last KYC that a user had submitted. This endpoint however doesn't returns `KYC data` submitted by users. You need to supply the identifier that was returned upon user creation for fetching the information.
+A user can submit their KYC details multiple times, a GET to `https://kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves some properties and status related information of the last KYC that a user had submitted. This endpoint however doesn't returns `KYC data` submitted by users. You need to supply the identifier that was returned upon user creation for fetching the information.
 
 <u>**Input Parameters**</u>
 
@@ -766,7 +766,7 @@ end
 
 get_users_kyc_list()
 ```
-A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. A `user-kyc` object provides some properties and status related information of the kyc details that a user had last submitted. The `user-kyc` objects are returned sorted by the time when the latest kyc details were submitted, with the most recent `user-kyc` object appearing first.
+A GET to `https://kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. A `user-kyc` object provides some properties and status related information of the kyc details that a user had last submitted. The `user-kyc` objects are returned sorted by the time when the latest kyc details were submitted, with the most recent `user-kyc` object appearing first.
 
 <u>**Input Parameters**</u>
 
@@ -992,7 +992,7 @@ get_presigned_url_put(params)
 
 While filling in KYC details there are identification and other documents that a user submits which are required to be uploaded for verification. The upload functionality is achieved by generating a pre-signed S3 URL. These URLs are used to get temporary access to an otherwise private OST KYC S3 bucket and can be used for putting user documents in that bucket. 
 
-A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-put` will generate the pre-signed URL for uploading the documents which we return in the response. We also show example code for consuming the response this endpoint sends.
+A GET to `https://kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-put` will generate the pre-signed URL for uploading the documents which we return in the response. We also show example code for consuming the response this endpoint sends.
 
 <u>**Input Parameters**</u>
 
@@ -1107,7 +1107,7 @@ get_presigned_url_post(params)
 
 While filling in KYC details there are identification and other documents that a user submits which are required to be uploaded for verification. The upload functionality is achieved by generating a pre-signed S3 URL. These URLs are used to get temporary access to an otherwise private OST KYC S3 bucket and can be used for putting user documents in that bucket. 
 
-A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-post` will generate the pre-signed URL for uploading the documents which we return in the response. It allows to upload documents to S3 directly from browser using an HTML form. 
+A GET to `https://kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-post` will generate the pre-signed URL for uploading the documents which we return in the response. It allows to upload documents to S3 directly from browser using an HTML form. 
 
 <u>**Input Parameters**</u>
 
@@ -1188,7 +1188,7 @@ def verify_ethereum_address(custom_params)
 end
 verify_ethereum_address(ethereum_address: "0x81b7e08f65bdf5648606c89998a9cc8164397647")
 ```
-A GET to `kyc.ost.com/api/v2/ethereum-address-validation` checks if Ethereum Address format is correct.
+A GET to `https://kyc.ost.com/api/v2/ethereum-address-validation` checks if Ethereum Address format is correct.
 
 <u>**Input Parameters**</u>
 
