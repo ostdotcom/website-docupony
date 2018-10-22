@@ -1,6 +1,6 @@
 # Errors
 
-We use HTTP response status codes to indicate the success or failure of an API request. OST KIT⍺ returns `4xx` or `5xx` status codes.
+We use HTTP response status codes to indicate the success or failure of an API request. OST KYC returns `4xx` or `5xx` status codes.
 
 > In reponse to failed requests an error object is included in the response body that includes additional error details in this format : 
 

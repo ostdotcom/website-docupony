@@ -55,33 +55,34 @@ custom_params = {email: 'kyc@ost.com'}
 endpoint = "/api/v2/users"
 request_params = base_params(endpoint, custom_params)
 ```
-Every API request on https://kyc.ost.com/api/v2 requires hash-based message authentication. Every request has three mandatory parameters that must be included:
+Every API request on `https://kyc.ost.com/api/v2` requires hash-based message authentication. Every request has three mandatory parameters that must be included:
 
-* api_key, the API key as provided post KYC client account activation.
-* request_timestamp, the current unix timestamp in seconds.
-* signature, the signature as the sha256 digest of the API secret and the correctly formatted query string as described below.
+* api_key :  the API key as provided post KYC client account activation.
+* request_timestamp : the current unix timestamp in seconds.
+* signature : the signature as the sha256 digest of the API secret and the correctly formatted query string as described below.
 
 <aside class="warning">The request timestamp will be valid for up to ten minutes. Your computer clock must therefore be synchronised for authentication to succeed.</aside>
 
-You can implement the signature generation by computing the HMAC sha256digest of the API secret and the query string. The resulting signature must be then included in the request.
+You can implement the signature generation by computing the HMAC sha256 digest of the API secret and the query string. The resulting signature must be then included in the request.
 
 ### 1. Creating the string to sign.
-To generate the signature you must first form the string to sign. This string to sign can be formed by concatenation of the following elements
+To generate the signature you must first form the string to sign. This string to sign can be formed by concatenation of the following elements:
+
 * API endpoint
-* api_key, the API key as provided from OST KIT⍺
-* request_timestamp, the current unix timestamp in seconds.
+* api_key
+* request_timestamp
 * API parameters.
 
-<aside class="warning">Note all the inputs must be alphabetically sorted on the keys.</aside>
+<aside class="warning">Note all the inputs must be alphabetically sorted on the keys. (asec)</aside>
 
 ### 2. Generating a signature.
-The signature is the sha256 digest of the shared API secret and the correctly formatted query string
+The signature is the sha256 digest of the shared API secret and the correctly formatted query string.
 
 generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, api-secret)
 
 <aside class="warning">Please ensure that the final URL is encoded while making the API request.</aside>
 
-For a Post request,the parameters are sent in the request body with default application/x-www-form-urlencoded content-type so the request body uses the same format as the query string.
+For a Post request, the parameters are sent in the request body with default content-type `application/x-www-form-urlencoded`  so the request body uses the same format as the query string.
  
 
 # Users
@@ -102,10 +103,10 @@ For a Post request,the parameters are sent in the request body with default appl
 ```
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
-|id|bigint| unique identifier for the user |
+|id|bigint| Unique identifier for the user |
 |email| string | Email Id of the user|
 |properties|array<strings>|Properties of the user:<br> "kyc_submitted",<br> "doptin_mail_sent",<br> "doptin_done".<br> Remains empty when the user is created. |
-|created_at| timestamp |timestamp at which user was created. (epoc time in seconds)|
+|created_at| timestamp |Timestamp at which user was created. (epoc time in seconds)|
 
 ## Add a User
 > Example Request code:
@@ -144,7 +145,7 @@ A POST to `kyc.ost.com/api/v2/users` creates a new user object for the user in O
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|email | string | yes | A <u>unique</u> email id of the user whose KYC entry has to be made|
+|email | string | yes | A unique email id of the user whose KYC entry has to be made|
 
 <aside class="warning"> This API cannot be used by OST KYC clients who are using OST KYC Frontend solution.</aside>
 
@@ -206,7 +207,7 @@ A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the information of an existin
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|id | bigint | yes | An unique identifier of the user whose information is to be retrieved|
+|id | bigint | yes | Unique identifier of the user whose information is to be retrieved|
 
 <u>**Returns**</u><br>
 For api calls to `/users` the data.result\_type is the string "user" and the key data.user is a user object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
@@ -389,7 +390,7 @@ A GET to `kyc.ost.com/api/v2/users` returns a list of all users who have signed 
 }
 ```
 
-For api calls to `/users` the data.result\_type is the string "users" and the key data.users is an array of the returned user objects (10 users per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
+For api calls to `/users` the data.result\_type is the string "users" and the key data.users is an array of the returned user objects (10 users per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page or is empty for the last page of the list.
 
 Passing an optional email will result in filtering of users with that email address. Each entry in the array is a separate user object. If no more user are available, the resulting array will be empty without an error thrown.
 
@@ -426,7 +427,7 @@ Passing an optional email will result in filtering of users with that email addr
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
 |||<img width=1000/>|
-|id|bigint| unique identifier of the last submitted kyc of a user. |
+|id|bigint| Unique identifier of the last submitted kyc of a user. |
 |first_name|string| The user's first name. |
 |last_name| string | The user's last name.|
 |birthdate| string | The user's birthdate in dd/mm/yyyy format.|
@@ -440,10 +441,10 @@ Passing an optional email will result in filtering of users with that email addr
 |ethereum_address|string|Ethereum address from where the user intends to transfer Eth to company to buy tokens|
 |estimated_participation_amount|float|Estimated participation amount that user intends to invest during the token sale|
 |street_address|string|The user's current address|
-|city|string|the user's current city of residence|
+|city|string|The user's current city of residence|
 |state|string|The user's state|
-|postal\_code|string|postal_code|
-|created_at|timestamp|timestamp at which kyc was submitted. (epoc time in seconds)|
+|postal\_code|string|Postal code|
+|created_at|timestamp|Timestamp at which kyc was submitted. (epoc time in seconds)|
 
 
 
@@ -497,9 +498,9 @@ A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc det
 |ethereum_address|string|yes|Ethereum address from where the user intends to transfer Eth to company to buy tokens|
 |estimated_participation_amount|float|yes|Estimated participation amount that user intends to invest during the token sale|
 |street_address|string|yes|The user's current address|
-|city|string|yes|the user's current city of residence|
+|city|string|yes|The user's current city of residence|
 |state|string|yes|The user's state|
-|postal\_code|string|yes|postal_code|
+|postal\_code|string|yes|Postal_code|
 
 The Input parameters above list all the fields accepted as input. KYC clients should send only those fields which they have selected for their users' kyc.
 
@@ -571,7 +572,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|user_id | bigint | yes | A <u>unique</u> identifier of the user that is returned upon user creation.|
+|user_id | bigint | yes | Unique identifier of the user that is returned upon user creation.|
 
 
 <u>**Returns**</u><br>
@@ -652,9 +653,9 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an objec
 ```
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
-|id|bigint| unique identifier of the last submitted kyc of a user |
+|id|bigint| Unique identifier of the last submitted kyc of a user |
 |user\_kyc\_detail\_id| bigint | A unique identifier of the `user kyc details` object that is returned upon submitting  a user's kyc details|
-|user_id|bigint| An unique identifier of the user that is returned upon user creation|
+|user_id|bigint| Unique identifier of the user that is returned upon user creation|
 |kyc_status|string|A kyc status will be `pending` until it has been taken up for processing. If the KYC goes through successfully the status will change to `approved` otherwise `denied` |
 |admin_status|string | Admin status is helpful for actors doing the KYC checks. `unprocessed` admin status indicates that the kyc entry needs to be taken care of. If any one of the admins approves a KYC entry the status changes to `qualified` and in case of a disapproval the status changes to `denied` |
 |aml_status|string |AML status of KYC will be `unprocessed` until it has been taken up for processing. It changes to `pending` while the KYC is being processed. As a result of processing it is either `cleared` or `rejected`. If a KYC is cleared via an AML check the admin actor does a manual check and further approves the submission and the status changes to `approved` or rejects the submission which changes the status to `rejected`. `failed` status indicates there was an error in aml processing. |
@@ -662,7 +663,7 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an objec
 |admin\_action\_types |array | An array that shows the different kyc issue emails that are sent to the user. The triggers to send emails are `data_mismatch` , `document_issue ` or an email with custom instructions with action type `other_issue` ] |
 |submission_count | integer | A count of number of time KYC is submitted by a user| 
 |last\_acted\_by | string | Name of the last admin actor who took an action on the KYC. `nil` value indicates the last action was by the ost kyc system or no action has been taken. |
-|created_at | timestamp| timestamp at which user KYC was created. (epoc time in seconds)| 
+|created_at | timestamp| Timestamp at which user KYC was created. (epoc time in seconds)| 
 
 
 ## Retrieve KYC Status 
@@ -704,7 +705,7 @@ A user can submit their KYC details multiple times, a GET to `kyc.ost.com/api/v2
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|user_id | bigint | yes | An unique identifier of the user whose KYC status information is to be retrieved|
+|user_id | bigint | yes | Unique identifier of the user whose KYC status information is to be retrieved|
 
 <u>**Returns**</u><br>
 For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an user-kyc object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
@@ -781,10 +782,10 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|admin_status| string | no | A filter on `user-kyc` admin status :<br> unprocessed, <br> qualified, <br> denied|
-|aml_status|string|no| A filter on `user-kyc` aml\_status :<br> cleared:approved, <br> unprocessed, <br> pending, <br> cleared, <br> approved, <br> rejected, <br> failed.|
-|whitelist_status|string| no | A filter on `user-kyc` whitelist\_status:<br>unprocessed, <br> started, <br> done, <br> failed.| 
-|admin\_action\_types| string | no | A filter on `user-kyc` admin\_action_types:<br> no\_admin\_action, <br> data\_mismatch, <br> document\_issue, <br> other\_issue|
+|admin_status| string | no | A filter on `user-kyc` "admin status" :<br> "unprocessed", <br> "qualified", <br> "denied"|
+|aml_status|string|no| A filter on `user-kyc` aml\_status :<br> "cleared:approved", <br> "unprocessed", <br> "pending", <br> "cleared", <br> "approved", <br> "rejected", <br> "failed".|
+|whitelist_status|string| no | A filter on `user-kyc` whitelist\_status:<br>"unprocessed", <br> "started", <br> "done", <br> "failed".| 
+|admin\_action\_types| string | no | A filter on `user-kyc` admin\_action_types:<br> "no\_admin\_action", <br> "data\_mismatch", <br> "document\_issue", <br> "other\_issue"|
 
 <br>
 <u>**Returns**</u><br>
@@ -940,7 +941,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
    }
 }
 ```
-For api calls to `/users-kyc/` the data.result_type is the string "users_kyc" and the key data.users\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
+For api calls to `/users-kyc/` the data.result_type is the string "users_kyc" and the key data.users\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page or is empty for the last page of the list.
 
 Each entry in the array is a separate user\_kyc object. If no more `user-kyc` objects are available, the resulting array will be empty without an error thrown.
 
@@ -1193,7 +1194,7 @@ A GET to `kyc.ost.com/api/v2/ethereum-address-validation` checks if Ethereum Add
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|ethereum_address | string | yes | ethereum address to be validated.|
+|ethereum_address | string | yes | Ethereum address to be validated.|
 
 <u>**Returns**</u><br>
 For api calls to `/ethereum-address-validation` a success `true` is sent if the ethereum address is in correct format. And a `false` in case the format of the ethereum address is in correct.
