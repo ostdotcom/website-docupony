@@ -61,7 +61,7 @@ Every API request on `https://kyc.ost.com/api/v2` requires hash-based message au
 * request_timestamp : the current unix timestamp in seconds.
 * signature : the signature as the sha256 digest of the API secret and the correctly formatted query string as described below.
 
-<aside class="warning">The request timestamp will be valid for up to ten minutes. Your computer clock must therefore be synchronised for authentication to succeed.</aside>
+<aside class="warning">The request timestamp will be valid for up to ten seconds. Your computer clock must therefore be synchronised for authentication to succeed.</aside>
 
 You can implement the signature generation by computing the HMAC sha256 digest of the API secret and the query string. The resulting signature must be then included in the request.
 
