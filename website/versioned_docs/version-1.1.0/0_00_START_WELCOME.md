@@ -35,6 +35,8 @@ To get to the documentation of API version 1, see [<u>OST API v1 Documentation</
 ### API v0
 To get to the documentation of API version 0, see [<u>OST API v0 Documentation</u>](https://dev.ost.com/docs/0.1.0/simpletoken.html)
 
+### SLATE 
+[<u>API Reference SLATE</u>](https://dev.stagingost.com/docs/build/index.html)
 
 >_last updated 2nd July 2018_; for support see [<u>help.ost.com</u>](https://help.ost.com)
 >
