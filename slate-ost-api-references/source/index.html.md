@@ -209,7 +209,7 @@ A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the information of an existin
 |id | bigint | yes | An unique identifier of the user whose information is to be retrieved|
 
 <u>**Returns**</u><br>
-For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of returned user object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
+For api calls to `/users` the data.result\_type is the string "user" and the key data.user is a user object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
 
 > Example Response
 
@@ -1000,7 +1000,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-put` will generate th
 |files | object | yes | A 'files' object. Where data.unique identifier is a key and its content type is a value. <br> Supported content types: <br> 'image/jpeg',<br> 'image/png', <br>'image/jpg',<br>'application/pdf '|
 
 <u>**Returns**</u><br>
-For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is the string "file\_upload\_put" and the key data.file\_upload_put is an array of returned `file_upload_put` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore. 
+For api calls to `/users-kyc/pre-signed-urls/for-put` the data.result\_type is the string "file\_upload\_put" and the key data.file\_upload_put is a `file_upload_put` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore. 
 
 For instance, the value in the key `data.file_upload_put.document_id.fields.key` in the response will be used to set the value of input parameter `document_id_file_path` while adding or updating kyc details for a user using the endpoint `/users-kyc/{{user_id}}`
 
@@ -1116,7 +1116,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc/pre-signed-urls/for-post` will generate t
 
 
 <u>**Returns**</u><br>
-For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is the string "file\_upload\_post" and the key data.file_upload\_post is an array of returned `file_upload_post` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
+For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is the string "file\_upload\_post" and the key data.file_upload\_post is a `file_upload_post` object. The pre-signed URLs will be sent against the unique key. The pre-signed URLs are generated with an expiration time of 15 minutes after which they can not used anymore.
 
 > Example Response code
 
