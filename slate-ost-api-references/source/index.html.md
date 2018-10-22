@@ -206,7 +206,7 @@ A GET to `kyc.ost.com/api/v2/users/{id}` retrieves the information of an existin
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|id | integer | yes | An unique identifier of the user whose information is to be retrieved|
+|id | bigint | yes | An unique identifier of the user whose information is to be retrieved|
 
 <u>**Returns**</u><br>
 For api calls to `/users` the data.result\_type is the string "user" and the key data.user is an array of returned user object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
@@ -433,10 +433,10 @@ Passing an optional email will result in filtering of users with that email addr
 |country|string|The user's country of residence.|
 |nationality|string| The user's nationality.|
 |document\_id\_number| string| The users identification number from their identification document.|
-|document_id_file_path|string|File path of the document id file. This link expires in 12 hours.|
-|selfie_file_path|string|S3 File path of the selfile file. This link expires in 12 hours.|
-|residence_proof_file_path|string| File path of the residence proof file. This link expires in 12 hours.|
-|investor_proof_files_path|array\<string\>| An array of file paths of investor proof files. These links expire in 12 hours|
+|document_id_file|string|S3 file url of the document id file. This link expires in 12 hours.|
+|selfie_file|string|S3 file url of the selfile file. This link expires in 12 hours.|
+|residence_proof_file|string| S3 file url of the residence proof file. This link expires in 12 hours.|
+|investor_proof_files|array\<string\>| An array of S3 file urls of investor proof files. These links expire in 12 hours|
 |ethereum_address|string|Ethereum address from where the user intends to transfer Eth to company to buy tokens|
 |estimated_participation_amount|float|Estimated participation amount that user intends to invest during the token sale|
 |street_address|string|The user's current address|
@@ -490,10 +490,10 @@ A POST to `kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc det
 |country|string| yes |The user's country of residence.|
 |nationality|string| yes |The user's nationality.|
 |document\_id\_number| string| yes| The users identification number from their identification document.|
-|document_id_file_path|string| yes | File path of the document id file. This link expires in 12 hours.|
-|selfie_file_path|string| yes |File path of the selfile file. This link expires in 12 hours.|
-|residence_proof_file_path|string|no | File path of the residence proof file. This link expires in 12 hours.|
-|investor_proof_files_path|array\<string\>|no| An array of file paths of investor proof files. These links expire in 12 hours|
+|document_id_file_path|string| yes | File path of the document id file. The value for this parameter is fetched from the response object of Get Pre-Signed URL endpoint.|
+|selfie_file_path|string| yes |File path of the selfile file. The value for this parameter is fetched from the response object of Get Pre-Signed URL endpoint.|
+|residence_proof_file_path|string|no | File path of the residence proof file. The value for this parameter is fetched from the response object of Get Pre-Signed URL endpoint.|
+|investor_proof_files_path|array\<string\>|no| An array of file paths of investor proof files. The value for this parameter is fetched from the response object of Get Pre-Signed URL endpoint.|
 |ethereum_address|string|yes|Ethereum address from where the user intends to transfer Eth to company to buy tokens|
 |estimated_participation_amount|float|yes|Estimated participation amount that user intends to invest during the token sale|
 |street_address|string|yes|The user's current address|
@@ -571,7 +571,7 @@ A GET to `kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|user_id | integer | yes | A <u>unique</u> identifier of the user that is returned upon user creation.|
+|user_id | bigint | yes | A <u>unique</u> identifier of the user that is returned upon user creation.|
 
 
 <u>**Returns**</u><br>
@@ -653,11 +653,11 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an objec
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
 |id|bigint| unique identifier of the last submitted kyc of a user |
-|user\_kyc\_detail\_id| integer | A unique identifier of the `user kyc details` object that is returned upon submitting  a user's kyc details|
-|user_id|integer| An unique identifier of the user that is returned upon user creation|
+|user\_kyc\_detail\_id| bigint | A unique identifier of the `user kyc details` object that is returned upon submitting  a user's kyc details|
+|user_id|bigint| An unique identifier of the user that is returned upon user creation|
 |kyc_status|string|A kyc status will be `pending` until it has been taken up for processing. If the KYC goes through successfully the status will change to `approved` otherwise `denied` |
 |admin_status|string | Admin status is helpful for actors doing the KYC checks. `unprocessed` admin status indicates that the kyc entry needs to be taken care of. If any one of the admins approves a KYC entry the status changes to `qualified` and in case of a disapproval the status changes to `denied` |
-|aml_status|string |AML status of KYC will be `unprocessed` until it has been taken up for processing. It changes to `pending` while the KYC is being processed. As a result of processing it is either `cleared` or `failed`. If a KYC is cleared via an AML check the admin actor does a manual check and further approves the submission and the status changes to `approved` or rejects the submission which changes the status to `rejected`. `failed` status indicates there was an error in aml processing. |
+|aml_status|string |AML status of KYC will be `unprocessed` until it has been taken up for processing. It changes to `pending` while the KYC is being processed. As a result of processing it is either `cleared` or `rejected`. If a KYC is cleared via an AML check the admin actor does a manual check and further approves the submission and the status changes to `approved` or rejects the submission which changes the status to `rejected`. `failed` status indicates there was an error in aml processing. |
 |whitelist_status| string | Whitelisting status will be `unprocessed` until an approved KYC has been taken up for whitelisting. It changes to `started` while the whitelisting is in progress. Based on the result of whitelisting process the status is `done` if it finishes successfully or the status is `failed` if a technical issue occurs during the process of whitelisting. This is very rare but you will have to contact the OST KYC support team in such situation. |
 |admin\_action\_types |array | An array that shows the different kyc issue emails that are sent to the user. The triggers to send emails are `data_mismatch` , `document_issue ` or an email with custom instructions with action type `other_issue` ] |
 |submission_count | integer | A count of number of time KYC is submitted by a user| 
@@ -704,7 +704,7 @@ A user can submit their KYC details multiple times, a GET to `kyc.ost.com/api/v2
 
 |Parameter| Type | Mandatory | Description | 
 ----------|------|-----------|--------------
-|user_id | integer | yes | An unique identifier of the user whose KYC status information is to be retrieved|
+|user_id | bigint | yes | An unique identifier of the user whose KYC status information is to be retrieved|
 
 <u>**Returns**</u><br>
 For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an user-kyc object if a valid identifier was provided. When the requesting ID of a user is not found a 404, resource could not be located error will be returned.
@@ -940,9 +940,9 @@ A GET to `kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. 
    }
 }
 ```
-For api calls to `/users-kyc/` the data.result_type is the string "users_kyc" and the key data.user\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
+For api calls to `/users-kyc/` the data.result_type is the string "users_kyc" and the key data.users\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page; or is empty for the last page of the list.
 
-Each entry in the array is a separate user\_kyc object. If no more user are available, the resulting array will be empty without an error thrown.
+Each entry in the array is a separate user\_kyc object. If no more `user-kyc` objects are available, the resulting array will be empty without an error thrown.
 
 
 # Utilities
@@ -1145,7 +1145,7 @@ For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is 
 }
 ```
 
-For using the pre-signed URL to build an HTML Form it is recommended to use some helper to build the form tag and input tags that properly escapes values. To upload a file to S3 using a browser, you need to create a post form. The key `data.file\_upload\_post.document\_id.url` in the response is the value you should use as the form action.
+For using the pre-signed URL to build an HTML Form it is recommended to use some helper to build the form tag and input tags that properly escapes values. To upload a file to S3 using a browser, you need to create a post form. The key `data.file_upload_post.document_id.url` in the response is the value you should use as the form action.
 
 <aside class="success">
 < form action="<%= @data.file_upload_post.document_id.url %>" method="post" enctype="multipart/form-data">
