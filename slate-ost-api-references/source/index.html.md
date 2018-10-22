@@ -22,12 +22,12 @@ thousands of applicants smoothly and securely. Once you sign up for the KYC serv
 | |<img width=1200/>|
 |<u>**Account Details**</u>| Link to KYC Dashboard <br> Login Credentials for KYC Dashboard <br> Link to Cynopsis Environment <br>Login credentials to Cynopsis Environment |
 |<u>**API Access:​**</u> API access is authorized using secret key. Please share the key with trusted entities only. | API Key <br> API Secret Key |
-|<u>**Whitelisting Address:​**</u> This is the address which will be communicating to the Sale contract to whitelist registered Eth addresses. This is also known as Verified Operator Address | Whitelisting Address |
+|<u>**Whitelisting Address:​**</u> This is the address which will be communicating to the Sale contract to whitelist registered Eth addresses. This is also known as Verified Operator Address. | Whitelisting Address |
 |<u>**DNS records for domain verification:**</u>It is required to add the DNS records for the domain authentication in the DNS provider in order to start sending emails.| DNS records will be provided in the form of a CSV file. |
 |<u>**Participating Countries:**</u> ​This is the list of countries and nationalities in yml file format to be used in the submission formfor API validation. This list shall be adjusted by the client based on his specific requirements. |List of Countries and Nationalities. |
 
 
-As part of the complete solution one of the product offerings is the robust set of OST KYC APIs. They allow access to several functionality used for KYC/AML verification. Here are the APIs that we deliver through OST KYC -
+As part of the complete solution one of the product offerings is the robust set of OST KYC APIs. They allow access to several functionality used for KYC/AML verification. Here are the APIs that we deliver through OST KYC.
 
 ## Authentication
 
@@ -71,9 +71,9 @@ To generate the signature you must first form the string to sign. This string to
 * API endpoint
 * api_key
 * request_timestamp
-* API parameters.
+* API parameters
 
-<aside class="warning">Note all the inputs must be alphabetically sorted on the keys. (asec)</aside>
+<aside class="warning">Note all the inputs must be alphabetically sorted on the keys. (asc)</aside>
 
 ### 2. Generating a signature.
 The signature is the sha256 digest of the shared API secret and the correctly formatted query string.
@@ -139,7 +139,7 @@ create_user({email: 'kyc@ost.com'})
 
 ```
 
-A POST to `https://kyc.ost.com/api/v2/users` creates a new user object for the user in OST KYC database. Only user's signup information is sent via this endpoint. For sending user's KYC details a POST request to a different endpoint `/users-kyc/{{user_id}}` has to be sent.
+A POST to `https://kyc.ost.com/api/v2/users` creates a new `user` object for the user in OST KYC database. Only user's signup information is sent via this endpoint. For sending user's KYC details a POST request to a different endpoint `/users-kyc/{{user_id}}` has to be sent.
 
 <u>**Input Parameters**</u>
 
@@ -479,7 +479,7 @@ end
 submit_kyc(11420, {first_name:'YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'})
 ```
 
-A POST to `https://kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user kyc detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
+A POST to `https://kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user-kyc-detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
 
 <u>**Input Parameters**</u>
 
