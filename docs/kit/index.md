@@ -5,7 +5,7 @@ sidebar_label: Simple Token
 ---
 
 
-![KitIndexImage](../assets/ost-kit-illustration@3x.png)
+![KitIndexImage]( /docs/assets/ost-kit-illustration@3x.png)
 
 ## Introducing OST KIT
 

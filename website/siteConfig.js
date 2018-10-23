@@ -46,8 +46,6 @@ const siteConfig = {
   ],
 
 
-
-
   // If you have users set above, you add it here:
   users,
 
@@ -85,7 +83,9 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [
+    '/js/gitter.js'
+  ],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',

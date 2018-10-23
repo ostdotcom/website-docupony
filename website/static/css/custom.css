@@ -4,9 +4,20 @@
 }
 
 @media only screen and (min-width: 1024px) {
+    .content-block {
+        margin-right: 20px;
+        width: calc(33.33% - 20px);
+        display: grid;
+    }
 }
 
 @media only screen and (max-width: 1023px) {
+    .content-block {
+        /*margin-right: 20px;*/
+        width: 100%;
+        display: grid;
+    }
+
 }
 
 @media only screen and (min-width: 1400px) {
@@ -115,11 +126,7 @@ nav.toc .toggleNav ul li a.navItemActive {
     flex-wrap: wrap;
     margin-top: 5px;
 }
- .content-block {
-        margin-right: 20px;
-        width: calc(33.33% - 20px);
-        display: grid;
-}
+
 
 .section-promo {
     background-color: #f3f3f3;
@@ -136,6 +143,12 @@ img.center-block {
 
 }
 
+aside.gitter-chat-embed{
+    z-index: 100000;
+}
+.navPusher{
+  padding-top: 80px;
+}
 
 
 
