@@ -4,9 +4,9 @@ title: OST KIT⍺ API | Create A User
 sidebar_label: Create A User
 original_id: api_users_create
 ---
-> Deprecation Warning for two parameters in the User Object. 
-> In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' will be deprecated from User's Object in 3 months, on 2nd October 2018.
-> Its advicied that *these values should not to be relied upon*. We now provide this information and more via a separate endpoint `/balances/{user_id}` 
+>
+> In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' have been deprecated
+> They will be removed from the user object in our next release. To access balances, please use `/balances/{user_id}`
 
 Post to `/users` to register a new `user` and obtain a unique identifier to interact with the created user within your application.
 
