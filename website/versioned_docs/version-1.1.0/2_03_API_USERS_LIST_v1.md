@@ -4,7 +4,7 @@ title: OST KIT⍺ API | List Users
 sidebar_label: List Users
 original_id: api_users_list
 ---
-> In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' have been deprecated
+> In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' have been deprecated.
 > They will be removed from the user object in our next release. To access balances, please use `/balances/{user_id}` 
 
 Send a GET request on `/users` to receive a paginated - optionally filtered - ordered array of users within the economy.

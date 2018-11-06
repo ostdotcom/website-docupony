@@ -4,7 +4,7 @@ title: OST KIT⍺ API | Update A User
 sidebar_label: Update A User
 original_id: api_users_edit
 ---
-> In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' have been deprecated
+> In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' have been deprecated.
 > They will be removed from the user object in our next release. To access balances, please use `/balances/{user_id}` `
 
 Send a POST-request to `/users/{id}` to update an existing `user`. The {id} within the API endpoint is a unique identifier, which is returned during the creation of a user or is returned as `id` when a GET-request is sent to `/users`.
