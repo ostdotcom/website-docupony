@@ -1211,7 +1211,7 @@ For api calls to `/ethereum-address-validation` a success `true` is sent if the 
 
  Webhooks will notify a URL of your choice with information about events that occur while a user registers or user's KYC is being processed. You can use this data to delete users, determine when a double opt-in is done by a user, react to when a user adds or updates their KYC information, identify when status of a KYC entry is updated, determine when an ethereum address is updated. With different `Event Types` and `Sources` parameters we provide, you can set filtered data that can be recieved on a URL which will help you give a clear structure to your KYC processes and flows.
 
- ## Setup A Webhook
+## Creat A Webhook
 
  To get started with the Webhooks :
 
@@ -1230,15 +1230,15 @@ For api calls to `/ethereum-address-validation` a success `true` is sent if the 
 
 Now that you've setup Webhooks on the KYC Dashboard, it's important to note a few points before you start integration. Webhooks notify the URL of your choice via HTTP POST requests. Every https post request is sent with a signature. Details of how the signature is generated are given below. 
 
-OST KYC server expects to receive 200 OK in http status code as response within 10 sec from KYC client server otherwise event will be marked as failed.
+OST KYC server expects to receive 200 OK in http status code as response within 10 seconds from KYC client server otherwise event will be marked as failed.
 
 Failed events will be retried upto 6 times at an interval of 1 hour increasing exponentially with a factor of 2. Consequently the intervals of retrial will be 1 hr, 2 hrs, 4 hrs, 8 hrs, 16 hrs, 32 hrs. 
 
 ## Signature Generation
 Every request sent will have two mandatory parameters mentioned below:
 
-request_timestamp : the current unix timestamp in seconds.
-signature : the signature as the sha256 digest of the secret key and the correctly formatted query string as described below.
+* request_timestamp : the current unix timestamp in seconds.
+* signature : the signature as the sha256 digest of the secret key and the correctly formatted query string as described below.
 
 ### 1. Creating the string to sign.
 The string to sign is formed by concatenating the following elements:
@@ -1247,6 +1247,15 @@ The string to sign is formed by concatenating the following elements:
 * request_timestamp
 * Event parameters 
 
+> Example of String to Sign
+```ruby
+
+# For example Webhook url is - https://webhook.ost.com/test/
+
+# Event parameter - {type: 'user', request_timestamp: 1100110, source: 'web'}
+
+string_to_sign = https://webhook.ost.com/test/?request_timestamp=1100110&source=web&type=user  # parameters sorted alphabetically
+```
 <aside class="warning">Note all the inputs must be alphabetically sorted on the keys. (asc)</aside>
 
 ### 2. Generating a signature.
@@ -1258,6 +1267,102 @@ generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
 Register
 Doptin done
 Deleted
+
+| Event Name | Type | Description | 
+------|-----------|------------------
+| user_register | user | |
+
+> Example Webhook Response
+```json
+{
+   "created_at": "1541144915",
+   "data": {
+      "result_type": "user",
+      "user": {
+         "created_at": "1541144915",
+         "email": "yogesh+13233@ost.com",
+         "id": "11493",
+         "properties": [
+            "doptin_mail_sent"
+         ]
+      }
+   },
+   "description": "User has signed up",
+   "id": "236",
+   "name": "user_register",
+   "request_timestamp": "1541144919",
+   "signature": "fae67f17bf5b2ae39e8816952cac76a189997ebaf0f42dcae79ca649dafa6f51",
+   "source": "web",
+   "type": "user",
+   "version": "v1"
+}
+```
+
+
+| Event Name | Type | Description | 
+------|-----------|------------------
+| user\_dopt\_in | user | |
+
+> Example Webhook Response
+```json
+{
+   "created_at": "1541152654",
+   "data": {
+      "result_type": "user",
+      "user": {
+         "created_at": "1541144915",
+         "email": "yogesh+13233@ost.com",
+         "id": "11493",
+         "properties": [
+            "doptin_mail_sent",
+            "doptin_done"
+         ]
+      }
+   },
+   "description": "User has done double opt in",
+   "id": "241",
+   "name": "user_dopt_in",
+   "request_timestamp": "1541152655",
+   "signature": "4f98e901170adad77278ced8fa4f76dbbf7080058bbb8bd5d2b8755dd72251ce",
+   "source": "web",
+   "type": "user",
+   "version": "v1"
+}
+```
+
+
+| Event Name | Type | Description | 
+------|-----------|------------------
+| user_deleted | user | |
+
+> Example Webhook Response
+```json
+{
+   "created_at": "1541144571",
+   "data": {
+      "result_type": "user",
+      "user": {
+         "created_at": "1541144915",
+         "email": "yogesh@ost.com",
+         "id": "11404",
+         "properties": [
+            "doptin_mail_sent",
+            "doptin_done",
+            "kyc_submitted"
+         ]
+      }
+   },
+   "description": "User was deletd by admin",
+   "id": "234",
+   "name": "user_deleted",
+   "request_timestamp": "1541144575",
+   "signature": "d044b907f7aa8f17b14fbf792612714e65e76097136ca2d6ec7018f1c61dcf86",
+   "source": "web",
+   "type": "user",
+   "version": "v1"
+}
+```
+
 
 ## User KYC Events
 Add/Update kyc
