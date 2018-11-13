@@ -1265,15 +1265,8 @@ The signature is the sha256 digest of the secret key and the correctly formatted
 generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
 
 ## User Events
-Register
-Doptin done
-Deleted
 
-| Event Name | Type | Description | 
-------|-----------|------------------
-| user_register | user |       |
-
-> Example Webhook Response
+> Example Webhook Response for register event
 
 ```json
 {
@@ -1301,11 +1294,7 @@ Deleted
 ```
 
 
-| Event Name | Type | Description | 
-------|-----------|------------------
-| user\_dopt\_in | user | |
-
-> Example Webhook Response
+> Example Webhook Response for double opt-in event
 
 ```json
 {
@@ -1333,12 +1322,7 @@ Deleted
 }
 ```
 
-
-| Event Name | Type | Description | 
-------|-----------|------------------
-| user_deleted | user | |
-
-> Example Webhook Response
+> Example Webhook Response for delete user event
 
 ```json
 {
@@ -1366,12 +1350,153 @@ Deleted
    "version": "v1"
 }
 ```
+User events indicate a user's status in the system at that point in time. User events include register, double\_opt_in and delete.
+
+| Event Name | Type | Description | 
+------|-----------|------------------
+| user_register | user | User has successfully registered. |
+| user\_dopt\_in | user | User has accepted the double opt-in email.   |
+| user_deleted | user |  User has been deleted from the system.   |
+
 
 
 ## User KYC Events
-Add/Update kyc
-update_ethereum_address
-Status Update
+
+> Example Webhook Response for user KYC submit event
+
+```json
+{
+   "created_at": "1541753766",
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "admin_status": "unprocessed",
+         "aml_status": "cleared",
+         "created_at": "1541753703",
+         "id": "337",
+         "kyc_status": "pending",
+         "last_acted_by": "",
+         "submission_count": "2",
+         "user_id": "11483",
+         "user_kyc_detail_id": "820",
+         "whitelist_status": "unprocessed"
+      }
+   },
+   "description": "User has submitted kyc data",
+   "id": "345",
+   "name": "kyc_submit",
+   "request_timestamp": "1541753770",
+   "signature": "ef55a8e894b0ff94b4cfc245921aafb1644938c101c8d8e27c8397c938d9c07f",
+   "source": "api",
+   "type": "user_kyc",
+   "version": "v1"
+}
+```
+
+> Example Webhook Response for Etherum Address Update event
+
+```json
+{
+   "created_at": "1541756913",
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "admin_status": "unprocessed",
+         "aml_status": "cleared",
+         "created_at": "1541755701",
+         "id": "338",
+         "kyc_status": "pending",
+         "last_acted_by": "all is well kyc",
+         "submission_count": "2",
+         "user_id": "11497",
+         "user_kyc_detail_id": "823",
+         "whitelist_status": "unprocessed"
+      }
+   },
+   "description": "Admin has updates ethereum address of user",
+   "id": "353",
+   "name": "update_ethereum_address",
+   "request_timestamp": "1541756919",
+   "signature": "d489a5c8a796ac0652df7d76c62b2d5d6819c78f4d68040929d99490dad9cfc9",
+   "source": "web",
+   "type": "user_kyc",
+   "version": "v1"
+}
+```
+
+> Example Webhook Response when a KYC entry is re-opened
+
+```json
+{
+   "created_at": "1541144431",
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "admin_status": "unprocessed",
+         "aml_status": "cleared",
+         "created_at": "1538648382",
+         "id": "284",
+         "kyc_status": "pending",
+         "last_acted_by": "yogesh + 6",
+         "submission_count": "5",
+         "user_id": "11404",
+         "user_kyc_detail_id": "613",
+         "whitelist_status": "unprocessed"
+      }
+   },
+   "description": "user kyc case was reopened by admin",
+   "id": "232",
+   "name": "kyc_reopen",
+   "request_timestamp": "1541144436",
+   "signature": "475dd44692bf50cd206fb29df4c023ed056b63e6f84933586242d056f72fc025",
+   "source": "web",
+   "type": "user_kyc",
+   "version": "v1"
+}
+```
+
+> Example Webhook Response when status of a KYC entry changes
+
+```json
+{
+   "created_at": "1541154581",
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "admin_status": "qualified",
+         "aml_status": "cleared",
+         "created_at": "1541152723",
+         "id": "328",
+         "kyc_status": "approved",
+         "last_acted_by": "yogesh + 6",
+         "submission_count": "3",
+         "user_id": "11493",
+         "user_kyc_detail_id": "790",
+         "whitelist_status": "unprocessed"
+      }
+   },
+   "description": "user kyc state has changed",
+   "id": "256",
+   "name": "kyc_status_update",
+   "request_timestamp": "1541154583",
+   "signature": "5edf777d1283bd37397285288cd27d73d06f4b912250ebf579455103e2a2927a",
+   "source": "web",
+   "type": "user_kyc",
+   "version": "v1"
+}
+```
+
+
+User KYC events indicate the status of user's KYC entry in the system at a given point in time. User KYC events include Add/Update KYC, Update Ethereum Address, KYC entry re-opened and status of KYC entry has changed. 
+
+
+| Event Name | Type | Description | 
+------|-----------|------------------
+| kyc_submit | user\_kyc | User has added or updated the KYC information in the system. |
+| update\_ethereum\_address | user\_kyc | User's ethereum address has been updated. |
+| kyc_reopen | user\_kyc |  An approved, rejected or closed KYC application of a user has been re-opened. |
+| kyc\_status\_update| user\_kyc | Status of KYC entry changes in following cases <br> `cynopsis_status` : When the KYC entry is changed or updated in the Artemis database. The consequent status is updated in this field. <br> `admin_action` : When super admin takes required action on the KYC entry in the OST KYC dashboard. <br> `admin_status` : Helps the admin know if the KYC entry needs to be freshly processed or some action has already been taken. <br> `whitelist_status` :  When the whitelisting process for a KYC entry finishes. <br> `status` : The final status of the KYC entry when its either approved or rejected. |
+
 
 
 
