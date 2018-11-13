@@ -4,9 +4,8 @@ title: OST KIT⍺ API | List Users
 sidebar_label: List Users
 original_id: api_users_list
 ---
-> Deprecation Warning for two parameters in the User Object. 
-> In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' will be deprecated from User's Object in 3 months, on 2nd October 2018.
-> Its advicied that *these values should not to be relied upon*. We now provide this information and more via a separate endpoint `/balances/{user_id}`
+> In order to keep end user's balance information safe and private, two parameters '_airdropped_tokens_' and '_token_balance_' have been deprecated.
+> They will be removed from the user object in our next release. To access balances, please use `/balances/{user_id}` 
 
 Send a GET request on `/users` to receive a paginated - optionally filtered - ordered array of users within the economy.
 
