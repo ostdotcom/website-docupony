@@ -1248,12 +1248,12 @@ The string to sign is formed by concatenating the following elements:
 * Event parameters 
 
 > Example of String to Sign
+
+
 ```ruby
 # For example Webhook url is - https://webhook.ost.com/test/
 # Event parameter - {type: 'user', request_timestamp: 1100110, source: 'web'}
-def
- string_to_sign = https://webhook.ost.com/test/?request_timestamp=1100110&source=web&type=user  # parameters sorted alphabetically
-end
+# string_to_sign = https://webhook.ost.com/test/?request_timestamp=1100110&source=web&type=user  # parameters sorted alphabeticallyend
 ```
 
 <aside class="warning">Note all the inputs must be alphabetically sorted on the keys. (asc)</aside>
