@@ -1487,7 +1487,7 @@ User events indicate a user's status in the system at that point in time. User e
 ```
 
 
-User KYC events indicate the status of user's KYC entry in the system at a given point in time. User KYC events include Add/Update KYC, Update Ethereum Address, KYC entry re-opened and status of KYC entry has changed. 
+User KYC events indicate the status of user's KYC entry in the system at a given point in time. User KYC events include Add/Update KYC, Update Ethereum Address, KYC entry re-opened and events status of KYC entry changes. 
 
 
 | Event Name | Type | Description | 
