@@ -1241,11 +1241,6 @@ Every request sent will have two mandatory parameters mentioned below:
 * signature : the signature as the sha256 digest of the secret key and the correctly formatted query string as described below.
 
 ### 1. Creating the string to sign.
-The string to sign is formed by concatenating the following elements:
-
-* Webhook URL given for notification
-* request_timestamp
-* Event parameters 
 
 > Example of String to Sign
 
@@ -1255,6 +1250,12 @@ The string to sign is formed by concatenating the following elements:
 # Event parameter - {type: 'user', request_timestamp: 1100110, source: 'web'}
 # string_to_sign = https://webhook.ost.com/test/?request_timestamp=1100110&source=web&type=user  # parameters sorted alphabeticallyend
 ```
+
+The string to sign is formed by concatenating the following elements:
+
+* Webhook URL given for notification
+* request_timestamp
+* Event parameters 
 
 <aside class="warning">Note all the inputs must be alphabetically sorted on the keys. (asc)</aside>
 
@@ -1270,9 +1271,10 @@ Deleted
 
 | Event Name | Type | Description | 
 ------|-----------|------------------
-| user_register | user | |
+| user_register | user |       |
 
 > Example Webhook Response
+
 ```json
 {
    "created_at": "1541144915",
@@ -1304,6 +1306,7 @@ Deleted
 | user\_dopt\_in | user | |
 
 > Example Webhook Response
+
 ```json
 {
    "created_at": "1541152654",
@@ -1336,6 +1339,7 @@ Deleted
 | user_deleted | user | |
 
 > Example Webhook Response
+
 ```json
 {
    "created_at": "1541144571",
