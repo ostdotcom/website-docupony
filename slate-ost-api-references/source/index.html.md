@@ -1206,3 +1206,58 @@ For api calls to `/ethereum-address-validation` a success `true` is sent if the 
   "success": true
 }
 ```
+
+## WebHooks
+
+ Webhooks will notify a URL of your choice with information about events that occur while a user registers or user's KYC is being processed. You can use this data to delete users, determine when a double opt-in is done by a user, react to when a user adds or updates their KYC information, identify when status of a KYC entry is updated, determine when an ethereum address is updated. With different `Event Types` and `Sources` parameters we provide, you can set filtered data that can be recieved on a URL which will help you give a clear structure to your KYC processes and flows.
+
+ ### Setup A Webhook
+
+ To get started with the Webhooks :
+
+ 1. Go to the [<u>OST KYC Dashboard</u>](https://kyc.ost.com/admin/login).
+ 2. In the Window, click on to your profile at top-right, open Settings > WebHooks
+ 3. Click on Add New Webhook.
+ 4. In the URL field, paste the unique URL that you want to recieve events on.
+ 5. Select the Filters based on Event Source and Event Type whose notifications you would like to recieve.
+ 6. Click the ADD button to save these updates.
+
+<aside class="success">Each webhook has a Secret Key that does not changes when a webhook is updated. If you wish to change the secret key you will have to independently hit the refresh icon beside the `SECRET KEY` field.</aside>
+
+<aside class="warning">You can configure upto 3 URLs to recieve OST KYC Events information.</aside>
+
+### Important Details
+
+Now that you've setup Webhooks on the KYC Dashboard, it's important to note a few points before you start integration. Webhooks notify the URL of your choice via HTTP POST requests. Every https post request is sent with a signature. Details of how the signature is generated are given below. 
+
+OST KYC server expects to receive 200 OK in http status code as response within 10 sec from KYC client server otherwise event will be marked as failed.
+
+Failed events will be retried upto 6 times at an interval of 1 hour increasing exponentially with a factor of 2. Consequently the intervals of retrial will be 1 hr, 2 hrs, 4 hrs, 8 hrs, 16 hrs, 32 hrs. 
+
+### Signature Generation
+Every request sent will have two mandatory parameters mentioned below:
+
+request_timestamp : the current unix timestamp in seconds.
+signature : the signature as the sha256 digest of the secret key and the correctly formatted query string as described below.
+
+#### 1. Creating the string to sign.
+The string to sign is formed by concatenating the following elements:
+
+* Webhook URL given for notification
+* request_timestamp
+* Webhook parameters  ?? (Aman to Confirm)
+
+<aside class="warning">Note all the inputs must be alphabetically sorted on the keys. (asc)</aside>
+
+#### 2. Generating a signature.
+The signature is the sha256 digest of the secret key and the correctly formatted string-to-sign.
+
+generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
+
+
+
+
+
+
+
+
