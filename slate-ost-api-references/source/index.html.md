@@ -1248,7 +1248,7 @@ Every request sent will have two mandatory parameters mentioned below:
 
 ### 1. Creating the string to sign.
 
-> Example to generate signature
+> Example code to generate signature
 
 
 ```ruby
@@ -1290,7 +1290,7 @@ The string to sign is formed by concatenating the following elements:
 
 ### 2. Generating a signature.
 
-> Example to code to verify signature.
+> Example code to verify signature.
 
 ```ruby
 require 'rails'
