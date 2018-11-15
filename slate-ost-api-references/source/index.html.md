@@ -1550,7 +1550,7 @@ User KYC events indicate the status of user's KYC entry in the system at a given
 | kyc_submit | user\_kyc | User has added or updated the KYC information in the system. |
 | update\_ethereum\_address | user\_kyc | User's ethereum address has been updated. |
 | kyc_reopen | user\_kyc |  An approved or rejected KYC application of a user has been re-opened. |
-| kyc\_status\_update| user\_kyc | Status of KYC entry changes in following cases <br> `aml_status` : When AML status for a KYC entry changes this field is updated. <br> `admin_action_types` : When super admin reports any issue against a KYC entry in the OST KYC dashboard this field is updated. <br> `admin_status` : Whenever the admin qualifies or denies the KYC entry this field is updated accordingly. <br> `whitelist_status` :  When the whitelist status for a KYC entry changes. |
+| kyc\_status\_update| user\_kyc | Status of KYC entry changes in following cases <br> `aml_status` :  When AML status for a KYC entry changes the event is triggered. <br> `admin_action_types` : When admin reports any issue against a KYC entry in the OST KYC dashboard the event is triggered. <br> `admin_status` : Whenever the admin qualifies or denies the KYC entry the event is triggered. <br> `whitelist_status` :  When the whitelist status for a KYC entry changes after kyc is approved the event is triggered. |
 
 
 
