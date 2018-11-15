@@ -13,7 +13,7 @@ includes:
   - errors
 ---
 
-# OST KYC
+# Introduction
 OST KYC is the first plug-and-play KYC/AML management solution for token sales to process
 thousands of applicants smoothly and securely. Once you sign up for the KYC services and an OST KYC client account is activated, the following details are provided :
 
@@ -106,7 +106,7 @@ For a Post request, the parameters are sent in the request body with default con
 |id|bigint| Unique identifier for the user |
 |email| string | Email Id of the user|
 |properties|array<strings>|Properties of the user:<br> "kyc_submitted",<br> "doptin_mail_sent",<br> "doptin_done".<br> Remains empty when the user is created. |
-|created_at| timestamp |Timestamp at which user was created. (epoc time in seconds)|
+|created_at| timestamp |Timestamp at which user was created. (epoch time in seconds)|
 
 ## Add a User
 > Example Request code:
@@ -444,7 +444,7 @@ Passing an optional email will result in filtering of users with that email addr
 |city|string|The user's current city of residence|
 |state|string|The user's state|
 |postal\_code|string|Postal code|
-|created_at|timestamp|Timestamp at which kyc was submitted. (epoc time in seconds)|
+|created_at|timestamp|Timestamp at which kyc was submitted. (epoch time in seconds)|
 
 
 
@@ -663,7 +663,7 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an objec
 |admin\_action\_types |array | An array that shows the different kyc issue emails that are sent to the user. The triggers to send emails are `data_mismatch` , `document_issue ` or an email with custom instructions with action type `other_issue` ] |
 |submission_count | integer | A count of number of time KYC is submitted by a user| 
 |last\_acted\_by | string | Name of the last admin actor who took an action on the KYC. `nil` value indicates the last action was by the ost kyc system or no action has been taken. |
-|created_at | timestamp| Timestamp at which user KYC was created. (epoc time in seconds)| 
+|created_at | timestamp| Timestamp at which user KYC was created. (epoch time in seconds)| 
 
 
 ## Retrieve KYC Status 
@@ -1206,3 +1206,358 @@ For api calls to `/ethereum-address-validation` a success `true` is sent if the 
   "success": true
 }
 ```
+
+# WebHooks
+
+ Webhooks will notify a URL of your choice with information about events that occur while a user registers or user's KYC is being processed. You can use this data to delete users, determine when a double opt-in is done by a user, react to when a user adds or updates their KYC information, identify when status of a KYC entry is updated, determine when an ethereum address is updated. With different `Event Type` and `Source` parameters we provide, you can filter events that can be recieved on a URL which will help you give a clear structure to your KYC processes and flows.
+
+| Source  | Description | 
+-----------|------------------
+|  web | If the source is web it indicates the action is taken by the user or admin from the website. |
+|  api | If the source is api it indicates an api call was made by the client triggering the event. |
+|  kyc_system |  If the source is kyc\_system it indicates event was triggered due to internal KYC system updates. |
+
+## Creat A Webhook
+
+ To get started with the Webhooks :
+
+ 1. Go to the [<u>OST KYC Dashboard</u>](https://kyc.ost.com/admin/login).
+ 2. In the Window, click on to your profile at top-right, open Settings > WebHooks
+ 3. Click on Add New Webhook.
+ 4. In the URL field, paste the unique URL that you want to recieve events on.
+ 5. Select the Filters based on Event Source and Event Type whose notifications you would like to recieve.
+ 6. Click the ADD button to save these updates.
+
+<aside class="success">Each webhook has a Secret Key that does not changes when a webhook is updated. If you wish to change the secret key you will have to independently hit the refresh icon beside the `SECRET KEY` field.</aside>
+
+<aside class="warning">You can configure upto 3 URLs to recieve OST KYC Events information.</aside>
+
+## Important Details
+
+Now that you've setup Webhooks on the KYC Dashboard, it's important to note a few points before you start integration. Webhooks notify the URL of your choice via HTTP POST requests. Every https post request is sent with a signature. Details of how the signature is generated are given below. 
+
+OST KYC server expects to receive 200 OK in http status code as response within 10 seconds from KYC client server otherwise event will be marked as failed.
+
+Failed events will be retried upto 6 times at an interval of 1 hour increasing exponentially with a factor of 2. Consequently the intervals of retrial will be 1 hr, 2 hrs, 4 hrs, 8 hrs, 16 hrs, 32 hrs. 
+
+## Signature Generation
+Every request sent will have two mandatory parameters mentioned below:
+
+* request_timestamp : the current unix timestamp in seconds.
+* signature : the signature as the sha256 digest of the secret key and the correctly formatted query string as described below.
+
+### 1. Creating the string to sign.
+
+> Example code to generate signature
+
+
+```ruby
+to generate signature
+
+# For example Webhook url is - https://webhook.ost.com/test/
+# Event parameter to send - {"created_at"=>"1541144915", "data"=>{"result_type"=>"user", "user"=>{"created_at"=>"1541144915", "email"=>"yogesh+13233@ost.com", "id"=>"11493", "properties"=>["doptin_mail_sent"]}}, "description"=>"User has signed up", "id"=>"236", "name"=>"user_register", "source"=>"web", "type"=>"user", "version"=>"v1"} 
+
+require 'rails'
+
+event_data = {"created_at"=>"1541144915", "data"=>{"result_type"=>"user", "user"=>{"created_at"=>"1541144915", "email"=>"yogesh+13233@ost.com", "id"=>"11493", "properties"=>["doptin_mail_sent"]}}, "description"=>"User has signed up", "id"=>"236", "name"=>"user_register", "source"=>"web", "type"=>"user", "version"=>"v1"} 
+
+webhook_url= "https://webhook.ost.com/test/"
+
+def generate_signature(string_to_sign)
+  digest = OpenSSL::Digest.new('sha256')
+  OpenSSL::HMAC.hexdigest(digest, 'WEBHOOK_SECRET_KEY', string_to_sign) # Make sure to replace `API_SECRET` with your API secret key.
+end
+
+params = event_data.merge("request_timestamp" => Time.now.to_i)
+string_to_sign = webhook_url + "?" + params.to_query
+
+#generated string_to_sign
+#https://webhook.ost.com/test/?created_at=1541144915&data%5Bresult_type%5D=user&data%5Buser%5D%5Bcreated_at%5D=1541144915&data%5Buser%5D%5Bemail%5D=yogesh%2B13233%40ost.com&data%5Buser%5D%5Bid%5D=11493&data%5Buser%5D%5Bproperties%5D%5B%5D=doptin_mail_sent&description=User+has+signed+up&id=236&name=user_register&request_timestamp=1542185198&source=web&type=user&version=v1
+
+signature = generate_signature(string_to_sign)
+
+#generated signature -> "34e852b1bb2b73357483ce7d35a837611f098f9e7df580edb0bb735993868c0a"
+
+```
+
+The string to sign is formed by concatenating the following elements:
+
+* Webhook URL given for notification
+* request_timestamp
+* Event parameters 
+
+<aside class="warning">Note all the inputs must be alphabetically sorted on the keys. (asc)</aside>
+
+### 2. Generating a signature.
+
+> Example code to verify signature.
+
+```ruby
+require 'rails'
+
+received_params = {"created_at"=>"1541144915", "data"=>{"result_type"=>"user", "user"=>{"created_at"=>"1541144915", "email"=>"yogesh+13233@ost.com", "id"=>"11493", "properties"=>["doptin_mail_sent"]}}, "description"=>"User has signed up", "id"=>"236", "name"=>"user_register", "source"=>"web", "type"=>"user", "version"=>"v1", "signature" => "34e852b1bb2b73357483ce7d35a837611f098f9e7df580edb0bb735993868c0a", "request_timestamp" => 1542185198} 
+
+webhook_url= "https://webhook.ost.com/test/"
+signature = received_params.delete("signature")
+
+
+string_to_sign = webhook_url + "?" + received_params.to_query
+# parameters sorted alphabetically
+#string_to_sign = "https://webhook.ost.com/test/?created_at=1541144915&data%5Bresult_type%5D=user&data%5Buser%5D%5Bcreated_at%5D=1541144915&data%5Buser%5D%5Bemail%5D=yogesh%2B13233%40ost.com&data%5Buser%5D%5Bid%5D=11493&data%5Buser%5D%5Bproperties%5D%5B%5D=doptin_mail_sent&description=User+has+signed+up&id=236&name=user_register&request_timestamp=1542185198&source=web&type=user&version=v1"
+
+digest = OpenSSL::Digest.new('sha256')
+generated_signature = OpenSSL::HMAC.hexdigest(digest, 'WEBHOOK_SECRET_KEY', string_to_sign) # Make sure to replace `WEBHOOK_SECRET_KEY` with your Webhook secret key.
+
+if signature == generated_signature
+#signature authenticated
+else
+# invalid signature
+end
+
+```
+
+The signature is the sha256 digest of the secret key and the correctly formatted string-to-sign.
+
+generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
+
+## User Events
+
+> Example Webhook Response for register event
+
+```json
+{
+   "created_at": "1541144915",
+   "data": {
+      "result_type": "user",
+      "user": {
+         "created_at": "1541144915",
+         "email": "yogesh+13233@ost.com",
+         "id": "11493",
+         "properties": [
+            "doptin_mail_sent"
+         ]
+      }
+   },
+   "description": "User has signed up",
+   "id": "236",
+   "name": "user_register",
+   "request_timestamp": "1541144919",
+   "signature": "fae67f17bf5b2ae39e8816952cac76a189997ebaf0f42dcae79ca649dafa6f51",
+   "source": "web",
+   "type": "user",
+   "version": "v1"
+}
+```
+
+
+> Example Webhook Response for double opt-in event
+
+```json
+{
+   "created_at": "1541152654",
+   "data": {
+      "result_type": "user",
+      "user": {
+         "created_at": "1541144915",
+         "email": "yogesh+13233@ost.com",
+         "id": "11493",
+         "properties": [
+            "doptin_mail_sent",
+            "doptin_done"
+         ]
+      }
+   },
+   "description": "User has done double opt in",
+   "id": "241",
+   "name": "user_dopt_in",
+   "request_timestamp": "1541152655",
+   "signature": "4f98e901170adad77278ced8fa4f76dbbf7080058bbb8bd5d2b8755dd72251ce",
+   "source": "web",
+   "type": "user",
+   "version": "v1"
+}
+```
+
+> Example Webhook Response for delete user event
+
+```json
+{
+   "created_at": "1541144571",
+   "data": {
+      "result_type": "user",
+      "user": {
+         "created_at": "1541144915",
+         "email": "yogesh@ost.com",
+         "id": "11404",
+         "properties": [
+            "doptin_mail_sent",
+            "doptin_done",
+            "kyc_submitted"
+         ]
+      }
+   },
+   "description": "User was deletd by admin",
+   "id": "234",
+   "name": "user_deleted",
+   "request_timestamp": "1541144575",
+   "signature": "d044b907f7aa8f17b14fbf792612714e65e76097136ca2d6ec7018f1c61dcf86",
+   "source": "web",
+   "type": "user",
+   "version": "v1"
+}
+```
+
+User events indicate a user's status in the system at that point in time. User events include register, double\_opt_in and delete.
+
+| Event Name | Type | Description | 
+------|-----------|------------------
+| user_register | user | User has successfully registered. |
+| user\_dopt\_in | user | User has accepted the double opt-in email.   |
+| user_deleted | user |  User has been deleted from the system.   |
+
+
+
+## User KYC Events
+
+> Example Webhook Response for user KYC submit event
+
+```json
+{
+   "created_at": "1541753766",
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "admin_status": "unprocessed",
+         "aml_status": "cleared",
+         "created_at": "1541753703",
+         "id": "337",
+         "kyc_status": "pending",
+         "last_acted_by": "",
+         "submission_count": "2",
+         "user_id": "11483",
+         "user_kyc_detail_id": "820",
+         "whitelist_status": "unprocessed"
+      }
+   },
+   "description": "User has submitted kyc data",
+   "id": "345",
+   "name": "kyc_submit",
+   "request_timestamp": "1541753770",
+   "signature": "ef55a8e894b0ff94b4cfc245921aafb1644938c101c8d8e27c8397c938d9c07f",
+   "source": "api",
+   "type": "user_kyc",
+   "version": "v1"
+}
+```
+
+> Example Webhook Response for Etherum Address Update event
+
+```json
+{
+   "created_at": "1541756913",
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "admin_status": "unprocessed",
+         "aml_status": "cleared",
+         "created_at": "1541755701",
+         "id": "338",
+         "kyc_status": "pending",
+         "last_acted_by": "all is well kyc",
+         "submission_count": "2",
+         "user_id": "11497",
+         "user_kyc_detail_id": "823",
+         "whitelist_status": "unprocessed"
+      }
+   },
+   "description": "Admin has updates ethereum address of user",
+   "id": "353",
+   "name": "update_ethereum_address",
+   "request_timestamp": "1541756919",
+   "signature": "d489a5c8a796ac0652df7d76c62b2d5d6819c78f4d68040929d99490dad9cfc9",
+   "source": "web",
+   "type": "user_kyc",
+   "version": "v1"
+}
+```
+
+> Example Webhook Response when a KYC entry is re-opened
+
+```json
+{
+   "created_at": "1541144431",
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "admin_status": "unprocessed",
+         "aml_status": "cleared",
+         "created_at": "1538648382",
+         "id": "284",
+         "kyc_status": "pending",
+         "last_acted_by": "yogesh + 6",
+         "submission_count": "5",
+         "user_id": "11404",
+         "user_kyc_detail_id": "613",
+         "whitelist_status": "unprocessed"
+      }
+   },
+   "description": "user kyc case was reopened by admin",
+   "id": "232",
+   "name": "kyc_reopen",
+   "request_timestamp": "1541144436",
+   "signature": "475dd44692bf50cd206fb29df4c023ed056b63e6f84933586242d056f72fc025",
+   "source": "web",
+   "type": "user_kyc",
+   "version": "v1"
+}
+```
+
+> Example Webhook Response when status of a KYC entry changes
+
+```json
+{
+   "created_at": "1541154581",
+   "data": {
+      "result_type": "user_kyc",
+      "user_kyc": {
+         "admin_status": "qualified",
+         "aml_status": "cleared",
+         "created_at": "1541152723",
+         "id": "328",
+         "kyc_status": "approved",
+         "last_acted_by": "yogesh + 6",
+         "submission_count": "3",
+         "user_id": "11493",
+         "user_kyc_detail_id": "790",
+         "whitelist_status": "unprocessed"
+      }
+   },
+   "description": "user kyc state has changed",
+   "id": "256",
+   "name": "kyc_status_update",
+   "request_timestamp": "1541154583",
+   "signature": "5edf777d1283bd37397285288cd27d73d06f4b912250ebf579455103e2a2927a",
+   "source": "web",
+   "type": "user_kyc",
+   "version": "v1"
+}
+```
+
+User KYC events indicate the status of user's KYC entry in the system at a given point in time. User KYC events include submit KYC, Update Ethereum Address, KYC entry re-opened and KYC entry status changes. 
+
+| Event Name | Type | Description | 
+------|-----------|------------------
+| kyc_submit | user\_kyc | User has added or updated the KYC information in the system. |
+| update\_ethereum\_address | user\_kyc | User's ethereum address has been updated. |
+| kyc_reopen | user\_kyc |  An approved or rejected KYC application of a user has been re-opened. |
+| kyc\_status\_update| user\_kyc | Status of KYC entry changes in following cases <br> `aml_status` :  When AML status for a KYC entry changes the event is triggered. <br> `admin_action_types` : When admin reports any issue against a KYC entry in the OST KYC dashboard the event is triggered. <br> `admin_status` : Whenever the admin qualifies or denies the KYC entry the event is triggered. <br> `whitelist_status` :  When the whitelist status for a KYC entry changes after kyc is approved the event is triggered. |
+
+
+
+
+
+
+
+
+
+
