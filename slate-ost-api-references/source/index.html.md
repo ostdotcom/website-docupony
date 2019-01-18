@@ -20,7 +20,7 @@ thousands of applicants smoothly and securely. Once you sign up for the KYC serv
 |Account Activation | Elements |
 -------------------|----------
 | |<img width=1200/>|
-|<u>**Account Details**</u>| Link to KYC Dashboard <br> Login Credentials for KYC Dashboard <br> Link to Cynopsis Environment <br>Login credentials to Cynopsis Environment |
+|<u>**Account Details**</u>| Link to KYC Dashboard <br> Login Credentials for KYC Dashboard
 |<u>**API Access:​**</u> API access is authorized using secret key. Please share the key with trusted entities only. | API Key <br> API Secret Key |
 |<u>**Whitelisting Address:​**</u> This is the address which will be communicating to the Sale contract to whitelist registered Eth addresses. This is also known as Verified Operator Address. | Whitelisting Address |
 |<u>**DNS records for domain verification:**</u>It is required to add the DNS records for the domain authentication in the DNS provider in order to start sending emails.| DNS records will be provided in the form of a CSV file. |
