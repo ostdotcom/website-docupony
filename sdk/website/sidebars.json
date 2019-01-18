@@ -1,0 +1,36 @@
+{
+  "kit": {
+    "Getting Started": [
+      "kit/index",
+      "kit/tokenize",
+      "kit/alpha",
+      "kit/changelog"
+    ],
+    "OST KIT": [
+      "kit/kit"
+    ],
+    "SDK": [
+      "kit/sdks_overview",
+      "kit/sdk_ruby",
+      "kit/sdk_javascript"
+    ]
+  },
+   "kyc" :{"REST API": [
+      "kyc/index",
+      "kyc/api_authentication"],
+    "USER" : [
+      "kyc/api_users_create",
+      "kyc/api_users_edit",
+      "kyc/api_users_list"],
+    "AIRDROP" : [
+      "kyc/api_airdrop_drop",
+      "kyc/api_airdrop_status"],
+    "ACTION" : [
+      "kyc/api_transaction-types_create",
+      "kyc/api_transaction-types_edit",
+      "kyc/api_transaction-types_list"],
+    "TRANSACTION" : [
+      "kyc/api_transaction-types_execute",
+      "kyc/api_transaction-types_status"]
+  }
+}
