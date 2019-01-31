@@ -35,7 +35,7 @@ class Footer extends React.Component {
           />
         </a>
         <section className="copyright">
-          Copyright &copy; {currentYear} Simple Token. All Rights Reserved.
+          Copyright &copy; {currentYear} <a href='https://ost.com'>OST.com</a> Ltd. All Rights Reserved.
         </section>
       </footer>
     );
