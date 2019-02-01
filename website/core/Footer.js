@@ -30,12 +30,12 @@ class Footer extends React.Component {
           className="fbOpenSource">
           <img
             src={this.props.config.baseUrl + 'img/ost.png'}
-            alt="Simple Token"
+            alt="OST.com"
             width="100"
           />
         </a>
         <section className="copyright">
-          Copyright &copy; {currentYear} <a href='https://ost.com'>OST.com</a> Ltd. All Rights Reserved.
+          Copyright &copy; {currentYear} <a href="https://ost.com" target="_blank">OST.com</a> Ltd. All Rights Reserved.
         </section>
       </footer>
     );
