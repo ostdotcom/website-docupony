@@ -29,8 +29,8 @@ var path = {
     kit_sdk_docs_dest: './build-root/kit/docs/sdk'
 };
 
-var docusaurus_build_cmd = 'npm install && yarn run build';
-var slate_build_cmd = 'bundle install && bundle exec middleman build';
+var docusaurus_build_cmd = ['npm install', 'yarn run build'];
+var slate_build_cmd = ['bundle install', 'bundle exec middleman build --clean'];
 
 
 // =================================== KYC TASKS =============================================
@@ -74,7 +74,7 @@ gulp.task('kyc-build', gulp.parallel('build-kyc-docs', 'build-kyc-sdk', 'build-k
 
 gulp.task('kyc-copy', gulp.series('copy-kyc-docs-build', 'copy-kyc-sdk-build', 'copy-kyc-api-build', 'change-kyc-sdk-build-links', 'clean-kyc-sdk-build'));
 
-gulp.task('generate-kyc-docs', gulp.series('kyc-build', 'kyc-copy'));
+gulp.task('generate-kyc-docs', gulp.series('clean-kyc','kyc-build', 'kyc-copy'));
 
 
 
@@ -116,10 +116,22 @@ gulp.task('kit-build', gulp.parallel('build-kit-docs', 'build-kit-sdk', 'build-k
 
 gulp.task('kit-copy', gulp.series('copy-kit-docs-build', 'copy-kit-sdk-build', 'copy-kit-api-build', 'change-kit-sdk-build-links', 'clean-kit-sdk-build'));
 
-gulp.task('generate-kit-docs', gulp.series('kit-build', 'kit-copy'));
+gulp.task('generate-kit-docs', gulp.series('clean-kit', 'kit-build', 'kit-copy'));
+
+gulp.task('clean-kit', function() {
+   return  del('./kit/sdk/website/build/**', {force: true}) && 
+    del('./kit/api/build/**', {force: true}) &&
+    del('./kit/website/build/**', {force: true});
+});
+
+gulp.task('clean-kyc', function() {
+    return  del('./kyc/sdk/website/build/**', {force: true}) &&
+    del('./kyc/api/build/**', {force: true}) &&
+    del('./kyc/website/build/**', {force: true});
+ });
 
 
-
+ gulp.task('clean-all', gulp.parallel('clean-kit', 'clean-kyc'));
 
 gulp.task('generate-all-docs', gulp.parallel('generate-kit-docs', 'generate-kyc-docs'));
 
