@@ -133,8 +133,7 @@ gulp.task('kit-copy', gulp.series('copy-kit-docs-build', 'copy-kit-sdk-build', '
 
 gulp.task('generate-kit-docs', gulp.series('clean-kit', 'kit-build', 'kit-copy'));
 
+gulp.task('clean-all', gulp.parallel('clean-kit', 'clean-kyc'));
 
- gulp.task('clean-all', gulp.parallel('clean-kit', 'clean-kyc'));
-
-gulp.task('generate-all-docs', gulp.parallel('generate-kit-docs', 'generate-kyc-docs'));
+gulp.task('generate-all-docs', gulp.parallel('copy-index-file', 'generate-kit-docs', 'generate-kyc-docs'));
 
