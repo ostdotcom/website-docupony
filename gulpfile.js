@@ -29,7 +29,7 @@ var path = {
     kit_sdk_docs_dest: './build-root/kit/docs/sdk'
 };
 
-var docusaurus_build_cmd = ['npm install', 'yarn run build'];
+var docusaurus_build_cmd = ['npm install', 'npm run build'];
 var slate_build_cmd = ['bundle install', 'bundle exec middleman build --clean'];
 
 
