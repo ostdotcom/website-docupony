@@ -29,8 +29,8 @@ var path = {
     kit_sdk_docs_dest: './build-root/kit/docs/sdk'
 };
 
-var docusaurus_build_cmd = 'yarn run build';
-var slate_build_cmd = 'bundle exec middleman build';
+var docusaurus_build_cmd = 'npm install && yarn run build';
+var slate_build_cmd = 'bundle install && bundle exec middleman build';
 
 
 // =================================== KYC TASKS =============================================
@@ -100,8 +100,6 @@ gulp.task('copy-kit-api-build', function() {
     return gulp.src(path.kit_api_build_src).pipe(gulp.dest(path.kit_api_build_dest));
 });
 
-
-
 // additional tasks for sdk
 gulp.task('clean-kit-sdk-build', function() {
     return del('./build-root/kit/docs/sdk/docs/**', {force: true});
@@ -119,3 +117,9 @@ gulp.task('kit-build', gulp.parallel('build-kit-docs', 'build-kit-sdk', 'build-k
 gulp.task('kit-copy', gulp.series('copy-kit-docs-build', 'copy-kit-sdk-build', 'copy-kit-api-build', 'change-kit-sdk-build-links', 'clean-kit-sdk-build'));
 
 gulp.task('generate-kit-docs', gulp.series('kit-build', 'kit-copy'));
+
+
+
+
+gulp.task('generate-all-docs', gulp.parallel('generate-kit-docs', 'generate-kyc-docs'));
+

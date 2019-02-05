@@ -7,6 +7,4 @@ package-lock.json
 
 /.idea
 
-build-root/
-
-*/build/
+build
