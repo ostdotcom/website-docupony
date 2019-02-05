@@ -123,7 +123,7 @@ gulp.task('clean-kit-sdk-build', function() {
 gulp.task('change-kit-sdk-build-links', function() {
     return gulp.src(path.kit_sdk_docs_src).pipe(replace( /(\/kit\/docs\/sdk\/docs)/g, function(match) {
         return '/kit/docs/sdk';
-    })).pipe(gulp.dest(path.kyc_sdk_docs_dest));
+    })).pipe(gulp.dest(path.kit_sdk_docs_dest));
 });
 
 

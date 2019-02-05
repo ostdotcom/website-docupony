@@ -40,8 +40,8 @@ const siteConfig = {
   // ],
 
   headerLinks: [
-    {href: "/kit/docs/", label: 'KIT'},
-    {href: "/kit/docs/", label: 'KYC'},
+    {href: "/kit/", label: 'KIT'},
+    {href: "/kyc/", label: 'KYC'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
   ],
 
