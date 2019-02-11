@@ -77,7 +77,7 @@ gulp.task('change-kyc-sdk-build-links', function() {
 
 
 
-gulp.task('kyc-build', gulp.parallel('build-kyc-docs', 'build-kyc-sdk', 'build-kyc-api'));
+gulp.task('kyc-build', gulp.parallel('build-kyc-sdk', 'build-kyc-docs', 'build-kyc-api'));
 
 gulp.task('kyc-copy', gulp.series('copy-kyc-docs-build', 'copy-kyc-sdk-build', 'copy-kyc-api-build', 'change-kyc-sdk-build-links', 'clean-kyc-sdk-build'));
 
@@ -127,7 +127,7 @@ gulp.task('change-kit-sdk-build-links', function() {
 });
 
 
-gulp.task('kit-build', gulp.parallel('build-kit-docs', 'build-kit-sdk', 'build-kit-api'));
+gulp.task('kit-build', gulp.parallel( 'build-kit-sdk','build-kit-docs', 'build-kit-api'));
 
 gulp.task('kit-copy', gulp.series('copy-kit-docs-build', 'copy-kit-sdk-build', 'copy-kit-api-build', 'change-kit-sdk-build-links', 'clean-kit-sdk-build'));
 

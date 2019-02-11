@@ -92,8 +92,8 @@ const siteConfig = {
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [
     'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-    '/kyc/js/gitter.js',
-    '/kyc/js/custom.js'
+    '/kyc/docs/sdk/js/gitter.js',
+    '/kyc/docs/sdk/js/custom.js'
   ],
 
   // On page navigation for the current documentation page.

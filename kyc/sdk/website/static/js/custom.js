@@ -21,8 +21,8 @@ $(window).scroll(function() {                  // assign scroll event listener
 
 $(document).ready(function() {
     var pathArray = location.href.split('/');
-    var lastPath = pathArray[3];
-    var productName = pathArray[2];
+    var lastPath = pathArray[4];
+    var productName = pathArray[3];
 
     // Making primary Nav li element active based on 
     var primaryNavLinkArray = $('.slidingNav ul li'); 
@@ -56,4 +56,16 @@ $(document).ready(function() {
 
         }
     }
+
+    $('code').addClass('prettyprint');
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js';
+    document.head.appendChild(script);
+
+
 })
+
+
+

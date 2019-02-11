@@ -5,76 +5,29 @@
     "previous": "Previous",
     "tagline": "Developer Documentation",
     "docs": {
-      "admin_dashboard/a": {
-        "title": "Some feature",
-        "sidebar_label": "Feature A"
-      },
-      "assets/kit_index": {
-        "title": "assets/kit_index"
-      },
-      "features/compliance_partner": {
-        "title": "Compliance Partner",
-        "sidebar_label": "Compliance Partner"
-      },
-      "features/front_end_customization": {
-        "title": "Front End Customization",
-        "sidebar_label": "Front End Customization"
-      },
-      "features/ocr_fr": {
-        "title": "OCR + FR",
-        "sidebar_label": "OCR + FR"
-      },
-      "features/security_and_encryption": {
-        "title": "Security and Encryption",
-        "sidebar_label": "Security"
-      },
-      "features/whitelisting": {
-        "title": "Whitelisting",
-        "sidebar_label": "Whitelisting"
-      },
       "getting_started/overview": {
         "title": "KYC | Overview",
         "sidebar_label": "Overview"
       },
-      "whitelisting_setup/whitelisting_setup": {
-        "title": "whitelisting Setup",
-        "sidebar_label": "Whitelisting Setup"
+      "python_sdk/add_kyc_details": {
+        "title": "KYC Python SDK | Add KYC details",
+        "sidebar_label": "Add KYC details"
       },
-      "version-1.1.0-a": {
-        "title": "Some feature",
-        "sidebar_label": "Feature A"
+      "python_sdk/create_user": {
+        "title": "KYC Python SDK | Create User",
+        "sidebar_label": "Create User"
       },
-      "version-1.1.0-compliance_partner": {
-        "title": "Compliance Partner",
-        "sidebar_label": "Compliance Partner"
+      "python_sdk/installation": {
+        "title": "KYC Python SDK | Installation",
+        "sidebar_label": "Installation"
       },
-      "version-1.1.0-front_end_customization": {
-        "title": "Front End Customization",
-        "sidebar_label": "Front End Customization"
+      "python_sdk/update_kyc_status": {
+        "title": "KYC Python SDK | Update KYC status",
+        "sidebar_label": "Update KYC status"
       },
-      "version-1.1.0-ocr_fr": {
-        "title": "OCR + FR",
-        "sidebar_label": "OCR + FR"
-      },
-      "version-1.1.0-security_and_encryption": {
-        "title": "Security and Encryption",
-        "sidebar_label": "Security"
-      },
-      "version-1.1.0-whitelisting": {
-        "title": "Whitelisting",
-        "sidebar_label": "Whitelisting"
-      },
-      "version-1.1.0-overview": {
-        "title": "KYC | Overview",
-        "sidebar_label": "Overview"
-      },
-      "version-1.1.0-whitelisting_setup": {
-        "title": "whitelisting Setup",
-        "sidebar_label": "Whitelisting Setup"
-      },
-      "version-1.1.1-overview": {
-        "title": "KYC | Overview",
-        "sidebar_label": "Overview"
+      "python_sdk/utilities": {
+        "title": "KYC Python SDK | Utilities",
+        "sidebar_label": "Utilities"
       }
     },
     "links": {
@@ -84,9 +37,7 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
-      "Features": "Features",
-      "Whitelisting Setup": "Whitelisting Setup",
-      "Admin Dashboard": "Admin Dashboard"
+      "Python SDK Guide": "Python SDK Guide"
     }
   },
   "pages-strings": {
