@@ -54,4 +54,8 @@ kyc_sdk = ost_kyc_sdk_python.Services({
 |   Config           |  Dict      |  You can pass timeout with key as "timeout" and value as number (Will be considered as seconds) for http requests that SDK will make Ex: `config: {"timeout": 10}`    |
 
 
+### User creation for KYC 
+1. Create user.
+2. Add KYC details.
+3. Get KYC status.
 

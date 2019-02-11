@@ -14,16 +14,20 @@
         "sidebar_label": "Add KYC details"
       },
       "python_sdk/create_user": {
-        "title": "KYC Python SDK | Create User",
+        "title": "Create User",
         "sidebar_label": "Create User"
+      },
+      "python_sdk/get_kyc_details": {
+        "title": "KYC Python SDK | Get KYC details",
+        "sidebar_label": "Get KYC Details"
+      },
+      "python_sdk/get_kyc_status": {
+        "title": "KYC Python SDK | Get KYC status",
+        "sidebar_label": "Get KYC status"
       },
       "python_sdk/installation": {
         "title": "KYC Python SDK | Installation",
         "sidebar_label": "Installation"
-      },
-      "python_sdk/update_kyc_status": {
-        "title": "KYC Python SDK | Update KYC status",
-        "sidebar_label": "Update KYC status"
       },
       "python_sdk/utilities": {
         "title": "KYC Python SDK | Utilities",

@@ -6,7 +6,6 @@ sidebar_label: Create User
 
 In order to create a user entity, we will have to use `Users` service provided by SDK. `Users` service is only used to create primary user entity that will only strore email address of a user.
 
-In order to craete a user for KYC, following steps
 
 ## Input Data
 
@@ -33,7 +32,6 @@ print(user) # Print the newly created user object
 
 ## Output
 If we run the above code, the output will be:
-
 
 ```
 {

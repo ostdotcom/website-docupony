@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/OpenSTFoundation/website-docupony#readme",
   "dependencies": {
+    "browser-sync": "^2.26.3",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",

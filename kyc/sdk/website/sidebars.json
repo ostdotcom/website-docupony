@@ -7,7 +7,8 @@
       "python_sdk/installation",
       "python_sdk/create_user",
       "python_sdk/add_kyc_details",
-      "python_sdk/update_kyc_status",
+      "python_sdk/get_kyc_status",
+      "python_sdk/get_kyc_details",
       "python_sdk/utilities"
     ]
   }
