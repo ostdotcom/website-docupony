@@ -53,80 +53,7 @@ users_kyc_service.get_pre_signed_url_post({'files': {
 }})
 
 ```
-### Response
 
-```
-{
-    "success": true,
-    "data": {
-        "result_type": "file_upload_put",
-        "file_upload_put": {
-            "document_id": {
-                "url": "https://s3.amazonaws.com/*******",
-                "fields": {
-                    "key": "4/i/f6417391000fae92b5d074b2e5928a3b"
-                }
-            },
-            "investor_proof_file1": {
-                "url": "https://s3.amazonaws.com/*******",
-
-                "fields": {
-                    "key": "4/d/5cfaefa078eb75f3a6470474053ef175"
-                }
-            },
-            "investor_proof_file2": {
-                "url": "https://s3.amazonaws.com/*******",
-
-                "fields": {
-                    "key": "4/d/5ccc6d4b167e12af4616f1c96eb6505a"
-                }
-            },
-            "residence_proof": {
-                "url": "https://s3.amazonaws.com/*******",
-
-                "fields": {
-                    "key": "4/d/6c6c6e759bee4c496c325decdeeef007"
-                }
-            },
-            "selfie": {
-                "url": "https://s3.amazonaws.com/*******",
-
-                "fields": {
-                    "key": "4/i/dc71d140532b1a7b55ba29f35b7a16d2"
-                }
-            }
-        }
-    }
-}
-```
-
-
-2. Upload from server side (S3 URL accepting PUT request): When you want to upload documents directly from browser you need to get signed URL that will accept PUT requests. This URL will be valid for some time so you have to request it everytime you want to submit the user's documents.
-<br> When requesting the signed URL for S3 buckets you will have to pass file types for each document needed from user.
-
-### Sample Code
-```
-import ost_kyc_sdk_python
-
-# Initializing SDK
-kyc_sdk = ost_kyc_sdk_python.Services({
-    "api_key": "Your API key",
-    "api_secret": "Your API",
-    "api_base_url": "API base URL",
-    "config": { "timeout": "An integer representing desired timeout in seconds"}
-})
-
-user_kyc_service = kyc_sdk.services.users_kyc
-
-users_kyc_service.get_pre_signed_url_put({'files': {
-    'residence_proof': 'application/pdf',
-    'investor_proof_file1': 'application/pdf',
-    'investor_proof_file2': 'application/pdf',
-    'document_id': 'image/jpeg',
-    'selfie': 'image/jpeg'
-}})
-
-```
 ### Response
 
 ```
@@ -209,6 +136,82 @@ users_kyc_service.get_pre_signed_url_put({'files': {
     }
 }
 ```
+
+2. Upload from server side (S3 URL accepting PUT request): When you want to upload documents directly from browser you need to get signed URL that will accept PUT requests. This URL will be valid for some time so you have to request it everytime you want to submit the user's documents.
+<br> When requesting the signed URL for S3 buckets you will have to pass file types for each document needed from user.
+
+### Sample Code
+```
+import ost_kyc_sdk_python
+
+# Initializing SDK
+kyc_sdk = ost_kyc_sdk_python.Services({
+    "api_key": "Your API key",
+    "api_secret": "Your API",
+    "api_base_url": "API base URL",
+    "config": { "timeout": "An integer representing desired timeout in seconds"}
+})
+
+user_kyc_service = kyc_sdk.services.users_kyc
+
+users_kyc_service.get_pre_signed_url_put({'files': {
+    'residence_proof': 'application/pdf',
+    'investor_proof_file1': 'application/pdf',
+    'investor_proof_file2': 'application/pdf',
+    'document_id': 'image/jpeg',
+    'selfie': 'image/jpeg'
+}})
+
+```
+### Response
+
+
+```
+{
+    "success": true,
+    "data": {
+        "result_type": "file_upload_put",
+        "file_upload_put": {
+            "document_id": {
+                "url": "https://s3.amazonaws.com/*******",
+                "fields": {
+                    "key": "4/i/f6417391000fae92b5d074b2e5928a3b"
+                }
+            },
+            "investor_proof_file1": {
+                "url": "https://s3.amazonaws.com/*******",
+
+                "fields": {
+                    "key": "4/d/5cfaefa078eb75f3a6470474053ef175"
+                }
+            },
+            "investor_proof_file2": {
+                "url": "https://s3.amazonaws.com/*******",
+
+                "fields": {
+                    "key": "4/d/5ccc6d4b167e12af4616f1c96eb6505a"
+                }
+            },
+            "residence_proof": {
+                "url": "https://s3.amazonaws.com/*******",
+
+                "fields": {
+                    "key": "4/d/6c6c6e759bee4c496c325decdeeef007"
+                }
+            },
+            "selfie": {
+                "url": "https://s3.amazonaws.com/*******",
+
+                "fields": {
+                    "key": "4/i/dc71d140532b1a7b55ba29f35b7a16d2"
+                }
+            }
+        }
+    }
+}
+```
+
+
 
 ## Uploading KYC documents
 

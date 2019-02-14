@@ -5,12 +5,12 @@
     "previous": "Previous",
     "tagline": "Developer Documentation",
     "docs": {
-      "admin_dashboard/a": {
-        "title": "Some feature",
-        "sidebar_label": "Feature A"
-      },
       "assets/kit_index": {
         "title": "assets/kit_index"
+      },
+      "features/admin_dashboard": {
+        "title": "Some feature",
+        "sidebar_label": "Admin Dashboard"
       },
       "features/compliance_partner": {
         "title": "Compliance Partner",
@@ -18,27 +18,23 @@
       },
       "features/front_end_customization": {
         "title": "Front End Customization",
-        "sidebar_label": "Front End Customization"
+        "sidebar_label": "Customised Front End"
       },
-      "features/ocr_fr": {
+      "features/auto_id_verification": {
         "title": "OCR + FR",
-        "sidebar_label": "OCR + FR"
+        "sidebar_label": "Auto ID verification"
       },
       "features/security_and_encryption": {
         "title": "Security and Encryption",
-        "sidebar_label": "Security"
+        "sidebar_label": "Security & Encryption"
       },
       "features/whitelisting": {
         "title": "Whitelisting",
-        "sidebar_label": "Whitelisting"
+        "sidebar_label": "Whitelisting Service"
       },
       "getting_started/overview": {
         "title": "KYC | Overview",
         "sidebar_label": "Overview"
-      },
-      "whitelisting_setup/whitelisting_setup": {
-        "title": "whitelisting Setup",
-        "sidebar_label": "Whitelisting Setup"
       }
     },
     "links": {
@@ -48,9 +44,7 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
-      "Features": "Features",
-      "Whitelisting Setup": "Whitelisting Setup",
-      "Admin Dashboard": "Admin Dashboard"
+      "Features": "Features"
     }
   },
   "pages-strings": {

@@ -4,22 +4,12 @@
       "getting_started/overview"
     ],
     "Features": [
-      "features/ocr_fr",
+      "features/auto_id_verification",
       "features/compliance_partner",
       "features/security_and_encryption",
       "features/whitelisting",
-      "features/front_end_customization"
-    ],
-    "Whitelisting Setup": [
-      "whitelisting_setup/whitelisting_setup"
-    ],
-    "Admin Dashboard": [
-      "admin_dashboard/a"
-    ]
-  },
-  "kyc_sdk": {
-    "Getting Started": [
-      "sdk/getting_started/sdk_overview"
+      "features/front_end_customization",
+      "features/admin_dashboard"
     ]
   }
 }
