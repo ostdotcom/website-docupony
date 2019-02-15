@@ -1,7 +1,7 @@
 ---
 id: compliance_partner
-title: Compliance Partner 
-sidebar_label: Compliance Partner 
+title: Compliance Partner
+sidebar_label: Compliance Partner
 ---
 
 # Compliance Partner - [Acuris Risk Intelligence](https://www.acurisriskintelligence.com/) 

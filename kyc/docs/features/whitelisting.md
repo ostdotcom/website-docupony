@@ -1,6 +1,6 @@
 ---
 id: whitelisting
-title: Whitelisting
+title: Whitelisting Service
 sidebar_label: Whitelisting Service
 ---
 
@@ -17,15 +17,15 @@ This is an OST Ethereum address that needs to be set in the ICO client's contrac
 ### Whitelisting logic on the blockchain
 After the whitelisting transaction was submitted we wait 90 seconds which is the time needed for 6 new blocks to be mined. If the block where the transaction was performed on is still existing after 90 seconds, we can say the transaction is confirmed and therefore the Ethereum address of the investor is whitelisted.
 
-##Whitelisting Setup
+## Whitelisting Setup
 OST KYC's whitelisting process integration requires updateWhitelist method and WhitelistUpdated event in your Token Sale contract with the below given specifications. A sample contract with whitelisting functionality is present at the end of this section.
 
-###Interface
+### Interface
 function updateWhitelist(address _account, uint8 _phase) external onlyOps returns (bool)
 
 onlyOps is a modifier but clients can implement their own Access Control List (ACL) modifier.  The requirement is that Verified Operator Address (i.e. opsAddress) only has the permission to call updateWhitelist. The opsAddress is set by the owner of the contract using the setOpsAddress function.
 
-###Event
+### Event
 event WhitelistUpdated(address indexed _account, uint8 _phase);
 
 WhitelistUpdated event should always be emitted on successful whitelist/unwhitelist transaction. Where _account is ethereum address and _phase represents the whitelist status (0: unwhitelisted, 1: whitelisted). 
@@ -34,7 +34,7 @@ The Abi for the WhitelistUpdated event is :-
 
 {"anonymous":false,"inputs":[{"indexed":true,"name":"_account","type":"address"},{"indexed":false,"name":"_phase","type":"uint8"}],"name":"WhitelistUpdated","type":"event"}
 
-####Sample Code with Whitelist Functionality:
+#### Sample Code with Whitelist Functionality:
 ```
 pragma solidity ^0.4.23;
 

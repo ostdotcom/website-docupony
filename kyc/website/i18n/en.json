@@ -9,27 +9,27 @@
         "title": "assets/kit_index"
       },
       "features/admin_dashboard": {
-        "title": "Some feature",
+        "title": "Admin Dashboard",
         "sidebar_label": "Admin Dashboard"
+      },
+      "features/auto_id_verification": {
+        "title": "Auto ID verification",
+        "sidebar_label": "Auto ID verification"
       },
       "features/compliance_partner": {
         "title": "Compliance Partner",
         "sidebar_label": "Compliance Partner"
       },
       "features/front_end_customization": {
-        "title": "Front End Customization",
-        "sidebar_label": "Customised Front End"
-      },
-      "features/auto_id_verification": {
-        "title": "OCR + FR",
-        "sidebar_label": "Auto ID verification"
+        "title": "Customized Front End",
+        "sidebar_label": "Customized Front End"
       },
       "features/security_and_encryption": {
         "title": "Security and Encryption",
         "sidebar_label": "Security & Encryption"
       },
       "features/whitelisting": {
-        "title": "Whitelisting",
+        "title": "Whitelisting Service",
         "sidebar_label": "Whitelisting Service"
       },
       "getting_started/overview": {

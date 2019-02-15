@@ -1,6 +1,6 @@
 ---
 id: admin_dashboard
-title: Some feature
+title: Admin Dashboard
 sidebar_label: Admin Dashboard
 ---
 

@@ -191,11 +191,11 @@ var buildAndReload = function(path) {
         return gulp.series('build-kyc-api', 'kyc-copy','reload')();
 
     }
-    else if (paths[0] == 'kit' && paths[1] == 'docs') {
+    else if (paths[0] == 'kit' && (paths[1] == 'docs' || paths[1] == 'website') ) {
         return gulp.series('build-kit-docs','kit-copy', 'reload')();
 
     }
-    else if(paths[0] == 'kyc' && paths[1] == 'docs') {
+    else if(paths[0] == 'kyc' && (paths[1] == 'docs' || paths[1] == 'website')) {
         return gulp.series('build-kyc-docs', 'kyc-copy','reload')();
     }
 }

@@ -1,6 +1,6 @@
 ---
 id: auto_id_verification
-title: OCR + FR
+title: Auto ID verification
 sidebar_label: Auto ID verification
 ---
 
