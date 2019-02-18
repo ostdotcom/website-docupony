@@ -4,7 +4,7 @@ title: Compliance Partner
 sidebar_label: Compliance Partner
 ---
 
-# Compliance Partner - [Acuris Risk Intelligence](https://www.acurisriskintelligence.com/) 
+In order to conduct the  AML/CTF checks in OST KYC, we have partnered with Acuris Risk Intelligence - [https://www.acurisriskintelligence.com/](https://www.acurisriskintelligence.com/).
 
 ## Acuris Risk Intelligence Data
 Acuris Risk Intelligence provides historic and global coverage on high-risk individuals and businesses allowing clients to pinpoint where risks may lie when beginning business relationships as well as the ability to track changes and alerts to those that they are monitoring.
