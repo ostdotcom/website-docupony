@@ -249,6 +249,6 @@ li.sub-nav-li.active a{
 }
 
 
-.container.mainContainer a, .container.mainContainer a:hover {
+.container.mainContainer article a, .container.mainContainer article a:hover {
     color: #e4b030;
 }

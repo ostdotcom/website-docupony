@@ -247,3 +247,8 @@ li.sub-nav-li.active a{
     padding-left: 40px;
     background: #f9fafa;
 }
+
+
+.container.mainContainer article a, .container.mainContainer article a:hover {
+    color: #e4b030;
+}

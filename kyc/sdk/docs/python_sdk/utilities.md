@@ -1,6 +1,6 @@
 ---
 id: utilities
-title: KYC Python SDK | Utilities
+title: Utilities
 sidebar_label: Utilities
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: installation
-title: KYC Python SDK | Installation
+title: Installation
 sidebar_label: Installation
 ---
 
