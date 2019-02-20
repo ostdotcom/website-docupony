@@ -4,7 +4,7 @@ title: API Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - python: Python
   - ruby: Ruby
-  - javascript: Node Js
+  - javascript: NodeJs
   - java: Java
   - php: PHP
 
@@ -94,7 +94,7 @@ For a Post request, the parameters are sent in the request body with default con
 ## The User Object 
 > Sample User Object :
 
-```json
+```jason
 {
   "id": 11428,
   "email": "kycuser@ost.com",
@@ -150,7 +150,7 @@ user = user_service.create(params).to_json
 
 
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -243,7 +243,7 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 
 > Example Response
 
-```json
+```jason
 {
   "success": true,
    "data": {
@@ -294,7 +294,7 @@ user = Users.get({'id': '11003'})
 print(user)
 ```
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -312,6 +312,7 @@ userService.get({id: '123454333'})
    console.log(JSON.stringify(err)); 
 });
 ```
+
 ```php
 require 'vendor/autoload.php';
 
@@ -382,7 +383,7 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 
 > Example Response
 
-```json
+```jason
 {
   "success": true,
    "data": {
@@ -399,7 +400,7 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 
 > Example Error Response
 
-```json
+```jason
 {
   "success": false,
   "err": {
@@ -444,7 +445,7 @@ users = Users.list()
 print(users)
 ```
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -463,6 +464,7 @@ userService.list({})
 });
 
 ```
+
 ```php
 require 'vendor/autoload.php';
 
@@ -542,7 +544,7 @@ A GET to `https://kyc.ost.com/api/v2/users` returns a list of all users who have
 <u>**Returns**</u><br>
 > Example Response
 
-```json
+```jason
 {
    "success": true,
    "data": {
@@ -642,7 +644,7 @@ Passing an optional email will result in filtering of users with that email addr
 ## The User KYC Detail Object 
 > Example Response:
 
-```json
+```jason
 {
   "id": 727,
   "created_at": 1539622156,
@@ -761,7 +763,7 @@ response = Services.users_kyc.submit_kyc({
 print(response)
 ```
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -830,6 +832,7 @@ $params['investor_proof_files_path'] = array("2/i/9ff6374909897ca507ba3077ee8587
 
 $response = $usersKycService->submit_kyc($params)->wait();
 ```
+
 ```java
 import java.io.IOException;
 import java.util.HashMap;
@@ -907,7 +910,7 @@ The Input parameters above list all the fields accepted as input. KYC clients sh
 <u>**Returns**</u><br>
 > Example Response
 
-```json
+```jason
 {
    "success": true,
    "data": {
@@ -966,7 +969,7 @@ response = users_kyc_details_service.get({'user_id':11767})
 print(response)
 ```
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -986,6 +989,7 @@ usersKYCDetailsService.get({user_id:11003})
 });
 
 ```
+
 ```php
 require 'vendor/autoload.php';
 
@@ -1057,7 +1061,7 @@ A GET to `https://kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the
 
 > Example Response 
 
-```json
+```jason
 # If the setting in admin management dashboard if OFF
 {
    "success": true,
@@ -1114,7 +1118,7 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an objec
 ## The User KYC Object 
 > Example Response:
 
-```json
+```jason
 {
    "id": 304,
    "user_kyc_detail_id": 702,
@@ -1179,7 +1183,7 @@ print(response)
 ```
 
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -1198,6 +1202,7 @@ usersKYCService.get({'user_id':11003})
    console.log(JSON.stringify(err)); 
 });
 ```
+
 ```php
 require 'vendor/autoload.php';
 
@@ -1221,6 +1226,7 @@ $params['user_id'] = '11007';
 $response = $usersKycService->get($params)->wait();
 var_dump($response);
 ```
+
 ```java
 import java.io.IOException;
 import java.util.HashMap;
@@ -1265,7 +1271,7 @@ For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "u
 
 > Example Response
 
-```json
+```jason
 {
    "success": true,
    "data": {
@@ -1322,7 +1328,7 @@ response = Services.users_kyc.list()
 print(response)
 ```
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -1341,6 +1347,7 @@ usersKYCService.list()
    console.log(JSON.stringify(err)); 
 });
 ```
+
 ```php
 require 'vendor/autoload.php';
 
@@ -1419,7 +1426,7 @@ A GET to `https://kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc o
 
 > Example Response code
 
-```json
+```jason
 {
    "success": true,
    "data": {
@@ -1622,7 +1629,7 @@ response = Services.users_kyc.get_pre_signed_url_put({'files': {
 print(response)
 ```
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -1739,7 +1746,7 @@ For instance, the value in the key `data.file_upload_put.document_id.fields.key`
 
 > Example Response code
 
-```json
+```jason
 {
     "success": "true",
     "data": {
@@ -1846,7 +1853,7 @@ response = Services.users_kyc.get_pre_signed_url_put({'files': {
 print(response)
 ```
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -1873,6 +1880,7 @@ usersKYCService.getPresignedUrlPost({
    console.log(JSON.stringify(err)); 
 });
 ```
+
 ```php
 require 'vendor/autoload.php';
 
@@ -1962,7 +1970,7 @@ For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is 
 
 > Example Response code
 
-```json
+```jason
 {
     "success": true,
     "data": {
@@ -2031,7 +2039,7 @@ response = validator_service.verify_ethereum_address({'ethereum_address': '0x32b
 print(response)
 ```
 
-```js
+```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 
 const kycObj = new KYCSDK({
@@ -2119,7 +2127,7 @@ For api calls to `/ethereum-address-validation` a success `true` is sent if the 
 
 > Example Response
 
-```json
+```jason
 {
   "success": true
 }
@@ -2242,7 +2250,7 @@ generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
 
 > Example Webhook Response for register event
 
-```json
+```jason
 {
    "created_at": "1541144915",
    "data": {
@@ -2270,7 +2278,7 @@ generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
 
 > Example Webhook Response for double opt-in event
 
-```json
+```jason
 {
    "created_at": "1541152654",
    "data": {
@@ -2298,7 +2306,7 @@ generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
 
 > Example Webhook Response for delete user event
 
-```json
+```jason
 {
    "created_at": "1541144571",
    "data": {
@@ -2339,7 +2347,7 @@ User events indicate a user's status in the system at that point in time. User e
 
 > Example Webhook Response for user KYC submit event
 
-```json
+```jason
 {
    "created_at": "1541753766",
    "data": {
@@ -2370,7 +2378,7 @@ User events indicate a user's status in the system at that point in time. User e
 
 > Example Webhook Response for Etherum Address Update event
 
-```json
+```jason
 {
    "created_at": "1541756913",
    "data": {
@@ -2401,7 +2409,7 @@ User events indicate a user's status in the system at that point in time. User e
 
 > Example Webhook Response when a KYC entry is re-opened
 
-```json
+```jason
 {
    "created_at": "1541144431",
    "data": {
@@ -2432,7 +2440,7 @@ User events indicate a user's status in the system at that point in time. User e
 
 > Example Webhook Response when status of a KYC entry changes
 
-```json
+```jason
 {
    "created_at": "1541154581",
    "data": {
