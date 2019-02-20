@@ -2,7 +2,12 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
+  - python: Python
   - ruby: Ruby
+  - javascript: Node Js
+  - java: Java
+  - php: PHP
+
 
 toc_footers:
   - Documentation Powered by Slate
@@ -111,31 +116,115 @@ For a Post request, the parameters are sent in the request body with default con
 ## Add a User
 > Example Request code:
 
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+Users = Services.users
+
+user = Users.create({'email': 'bob@example-domain.com'})
+print(user)
+```
+
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
-# setup http request
-  def setup_request(uri)
-     http = Net::HTTP.new(uri.host, uri.port)
-     http.use_ssl = true
-     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-     http
-  end
-# Make a Post Request
-def make_post_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  uri = URI('https://kyc.ost.com' + endpoint)
-  http = setup_request(uri)
-  result = http.post(uri.path, request_params.to_query)
-  result
-end  
-# create user
-def create_user(custom_params = {})
-  endpoint = "/api/v2/users"
-  make_post_request(endpoint, custom_params)
-end
-create_user({email: 'kyc@ost.com'})
+require('ost-kyc-sdk-ruby')
+
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
+
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+user_service = ost_kyc_sdk.services.users
+params = {email: 'email1@domain.com'}
+user = user_service.create(params).to_json
+```
+
+
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+const userService = kycObj.services.users;
+
+userService.create({email: 'alice+1@ost.com'})
+.then(function(res) { 
+   console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+```
+
+
+
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         // User Services
+         com.ost.kyc.services.v2.User userService = services.user;
+
+         HashMap <String,Object> params = new HashMap<String,Object>();
+         params.put("email", "something@domain.com");
+         JsonObject response = userService.create( params );
+         System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$userService = $ostKycSdkObj->services->user;
+
+$params = array();
+$params['email'] = 'email@domain.com';
+$user = $userService->create($params)->wait();
 
 ```
 
@@ -175,32 +264,111 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 > Example Request code:
 
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
-# setup http request
-def setup_request(uri)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  http
-end
-# Make a Get Request
-def make_get_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  query_string = request_params.to_query
-  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
-  http = setup_request(uri)
-  result = http.get(uri)
-  result
-end  
-# retrieve a user
-def get_user(user_id)
-      endpoint = "/api/v2/users/#{user_id}"
-      make_get_request(endpoint)
-end
-get_user(11428)
+require('ost-kyc-sdk-ruby')
+
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
+
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+user_service = ost_kyc_sdk.services.users
+
+user = user_service.get(id: 11007).to_json
 ```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+Users = Services.users
+user = Users.get({'id': '11003'})
+print(user)
+```
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+const userService = kycObj.services.users;
+
+userService.get({id: '123454333'})
+.then(function(res) { 
+   console.log(JSON.stringify(res)); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+```
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$userService = $ostKycSdkObj->services->user;
+
+$params = array();
+$params['id'] = '11007';
+$response = $userService->get($params)->wait();
+var_dump($response);
+
+```
+
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         // User Services
+         com.ost.kyc.services.v2.User userService = services.user;
+
+         HashMap <String,Object> params = new HashMap<String,Object>();
+         params.put("id", "11007");
+         JsonObject response = userService.get( params );
+         System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 A GET to `https://kyc.ost.com/api/v2/users/{id}` retrieves the information of an existing user. You need to supply the identifier that was returned upon user creation.
 
 <u>**Input Parameters**</u>
@@ -246,33 +414,109 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 > Example Request code:
 
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
-# setup http request
-def setup_request(uri)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  http
-end
-# Make a Get Request
-def make_get_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  query_string = request_params.to_query
-  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
-  http = setup_request(uri)
-  result = http.get(uri)
-  result
-end 
-# Get user list
-def get_user_list(custom_params = {})
-  endpoint = "/api/v2/users"
-  make_get_request(endpoint, custom_params)
-end
-get_user_list({page_number: 1, order: 'desc', filters: {email: "kycuser"}, limit: 10})
+require('ost-kyc-sdk-ruby')
+
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
+
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+user_service = ost_kyc_sdk.services.users
+
+users = ost_kyc_user_object.list().to_json
+```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+Users = Services.users
+users = Users.list()
+print(users)
+```
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+const userService = kycObj.services.users;
+
+userService.list({})
+.then(function(res) { 
+   console.log(JSON.stringify(res)); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
 
 ```
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$userService = $ostKycSdkObj->services->user;
+
+$params = array();
+$response = $userService->getList($params)->wait();
+var_dump($response);
+```
+
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         // User Services
+         com.ost.kyc.services.v2.User userService = services.user;
+
+         HashMap <String,Object> params = new HashMap<String,Object>();
+         JsonObject response = userService.list( params );
+         System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 A GET to `https://kyc.ost.com/api/v2/users` returns a list of all users who have signed up. This doesn't imply that all these users have submitted their required KYC details. The users are returned sorted by creation date, with the most recent users appearing first. 
 
 <u>**Input Parameters**</u>
@@ -452,31 +696,185 @@ Passing an optional email will result in filtering of users with that email addr
 > Example Request code :
 
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
-# setup http request
-  def setup_request(uri)
-     http = Net::HTTP.new(uri.host, uri.port)
-     http.use_ssl = true
-     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-     http
-  end
-# Make a Post Request
-def make_post_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  uri = URI('https://kyc.ost.com' + endpoint)
-  http = setup_request(uri)
-  result = http.post(uri.path, request_params.to_query)
-  result
-end  
-# Submit KYC details request
-def submit_kyc(user_id, custom_params={})
-  endpoint = "/api/v2/users-kyc/#{user_id}"
-  custom_params = custom_params
-  make_post_request(endpoint, custom_params)
-end
-submit_kyc(11420, {first_name:'YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'})
+require('ost-kyc-sdk-ruby')
+
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
+
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+users_kyc_service = ost_kyc_sdk.services.users_kyc
+
+params = {
+    user_id: 11007, 
+    first_name:'YOGESH',  
+    last_name:'SAWANT',  
+    birthdate:'29/07/1992', 
+    country:'INDIA', 
+    nationality:'INDIAN', 
+    document_id_number:'ABCD123', 
+    document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',
+    residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], 
+    city:'pune',
+    street_address:'hadapsar',
+    postal_code:'411028',
+    state:'maharashtra'}
+
+users_kyc_service.submit_kyc(params).to_json
+```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+
+response = Services.users_kyc.submit_kyc({
+        'user_id': 11035,
+        'first_name':'aniket',
+        'last_name':'ayachit', 
+        'birthdate':'21/12/1991', 
+        'country':'india', 
+        'nationality':'indian', 
+        'document_id_number':'arqpa7659a',
+        'document_id_file_path': '4/i/f6417391000fae92b5d074b2e5928a3b', 
+        'selfie_file_path':'4/i/dc71d140532b1a7b55ba29f35b7a16d2', 
+        'residence_proof_file_path':'4/d/6c6c6e759bee4c496c325decdeeef007', 
+        'ethereum_address': '0xdfbc84ccac430f2c0455c437adf417095d7ad68e', 
+        'estimated_participation_amount':'2', 
+        'street_address':'afawfveav ',
+        'city':'afawfveav', 
+        'state':'afawfveav',
+        'postal_code':'afawfveav',
+        'investor_proof_files_path':[
+            '4/d/5cfaefa078eb75f3a6470474053ef175', 
+            '4/d/5ccc6d4b167e12af4616f1c96eb6505a']
+        })
+print(response)
+```
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+
+const usersKYCService = kycObj.services.usersKyc;
+
+usersKYCService.submitKyc({
+   user_id:11003, 
+   first_name:'RAJESH',  
+   last_name:'KUMAR',  
+   birthdate:'29/07/1992', 
+   country:'INDIA', 
+   nationality:'INDIAN', 
+   document_id_number:'ADDHBDHBSH', 
+   document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',
+   residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], 
+   city:'pune',
+   street_address:'hadapsar',
+   postal_code:'411028',
+   state:'maharashtra'
+   })
+.then(function(res) {
+   console.log(JSON.stringify(res)); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+```
+
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$usersKycService = $ostKycSdkObj->services->usersKyc;
+
+$params = array();
+$params['user_id'] = "11035";
+$params['first_name'] = "aniket";
+$params['last_name'] = "ayachit";
+$params['birthdate'] = "21/12/1991";
+$params['country'] = "india";
+$params['nationality'] = "indian";
+$params['document_id_number'] = "arqpa7659a";
+$params['document_id_file_path'] = "2/i/016be96da275031de2787b57c99f1471";
+$params['selfie_file_path'] = "2/i/9e8d3a5a7a58f0f1be50b7876521aebc";
+$params['residence_proof_file_path'] = "2/i/4ed790b2d525f4c7b30fbff5cb7bbbdb";
+$params['ethereum_address'] = "0xdfbc84ccac430f2c0455c437adf417095d7ad68e";
+$params['postal_code'] = "afawfveav";
+$params['investor_proof_files_path'] = array("2/i/9ff6374909897ca507ba3077ee8587da", "2/i/4872730399670c6d554ab3821d63ebce");
+
+$response = $usersKycService->submit_kyc($params)->wait();
+```
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         com.ost.kyc.services.v2.UsersKyc usersKycService = services.usersKyc;
+
+         HashMap <String, Object> params = new HashMap<String, Object>();
+
+         params.put("user_id", "11052");
+         params.put("first_name", "YOGESH");
+         params.put("last_name", "SAWANT");
+         params.put("birthdate", "29/07/1992");
+         params.put("country", "INDIA");
+         params.put("document_id_number", "ABCD123");
+         params.put("document_id_file_path", "2/i/016be96da275031de2787b57c99f1471");
+         params.put("selfie_file_path", "2/i/9e8d3a5a7a58f0f1be50b7876521aebc");
+         params.put("ethereum_address", "0x04d39e0b112c20917868ffd5c42372ecc5df577b");
+         params.put("estimated_participation_amount", "1.2");
+         params.put("residence_proof_file_path", "2/i/4ed790b2d525f4c7b30fbff5cb7bbbdb");
+         params.put("city", "pune");
+         params.put("nationality", "INDIAN");
+         params.put("state", "maharashtra");
+         params.put("postal_code", "411028");
+
+         JsonObject response = usersKycService.submit_kyc( params );
+         System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 A POST to `https://kyc.ost.com/api/v2/users-kyc/{{user_id}}` creates a new `user-kyc-detail` object for a user with the details provided through the input parameters. The same endpoint has to be used to update a user's KYC details in case of re-submissions. All parameters are required to be re-sent in an update request. You need to supply the user identifier as part of the endpoint that was returned upon user creation.
@@ -537,31 +935,111 @@ For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "
 > Example Request code :
 
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
-# setup http request
-  def setup_request(uri)
-     http = Net::HTTP.new(uri.host, uri.port)
-     http.use_ssl = true
-     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-     http
-  end
-# Make a Get Request
-def make_get_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  query_string = request_params.to_query
-  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
-  http = setup_request(uri)
-  result = http.get(uri)
-  result
-end  
-# Get user kyc details for particular id
-def get_user_kyc_detail(user_id)
-  endpoint = "/api/v2/users-kyc-detail/#{user_id}"
-  make_get_request(endpoint)
-end
-get_user_kyc_detail(11420)
+require('ost-kyc-sdk-ruby')
+
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
+
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+users_kyc_details_service = ost_kyc_sdk.services.users_kyc_detail
+
+response = users_kyc_details_service.get(user_id: 11007).to_json
+print(response)
+```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+users_kyc_details_service = Services.users_kyc_details
+response = users_kyc_details_service.get({'user_id':11767})
+print(response)
+```
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+
+const usersKYCDetailsService = kycObj.services.usersKycDetails;
+
+usersKYCDetailsService.get({user_id:11003})
+.then(function(res) { 
+   console.log(JSON.stringify(res)); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+
+```
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$usersKycDetailService = $ostKycSdkObj->services->usersKycDetail;
+
+$params = array();
+$params['user_id'] = '11007';
+$response = $usersKycDetailService->get($params)->wait();
+var_dump($response);
+```
+
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         com.ost.kyc.services.v2.UsersKycDetail usersKycDetailService = services.usersKycDetail;
+
+         HashMap <String, Object> params = new HashMap<String, Object>();
+         params.put("user_id", "11007");
+
+         JsonObject response = usersKycDetailService.get( params );
+         System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 A GET to `https://kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the details of KYC data an existing user has submitted. You need to supply the user identifier that was returned while creating the user. 
@@ -670,33 +1148,108 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an objec
 > Example Request code:
 
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
+require('ost-kyc-sdk-ruby')
 
-# setup http request
-def setup_request(uri)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  http
-end
-# Make a Get Request
-def make_get_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  query_string = request_params.to_query
-  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
-  http = setup_request(uri)
-  result = http.get(uri)
-  result
-end   
-# retrieve user kyc for particular user
-def get_user_kyc(user_id)
-  endpoint = "/api/v2/users-kyc/#{user_id}"
-  make_get_request(endpoint)
-end
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
 
-get_user_kyc(11430)
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+users_kyc_service = ost_kyc_sdk.services.users_kyc
+
+response = users_kyc_service.get(user_id: '11007').to_json
+print(response)
+```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+response = Services.users_kyc.get({'user_id': 11767})
+print(response)
+```
+
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+
+const usersKYCService = kycObj.services.usersKyc;
+
+usersKYCService.get({'user_id':11003})
+.then(function(res) { 
+   console.log(JSON.stringify(res)); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+```
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$usersKycService = $ostKycSdkObj->services->usersKyc;
+
+$params = array();
+$params['user_id'] = '11007';
+$response = $usersKycService->get($params)->wait();
+var_dump($response);
+```
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         com.ost.kyc.services.v2.UsersKyc usersKycService = services.usersKyc;
+
+         HashMap <String,Object> params = new HashMap<String,Object>();
+         params.put("user_id", "11007");
+         JsonObject response = usersKycService.get( params );
+         System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 A user can submit their KYC details multiple times, a GET to `https://kyc.ost.com/api/v2/users-kyc/{{user_id}}` retrieves some properties and status related information of the last KYC that a user had submitted. This endpoint however doesn't returns `KYC data` submitted by users. You need to supply the identifier that was returned upon user creation for fetching the information.
@@ -737,35 +1290,109 @@ For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "u
 ## List KYC Statuses 
 > Example Request code:
 
+
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
+require('ost-kyc-sdk-ruby')
 
-# setup http request
-def setup_request(uri)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  http
-end
-# Make a Get Request
-def make_get_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  query_string = request_params.to_query
-  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
-  http = setup_request(uri)
-  result = http.get(uri)
-  result
-end   
-# list kyc status of users 
-def get_users_kyc_list(custom_params = {})
-  endpoint = "/api/v2/users-kyc"
-  make_get_request(endpoint, custom_params)
-end
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
 
-get_users_kyc_list()
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+users_kyc_service = ost_kyc_sdk.services.users_kyc
+
+response = users_kyc_service.list().to_json
+print(response)
 ```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+response = Services.users_kyc.list()
+print(response)
+```
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+
+const usersKYCService = kycObj.services.usersKyc;
+
+usersKYCService.list()
+.then(function(res) { 
+   console.log(JSON.stringify(res)); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+```
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$usersKycService = $ostKycSdkObj->services->usersKyc;
+
+$params = array();
+$response = $usersKycService->getList($params)->wait();
+var_dump($response);
+```
+
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         com.ost.kyc.services.v2.UsersKyc usersKycService = services.usersKyc;
+
+         HashMap <String,Object> params = new HashMap<String,Object>();
+         JsonObject response = usersKycService.list( params );
+         System.out.println("response: " + response.toString() );
+    }
+}
+```
+
 A GET to `https://kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc objects. A `user-kyc` object provides some properties and status related information of the kyc details that a user had last submitted. The `user-kyc` objects are returned sorted by the time when the latest kyc details were submitted, with the most recent `user-kyc` object appearing first.
 
 <u>**Input Parameters**</u>
@@ -951,43 +1578,148 @@ Each entry in the array is a separate user\_kyc object. If no more `user-kyc` ob
 > Example request code
 
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
+require('ost-kyc-sdk-ruby')
 
-# setup http request
-def setup_request(uri)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  http
-end
-# Make a Get Request
-def make_get_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  query_string = request_params.to_query
-  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
-  http = setup_request(uri)
-  result = http.get(uri)
-  result
-end   
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
 
-def get_presigned_url_put(custom_params)
-  endpoint = "/api/v2/users-kyc/pre-signed-urls/for-put"
-  make_get_request(endpoint, custom_params)
-end
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+users_kyc_service = ost_kyc_sdk.services.users_kyc
 
 params = {
-    files: {
-        residence_proof: 'application/pdf',
-        investor_proof_file1: 'application/pdf',
-        investor_proof_file2: 'application/pdf',
-        document_id: 'image/jpeg',
-        selfie: 'image/jpeg'
-    }
+    'files': {
+        'residence_proof': 'application/pdf',
+        'investor_proof_file1': 'application/pdf',
+        'investor_proof_file2': 'application/pdf',
+        'document_id': 'image/jpeg',
+        'selfie': 'image/jpeg'
 }
 
-get_presigned_url_put(params)
+signed_urls = users_kyc_service.get_presigned_url_put(params).to_json
+```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+response = Services.users_kyc.get_pre_signed_url_put({'files': {
+    'residence_proof': 'application/pdf',
+    'investor_proof_file1': 'application/pdf',
+    'investor_proof_file2': 'application/pdf',
+    'document_id': 'image/jpeg',
+    'selfie': 'image/jpeg'
+}})
+print(response)
+```
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+
+const usersKYCService = kycObj.services.usersKyc
+
+usersKYCService.getPresignedUrlPut({
+   files: {
+      residence_proof: 'application/pdf',
+      investor_proof_file1: 'application/pdf',
+      investor_proof_file2: 'application/pdf',
+      document_id: 'image/jpeg',
+      selfie: 'image/jpeg'
+   }
+})
+.then(function(res) { 
+   console.log(JSON.stringify(res, null, "  ")); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+```
+
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$usersKycService = $ostKycSdkObj->services->usersKyc;
+
+$params = array();
+$nestedparams = array();
+
+$nestedparams['selfie'] = 'image/jpeg';
+$nestedparams['document_id'] = 'image/jpeg';
+$nestedparams['investor_proof_file1'] = 'application/pdf';
+$nestedparams['investor_proof_file2'] = 'application/pdf';
+$nestedparams['residence_proof'] = 'application/pdf';
+
+$params['files'] = $nestedparams;
+
+$response = $usersKycService->get_presigned_url_put($params)->wait();
+var_dump($response);
+```
+
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         com.ost.kyc.services.v2.UsersKyc usersKycService = services.usersKyc;
+
+         HashMap <String, Object> params = new HashMap<String, Object>();
+         HashMap <String, String> nestedparams = new HashMap<String, String>();
+
+         nestedparams.put("selfie", "image/jpeg");
+         nestedparams.put("residence_proof", "application/pdf");
+         nestedparams.put("investor_proof_file1", "application/pdf");
+         nestedparams.put("investor_proof_file2", "application/pdf");
+         nestedparams.put("document_id", "image/jpeg");
+
+
+         params.put("files", nestedparams);
+         JsonObject response = usersKycService.get_presigned_url_put( params );
+         System.out.println("response: " + response.toString());
+    }
+}
 ```
 
 While filling in KYC details there are identification and other documents that a user submits which are required to be uploaded for verification. The upload functionality is achieved by generating a pre-signed S3 URL. These URLs are used to get temporary access to an otherwise private OST KYC S3 bucket and can be used for putting user documents in that bucket. 
@@ -1070,40 +1802,149 @@ r = Net::HTTP.start(uri.host, :use_ssl => true) do |http|
 > Example request code
 
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
+require('ost-kyc-sdk-ruby')
 
-# setup http request
-def setup_request(uri)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  http
-end
-# Make a Get Request
-def make_get_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  query_string = request_params.to_query
-  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
-  http = setup_request(uri)
-  result = http.get(uri)
-  result
-end   
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
 
-def get_presigned_url_post(custom_params)
-  endpoint = "/api/v2/users-kyc/pre-signed-urls/for-post"
-  make_get_request(endpoint, custom_params)
-end
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+users_kyc_service = ost_kyc_sdk.services.users_kyc
 
 params = {
-     files: {
-         document_id: 'image/jpeg',
-     }
- }
+    'files': {
+        'residence_proof': 'application/pdf',
+        'investor_proof_file1': 'application/pdf',
+        'investor_proof_file2': 'application/pdf',
+        'document_id': 'image/jpeg',
+        'selfie': 'image/jpeg'
+}
 
-get_presigned_url_post(params)
+signed_urls = users_kyc_service.get_presigned_url_post(params).to_json
 ```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+response = Services.users_kyc.get_pre_signed_url_put({'files': {
+    'residence_proof': 'application/pdf',
+    'investor_proof_file1': 'application/pdf',
+    'investor_proof_file2': 'application/pdf',
+    'document_id': 'image/jpeg',
+    'selfie': 'image/jpeg'
+}})
+print(response)
+```
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+
+const usersKYCService = kycObj.services.usersKyc
+
+usersKYCService.getPresignedUrlPost({
+   files: {
+      residence_proof: 'application/pdf',
+      investor_proof_file1: 'application/pdf',
+      investor_proof_file2: 'application/pdf',
+      document_id: 'image/jpeg',
+      selfie: 'image/jpeg'
+   }
+})
+.then(function(res) { 
+   console.log(JSON.stringify(res, null, "  ")); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+```
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$usersKycService = $ostKycSdkObj->services->usersKyc;
+
+$params = array();
+$nestedparams = array();
+
+$nestedparams['selfie'] = 'image/jpeg';
+$nestedparams['document_id'] = 'image/jpeg';
+$nestedparams['investor_proof_file1'] = 'application/pdf';
+$nestedparams['investor_proof_file2'] = 'application/pdf';
+$nestedparams['residence_proof'] = 'application/pdf';
+
+$params['files'] = $nestedparams;
+
+$response = $usersKycService->get_presigned_url_post($params)->wait();
+var_dump($response);
+```
+
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         com.ost.kyc.services.v2.UsersKyc usersKycService = services.usersKyc;
+
+         HashMap <String, Object> params = new HashMap<String, Object>();
+         HashMap <String, String> nestedparams = new HashMap<String, String>();
+
+         nestedparams.put("selfie", "image/jpeg");
+         nestedparams.put("residence_proof", "application/pdf");
+         nestedparams.put("investor_proof_file1", "application/pdf");
+         nestedparams.put("investor_proof_file2", "application/pdf");
+         nestedparams.put("document_id", "image/jpeg");
+
+
+         params.put("files", nestedparams);
+         JsonObject response = usersKycService.get_presigned_url_post( params );
+         System.out.println("response: " + response.toString());
+    }
+}
+```
+
 
 While filling in KYC details there are identification and other documents that a user submits which are required to be uploaded for verification. The upload functionality is achieved by generating a pre-signed S3 URL. These URLs are used to get temporary access to an otherwise private OST KYC S3 bucket and can be used for putting user documents in that bucket. 
 
@@ -1161,33 +2002,110 @@ Also the value in the key `data.file_upload_post.document_id.fields.key` in the 
 > Example Request code:
 
 ```ruby
-require 'openssl'
-require 'net/http'
-require 'rails'
+require('ost-kyc-sdk-ruby')
 
-# setup http request
-def setup_request(uri)
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  http
-end
-# Make a Get Request
-def make_get_request(endpoint, custom_params = {})
-  request_params = base_params(endpoint, custom_params)
-  query_string = request_params.to_query
-  uri = URI('https://kyc.ost.com' + endpoint + "?" + query_string)
-  http = setup_request(uri)
-  result = http.get(uri)
-  result
-end  
-# Verify ethereum address
-def verify_ethereum_address(custom_params)
-  endpoint = "/api/v2/ethereum-address-validation"
-  make_get_request(endpoint, custom_params)
-end
-verify_ethereum_address(ethereum_address: "0x81b7e08f65bdf5648606c89998a9cc8164397647")
+# The timeout in the config is the timeout in seconds for which the socket connection will remain open
+CONFIG = {timeout: 10}
+
+ost_kyc_sdk = OstKycSdkRuby::Saas::Services.new({
+    api_key: 'Your API key', 
+    api_secret: 'Your API Secret', 
+    api_base_url: 'API base URL', 
+    config: CONFIG})
+
+validators_service = ost_kyc_sdk.services.validators
+validators_service.verify_ethereum_address({ethereum_address: '0x7f2ED21D1702057C7d9f163cB7e5458FA2B6B7c4'}).to_json
 ```
+
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
+                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
+                                        'api_base_url': 'https://kyc.stagingost.com',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+validator_service = Services.validators
+response = validator_service.verify_ethereum_address({'ethereum_address': '0x32be343b94f860124dc4fee278fdcbd38c102d88'})
+print(response)
+```
+
+```js
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
+
+const kycObj = new KYCSDK({
+   apiKey: <api_key>, 
+   apiSecret: <api_secret>, 
+   apiEndpoint: <api_endpoint>, 
+   config: {timeout: <timeout>}
+   });
+
+const validatorService = kycObj.services.validators;
+
+validatorService.verifyEthereumAddress({
+   ethereum_address: '0x32be343b94f860124dc4fee278fdcbd38c102d88'})
+.then(function(res) { 
+   console.log(JSON.stringify(res)); })
+.catch(function(err) { 
+   console.log(JSON.stringify(err)); 
+});
+```
+
+```php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='API_KEY';
+$params['apiSecret']='API_SECRET';
+$params['apiBaseUrl']='API_BASE_URL';
+
+// The config field is optional for $ostKycSdkObj Object
+$nestedparams = array();
+// This is the timeout in seconds for which the socket connection will remain open
+$nestedparams["timeout"] = 15;
+$params["config"] = $nestedparams;
+
+$ostKycSdkObj = new OSTKYCSDK($params);
+
+$validatorsService = $ostKycSdkObj->services->validators;
+
+$params = array();
+$params['ethereum_address'] = '0x7f2ED21D1702057C7d9f163cB7e5458FA2B6B7c4';
+$response = $validatorsService->verify_ethereum_address($params)->wait();
+var_dump($response);
+```
+
+```java
+import java.io.IOException;
+import java.util.HashMap;
+
+import com.ost.kyc.OSTKYCSDK;
+import com.ost.kyc.services.OSTKYCAPIService;
+
+import com.google.gson.JsonObject;
+
+public class Test {
+    public static void main(String[] args) throws IOException, OSTKYCAPIService.MissingParameter, OSTKYCAPIService.InvalidParameter {
+         HashMap<String, Object> sdkConfig = new HashMap<String, Object>();
+         
+         sdkConfig.put("apiEndpoint", "API base URL");
+         sdkConfig.put("apiKey", "Your API key");
+         sdkConfig.put("apiSecret", "API secret"); 
+
+         OSTKYCSDK ostObj = new OSTKYCSDK(sdkConfig);
+         com.ost.kyc.services.v2.Manifest services = (com.ost.kyc.services.v2.Manifest) ostObj.services;
+         
+         com.ost.kyc.services.v2.Validators validatorService = services.validators;
+
+         HashMap <String, Object> params = new HashMap<String, Object>();
+         params.put("ethereum_address", "0x7f2ED21D1702057C7d9f163cB7e5458FA2B6B7c4");
+         JsonObject response = validatorService.verify_ethereum_address( params );
+         System.out.println("response: " + response.toString() );
+    }
+}
+```
+
 A GET to `https://kyc.ost.com/api/v2/ethereum-address-validation` checks if Ethereum Address format is correct.
 
 <u>**Input Parameters**</u>
