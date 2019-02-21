@@ -19,6 +19,7 @@ img{border-style:none;box-sizing:content-box;max-width:100%;}
 .wrapper{max-width:1400px;}
 }
 .fixedHeaderContainer{
+    font-weight: 600;
     font-size: 16px;
     background:#34445b;color:#fff;min-height:50px;padding:8px 0;position:fixed;width:100%;z-index:9999;}
 @media only screen and (min-width: 1024px){
@@ -48,7 +49,7 @@ img{border-style:none;box-sizing:content-box;max-width:100%;}
 .navigationSlider .slidingNav ul{overflow-x:auto;}
 .navigationSlider .slidingNav ul::-webkit-scrollbar{display:none;}
 }
-.navigationSlider .slidingNav ul li a{border:0;color:rgba(255, 255, 255, 0.8);display:flex;margin:0;padding:0;font-size:16px;font-weight:300;line-height:1.2em;padding:6px 10px;height:32px;font-size:1em;}
+.navigationSlider .slidingNav ul li a{border:0;color:rgba(255, 255, 255, 0.8);display:flex;margin:0;padding:0;font-size:16px;font-weight:500;line-height:1.2em;padding:6px 10px;height:32px;font-size:1em;}
 .navigationSlider .slidingNav ul li a:hover{color:#fff;}
 .fixedHeaderContainer header h2{display:block;color:#34445B!important;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;line-height:0px!important;position:relative;z-index:9999;}
 .wrapper{max-width:100%;}
@@ -83,14 +84,14 @@ li + li{margin-top:0.25em;}
 }
 .sub-nav ul{display:block;float:left;margin-bottom:0;}
 li.sub-nav-li{height:50px;font-size:20px;list-style:none;display:inline-block;padding:10px 20px 0 20px;margin-top:0;}
-li.sub-nav-li.active a{color:#e6b847;border-bottom:2px solid #e6b847;padding-bottom:13px;}
+li.sub-nav-li.active a{color:#e6b847;border-bottom:2px solid #e6b847;padding-bottom:9px;}
 
 
 
 // Overriding existing slate styles
 
 .toc-wrapper .toc-link.active { 
-    background: none;
+    background: #f9fafa;
     color: #e7bc4e;
 }
 .toc-wrapper {
@@ -109,7 +110,7 @@ li.sub-nav-li.active a{color:#e6b847;border-bottom:2px solid #e6b847;padding-bot
 li.sub-nav-li.active a {
     line-height: 30px;
     font-weight: 500;
-    padding-bottom: 12px; 
+    padding-bottom: 9px; 
 }
 
 .toc-wrapper > .search input {
@@ -127,6 +128,19 @@ li.sub-nav-li.active a {
     h1, h2, h3, h4{
         border: none;
         font-weight: 600;
+        color: #438BAD;
+    }
+    h1 {
+        font-size: 32px;
+        margin-top: 1em;
+        margin-bottom: 0.4em;
+        background: none;
+    }
+    h2 {
+        font-size: 20px;
+        margin-top: 2em;
+        margin-bottom: 0.6em;
+        padding-bottom: 0; 
     }
     
     
@@ -137,4 +151,90 @@ li.sub-nav-li.active a {
 
 strong {
     font-weight: 600;
+}
+
+
+/* Changes to beautify slate */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: #34445b;
+}
+
+.content {
+    font-size: 16px;
+    line-height: 24px;
+    color: #34445b;
+
+}
+
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * quasimoda:
+ *   - http://typekit.com/eulas/00000000000000003b9af974
+ *   - http://typekit.com/eulas/00000000000000003b9af978
+ *   - http://typekit.com/eulas/00000000000000003b9af97a
+ *   - http://typekit.com/eulas/00000000000000003b9af97b
+ *   - http://typekit.com/eulas/00000000000000003b9af97c
+ *   - http://typekit.com/eulas/00000000000000003b9af97e
+ *   - http://typekit.com/eulas/00000000000000003b9af980
+ *
+ * © 2009-2019 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2018-04-12 14:46:13 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=lde7yjs&ht=tk&f=34089.34093.34095.34096.34097.34099.34101&a=8724613&app=typekit&e=css");
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");
+font-style:normal;font-weight:100;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+font-style:normal;font-weight:300;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-style:italic;font-weight:400;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+font-style:normal;font-weight:500;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"),url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"),
+url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");
+font-style:normal;font-weight:600;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-style:normal;font-weight:700;
+}
+
+.tk-quasimoda { font-family: "quasimoda",sans-serif; }
+
+body:not(pre) {
+    font-family: "quasimoda",sans-serif;
 }

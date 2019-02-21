@@ -60,6 +60,7 @@ custom_params = {email: 'kyc@ost.com'}
 endpoint = "/api/v2/users"
 request_params = base_params(endpoint, custom_params)
 ```
+
 Every API request on `https://kyc.ost.com/api/v2` requires hash-based message authentication. Every request has three mandatory parameters that must be included:
 
 * api_key :  the API key as provided post KYC client account activation.
@@ -94,7 +95,7 @@ For a Post request, the parameters are sent in the request body with default con
 ## The User Object 
 > Sample User Object :
 
-```jason
+```json
 {
   "id": 11428,
   "email": "kycuser@ost.com",
@@ -106,6 +107,7 @@ For a Post request, the parameters are sent in the request body with default con
   "created_at": 1539163614
 }
 ```
+
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
 |id|bigint| Unique identifier for the user |
@@ -119,9 +121,9 @@ For a Post request, the parameters are sent in the request body with default con
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -205,6 +207,7 @@ public class Test {
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -225,7 +228,7 @@ $userService = $ostKycSdkObj->services->user;
 $params = array();
 $params['email'] = 'email@domain.com';
 $user = $userService->create($params)->wait();
-
+?>
 ```
 
 A POST to `https://kyc.ost.com/api/v2/users` creates a new `user` object for the user in OST KYC database. Only user's signup information is sent via this endpoint. For sending user's KYC details a POST request to a different endpoint `/users-kyc/{{user_id}}` has to be sent.
@@ -243,7 +246,7 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 
 > Example Response
 
-```jason
+```json
 {
   "success": true,
    "data": {
@@ -263,6 +266,21 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 ## Retrieve a User
 > Example Request code:
 
+```python
+import ost_kyc_sdk_python
+
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
+                                        'config': {'timeout': 10 }
+                                        })
+Services = kyc_sdk.services
+Users = Services.users
+user = Users.get({'id': '11003'})
+print(user)
+```
+
+
 ```ruby
 require('ost-kyc-sdk-ruby')
 
@@ -280,19 +298,6 @@ user_service = ost_kyc_sdk.services.users
 user = user_service.get(id: 11007).to_json
 ```
 
-```python
-import ost_kyc_sdk_python
-
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
-                                        'config': {'timeout': 10 }
-                                        })
-Services = kyc_sdk.services
-Users = Services.users
-user = Users.get({'id': '11003'})
-print(user)
-```
 
 ```javascript
 const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
@@ -314,6 +319,7 @@ userService.get({id: '123454333'})
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -335,7 +341,7 @@ $params = array();
 $params['id'] = '11007';
 $response = $userService->get($params)->wait();
 var_dump($response);
-
+?>
 ```
 
 ```java
@@ -383,7 +389,7 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 
 > Example Response
 
-```jason
+```json
 {
   "success": true,
    "data": {
@@ -400,7 +406,7 @@ For api calls to `/users` the data.result\_type is the string "user" and the key
 
 > Example Error Response
 
-```jason
+```json
 {
   "success": false,
   "err": {
@@ -434,9 +440,9 @@ users = ost_kyc_user_object.list().to_json
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -466,6 +472,7 @@ userService.list({})
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -486,6 +493,7 @@ $userService = $ostKycSdkObj->services->user;
 $params = array();
 $response = $userService->getList($params)->wait();
 var_dump($response);
+?>
 ```
 
 ```java
@@ -544,7 +552,7 @@ A GET to `https://kyc.ost.com/api/v2/users` returns a list of all users who have
 <u>**Returns**</u><br>
 > Example Response
 
-```jason
+```json
 {
    "success": true,
    "data": {
@@ -644,7 +652,7 @@ Passing an optional email will result in filtering of users with that email addr
 ## The User KYC Detail Object 
 > Example Response:
 
-```jason
+```json
 {
   "id": 727,
   "created_at": 1539622156,
@@ -732,9 +740,9 @@ users_kyc_service.submit_kyc(params).to_json
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -798,6 +806,7 @@ usersKYCService.submitKyc({
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -831,6 +840,7 @@ $params['postal_code'] = "afawfveav";
 $params['investor_proof_files_path'] = array("2/i/9ff6374909897ca507ba3077ee8587da", "2/i/4872730399670c6d554ab3821d63ebce");
 
 $response = $usersKycService->submit_kyc($params)->wait();
+?>
 ```
 
 ```java
@@ -910,7 +920,7 @@ The Input parameters above list all the fields accepted as input. KYC clients sh
 <u>**Returns**</u><br>
 > Example Response
 
-```jason
+```json
 {
    "success": true,
    "data": {
@@ -932,6 +942,7 @@ The Input parameters above list all the fields accepted as input. KYC clients sh
 }
 
 ```
+
 For POST calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "user_kyc" and the key data.user\_kyc is an **user-kyc** object if a valid user identifier was provided. A `user-kyc` object provides properties and status related information of the kyc details that a user had last submitted.
  
 ## Retrieve User KYC Details
@@ -958,9 +969,9 @@ print(response)
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -991,6 +1002,7 @@ usersKYCDetailsService.get({user_id:11003})
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -1012,6 +1024,7 @@ $params = array();
 $params['user_id'] = '11007';
 $response = $usersKycDetailService->get($params)->wait();
 var_dump($response);
+?>
 ```
 
 ```java
@@ -1061,7 +1074,7 @@ A GET to `https://kyc.ost.com/api/v2/users-kyc-detail/{{user_id}}` retrieves the
 
 > Example Response 
 
-```jason
+```json
 # If the setting in admin management dashboard if OFF
 {
    "success": true,
@@ -1118,7 +1131,7 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an objec
 ## The User KYC Object 
 > Example Response:
 
-```jason
+```json
 {
    "id": 304,
    "user_kyc_detail_id": 702,
@@ -1133,6 +1146,7 @@ If the setting to send KYC data is `OFF` then the key data.user\_kyc is an objec
    "created_at": 1539279352
 }
 ```
+
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
 |id|bigint| Unique identifier of the last submitted kyc of a user |
@@ -1172,9 +1186,9 @@ print(response)
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -1204,6 +1218,7 @@ usersKYCService.get({'user_id':11003})
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -1225,6 +1240,7 @@ $params = array();
 $params['user_id'] = '11007';
 $response = $usersKycService->get($params)->wait();
 var_dump($response);
+?>
 ```
 
 ```java
@@ -1271,7 +1287,7 @@ For api calls to `/users-kyc/{{user_id}}` the data.result\_type is the string "u
 
 > Example Response
 
-```jason
+```json
 {
    "success": true,
    "data": {
@@ -1318,9 +1334,9 @@ print(response)
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -1349,6 +1365,7 @@ usersKYCService.list()
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -1369,6 +1386,7 @@ $usersKycService = $ostKycSdkObj->services->usersKyc;
 $params = array();
 $response = $usersKycService->getList($params)->wait();
 var_dump($response);
+?>
 ```
 
 ```java
@@ -1426,7 +1444,7 @@ A GET to `https://kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc o
 
 > Example Response code
 
-```jason
+```json
 {
    "success": true,
    "data": {
@@ -1575,6 +1593,7 @@ A GET to `https://kyc.ost.com/api/v2/users-kyc` returns a list of all user-kyc o
    }
 }
 ```
+
 For api calls to `/users-kyc/` the data.result_type is the string "users_kyc" and the key data.users\_kyc is an array of the returned `user-kyc` objects (10 objects per page). The field data.meta.next_page_payload contains the filter and order information and the page_no number for the next page or is empty for the last page of the list.
 
 Each entry in the array is a separate user\_kyc object. If no more `user-kyc` objects are available, the resulting array will be empty without an error thrown.
@@ -1613,9 +1632,9 @@ signed_urls = users_kyc_service.get_presigned_url_put(params).to_json
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -1658,6 +1677,7 @@ usersKYCService.getPresignedUrlPut({
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -1688,6 +1708,7 @@ $params['files'] = $nestedparams;
 
 $response = $usersKycService->get_presigned_url_put($params)->wait();
 var_dump($response);
+?>
 ```
 
 ```java
@@ -1746,7 +1767,7 @@ For instance, the value in the key `data.file_upload_put.document_id.fields.key`
 
 > Example Response code
 
-```jason
+```json
 {
     "success": "true",
     "data": {
@@ -1837,9 +1858,9 @@ signed_urls = users_kyc_service.get_presigned_url_post(params).to_json
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -1882,6 +1903,7 @@ usersKYCService.getPresignedUrlPost({
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -1912,6 +1934,7 @@ $params['files'] = $nestedparams;
 
 $response = $usersKycService->get_presigned_url_post($params)->wait();
 var_dump($response);
+?>
 ```
 
 ```java
@@ -1970,7 +1993,7 @@ For api calls to `/users-kyc/pre-signed-urls/for-post` the data.result\_type is 
 
 > Example Response code
 
-```jason
+```json
 {
     "success": true,
     "data": {
@@ -2028,9 +2051,9 @@ validators_service.verify_ethereum_address({ethereum_address: '0x7f2ED21D1702057
 ```python
 import ost_kyc_sdk_python
 
-kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': '9864024263fc2a20a3fc0f795f776819' , 
-                                        'api_secret': 'a999622f480d8689e491b0aaa3f0c5f8' , 
-                                        'api_base_url': 'https://kyc.stagingost.com',
+kyc_sdk = ost_kyc_sdk_python.Services({ 'api_key': 'Your API key' , 
+                                        'api_secret': 'Your API secret' , 
+                                        'api_base_url': 'API base URL',
                                         'config': {'timeout': 10 }
                                         })
 Services = kyc_sdk.services
@@ -2061,6 +2084,7 @@ validatorService.verifyEthereumAddress({
 ```
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 $params = array();
@@ -2082,6 +2106,7 @@ $params = array();
 $params['ethereum_address'] = '0x7f2ED21D1702057C7d9f163cB7e5458FA2B6B7c4';
 $response = $validatorsService->verify_ethereum_address($params)->wait();
 var_dump($response);
+?>
 ```
 
 ```java
@@ -2127,7 +2152,7 @@ For api calls to `/ethereum-address-validation` a success `true` is sent if the 
 
 > Example Response
 
-```jason
+```json
 {
   "success": true
 }
@@ -2250,7 +2275,7 @@ generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
 
 > Example Webhook Response for register event
 
-```jason
+```json
 {
    "created_at": "1541144915",
    "data": {
@@ -2278,7 +2303,7 @@ generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
 
 > Example Webhook Response for double opt-in event
 
-```jason
+```json
 {
    "created_at": "1541152654",
    "data": {
@@ -2306,7 +2331,7 @@ generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, secret-key)
 
 > Example Webhook Response for delete user event
 
-```jason
+```json
 {
    "created_at": "1541144571",
    "data": {
@@ -2347,7 +2372,7 @@ User events indicate a user's status in the system at that point in time. User e
 
 > Example Webhook Response for user KYC submit event
 
-```jason
+```json
 {
    "created_at": "1541753766",
    "data": {
@@ -2378,7 +2403,7 @@ User events indicate a user's status in the system at that point in time. User e
 
 > Example Webhook Response for Etherum Address Update event
 
-```jason
+```json
 {
    "created_at": "1541756913",
    "data": {
@@ -2409,7 +2434,7 @@ User events indicate a user's status in the system at that point in time. User e
 
 > Example Webhook Response when a KYC entry is re-opened
 
-```jason
+```json
 {
    "created_at": "1541144431",
    "data": {
@@ -2440,7 +2465,7 @@ User events indicate a user's status in the system at that point in time. User e
 
 > Example Webhook Response when status of a KYC entry changes
 
-```jason
+```json
 {
    "created_at": "1541154581",
    "data": {
