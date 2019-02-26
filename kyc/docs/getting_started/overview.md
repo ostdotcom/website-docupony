@@ -6,6 +6,8 @@ sidebar_label: Overview
 
 OST KYC is a plug-and-play KYC/AML management solution for your KYC needs. OST KYC can process thousands of applicants smoothly and securely. 
 
+![KYCIndexImage]( /kyc/docs/assets/ost-kyc-illustration.jpg)
+
 Easily run your KYC operation with our complete KYC/AML management solution. Ensure a smooth, safe, and secure experience. Leverage our back-end tools to manage applicants, process change requests, and comply with legal requirements.
 
 Integrated assessment of anti-money laundering, counter-terrorism financing and risk assessment backed by our compliance partner - [Acuris Risk Intelligence](https://www.acurisriskintelligence.com/).

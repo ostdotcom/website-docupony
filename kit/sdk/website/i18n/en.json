@@ -8,70 +8,6 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "client_sdk/android/latest/entity_api": {
-        "title": "Android SDK entity API",
-        "sidebar_label": "Entity API"
-      },
-      "client_sdk/android/latest/guides/add_new_device_flow": {
-        "title": "Add new device flow",
-        "sidebar_label": "Add new device flow"
-      },
-      "client_sdk/android/latest/guides/create_wallet_flow": {
-        "title": "Create wallet flow",
-        "sidebar_label": "Create wallet flow"
-      },
-      "client_sdk/android/latest/guides/transaction_flow": {
-        "title": "transaction flow",
-        "sidebar_label": "transaction flow"
-      },
-      "client_sdk/android/latest/guides/wallet_recovery_flow": {
-        "title": "Wallet recovery flow",
-        "sidebar_label": "Wallet recovery flow"
-      },
-      "client_sdk/android/latest/installation": {
-        "title": "Android SDK installation",
-        "sidebar_label": "Installation"
-      },
-      "client_sdk/android/latest/interfaces": {
-        "title": "Android SDk interfaces",
-        "sidebar_label": "Interfaces"
-      },
-      "client_sdk/android/latest/workflows": {
-        "title": "Android SDk workflows",
-        "sidebar_label": "Workflows"
-      },
-      "client_sdk/ios/latest/entity_api": {
-        "title": "IOS SDk entity API",
-        "sidebar_label": "Entity API"
-      },
-      "client_sdk/ios/latest/guides/add_new_device_flow": {
-        "title": "Add new device flow",
-        "sidebar_label": "Add new device flow"
-      },
-      "client_sdk/ios/latest/guides/create_wallet_flow": {
-        "title": "Create wallet flow",
-        "sidebar_label": "Create wallet flow"
-      },
-      "client_sdk/ios/latest/guides/transaction_flow": {
-        "title": "transaction flow",
-        "sidebar_label": "transaction flow"
-      },
-      "client_sdk/ios/latest/guides/wallet_recovery_flow": {
-        "title": "Wallet recovery flow",
-        "sidebar_label": "Wallet recovery flow"
-      },
-      "client_sdk/ios/latest/installation": {
-        "title": "IOS SDK installation",
-        "sidebar_label": "Installation"
-      },
-      "client_sdk/ios/latest/protocols": {
-        "title": "IOS SDk protocols",
-        "sidebar_label": "Protocols"
-      },
-      "client_sdk/ios/latest/workflows": {
-        "title": "IOS SDk workflows",
-        "sidebar_label": "workflows"
-      },
       "overview": {
         "title": "KIT SDK overview",
         "sidebar_label": "Overview"
@@ -83,6 +19,70 @@
       "server_sdk/php/latest/php": {
         "title": "PHP SDK Quickstart Guide",
         "sidebar_label": "PHP SDK Quickstart Guide"
+      },
+      "wallet_sdk/android/latest/entity_api": {
+        "title": "Android SDK entity API",
+        "sidebar_label": "Entity API"
+      },
+      "wallet_sdk/android/latest/guides/add_new_device_flow": {
+        "title": "Add new device flow",
+        "sidebar_label": "Add new device flow"
+      },
+      "wallet_sdk/android/latest/guides/create_wallet_flow": {
+        "title": "Create wallet flow",
+        "sidebar_label": "Create wallet flow"
+      },
+      "wallet_sdk/android/latest/guides/transaction_flow": {
+        "title": "transaction flow",
+        "sidebar_label": "transaction flow"
+      },
+      "wallet_sdk/android/latest/guides/wallet_recovery_flow": {
+        "title": "Wallet recovery flow",
+        "sidebar_label": "Wallet recovery flow"
+      },
+      "wallet_sdk/android/latest/installation": {
+        "title": "Android SDK installation",
+        "sidebar_label": "Installation"
+      },
+      "wallet_sdk/android/latest/interfaces": {
+        "title": "Android SDk interfaces",
+        "sidebar_label": "Interfaces"
+      },
+      "wallet_sdk/android/latest/workflows": {
+        "title": "Android SDk workflows",
+        "sidebar_label": "Workflows"
+      },
+      "wallet_sdk/ios/latest/entity_api": {
+        "title": "IOS SDk entity API",
+        "sidebar_label": "Entity API"
+      },
+      "wallet_sdk/ios/latest/guides/add_new_device_flow": {
+        "title": "Add new device flow",
+        "sidebar_label": "Add new device flow"
+      },
+      "wallet_sdk/ios/latest/guides/create_wallet_flow": {
+        "title": "Create wallet flow",
+        "sidebar_label": "Create wallet flow"
+      },
+      "wallet_sdk/ios/latest/guides/transaction_flow": {
+        "title": "transaction flow",
+        "sidebar_label": "transaction flow"
+      },
+      "wallet_sdk/ios/latest/guides/wallet_recovery_flow": {
+        "title": "Wallet recovery flow",
+        "sidebar_label": "Wallet recovery flow"
+      },
+      "wallet_sdk/ios/latest/installation": {
+        "title": "IOS SDK installation",
+        "sidebar_label": "Installation"
+      },
+      "wallet_sdk/ios/latest/protocols": {
+        "title": "IOS SDk protocols",
+        "sidebar_label": "Protocols"
+      },
+      "wallet_sdk/ios/latest/workflows": {
+        "title": "IOS SDk workflows",
+        "sidebar_label": "workflows"
       }
     },
     "links": {
@@ -91,7 +91,8 @@
       "Support": "Support"
     },
     "categories": {
-      "KIT SDKs": "KIT SDKs"
+      "Wallet SDKs": "Wallet SDKs",
+      "Server Side SDK": "Server Side SDK"
     }
   },
   "pages-strings": {
