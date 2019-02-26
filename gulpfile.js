@@ -214,21 +214,21 @@ gulp.task('serve-dev', function() {
     var watcher = gulp.watch([
         'kyc/docs/**/*',
         'kyc/website/static/**/*',
-        'kyc/website/sidebar.json',
+        'kyc/website/sidebars.json',
         'kyc/website/siteConfig.js', 
         'kyc/sdk/docs/**/*',
         'kyc/sdk/website/static/**/*',
-        'kyc/sdk/website/sidebar.json',
+        'kyc/sdk/website/sidebars.json',
         'kyc/sdk/website/siteConfig.js',
         
         'kyc/api/source/**/*',
         'kit/docs/**/*',
         'kit/website/static/**/*',
-        'kit/website/sidebar.json',
+        'kit/website/sidebars.json',
         'kit/website/siteConfig.js', 
         'kit/sdk/docs/**/*',
         'kit/sdk/website/static/**/*',
-        'kit/sdk/website/sidebar.json',
+        'kit/sdk/website/sidebars.json',
         'kit/sdk/website/siteConfig.js',
         'kit/api/source/**/*'
     ]);

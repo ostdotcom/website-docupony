@@ -1,25 +1,28 @@
 {
   "kyc": {
+
     "Getting Started": [
-      "getting_started/overview"
+      "getting_started/introduction",
+      "getting_started/implementation_overview"
     ],
-    "Features": [
-      "features/ocr_fr",
-      "features/compliance_partner",
-      "features/security_and_encryption",
-      "features/whitelisting",
-      "features/front_end_customization"
+
+    "Economy Setup and Administration": [
+      "economy_setup/administration",
+      "economy_setup/token_setup",
+      "economy_setup/stake_and_mint",
+      "economy_setup/production_checklist"
+    ], 
+
+    "Wallet": [
+      "wallet/kms",
+      "wallet/ux_guide",
+      "wallet/recovery"
     ],
-    "Whitelisting Setup": [
-      "whitelisting_setup/whitelisting_setup"
-    ],
-    "Admin Dashboard": [
-      "admin_dashboard/a"
-    ]
-  },
-  "kyc_sdk": {
-    "Getting Started": [
-      "sdk/getting_started/sdk_overview"
+
+    "Development Guide": [
+      "development_guide/overview",
+      "development_guide/sample_flow"
+
     ]
   }
 }

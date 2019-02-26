@@ -355,3 +355,8 @@ body:not(pre) {
 .onPageNav {
     font-weight: 500;
 }
+
+.toc .toggleNav .navGroup .navGroupSubcategoryTitle {
+    font-weight: 600;
+    font-size: 16px;
+}

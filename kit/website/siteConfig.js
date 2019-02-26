@@ -46,7 +46,7 @@ const siteConfig = {
   ],
 
   secondryHeaderLinks: [
-  {href: '/kit/docs/getting_started/overview', label: 'Docs'},
+  {href: '/kit/', label: 'Docs'},
   {href: '/kit/docs/api', label: 'API'},
   {href: '/kit/docs/sdk/', label: 'SDK'},
 

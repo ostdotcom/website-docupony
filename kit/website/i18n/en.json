@@ -5,40 +5,52 @@
     "previous": "Previous",
     "tagline": "Developer Documentation",
     "docs": {
-      "admin_dashboard/a": {
-        "title": "Some feature",
-        "sidebar_label": "Feature A"
-      },
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "features/compliance_partner": {
-        "title": "Compliance Partner",
-        "sidebar_label": "Compliance Partner"
-      },
-      "features/front_end_customization": {
-        "title": "Front End Customization",
-        "sidebar_label": "Front End Customization"
-      },
-      "features/ocr_fr": {
-        "title": "OCR + FR",
-        "sidebar_label": "OCR + FR"
-      },
-      "features/security_and_encryption": {
-        "title": "Security and Encryption",
-        "sidebar_label": "Security"
-      },
-      "features/whitelisting": {
-        "title": "Whitelisting",
-        "sidebar_label": "Whitelisting"
-      },
-      "getting_started/overview": {
-        "title": "KYC | Overview",
+      "development_guide/overview": {
+        "title": "Development Guide Overview",
         "sidebar_label": "Overview"
       },
-      "whitelisting_setup/whitelisting_setup": {
-        "title": "whitelisting Setup",
-        "sidebar_label": "Whitelisting Setup"
+      "development_guide/sample_flow": {
+        "title": "Sample Flow",
+        "sidebar_label": "Sample Flow"
+      },
+      "economy_setup/administration": {
+        "title": "Administration",
+        "sidebar_label": "Administration"
+      },
+      "economy_setup/production_checklist": {
+        "title": "Production Checklist",
+        "sidebar_label": "Production Checklist"
+      },
+      "economy_setup/stake_and_mint": {
+        "title": "Stake and Mint",
+        "sidebar_label": "Stake and Mint"
+      },
+      "economy_setup/token_setup": {
+        "title": "Token Setup",
+        "sidebar_label": "Token Setup"
+      },
+      "getting_started/implementation_overview": {
+        "title": "Implementation Overview",
+        "sidebar_label": "Implementation Overview"
+      },
+      "getting_started/introduction": {
+        "title": "KIT Introduction",
+        "sidebar_label": "Introduction"
+      },
+      "wallet/kms": {
+        "title": "Key Management Solution",
+        "sidebar_label": "Key Management Solution"
+      },
+      "wallet/recovery": {
+        "title": "Wallet recovery",
+        "sidebar_label": "Wallet recovery"
+      },
+      "wallet/ux_guide": {
+        "title": "UX Guide",
+        "sidebar_label": "UX Guide"
       }
     },
     "links": {
@@ -48,9 +60,9 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
-      "Features": "Features",
-      "Whitelisting Setup": "Whitelisting Setup",
-      "Admin Dashboard": "Admin Dashboard"
+      "Economy Setup and Administration": "Economy Setup and Administration",
+      "Wallet": "Wallet",
+      "Development Guide": "Development Guide"
     }
   },
   "pages-strings": {
