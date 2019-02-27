@@ -2,6 +2,7 @@
   "KIT": {
     "Wallet SDKs": [
       "overview",
+      "sample_flow",
       {
         "type": "subcategory",
         "label": "Android SDK",

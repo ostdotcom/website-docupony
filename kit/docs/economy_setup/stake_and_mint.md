@@ -1,7 +1,7 @@
 ---
 id: stake_and_mint
-title: Stake and Mint
-sidebar_label: Stake and Mint
+title: Stake And Mint
+sidebar_label: Stake And Mint
 ---
 
 ## This is stake and mint

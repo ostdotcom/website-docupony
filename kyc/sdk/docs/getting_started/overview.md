@@ -22,40 +22,41 @@ KYC has 5 different SDK's that can be integrated within your application.
 <div class="content-blocks">
   <div class="content-block">
     <div class="section-promo">
-       <a target="_blank" href="https://github.com/openSTFoundation/ost-kyc-sdk-python">
-        <img class="center-block" src="/kyc/docs/sdk/assets/icons/python.png">
+       <a target="_blank" href="/kyc/docs/sdk/python_sdk/latest/quickstart_guide/">
+        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/python.png" >
         <h3 class="accent-color text-center">Python SDK</h3>
       </a>
     </div>
   </div>
+  
   <div class="content-block">
     <div class="section-promo">
-       <a target="_blank" href="https://github.com/openSTFoundation/ost-kyc-sdk-ruby">
-        <img class="center-block" src="/kyc/docs/sdk/assets/icons/ruby.png" height="110">
+       <a target="_blank" href="/kyc/docs/sdk/ruby_sdk/latest/quickstart_guide/">
+        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/ruby.png" >
         <h3 class="accent-color text-center">Ruby SDK</h3>
       </a>
     </div>
   </div>
   <div class="content-block">
     <div class="section-promo">
-       <a target="_blank" href="https://github.com/openSTFoundation/ost-kyc-sdk-js">
-        <img class="center-block" src="/kyc/docs/sdk/assets/icons/nodejs.png" height="110">
+       <a target="_blank" href="/kyc/docs/sdk/nodejs_sdk/latest/quickstart_guide/">
+        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/nodejs.png" >
         <h3 class="accent-color text-center">Node Js SDK</h3>
       </a>
     </div>
   </div>
   <div class="content-block">
     <div class="section-promo">
-       <a target="_blank" href="https://github.com/openSTFoundation/ost-kyc-sdk-java">
-        <img class="center-block" src="/kyc/docs/sdk/assets/icons/java.png" height="110">
+       <a target="_blank" href="/kyc/docs/sdk/java_sdk/latest/quickstart_guide/">
+        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/java.png" >
         <h3 class="accent-color text-center">Java SDK</h3>
       </a>
     </div>
   </div>
   <div class="content-block">
     <div class="section-promo">
-       <a target="_blank" href="https://github.com/openSTFoundation/ost-kyc-sdk-php">
-        <img class="center-block" src="/kyc/docs/sdk/assets/icons/php.png">
+       <a target="_blank" href="/kyc/docs/sdk/php_sdk/latest/quickstart_guide/">
+        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/php.png">
         <h3 class="accent-color text-center">PHP SDK</h3>
       </a>
     </div>

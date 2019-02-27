@@ -12,6 +12,10 @@
         "title": "KIT SDK overview",
         "sidebar_label": "Overview"
       },
+      "sample_flow": {
+        "title": "Sample Flow",
+        "sidebar_label": "Sample Flow"
+      },
       "server_sdk/overview": {
         "title": "Server SDK overview",
         "sidebar_label": "Overview"

@@ -6,23 +6,20 @@
       "getting_started/implementation_overview"
     ],
 
-    "Economy Setup and Administration": [
-      "economy_setup/administration",
+    "Economy Setup": [
+      "economy_setup/company_wallet_setup",
+      "economy_setup/company_to_user_transaction",
       "economy_setup/token_setup",
       "economy_setup/stake_and_mint",
-      "economy_setup/production_checklist"
+      "economy_setup/switching_to_production",
+      "economy_setup/helpful_definitions"
+
     ], 
 
     "Wallet": [
       "wallet/kms",
       "wallet/ux_guide",
       "wallet/recovery"
-    ],
-
-    "Development Guide": [
-      "development_guide/overview",
-      "development_guide/sample_flow"
-
     ]
   }
 }
