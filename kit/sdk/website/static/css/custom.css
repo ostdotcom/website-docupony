@@ -236,6 +236,7 @@ li.sub-nav-li.active a{
 /* Sidebar Fix */
 .navigationSlider {
     margin-left: 0;
+    padding-left: 40px;
 }
 
 .docMainWrapper.wrapper {

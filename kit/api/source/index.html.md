@@ -20,28 +20,46 @@ includes:
 # Users
 
 ## Create User
-## Retrieve a User
-## Get all Users
+## Get a User
+## List all Users
+## Get salt
 
 
 # Tokens
-
 ## Get Token
 
-# Devices
 
+# Devices
 ## Register Devices
+## Get a Device
+## List all Devices
+
 
 # Sessions
+## Get a Session
+## List all Sessions
+
 
 # Device Manager
+## Get device manager
+
 
 # Rules 
+## List all Rules
+
+
 
 # Transactions
 
+
+
 # Price Point
+
+
 
 # Balance
 
+
+
 # Recovery
+

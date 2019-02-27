@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'OST DEV' /* title for your website */,
+  title: '' /* title for your website */,
   tagline: 'Developer Documentation',
   url: 'localhost:8000/' /* your website url */,
   baseUrl: '/kyc/' /* base url for your project */,
