@@ -61,7 +61,7 @@ ul.nav-site.nav-site-internal li.siteNavItemActive:not(:last-child){background:#
 ul.nav-site.nav-site-internal li.siteNavItemActive:not(:last-child) a{color:#000;background:#fff;}
 ul.nav-site.nav-site-internal{display:inline-block;}
 ul.nav-site.nav-site-internal li{display:inherit;}
-.navigationSlider{margin-left:0;}
+.navigationSlider{margin-left:0; padding-left: 40px;}
 
 
 
@@ -237,4 +237,9 @@ font-style:normal;font-weight:700;
 
 body:not(pre) {
     font-family: "quasimoda",sans-serif;
+}
+
+
+.toc-wrapper .toc-h2 {
+    font-size: 14px;
 }

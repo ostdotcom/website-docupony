@@ -361,3 +361,7 @@ body:not(pre) {
     font-weight: 600;
     font-size: 16px;
 }
+
+.docs-prevnext a:hover span{
+    color: #fff;
+}
