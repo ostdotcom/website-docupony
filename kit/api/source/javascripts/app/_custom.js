@@ -72,5 +72,40 @@ $(document).ready(function() {
             }
         }
     }
+
+
+    var toggles = $('.child-table-toggle');
+
+    var i;
+    for (i=0; i<toggles.length; i++) {
+        var toggle = toggles[i];
+        var dataId = $(toggle).attr("data-target");
+        var selector = "#" + dataId + " tbody";
+        $(toggle).closest('tr').after($(selector).html());
+        $("." + dataId).css("display", "none");
+    }
+
+    $('.child-table-toggle').click(function (event){
+        console.log(event)
+        var toggleBtn = $(event.target);
+        var dataId = $(toggleBtn).attr('data-target');
+        var trSelector = "." + dataId;
+
+        if($(trSelector).css("display") !=="none") {
+            console.log('present');
+            $(event.target).html("Show child attributes");
+            $(trSelector).css("display", "none");
+        }   
+        else {
+            console.log('Not present');
+            $(event.target).html("Hide child attributes");
+            $(trSelector).css("display", "table-row");
+        }
+    });
+
+
+
+   
+ 
     
 })

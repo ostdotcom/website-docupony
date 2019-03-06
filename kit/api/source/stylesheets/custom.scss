@@ -260,3 +260,16 @@ td:first-child br ~ a strong {
 .toc-wrapper .toc-h2 {
     font-size: 14px;
 }
+
+.child-table-toggle {
+    font-size: 14px;
+    color: #e7bc4e;
+    cursor: pointer;
+}
+
+.child-row {
+    border-left: 1px solid #ccc;
+}
+tr.child-row td {
+    padding-left: 20px;
+}
