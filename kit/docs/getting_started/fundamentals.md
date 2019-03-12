@@ -51,6 +51,12 @@ Companies that use OST KIT do not need to write interact with the OpenST protoco
 * This contract is configured as the owner of the user's TokenHolder contract.  And one or more user's device keys / owner keys are configured as owners of this contract.
 * Thus, a user can have device keys present on different devices (such as mobile phones and tablets), enabling movement between devices without the keys being shared. 
 
+
+![entity-relationship](/kit/docs/assets/entity-relationship.png)
+
+
+
+
 ## Creating the wallet.
 1. owner key is created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device. 
 2. The private key in each pair is encrypted and stored on the device.
@@ -90,3 +96,6 @@ To enable partner companies to design custom Rules that align with their economy
 	* Company's TokenHolder contract initiates “execute pricer rule” request to partner company's  PricerRule Contract. The TokenHolder contract also approves company's TokenRules Contract to spend tokens on its behalf.
 	* Company's PriceRule Contract applies “conversion from USD to tokens rules”.   The PriceRule Contract will pass all this information after applying rules to the TokenRules Contract.
 	* The TokenRules Contract executes the transfer between all concerned parties as specified by the company's PriceRule Contract.
+
+
+![openst-contracts](/kit/docs/assets/openst-contracts.png)
