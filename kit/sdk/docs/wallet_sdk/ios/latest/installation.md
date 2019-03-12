@@ -1,7 +1,7 @@
 ---
 id: installation
-title: IOS SDK installation
+title: iOS SDK installation
 sidebar_label: Installation
 ---
 
-## This is IOS SDK installation
+## This is iOS SDK installation

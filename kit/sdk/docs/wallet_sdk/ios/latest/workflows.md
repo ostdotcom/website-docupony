@@ -1,7 +1,7 @@
 ---
 id: workflows
-title: IOS SDk workflows
+title: iOS SDK workflows
 sidebar_label: workflows
 ---
 
-## This is IOS SDK Protocol
+## This is iOS SDK Protocol

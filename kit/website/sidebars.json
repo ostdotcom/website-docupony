@@ -3,19 +3,10 @@
 
     "Getting Started": [
       "getting_started/introduction",
-      "getting_started/implementation_overview"
+      "getting_started/platform_overview",
+      "getting_started/fundamentals",
+      "getting_started/create_token"
     ],
-
-    "Economy Setup": [
-      "economy_setup/company_wallet_setup",
-      "economy_setup/company_to_user_transaction",
-      "economy_setup/token_setup",
-      "economy_setup/stake_and_mint",
-      "economy_setup/switching_to_production",
-      "economy_setup/helpful_definitions"
-
-    ], 
-
     "Wallet": [
       "wallet/kms",
       "wallet/ux_guide",

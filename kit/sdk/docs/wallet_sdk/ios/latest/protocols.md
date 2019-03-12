@@ -1,7 +1,7 @@
 ---
 id: protocols
-title: IOS SDk protocols
+title: iOS SDK protocols
 sidebar_label: Protocols
 ---
 
-## This is IOS SDK Protocol
+## This is iOS SDK Protocol

@@ -40,7 +40,7 @@ class Footer extends React.Component {
             </a>
           </div>
           <div>
-            <h5>Community</h5>
+            {/* <h5>Community</h5>
             <a href={this.pageUrl('users.html')}>
               User Showcase
             </a>
@@ -56,7 +56,7 @@ class Footer extends React.Component {
               target="_blank"
               rel="noreferrer noopener">
               Twitter
-            </a>
+            </a> */}
           </div>
 
 

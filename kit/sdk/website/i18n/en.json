@@ -8,9 +8,9 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "overview": {
-        "title": "KIT SDK overview",
-        "sidebar_label": "Overview"
+      "implementation_security_guideline": {
+        "title": "Implementation and Security Guideline",
+        "sidebar_label": "Implementation and Security Guideline"
       },
       "sample_flow": {
         "title": "Sample Flow",
@@ -20,13 +20,9 @@
         "title": "Server SDK overview",
         "sidebar_label": "Overview"
       },
-      "server_sdk/php/latest/php": {
+      "server_sdk/php/latest/quickstart_guide": {
         "title": "PHP SDK Quickstart Guide",
         "sidebar_label": "PHP SDK Quickstart Guide"
-      },
-      "wallet_sdk/android/latest/entity_api": {
-        "title": "Android SDK entity API",
-        "sidebar_label": "Entity API"
       },
       "wallet_sdk/android/latest/guides/add_new_device_flow": {
         "title": "Add new device flow",
@@ -49,16 +45,16 @@
         "sidebar_label": "Installation"
       },
       "wallet_sdk/android/latest/interfaces": {
-        "title": "Android SDk interfaces",
+        "title": "Android SDK interfaces",
         "sidebar_label": "Interfaces"
       },
-      "wallet_sdk/android/latest/workflows": {
-        "title": "Android SDk workflows",
-        "sidebar_label": "Workflows"
+      "wallet_sdk/android/latest/quickstart_guide": {
+        "title": "Android SDK Quickstart Guide",
+        "sidebar_label": "Quickstart Guide"
       },
-      "wallet_sdk/ios/latest/entity_api": {
-        "title": "IOS SDk entity API",
-        "sidebar_label": "Entity API"
+      "wallet_sdk/android/latest/workflows": {
+        "title": "Android SDK workflows",
+        "sidebar_label": "Workflows"
       },
       "wallet_sdk/ios/latest/guides/add_new_device_flow": {
         "title": "Add new device flow",
@@ -77,16 +73,24 @@
         "sidebar_label": "Wallet recovery flow"
       },
       "wallet_sdk/ios/latest/installation": {
-        "title": "IOS SDK installation",
+        "title": "iOS SDK installation",
         "sidebar_label": "Installation"
       },
       "wallet_sdk/ios/latest/protocols": {
-        "title": "IOS SDk protocols",
+        "title": "iOS SDK protocols",
         "sidebar_label": "Protocols"
       },
+      "wallet_sdk/ios/latest/quickstart_guide": {
+        "title": "iOS SDK Quickstart Guide",
+        "sidebar_label": "Quickstart Guide"
+      },
       "wallet_sdk/ios/latest/workflows": {
-        "title": "IOS SDk workflows",
+        "title": "iOS SDK workflows",
         "sidebar_label": "workflows"
+      },
+      "wallet_sdk/overview": {
+        "title": "Wallet SDK overview",
+        "sidebar_label": "Overview"
       }
     },
     "links": {

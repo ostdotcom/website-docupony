@@ -1,33 +1,35 @@
 {
   "KIT": {
     "Wallet SDKs": [
-      "overview",
+      "wallet_sdk/overview",
       "sample_flow",
+      "implementation_security_guideline",
       {
         "type": "subcategory",
         "label": "Android SDK",
         "ids": [
           "wallet_sdk/android/latest/installation",
+          "wallet_sdk/android/latest/quickstart_guide",
+
           "wallet_sdk/android/latest/interfaces",
-          "wallet_sdk/android/latest/workflows",
-          "wallet_sdk/android/latest/entity_api"  
+          "wallet_sdk/android/latest/workflows"
         ]
       },
       {
         "type": "subcategory",
-        "label": "IOS SDK",
+        "label": "iOS SDK",
         "ids": [
           "wallet_sdk/ios/latest/installation",
+          "wallet_sdk/ios/latest/quickstart_guide",
+
           "wallet_sdk/ios/latest/protocols",
-          "wallet_sdk/ios/latest/workflows",
-          "wallet_sdk/ios/latest/entity_api"
-         
+          "wallet_sdk/ios/latest/workflows"
         ]
       }
     ],
     "Server Side SDK": [
       "server_sdk/overview",
-      "server_sdk/php/latest/php"
+      "server_sdk/php/latest/quickstart_guide"
     ]
   }
 }

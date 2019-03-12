@@ -365,3 +365,30 @@ body:not(pre) {
 .docs-prevnext a:hover span{
     color: #fff;
 }
+
+td:first-child br ~ strong {
+    font-size: 14px;
+    color: #36455980;
+    margin: 0;
+    padding: 0;
+    /* margin-top: -1px; */
+    display: inline;
+}
+
+td:first-child br ~ a strong {
+    font-size: 14px;
+    color: #e7bc4e;
+    margin: 0;
+    padding: 0;
+    /* margin-top: -1px; */
+    display: inline;
+    text-decoration: underline;
+}
+
+table tr:nth-child(2n) {
+    background: none;
+}
+
+table thead {
+    border-bottom: 1px solid #808080;
+}

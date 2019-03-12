@@ -56,4 +56,11 @@ $(document).ready(function() {
 
         }
     }
+
+    $('code').addClass('prettyprint');
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js';
+    document.head.appendChild(script);
 })

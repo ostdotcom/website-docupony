@@ -8,37 +8,21 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "economy_setup/company_to_user_transaction": {
-        "title": "Company To User Transaction",
-        "sidebar_label": "Company To User Transaction"
+      "getting_started/create_token": {
+        "title": "Create Token Guide",
+        "sidebar_label": "Create Token Guide"
       },
-      "economy_setup/company_wallet_setup": {
-        "title": "Company Wallet Setup",
-        "sidebar_label": "Company Wallet Setup"
-      },
-      "economy_setup/helpful_definitions": {
-        "title": "Helpful Definitions",
-        "sidebar_label": "Helpful Definitions"
-      },
-      "economy_setup/stake_and_mint": {
-        "title": "Stake And Mint",
-        "sidebar_label": "Stake And Mint"
-      },
-      "economy_setup/switching_to_production": {
-        "title": "Switching To Production",
-        "sidebar_label": "Switching To Production"
-      },
-      "economy_setup/token_setup": {
-        "title": "Token Setup",
-        "sidebar_label": "Token Setup"
-      },
-      "getting_started/implementation_overview": {
-        "title": "Implementation Overview",
-        "sidebar_label": "Implementation Overview"
+      "getting_started/fundamentals": {
+        "title": "OST KIT Fundamentals",
+        "sidebar_label": "Fundamentals"
       },
       "getting_started/introduction": {
         "title": "KIT Introduction",
         "sidebar_label": "Introduction"
+      },
+      "getting_started/platform_overview": {
+        "title": "Platform Overview",
+        "sidebar_label": "Platform Overview"
       },
       "wallet/kms": {
         "title": "Key Management Solution",
@@ -60,7 +44,6 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
-      "Economy Setup": "Economy Setup",
       "Wallet": "Wallet"
     }
   },
