@@ -48,6 +48,8 @@ The KIT Server Side SDKs are designed so that the server side components can sup
 
 The diagram below illustrates this approach.
 
+![platform-overview](/kit/docs/assets/platform-overview.png)
+
 
 * The KIT Server Side SDKs and APIs provide your application with various methods and URLs for different services like users, tokens, wallet services corresponding to an end-user of the economy. 
 
