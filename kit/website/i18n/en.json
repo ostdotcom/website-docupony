@@ -24,6 +24,10 @@
         "title": "Platform Overview",
         "sidebar_label": "Platform Overview"
       },
+      "wallet/introduction": {
+        "title": "Wallet Introduction",
+        "sidebar_label": "Introduction"
+      },
       "wallet/kms": {
         "title": "Key Management Solution",
         "sidebar_label": "Key Management Solution"

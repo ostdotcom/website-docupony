@@ -8,6 +8,7 @@
       "getting_started/create_token"
     ],
     "Wallet": [
+      "wallet/introduction",
       "wallet/kms",
       "wallet/ux_guide",
       "wallet/recovery"
