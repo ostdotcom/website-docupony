@@ -1,5 +1,17 @@
 /* your custom css */
 
+@media only screen and (min-width: 1400px) {
+    .sub-nav ul {
+        float: none!important;
+        width: 1400px;
+        padding-left: 0em;
+        margin: 0 auto;
+     }
+     .docMainWrapper.wrapper{
+         max-width: 1400px;
+         margin: 0 auto!important;
+     }
+ }
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 

@@ -60,9 +60,9 @@ func application(_ application: UIApplication,
 **KIT_API_ENDPOINT**:
 This will be the base API URL we need to provide to SDK while initializing.
 
-**Sandbox mode endpoint**: "kit.ost.com/test/v2"
+**Sandbox mode endpoint**: "api.ost.com/testnet/v2"
 
-**Production endpoint**: "kit.ost.com/test/v2"
+**Production endpoint**: "api.ost.com/mainnet/v2"
 
 
 ## 5. Setting up communication between App and Wallet SDK

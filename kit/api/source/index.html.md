@@ -22,34 +22,34 @@ OST KIT API allows developers to interact with smart contract layer through REST
 API libraries are called `Server Side SDK` since they include API calls that can only be used by partner company's server. 
 
 Available Server Side SDKs:<br>
-1. PHP SDK  <br>
+1. [PHP SDK](/kit/docs/sdk/getting_started/server_sdk_quickstart_guide/php/)  <br>
 2. Ruby SDK   <br>
 3. Java SDK  <br>
-4. Node Js SDK  <br>
+4. Node.js SDK  <br>
 
 
 ## Access
 
-> Sandbox Environment API URL
+> Sandbox Environment Base API URL
 
 ```json
 "https://api.ost.com/testnet/v2/"
 ```
 
-> Production Environment API URL
+> Production Environment Base API URL
 
 ```json
-"https://api.ost.com/testnet/v2/"
+"https://api.ost.com/mainnet/v2/"
 ```
 
 ### Sandbox Environment
-You can signup on [ost.com](https://ost.com/) to create your account. By default you will land in sandbox mode. You can create an economy in sandbox mode to test the API. <br><br>
+You can signup on [OST KIT](https://kit.ost.com/) to create your account. By default you will land in sandbox mode. You can create an economy in sandbox mode to test the API. <br><br>
 
 Once you have created your token (refer [create token guide](/kit/)) (Change link) to create token, then you can head over to [developers page ](https://ost.com/) (Change link) to get access to API key and API secret.
 
 
 ### Production Environment
-A request to enable the production mode can be made after loggin in to sandbox mode. Our team will reach out to you to check if you are ready to go live. Once our team is done with the check, your account will be moved to production mode. 
+A request to enable the production mode can be made after login in to sandbox mode. Our team will reach out to you to check if you are ready to go live. Once our team is done with the check, your account will be moved to production mode. 
 
 A toggle switch will be enabled that can be used to switch back to sandbox mode.
 
@@ -62,53 +62,64 @@ For other languages you can implement the signature generation by computing the 
 
 Every API request on `https://api.ost.com/testnet/v2/` or `https://api.ost.com/mainnet/v2/` requires hash-based message authentication.
 
-Every request has three mandatory parameters that must be included: <br>
+Every request has 4 mandatory parameters that must be included: <br>
 - `api_key`, the API key as provided from [<u>developers page</u>](kit.ost.com/testnet/developer) inside OST KIT dashboard.<br>
-- `request_timestamp`, the current unix timestamp in seconds.<br>
-- `signature`, the signature as the sha256 digest of the shared API secret and the correctly formatted query string as described below.<br>
+- `api_request_timestamp`, the current unix timestamp in seconds.<br>
+- `api_signature`, the signature as the sha256 digest of the shared API secret and the correctly formatted query string as described below.<br>
+- `api_signature_kind`, the value for this parameter should be `OST1-HMAC-SHA256`.
+<br>
 
-The request timestamp will be valid for up to ten seconds.  Your computer clock must therefore be synchronised for authentication to succeed.
+The request timestamp will be valid for up to 60 seconds.  Your computer clock must therefore be synchronised for authentication to succeed.
 
-The reason for these 3 mandatory parameters in each request is to ensure that the man-in-the-middle cannot change the input params to the request and also so that we can validate the signature on the server side.
+The reason for these 4 mandatory parameters in each request is to ensure that the man-in-the-middle cannot change the input params to the request and also so to validate the signature on the server side.
 
 
 ### A. Creating the string to sign.
 
 To generate the signature you must first form the string to sign. This string to sign can be formed by concatenation of the following elements
 
--  API endpoint
--  api_key, the API key as provided from [OST KIT⍺](https://dev.ost.com/docs/kit.ost.com/testnet/developer)
--  `request_timestamp`, the current unix timestamp in seconds.
+-  Resource endpoint without trailing slash("/"). Ex: `/users`, `/users/{id}/devices`
+-  `api_key`, the API key as provided from [OST KIT](kit.ost.com/testnet/developer)
+-  `api_request_timestamp`, the current unix timestamp in seconds.
+-  `api_signature_kind`, the value for this parameter should be `OST1-HMAC-SHA256`
 -   API parameters.
 
 > Sample String-to-sign :
 
 ```js
-"/users/create?api_key=4b66f566d7596e2b733b&name=Alice+Anderson&request_timestamp=1521073147"
+"/users?api_key=4b66f566d7596e2b733b&api_request_timestamp=1521073147&api_signature_kind=OST1-HMAC-SHA256"
 ```
 
-Note all the inputs must be alphabetically sorted on the keys. The keys are lower-case, snake case as documented for each API endpoint. Spaces in input values are replaced with plus sign`+`.
+**Note:** All the parameters must be alphabetically sorted on the keys. The keys are lower-case, snake case (Ex: `user_id`)  as documented for each API endpoint. Spaces in input values are replaced with plus sign `+`.
 
 ### B. Generating a signature
 
 The signature is the sha256 digest of the shared API secret and the correctly formatted query string
 
-generated_signature = Hmac_Sha256_Hexdigest(string-to-sign, api-secret)
+SIGNATURE = Hmac_Sha256_Hexdigest(string-to-sign, api-secret)
+
+### C. Final URL
 
 > Sample Final URL
 
 ```json
-"https://https://api.ost.com/testnet/v2/users/list?api_key=API_KEY&request_timestamp=REQUEST_TIMESTAMP&signature=SIGNATURE"
+"https://api.ost.com/testnet/v2/users?api_key=4b66f566d7596e2b733b&api_request_timestamp=1521073147&api_signature_kind=OST1-HMAC-SHA256&api_signature=SIGNATURE"
 ```
 
-Please ensure that the final URL is encoded while making the API request.
+
+Please ensure that the signature is appended in the final URL and it is encoded while making the API request.
+
+## Pagination
+
+
+
 
 ## Versioning
 
 
 
 
-
+## Pagination
 
 
 
@@ -117,21 +128,21 @@ Please ensure that the final URL is encoded while making the API request.
 
 
 # Users
-`Users` object allows you to retrieve all the contract addresses associated with it. This API allows you to create, get, list and get the salt of the user. Below you can find details about `Users` object.
+`Users` API allows you to create, get and list user. Below you can find details about `Users` object.
 
 ## User Object
 
 | Attribute  | Description  |
 |---|---|
-| **id** <br> **uuid v4**    | UUID V4  |
+| **id** <br> **String \<uuid v4\>**  | UUID V4  |
 | **token_id** <br> **Integer** | Unique integer for an economy |
-|  **token\_holder\_address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address) | Holds a 20 byte value (size of an Ethereum address). This will be the address for token-holder contract.  |
-| **device\_manager\_address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address)  |  Holds a 20 byte value (size of an Ethereum address). This will be the address for [multi-sig](https://en.bitcoin.it/wiki/Multisignature) contract.   |
+|  **token\_holder\_address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address) | Holds a 20 byte value (size of an Ethereum address). This will be the address of token-holder contract.  |
+| **device\_manager\_address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address)  |  Holds a 20 byte value (size of an Ethereum address). This will be the address of [device manager](https://en.bitcoin.it/wiki/Multisignature) contract.   |
 |  **recovery_address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address) | Holds a 20 byte value (size of an Ethereum address). This will be the address of recovery contract.  |
 | **recovery\_owner\_address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address) | Holds a 20 byte value (size of an Ethereum address). This will be the recovery owner address.  |
 | **type** <br> **String** | `type` string will determine the type of user. It can have two possible values `user` and `company`. <br> `user`: All economy users will be of type `user`<br> `company`: Accounts used by Partner companies will have type `company`   |
-| **status** <br> **String**| A list of contracts is deployed on blockchains for each economy user. This `status` string gives us the status about contracts deployment.<br> It can have 3 possible string values described below. <br> `CREATED`: This will be the default status when a user is created. <br> `ACTIVATING`: This will be the users status when token holder contract is being deployed. <br> `ACTIVATED`: This will be the users status when token holder deployment is complete.|
-| **updated_timestamp** <br> **EPOCH time**| Last update timestamp.  |
+| **status** <br> **String**| This will be the user's status.<br> It can have 3 possible string values described below. <br> `CREATED`: This will be the default status when a user is created. At this stage there are no smart contracts deployed on blockchain.  <br> `ACTIVATING`: This will be the user's status when smart contracts for the user are being deployed. <br> `ACTIVATED`: This will be the user's status when all the smart contracts for the user are deployed and user now can now perform the wallet actions.|
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
 
@@ -162,15 +173,15 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-A POST to `https://api.ost.com/testnet/v2/users` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users` (Production environment)  will create a `user` object. 
+#### POST "/users" 
 
 <u>**Input Parameters**</u>
 
 No input params needed to create a user.
 
 
-<u>**Returns**</u><br>
-For API calls to `/users` the `data.result_type` will be the string "user" and the key `data.user` will be the newaly created user object. The user object will have an identifier `id`. This `id` will be used to get any user specific details like `devices`, etc. <br>
+<u>**Success Response**</u><br>
+For API calls to `/users` the `data.result_type` will be the string "user" and the key `data.user` will be the newly created user object. The user object will have an identifier `id`. This `id` will be used to get any user specific details like `devices`, etc. <br>
 
 The user's `id` should be mapped with user entity on partner company's server. One example of this mapping could be storing user's `id` along with it's `email_id` on parter company's server. 
 
@@ -220,24 +231,25 @@ $ostObj = new OSTSdk($params);
 $userService = $ostObj->services->users;
 
 $getParams = array();
-$getParams['id'] = '5ff57c15-f54f-45fe-acf5-6c6fbfdf815a'; // replace this with your user's id
+$getParams['user_id'] = '5ff57c15-f54f-45fe-acf5-6c6fbfdf815a'; // replace this with your user's id
 $response = $userService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
 ```
 
-To get a user, you need user's `id` that will be passed in the URL. A GET request to `https://api.ost.com/testnet/v2/users/{user-id}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}` (Production environment)  will return the `user` object. 
+
+To get a user, you need user's `id` that will be passed in the URL. A GET request to `/users/{user_id}` will return the `user` object. 
 
 
 <u>**Input Parameters**</u>
 
 | Parameter  | Description  |
 |---|---|
-| **user's id** <br> **Required** | Identifier of the user to be retrieved  |
+| **user_id** <br> **Required** | Identifier of the user to be retrieved  |
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash if the valid `id` was provided. The example of response is given on the right hand side.
 
 > Example Response
@@ -323,7 +335,7 @@ A GET call to `https://api.ost.com/testnet/v2/users` (Sandbox environment) or `h
 | **ids** <br> **Optional**   | List of user id's to be retrieved. Max 25 ids can be passed.  |
 | **Limit** <br> **Optional**   |  Limit on the number of users to be returned. Max limit is 25. Limit is ignored when user ids are passed. **Default value of limit is 10**  |
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `users` and `meta`.<br><br>
 
 The value of `data.result_type` property will be `users` and list of users will be available under `data.users` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
@@ -485,8 +497,8 @@ Devices are the wallet devices that are added by a user. `Devices` API allows yo
 |  **api\_signer_address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address) | Will be used to validate the request coming from client SDK.  |
 |  **device_name** <br> **String** | Name that the user has set for its device  |
 |  **device_uuid** <br> **String**| device unique identifier set by the deviceOS  |
-|   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Default status when a partner company associates a user-id with a device <br>`AUTHORIZING `: Status when a user authorizes its device using its MultiSig contract and the transaction on blockchain for it is still in progress. <br>`AUTHORIZED `: Status when the authorization transaction on blockchain is complete.<br>`REVOKING `: Status when a user revokes its device using its MultiSig contract and the transaction on blockchain for it is still in progress. <br>`REVOKED `: Status when the revoke transaction on blockchain is complete. <br> `RECOVERING`: Status when device is being recovered. <br> `ABORTING`: Status when recovery is being aborted. |
-|   **updated_timestamp** <br> **EPOCH \<time\>**| Last update timestamp.   |
+|   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Default status when a partner company associates a user_id with a device <br>`AUTHORIZING `: Status when a user authorizes its device using its MultiSig contract and the transaction on blockchain for it is still in progress. <br>`AUTHORIZED `: Status when the authorization transaction on blockchain is complete.<br>`REVOKING `: Status when a user revokes its device using its MultiSig contract and the transaction on blockchain for it is still in progress. <br>`REVOKED `: Status when the revoke transaction on blockchain is complete. <br> `RECOVERING`: Status when device is being recovered. <br> `ABORTING`: Status when recovery is being aborted. |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.   |
 
 
 ## Register Devices
@@ -522,7 +534,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-To register a new device for a user you need to do a POST request to `https://api.ost.com/testnet/v2/users/{user-id}/devices` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/devices` (Production environment) will create a device.
+To register a new device for a user you need to do a POST request to `https://api.ost.com/testnet/v2/users/{user_id}/devices` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/devices` (Production environment) will create a device.
 
 <u>**Input Parameters**</u>
 
@@ -533,7 +545,7 @@ To register a new device for a user you need to do a POST request to `https://ap
 | **device_name** <br> **Required**   | Device name. |
 | **device_uuid** <br> **Required**   | Unique identifier (uuid) for the device.  |
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `users`.<br><br>
 
 The value of `data.result_type` property will be `users` and list of users will be available under `data.users` property. The example response is given on the right hand side. 
@@ -590,7 +602,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-To get a device you need device address that will be passed in the URL. A GET request to `https://api.ost.com/testnet/v2/users/{user-id}/devices/{device-address}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/devices/{device-address}` (Production environment) will return the device object.
+To get a device you need device address that will be passed in the URL. A GET request to `https://api.ost.com/testnet/v2/users/{user_id}/devices/{device-address}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/devices/{device-address}` (Production environment) will return the device object.
 
 <u>**Input Parameters**</u>
 
@@ -598,7 +610,7 @@ To get a device you need device address that will be passed in the URL. A GET re
 |---|---|
 | **address** <br> **Required**   | Device address |
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `device`.<br><br>
 
 The value of `data.result_type` property will be `device` and device object will be available under `data.device` property. The example response is given on the right hand side. 
@@ -656,7 +668,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-A GET call to `https://api.ost.com/testnet/v2/users/{user-id}/devices` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/devices` (Production environment) will return a list of devices of a user. The devices are sorted by creation date, with the most recently registered devices appearing first.
+A GET call to `https://api.ost.com/testnet/v2/users/{user_id}/devices` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/devices` (Production environment) will return a list of devices of a user. The devices are sorted by creation date, with the most recently registered devices appearing first.
 
 
 <u>**Input Parameters**</u>
@@ -666,7 +678,7 @@ A GET call to `https://api.ost.com/testnet/v2/users/{user-id}/devices` (Sandbox 
 | **Addresses** <br> **Optional**   | List of device addresses to be retrieved. Max 25 devices addresses can be passed.  |
 | **Limit** <br> **Optional**   |  Limit on the number of devices to be returned. Max limit is 25. Limit is ignored when device addresses are passed. **Default value of limit is 10**   |
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `devices` and `meta`.<br><br>
 
 The value of `data.result_type` property will be `devices` and list of devices will be available under `data.devices` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
@@ -719,11 +731,11 @@ API you can `get` and `list` user's sessions.
 |  **user_id** <br> **String \<uuid v4\>** | uuid of the user in the token economy.   |
 |  **address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address)  | Holds a 20 byte value (size of an Ethereum address). This will be the session key address.   |
 |  **expiration_height** <br> **Integer** | Expiration block height calculated using approx expiration timestamp.  |
-|   **approx\_expiration\_timestamp** <br> **EPOCH \<time\>**| Approximate time at which the session key will expire.  |
+|   **approx\_expiration\_timestamp** <br> **EPOCH \<time in seconds\>**| Approximate time at which the session key will expire.  |
 |  **spending_limit** <br> **String** |   |
 |   **nonce** <br> **Integer**|   |
 |  **status** <br> **String**| Status gives us status of session key. It can take one of these values. INITITIALIZING / AUTHORISED / REVOKING / REVOKED <br>  |
-|  **updated_timestamp** <br> **EPOCH \<time\>**| Last update timestamp.  |
+|  **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 ## Get a User's Session
 
@@ -755,7 +767,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-To get a user's session you need session `address` that can be passed in the URL. A GET request to `https://api.ost.com/testnet/v2/users/{user-id}/sessions/{address}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/sessions/{address}` (Production environment) will return the session object.
+To get a user's session you need session `address` that can be passed in the URL. A GET request to `https://api.ost.com/testnet/v2/users/{user_id}/sessions/{address}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/sessions/{address}` (Production environment) will return the session object.
 
 <u>**Input Parameters**</u>
 
@@ -763,7 +775,7 @@ To get a user's session you need session `address` that can be passed in the URL
 |---|---|
 | **address** <br> **Required**   | Session address |
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `session`.<br><br>
 
 The value of `data.result_type` property will be `session` and session object will be available under `data.session` property. The example response is given on the right hand side. 
@@ -819,7 +831,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-A GET call to `https://api.ost.com/testnet/v2/users/{user-id}/sessions` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/sessions` (Production environment) will return a list of sessions. The sessions are sorted by creation date, with the most recent sessions appearing first.
+A GET call to `https://api.ost.com/testnet/v2/users/{user_id}/sessions` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/sessions` (Production environment) will return a list of sessions. The sessions are sorted by creation date, with the most recent sessions appearing first.
 
 <u>**Input Parameters**</u>
 
@@ -828,7 +840,7 @@ A GET call to `https://api.ost.com/testnet/v2/users/{user-id}/sessions` (Sandbox
 | **Addresses** <br> **Optional**   | List of session addresses to be retrieved. Max 25 session addresses can be passed.  |
 | **Limit** <br> **Optional**   |  Limit on the number of sessions to be returned. Max limit is 25. Limit is ignored when session addresses are passed. **Default value of limit is 10**  |
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `sessions` and `meta`.<br><br>
 
 The value of `data.result_type` property will be `sessions` and list of sessions will be available under `data.sessions` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
@@ -930,8 +942,8 @@ The value of `data.result_type` property will be `sessions` and list of sessions
 | **transaction_fee** <br> **String** |   |
 | **block_confirmation** <br>  **Integer**|   |
 | **status**  <br> **String**|   |
-| **updated_timestamp** <br>  **EPOCH \<time\>**|   |
-| **block_timestamp** <br>  **EPOCH \<time\>** |   |
+| **updated_timestamp** <br>  **EPOCH \<time in seconds\>**|   |
+| **block_timestamp** <br>  **EPOCH \<time in seconds\>** |   |
 | **block_number** <br> **Integer** |   |
 | **rule_name** <br> **String**|  |
 | **transfers** <br>|  |
@@ -942,7 +954,7 @@ The value of `data.result_type` property will be `sessions` and list of sessions
 
 
 Execute transaction API allows you to do company-to-user transactions, user-to-user transactions will be managed by Wallet SDK. <br> <br>
-A POST to `https://api.ost.com/testnet/v2/users/{user-id}/transactions` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/transactions` (Production environment)  will create a `transaction` object. 
+A POST to `https://api.ost.com/testnet/v2/users/{user_id}/transactions` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/transactions` (Production environment)  will create a `transaction` object. 
 <br>
 
 You can transfer any amount of Branded Tokens to users or you can choose a fiat currency like Dollar to do fix the fiat value of transaction then this fixed amount in fiat will be converted into Branded tokens needed to be transfered. More details are provided in input parameters below.
@@ -1021,7 +1033,7 @@ You can transfer any amount of Branded Tokens to users or you can choose a fiat 
   </tr>
 </table>
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `transaction`.<br><br>
 
 The value of `data.result_type` property will be `transaction` and transaction object will be available under `data.transaction` property. The example response is given on the right hand side. 
@@ -1080,7 +1092,7 @@ The value of `data.result_type` property will be `transaction` and transaction o
 
 ## Get a transaction details
 
-To get a transaction, you need transaction's `id` that will be passed in the URL. A GET request to `https://api.ost.com/testnet/v2/users/{user-id}/transactions/{transaction-id}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/transactions/{transaction-id}` (Production environment)  will return the `transaction` object. 
+To get a transaction, you need transaction's `id` that will be passed in the URL. A GET request to `https://api.ost.com/testnet/v2/users/{user_id}/transactions/{transaction-id}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/transactions/{transaction-id}` (Production environment)  will return the `transaction` object. 
 
 
 <u>**Input Parameters**</u>
@@ -1090,7 +1102,7 @@ To get a transaction, you need transaction's `id` that will be passed in the URL
 | **transactions's id** <br> **Required** | Identifier of the transaction to be retrieved  |
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash if the valid `id` was provided. The example of response is given on the right hand side.
 
 > Get Transaction - Example Response
@@ -1147,7 +1159,7 @@ This call will return a hash if the valid `id` was provided. The example of resp
 
 
 
-A GET call to `https://api.ost.com/testnet/v2/users/{user-id}/transactions` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/transactions` (Production environment) will return a list of transactions of a user. The transactions are sorted by creation date, with the most recent transactions appearing first.
+A GET call to `https://api.ost.com/testnet/v2/users/{user_id}/transactions` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/transactions` (Production environment) will return a list of transactions of a user. The transactions are sorted by creation date, with the most recent transactions appearing first.
 
 
 <u>**Input Parameters**</u>
@@ -1157,7 +1169,7 @@ A GET call to `https://api.ost.com/testnet/v2/users/{user-id}/transactions` (San
 | **ids** <br> **Optional**   | List of transaction id's to be retrieved. Max 25 ids can be passed.  |
 | **Limit** <br> **Optional**   |  Limit on the number of transactions to be returned. Max limit is 25. Limit is ignored when transaction ids are passed. **Default value of limit is 10**  |
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `transactions` and `meta`.<br><br>
 
 The value of `data.result_type` property will be `transactions` and list of transactions will be available under `data.transactions` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
@@ -1238,7 +1250,7 @@ Tokens object contains details about economy and various contract addresses. One
 | **total_supply** <br> **String** | Total supply of Branded Tokens  |
 | **origin_chain** <br> **Hash** <br> <span class="child-table-toggle" data-target="token-origin-chain">Show child attributes</span>|   |
 | **auxiliary_chain** <br> **Hash** <br> <span class="child-table-toggle" data-target="token-auxiliary-chain">Show child attributes</span> |   |
-| **updated_timestamp** <br> **EPOCH \<time\>**| Last update timestamp.  |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
 <table id="token-origin-chain" style="display:none;">
@@ -1384,7 +1396,7 @@ A GET request to `https://api.ost.com/testnet/v2/tokens` (Sandbox environment) o
 No input params needed to get `token` object.
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `token`.<br><br>
 
@@ -1455,7 +1467,7 @@ The value of `data.result_type` property will be `token` and token object will b
 | **total_balance** <br> **String**|   |
 | **available_balance** <br> **String** |   |
 | **unsettled_debit** <br> **String** |   |
-| **updated_timestamp** <br> **EPOCH \<time\>**| Last update timestamp.  |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
 ## Get users balance
@@ -1487,7 +1499,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-A GET request to `https://api.ost.com/testnet/v2/users/{user-id}/balance` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/balance` (Production environment) will return the balance object.
+A GET request to `https://api.ost.com/testnet/v2/users/{user_id}/balance` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/balance` (Production environment) will return the balance object.
 
 
 <u>**Input Parameters**</u>
@@ -1495,7 +1507,7 @@ A GET request to `https://api.ost.com/testnet/v2/users/{user-id}/balance` (Sandb
 No input params needed to get `balance` object.
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `balance`.<br><br>
 
@@ -1538,7 +1550,7 @@ The value of `data.result_type` property will be `balance` and balance object wi
 | **user_id**  <br> **String \<uuid v4\>** | uuid of the user in the token economy.  |
 | **address**  <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address) | Recovery contract address.  |
 | **status** <br> **String** | Status can be one of the following values: <br> AUTHORIZATION_FAILED / AUTHORIZING / AUTHORIZED / REVOKING/REVOKED  |
-| **updated_timestamp** <br> **EPOCH \<time\>**| Last update timestamp.  |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
 ## Get recovery owner
@@ -1571,14 +1583,14 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ```
 
 
-A GET request to `https://api.ost.com/testnet/v2/users/{user-id}/recovery-owners/{recovery-owner-address}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/recovery-owners/{recovery-owner-address}` (Production environment) will return the recovery owner object.
+A GET request to `https://api.ost.com/testnet/v2/users/{user_id}/recovery-owners/{recovery-owner-address}` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/recovery-owners/{recovery-owner-address}` (Production environment) will return the recovery owner object.
 
 <u>**Input Parameters**</u>
 
 No input params needed to get `recovery owner` object.
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `recovery_owner`.<br><br>
 
@@ -1618,7 +1630,7 @@ The value of `data.result_type` property will be `recovery_owner` and recovery_o
 | **name** <br> **String** | Name of the rule  |
 | **address** <br> **String** [**\<Address\>**](https://solidity.readthedocs.io/en/v0.4.24/types.html#address)  | Holds a 20 byte value (size of an Ethereum address). This will be the rule address.   |
 |  **abi** <br> **String** | A stringified JSON string which will need parsing. This string has rule contract abi (Application Binary Interface).  |
-|  **updated_timestamp** <br> **EPOCH \<time\>**| Last update timestamp.  |
+|  **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 ## List all Rules
 
@@ -1656,7 +1668,7 @@ A GET request to `https://api.ost.com/testnet/v2/rules` (Sandbox environment) or
 No input params needed to get list of `rules`.
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `rules`.<br><br>
 
@@ -2412,7 +2424,7 @@ A GET request to `https://api.ost.com/testnet/v2/chains/{chain_id}/price-points`
 
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `price_point`.<br><br>
 
@@ -2460,7 +2472,7 @@ The value of `data.result_type` property will be `price_point` and price point o
 | **type**  <br> **String**| Type can take one of the two values:<br> 1. `Origin`: Chain on ethereum blockchain<br>2.`Auxiliary`: Chain on private blockchain   |
 | **block_height**  <br> **Integer** | Current block height  |
 |  **block_time** <br> **Integer** |   |
-| **updated_timestamp** <br> **EPOCH \<time\>**| Last update timestamp.  |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
 ## Get chain information
@@ -2502,7 +2514,7 @@ A GET request to `https://api.ost.com/testnet/v2/chains/{chain_id}/` (Sandbox en
 
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `chain`.<br><br>
 
@@ -2549,7 +2561,7 @@ Device manager is an object which stores information about multi-signature contr
 |  **requirement** <br> **Integer** | Requirement for multi-sig transactions   |
 |  **nonce** <br> **Integer** |   |
 |  **status** <br> **String** | The status of device manager.   |
-| **updated_timestamp** <br> **EPOCH \<time\>**| Last update timestamp.  |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
 
@@ -2583,7 +2595,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ```
 
 
-A GET request to `https://api.ost.com/testnet/v2/users/{user-id}/device-managers/` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user-id}/device-managers/` (Production environment) will return the device manager object.
+A GET request to `https://api.ost.com/testnet/v2/users/{user_id}/device-managers/` (Sandbox environment) or `https://api.ost.com/mainnet/v2/users/{user_id}/device-managers/` (Production environment) will return the device manager object.
 
 <u>**Input Parameters**</u>
 
@@ -2593,7 +2605,7 @@ A GET request to `https://api.ost.com/testnet/v2/users/{user-id}/device-managers
 
 
 
-<u>**Returns**</u><br>
+<u>**Success Response**</u><br>
 
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `device_manager`.<br><br>
 

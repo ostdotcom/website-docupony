@@ -65,7 +65,7 @@ void setupDevice( String userId,
 |---|---|
 | **userId** <br> **String**	| Unique identifier for the user of economy |
 | **tokenId** <br> **String**	| Unique identifier for the token economy |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function. This should implement `registerDevice` function. `registerDevice` will be called during the execution of this workflow.  |
+| **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/). This should implement `registerDevice` function. `registerDevice` will be called during the execution of this workflow.  |
 
 <br>
 
@@ -84,7 +84,7 @@ void activateUser(UserPassphrase passphrase,
 | **userPassPhrase** <br> **UserPassphrase**	| Unique iedntifier for token economy |
 | **expiresAfterInSecs** <br> **long**	| Expire time of session key in seconds. |
 | **spendingLimitInWei** <br> **String**	| Spending limit of session key in Wei.  |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function. You can pass `flowComplete` and `flowInterrupt` functions to get the workflow status. To learn more about  |
+| **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/).  |
 
 
 
@@ -104,7 +104,7 @@ This workflow will create and authorize the session keys that are needed to do t
 | **userId** <br> **String**	| Unique identifier for the user of economy |
 | **expiresAfterInSecs** <br> **long**	| Expire time of session key in seconds.  |
 | **spendingLimitInWei** <br> **String**	| Spending limit of session key in Wei.   |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.   |
+| **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/).   |
 
 
 
@@ -124,7 +124,7 @@ This workflow will perform operations after reading datat from a QRCode. This wo
 |---|---|
 | **userId** <br> **String**	| Unique identifier for the user of economy |
 | **data** <br> **String**	| JSON object string scanned from QR code. |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.   |
+| **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/).   |
 
 
 
@@ -140,7 +140,7 @@ To get the 12 words of the current device keys.
 | Parameter | Description |
 |---|---|
 | **userId** <br> **String**	| Unique identifier for the user of economy |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.  |
+| **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/).  |
 
 
 
@@ -165,7 +165,7 @@ void executeTransaction(String userId,
 | **tokenHolderAddresses** <br> **List**	| Token holder addresses of amount receiver |
 | **amounts** <br> **List**	| Amoun to be transfered in Wei.  |
 | **ruleName** <br> **String**	|  Rule name to be executed.  |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.  |
+| **workFlowCallback** <br> **OstWorkFlowCallback**	|An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/).  |
 
 
 
@@ -185,7 +185,7 @@ void addDeviceUsingMnemonics( String userId,
 |---|---|
 | **userId** <br> **String**	| Unique identifier for the user of economy |
 | **mnemonics** <br> **byte[]**	| byte array of 12 words. |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.   |
+| **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/).   |
 
 
 
@@ -203,36 +203,11 @@ Bitmap getAddDeviceQRCode(String userId)
 | **userId** <br> **String**	| Unique identifier for the user of economy |
 
 
-<br>
-
-### 10. startPolling
-
-```
-  void startPolling(String userId, 
-                    String entityId,  
-                    String entityType, 
-                    String successStatus, 
-                    String failureStatus, 
-                    OstWorkFlowCallback workFlowCallback)
-```
-
-
-| Parameter | Description |
-|---|---|
-| **userId** <br> **String**	| Unique identifier for the user of economy |
-| **entityId** <br> **String**	| Entity Id of the entity that you want to poll.  |
-| **entityType** <br> **String**	| Entity type that you want to poll.  |
-| **successStatus** <br> **String**	|  |
-| **failureStatus** <br> **String**	|  |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.   |
-
-
-
 
 
 
 <br>    
-### 11. resetPin
+### 10. resetPin
 This workflow can be used to change the PIN. User will have to provide the current PIN in order to change the it.
 
 ```
@@ -246,7 +221,7 @@ This workflow can be used to change the PIN. User will have to provide the curre
 | **appSalt** <br> **String**	|   |
 | **currentPin** <br> **String**	| Current PIN  |
 | **newPin** <br> **String**	| New PIN |
-| **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.  |
+| **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/). |
 
 
 
