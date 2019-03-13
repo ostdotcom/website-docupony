@@ -1,35 +1,51 @@
 {
   "KIT": {
-    "Wallet SDKs": [
-      "wallet_sdk/overview",
-      "sample_flow",
-      "implementation_security_guideline",
+    "Getting Started": [
+      "getting_started/overview",
+      "getting_started/authentication",
       {
         "type": "subcategory",
-        "label": "Android SDK",
+        "label": "Server SDK Quickstart Guides",
         "ids": [
-          "wallet_sdk/android/latest/installation",
-          "wallet_sdk/android/latest/quickstart_guide",
-
-          "wallet_sdk/android/latest/interfaces",
-          "wallet_sdk/android/latest/workflows"
+          "getting_started/server_sdk_quickstart_guide/php"
+        ]
+      },
+      
+      {
+        "type": "subcategory",
+        "label": "Wallet SDK Setup",
+        "ids": [
+          "getting_started/wallet_sdk_setup/android",
+          "getting_started/wallet_sdk_setup/iOS"
         ]
       },
       {
         "type": "subcategory",
-        "label": "iOS SDK",
+        "label": "Integration",
         "ids": [
-          "wallet_sdk/ios/latest/installation",
-          "wallet_sdk/ios/latest/quickstart_guide",
-
-          "wallet_sdk/ios/latest/protocols",
-          "wallet_sdk/ios/latest/workflows"
+          "getting_started/integration/integration_guide"
         ]
       }
     ],
-    "Server Side SDK": [
-      "server_sdk/overview",
-      "server_sdk/php/latest/quickstart_guide"
+
+    "References": [
+      "references/overview",
+      {
+        "type": "subcategory",
+        "label": "Android SDK Reference",
+        "ids": [
+          "references/wallet_sdk/android/latest/interfaces",
+          "references/wallet_sdk/android/latest/workflows"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "iOS SDK Reference",
+        "ids": [
+          "references/wallet_sdk/iOS/latest/protocols",
+          "references/wallet_sdk/iOS/latest/workflows"
+        ]
+      }
     ]
   }
 }

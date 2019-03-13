@@ -1,7 +1,7 @@
 ---
-id: sample_flow
-title: Sample Flow
-sidebar_label: Sample Flow
+id: integration_guide
+title: Integration
+sidebar_label: Integration Guide
 ---
 
 ## Create Token On OST KIT
@@ -16,4 +16,6 @@ sidebar_label: Sample Flow
 
 ## Do the Wallet SDK integration
 
+
+USERFLOWS
 

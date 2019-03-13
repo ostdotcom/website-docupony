@@ -12,10 +12,6 @@
         "title": "Create Token Guide",
         "sidebar_label": "Create Token Guide"
       },
-      "getting_started/fundamentals": {
-        "title": "OST KIT Fundamentals",
-        "sidebar_label": "Fundamentals"
-      },
       "getting_started/introduction": {
         "title": "KIT Introduction",
         "sidebar_label": "Introduction"
@@ -23,6 +19,10 @@
       "getting_started/platform_overview": {
         "title": "Platform Overview",
         "sidebar_label": "Platform Overview"
+      },
+      "wallet/fundamentals": {
+        "title": "OST KIT Fundamentals",
+        "sidebar_label": "Fundamentals"
       },
       "wallet/introduction": {
         "title": "Wallet Introduction",

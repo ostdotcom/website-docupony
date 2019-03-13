@@ -4,12 +4,11 @@
     "Getting Started": [
       "getting_started/introduction",
       "getting_started/platform_overview",
-      "getting_started/fundamentals",
       "getting_started/create_token"
     ],
     "Wallet": [
       "wallet/introduction",
-      "wallet/kms",
+      "wallet/fundamentals",
       "wallet/ux_guide",
       "wallet/recovery"
     ]

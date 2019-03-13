@@ -56,12 +56,15 @@ After init, setupDevice should be called everytime the app launches. It ensures 
 **Recommended location to call setupDevice() is in MainActivity.**
 
 ```
-void setupDevice(String tokenId, OstWorkFlowCallback workFlowCallback)
+void setupDevice( String userId, 
+                  String tokenId, 
+                  OstWorkFlowCallback workFlowCallback)
 ```
 
 | Parameter | Description |
 |---|---|
-| **tokenId** <br> **String**	| Unique iedntifier for token economy |
+| **userId** <br> **String**	| Unique identifier for the user of economy |
+| **tokenId** <br> **String**	| Unique identifier for the token economy |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function. This should implement `registerDevice` function. `registerDevice` will be called during the execution of this workflow.  |
 
 <br>
@@ -70,7 +73,10 @@ void setupDevice(String tokenId, OstWorkFlowCallback workFlowCallback)
 It `authorises` the registered device and activates the user. User activation deploys various contracts on blockchain. So after `user activation` user can perform wallet actions like doing transactions, etc. Session keys are also created during `activateUser` workflow.
 
 ```
-void activateUser(UserPassphrase passphrase, long expiresAfterInSecs, String spendingLimitInWei, OstWorkFlowCallback callback)
+void activateUser(UserPassphrase passphrase, 
+                  long expiresAfterInSecs, 
+                  String spendingLimitInWei, 
+                  OstWorkFlowCallback callback)
 ```
 
 | Parameter | Description |
@@ -87,11 +93,15 @@ void activateUser(UserPassphrase passphrase, long expiresAfterInSecs, String spe
 This workflow will create and authorize the session keys that are needed to do the transactions. This flow should be called in the absence of session keys. 
 
 ```
- void addSession(long expireAfterInSecs, String spendingLimitInWei, OstWorkFlowCallback workFlowCallback)
+ void addSession( String userId, 
+                  long expireAfterInSecs, 
+                  String spendingLimitInWei, 
+                  OstWorkFlowCallback workFlowCallback)
 ```
 
 | Parameter | Description |
 |---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
 | **expiresAfterInSecs** <br> **long**	| Expire time of session key in seconds.  |
 | **spendingLimitInWei** <br> **String**	| Spending limit of session key in Wei.   |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.   |
@@ -105,11 +115,14 @@ This workflow will create and authorize the session keys that are needed to do t
 This workflow will perform operations after reading datat from a QRCode. This workflow can used to add a new device and to do the transactions on the websites.
 
 ```
-void ostPerform(String data, OstWorkFlowCallback workFlowCallback)
+  void ostPerform(String userId, 
+                  String data, 
+                  OstWorkFlowCallback workFlowCallback)
 ```
 
 | Parameter | Description |
 |---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
 | **data** <br> **String**	| JSON object string scanned from QR code. |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.   |
 
@@ -120,11 +133,13 @@ void ostPerform(String data, OstWorkFlowCallback workFlowCallback)
 To get the 12 words of the current device keys.
 
 ```
-  void getPaperWallet( OstWorkFlowCallback workFlowCallback)
+ void getPaperWallet( String userId, 
+                      OstWorkFlowCallback workFlowCallback)
 ```
 
 | Parameter | Description |
 |---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.  |
 
 
@@ -135,11 +150,18 @@ To get the 12 words of the current device keys.
 To workflow should be used to do transactions.
 
 ```
-void executeTransaction(List tokenHolderAddresses, List amounts, String ruleName, OstWorkFlowCallback workFlowCallback)
+void executeTransaction(String userId, 
+                        String tokenId, 
+                        List tokenHolderAddresses, 
+                        List amounts, 
+                        String ruleName, 
+                        OstWorkFlowCallback workFlowCallback)
 ```
 
 | Parameter | Description |
 |---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
+| **tokenId** <br> **String**	| Unique identifier for the token economy |
 | **tokenHolderAddresses** <br> **List**	| Token holder addresses of amount receiver |
 | **amounts** <br> **List**	| Amoun to be transfered in Wei.  |
 | **ruleName** <br> **String**	|  Rule name to be executed.  |
@@ -153,12 +175,15 @@ void executeTransaction(List tokenHolderAddresses, List amounts, String ruleName
 This workflow should be used to add a new device using 12 words. 
 
 ```
-void addDeviceUsingMnemonics( byte[] mnemonics, OstWorkFlowCallback ostWorkFlowCallback)
+void addDeviceUsingMnemonics( String userId, 
+                              byte[] mnemonics, 
+                              OstWorkFlowCallback ostWorkFlowCallback)
 
 ```
 
 | Parameter | Description |
 |---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
 | **mnemonics** <br> **byte[]**	| byte array of 12 words. |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| OstWorkFlowCallback interface function.   |
 
@@ -170,12 +195,12 @@ void addDeviceUsingMnemonics( byte[] mnemonics, OstWorkFlowCallback ostWorkFlowC
 This workflow will return the QRCode Bitmap that can be used to show on screen. This QRCode can then be scanned to add the new device.
 
 ```
- Bitmap getAddDeviceQRCode()
+Bitmap getAddDeviceQRCode(String userId)
 ```
 
 | Parameter | Description |
 |---|---|
-| **None**	|  NA |
+| **userId** <br> **String**	| Unique identifier for the user of economy |
 
 
 <br>
@@ -183,12 +208,18 @@ This workflow will return the QRCode Bitmap that can be used to show on screen. 
 ### 10. startPolling
 
 ```
-  void startPolling( String entityId, String entityType, String successStatus, String failureStatus, OstWorkFlowCallback workFlowCallback)
+  void startPolling(String userId, 
+                    String entityId,  
+                    String entityType, 
+                    String successStatus, 
+                    String failureStatus, 
+                    OstWorkFlowCallback workFlowCallback)
 ```
 
 
 | Parameter | Description |
 |---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
 | **entityId** <br> **String**	| Entity Id of the entity that you want to poll.  |
 | **entityType** <br> **String**	| Entity type that you want to poll.  |
 | **successStatus** <br> **String**	|  |
@@ -205,12 +236,13 @@ This workflow will return the QRCode Bitmap that can be used to show on screen. 
 This workflow can be used to change the PIN. User will have to provide the current PIN in order to change the it.
 
 ```
-  void resetPin( String appSalt, String currentPin, String newPin, OstWorkFlowCallback workFlowCallback)
+  void resetPin(String userId,  String appSalt, String currentPin, String newPin, OstWorkFlowCallback workFlowCallback)
 ```
 
 
 | Parameter | Description |
 |---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
 | **appSalt** <br> **String**	|   |
 | **currentPin** <br> **String**	| Current PIN  |
 | **newPin** <br> **String**	| New PIN |

@@ -1,7 +1,7 @@
 ---
-id: quickstart_guide
+id: php
 title: PHP SDK Quickstart Guide
-sidebar_label: PHP SDK Quickstart Guide
+sidebar_label: PHP
 ---
 
 
@@ -16,7 +16,10 @@ Signup on [oct.com](https://ost.com) to create an account. Follow [create token 
 
 
 ## 2. Get Credentials
-Once token setup is complete, go to [developers page](kit.ost.com/testnet/developer) inside OST KIT dashboard to get access to API key and API secret.
+Once token setup is complete, go to [Developers page](kit.ost.com/testnet/developer) inside OST KIT dashboard to get access to API key and API secret.
+
+Every account is provided with two pairs of keys: one for sandbox environment and one for production environment.
+Use only your sandbox environment API keys for testing and development. This ensures that you don't modify your live production data.
 
 
 
@@ -239,4 +242,10 @@ A details explanation about device attributes is available at [device object](/k
 
 ## Next Steps
 
+android setup guide
 
+ios setup
+
+master the fundamentals
+
+API REFERENCES

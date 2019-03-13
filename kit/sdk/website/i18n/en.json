@@ -8,89 +8,49 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "implementation_security_guideline": {
-        "title": "Implementation and Security Guideline",
-        "sidebar_label": "Implementation and Security Guideline"
+      "getting_started/authentication": {
+        "title": "Authentication",
+        "sidebar_label": "Authentication"
       },
-      "sample_flow": {
-        "title": "Sample Flow",
-        "sidebar_label": "Sample Flow"
+      "getting_started/integration/integration_guide": {
+        "title": "Integration",
+        "sidebar_label": "Integration Guide"
       },
-      "server_sdk/overview": {
-        "title": "Server SDK overview",
+      "getting_started/overview": {
+        "title": "Overview",
         "sidebar_label": "Overview"
       },
-      "server_sdk/php/latest/quickstart_guide": {
+      "getting_started/server_sdk_quickstart_guide/php": {
         "title": "PHP SDK Quickstart Guide",
-        "sidebar_label": "PHP SDK Quickstart Guide"
+        "sidebar_label": "PHP"
       },
-      "wallet_sdk/android/latest/guides/add_new_device_flow": {
-        "title": "Add new device flow",
-        "sidebar_label": "Add new device flow"
+      "getting_started/wallet_sdk_setup/android": {
+        "title": "Android SDK Setup",
+        "sidebar_label": "Android SDK"
       },
-      "wallet_sdk/android/latest/guides/create_wallet_flow": {
-        "title": "Create wallet flow",
-        "sidebar_label": "Create wallet flow"
+      "getting_started/wallet_sdk_setup/iOS": {
+        "title": "iOS SDK Setup",
+        "sidebar_label": "iOS SDK"
       },
-      "wallet_sdk/android/latest/guides/transaction_flow": {
-        "title": "transaction flow",
-        "sidebar_label": "transaction flow"
+      "references/overview": {
+        "title": "Refrences",
+        "sidebar_label": "Overview"
       },
-      "wallet_sdk/android/latest/guides/wallet_recovery_flow": {
-        "title": "Wallet recovery flow",
-        "sidebar_label": "Wallet recovery flow"
-      },
-      "wallet_sdk/android/latest/installation": {
-        "title": "Android SDK installation",
-        "sidebar_label": "Installation"
-      },
-      "wallet_sdk/android/latest/interfaces": {
+      "references/wallet_sdk/android/latest/interfaces": {
         "title": "Android SDK interfaces",
         "sidebar_label": "Interfaces"
       },
-      "wallet_sdk/android/latest/quickstart_guide": {
-        "title": "Android SDK Quickstart Guide",
-        "sidebar_label": "Quickstart Guide"
-      },
-      "wallet_sdk/android/latest/workflows": {
+      "references/wallet_sdk/android/latest/workflows": {
         "title": "Android SDK workflows",
         "sidebar_label": "Workflows"
       },
-      "wallet_sdk/ios/latest/guides/add_new_device_flow": {
-        "title": "Add new device flow",
-        "sidebar_label": "Add new device flow"
-      },
-      "wallet_sdk/ios/latest/guides/create_wallet_flow": {
-        "title": "Create wallet flow",
-        "sidebar_label": "Create wallet flow"
-      },
-      "wallet_sdk/ios/latest/guides/transaction_flow": {
-        "title": "transaction flow",
-        "sidebar_label": "transaction flow"
-      },
-      "wallet_sdk/ios/latest/guides/wallet_recovery_flow": {
-        "title": "Wallet recovery flow",
-        "sidebar_label": "Wallet recovery flow"
-      },
-      "wallet_sdk/ios/latest/installation": {
-        "title": "iOS SDK installation",
-        "sidebar_label": "Installation"
-      },
-      "wallet_sdk/ios/latest/protocols": {
+      "references/wallet_sdk/iOS/latest/protocols": {
         "title": "iOS SDK protocols",
         "sidebar_label": "Protocols"
       },
-      "wallet_sdk/ios/latest/quickstart_guide": {
-        "title": "iOS SDK Quickstart Guide",
-        "sidebar_label": "Quickstart Guide"
-      },
-      "wallet_sdk/ios/latest/workflows": {
+      "references/wallet_sdk/iOS/latest/workflows": {
         "title": "iOS SDK workflows",
         "sidebar_label": "workflows"
-      },
-      "wallet_sdk/overview": {
-        "title": "Wallet SDK overview",
-        "sidebar_label": "Overview"
       }
     },
     "links": {
@@ -99,8 +59,8 @@
       "Support": "Support"
     },
     "categories": {
-      "Wallet SDKs": "Wallet SDKs",
-      "Server Side SDK": "Server Side SDK"
+      "Getting Started": "Getting Started",
+      "References": "References"
     }
   },
   "pages-strings": {
