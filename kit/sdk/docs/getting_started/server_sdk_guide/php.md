@@ -6,8 +6,9 @@ sidebar_label: PHP
 
 
 ## Introduction
-Do we want to explain them about wallet SDK
+The OST PHP SDK is a PHP wrapper for the OST API. This Quick Start Guide will show you how to use the OST PHP SDK for a simple flow.
 
+You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
 
 ## 1. Create Token On OST KIT
 Signup on [oct.com](https://ost.com) to create an account. Follow [create token guide](/kit/docs/getting_started/create_token/) (ADD LINK HERE) to complete the token setup.
@@ -85,7 +86,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ```
 
 ### Tokens Information 
-Token information contains all the information that you had filled while setting up you branded token. Token information will have [smart contract](/kit/docs/glossary/#smart-contract) address information of [origin chain](/kit/docs/glossary/#origin-chain) and [auxiliary chain](/kit/docs/glossary/#auxiliary-chain). <br>**It is recommended to save this information in your database for future use**. 
+Token entity has important information about your token which we recommend you to save on your server for further use. 
 
 ```json
 {
@@ -177,75 +178,12 @@ Ex: `jack.ryan@example.com` can be a unique identifier of your application user,
 A detail explanation about each attribute of user is availaible on [user object](/kit/docs/api/?php#user-object) section of [API docs](/kit/docs/api/?php#user-object).
 
 
-## 6. Register Device
-Device is a mobile device running your mobile application. Your mobile application will use [wallet SDK](/kit/docs/sdk/wallet_sdk/overview/) to add wallet functionality in your app. user's wallet will have keys which are called as device keys. 
-
-Device registeration is a process of associating these device keys onto KIT. When the device keys are generated in a mobile device using wallet SDK, wallet SDK would not be able to communicate directly with OST KIT server.
-
-So device registeration should happen via mappy server (Partner companies server) because wallet SDK can't be trusted OST KIT server at this stage. After the device registeration walet SDK can communicate directly with OST KIT servers.
-
-### Sample device information
-Ideally partner companies server will recieve the device information form thier mobile application. But device registeration remains partner companies responsibility. So let's take some dummy device data to register it on OST KIT server.
-
-```php
-<?php
-$createParams = array();
-$createParams['address'] = '0x2Ea365269A3e6c8fa492eca9A531BFaC8bA1649C';
-$createParams['api_signer_address'] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455';
-$createParams['device_uuid'] = '593a967f-87bd-49a6-976c-52edf46c4df4';
-$createParams['device_name'] = 'Iphone S';
-?>
-```
-Do not worry about the device data and its attributes. Wallet SDK will provide it to you. <br>
-
-
-### Device registration
-We need to provide the user id of the OST KIT user whose device information we are adding on OST KIT server. 
-
-
-```php
-<?php
-$createParams['user_id'] = '7303bd10-5114-423e-9206-04cafafb1708';
-
-$deviceService = $ostObj->services->devices;
-
-$response = $deviceService->create($createParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-?>
-```
-
-### Response 
-
-```json
-{
-    "success": true,
-    "data": {
-        "result_type": "device",
-        "device": {
-            "user_id": "7303bd10-5114-423e-9206-04cafafb1708",
-            "address": "0x2ea365269a3e6c8fa492eca9a531bfac8ba1649c",
-            "linked_address": null,
-            "api_signer_address": "0x5f860598383868e8e8ee0ffc5add92369db37455",
-            "device_name": "Iphone S",
-            "device_uuid": "593a967f-87bd-49a6-976c-52edf46c4df4",
-            "status": "REGISTERED",
-            "updated_timestamp": 1552368397
-        }
-    }
-}
-
-```
-Default status of device will be registered. It needs to be `AUTHORIZED` before it can be used to do transactions. 
-A details explanation about device attributes is available at [device object](/kit/docs/api/?php#device-object) section of [API docs](/kit/docs/api/?php).
-
-
 ## Next Steps
 
-android setup guide
+### [Android SDK setup guide](/kit/docs/sdk/getting_started/wallet_sdk_setup/android/)
 
-ios setup
+### [iOS SDK setup guide](/kit/docs/sdk/getting_started/wallet_sdk_setup/iOS/)
 
-master the fundamentals
+### [Master the fundamentals](/kit/docs/wallet/fundamentals/)
 
-API REFERENCES
+### [API Reference](/kit/docs/api/)
