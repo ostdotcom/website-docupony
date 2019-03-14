@@ -33,7 +33,7 @@ Adding and removing devices, which really just alters the list of the owners of 
 Thus, there is the process of adding a and additional device which must happen before recovery is needed. Given that there is an authorized device, the user can use this device to replace the key from the compromised device with one from a new deivce. 
 
 
-![recovery-using-additional-device](/kit/docs/assets/QR.png)
+![recovery-using-additional-device](/kit/docs/assets/qr-scan.png)
 
 
 To add a device as an owner of the TokenHolder contract, an existing owner must sign the transaction to add the device. To create the transaction to add a new key, a  QR code is generated on the new device; the user can scan this code with their old device and confirm the details to authorize the new device. 
@@ -47,7 +47,7 @@ Writing down a 12-word recovery key is pretty much the best-known way to back up
 
 As with the recovery from the additional device, the user should have written down their seed-phrase before losing their device.
 
-![recovery-12-words](/kit/docs/assets/SeedPhrase.png)
+![recovery-12-words](/kit/docs/assets/seed-phrase.png)
 
 
 The process of regaining access to the Wallet using the seed phrase would involve typing the words in the correct order. When they do so, a valid key to their Wallet is generated and stored on their device. 
