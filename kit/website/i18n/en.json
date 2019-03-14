@@ -20,6 +20,10 @@
         "title": "Platform Overview",
         "sidebar_label": "Platform Overview"
       },
+      "glossary": {
+        "title": "Glossary",
+        "sidebar_label": "Glossary"
+      },
       "wallet/fundamentals": {
         "title": "OST KIT Fundamentals",
         "sidebar_label": "Fundamentals"
@@ -48,7 +52,8 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
-      "Wallet": "Wallet"
+      "Wallet": "Wallet",
+      "Miscellaneous docs": "Miscellaneous docs"
     }
   },
   "pages-strings": {

@@ -4,7 +4,7 @@
 //= require ./app/_custom
 
 $(function() {
-  loadToc($('#toc'), '.toc-link', '.toc-list-h2', 10);
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2', 0);
   setupLanguages($('body').data('languages'));
   $('.content').imagesLoaded( function() {
     window.recacheHeights();

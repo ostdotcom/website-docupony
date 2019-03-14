@@ -290,12 +290,22 @@ p a:hover {
 .content h4 {
     font-size: 16px;
     line-height: 26px;
-    background: #f3f4f5;
+    background: #f9fafa;
     margin: 0;
     margin-bottom: 10px;
-    margin-top: 10px;
-    margin-left: 30px;
+    margin-top: 15px;
+    margin-left: 27px;
+    margin-bottom: 25px;
     padding: 10px;
     padding-left: 16px;
-    width: 40%;
+    padding-right: 30px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    min-width: 350px;
+    border-left: 2px solid #84aec2;
+}
+
+.content h4 span {
+    color: #E4B030;
 }
