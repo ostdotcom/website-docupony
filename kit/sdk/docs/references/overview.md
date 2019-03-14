@@ -19,7 +19,7 @@ Wallet SDK will take care of key management solution (to learn more about key ma
     <div class="content-block">
         <div class="section-promo">
         <a target="_blank" href="/kyc/docs/sdk/python_sdk/latest/quickstart_guide/">
-            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/python.png" >
+            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kit/docs/sdk/assets/android.png" >
             <h3 class="accent-color text-center">Android SDK</h3>
         </a>
         </div>
@@ -27,7 +27,7 @@ Wallet SDK will take care of key management solution (to learn more about key ma
     <div class="content-block">
         <div class="section-promo">
         <a target="_blank" href="/kyc/docs/sdk/ruby_sdk/latest/quickstart_guide/">
-            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/ruby.png" >
+            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kit/docs/sdk/assets/xcode-ios.png" >
             <h3 class="accent-color text-center">iOS SDK</h3>
         </a>
         </div>
@@ -47,7 +47,7 @@ Server side SDK's are an alternative to [REST API](/kit/docs/api/). Server SDK's
 <div class="content-block">
     <div class="section-promo">
        <a target="_blank" href="/kit/docs/sdk/server_sdk/php/latest/quickstart_guide/">
-        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/php.png">
+        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kit/docs/sdk/assets/php.png">
         <h3 class="accent-color text-center">PHP SDK</h3>
       </a>
     </div>
@@ -66,7 +66,7 @@ Server side SDK's are an alternative to [REST API](/kit/docs/api/). Server SDK's
     <div class="section-promo">
        <a target="_blank" href="/kyc/docs/sdk/nodejs_sdk/latest/quickstart_guide/">
         <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/kyc/docs/sdk/assets/icons/nodejs.png" >
-        <h3 class="accent-color text-center">Node Js SDK</h3>
+        <h3 class="accent-color text-center">Node.js SDK</h3>
       </a>
     </div>
   </div>

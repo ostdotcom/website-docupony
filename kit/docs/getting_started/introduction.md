@@ -30,11 +30,11 @@ Integrating with OST platform involves interacting with different services and t
 | Steps | Process |
 |---|---|
 | Register on OST KIT | Register or Login to your OST KIT and get access to API Key and API secret.  |
-| Learn how to make KIT Server Side API calls | [Server side SDK quickstart guide](/kit/docs/sdk/server_sdk/overview/) |
-| Integrate Wallet SDK into your app | [Fundamentals guide](/kit/docs/getting_started/fundamentals/) |
-| | Go through the [wallet UX guide](/kit/docs/wallet/ux_guide/)  |
-| | Go through the [Wallet SDK Documentation](/kit/docs/sdk/wallet_sdk/overview/) |
-| | Follow the [sample flow](/kit/docs/sdk/sample_flow/) |
-| | Take a look at [Implementation and Security best practices](/kit/docs/sdk/implementation_security_guideline/)|
-| Test your application in the sandbox | Testing Best Practices |
+| Learn how to make KIT Server Side API calls | Make your first call with server SDK quickstart guides available in  [PHP](/kit/docs/sdk/getting_started/server_sdk_quickstart_guide/php/)  |
+| Integrate Wallet SDK into your app | Setup the Wallet SDK in your [android](/kit/docs/sdk/getting_started/wallet_sdk_setup/android/) app and [iOS](/kit/docs/sdk/getting_started/wallet_sdk_setup/iOS/) app. |
+| | [Master the fundamentals](/kit/docs/wallet/fundamentals/) before moving onto integration  |
+| |  Follow the sample flow outlined in this [integration guide](/kit/docs/sdk/getting_started/integration/integration_guide/). |
+| | Go through the [Wallet SDK Documentation](/kit/docs/sdk/references/overview/#wallet-sdk-references) and [API references](/kit/docs/api/#introduction) |
+|  | Take a look at [sample applications](/kit/docs/sdk/getting_started/overview/#sample-apps) |
+| Test your application in the sandbox mode | Testing Best Practices |
 | Go Live | Get in touch with OST team |

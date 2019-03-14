@@ -10,7 +10,7 @@ You should complete the [server side SDK integration](/kit/docs/sdk/server_sdk/o
 ### Protocols and workflows
 iOS Wallet SDK consists of `workflows` and `protocol`. <br><br>
 **Protocols**: Callback functions are used for communication between app and wallet SDK. 
-<br> In iOS wallet SDK these callback functions are provided as an [protocol]().
+<br> In iOS wallet SDK these callback functions are provided as an protocol.
 <br><br>
 
 **Workflows**: Workflows are functions that can be used to perform wallet related tasks. App developers will be calling these functions to execute different tasks
@@ -148,8 +148,8 @@ To provide developers with sample integration of wallet SDK, a [demo iOS app ](h
 ## Next Steps
 
 1. [Sample Flow Guide](/kit/docs/sdk/getting_started/sample_flow/)
-1. [SDK REFERNECES]()
-1. [SDK User Flows]()
+1. iOS Wallet SDK [Workflows](/kit/docs/sdk/references/wallet_sdk/iOS/latest/workflows/) and [Protocol](/kit/docs/sdk/references/wallet_sdk/iOS/latest/protocols/)
+1. [User Flows]()
 
 
 

@@ -4,11 +4,6 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-## Wallet SDK Authentication
-OST has created Wallet SDK, providing private key management, authorization and recovery of user wallet services from an Android app / iOS app. With our SDK, we shoulder the burden of creating a wallet for users to own their tokens without requiring them to directly manage their private crypto keys. The private keys are limited to the device and the person with access to the device. And our wallet SDK uses “Personal” sign authentication to communicates to our servers.
-
-Your app will receive a token created by Wallet SDK which we call as ‘Api Signer’, which your app can then send the token to an endpoint on your server, where it can be used to register a device on KIT server. Once the ‘Api Signer’ token is registered, the wallet SDK can directly start communicating with OST APIs. The SDK ‘Personal’ signs the Api request using the ‘Api Signer’. The Kit server validates the ‘personal’ signed Api call by recovering the Api Key address.
-
 ## Server API Authentication
 OST servers authenticate your API requests using your account’s API keys. If you do not include your key when making an API request, or use one that is incorrect or outdated, Stripe returns an error.
 
@@ -44,3 +39,10 @@ Your secret API key can be used to make any API call on behalf of your account. 
 If an API key is compromised, roll the key in the Developers Page to block it and generate a new one.
 
 When rolling an API key, you can choose to delete the old key immediately or allow it to work for 24 hours, providing you with time to make the transitions. In either case, the new key can be used immediately.
+
+
+## Wallet SDK Authentication
+OST has created Wallet SDK, providing private key management, authorization and recovery of user wallet services from an Android app / iOS app. With our SDK, we shoulder the burden of creating a wallet for users to own their tokens without requiring them to directly manage their private crypto keys. The private keys are limited to the device and the person with access to the device. And our wallet SDK uses “Personal” sign authentication to communicates to our servers.
+
+Your app will receive a token created by Wallet SDK which we call as ‘Api Signer’, which your app can then send the token to an endpoint on your server, where it can be used to register a device on KIT server. Once the ‘Api Signer’ token is registered, the wallet SDK can directly start communicating with OST APIs. The SDK ‘Personal’ signs the Api request using the ‘Api Signer’. The Kit server validates the ‘personal’ signed Api call by recovering the Api Key address.
+

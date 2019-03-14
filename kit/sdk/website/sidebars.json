@@ -5,9 +5,9 @@
       "getting_started/authentication",
       {
         "type": "subcategory",
-        "label": "Server SDK Quickstart Guides",
+        "label": "Server SDK Guides",
         "ids": [
-          "getting_started/server_sdk_quickstart_guide/php"
+          "getting_started/server_sdk_guide/php"
         ]
       },
       

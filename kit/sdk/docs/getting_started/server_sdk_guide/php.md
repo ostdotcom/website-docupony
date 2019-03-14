@@ -10,7 +10,7 @@ Do we want to explain them about wallet SDK
 
 
 ## 1. Create Token On OST KIT
-Signup on [oct.com](https://ost.com) to create an account. Follow [create token guide]() (ADD LINK HERE) to complete the token setup.
+Signup on [oct.com](https://ost.com) to create an account. Follow [create token guide](/kit/docs/getting_started/create_token/) (ADD LINK HERE) to complete the token setup.
 
 
 
@@ -32,10 +32,10 @@ To install the SDK run the following command <br>
 ### Installing composer
 > curl -sS https://getcomposer.org/installer | php
 
-**Source code:** [Github - PHP SDK](https://github.com/ostdotcom/ost-sdk-php)
+**Source code:** [Github - PHP SDK](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
 
 ### Install the latest stable version of the SDK:
-> php composer.phar require ostdotcom/ost-sdk-php
+> php composer.phar require ostdotcom/ost-sdk-php:dev-release-2.0
 
 
 
@@ -85,7 +85,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ```
 
 ### Tokens Information 
-This is the same information that you had filled during creating the branded token.
+Token information contains all the information that you had filled while setting up you branded token. Token information will have [smart contract](/kit/docs/glossary/#smart-contract) address information of [origin chain](/kit/docs/glossary/#origin-chain) and [auxiliary chain](/kit/docs/glossary/#auxiliary-chain). <br>**It is recommended to save this information in your database for future use**. 
 
 ```json
 {

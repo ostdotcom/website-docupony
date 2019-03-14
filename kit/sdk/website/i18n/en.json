@@ -13,14 +13,14 @@
         "sidebar_label": "Authentication"
       },
       "getting_started/integration/integration_guide": {
-        "title": "Integration",
-        "sidebar_label": "Integration Guide"
+        "title": "Sample Flow",
+        "sidebar_label": "Sample Flow"
       },
       "getting_started/overview": {
         "title": "Overview",
         "sidebar_label": "Overview"
       },
-      "getting_started/server_sdk_quickstart_guide/php": {
+      "getting_started/server_sdk_guide/php": {
         "title": "PHP SDK Quickstart Guide",
         "sidebar_label": "PHP"
       },

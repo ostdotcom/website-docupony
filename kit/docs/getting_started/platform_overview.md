@@ -24,7 +24,7 @@ The following SDKs are actively maintained and supported:
 
 * Ruby for server-side applications
 * PHP  for server-side applications
-* Node Js for server-side applications
+* Node.js for server-side applications
 * Java for server-side applications
 
 For Client side integrations we provide wallet SDKs for native iOS and Android applications. These integrate with our server-side SDKs.

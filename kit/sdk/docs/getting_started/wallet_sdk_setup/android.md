@@ -5,36 +5,88 @@ sidebar_label: Android SDK
 ---
 
 ## 1. Overview
-You should complete the [server side SDK integration](/kit/docs/sdk/server_sdk/overview).
+
 
 ### Interfaces and workflows
 Android Wallet SDK consists of `workflows` and `interface`. <br><br>
 
 **Interface**: Callback functions are used for communication between app and wallet SDK. 
-<br> In Android wallet SDK these callback functions are provided as an [interface]().
+<br> In Android wallet SDK these callback functions are provided as an interface.
 <br><br>
 
 **Workflows**: Workflows are functions that can be used to perform wallet related tasks. App developers will be calling these functions to execute different tasks
 
+### Prerequisite
+You should complete one of the server SDK Guides ([PHP](/kit/docs/sdk/getting_started/server_sdk_guide/php/), Ruby, Node.js, Java)
+
+<br>
 
 ## 2. Requirements
 
 Android supported version: 22 and Above
+<br>
+Java Compile version: 1.7 
 
 
 <br>
 
 ## 3. Install Android Wallet SDK
 
-### installation using Android Studio and Gradle.
-<br> 
-#### a). Add wallet SDK package entry to your `build.gradle` file
+### i) Update build.gradle files
+
+#### a). Setting minSdkVersion to 22
 ```
-implementation com.ost.mobilesdk.OstSdk:1.0.0
+android {
+    defaultConfig {
+        minSdkVersion 22
+        ...
+        ...
+        ...
+    }
+}
 ```
 
-#### b). Sync project with gradle files
-Once you have added the entry in `build.gradle` file, you need to sync the project with Gradle files. To sync the project with gradle files go to `File` menu, then click on `sync project with gradle files` entry.
+#### b). Adding compile options
+Add following code in your `build.gradle` file
+
+```
+compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+```
+
+#### c). Adding android wallet sdk package in dependencies
+
+```
+dependencies {
+        implementation 'com.ost:ost-client-android-sdk:0.1.0.beta.10'
+        ...
+        ...
+        ...
+}
+```
+
+<br>
+
+### Create config file named `ost-mobilesdk.json` file in `app/src/main/assets/` path of your android project.
+
+Paste following contents in `app/src/main/assets/ost-mobilesdk.json` file
+
+```json
+ {
+       "BLOCK_GENERATION_TIME": 3,
+       "PIN_MAX_RETRY_COUNT": 3,
+       "REQUEST_TIMEOUT_DURATION": 60,
+       "SESSION_BUFFER_TIME": 3600,
+       "PRICE_POINT_TOKEN_SYMBOL": "OST",
+       "PRICE_POINT_CURRENCY_SYMBOL": "USD"
+ }
+```
+
+
+
+
 
 <br>
 
@@ -51,8 +103,6 @@ import com.ost.mobilesdk.OstSdk;
 
 public class App extends Application {
 
-
-    public static final String BASE_URL_MAPPY = "https://s5-mappy.stagingost.com/api/";
     public static final String BASE_URL_KIT = "https://s6-api.stagingost.com/testnet/v2";
     private LogInUser loggedUser;
     @Override
@@ -85,7 +135,9 @@ The communication between app and wallet SDK happens through callback functions.
 <br>
 
 ### a). Implementing the `OstWorkFlowCallback` interface
-There are different ways to pass these callback functions in workflows. We will create a `Java Class` with name `BaseFragment` that inherits `Fragment` and implements `OstWorkFlowCallback` interface.
+There are different ways to pass these callback functions in workflows. We will create a `BaseFragment` for reusability purpose which will implement `OstWorkFlowCallback` interface.
+
+The Wallet SDK <u>does not hold strong reference of workflow callbacks.</u> It only has a <u>weak reference of workflow callback.</u> This is done to avoid any memory leaks. The app should hold therference of the calbacks as long as it needs.
 
 Sample Implementation of [ BaseFragment class](https://github.com/ostdotcom/ost-client-android-sdk/blob/develop/app/src/main/java/ost/com/sampleostsdkapplication/fragments/BaseFragment.java) is available as a part of [demo app ](https://github.com/ostdotcom/ost-client-android-sdk).
 
@@ -119,7 +171,7 @@ public class BaseFragment extends Fragment, OstWorkFlowCallback {
 
   }
 
-// More callback functions declaration here
+// More callback functions definitions here
 ....
 ....
 
@@ -128,11 +180,8 @@ public class BaseFragment extends Fragment, OstWorkFlowCallback {
 
 
 
-### b). Using BaseFragment to implement new Fragments
-`BaseFragment` class can be inherited by other fragments in application. 
-
-For Example: Let's assume that we have a `LoginFragment` that has login functionality. We would want to call `setupDevice` workflow after successful login. Then `LoginFragment` can just inherit `BaseFragment`
-
+### b). Creating new fragment.
+We can now create new fragment that will inherit `BaseFragment` and override definition of **callback functions**. This new fragment can now call workflow function to perform any wallet realted task.
 
 [Sample implementation inheriting `BaseFragment`](https://github.com/ostdotcom/ost-client-android-sdk/blob/develop/app/src/main/java/ost/com/sampleostsdkapplication/fragments/LoginFragment.java)
 
@@ -141,9 +190,9 @@ For Example: Let's assume that we have a `LoginFragment` that has login function
 To provide developers with sample integration of wallet SDK, a [demo android app ](https://github.com/ostdotcom/ost-client-android-sdk) is available on github. 
 
 
-
 ## Next Steps
 
 1. [Sample Flow Guide](/kit/docs/sdk/getting_started/sample_flow/)
-1. [SDK REFERNECES]()
-1. [SDK User Flows]()
+2. SDK [Workflows](/kit/docs/sdk/references/wallet_sdk/android/latest/workflows/) and [Interfaces](/kit/docs/sdk/references/wallet_sdk/android/latest/interfaces/)
+3. [User Flows]()
+

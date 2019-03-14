@@ -51,7 +51,8 @@ public void onCreate() {
 
 <br>
 ### 2. setupDevice
-After init, setupDevice should be called everytime the app launches. It ensures that the current device is registered before communicating with OST KIT server. This will register the device if the current device is not registered. In case the device is already registered this function wouldn't do anything. 
+This workflow needs `userId` and `tokenId` in the arguments so `setupDevice` should be called after your app login or signup is successfull. 
+ Using the mapping between OST KIT userId and your app user you have access to `userId` and `tokenId` of OST KIT user. Now you can call `setupDevice` workflow but make sure `setupDevice` should be called everytime the app launches, this ensures that the current device is registered before communicating with OST KIT server.
 
 **Recommended location to call setupDevice() is in MainActivity.**
 

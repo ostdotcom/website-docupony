@@ -133,7 +133,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -143,13 +143,14 @@ $userService = $ostObj->services->users;
 
 // List users without any filters. This will return 10 users because the default limit is 10.
 $getParams = array();
+
 $response = $userService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
 ```
 
-On the right hand side, a sample cod eis given to get a list of user. By default the `limit` of entities in 1 page is 10. **Max value of limit is 25**.
+On the right hand side, a sample code is given to get a list of user. By default the `limit` of entities in 1 page is 10. **Max value of limit is 25**.
 
 
 **List user API call response:**
@@ -289,6 +290,8 @@ The value of `data.result_type` property will be `users` and list of users will 
 
 ### Requesting next page
 
+If next page is not present, `next_page_payload` will be empty hash and `pagination_identifier` key won't be present
+
 > Pagination Exmaple: Requesting next page users
 
 ```php
@@ -302,7 +305,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -472,7 +475,7 @@ This is version 2 (v2) OST KIT API. Earlier versions have been removed from the 
 
 | Attribute  | Description  |
 |---|---|
-| **id** <br> **String \<uuid v4\>**  | UUID V4  |
+| **id** <br> **String**, [**\<uuid v4\>**](/kit/docs/glossary/#uuid-v4)  | UUID V4  |
 | **token_id** <br> **Integer** | Unique integer for the token |
 |  **token\_holder\_address** <br> **String**,  [**\<Address\>**](/kit/docs/glossary/#contract-address),<br> **default is null** | This will be the address of [token-holder contract](/kit/docs/wallet/fundamentals/#tokenholder-contracts).|
 | **device\_manager\_address** <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address), <br> **default is null**   | This will be the address of [device manager contract](/kit/docs/wallet/fundamentals/#device-manager-a-multisig-contract) contract.   |
@@ -497,7 +500,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -512,10 +515,6 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ```
 
 #### <span> POST </span> &nbsp; &nbsp; /users
-
-<u>**Input Parameters**</u>
-
-No input params needed to create a user.
 
 
 <u>**Success Response**</u><br>
@@ -560,7 +559,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -627,7 +626,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -670,7 +669,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 | Parameter  | Description  |
 |---|---|
 | **ids** <br> **Optional**   | List of user id's to be retrieved. Max 25 ids can be passed.  |
-| **Limit** <br> **Optional**   |  Limit on the number of users to be returned. Max limit is 25.  **Default value of limit is 10** <br> **Limit is ignored when user ids are passed.**  |
+| **limit** <br> **Optional**   |  Limit on the number of users to be returned. Max limit is 25.  **Default value of limit is 10** <br> **Limit is ignored when user ids are passed.**  |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `users` and `meta`.<br><br>
@@ -828,7 +827,7 @@ Devices are the wallet devices that are added by a user. `Devices` API allows yo
 
 | Attribute  | Description  |
 |---|---|
-|  **user_id** <br> **String \<uuid v4\>**| uuid of the user in the token economy.  |
+|  **user_id** <br> **String**, [**\<uuid v4\>**](/kit/docs/glossary/#uuid-v4)| uuid of the user in the token economy.  |
 |  **address** <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address) | This will be the address of the owner key of user's [Token Holder Contract](http://localhost:3000/kit/docs/wallet/fundamentals/#tokenholder-contracts).  |
 |  **linked_address** <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address), <br> **default is null** | Address that points to the device's address in the device manager contract linked list. This is used during recovery.?  |
 |  **api\_signer_address** <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address) | Will be used to validate the request coming from client SDK.  |
@@ -851,7 +850,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -879,7 +878,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 |---|---|
 | **user_id** <br> **Required**   | Unique identifier for the user of economy |
 
-<u>**Body Parameters**</u>
+<u>**POST Parameters**</u>
 
 | Parameter  | Description  |
 |---|---|
@@ -929,7 +928,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -998,7 +997,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -1015,7 +1014,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/devices/
+#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/devices
 
 
 <u>**URL Parameters**</u>
@@ -1083,13 +1082,13 @@ API you can `get` and `list` user's sessions. Sessions are generated by wallet S
 
 | Attribute  | Description  |
 |---|---|
-|  **user_id** <br> **String \<uuid v4\>** | uuid of the user in the token economy.   |
+|  **user_id** <br> **String**, [**\<uuid v4\>**](/kit/docs/glossary/#uuid-v4) | uuid of the user in the token economy.   |
 |  **address** <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address)  | This will be the [session key address](http://localhost:3000/kit/docs/wallet/fundamentals/#session-key).   |
 |  **expiration_height** <br> **Integer** | Block height when the session address will expire |
 |   **approx\_expiration\_timestamp** <br> **EPOCH \<time in seconds\>**, <br> **default is null**| Approximate time at which the session address will expire.  |
 |  **spending_limit** <br> **String \<BigInt\>** | Maximum allowed branded token amount in `Wei` that can be transfered in one transaction by this session address. |
 |   **nonce** <br> **Integer**,<br> **default is null**| Transaction counter of session address which helps prevents replay attacks.  |
-|  **status** <br> **String**| Status gives us status of session key. It can take one of these values. INITITIALIZING / AUTHORIZED / REVOKING / REVOKED <br> INITITIALIZING: Status when the session address is being authorized in user's token holder contract. <br>AUTHORIZED: Status when the authorization is complete <br> REVOKING: Status when the session is beign revoked from token holder contract<br> REVOKED: Status when the session revocation is complete|
+|  **status** <br> **String**| Status gives us status of session key. It can take one of these values. INITITIALIZING / AUTHORIZED / REVOKING / REVOKED <br> `INITITIALIZING`: Status when the session address is being authorized in user's token holder contract. <br>`AUTHORIZED`: Status when the authorization is complete <br> `REVOKING`: Status when the session is being revoked from token holder contract<br> `REVOKED`: Status when the session revocation is complete|
 |  **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 ## Get a User's Session
@@ -1105,7 +1104,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -1171,7 +1170,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -1295,7 +1294,7 @@ The value of `data.result_type` property will be `sessions` and list of sessions
 
 | Attribute  | Description  |
 |---|---|
-| **id** <br> **String \<uuid v4\>** | Unique Indentifeir of transaction   |
+| **id** <br> **String**, [**\<uuid v4\>**](/kit/docs/glossary/#uuid-v4) | Unique Indentifeir of transaction   |
 | **transaction_hash** <br> **String \<tx hash\>**, <br> **default is null** | Hash of the transaction in blockchain  |
 |  **from**  <br> **String**,  [**\<Address\>**](/kit/docs/glossary/#contract-address),<br> **default is null** | Sender address of transaction on blockchain.  |
 |  **to** <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address) |   This will be the token holder address of transaction initiator.|
@@ -1337,7 +1336,7 @@ The value of `data.result_type` property will be `sessions` and list of sessions
     </td>
 
     <td>
-    user <code>User id</code> of <code>from</code> address if the user is known.
+    <code>User id</code> of <code>from</code> address if the user is known.
     </td>
   </tr>
 
@@ -1362,7 +1361,7 @@ The value of `data.result_type` property will be `sessions` and list of sessions
     </td>
 
     <td>
-     user <code>User id</code> of <code>to</code> address if the user is known.
+     <code>User id</code> of <code>to</code> address if the user is known.
     </td>
   </tr>
 
@@ -1449,7 +1448,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -1521,7 +1520,7 @@ Execute transaction API allows you to do `company-to-user` transactions. `user-t
 |---|---|
 | **user_id** <br> **Required**   | Unique identifier for the user of economy |
 
-<u>**Body Parameters**</u>
+<u>**POST Parameters**</u>
 
 | Parameter  | Description  |
 |---|---|
@@ -1699,7 +1698,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -1750,7 +1749,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -1824,7 +1823,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -1844,7 +1843,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions/
+#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions
 
 
 <u>**URL Parameters**</u>
@@ -1859,7 +1858,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 |---|---|
 | **meta_property** <br> **Optional**   | List of meta properties. |
 | **status** <br> **Optional**   | List of status values. |
-| **limit** <br> **Optional**   |  Limit on the number of transactions to be returned. Max limit is 25.  **Default value of limit is 10**. <br> **Limit is ignored when transaction ids are passed.**  |
+| **limit** <br> **Optional**   |  Limit on the number of transactions to be returned. Max limit is 25.  **Default value of limit is 10**. |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `transactions` and `meta`.<br><br>
@@ -2148,7 +2147,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -2165,10 +2164,6 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /tokens
-
-<u>**Input Parameters**</u>
-
-No input params needed to get `token` object.
 
 
 <u>**Success Response**</u><br>
@@ -2233,15 +2228,16 @@ The value of `data.result_type` property will be `token` and token object will b
 
 
 # Balance
+Balance API offers the functionality to view a user’s balances.
 
 ## Balance Object
 
 | Attribute  | Description  |
 |---|---|
-| **user_id**  <br> **String \<uuid v4\>** | uuid of the user in the token economy.  |
-| **total_balance** <br> **String**| Setteled branded token balance on blockchain.  |
-| **available_balance** <br> **String** | Total branded token balance - unsettled balance  |
-| **unsettled_debit** <br> **String** | Unsettled branded token balance. When the transaction is initiated branded token sender's balance gets pessimistically debited. When transaction is either is successful or failed, usettled debits are settled.   |
+| **user_id**  <br> **String**, [**\<uuid v4\>**](/kit/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **total_balance** <br> **String \<BigInt\>**| Settled branded token balance on blockchain.  |
+| **available_balance** <br> **String \<BigInt\>** | Total branded token balance minus unsettled debits  |
+| **unsettled_debit** <br> **String \<BigInt\>** | Unsettled branded token balance. When the transaction is initiated branded token sender's balance gets [pessimistically debited](/kit/docs/glossary/#). When transaction is either is successful or failed, usettled debits are settled.   |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
@@ -2258,7 +2254,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -2320,13 +2316,17 @@ The value of `data.result_type` property will be `balance` and balance object wi
 
 # Recovery Owner
 
+A user’s Brand Tokens are held by a [TokenHolder contract](/kit/docs/wallet/fundamentals/#tokenholder-contracts) that is controlled ("owned") by a [Device Manager](/kit/docs/wallet/fundamentals/#device-manager-a-multisig-contract); the device manager is controlled ("owned") by [device keys](/kit/docs/wallet/fundamentals/#owner-key-device-key) created and held by the user in their wallets and if any of those keys is lost, the Device Manager (which is a multi-signature contract) is programmed to allow the replacement of a key by the recovery owner key for the user, via the `DelayedRecoveryModule`, which is deployed at the time of the creation of the user's initial wallet.
+
+This API is used to get the status of newly created recovery owner key
+
 ## Recovery Owner Object
 
 | Attribute  | Description  |
 |---|---|
-| **user_id**  <br> **String \<uuid v4\>** | uuid of the user in the token economy.  |
-| **address**  <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address) | Recovery contract address.  |
-| **status** <br> **String** | Status can be one of the following values: <br> AUTHORIZATION_FAILED / AUTHORIZING / AUTHORIZED / REVOKING/REVOKED  |
+| **user_id**  <br> **String**, [**\<uuid v4\>**](/kit/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **address**  <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address) | This will be recovery public address generated using user's PIN and other 2 inputs. This key has authorization to replace the lost device address key using `DelayedRecoveryModule`. |
+| **status** <br> **String** | Status can be one of the following values: <br> AUTHORIZATION_FAILED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED <br> `AUTHORIZING`: Default status when the recovery oner is created.<br>`AUTHORIZED`: Status when recovery owner address is authorized successfully <br>  |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
@@ -2343,7 +2343,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -2366,7 +2366,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 | Parameter  | Description  |
 |---|---|
 | **user_id** <br> **Required**   | Unique identifier for the user of economy |
-| **recovery_owner_address** <br> **Required**   | recovery contract owner's public address. This will be the token holder contract address of the user ? **confirm**. |
+| **recovery_owner_address** <br> **Required**   | This will be the recovery public addres generated. |
 
 
 <u>**Success Response**</u><br>
@@ -2406,9 +2406,9 @@ The value of `data.result_type` property will be `recovery_owner` and recovery_o
 |---|---|
 |  **id** <br> **Integer**| Integer identifier of the rule |
 | **token_id**  <br> **Integer** | Token id is the unique identifier for your branded token.  |
-| **name** <br> **String** | Name of the rule  |
-| **address** <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address)  | Holds a 20 byte value (size of an Ethereum address). This will be the rule address.   |
-|  **abi** <br> **String** | A stringified JSON string which will need parsing. This string has rule contract abi (Application Binary Interface).  |
+| **name** <br> **String** | Name of the rule smart contract.  |
+| **address** <br> **String** [**\<Address\>**](/kit/docs/glossary/#contract-address)  | This will be the rule smart contract address.   |
+|  **abi** <br> **String** | [Abi object](https://solidity.readthedocs.io/en/develop/abi-spec.html)  for rule smart contract.  |
 |  **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 ## List all Rules
@@ -2424,7 +2424,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -2440,10 +2440,6 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /rules
-
-<u>**Input Parameters**</u>
-
-No input params needed to get list of `rules`.
 
 
 <u>**Success Response**</u><br>
@@ -3125,6 +3121,7 @@ The value of `data.result_type` property will be `rules` and rules array will be
 
 
 # Price Point
+Price point API is used to get the conversion rate between OST and USD. They can use [token information](/kit/docs/api/#get-token) to get the conversion rate between thier branded token and OST. So essentially partner company can calculate conversion rate between branded token and USD. Now they can use this information to perform [directTransfer](/kit/docs/api/#execute-a-transaction)  transactions.
 
 
 ## Price Point Object
@@ -3176,7 +3173,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -3236,15 +3233,16 @@ The value of `data.result_type` property will be `price_point` and price point o
 
 
 # Chains
+Chains API provides information about origin and auxiliary chains used by your branded token economy.
 
 ## Chain Object
 
 | Attribute  | Description  |
 |---|---|
 |  **id** <br> **Integer**| Unique identifier for chain  |
-| **type**  <br> **String**| Type can take one of the two values:<br> 1. `Origin`: Chain on ethereum blockchain<br>2.`Auxiliary`: Chain on private blockchain   |
+| **type**  <br> **String**| Type can take one of the two values:<br> 1. `Origin`: Chain on ethereum blockchain<br>2.`Auxiliary`: Chain on private blockchain based on ethereum  |
 | **block_height**  <br> **Integer** | Current block height  |
-|  **block_time** <br> **Integer** |   |
+|  **block_time** <br> **Integer** | This is the block generation time of the chain in seconds  |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
@@ -3261,7 +3259,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
@@ -3323,18 +3321,18 @@ The value of `data.result_type` property will be `chain` and chain object will b
 
 # Device Manager
 
-Device manager is an object which stores information about multi-signature contract.
-
+Device manager is an object that manages the authorization of device keys and recovery owner address. 
+This API allows you to get the device manager information.
 
 ## Device manager Object
 
 | Attribute  | Description  |
 |---|---|
-| **user_id** <br> **String \<uuid v4\>** | User id of the `user` to which this device manager belongs.  |
-|  **address** <br> **String** \<[**Address**](/kit/docs/glossary/#contract-address)\>  | Holds a 20 byte value (size of an Ethereum address). This will be the address for multi-signature contract.   |
-|  **requirement** <br> **Integer** | Requirement for multi-sig transactions   |
-|  **nonce** <br> **Integer** |   |
-|  **status** <br> **String** | The status of device manager.   |
+| **user_id** <br> **String**, [**\<uuid v4\>**](/kit/docs/glossary/#uuid-v4) | User id of the `user` to which this device manager belongs.  |
+|  **address** <br> **String** \<[**Address**](/kit/docs/glossary/#contract-address)\>  |  Address of [device manager contract](/kit/docs/wallet/fundamentals/#device-manager-a-multisig-contract)   |
+|  **requirement** <br> **Integer** | Minimum number of signatures needed to execute multi sig operations.  |
+|  **nonce** <br> **Integer** | Transaction counter to be used for multi sig operations which helps prevents replay attacks.  |
+|  **status** <br> **String** | Only value possible is `ACTIVATED`   |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
@@ -3352,7 +3350,7 @@ $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
 
 // The config field is optional
 $configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
+// Request timeout in seconds. Default is 10 seconds.
 $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 

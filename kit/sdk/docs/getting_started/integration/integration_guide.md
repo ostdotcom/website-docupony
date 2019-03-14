@@ -1,7 +1,7 @@
 ---
 id: integration_guide
-title: Integration
-sidebar_label: Integration Guide
+title: Sample Flow
+sidebar_label: Sample Flow
 ---
 
 ## Create Token On OST KIT

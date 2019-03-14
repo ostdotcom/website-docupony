@@ -4,7 +4,7 @@ title: Quickstart Guide
 sidebar_label: Quickstart Guide
 ---
 
-In this Node Js SDK quickstart guide, we will first create a user and then submit its KYC details. We will also show how can you get the KYC status and retrieve the KYC details.
+In this Node.js SDK quickstart guide, we will first create a user and then submit its KYC details. We will also show how can you get the KYC status and retrieve the KYC details.
 
 ## Create User
 
