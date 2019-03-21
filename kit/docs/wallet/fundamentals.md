@@ -94,8 +94,8 @@ To enable partner companies to design custom Rules that align with their economy
 3. When end-users register on a partner company application a TokenHolder Contract and a DeviceManager(MultiSig) Contract for each of them will be created and deployed by partner company via APIs.
 4. If partner company wants to transfer tokens worth 5$ to a user the following sequence of events occur:
 	* Company's TokenHolder contract initiates “execute pricer rule” request to partner company's  PricerRule Contract. The TokenHolder contract also approves company's TokenRules Contract to spend tokens on its behalf.
-	* Company's PriceRule Contract applies “conversion from USD to tokens rules”.   The PriceRule Contract will pass all this information after applying rules to the TokenRules Contract.
-	* The TokenRules Contract executes the transfer between all concerned parties as specified by the company's PriceRule Contract.
+	* Company's PricerRule Contract applies “conversion from USD to tokens rules”.   The PricerRule Contract will pass all this information after applying rules to the TokenRules Contract.
+	* The TokenRules Contract executes the transfer between all concerned parties as specified by the company's PricerRule Contract.
 
 
 ![openst-contracts](/kit/docs/assets/openst-contracts.png)

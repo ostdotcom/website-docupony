@@ -4,7 +4,7 @@ title: Wallet recovery
 sidebar_label: Wallet recovery
 ---
 
-With the Wallet SDK, OST supports its partners in creating a decentralized cryptocurrency wallet within their mobile application. The users' private keys are generated and stored on their mobile device.
+With the Wallet SDK, OST supports its partners in integrating the functionality of a non-custodial cryptocurrency wallet into their mobile applications. The users' private keys are generated and stored on their mobile device.
 
 This guide describes the ways in which application developers can work with the OST Wallet SDK to enable their users to regain access to their funds in case they lose access to their mobile device. 
 

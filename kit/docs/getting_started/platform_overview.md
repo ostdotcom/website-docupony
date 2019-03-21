@@ -4,9 +4,9 @@ title: Platform Overview
 sidebar_label: Platform Overview
 ---
 
-OST is a complete technology solution enabling mainstream businesses to easily launch blockchain-based economies at low risk and without requiring blockchain development.
+OST is a complete technology solution enabling mainstream businesses to easily launch blockchain-based economies without requiring blockchain development.
 
-At the core of OST is the concept of OST-powered **Brand Tokens** (BTs).  BTs are white-label cryptocurrency tokens running on highly scalable Ethereum-based side blockchains, backed by staking OST Tokens into smart contracts on Ethereum mainnet. BTs can only be transferred to whitelisted user addresses within a business’s community. This ensures that they stay within a specific BT community.
+At the core of OST is the concept of OST-powered **Brand Tokens** (BTs).  BTs are white-label cryptocurrency tokens with utility representations running on highly-scalable Ethereum-based side blockchains, backed by OST tokens staked on Ethereum mainnet. Within a business’s token economy, BTs can only be transferred to whitelisted user addresses. This ensures that they stay within the token economy.
 
 The **OST technology stack** is designed to give businesses everything they need to integrate, test, and deploy BTs.Within the OST suite of products developers can use **OST KIT** to create, test and launch Branded Tokens backed by OST.  KIT also provides dashboards that give insights into how the token economy is functioning. 
 
