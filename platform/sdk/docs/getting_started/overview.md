@@ -4,7 +4,10 @@ title: Overview
 sidebar_label: Overview
 ---
 
-## Concepts
+![platform-overview](/platform/docs/assets/Platform-Integrations.jpg)
+
+
+
 We provide client and server SDKs to complete your integration :
 
 * The OST Platform Server SDKs provide your application with various methods for different services like users, tokens, wallet services corresponding to an end-user of the economy. 

@@ -19,7 +19,8 @@ OST Platform API allows developers to interact with smart contract layer through
 
 This API library includes API calls that will be used by client company's server for integration. 
 
-![platform-sdk-overview](/platform/docs/api/images/Platform-Integrations-blur.jpg)
+<!-- ![platform-sdk-overview](images/Platform-Integration-blur.jpg) -->
+
 
 Available Server Side SDKs:<br>
 1. [PHP SDK](/platform/docs/sdk/getting_started/server_sdk_quickstart_guide/php/)  <br>
