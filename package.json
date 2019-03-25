@@ -7,18 +7,19 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "echo 'npm install -g gulp-cli && gem install bundler' | sh"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenSTFoundation/website-docupony.git"
+    "url": "git+https://github.com/ostdotcom/website-docupony.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OpenSTFoundation/website-docupony/issues"
+    "url": "https://github.com/ostdotcom/website-docupony/issues"
   },
-  "homepage": "https://github.com/OpenSTFoundation/website-docupony#readme",
+  "homepage": "https://github.com/ostdotcom/website-docupony#readme",
   "dependencies": {
     "@ostdotcom/ost-kyc-sdk-js": "^2.0.1",
     "browser-sync": "^2.26.3",
