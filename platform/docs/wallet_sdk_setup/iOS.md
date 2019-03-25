@@ -1,7 +1,7 @@
 ---
 id: iOS
 title: iOS SDK Setup
-sidebar_label: iOS SDK
+sidebar_label: iOS
 ---
 
 ## 1. Prerequisite 
