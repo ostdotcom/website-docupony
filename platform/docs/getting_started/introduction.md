@@ -8,7 +8,9 @@ sidebar_label: Introduction
 
 OST stands for "Open Simple Token". OST platform has been designed to enable consumer internet businesses to integrate blockchain based tokens into their applications without requiring any in-house blockchain development. 
 
-The OST platform consists of three main components:
+At the core of OST is the concept of OST-powered Brand Tokens (BTs). BTs are white-label cryptocurrency tokens with utility representations running on highly-scalable OpenST sidechains, backed by OST tokens staked on Ethereum mainnet.
+
+The *OST technology stack* is designed to give businesses everything they need to create, test, and deploy BTs. It consists of three main components:
 
 * Infrastructure for scaling blockchain economies to millions of users and billions of transactions.
 * APIs , SDKs and Development tools for easy integration and deployment.

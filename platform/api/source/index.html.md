@@ -15,11 +15,11 @@ includes:
 
 # Introduction
 
-OST Platform a toolkit built on the OpenST and Mosaic protocol that allows anyone to create, launch, and manage their own brand token economy in 3 easy steps. First set a conversion rate for your token. Next define the actions that you want your users to be able to engage in. Finally mint your tokens and initialize your token economy. 
-
 OST Platform API allows developers to interact with smart contract layer through REST API. The REST URLs are resource oriented and returns JSON response with standard HTTP response codes.
 
-API libraries are called `Server Side SDK` since they include API calls that can only be used by partner company's server. 
+This API library includes API calls that will be used by client company's server for integration. 
+
+![platform-sdk-overview](/platform/docs/api/images/Platform-Integrations-blur.jpg)
 
 Available Server Side SDKs:<br>
 1. [PHP SDK](/platform/docs/sdk/getting_started/server_sdk_quickstart_guide/php/)  <br>
@@ -481,8 +481,8 @@ This is version 2 (v2) OST Platform API. Earlier versions have been removed from
 | **device\_manager\_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address), <br> **default is null**   | This will be the address of [device manager contract](/platform/docs/wallet/fundamentals/#device-manager-a-multisig-contract) contract.   |
 |  **recovery_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address), <br> **default is null**  | This will be the address of recovery contract.  |
 | **recovery\_owner\_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address), <br> **default is null**  | This will be the recovery owner address.  |
-| **type** <br> **String** | `type` string will determine the type of user. It can have two possible values `user` and `company`. <br> `user`: All economy users will be of type `user`<br> `company`: Accounts used by Partner companies will have type `company`   |
-| **status** <br> **String**| This will be the user's status.<br> It can have 3 possible string values described below. <br> `CREATED`: This will be the default status when a user is created. At this stage there are no smart contracts deployed on blockchain.  <br> `ACTIVATING`: This will be the user's status when smart contracts for the user are being deployed. <br> `ACTIVATED`: This will be the user's status when all the smart contracts for the user are deployed and user now can now perform the wallet actions.|
+| **type** <br> **String** | `type` string will determine the type of user. It can have two possible values `user` and `company`. <br> `user`: All economy users will be of type `user`<br> `company`: Accounts used by client companies will have type `company`   |
+| **status** <br> **String**| CREATED / ACTIVATING / ACTIVATED. <br> `CREATED`: This will be the default status when a user is created. At this stage there are no smart contracts deployed on blockchain.  <br> `ACTIVATING`: This will be the user's status when smart contracts for the user are being deployed. <br> `ACTIVATED`: This will be the user's status when all the smart contracts for the user are deployed and user now can now perform the wallet actions.|
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
@@ -581,8 +581,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
-
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `user`.<br><br>
@@ -661,7 +660,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
 ```
-#### <span> GET </span> &nbsp; &nbsp; "/users"
+#### <span> GET </span> &nbsp; &nbsp; /users
 
 
 <u>**Query Parameters**</u>
@@ -828,12 +827,12 @@ Devices are the wallet devices that are added by a user. `Devices` API allows yo
 | Attribute  | Description  |
 |---|---|
 |  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4)| uuid of the user in the token economy.  |
-|  **address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) | This will be the address of the device's key in user's [Token Holder Contract](/platform/docs/wallet/fundamentals/#tokenholder-contracts).  |
+|  **address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) | This will be the address of the device's key in user's [TokenHolder Contract](/platform/docs/wallet/fundamentals/#tokenholder-contracts).  |
 |  **linked_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address), <br> **default is null** | Address that points to the device's address in the device manager contract's linked list of `owners`. This is used during recovery.  |
 |  **api\_signer_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) | Will be used to validate the request coming from the wallet SDK.  |
 |  **device_name** <br> **String** | Name that the user has set for its device  |
 |  **device_uuid** <br> **String**| unique identifier set by the device's operating system  |
-|   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Status when client company registers device with OST. After this status wallet SDK can start communicating with OST Platform directly. <br>`AUTHORIZING `: Status when device address is being authorized in user's device manager contract. <br>`AUTHORIZED `: Status when the authorization is complete.<br>`REVOKING `: Status when device is being revoked from user's device manager contract.<br>`REVOKED `: Status when revocation of the device address is complete. <br> `RECOVERING`: Status when device address is being revoked and a replacement address is being authorized in user's device manager contract (recovery). <br> `ABORTING`: Status when recovery is being aborted. |
+|   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Status when client company registers device with OST. <br>`AUTHORIZING `: Status when device address is being authorized in user's device manager contract. <br>`AUTHORIZED `: Status when the authorization is complete.<br>`REVOKING `: Status when device is being revoked from user's device manager contract.<br>`REVOKED `: Status when revocation of the device address is complete. <br> `RECOVERING`: Status when device address is being revoked and a replacement address is being authorized in user's device manager contract (recovery). <br> `ABORTING`: Status when recovery is being aborted. |
 
 
 
@@ -870,13 +869,14 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-#### <span> POST </span> &nbsp; &nbsp; "/users/{user_id}/devices"
+#### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/devices
 
 <u>**URL Parameters**</u>
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+
 
 <u>**POST Parameters**</u>
 
@@ -953,7 +953,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 | **device_address** <br> **Required**   | Device address |
 
 <u>**Success Response**</u><br>
@@ -1021,8 +1021,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
-
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**Query Parameters**</u>
@@ -1088,7 +1087,7 @@ API you can `get` and `list` user's sessions. Sessions are generated by wallet S
 |   **approx\_expiration\_timestamp** <br> **EPOCH \<time in seconds\>**, <br> **default is null**| Approximate time at which the session address will expire.  |
 |  **spending_limit** <br> **String \<BigInt\>** | Maximum allowed brand token amount in `Wei` that can be transfered in one transaction by this session address. |
 |   **nonce** <br> **Integer**,<br> **default is null**| Transaction counter of session address which helps prevents replay attacks.  |
-|  **status** <br> **String**| Status gives us status of session key. It can take one of these values. INITIALIZING / AUTHORIZED / REVOKING / REVOKED <br> `INITIALIZING`: Status when the session address is being authorized in user's token holder contract. <br>`AUTHORIZED`: Status when the authorization is complete <br> `REVOKING`: Status when the session is being revoked from token holder contract<br> `REVOKED`: Status when the session revocation is complete|
+|  **status** <br> **String**| Status gives us status of session key. It can take one of these values. INITIALIZING / AUTHORIZED / REVOKING / REVOKED <br> `INITIALIZING`: Status when the session address is being authorized in user's device manager(multisig) contract. <br>`AUTHORIZED`: Status when the authorization is complete <br> `REVOKING`: Status when the session is being revoked from device manager(multisig) contract<br> `REVOKED`: Status when the session revocation is complete|
 |  **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 ## Get a User's Session
@@ -1127,7 +1126,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 | **session_address** <br> **Required**   | Session address |
 
 
@@ -1194,7 +1193,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 <u>**Query Parameters**</u>
 
@@ -1297,7 +1296,7 @@ The value of `data.result_type` property will be `sessions` and list of sessions
 | **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | Unique Indentifeir of transaction   |
 | **transaction_hash** <br> **String \<tx hash\>**, <br> **default is null** | Hash of the transaction in blockchain  |
 |  **from**  <br> **String**,  [**\<Address\>**](/platform/docs/glossary/#contract-address),<br> **default is null** | Sender address of transaction on blockchain.  |
-|  **to** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) |   This will be the token holder address of transaction initiator.|
+|  **to** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) |   This will be the TokenHolder contract address of transaction initiator.|
 |  **nonce** <br> **Integer**, <br> **default is null**| Transaction counter of sender address which helps prevents replay attacks.  |
 | **value**  <br> **String \<BigInt\>**, <br> **default is null**| Transfered OST amount in `Wei`   |
 | **gas_price**<br> **String \<BigInt\>** | The Wei per unit of gas provided by the sender in wei.   |
@@ -1467,10 +1466,10 @@ $transferTo = array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496");
 $transferAmount = array("10");
 $rawCallData['method'] = 'directTransfers';
 $rawCallData['parameters'] = array($transferTo, $transferAmount);
-$metaPropererty['details']='this is test';
-$metaPropererty['type']='company_to_user';
-$metaPropererty['name']='download_download_';
-$executeParams['meta_property']=$metaPropererty;
+$metaProperty['details']='this is test';
+$metaProperty['type']='company_to_user';
+$metaProperty['name']='download_download_';
+$executeParams['meta_property']=$metaProperty;
 $executeParams['raw_calldata'] = json_encode($rawCallData);
 $response = $transactionService->execute($executeParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
@@ -1508,7 +1507,7 @@ Execute transaction API allows you to do `company-to-user` transactions. `user-t
 [Rules contract](/platform/docs/wallet/fundamentals/#rules-contract) for both the types of transactions are different.
 
 
-1. Transfering amount in brand tokens (`directTransfer`) : In this type of `company-to-user` transaction the amount of brand token set by partner company server will be transfered directly to the receiver user. 
+1. Transfering amount in brand tokens (`directTransfer`) : In this type of `company-to-user` transaction the amount of brand token set by client company server will be transfered directly to the receiver user. 
 
 
 2. Transfering brand token by fixing the fiat currency value (`pay`): In this type of `company-to-user` transaction the amount of fiat passed will first be converted into brand token. After this conversion the transfer will for converted brand token amount.
@@ -1518,7 +1517,8 @@ Execute transaction API allows you to do `company-to-user` transactions. `user-t
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+
 
 <u>**POST Parameters**</u>
 
@@ -1726,7 +1726,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 | **transaction_id** <br> **Required**   | Unique Identifier of the transaction to be retrieved  |
 
 
@@ -1850,7 +1850,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 <u>**Query Parameters**</u>
 
@@ -1974,9 +1974,9 @@ The value of `data.result_type` property will be `transactions` and list of tran
 
 
 
-# Tokens
+# Token
 
-Tokens object contains details about economy and various contract addresses. One economy will have only one `tokens` object. This object is created during economy setup in dashboard so using API you can only make a `GET` request.
+Token object contains details about economy and various contract addresses. One economy will have only one `token` object. This object is created during economy setup in dashboard so using API you can only make a `GET` request.
 
 ## Token Object
 
@@ -2031,7 +2031,7 @@ Tokens object contains details about economy and various contract addresses. One
     </td>
 
     <td>
-      Brand Token organisation contract details
+      Brand Token organization contract details
     </td>
   </tr>
 
@@ -2084,7 +2084,7 @@ Tokens object contains details about economy and various contract addresses. One
     </td>
 
     <td>
-      Company token holder addresses.
+      Company TokenHolder contract addresses.
     </td>
   </tr>
 
@@ -2096,7 +2096,7 @@ Tokens object contains details about economy and various contract addresses. One
     </td>
 
     <td>
-      Utility Brand Token organisation contract details
+      Utility Brand Token organization contract details
     </td>
   </tr>
 
@@ -2235,9 +2235,9 @@ Balance API offers the functionality to view a user’s balances.
 | Attribute  | Description  |
 |---|---|
 | **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-| **total_balance** <br> **String \<BigInt\>**| Settled brand token balance on blockchain.  |
-| **available_balance** <br> **String \<BigInt\>** | Total brand token balance minus unsettled debits  |
-| **unsettled_debit** <br> **String \<BigInt\>** | Unsettled brand token balance. When the transaction is initiated brand token sender's balance gets [pessimistically debited](/platform/docs/glossary/#). When transaction is either is successful or failed, usettled debits are settled.   |
+| **total_balance** <br> **String \<BigInt\>**| Settled brand token balance in Wei.  |
+| **available_balance** <br> **String \<BigInt\>** | Total brand token balance minus unsettled debits in Wei  |
+| **unsettled_debit** <br> **String \<BigInt\>** | Unsettled brand token balance in Wei. When the transaction is initiated brand token sender's balance gets [pessimistically debited](/platform/docs/glossary/#). When transaction is either is successful or failed, usettled debits are settled.   |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
@@ -2276,8 +2276,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
-
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**Success Response**</u><br>
@@ -2325,8 +2324,8 @@ This API is used to get the status of newly created recovery owner key
 | Attribute  | Description  |
 |---|---|
 | **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-| **address**  <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) | This will be recovery public address generated using user's PIN and other 2 inputs. This key has authorization to replace the lost device address key using `DelayedRecoveryModule`. |
-| **status** <br> **String** | Status can be one of the following values: <br> AUTHORIZATION_FAILED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED <br> `AUTHORIZING`: Default status when the recovery owner is created.<br>`AUTHORIZED`: Status when recovery owner address is authorized successfully <br>  |
+| **address**  <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) | This is the public address knowns as recovery owner address. This key has authorization to replace the lost device address key using `DelayedRecoveryModule`. |
+| **status** <br> **String** | Status can be one of the following values: <br> AUTHORIZATION_FAILED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED <br> `AUTHORIZING`: Default status when the recovery owner is created during user activation.<br>`AUTHORIZED`: Status when recovery owner address is authorized successfully during user activation. <br>  |
 
 
 
@@ -2365,7 +2364,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 | **recovery_owner_address** <br> **Required**   | This will be the recovery public addres generated. |
 
 
@@ -3120,7 +3119,7 @@ The value of `data.result_type` property will be `rules` and rules array will be
 
 
 # Price Point
-Price point API is used to get the conversion rate between OST and USD. They can use [token information](/platform/docs/api/#get-token) to get the conversion rate between thier brand token and OST. So essentially partner company can calculate conversion rate between brand token and USD. Now they can use this information to perform [directTransfer](/platform/docs/api/#execute-a-transaction)  transactions.
+Price point API is used to get the conversion rate between OST and USD. They can use [token information](/platform/docs/api/#get-token) to get the conversion rate between thier brand token and OST. So essentially client company can calculate conversion rate between brand token and USD. Now they can use this information to perform [directTransfer](/platform/docs/api/#execute-a-transaction)  transactions.
 
 
 ## Price Point Object
@@ -3373,8 +3372,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id** <br> **Required**   | Unique identifier for the user of economy |
-
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**Success Response**</u><br>

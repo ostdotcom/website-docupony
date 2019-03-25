@@ -135,7 +135,7 @@ Token entity has important information about your token which we recommend you t
 ## 5. Register User
 We can create users in OST Platform. These user object do not have any personal information about your application users. OST Platform deploys smart contracts for every user in the economy and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4). 
 
-Partner companies will have to create users from their servers and they will be responsible to maintain the mapping between thier application user and OST Platform users.
+client companies will have to create users from their servers and they will be responsible to maintain the mapping between thier application user and OST Platform users.
 
 ### Create User
 To create the user object we will use the `user` service. No input parameters are needed to create user.

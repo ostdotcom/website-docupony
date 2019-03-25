@@ -79,7 +79,7 @@ void requestAcknowledged(OstWorkflowContext ostWorkflowContext, OstContextEntity
 
 ### 4. getPin
 This function will be called by wallet SDK when it needs to get the PIN from the `app` user to authenticate any authorised action.
-<br>**Expected Function Definition:** Developers of partner company are expected to launch their user interface to get the PIN from the user and pass back this PIN to SDK by calling **ostPinAcceptInterface.pinEntered()** 
+<br>**Expected Function Definition:** Developers of client company are expected to launch their user interface to get the PIN from the user and pass back this PIN to SDK by calling **ostPinAcceptInterface.pinEntered()** 
 
 ```
 void getPin(String userId, OstPinAcceptInterface ostPinAcceptInterface)
@@ -131,7 +131,7 @@ void invalidPin(String userId, OstPinAcceptInterface ostPinAcceptInterface)
 
 
 ### 7. registerDevice
-This function will be called by wallet SDK to register the device.<br>**Expected Function Definition:** Developers of partner company are expected to register the device by communicating with partner company's server. On partner company's server they can use `Server SDK` to register this device in OST Platform. Once device is registered on OST Platform partner company's server will recieve the newly created `device` entity. This device entity should be passed back to the `app`.<br>
+This function will be called by wallet SDK to register the device.<br>**Expected Function Definition:** Developers of client company are expected to register the device by communicating with client company's server. On client company's server they can use `Server SDK` to register this device in OST Platform. Once device is registered on OST Platform client company's server will recieve the newly created `device` entity. This device entity should be passed back to the `app`.<br>
 Finally they should pass back this newly created device entity back to the wallet SDK by calling **OstDeviceRegisteredInterface.deviceRegistered(JSONObject newDeviceEntity )**.
 
 ```

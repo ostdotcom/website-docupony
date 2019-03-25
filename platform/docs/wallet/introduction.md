@@ -23,6 +23,6 @@ The OST Wallet SDK natively supports multi-device access. Thus a user can have i
 
 A user can also choose to view and store a seed phrase and use the seed phrase to authorize a new device. 
 
-During an active session, transactions of a value lower than the spendingLimit are signed without explicit involvement from the user. We recommend that partners link the creation of these transactions to explicit user activity within their application. A user can also revoke active sessions, revoke other authorized devices and sign out of the tokenHolder thereby revoking all sessions. 
+During an active session, transactions of a value lower than the spendingLimit are signed without explicit involvement from the user. We recommend that clients link the creation of these transactions to explicit user activity within their application. A user can also revoke active sessions, revoke other authorized devices and sign out of the tokenHolder thereby revoking all sessions. 
 
 When a user logs in to the application from a new device [with no registered key stored on it](/platform/docs/wallet/recovery/), the user can either add the device using one of the two methods described above or, if they have no other devices or seed phrases, choose to recover access to their wallet using the DelayedRecoveryModule smart contract using their 6 digit PIN.

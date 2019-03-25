@@ -46,12 +46,12 @@ A MultiSig contract is deployed on the blockchain. The public addresses from dev
 
 
 ## Executing a token transfer : 
-To enable partner companies to design custom Rules that align with their economy goals and define the behavior of the token transfer, OpenST protocol came up with contracts for "Partner Companies"
+To enable client companies to design custom Rules that align with their economy goals and define the behavior of the token transfer, OpenST protocol came up with contracts for "client Companies"
 
 ## Rules Contract
 * A Rule contract is a smart contract that contains a specific piece of business logic.
 * They can be written and deployed by anyone.
-* Each Partner Company will have at least one Custom Rules Contract. In this latest release OST has written one rule contract the [PricerRule](https://github.com/OpenSTFoundation/openst-contracts/blob/develop/contracts/rules/PricerRule.sol) Contract  for partner companies to use. 
+* Each client company will have at least one Custom Rules Contract. In this latest release OST has written one rule contract the [PricerRule](https://github.com/OpenSTFoundation/openst-contracts/blob/develop/contracts/rules/PricerRule.sol) Contract  for client companies to use. 
 * Rules that transfer value are required to be registered. Registering means the process of whitelisting a Rule for use in an economy. 
 
 
@@ -64,16 +64,19 @@ To enable partner companies to design custom Rules that align with their economy
 ## TokenHolder contract
 * For executing a token transfer, end-user's TokenHolder contract interacts with TokenRules Contract and Rules Contract.
 
+## Setting up Token Economy 
+1. OST writes and deploys the TokenRules Contract for the client company.
+2. OST writes a PricerRule Contract and registers the rule with TokenRules Contract on its auxiliary chain.
+
+## Setting up user in the economy
+Steps outlined above in creating a wallet section. When end-users register on a client company application a TokenHolder Contract and a DeviceManager(MultiSig) Contract for each of them will be created and deployed by client company via APIs.
 
 
 ## Steps for executing a token trasnfer
-1. OST writes and deploys the TokenRules Contract for the partner company.
-2. OST writes a PricerRule Contract and registers the rule with TokenRules Contract on its auxiliary chain.
-3. When end-users register on a partner company application a TokenHolder Contract and a DeviceManager(MultiSig) Contract for each of them will be created and deployed by partner company via APIs.
-4. If partner company wants to transfer tokens worth 5$ to a user the following sequence of events occur:
-	* Company's TokenHolder contract initiates “execute pricer rule” request to partner company's  PricerRule Contract. The TokenHolder contract also approves company's TokenRules Contract to spend tokens on its behalf.
-	* Company's PriceRule Contract applies “conversion from USD to tokens rules”.   The PriceRule Contract will pass all this information after applying rules to the TokenRules Contract.
-	* The TokenRules Contract executes the transfer between all concerned parties as specified by the company's PriceRule Contract.
+ Its important to understand the token economy setup and user setup outlined above before a client company can execute their first transaction. If client company wants to transfer tokens worth 5$ to a user the following sequence of events occur:
+	1. Company's TokenHolder contract initiates “execute pricer rule” request to client company's  PricerRule Contract. The TokenHolder contract also approves company's TokenRules Contract to spend tokens on its behalf.
+	2.  Company's PriceRule Contract applies “conversion from USD to tokens rules”.   The PriceRule Contract will pass all this information after applying rules to the TokenRules Contract.
+	3. The TokenRules Contract executes the transfer between all concerned parties as specified by the company's PriceRule Contract.
 
 
 ![openst-contracts](/platform/docs/assets/openst-contracts.png)

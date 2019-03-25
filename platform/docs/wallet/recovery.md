@@ -4,7 +4,7 @@ title: Wallet recovery
 sidebar_label: Wallet recovery
 ---
 
-With the Wallet SDK, OST supports its partners in integrating the functionality of a non-custodial cryptocurrency wallet into their mobile applications. The users' private keys are generated and stored on their mobile device.
+With the Wallet SDK, OST supports its clients in integrating the functionality of a non-custodial cryptocurrency wallet into their mobile applications. The users' private keys are generated and stored on their mobile device.
 
 This guide describes the ways in which application developers can work with the OST Wallet SDK to enable their users to regain access to their funds in case they lose access to their mobile device. 
 
@@ -12,7 +12,7 @@ The current features of OST's key management solution that enable recovery are:
  
 1. The user's funds are held in a smart contract on the blockchain. This contract called the TokenHolder contract serves as the public address where the balances sit. 
 2. The TokenHolder contract is owned by a Multisig contract. Multiple private keys that sit on the user's mobile devices can own the multisig contract
-3. Each user's Wallet also includes a recovery module that is owned by a key that is created using inputs from the user (a 6 digit PIN) , the Partner and OST. 
+3. Each user's Wallet also includes a recovery module that is owned by a key that is created using inputs from the user (a 6 digit PIN) , the client and OST. 
 
 
 ![ost-wallet-story](/platform/docs/assets/ost-wallet-story.jpg)

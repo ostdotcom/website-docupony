@@ -18,22 +18,13 @@ We provide client and server SDKs to complete your integration :
 ## Getting Started
 The following SDK guides are designed to help you get familiarized with the bare necessities, giving you a quick and clean approach to getting up and running.
 
-* Make your first call with quickstart guides available for [PHP](/platform/docs/server_sdk_setup/php/)
-* Setup the Wallet SDK on [android](/platform/docs/wallet_sdk_setup/android/) or [iOS](/platform/docs/wallet_sdk_setup/iOS/) devices.
+* Integrate the OST server side SDK with quickstart guide available for [PHP](/platform/docs/sdk/getting_started/server_sdk_quickstart_guide/php/)
+* Setup the Wallet SDK on [android](/platform/docs/sdk/getting_started/wallet_sdk_setup/android/) or [iOS](/platform/docs/sdk/getting_started/wallet_sdk_setup/iOS/) devices.
+* [Create a wallet for a user](/platform/docs/guides/create_wallet/) 
+* [Send some tokens to the user](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions)
+* [Test a user initiated transaction](/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web)
+* Familarize yourself with some important concepts and helpful definitions through [this guide.](/platform/docs/additional_resources/glossary/)
 
-* Follow this [create wallet](/platform/docs/guides/create_wallet/) to get you started with integration of wallet SDK and server SDK quickly. 
-
-
-## Detailed User Flows
-This section covers the detailed user flows to make integration process easier to understand and quicker to complete.
-
-* [Create a wallet](/platform/docs/guides/create_wallet/)
-* [Execute a transaction](/platform/docs/guides/execute_transaction/)
-* [Recover wallet via 6-digit PIN]()
-* [Recover wallet via mnemonics]() 
-* [Add a device for a user]()
-* [Reset the 6-digit PIN]()
-* [Show balances and transaction history of a user]() 
 
 ## Sample Apps
 This section shares the sample applications that we put together for your reference to show how integration with wallet SDK works.

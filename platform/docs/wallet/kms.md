@@ -18,7 +18,7 @@ Typically, and as a decentralization matter, access to the seed phrase that was 
 Generally, anyone with access to a private key can access the funds held by it. Generally, anyone with access to the seed phrase can regenerate that private key.
 
 ## Components
-In the context of Brand Tokens used in OST's partner economies, the public address is represented by a TokenHolder contract. The configured owner of a TokenHolder contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend-per-transaction.
+In the context of Brand Tokens used in OST's client economies, the public address is represented by a TokenHolder contract. The configured owner of a TokenHolder contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend-per-transaction.
 
 1. These ephemeral sessionKeys obviate the need for the user to sign every transaction within the application thereby creating a more seamless user experience. 
 2. The authorization of ephemeral sessionKeys requires the owner to sign the transaction.
@@ -48,9 +48,9 @@ calling `activateUser ` function of wallet SDK will deploy smart contracts. Once
 
 **Creation of the recoveryOwner key pair**
 
-The recoveryOwner is created using inputs from the Partner, OST and the user. The user's input is a 6-digit pin.
+The recoveryOwner is created using inputs from the client, OST and the user. The user's input is a 6-digit pin.
 
-The Partner and OST must provide pseudorandom inputs that are mapped to the user. For the sake of clarity, the Partner's input shall be referred to as the Partner User Secret and OST's input shall be referred to as OST User Salt. 
+The client and OST must provide pseudorandom inputs that are mapped to the user. For the sake of clarity, the client's input shall be referred to as the client User Secret and OST's input shall be referred to as OST User Salt. 
 
 These inputs are put through a cryptographically-sound key generation process (such as Scrypt) to create the private key that will be used as the recoveryOwner for the DelayedRecoveryModule.
 
