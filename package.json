@@ -1,0 +1,31 @@
+{
+  "name": "ost-developer-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenSTFoundation/website-docupony.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenSTFoundation/website-docupony/issues"
+  },
+  "homepage": "https://github.com/OpenSTFoundation/website-docupony#readme",
+  "dependencies": {
+    "@ostdotcom/ost-kyc-sdk-js": "^2.0.1",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-run-command": "0.0.9"
+  }
+}

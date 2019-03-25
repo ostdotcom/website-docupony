@@ -1,0 +1,29 @@
+{
+  "KIT": {
+
+    "Getting Started": [
+      "getting_started/introduction",
+      "getting_started/platform_overview"
+    ],
+
+    "Server SDK Setup": [
+      "server_sdk_setup/php"
+    ],
+
+    "Wallet SDK Setup": [
+      "wallet_sdk_setup/android",
+      "wallet_sdk_setup/iOS"
+    ],
+
+    "Guides": [
+      "guides/create_token",
+      "guides/create_wallet",
+      "guides/execute_transaction"
+    ],
+
+    "Additional Resources": [
+      "additional_resources/glossary",
+      "additional_resources/wallet_ux_guide"
+    ]
+  }
+}

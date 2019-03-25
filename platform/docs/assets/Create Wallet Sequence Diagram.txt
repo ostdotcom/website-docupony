@@ -1,0 +1,51 @@
+title Create Wallet Sequence Diagram
+actor User
+
+participantgroup **Mobile App**
+participant "You Mobile App" as App
+
+participant "OST Wallet Sdk" as Sdk
+end 
+participant "Your\nServer" as MappyServer
+participant "OST\nPlatform" as Platform
+
+autonumber
+User-->App: Signs up to your app
+App-->MappyServer: Sends signup details
+MappyServer-->Platform: Creates user
+Platform-->MappyServer: Provides paltform user entity
+box over MappyServer: Generate the **paasphasePrefix**\nfor this user.\nIt will be used during \n**activateUser** workflow
+MappyServer-->App: Provides paltform user entity
+rbox over App: Calling **setupDevice** workflow.
+App-->Sdk: Calls setupDevice workflow \nwith user_id & token_id
+box over Sdk: Checks if device & api signer\nkeys are present\nfor the given user_id.\nIf not creates user's wallet \ndevice key andapi key\nfor the given user_id.
+Sdk-->App: Calls registerDevice if\nthe if device key is NOT registered \nwith OST Platform else \ncalls **flowComplete**
+App-->MappyServer: Sends the device details so that device can be registered.
+MappyServer-->Platform: Creates device on Platform for the user.
+Platform-->MappyServer: Returns device entity
+MappyServer-->App: Returns device entity
+App-->Sdk: Calls deviceRegistered callback \nwith device entity.
+box over Sdk : Makes api calls to platform and\nsyncs user details.
+Sdk-->App: Calls flowComplete callback.
+rbox over App: Calling **activateUser** workflow
+User-->App: App developer can choose to\n trigger **activateUser** workflow\n on any user action. This is optional step.
+
+App-->User: Asks user to set wallet PIN.
+
+User-->App: User enters wallet PIN.
+
+App-->MappyServer: Sends request to get **passphasePrefix** for this user.
+MappyServer-->App: App receives the **passphasePrefix** 
+
+App->>Sdk: Calls the **activateUser** workflow with PIN,\npassphasePrefix and session key details.
+
+box over Sdk: Creates session keys. \nCreates recovery owner key.
+
+Sdk-->Platform: Sends session key, recovery owner key, device key.
+box over Platform: Deplys Token Holder and Device Manager\n Contract. Activates the user.
+Platform-->Sdk: Sends Activating user.
+
+Sdk-->Platform: Polls the status of activating user.
+Platform-->Sdk: Sends the status of user.
+box over Sdk:When the user's \nstatus is **activated**
+Sdk-->App: Calls **flowComplete** callback.

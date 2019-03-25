@@ -1,0 +1,20 @@
+{
+  "KIT": {
+    "Getting Started": [
+      "getting_started/overview",
+      "getting_started/authentication",
+      "getting_started/security_guidelines"
+    ],
+    "Android SDK Reference": [
+      "references/wallet_sdk/android/latest/methods",
+      "references/wallet_sdk/android/latest/interfaces",
+      "references/wallet_sdk/android/latest/classes"
+
+    ],
+    "iOS SDK Reference": [
+      "references/wallet_sdk/iOS/latest/methods",
+      "references/wallet_sdk/iOS/latest/protocols",
+      "references/wallet_sdk/iOS/latest/classes"
+    ]
+  }
+}

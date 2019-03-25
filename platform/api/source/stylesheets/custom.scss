@@ -1,0 +1,311 @@
+.toc-wrapper {
+    top:101px;
+}
+
+/*! CSS Used from: http://localhost:3000/platform/css/main.css */
+div,h2,a,img,ul,li,header,nav{border:0;font:inherit;font-size:100%;margin:0;padding:0;vertical-align:baseline;}
+*{box-sizing:border-box;}
+a{color:#34445b;text-decoration:none;}
+a:hover{color:#34445b;text-decoration:none;}
+a:active,a:hover{outline-width:0;}
+h2{color:inherit;font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:1.5em;}
+h2{font-size:24px;}
+ul{margin-bottom:1em;margin-top:0;padding-left:2em;}
+li{word-wrap:break-all;}
+li + li{margin-top:0.25em;}
+img{border-style:none;box-sizing:content-box;max-width:100%;}
+.wrapper{max-width:1100px;padding:0 40px;}
+@media only screen and (min-width: 1500px){
+.wrapper{max-width:1400px;}
+}
+.fixedHeaderContainer{
+    font-size: 16px;
+    background:#34445b;color:#fff;min-height:50px;padding:8px 0;position:fixed;width:100%;z-index:9999;}
+@media only screen and (min-width: 1024px){
+.fixedHeaderContainer{flex-shrink:0;}
+}
+.fixedHeaderContainer a{
+    align-items:center;border:0;color:#fff;display:flex;flex-flow:row nowrap;height:34px;z-index:10000;}
+.fixedHeaderContainer header{display:flex;flex-flow:row nowrap;position:relative;text-align:left;}
+.fixedHeaderContainer header img{height:100%;margin-right:10px;}
+.fixedHeaderContainer header .headerTitleWithLogo{display:block;font-size:1.25em;line-height:18px;margin:0;position:relative;z-index:9999;}
+@media (max-width: 480px){
+.headerTitleWithLogo{display:none!important;}
+}
+.navigationSlider .slidingNav{bottom:auto;box-sizing:border-box;left:0;position:fixed;right:0;top:0;}
+.navigationSlider .slidingNav ul{background:#e4b030;box-sizing:border-box;color:#fff;display:flex;flex-wrap:nowrap;list-style:none;margin-top:50px;padding:0;width:100%;}
+.navigationSlider .slidingNav ul li{flex:1 1 auto;margin:0;text-align:center;white-space:nowrap;}
+.navigationSlider .slidingNav ul li a{align-items:center;box-sizing:border-box;color:#34445b;color:inherit;display:flex;font-size:0.9em;height:auto;height:50px;justify-content:center;margin:0;padding:10px;transition:background-color 0.3s;}
+.navigationSlider .slidingNav ul li a:focus,.navigationSlider .slidingNav ul li a:hover,.navigationSlider .slidingNav ul li.siteNavItemActive a{background:#34445b;}
+@media only screen and (min-width: 1024px){
+.navigationSlider{height:34px;margin-left:auto;position:relative;}
+.navigationSlider nav.slidingNav{background:none;height:auto;position:relative;right:auto;top:auto;width:auto;}
+.navigationSlider .slidingNav ul{background:none;display:flex;flex-flow:row nowrap;margin:0;padding:0;width:auto;}
+.navigationSlider .slidingNav ul li a{border:0;color:rgba(255, 255, 255, 0.8);display:flex;font-size:16px;font-size:1em;font-weight:300;height:32px;line-height:1.2em;margin:0;padding:0;padding:6px 10px;}
+.navigationSlider .slidingNav ul li a:hover,.navigationSlider .slidingNav ul li.siteNavItemActive a{color:#fff;}
+}
+@media only screen and (max-width: 735px){
+.navigationSlider .slidingNav ul{overflow-x:auto;}
+.navigationSlider .slidingNav ul::-webkit-scrollbar{display:none;}
+}
+.navigationSlider .slidingNav ul li a{border:0;color:rgba(255, 255, 255, 0.8);display:flex;margin:0;padding:0;font-size:16px;font-weight:500;line-height:1.2em;padding:6px 10px;height:32px;font-size:1em;}
+.navigationSlider .slidingNav ul li a:hover{color:#fff;}
+.fixedHeaderContainer header h2{display:block;color:#34445B!important;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;line-height:0px!important;position:relative;z-index:9999;}
+.wrapper{max-width:100%;}
+div.navigationWrapper.navigationSlider{width:100%;}
+.fixedHeaderContainer{position:relative;}
+ul.nav-site.nav-site-internal li:last-child{position:absolute;right:10px;}
+ul.nav-site.nav-site-internal li:not(:last-child){padding:8px 20px 0 20px;height:50px;margin-top:-8px;padding-top:10px;}
+ul.nav-site.nav-site-internal li.siteNavItemActive:not(:last-child){background:#fff;}
+ul.nav-site.nav-site-internal li.siteNavItemActive:not(:last-child) a{color:#000;background:#fff;}
+ul.nav-site.nav-site-internal{display:inline-block;}
+ul.nav-site.nav-site-internal li{display:inherit;}
+.navigationSlider{margin-left:0; padding-left: 40px;}
+
+
+
+
+
+
+// Secondry Nav CSS
+
+/*! CSS Used from: http://localhost:3000/platform/css/main.css */
+div,a,ul,li{border:0;font:inherit;font-size:100%;margin:0;padding:0;vertical-align:baseline;}
+*{box-sizing:border-box;}
+a{color:#34445b;text-decoration:none;}
+a:hover{color:#34445b;text-decoration:none;}
+a:active,a:hover{outline-width:0;}
+ul{margin-bottom:1em;margin-top:0;padding-left:2em;}
+li{word-wrap:break-all;}
+li + li{margin-top:0.25em;}
+.sub-nav{border-bottom:1px solid #9fc0cf3b;background:#fff; width: 100%;
+    height: 50px;
+}
+.sub-nav ul{display:block;float:left;margin-bottom:0;}
+li.sub-nav-li{height:50px;font-size:20px;list-style:none;display:inline-block;padding:10px 20px 0 20px;margin-top:0;}
+li.sub-nav-li.active a{color:#e6b847;border-bottom:2px solid #e6b847;padding-bottom:9px;}
+
+
+
+// Overriding existing slate styles
+
+.toc-wrapper .toc-link.active { 
+    background: none;
+    color: #e7bc4e;
+}
+.toc-wrapper {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 0px 10px 30px;
+}
+.toc-wrapper .logo {
+    display: none;
+}
+
+.toc-wrapper li {
+    padding: 4px 0;
+}
+
+li.sub-nav-li.active a {
+    line-height: 30px;
+    font-weight: 500;
+    padding-bottom: 9px; 
+}
+
+.toc-wrapper > .search input {
+    width: 155px;
+}
+
+.content {
+    color: #24292e;
+}
+.content p{
+    line-height: 26px;
+}
+
+.content  {
+    h1, h2, h3, h4{
+        border: none;
+        font-weight: 600;
+        color: #438BAD;
+    }
+    
+    h1 {
+        font-size: 32px;
+        margin-top: 1em;
+        margin-bottom: 0.4em;
+        background: none;
+    }
+    h2 {
+        font-size: 20px;
+        margin-top: 2em;
+        margin-bottom: 0.6em;
+        padding-bottom: 0; 
+    }
+    
+}
+.toc-link, .toc-footer li {
+    color: #393939;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* Changes to beautify slate */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: #34445b;
+}
+
+.content {
+    font-size: 16px;
+    line-height: 24px;
+    color: #34445b;
+
+}
+
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * quasimoda:
+ *   - http://typekit.com/eulas/00000000000000003b9af974
+ *   - http://typekit.com/eulas/00000000000000003b9af978
+ *   - http://typekit.com/eulas/00000000000000003b9af97a
+ *   - http://typekit.com/eulas/00000000000000003b9af97b
+ *   - http://typekit.com/eulas/00000000000000003b9af97c
+ *   - http://typekit.com/eulas/00000000000000003b9af97e
+ *   - http://typekit.com/eulas/00000000000000003b9af980
+ *
+ * © 2009-2019 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2018-04-12 14:46:13 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=lde7yjs&ht=tk&f=34089.34093.34095.34096.34097.34099.34101&a=8724613&app=typekit&e=css");
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");
+font-style:normal;font-weight:100;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+font-style:normal;font-weight:300;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-style:italic;font-weight:400;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+font-style:normal;font-weight:500;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"),url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"),
+url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");
+font-style:normal;font-weight:600;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-style:normal;font-weight:700;
+}
+
+.tk-quasimoda { font-family: "quasimoda",sans-serif; }
+
+body:not(pre) {
+    font-family: "quasimoda",sans-serif;
+}
+
+
+td:first-child br ~ strong {
+    font-size: 14px;
+    color: #36455980;
+    margin: 0;
+    padding: 0;
+    /* margin-top: -1px; */
+    display: inline;
+}
+
+td:first-child br ~ a strong {
+    font-size: 14px;
+    color: #e7bc4e;
+    margin: 0;
+    padding: 0;
+    /* margin-top: -1px; */
+    display: inline;
+    text-decoration: underline;
+}
+
+.toc-wrapper .toc-h2 {
+    font-size: 14px;
+}
+
+.child-table-toggle {
+    font-size: 14px;
+    color: #e7bc4e;
+    cursor: pointer;
+}
+
+.child-row {
+    border-left: 1px solid #ccc;
+}
+tr.child-row td {
+    padding-left: 20px;
+}
+
+span.p {
+    color: #ccc;
+}
+
+p a {
+    color: #e7bc4e;
+}
+
+p a:hover {
+    color: #e7bc4e;
+}
+
+
+.content h4 {
+    font-size: 16px;
+    line-height: 26px;
+    background: #f9fafa;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-left: 27px;
+    margin-bottom: 25px;
+    padding: 10px;
+    padding-left: 16px;
+    padding-right: 30px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    min-width: 350px;
+    border-left: 2px solid #84aec2;
+}
+
+.content h4 span {
+    color: #E4B030;
+}

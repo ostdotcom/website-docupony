@@ -1,0 +1,15 @@
+{
+  "kyc": {
+    "Getting Started": [
+      "getting_started/overview"
+    ],
+    "Features": [
+      "features/auto_id_verification",
+      "features/compliance_partner",
+      "features/security_and_encryption",
+      "features/whitelisting",
+      "features/front_end_customization",
+      "features/admin_dashboard"
+    ]
+  }
+}

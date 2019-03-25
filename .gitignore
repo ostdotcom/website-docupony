@@ -1,0 +1,12 @@
+# nodejs
+node_modules
+package-lock.json
+
+# OSX
+.DS_Store
+
+/.idea
+
+build-root/
+
+*/build/

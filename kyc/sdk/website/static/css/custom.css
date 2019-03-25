@@ -1,0 +1,382 @@
+/* your custom css */
+
+@media only screen and (min-width: 1400px) {
+    .sub-nav ul {
+        float: none!important;
+        width: 1400px;
+        padding-left: 0em;
+        margin: 0 auto;
+     }
+     .docMainWrapper.wrapper{
+         max-width: 1400px;
+         margin: 0 auto!important;
+     }
+ }
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+    .content-block {
+        margin-right: 20px;
+        width: calc(33.33% - 20px);
+        display: grid;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .content-block {
+        /*margin-right: 20px;*/
+        width: 100%;
+        display: grid;
+    }
+
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+
+/** Side Nav Fixes **/
+
+
+nav.toc .toggleNav ul li a {
+    border: none;
+    color: #34445B !important;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin: 2px 10px 5px;
+    padding: 5px 0 2px;
+    transition: color 0.3s;
+}
+nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
+    color: #438CAD !important;
+}
+
+nav.toc .toggleNav ul li a.navItemActive {
+    color: #34445B !important;
+    font-weight: bold;
+}
+
+/** H1, H2, H3 **/
+.mainContainer .wrapper .post .postHeader h1 {
+    font-size: 250%;
+    font-weight: 500;
+    color: #438BAD !important;
+}
+
+
+.container .wrapper h3 {
+    color: #438CAD;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.mainContainer .wrapper .post h2 {
+    font-size: 130%;
+    color: #438CAD;
+}
+.mainContainer .wrapper .post h3 {
+    font-size: 110%;
+    color: #438CAD;
+}
+.mainContainer .wrapper .post h5 {
+    font-weight: 300;
+    color: #438CAD;
+    font-style: italic;
+}
+
+/** Top Nav and Header **/
+.navigationSlider .slidingNav ul li a {
+    border: 0;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+    padding: 6px 10px;
+    height: 32px;
+    font-size: 1em;
+}
+.navigationSlider .slidingNav ul li a:hover {
+    color: #fff;
+}
+
+.fixedHeaderContainer header h2 {
+    display: block;
+    color: #34445B !important;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+    line-height: 0px !important;
+    position: relative;
+    z-index: 9999;
+}
+.fixedHeaderContainer header h3 {
+    text-decoration: underline;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+    color: white;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+
+/* custom styling for header*/
+.wrapper{
+    max-width: 100%;
+}
+.toc .toggleNav ul li.navListItemActive a, nav.toc .toggleNav ul li a:hover  {
+    color: $secondaryColor! important;
+}
+
+.content-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+
+.section-promo {
+    background-color: #f3f3f3;
+    margin-bottom: 30px;
+}
+img.center-block {
+    margin: 20px auto;
+    display: block;
+    max-width: 70%;
+    height: fit-content;
+}
+.text-center{
+    text-align: center;
+
+}
+
+aside.gitter-chat-embed{
+    z-index: 100000;
+}
+
+
+
+
+
+
+
+/* Primary Header Navigation customizations */
+
+div.navigationWrapper.navigationSlider {
+    width: 100%;
+}
+
+.navPusher{
+  padding-top: 0;
+}
+
+.fixedHeaderContainer {
+    position: relative;
+}
+
+ul.nav-site.nav-site-internal li:last-child {
+    position: absolute;
+    right: 10px;
+}
+
+ul.nav-site.nav-site-internal li:not(:last-child) {
+    padding: 8px 20px 0 20px;
+    height: 50px;
+    margin-top: -8px;
+    padding-top: 10px;
+}
+
+ul.nav-site.nav-site-internal li.siteNavItemActive:not(:last-child) {
+    background: #fff;
+
+}
+
+ul.nav-site.nav-site-internal li.siteNavItemActive:not(:last-child) a {
+    color: #000;
+    background:  #fff;
+}
+
+ul.nav-site.nav-site-internal{
+    display: inline-block
+}
+
+ul.nav-site.nav-site-internal li {
+    display: inherit;
+}
+
+
+
+
+
+
+/* Secondry Header Navigation styles */
+.sub-nav {
+    border-bottom: 1px solid #9fc0cf3b;
+    background: #fff;
+}
+
+.sub-nav ul {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+}
+
+li.sub-nav-li {
+    height: 50px;
+    font-size: 20px;
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px 0 20px;
+    margin-top: 0;
+}
+
+li.sub-nav-li.active a{
+    color:#e6b847;
+    border-bottom: 2px solid #e6b847;
+    padding-bottom: 9px;
+}
+
+
+
+
+
+/* Sidebar Fix */
+.navigationSlider {
+    margin-left: 0;
+    padding-left: 40px;
+}
+
+.docMainWrapper.wrapper {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.container.docsNavContainer {
+    padding-left: 40px;
+    background: #f9fafa;
+}
+
+.container.mainContainer article a, .container.mainContainer article a:hover {
+    color: #e4b030;
+}
+
+
+/* Changes to beautify docusaurus */
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: #34445b
+}
+
+.mainContainer { 
+    padding: 25px 0;
+}
+
+@media only screen and (min-width: 1024px) {
+    .toc {
+        padding: 25px 0;
+    }
+}
+
+.page-wrap {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.navPusher {
+    display: block;
+}
+
+
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * quasimoda:
+ *   - http://typekit.com/eulas/00000000000000003b9af974
+ *   - http://typekit.com/eulas/00000000000000003b9af978
+ *   - http://typekit.com/eulas/00000000000000003b9af97a
+ *   - http://typekit.com/eulas/00000000000000003b9af97b
+ *   - http://typekit.com/eulas/00000000000000003b9af97c
+ *   - http://typekit.com/eulas/00000000000000003b9af97e
+ *   - http://typekit.com/eulas/00000000000000003b9af980
+ *
+ * © 2009-2019 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2018-04-12 14:46:13 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=lde7yjs&ht=tk&f=34089.34093.34095.34096.34097.34099.34101&a=8724613&app=typekit&e=css");
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");
+font-style:normal;font-weight:100;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+font-style:normal;font-weight:300;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-style:italic;font-weight:400;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+font-style:normal;font-weight:500;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"),url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"),url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");
+font-style:normal;font-weight:600;
+}
+
+@font-face {
+font-family:"quasimoda";
+src:url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-style:normal;font-weight:700;
+}
+
+.tk-quasimoda { font-family: "quasimoda",sans-serif; }
+
+body:not(pre) {
+    font-family: "quasimoda",sans-serif;
+}
+
+.onPageNav {
+    font-weight: 500;
+}
+
+.toc .toggleNav .navGroup .navGroupSubcategoryTitle {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.docs-prevnext a:hover span{
+    color: #fff;
+}
+
+.container.docsNavContainer {
+    padding-left: 30px;
+}
