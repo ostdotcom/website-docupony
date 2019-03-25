@@ -1,7 +1,7 @@
 ---
 id: android
 title: Android SDK Setup
-sidebar_label: Android SDK
+sidebar_label: Android
 ---
 
 ## 1. Overview

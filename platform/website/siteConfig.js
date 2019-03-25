@@ -40,7 +40,7 @@ const siteConfig = {
   // ],
 
   headerLinks: [
-    {href: "/platform/", label: 'OST PLATFORM'},
+    {href: "/platform/", label: 'Platform'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
   ],
 
