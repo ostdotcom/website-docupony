@@ -1,34 +1,12 @@
 /* your custom css */
 @media only screen and (min-width: 1400px) {
-    .sub-nav ul {
-        float: none!important;
-        width: 1400px;
-        padding-left: 0em;
-        margin: 0 auto;
-     }
      .docMainWrapper.wrapper{
          max-width: 1400px;
          margin: 0 auto!important;
      }
  }
- @media (max-width: 768px) {
-    .sub-nav {
-        top : 0 ;
-    }
-  
-    .sub-nav ul{
-      padding-left: 0; 
-     }
-  
-     .sub-nav .sub-nav-li {
-         font-size: 16px; 
-         padding: 10px 10px 0; 
-     }
-  
-   }
  
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
-}
+
 
 @media only screen and (min-width: 1024px) {
     .content-block {
@@ -45,12 +23,6 @@
         display: grid;
     }
 
-}
-
-@media only screen and (min-width: 1400px) {
-}
-
-@media only screen and (min-width: 1500px) {
 }
 
 
@@ -173,59 +145,6 @@ img.center-block {
 aside.gitter-chat-embed{
     z-index: 100000;
 }
-
-
-
-
-
-
-
-/* Primary Header Navigation customizations */
-
-div.navigationWrapper.navigationSlider {
-    width: 100%;
-}
-
-.navPusher{
-  padding-top: 0;
-}
-
-.fixedHeaderContainer {
-    position: relative;
-}
-
-ul.nav-site.nav-site-internal li:last-child {
-    position: absolute;
-    right: 10px;
-}
-
-ul.nav-site.nav-site-internal li:not(:last-child) {
-    padding: 8px 20px 0 20px;
-    height: 50px;
-    margin-top: -8px;
-    padding-top: 10px;
-}
-
-ul.nav-site.nav-site-internal li.siteNavItemActive:not(:last-child) {
-    background: #fff;
-
-}
-
-ul.nav-site.nav-site-internal li.siteNavItemActive:not(:last-child) a {
-    color: #000;
-    background:  #fff;
-}
-
-ul.nav-site.nav-site-internal{
-    display: inline-block
-}
-
-ul.nav-site.nav-site-internal li {
-    display: inherit;
-}
-
-
-
 
 
 
@@ -423,3 +342,152 @@ table thead {
 .container.docsNavContainer {
     padding-left: 30px;
 }
+
+
+
+
+
+/*  [START]=== Defaul Docusaurus Header Modifications =========================== */
+
+.navigationSlider .slidingNav ul {
+    background: #fff;
+    color: #33445b;
+    overflow-x: visible;
+
+}
+
+
+@media screen and (min-width: 1024px) {
+    .navPusher {
+        padding-top: 60px;
+    }
+}
+
+header > a {
+    transition: 100ms;
+    -webkit-transition: 100ms;
+    max-width: 245px;
+}
+
+.navigationSlider {
+    padding-left: 48px;
+}
+
+img.logo {
+    margin-top: 5px;
+}
+
+div.navigationWrapper.navigationSlider, div.navigationWrapper.navigationSlider ul {
+    width:100%;
+}
+
+div.navigationWrapper.navigationSlider ul li {
+    flex: none;
+}
+
+div.navigationWrapper.navigationSlider ul li:last-child {
+    margin-left: auto;
+}
+
+.fixedHeaderContainer {
+    min-height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+div.navigationWrapper.navigationSlider ul li a:hover {
+    color:#e6b847;
+    background: #fff;
+}
+
+div.navigationWrapper.navigationSlider ul li a{
+    transition: 200ms;
+    -webkit-transition: 200ms;
+    height: 52px;
+    color: #34445b;
+    font-weight: 400;
+    padding-bottom: 14px;
+}
+
+div.navigationWrapper.navigationSlider ul li {
+    height: 42px;
+    font-size: 18px;
+    list-style: none;
+    display: inline-block;
+    padding: 0px 14px 0;
+    margin-top: 0;
+    color: #33445b;
+}
+
+div.navigationWrapper.navigationSlider ul li.active a{
+    color:#e6b847;
+    border-bottom: 2px solid #e6b847;
+}
+
+@media screen and (max-width: 1024px) {
+    div.navigationWrapper.navigationSlider ul li {
+        height: 32px;
+    }
+
+    .fixedHeaderContainer {
+        min-height: 50px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    header > a {
+        transition: 100ms;
+        -webkit-transition: 100ms;
+        max-width: 360px;
+    }
+    ul.nav-site.nav-site-internal {
+        height: 50px;
+    }
+
+    .container.docsNavContainer {
+        padding-left: 0;
+    }
+
+    .mainContainer .wrapper {
+        padding-top: 30px;
+    }
+    
+
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 510px){
+    .fixedHeaderContainer, .mainContainer .post {
+        padding: 0 20px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 510px){
+    div.navigationWrapper.navigationSlider ul li {
+        padding: 0;
+    }
+    div.navigationWrapper.navigationSlider ul li a {
+        font-size: 14px;
+    }
+
+    .fixedHeaderContainer, .mainContainer .post {
+        padding: 0 14px;
+    }
+
+    .fixedHeaderContainer .headerWrapper.wrapper {
+        padding: 0;
+    }
+
+   
+}
+
+
+.tocToggler {
+    margin-right: 0;
+}
+
+/*  [END]=== Defaul Docusaurus Header Modifications =========================== */

@@ -40,23 +40,20 @@ const siteConfig = {
   // ],
 
   headerLinks: [
-    {href: "/platform/", label: 'Platform'},
+    {href: '/platform/', label: 'Docs'},
+    {href: '/platform/docs/sdk', label: 'SDK References'},
+    {href: '/platform/docs/api', label: 'API References'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
   ],
 
-  secondryHeaderLinks: [
-  {href: '/platform/', label: 'Docs'},
-  {href: '/platform/docs/sdk', label: 'SDK References'},
-  {href: '/platform/docs/api', label: 'API References'}
-
-  ],
+ 
 
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'docs/assets/ost-developers-platform.svg',
+  footerIcon: 'docs/assets/ost-developers-platform.svg',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
