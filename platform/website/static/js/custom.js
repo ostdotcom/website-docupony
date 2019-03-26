@@ -36,7 +36,7 @@ $(document).ready(function() {
         }
     }
 
-    var secondryNavLinkArray = $('.sub-nav li');
+    var secondryNavLinkArray = $('.slidingNav ul li');
     if(pathArray.length >= 6) {
         var path = pathArray[5].toLowerCase();
     

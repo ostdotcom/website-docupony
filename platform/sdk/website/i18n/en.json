@@ -50,7 +50,9 @@
       }
     },
     "links": {
-      "Platform": "Platform",
+      "Docs": "Docs",
+      "SDK References": "SDK References",
+      "API References": "API References",
       "Support": "Support"
     },
     "categories": {

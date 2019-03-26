@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'OST Platform Developer Docs' /* title for your website */,
+  title: '' /* title for your website */,
   tagline: 'Developer Documentation',
   url: 'localhost:8000/' /* your website url */,
   baseUrl: '/platform/' /* base url for your project */,
@@ -40,14 +40,14 @@ const siteConfig = {
   // ],
 
   headerLinks: [
-    {href: "/platform/", label: 'Platform'},
+    {href: '/platform/', label: 'Docs'},
+    {href: '/platform/docs/sdk/', label: 'SDK References'},
+    {href: '/platform/docs/api', label: 'API References'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
   ],
 
   secondryHeaderLinks: [
-  {href: '/platform/', label: 'Docs'},
-  {href: '/platform/docs/sdk/', label: 'SDK References'},
-  {href: '/platform/docs/api', label: 'API References'}
+  
 
   ],
 
@@ -55,8 +55,8 @@ const siteConfig = {
   // users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'docs/assets/ost-developers-platform.svg',
+  footerIcon: 'docs/assets/ost-developers-platform.svg',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
@@ -102,7 +102,12 @@ const siteConfig = {
   ogImage: 'img/docusaurus.png',
   twitterImage: 'img/docusaurus.png',
 
-  docsSideNavCollapsible: true,
+  // docsSideNavCollapsible: true,
+
+  // scrollToTop: true,
+  // scrollToTopOptions: {
+  //   zIndex: 100,
+  // },
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
