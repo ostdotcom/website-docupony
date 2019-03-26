@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: '' /* title for your website */,
+  title: 'OST Platform Developer Docs' /* title for your website */,
   tagline: 'Developer Documentation',
   url: 'localhost:8000/' /* your website url */,
   baseUrl: '/platform/' /* base url for your project */,
@@ -52,7 +52,7 @@ const siteConfig = {
   ],
 
   // If you have users set above, you add it here:
-  users,
+  // users,
 
   /* path to images for header/footer */
   headerIcon: 'img/docusaurus.svg',
@@ -101,6 +101,8 @@ const siteConfig = {
   // Open Graph and Twitter card images.
   ogImage: 'img/docusaurus.png',
   twitterImage: 'img/docusaurus.png',
+
+  docsSideNavCollapsible: true,
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...

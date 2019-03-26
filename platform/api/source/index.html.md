@@ -22,11 +22,12 @@ This API library includes API calls that will be used by client company's server
 <!-- ![platform-sdk-overview](images/Platform-Integration-blur.jpg) -->
 
 
-Available Server Side SDKs:<br>
-1. [PHP SDK](/platform/docs/sdk/getting_started/server_sdk_quickstart_guide/php/)  <br>
-2. Ruby SDK   <br>
-3. Java SDK  <br>
-4. Node.js SDK  <br>
+Available Server Side SDKs:
+
+1. [PHP SDK](/platform/docs/server_sdk_setup/php/)
+2. [Ruby SDK]()
+3. [Java SDK]()
+4. [Node.js SDK]()
 
 
 ## Access

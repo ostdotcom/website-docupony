@@ -2,6 +2,22 @@
     top:101px;
 }
 
+@media (max-width: 768px) {
+    .sub-nav {
+        top : 0 ;
+    }
+  
+    .sub-nav ul{
+      padding-left: 0; 
+     }
+  
+     .sub-nav .sub-nav-li {
+         font-size: 16px; 
+         padding: 10px 10px 0; 
+     }
+  
+   }
+
 /*! CSS Used from: http://localhost:3000/platform/css/main.css */
 div,h2,a,img,ul,li,header,nav{border:0;font:inherit;font-size:100%;margin:0;padding:0;vertical-align:baseline;}
 *{box-sizing:border-box;}
@@ -308,4 +324,8 @@ p a:hover {
 
 .content h4 span {
     color: #E4B030;
+}
+
+.page-wrapper a, .page-wrapper a:hover, .page-wrapper a:focus, .page-wrapper a:visited {
+    color: #e7bc4e !important ;
 }
