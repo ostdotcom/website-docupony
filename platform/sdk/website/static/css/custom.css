@@ -11,6 +11,21 @@
          margin: 0 auto!important;
      }
  }
+ @media (max-width: 768px) {
+    .sub-nav {
+        top : 0 ;
+    }
+  
+    .sub-nav ul{
+      padding-left: 0; 
+     }
+  
+     .sub-nav .sub-nav-li {
+         font-size: 16px; 
+         padding: 10px 10px 0; 
+     }
+  
+   }
  
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
