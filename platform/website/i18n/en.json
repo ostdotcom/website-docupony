@@ -16,6 +16,9 @@
         "title": "Introduction",
         "sidebar_label": "Introduction"
       },
+      "getting_started/platform_benefits": {
+        "title": "getting_started/platform_benefits"
+      },
       "getting_started/platform_overview": {
         "title": "Platform Overview",
         "sidebar_label": "Platform Overview"
@@ -32,9 +35,15 @@
         "title": "Execute Transaction Guide",
         "sidebar_label": "Execute Transaction"
       },
+
       "guides/wallet_ux_guide": {
         "title": "Wallet UX Guide",
         "sidebar_label": "Wallet UX"
+      },
+      "release-notes/2.0.0-beta": {
+        "title": "Release Notes 2.0.0 beta (March 2019)",
+        "sidebar_label": "2.0.0 beta Release"
+
       },
       "server_sdk_setup/php": {
         "title": "PHP SDK Quickstart Guide",
@@ -72,7 +81,8 @@
       "Server SDK Setup": "Server SDK Setup",
       "Wallet SDK Setup": "Wallet SDK Setup",
       "Guides": "Guides",
-      "Additional Resources": "Additional Resources"
+      "Additional Resources": "Additional Resources",
+      "Release Notes": "Release Notes"
     }
   },
   "pages-strings": {
