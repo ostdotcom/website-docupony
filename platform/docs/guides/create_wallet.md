@@ -1,6 +1,6 @@
 ---
 id: create_wallet
-title: Create Wallet
+title: Create Wallet Guide
 sidebar_label: Create Wallet
 ---
 
