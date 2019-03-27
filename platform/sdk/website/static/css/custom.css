@@ -397,7 +397,7 @@ div.navigationWrapper.navigationSlider ul li:last-child {
 
 div.navigationWrapper.navigationSlider ul li a:hover {
     color:#e6b847;
-    background: #fff;
+    background:transparent;
 }
 
 div.navigationWrapper.navigationSlider ul li a{

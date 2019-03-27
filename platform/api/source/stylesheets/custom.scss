@@ -57,7 +57,7 @@ div.navigationWrapper.navigationSlider,div.navigationWrapper.navigationSlider ul
 div.navigationWrapper.navigationSlider ul li{flex:none;}
 div.navigationWrapper.navigationSlider ul li:last-child{margin-left:auto;}
 .fixedHeaderContainer{min-height:60px;background:#fff;border-bottom:1px solid #e0e0e0;}
-div.navigationWrapper.navigationSlider ul li a:hover{color:#e6b847;background:#fff;}
+div.navigationWrapper.navigationSlider ul li a:hover{color:#e6b847;background:transparent;}
 div.navigationWrapper.navigationSlider ul li a{transition:.2s;-webkit-transition:.2s;height:52px;color:#34445b;font-weight:400;padding-bottom:14px;}
 div.navigationWrapper.navigationSlider ul li{height:42px;font-size:18px;list-style:none;display:inline-block;padding:0 14px;margin-top:0;color:#33445b;}
 div.navigationWrapper.navigationSlider ul li.active a{color:#e6b847;border-bottom:2px solid #e6b847;}
@@ -313,6 +313,9 @@ span.p {
     color: #e7bc4e !important ;
 }
 
+
+// slate fixes for navigation
+
 .lang-selector a {
     color: #fff;
 }
@@ -357,3 +360,16 @@ span.p {
         margin-left: 30px;
     }
 }
+
+
+@media screen and (min-width:1024px){
+
+    .navigationSlider {
+        padding-left: 7px;
+    }
+    .page-wrapper .dark-box {
+        top: 60px;
+    }
+
+}
+
