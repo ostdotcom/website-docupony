@@ -446,4 +446,10 @@ div.navigationWrapper.navigationSlider ul li.active a{
     margin-right: 0;
 }
 
+
+.navigationSlider .slidingNav ul li>a:focus, .navigationSlider .slidingNav ul li>a:hover {
+    background: transparent;
+    outline: none;
+}
+
 /*  [END]=== Defaul Docusaurus Header Modifications =========================== */

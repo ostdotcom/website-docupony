@@ -377,3 +377,9 @@ span.p {
     }
 
 }
+
+
+.navigationSlider .slidingNav ul li>a:focus, .navigationSlider .slidingNav ul li>a:hover {
+    background: transparent;
+    outline: none;
+}
