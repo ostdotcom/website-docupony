@@ -47,7 +47,7 @@ Available Server Side SDKs:
 ### Sandbox Environment
 You can signup on [OST Platform](https://platform.ost.com/) to create your account. By default you will land in sandbox mode. You can create an economy in sandbox mode to test the API. <br><br>
 
-Once you have created your token (refer [create token guide](/platform/)) (Change link) to create token, then you can head over to [developers page ](https://ost.com/) (Change link) to get access to API key and API secret.
+Once you have created your token (refer [create token guide](/platform/)) to create token, then you can head over to [developers page ](https://ost.com/) to get access to API key and API secret.
 
 
 ### Production Environment
