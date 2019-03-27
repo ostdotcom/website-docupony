@@ -1,6 +1,6 @@
 ---
 id: execute_transaction
-title: Execute Transaction
+title: Execute Transaction Guide
 sidebar_label: Execute Transaction
 ---
 

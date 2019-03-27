@@ -9,10 +9,6 @@
         "title": "Glossary",
         "sidebar_label": "Glossary"
       },
-      "additional_resources/wallet_ux_guide": {
-        "title": "Wallet UX Guide",
-        "sidebar_label": "Wallet UX Guide"
-      },
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
@@ -29,12 +25,16 @@
         "sidebar_label": "Create Token"
       },
       "guides/create_wallet": {
-        "title": "Create Wallet",
+        "title": "Create Wallet Guide",
         "sidebar_label": "Create Wallet"
       },
       "guides/execute_transaction": {
-        "title": "Execute Transaction",
+        "title": "Execute Transaction Guide",
         "sidebar_label": "Execute Transaction"
+      },
+      "guides/wallet_ux_guide": {
+        "title": "Wallet UX Guide",
+        "sidebar_label": "Wallet UX"
       },
       "server_sdk_setup/php": {
         "title": "PHP SDK Quickstart Guide",

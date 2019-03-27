@@ -4,6 +4,7 @@
     "Getting Started": [
       "getting_started/introduction",
       "getting_started/platform_overview"
+
     ],
 
     "Server SDK Setup": [
@@ -17,13 +18,13 @@
 
     "Guides": [
       "guides/create_token",
+      "guides/wallet_ux_guide",
       "guides/create_wallet",
       "guides/execute_transaction"
     ],
 
     "Additional Resources": [
-      "additional_resources/glossary",
-      "additional_resources/wallet_ux_guide"
+      "additional_resources/glossary"
     ]
   }
 }
