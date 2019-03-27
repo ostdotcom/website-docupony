@@ -1,5 +1,5 @@
 .toc-wrapper {
-    top:101px;
+    top:60px;
 }
 
 // Navigation Styles
@@ -84,6 +84,7 @@ div.navigationWrapper.navigationSlider ul li a{font-size:14px;}
 
 
 
+
 // Overriding existing slate styles
 
 .toc-wrapper .toc-link.active { 
@@ -114,6 +115,7 @@ li.sub-nav-li.active a {
 }
 
 .content {
+    padding-top: 70px; 
     color: #24292e;
 }
 .content p{
@@ -275,11 +277,11 @@ span.p {
     color: #ccc;
 }
 
-p a {
+.content p a {
     color: #e7bc4e;
 }
 
-p a:hover {
+.content p a:hover {
     color: #e7bc4e;
 }
 
@@ -307,6 +309,51 @@ p a:hover {
     color: #E4B030;
 }
 
-.page-wrapper a, .page-wrapper a:hover, .page-wrapper a:focus, .page-wrapper a:visited {
+.content a, .content a:hover, .content a:focus, .content a:visited {
     color: #e7bc4e !important ;
+}
+
+.lang-selector a {
+    color: #fff;
+}
+
+@media screen and (max-width:1024px){
+
+    .fixedHeaderContainer a {
+        margin-top: 3px; 
+    }
+
+    .toc-wrapper {
+        top:100px;
+    }
+
+    .content {
+        padding-top: 110px;
+    }
+
+    .page-wrapper .dark-box {
+        top: 100px;
+    }
+
+    .headerWrapper.wrapper header a {
+        margin-left: 10px;
+    }
+}
+
+#nav-button {
+    z-index: 9999999;
+    left: 10px;
+    top: 11px;
+}
+
+#nav-button.open{
+    left: 10px !important ;
+}
+
+
+
+@media screen and (max-width:510px){
+    .headerWrapper.wrapper header a {
+        margin-left: 30px;
+    }
 }
