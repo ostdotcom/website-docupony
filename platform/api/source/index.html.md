@@ -24,9 +24,9 @@ This API library includes API calls that will be used by client company's server
 Available Server Side SDKs:
 
 1. [PHP SDK](/platform/docs/server_sdk_setup/php/)
-2. [Ruby SDK](https://github.com/ostdotcom/ost-sdk-ruby)
-3. [Java SDK](https://github.com/ostdotcom/ost-sdk-java)
-4. [Node.js SDK](https://github.com/ostdotcom/ost-sdk-js)
+2. [Ruby SDK](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0)
+3. [Java SDK](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
+4. [Node.js SDK](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0)
 
 
 ## Access

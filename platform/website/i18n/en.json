@@ -40,9 +40,9 @@
         "title": "Wallet UX Guidelines",
         "sidebar_label": "Wallet UX"
       },
-      "release-notes/2.0.0-beta": {
-        "title": "2.0.0-beta Release (March 2019)",
-        "sidebar_label": "2.0.0-beta Release"
+      "release-notes/2.0.0": {
+        "title": "2.0.0 Release (March 2019)",
+        "sidebar_label": "2.0.0 Release"
       },
       "server_sdk_setup/php": {
         "title": "PHP SDK Quickstart Guide",
