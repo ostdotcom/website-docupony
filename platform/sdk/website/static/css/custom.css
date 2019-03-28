@@ -495,4 +495,13 @@ div.navigationWrapper.navigationSlider ul li.active a{
     background: transparent;
     outline: none;
 }
+
+
+@media screen and (max-width: 370px){ 
+
+    div.navigationWrapper.navigationSlider ul li a {
+        padding: 5px;
+    }
+
+}
 /*  [END]=== Defaul Docusaurus Header Modifications =========================== */

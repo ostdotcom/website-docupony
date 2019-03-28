@@ -327,6 +327,10 @@ span.p {
 
 @media screen and (max-width:1024px){
 
+    #nav-button {
+        padding-bottom: 0;
+    }
+
     .fixedHeaderContainer a {
         margin-top: 3px; 
     }
