@@ -12,10 +12,10 @@ sidebar_label: Security Guidelines
 2. Minimum length of `passPhrasePrefix` should be 30.
 
 3. The user passphrase must never be kept in ‘unencrypted’ form. The server must use encryption services such as [AWS KMS](https://aws.amazon.com/kms/) or [Goolge KMS](https://cloud.google.com/kms/).
-4. Please use special care while generating `passphrasePrefix`. It should not be deterministic (w.r.t. user information or time).. We recommend using BIP-39 libraries. 
+4. Please use special care while generating passphrasePrefix. It should not be deterministic (w.r.t. user information or time). We recommend using BIP-39 libraries.
 
 ## Android Wallet SDK
-1. App should use [ZXing](https://github.com/zxing/zxing) for scanning QR code, version 1.9.8 is included with the Sdk.
+1. App should use [ZXing](https://github.com/zxing/zxing) for scanning QR code, version 1.9.8 is included with the Android wallet SDK.
 <br> [Sample Implementation](https://github.com/dm77/barcodescanner)
 
 2. **Managing Passphrase Prefix**:
@@ -30,4 +30,4 @@ sidebar_label: Security Guidelines
 
 ## iOS Wallet SDK
 
-1. Applications should enable general data protection on the app’s provisioning profile, and then setting the `Sharing and Permissions to Complete Protection`, which will enable app-wide file system protection.
+1. Applications should enable general data protection on the app's provisioning profile, and then setting the `Sharing and Permissions to Complete Protection`, which will enable app-wide file system protection.
