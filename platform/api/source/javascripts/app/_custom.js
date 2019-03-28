@@ -1,31 +1,3 @@
-var fixmeTop = 50;
-$(window).scroll(function() {                  // assign scroll event listener
-
-    var currentScroll = $(window).scrollTop(); // get current position
-
-    if (currentScroll >= fixmeTop) {           // apply position: fixed if you
-        $('.sub-nav').css({                      // scroll to that element or below it
-            position: 'fixed',
-            width: '100%',
-            'z-index': 9999,
-            top:0,
-            left:0
-        });
-        $('.toc-wrapper').css({
-            top: '50px'
-        });
-    } else {                                   // apply position: static
-        $('.sub-nav').css({                      // if you scroll above it
-            position: 'relative',
-            'z-index': 99
-        });
-        var attachHieght = 101-currentScroll;
-        $('.toc-wrapper').css({
-            top: attachHieght
-        });
-    }
-
-});
 
 
 $(document).ready(function() {
@@ -49,7 +21,7 @@ $(document).ready(function() {
         }
         
 
-        var secondryNavLinkArray = $('.sub-nav li');
+        var secondryNavLinkArray = $('.slidingNav ul li');
         if(secondryNavLinkArray) {
             if(pathArray.length >= 6) {
                 var path = pathArray[5].toLowerCase();

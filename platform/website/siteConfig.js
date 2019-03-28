@@ -40,23 +40,23 @@ const siteConfig = {
   // ],
 
   headerLinks: [
-    {href: "/platform/", label: 'OST PLATFORM'},
+    {href: '/platform/', label: 'Docs'},
+    {href: '/platform/docs/sdk/', label: 'SDK References'},
+    {href: '/platform/docs/api', label: 'API References'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
   ],
 
   secondryHeaderLinks: [
-  {href: '/platform/', label: 'Docs'},
-  {href: '/platform/docs/sdk/', label: 'SDK References'},
-  {href: '/platform/docs/api', label: 'API References'}
+  
 
   ],
 
   // If you have users set above, you add it here:
-  users,
+  // users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'docs/assets/ost-developers-platform.svg',
+  footerIcon: 'docs/assets/ost-developers-platform.svg',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
@@ -80,7 +80,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} <a href="https://ost.com" target="_blank">OST.com</a> Ltd., All Rights Reserved.`,
+  copyright: `Copyright © ${new Date().getFullYear()} <a href="https://ost.com" target="_blank">OST.com</a> Inc., All Rights Reserved.`,
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     theme: 'default',
@@ -101,6 +101,13 @@ const siteConfig = {
   // Open Graph and Twitter card images.
   ogImage: 'img/docusaurus.png',
   twitterImage: 'img/docusaurus.png',
+
+  // docsSideNavCollapsible: true,
+
+  // scrollToTop: true,
+  // scrollToTopOptions: {
+  //   zIndex: 100,
+  // },
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...

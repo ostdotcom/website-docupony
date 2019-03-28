@@ -9,23 +9,24 @@ toc_footers:
 
 search: true
 
-includes: 
-  - errors
+
 ---
 
 # Introduction
 
-OST Platform API allows developers to interact with smart contract layer through REST API. The REST URLs are resource oriented and returns JSON response with standard HTTP response codes.
+OST Platform API allows developers to interact with smart contract layer through API. The URLs returns JSON response with standard HTTP response codes.
 
 This API library includes API calls that will be used by client company's server for integration. 
 
-![platform-sdk-overview](/platform/docs/api/images/Platform-Integrations-blur.jpg)
+<!-- ![platform-sdk-overview](images/Platform-Integration-blur.jpg) -->
 
-Available Server Side SDKs:<br>
-1. [PHP SDK](/platform/docs/sdk/getting_started/server_sdk_quickstart_guide/php/)  <br>
-2. Ruby SDK   <br>
-3. Java SDK  <br>
-4. Node.js SDK  <br>
+
+Available Server Side SDKs:
+
+1. [PHP SDK](/platform/docs/server_sdk_setup/php/)
+2. [Ruby SDK](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0)
+3. [Java SDK](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
+4. [Node.js SDK](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0)
 
 
 ## Access
@@ -45,7 +46,7 @@ Available Server Side SDKs:<br>
 ### Sandbox Environment
 You can signup on [OST Platform](https://platform.ost.com/) to create your account. By default you will land in sandbox mode. You can create an economy in sandbox mode to test the API. <br><br>
 
-Once you have created your token (refer [create token guide](/platform/)) (Change link) to create token, then you can head over to [developers page ](https://ost.com/) (Change link) to get access to API key and API secret.
+Once you have created your token (refer [create token guide](/platform/docs/guides/create_token/)) to create token, then you can head over to [developers page ](https://platform.ost.com/testnet/developer/) to get access to API key and API secret.
 
 
 ### Production Environment
@@ -63,7 +64,7 @@ For other languages you can implement the signature generation by computing the 
 Every API request on `https://api.ost.com/testnet/v2/` or `https://api.ost.com/mainnet/v2/` requires hash-based message authentication.
 
 Every request has 4 mandatory parameters that must be included: <br>
-- `api_key`, the API key as provided from [<u>developers page</u>](https://patform.ost.com/testnet/developer) inside OST Platform dashboard.<br>
+- `api_key`, the API key as provided from [developers page](https://patform.ost.com/testnet/developer) inside OST Platform dashboard.<br>
 - `api_request_timestamp`, the current unix timestamp in seconds.<br>
 - `api_signature`, the signature as the sha256 digest of the shared API secret and the correctly formatted query string as described below.<br>
 - `api_signature_kind`, the value for this parameter should be `OST1-HMAC-SHA256`.
@@ -78,8 +79,8 @@ The reason for these 4 mandatory parameters in each request is to ensure that th
 
 To generate the signature you must first form the string to sign. This string to sign can be formed by concatenation of the following elements
 
--  Resource endpoint without trailing slash("/"). Ex: `/users`, `/users/{id}/devices`
--  `api_key`, the API key as provided from [OST Platform](https://patform.ost.com/testnet/developer)
+-  Resource endpoint without trailing slash("/"). Example: `/users`, `/users/{id}/devices`
+-  `api_key`, the API key is provided from [Developers Tab](https://patform.ost.com/testnet/developer) in OST Platform.
 -  `api_request_timestamp`, the current unix timestamp in seconds.
 -  `api_signature_kind`, the value for this parameter should be `OST1-HMAC-SHA256`
 -   API parameters.
@@ -90,7 +91,7 @@ To generate the signature you must first form the string to sign. This string to
 "/users?api_key=4b66f566d7596e2b733b&api_request_timestamp=1521073147&api_signature_kind=OST1-HMAC-SHA256"
 ```
 
-**Note:** All the parameters must be alphabetically sorted on the keys. The keys are lower-case, snake case (Ex: `user_id`)  as documented for each API endpoint. Spaces in input values are replaced with plus sign `+`.
+**Note:** All the parameters must be alphabetically sorted on the keys. The keys are lower-case, snake case (Example: `user_id`)  as documented for each API endpoint. Spaces in input values are replaced with plus sign `+`.
 
 ### B. Generating a signature
 
@@ -475,12 +476,12 @@ This is version 2 (v2) OST Platform API. Earlier versions have been removed from
 
 | Attribute  | Description  |
 |---|---|
-| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4)  | UUID V4  |
+| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4)  | UUID V4  |
 | **token_id** <br> **Integer** | Unique integer for the token |
-|  **token\_holder\_address** <br> **String**,  [**\<Address\>**](/platform/docs/glossary/#contract-address),<br> **default is null** | This will be the address of [token-holder contract](/platform/docs/wallet/fundamentals/#tokenholder-contracts).|
-| **device\_manager\_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address), <br> **default is null**   | This will be the address of [device manager contract](/platform/docs/wallet/fundamentals/#device-manager-a-multisig-contract) contract.   |
-|  **recovery_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address), <br> **default is null**  | This will be the address of recovery contract.  |
-| **recovery\_owner\_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address), <br> **default is null**  | This will be the recovery owner address.  |
+|  **token\_holder\_address** <br> **String**,  [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address),<br> **default is null** | This will be the address of [token-holder contract](/platform/docs/additional_resources/glossary/#tokenholder-contracts).|
+| **device\_manager\_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null**   | This will be the address of [device manager contract](/platform/docs/additional_resources/glossary/#device-manager-a-multisig-contract) contract.   |
+|  **recovery_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null**  | This will be the address of recovery contract.  |
+| **recovery\_owner\_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null**  | This will be the recovery owner address.  |
 | **type** <br> **String** | `type` string will determine the type of user. It can have two possible values `user` and `company`. <br> `user`: All economy users will be of type `user`<br> `company`: Accounts used by client companies will have type `company`   |
 | **status** <br> **String**| CREATED / ACTIVATING / ACTIVATED. <br> `CREATED`: This will be the default status when a user is created. At this stage there are no smart contracts deployed on blockchain.  <br> `ACTIVATING`: This will be the user's status when smart contracts for the user are being deployed. <br> `ACTIVATED`: This will be the user's status when all the smart contracts for the user are deployed and user now can now perform the wallet actions.|
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
@@ -581,7 +582,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `user`.<br><br>
@@ -826,13 +827,12 @@ Devices are the wallet devices that are added by a user. `Devices` API allows yo
 
 | Attribute  | Description  |
 |---|---|
-|  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4)| uuid of the user in the token economy.  |
-|  **address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) | This will be the address of the device's key in user's [TokenHolder Contract](/platform/docs/wallet/fundamentals/#tokenholder-contracts).  |
-|  **linked_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address), <br> **default is null** | Address that points to the device's address in the device manager contract's linked list of `owners`. This is used during recovery.  |
-|  **api\_signer_address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) | Will be used to validate the request coming from the wallet SDK.  |
-|  **device_name** <br> **String** | Name that the user has set for its device  |
-|  **device_uuid** <br> **String**| unique identifier set by the device's operating system  |
+|  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4)| uuid of the user in the token economy.  |
+|  **address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | This will be the address of the device's key in user's [TokenHolder Contract](/platform/docs/additional_resources/glossary/#tokenholder-contracts).  |
+|  **linked_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null** | Address that points to the device's address in the device manager contract's linked list of `owners`. This is used during recovery.  |
+|  **api\_signer_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | Will be used to validate the request coming from the wallet SDK.  |
 |   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Status when client company registers device with OST. <br>`AUTHORIZING `: Status when device address is being authorized in user's device manager contract. <br>`AUTHORIZED `: Status when the authorization is complete.<br>`REVOKING `: Status when device is being revoked from user's device manager contract.<br>`REVOKED `: Status when revocation of the device address is complete. <br> `RECOVERING`: Status when device address is being revoked and a replacement address is being authorized in user's device manager contract (recovery). <br> `ABORTING`: Status when recovery is being aborted. |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
 
@@ -861,8 +861,6 @@ $createParams = array();
 $createParams['user_id'] = '5ff57c15-f54f-45fe-acf5-6c6fbfdf815a';
 $createParams['address'] = '0x2Ea365269A3e6c8fa492eca9A531BFaC8bA1649C';
 $createParams['api_signer_address'] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455';
-$createParams['device_uuid'] = '593a967f-87bd-49a6-976c-52edf46c4df4';
-$createParams['device_name'] = 'Iphone S';
 $response = $deviceService->create($createParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
@@ -875,7 +873,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**POST Parameters**</u>
@@ -884,8 +882,6 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 |---|---|
 | **address** <br> **Required**   | This device address is generated by wallet SDK when the device keys are created.  |
 | **api_signer_address** <br> **Required**   | Device API signer address, so that subsequent requests from the device can be authorized by OST server. This address is generated by wallet SDK when the device keys are created.  |
-| **device_name** <br> **Required**   | Device name. |
-| **device_uuid** <br> **Required**   | Unique identifier (uuid) for the device.  |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `device`.<br><br>
@@ -904,8 +900,6 @@ The value of `data.result_type` property will be `device` and device object will
       "address": "0x2ea365269a3e6c8fa492eca9a531bfac8ba1649c",
       "linked_address": null,
       "api_signer_address": "0x5f860598383868e8e8ee0ffc5add92369db37455",
-      "device_name": "Iphone S",
-      "device_uuid": "593a967f-87bd-49a6-976c-52edf46c4df4",
       "status": "REGISTERED",
       "updated_timestamp": 1552291023
     }
@@ -953,7 +947,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 | **device_address** <br> **Required**   | Device address |
 
 <u>**Success Response**</u><br>
@@ -973,8 +967,6 @@ The value of `data.result_type` property will be `device` and device object will
       "address": "0x2ea365269a3e6c8fa492eca9a531bfac8ba1649c",
       "linked_address": null,
       "api_signer_address": "0x5f860598383868e8e8ee0ffc5add92369db37455",
-      "device_name": "Iphone S",
-      "device_uuid": "593a967f-87bd-49a6-976c-52edf46c4df4",
       "status": "REGISTERED",
       "updated_timestamp": 1552291023
     }
@@ -1002,12 +994,15 @@ $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
 $ostObj = new OSTSdk($params);
+
 $deviceService = $ostObj->services->devices;
 
 $getParams = array();
-$getParams['user_id'] = '5ff57c15-f54f-45fe-acf5-6c6fbfdf815a';
+$getParams['user_id'] = 'cdbea777-2296-4220-a2e2-d35ac22e6d0b';
 
-// This will list all the devices of the above user. 
+// limiting the number of 
+$getParams['limit'] = '2';
+
 $response = $deviceService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
@@ -1021,7 +1016,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**Query Parameters**</u>
@@ -1039,27 +1034,39 @@ The value of `data.result_type` property will be `devices` and list of devices w
 > List all Devices - Example Response
 
 ```json
-{
-  "success": true,
-  "data": {
-    "result_type": "devices",
-    "devices": [
-      {
-        "user_id": "5ff57c15-f54f-45fe-acf5-6c6fbfdf815a",
-        "address": "0x2ea365269a3e6c8fa492eca9a531bfac8ba1649c",
-        "linked_address": null,
-        "api_signer_address": "0x5f860598383868e8e8ee0ffc5add92369db37455",
-        "device_name": "Iphone S",
-        "device_uuid": "593a967f-87bd-49a6-976c-52edf46c4df4",
-        "status": "REGISTERED",
-        "updated_timestamp": 1552291023
-      }
-    ],
-    "meta": {
-      "next_page_payload": []
+```{
+    "success": true,
+    "data": {
+        "result_type": "devices",
+        "devices": [
+            {
+                "user_id": "cdbea777-2296-4220-a2e2-d35ac22e6d0b",
+                "address": "0x70856388901ae5613483fd3ad117b87c749194c4",
+                "linked_address": "0x0000000000000000000000000000000000000001",
+                "api_signer_address": "0xff39a9374d61236ff5ba98da8542416a03690766",
+                "device_name": "Xiaomiriva",
+                "device_uuid": "2713ae2d-2861-4c7f-a8b5-f98232a9608f",
+                "status": "AUTHORIZED",
+                "updated_timestamp": 1552407684
+            },
+            {
+                "user_id": "cdbea777-2296-4220-a2e2-d35ac22e6d0b",
+                "address": "0x1f9e06a5c4abec36a68bdc976fde54127d024866",
+                "linked_address": null,
+                "api_signer_address": "0xe39534e792aa90e86e6195006c6117bbb4b0c9b8",
+                "device_name": "motorolasanders_n",
+                "device_uuid": "6152c446-d593-498d-bb51-046c6484b546",
+                "status": "REVOKED",
+                "updated_timestamp": 1552407684
+            }
+        ],
+        "meta": {
+            "next_page_payload": {
+                "pagination_identifier": "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiY2RiZWE3NzctMjI5Ni00MjIwLWEyZTItZDM1YWMyMmU2ZDBiIn0sIndhIjp7IlMiOiIweDFmOWUwNmE1YzRhYmVjMzZhNjhiZGM5NzZmZGU1NDEyN2QwMjQ4NjYifX0sInBhZ2UiOjIsImxpbWl0IjoyfQ=="
+            }
+        }
     }
-  }
-}
+}```
 ```
 
 
@@ -1081,11 +1088,11 @@ API you can `get` and `list` user's sessions. Sessions are generated by wallet S
 
 | Attribute  | Description  |
 |---|---|
-|  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.   |
-|  **address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address)  | This will be the [session key address](/platform/docs/wallet/fundamentals/#session-key).   |
+|  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.   |
+|  **address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address)  | This will be the [session key address](/platform/docs/additional_resources/glossary/#session-key).   |
 |  **expiration_height** <br> **Integer** | Block height when the session address will expire |
 |   **approx\_expiration\_timestamp** <br> **EPOCH \<time in seconds\>**, <br> **default is null**| Approximate time at which the session address will expire.  |
-|  **spending_limit** <br> **String \<BigInt\>** | Maximum allowed brand token amount in `Wei` that can be transfered in one transaction by this session address. |
+|  **spending_limit** <br> **String \<BigInt\>** | Maximum allowed [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token) that can be transfered in one transaction by this session address. |
 |   **nonce** <br> **Integer**,<br> **default is null**| Transaction counter of session address which helps prevents replay attacks.  |
 |  **status** <br> **String**| Status gives us status of session key. It can take one of these values. INITIALIZING / AUTHORIZED / REVOKING / REVOKED <br> `INITIALIZING`: Status when the session address is being authorized in user's device manager(multisig) contract. <br>`AUTHORIZED`: Status when the authorization is complete <br> `REVOKING`: Status when the session is being revoked from device manager(multisig) contract<br> `REVOKED`: Status when the session revocation is complete|
 |  **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
@@ -1126,7 +1133,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 | **session_address** <br> **Required**   | Session address |
 
 
@@ -1179,7 +1186,7 @@ $sessionService = $ostObj->services->sessions;
 
 $getParams = array();
 $getParams['user_id'] = '10543373-5eb5-4dce-8fac-dff38ba941ba';
-
+$getParams['limit']='2'
 $response = $sessionService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
@@ -1193,7 +1200,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 <u>**Query Parameters**</u>
 
@@ -1234,1170 +1241,24 @@ The value of `data.result_type` property will be `sessions` and list of sessions
             "nonce": 0,
             "status": "AUTHORIZED",
             "updated_timestamp": 1551958755
-          },
-          {
-            "user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "address": "0x9e2b6e125ed05f5c78695095124da8bff16c00f1",
-            "expiration_height": 10948394,
-            "approx_expiration_timestamp": 1583947735,
-            "spending_limit": "10000",
-            "nonce": 0,
-            "status": "AUTHORIZED",
-            "updated_timestamp": 1552066139
-          },
-          {
-            "user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "address": "0x760ee642bab9c80b4ed27e437cd6e4515c4764a7",
-            "expiration_height": 10948295,
-            "approx_expiration_timestamp": 1583947438,
-            "spending_limit": "100000",
-            "nonce": 1,
-            "status": "AUTHORIZED",
-            "updated_timestamp": 1552065841
-          },
-          {
-            "user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "address": "0x24845e9cd9dde48eaa28c9c2bc7a3c9dc39922c9",
-            "expiration_height": 31821558,
-            "approx_expiration_timestamp": 1646567227,
-            "spending_limit": "123",
-            "nonce": 9,
-            "status": "AUTHORIZED",
-            "updated_timestamp": 1551959229
           }
       ],
       "meta": {
-          "next_page_payload": []
-      }
-  }
-}
-
-```
-
-
-
-
-
-
-
-
-
-
-
-# Transactions
-`Transactions` API allows you to do company-to-user transactions. You can also `get` a user's transaction and `list` all user's transaction.
-
-
-
-## Transaction Object
-
-| Attribute  | Description  |
-|---|---|
-| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | Unique Indentifeir of transaction   |
-| **transaction_hash** <br> **String \<tx hash\>**, <br> **default is null** | Hash of the transaction in blockchain  |
-|  **from**  <br> **String**,  [**\<Address\>**](/platform/docs/glossary/#contract-address),<br> **default is null** | Sender address of transaction on blockchain.  |
-|  **to** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) |   This will be the TokenHolder contract address of transaction initiator.|
-|  **nonce** <br> **Integer**, <br> **default is null**| Transaction counter of sender address which helps prevents replay attacks.  |
-| **value**  <br> **String \<BigInt\>**, <br> **default is null**| Transfered OST amount in `Wei`   |
-| **gas_price**<br> **String \<BigInt\>** | The Wei per unit of gas provided by the sender in wei.   |
-| **gas_used** <br> **Integer**, <br> **default is null**| Gas used by this transaction  |
-| **transaction_fee** <br> **String \<BigInt\>**, <br> **default is null** | This is calculated by multiplying `gas_price` and `gas_used` (gas_price * gas_used) in `Wei`  |
-| **block_confirmation** <br>  **Integer**, <br> **default is null**| Number of blocks mined after the transaction was mined  |
-| **status**  <br> **String**| Status can take one of the following values: <br> CREATED / SUBMITTED / MINED / SUCCESS / FAILED <br> `CREATED`: Transaction is accepted by OST Platform.<br> `SUBMITTED`: Transaction is submitted on blockchain. <br> `MINED`: Transaction is successful but waiting for 6 block confirmation. At this stage transaction is not be visible in the ledger of `to` address of `transfers`.<br>`SUCCESS`: Transaction succeeded<br>`FAILED`: Transaction failed. |
-| **updated_timestamp** <br>  **EPOCH \<time in seconds\>**| Last update timestamp.   |
-| **block_timestamp** <br>  **EPOCH \<time in seconds\>**, <br> **default is null** | Timestamp when the block was collated  |
-| **block_number** <br> **Integer** , <br> **default is null**| Block number in which the transaction was present.  |
-| **rule_name** <br> **String**, <br> **default is null**| Name of the rule which is to be executed.  |
-| **transfers** <br> **Array** <br> <span class="child-table-toggle" data-target="transaction-transfers">Show child attributes</span>| Array of transfer details object. A transaction may include multiple transfers. |
-| **meta_property** <br> **Hash** <br> <span class="child-table-toggle" data-target="transaction-meta-property-1">Show child attributes</span>| Extra information about the transfer.   |
-
-
-<table id="transaction-transfers" style="display:none;">
-  <tr class="transaction-transfers child-row" >
-    <td>
-      <strong>From</strong> 
-      <br> 
-      <strong>String</strong> <a href="/platform/docs/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
-    </td>
-
-    <td>
-     Brand Token sender's address.
-    </td>
-
-  </tr>
-
-  <tr class="transaction-transfers child-row" >
-    <td>
-      <strong>from_user_id</strong>
-      <br> 
-      <strong>String 	&lt;uuid v4&gt;</strong>
-      , <br> <strong>default is null</strong>
-    </td>
-
-    <td>
-    <code>User id</code> of <code>from</code> address if the user is known.
-    </td>
-  </tr>
-
-  <tr class="transaction-transfers child-row" >
-    <td>
-      <strong>to </strong>
-      <br> 
-      <strong>String</strong> <a href="/platform/docs/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
-    </td>
-
-    <td>
-    Brand Token receiver address
-    </td>
-  </tr>
-
-  <tr class="transaction-transfers child-row" >
-    <td>
-      <strong>to_user_id</strong>
-      <br> 
-      <strong>String 	&lt;uuid v4&gt;</strong>
-      , <br> <strong>default is null</strong>
-    </td>
-
-    <td>
-     <code>User id</code> of <code>to</code> address if the user is known.
-    </td>
-  </tr>
-
-  <tr class="transaction-transfers child-row" >
-    <td>
-      <strong>amount</strong>
-      <br> 
-      <strong>String &lt;BigInt&gt; </strong> 
-    </td>
-
-    <td>
-    Brand Token amount transferred in Wei
-    </td>
-  </tr>
-
-  <tr class="transaction-transfers child-row" >
-    <td>
-      <strong>kind</strong>
-      <br> 
-      <strong>String</strong>
-    </td>
-
-    <td>
-    The value for this will be <code>transfer</code>
-    </td>
-  </tr>
-
-</table>
-
-
-<table id="transaction-meta-property-1" style="display:none;">
-  <tr class="transaction-meta-property-1 child-row" >
-    <td>
-      <strong>name</strong> 
-      <br> 
-      <strong>String</strong>
-      
-      
-    </td>
-
-    <td>
-      Name for the transaction. Only numbers, alphabets, spaces, "-" and "_" are allowed.<br> <strong>Max length is 25 characters</strong> .
-    </td>
-
-  </tr>
-
-  <tr class="transaction-meta-property-1 child-row" >
-    <td>
-      <strong>type</strong>
-      <br> 
-      <strong>String</strong>
-    </td>
-
-    <td>
-    String representing the type of transaction. It can have one of the following value: 
-    <code>user_to_user</code>, <code>company_to_user</code> and <code>user_to_company</code>.
-    </td>
-  </tr>
-
-  <tr class="transaction-meta-property-1 child-row" >
-    <td>
-      <strong>details</strong>
-      <br> 
-      <strong>String</strong>
-    </td>
-
-    <td>
-    String value having some extra information about transaction. <br> <strong>Max length is 120 characters</strong> .
-    </td>
-  </tr>
-</table>
-
-
-## Execute a transaction
-
-```php
-<?php
-require 'vendor/autoload.php';
-
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
-
-// The config field is optional
-$configParams = array();
-// Request timeout in seconds. Default is 10 seconds.
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
-
-$ostObj = new OSTSdk($params);
-
-$transactionService = $ostObj->services->transactions;
-
-$executeParams = array();
-
-
-// Direct Brand Token Transfer 
-$executeParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
-$executeParams['to'] = '0x64315ba1018307d6bc0380fa8eb8af210991ccbc';
-$rawCallData = array();
-$transferTo = array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496");
-$transferAmount = array("10");
-$rawCallData['method'] = 'directTransfers';
-$rawCallData['parameters'] = array($transferTo, $transferAmount);
-$metaProperty['details']='this is test';
-$metaProperty['type']='company_to_user';
-$metaProperty['name']='download_download_';
-$executeParams['meta_property']=$metaProperty;
-$executeParams['raw_calldata'] = json_encode($rawCallData);
-$response = $transactionService->execute($executeParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-
-// Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
-$transactionService = $ostObj->services->transactions;
-$executeParams = array();
-$executeParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
-$executeParams['to'] = '0x1a83bc05cc3ae1b19f2359d847e2589d9d91fb90';
-$rawCallData = array();
-$transferTo = array("0xE0b6B80d7f1f492410C53c10f279051Ec5B836a2");
-$transferAmount = array("1000000000000000000");
-$rawCallData['method'] = 'pay';
-$tokenHolderAddress = '0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee';
-$payCurrencyCode = 'USD';
-$ostToUsdInWei = '1000000000000';
-$rawCallData['parameters'] = array($tokenHolderAddress, $transferTo, $transferAmount, $payCurrencyCode, $ostToUsdInWei);
-$executeParams['raw_calldata'] = json_encode($rawCallData);
-echo json_encode($executeParams, JSON_PRETTY_PRINT);
-$response = $transactionService->execute($executeParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-
-
-?>
-```
-
-#### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/transactions
-
-
-Execute transaction API allows you to do `company-to-user` transactions. `user-to-user` and `user-to-company` transactions will be managed by Wallet SDK. <br>
-
-**Types of company-to-user transactions:**
-[Rules contract](/platform/docs/wallet/fundamentals/#rules-contract) for both the types of transactions are different.
-
-
-1. Transfering amount in brand tokens (`directTransfer`) : In this type of `company-to-user` transaction the amount of brand token set by client company server will be transfered directly to the receiver user. 
-
-
-2. Transfering brand token by fixing the fiat currency value (`pay`): In this type of `company-to-user` transaction the amount of fiat passed will first be converted into brand token. After this conversion the transfer will for converted brand token amount.
-
-
-<u>**URL Parameters**</u>
-
-| Parameter  | Description  |
-|---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-
-
-<u>**POST Parameters**</u>
-
-| Parameter  | Description  |
-|---|---|
-| **to** <br> **Required**   | Rule address |
-| **raw_calldata** <br> **Required** <br> <span class="child-table-toggle" data-target="transaction-row-calldata">Show child attributes</span>  | Parameters required for rule execution |
-| **meta_property** <br> **Required** <br> <span class="child-table-toggle" data-target="transaction-meta-property-2">Show child attributes</span>  | Extra information about the transfer.  |
-
-<table id="transaction-row-calldata" style="display:none;">
-  <tr class="transaction-row-calldata child-row" >
-    <td>
-      <strong>method</strong> 
-      <br> 
-      <strong>Required</strong>
-    </td>
-    <td>
-      Method can take one of the two possibe values:<br>
-      1. <code>directTransfer</code>: Value should be <code>directTransfer</code> if you want to do transfers in Brand Token as a currency.<br>
-      2. <code>pay</code>: Value should be <code>pay</code>  if you want to do transfers in any fiat currency. The transfer happens in Brand Token but here the value of Brand Token to be transfered is derived by converting the fiat into Brand Token.
-    </td>
-  </tr>
-
-  <tr class="transaction-row-calldata child-row" >
-    <td>
-      <strong>parameters</strong>
-      <br> 
-      <strong>Required</strong>
-    </td>
-
-    <td>
-    Array of parameters to be sent to the method. <br> [['0xasd..', '0xasas..'], ['121212', '232323']].
-    </td>
-  </tr>
-</table>
-
-<table id="transaction-meta-property-2" style="display:none;">
-  <tr class="transaction-meta-property-2 child-row" >
-    <td>
-      <strong>name</strong> 
-      <br> 
-      <strong>String</strong>
-      
-      
-    </td>
-
-    <td>
-      Name for the transaction. Only numbers, alphabets, spaces, "-" and "_" are allowed.<br> <strong>Max length is 25 characters</strong> .
-    </td>
-  </tr>
-
-  <tr class="transaction-meta-property-2 child-row" >
-    <td>
-      <strong>type</strong>
-      <br> 
-      <strong>String</strong>
-    </td>
-
-    <td>
-      String representing the type of transaction. It can have one of the following value: 
-      <code>user_to_user</code>, <code>company_to_user</code> and <code>user_to_company</code>.
-    </td>
-  </tr>
-
-  <tr class="transaction-meta-property-2 child-row" >
-     <td>
-      <strong>details</strong>
-      <br> 
-      <strong>String</strong>
-    </td>
-
-    <td>
-    String value having some extra information about transaction. <br> <strong>Max length is 120 characters</strong> .
-    </td>
-  </tr>
-</table>
-
-<u>**Success Response**</u><br>
-This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `transaction`.<br><br>
-
-The value of `data.result_type` property will be `transaction` and transaction object will be available under `data.transaction` property. The example response is given on the right hand side. 
-
-> directTransfer Execute Transaction - Example Response
-
-```json
-{
-  "success":true,
-  "data":{
-    "result_type":"transaction",
-    "transaction":{
-      "id":"e2c6cba9-ef2a-4da2-8a23-f6b3421a938c",
-      "transaction_hash":null,
-      "from":null,
-      "to":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
-      "nonce":null,
-      "value":null,
-      "gas_price":"1000000000",
-      "gas_used":null,
-      "transaction_fee":null,
-      "block_confirmation":null,
-      "status":"CREATED",
-      "updated_timestamp":1552536269,
-      "block_timestamp":null,
-      "block_number":null,
-      "rule_name":null,
-      "meta_property":{
-        "name":"download_download_",
-        "type":"company_to_user",
-        "details":"this is test"
-      },
-      "transfers":[
-        {
-          "from":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
-          "from_user_id":"724ed66c-8a0a-477e-b303-b0486e2a3797",
-          "to":"0xc3b9b4a5c1997d73cd8d9d0fb95aa945e68e0496",
-          "to_user_id":"9e847ac4-1bd8-498f-b601-51a56bbca076",
-          "kind":"transfer"
-        }
-      ]
-    }
-  }
-}
-```
-
-
-> pay Execute Transaction  - Example response
-
-```json
-{
-  "success":true,
-  "data":{
-    "result_type":"transaction",
-    "transaction":{
-      "id":"217f8731-0215-4fb6-85b0-a37bb40e0c3d",
-      "transaction_hash":null,
-      "from":null,
-      "to":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
-      "nonce":null,
-      "value":null,
-      "gas_price":"1000000000",
-      "gas_used":null,
-      "transaction_fee":null,
-      "block_confirmation":null,
-      "status":"CREATED",
-      "updated_timestamp":1552502121,
-      "block_timestamp":null,
-      "block_number":null,
-      "rule_name":null,
-      "meta_property":[
-
-      ],
-      "transfers":[
-        {
-          "from":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
-          "from_user_id":"724ed66c-8a0a-477e-b303-b0486e2a3797",
-          "to":"0xe0b6b80d7f1f492410c53c10f279051ec5b836a2",
-          "to_user_id":"80fad9b8-d25c-45d9-a6a8-38ca4f6ece5d",
-          "kind":"transfer"
-        }
-      ]
-    }
-  }
-}
-```
-
-## Get a transaction details
-
-
-```php
-<?php
-require 'vendor/autoload.php';
-
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
-
-// The config field is optional
-$configParams = array();
-// Request timeout in seconds. Default is 10 seconds.
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
-
-$ostObj = new OSTSdk($params);
-
-
-$transactionService = $ostObj->services->transactions;
-
-
-$getParams = array();
-$getParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
-$getParams['transaction_id'] = 'c03dde62-5baa-417d-8e64-8cd94dc950e9';
-$response = $transactionService->get($getParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-
-?>
-```
-
-#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions/{transaction_id}
-
-
-
-<u>**URL Parameters**</u>
-
-| Parameter  | Description  |
-|---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-| **transaction_id** <br> **Required**   | Unique Identifier of the transaction to be retrieved  |
-
-
-
-<u>**Success Response**</u><br>
-This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `transaction`.<br><br>
-
-The value of `data.result_type` property will be `transaction` and transaction object will be available under `data.transaction` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
-
-> Get Transaction - Example Response
-
-```php
-<?php
-require 'vendor/autoload.php';
-
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
-
-// The config field is optional
-$configParams = array();
-// Request timeout in seconds. Default is 10 seconds.
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
-
-$ostObj = new OSTSdk($params);
-
-
-$transactionService = $ostObj->services->transactions;
-
-
-$getParams = array();
-$getParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
-$getParams['transaction_id'] = 'c03dde62-5baa-417d-8e64-8cd94dc950e9';
-$response = $transactionService->get($getParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-
-?>
-```
-
-```json
-{
-  "success":true,
-  "data":{
-    "result_type":"transaction",
-    "transaction":{
-      "id":"c03dde62-5baa-417d-8e64-8cd94dc950e9",
-      "transaction_hash":"0x635e685f0c7d0c376c181ae277937b222bd2d0f4f06500975713ee32a5300429",
-      "from":"0x27b071bd8d486bf54e13a449127f2625b8da96b6",
-      "to":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
-      "nonce":261,
-      "value":"0",
-      "gas_price":"1000000000",
-      "gas_used":109931,
-      "transaction_fee":"109931000000000",
-      "block_confirmation":77940,
-      "status":"SUCCESS",
-      "updated_timestamp":1552302936,
-      "block_timestamp":1552302935,
-      "block_number":400120,
-      "rule_name":"Direct Transfer",
-      "meta_property":{
-        "name":"test name",
-        "type":"user_to_user",
-        "details":"verifying meta property"
-      },
-      "transfers":[
-        {
-          "from":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
-          "from_user_id":"724ed66c-8a0a-477e-b303-b0486e2a3797",
-          "to":"0xa7261667e6ec6768f6309c7d907dcad7acf0bafa",
-          "to_user_id":"8caa6412-ab11-41d6-8177-2928e948a9a8",
-          "amount":"5",
-          "kind":"transfer"
-        }
-      ]
-    }
-  }
-}
-```
-
-## Get all User's Transactions
-
-```php
-<?php
-require 'vendor/autoload.php';
-
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
-
-// The config field is optional
-$configParams = array();
-// Request timeout in seconds. Default is 10 seconds.
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
-
-$ostObj = new OSTSdk($params);
-
-$transactionService = $ostObj->services->transactions;
-
-$getParams = array();
-$getParams['user_id'] = '10543373-5eb5-4dce-8fac-dff38ba941ba';
-$getParams['limit']='2';
-//$getParams['status']=array('FAILED');
-//$getParams['pagination_identifier'] = 'eyJmcm9tIjoyLCJsaW1pdCI6MSwibWV0YV9wcm9wZXJ0eSI6W10sInN0YXR1cyI6WyJGQUlMRUQiXX0=';
-$response = $transactionService->getList($getParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-
-?>
-```
-
-#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions
-
-
-<u>**URL Parameters**</u>
-
-| Parameter  | Description  |
-|---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-
-<u>**Query Parameters**</u>
-
-| Parameter  | Description  |
-|---|---|
-| **meta_property** <br> **Optional**   | List of meta properties. |
-| **status** <br> **Optional**   | List of status values. |
-| **limit** <br> **Optional**   |  Limit on the number of transactions to be returned. Max limit is 25.  **Default value of limit is 10**. |
-
-<u>**Success Response**</u><br>
-This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `transactions` and `meta`.<br><br>
-
-The value of `data.result_type` property will be `transactions` and list of transactions will be available under `data.transactions` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
-
-> List all Transactions - Example Response
-
-```json
-{
-  "success": true,
-  "data": {
-    "result_type": "transactions",
-    "transactions": [
-      {
-        "id": "5247144a-5773-4aa8-95df-e50900744e89",
-        "transaction_hash": "0xcb66cfeb819c7516a1599eee05b482b47360b85849d725fec65f3bcb19069673",
-        "from": "0x27b071bd8d486bf54e13a449127f2625b8da96b6",
-        "to": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
-        "nonce": 87,
-        "value": "0",
-        "gas_price": "1000000000",
-        "gas_used": 171526,
-        "transaction_fee": "171526000000000",
-        "block_confirmation": 175101,
-        "status": "SUCCESS",
-        "updated_timestamp": 1551977293,
-        "block_timestamp": 1551977290,
-        "block_number": 291588,
-        "rule_name": "Direct Transfer",
-        "meta_property": [],
-        "transfers": [
-          {
-            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
-            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "to": "0xa8a4849aee244aad079dde66c32f333a8b1cb83c",
-            "to_user_id": "dc2a3554-ec6b-4a90-aa13-4ce243512e60",
-            "amount": "1",
-            "kind": "transfer"
-          },
-          {
-            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
-            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "to": "0xccb16ddecf1f1d9630d41403727262f21a2f78d4",
-            "to_user_id": "11b928e7-12c6-47f6-9892-ac1beb375e29",
-            "amount": "1",
-            "kind": "transfer"
-          },
-          {
-            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
-            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "to": "0xe41663ed79b7ba0bcb79a7314277cb53d3833467",
-            "to_user_id": "9ea4ae81-c866-44b4-afb4-2c9ca7081bd7",
-            "amount": "1",
-            "kind": "transfer"
+          "next_page_payload": {
+            "pagination_identifier": "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiY2RiZWE3NzctMjI5Ni00MjIwLWEyZTItZDM1YWMyMmU2ZDBiIn0sIndhIjp7IlMiOiIweDFmOWUwNmE1YzRhYmVjMzZhNjhiZGM5NzZmZGU1NDEyN2QwMjQ4NjYifX0sInBhZ2UiOjIsImxpbWl0IjoyfQ=="
           }
-        ]
-      },
-      {
-        "id": "fdad6521-2ae1-4e71-b955-f33f426e6755",
-        "transaction_hash": "0x9c63556c8daf9affdcb25c762ce652df5cd929b244b63aa300689f3a5d86de5b",
-        "from": "0x27b071bd8d486bf54e13a449127f2625b8da96b6",
-        "to": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
-        "nonce": 85,
-        "value": "0",
-        "gas_price": "1000000000",
-        "gas_used": 148228,
-        "transaction_fee": "148228000000000",
-        "block_confirmation": 176048,
-        "status": "SUCCESS",
-        "updated_timestamp": 1551974451,
-        "block_timestamp": 1551974449,
-        "block_number": 290641,
-        "rule_name": "Direct Transfer",
-        "meta_property": [],
-        "transfers": [
-          {
-            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
-            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "to": "0xccb16ddecf1f1d9630d41403727262f21a2f78d4",
-            "to_user_id": "11b928e7-12c6-47f6-9892-ac1beb375e29",
-            "amount": "1",
-            "kind": "transfer"
-          },
-          {
-            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
-            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "to": "0x8b31c35d65b15ff7b0e2f625d136051f5cc7f69c",
-            "to_user_id": "96814662-ae0b-461d-a85f-73a8c4706769",
-            "amount": "3",
-            "kind": "transfer"
-          }
-        ]
-      }
-    ],
-    "meta": {
-      "next_page_payload": {
-        "pagination_identifier": "eyJmcm9tIjoyLCJsaW1pdCI6MiwibWV0YV9wcm9wZXJ0eSI6W10sInN0YXR1cyI6W119"
-      },
-      "total_no": 22
-    }
-  }
-}
-```
-
-
-
-
-
-
-
-
-
-
-
-# Token
-
-Token object contains details about economy and various contract addresses. One economy will have only one `token` object. This object is created during economy setup in dashboard so using API you can only make a `GET` request.
-
-## Token Object
-
-
-| Attribute  | Description  |
-|---|---|
-| **id** <br> **Integer**  | Unique identifier of token.  |
-| **name** <br> **String** | Token name |
-| **symbol** <br> **String** | Token symbol |
-| **conversion_factor** <br> **Float**  | Number of Brand Token in one OST.  |
-| **total_supply** <br> **String \<BigInt\>** | Total supply of Brand Tokens  |
-| **decimals** <br> **Integer** | `10^decimals` brand token Wei makes one Brand Token  |
-| **origin_chains** <br> **Hash** <br> <span class="child-table-toggle" data-target="token-origin-chain">Show child attributes</span>| Origin chain details  |
-| **auxiliary_chain** <br> **Array** <br> <span class="child-table-toggle" data-target="token-auxiliary-chain">Show child attributes</span> | List of auxiliary chain details  |
-| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
-
-
-<table id="token-origin-chain" style="display:none;">
-  <tr class="token-origin-chain child-row" >
-    <td>
-      <strong>chain_id</strong> 
-      <br> 
-      <strong>Integer</strong>
-    </td>
-
-    <td>
-    Unique identifier for origin chain. For ethereum it is 1, for ropsten it is 3.
-
-    </td>
-  </tr>
-
-  <tr class="token-origin-chain child-row" >
-    <td>
-      <strong>branded_token</strong>
-      <br> 
-      <strong>String</strong> <a href="/platform/docs/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
-    </td>
-
-    <td>
-      Brand Token contract address on origin chain 
-    </td>
-  </tr>
-
-
-  <tr class="token-origin-chain child-row" >
-    <td>
-      <strong>organization</strong>
-      <br> 
-      <strong>Hash</strong>
-
-      <br> <span class="child-table-toggle" data-target="origin-org">Show child attributes</span>
-    </td>
-
-    <td>
-      Brand Token organization contract details
-    </td>
-  </tr>
-
-
-  <tr class="token-origin-chain child-row" >
-    <td>
-      <strong>stakers</strong>
-      <br> 
-      <strong>Array</strong>
-    </td>
-
-    <td>
-      List of addresses that can stake and mint brand tokens.
-    </td>
-  </tr>
-
-  
-</table>
-
-<table id="token-auxiliary-chain" style="display:none;">
-  <tr class="token-auxiliary-chain child-row" >
-    <td>
-      <strong>chain_id</strong> 
-      <br> 
-      <strong>Integer</strong>
-    </td>
-
-    <td>
-     Unique identifier for auxiliary chain
-    </td>
-  </tr>
-
-  <tr class="token-auxiliary-chain child-row" >
-    <td>
-      <strong>utility_branded_token</strong>
-      <br> 
-      <strong>String</strong> <a href="/platform/docs/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
-    </td>
-
-    <td>
-      Uitility brand token contract address on auxiliary chain.
-    </td>
-  </tr>
-
-  <tr class="token-auxiliary-chain child-row" >
-    <td>
-      <strong>company_token_holders</strong>
-      <br> 
-      <strong>Array</strong> 
-    </td>
-
-    <td>
-      Company TokenHolder contract addresses.
-    </td>
-  </tr>
-
-  <tr class="token-auxiliary-chain child-row" >
-    <td>
-      <strong>organization</strong>
-      <br> 
-      <strong>Hash</strong> 
-    </td>
-
-    <td>
-      Utility Brand Token organization contract details
-    </td>
-  </tr>
-
-</table>
-
-
-<table id="origin-org" style="display:none;">
-  <tr class="origin-org child-row" >
-    <td>
-      <strong>name</strong> 
-      <br> 
-      <strong>String</strong>
-      
-      
-    </td>
-
-    <td>
-      Name for the transaction. Only numbers, alphabets, spaces, "-" and "_" are allowed.<br> <strong>Max length is 25 characters</strong> .
-    </td>
-  </tr>
-
-  <tr class="origin-org child-row" >
-    <td>
-      <strong>type</strong>
-      <br> 
-      <strong>String</strong>
-    </td>
-
-    <td>
-      String representing the type of transaction. It can have one of the following value: 
-      <code>user_to_user</code>, <code>company_to_user</code> and <code>user_to_company</code>.
-    </td>
-  </tr>
-
-</table>
-
-
-## Get Token
-
-```php
-<?php
-require 'vendor/autoload.php';
-
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
-
-// The config field is optional
-$configParams = array();
-// Request timeout in seconds. Default is 10 seconds.
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
-
-$ostObj = new OSTSdk($params);
-
-$tokenService = $ostObj->services->tokens;
-
-$getParams = array();
-$response = $tokenService->get($getParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-
-?>
-```
-
-#### <span> GET </span> &nbsp; &nbsp; /tokens
-
-
-<u>**Success Response**</u><br>
-
-This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `token`.<br><br>
-
-The value of `data.result_type` property will be `token` and token object will be available under `data.token` property. The example response is given on the right hand side. 
-
-
-> Get Token - Example Response
-
-```json
-{
-  "success": true,
-  "data": {
-      "result_type": "token",
-      "token": {
-          "id": 1085,
-          "name": "OSTD",
-          "symbol": "OSTD",
-          "conversion_factor": 1,
-          "total_supply": "20000000000000000000000",
-          "decimals": 18,
-          "origin_chain": {
-              "chain_id": 3,
-              "branded_token": "0xd31756555d3a28c990c39fb85087e41afc09ff7a",
-              "organization": {
-                  "contract": "0x0a886e74747f5fed2db45c53df5e0c7b2bacc3d7",
-                  "owner": "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
-              },
-              "stakers": [
-                  "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
-              ]
-          },
-          "auxiliary_chains": [
-              {
-                  "chain_id": 199,
-                  "utility_branded_token": "0xdd7df6a4ec6a0c2edd051da875ab9a32e9567869",
-                  "company_token_holders": [
-                      "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee"
-                  ],
-                  "organization": {
-                      "contract": "0x5e0c62d0f3f286461ef70e1a01e26bc766107912",
-                      "owner": "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
-                  }
-              }
-          ],
-          "updated_timestamp": 1551870482
       }
   }
 }
 
 ```
-
-
-
-
-
-
-
-
-
-
-# Balance
-Balance API offers the functionality to view a user’s balances.
-
-## Balance Object
-
-| Attribute  | Description  |
-|---|---|
-| **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-| **total_balance** <br> **String \<BigInt\>**| Settled brand token balance in Wei.  |
-| **available_balance** <br> **String \<BigInt\>** | Total brand token balance minus unsettled debits in Wei  |
-| **unsettled_debit** <br> **String \<BigInt\>** | Unsettled brand token balance in Wei. When the transaction is initiated brand token sender's balance gets [pessimistically debited](/platform/docs/glossary/#). When transaction is either is successful or failed, usettled debits are settled.   |
-| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
-
-
-## Get users balance
-
-```php
-<?php
-require 'vendor/autoload.php';
-
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
-
-// The config field is optional
-$configParams = array();
-// Request timeout in seconds. Default is 10 seconds.
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
-
-$ostObj = new OSTSdk($params);
-
-$balanceService = $ostObj->services->balances;
-
-$getParams = array();
-$getParams['user_id'] = '10543373-5eb5-4dce-8fac-dff38ba941ba';
-$response = $balanceService->get($getParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-?>
-```
-#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/balance
-
-
-<u>**URL Parameters**</u>
-
-| Parameter  | Description  |
-|---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-
-
-<u>**Success Response**</u><br>
-
-This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `balance`.<br><br>
-
-The value of `data.result_type` property will be `balance` and balance object will be available under `data.balance` property. The example response is given on the right hand side. 
-
-> Get Balance - Example Response
-
-```json
-{
-  "success": true,
-  "data": {
-    "result_type": "balance",
-    "balance": {
-      "user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-      "total_balance": "2100001999999999954",
-      "available_balance": "2100001999999999954",
-      "unsettled_debit": "0",
-      "updated_timestamp": 1552302438
-    }
-  }
-}
-
-```
-
-
-
-
-
-
-
-
-
-
-# Recovery Owner
-
-A user’s Brand Tokens are held by a [TokenHolder contract](/platform/docs/wallet/fundamentals/#tokenholder-contracts) that is controlled ("owned") by a [Device Manager](/platform/docs/wallet/fundamentals/#device-manager-a-multisig-contract); the device manager is controlled ("owned") by [device keys](/platform/docs/wallet/fundamentals/#owner-key-device-key) created and held by the user in their wallets and if any of those keys is lost, the Device Manager (which is a multi-signature contract) is programmed to allow the replacement of a key by the recovery owner key for the user, via the `DelayedRecoveryModule`, which is deployed at the time of the creation of the user's initial wallet.
-
-This API is used to get the status of newly created recovery owner key
-
-## Recovery Owner Object
-
-| Attribute  | Description  |
-|---|---|
-| **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-| **address**  <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address) | This is the public address knowns as recovery owner address. This key has authorization to replace the lost device address key using `DelayedRecoveryModule`. |
-| **status** <br> **String** | Status can be one of the following values: <br> AUTHORIZATION_FAILED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED <br> `AUTHORIZING`: Default status when the recovery owner is created during user activation.<br>`AUTHORIZED`: Status when recovery owner address is authorized successfully during user activation. <br>  |
-
-
-
-## Get recovery owner
-
-```php
-<?php
-require 'vendor/autoload.php';
-
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
-
-// The config field is optional
-$configParams = array();
-// Request timeout in seconds. Default is 10 seconds.
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
-
-$ostObj = new OSTSdk($params);
-
-$recoveryOwnersService = $ostObj->services->recoveryOwners;
-
-$getParams = array();
-$getParams['user_id'] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9';
-$response = $recoveryOwnersService->get($getParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-
-?>
-```
-
-#### <span>GET</span> &nbsp; &nbsp; /users/{user_id}/recovery-owners/{recovery_owner_address}
-
-<u>**URL Parameters**</u>
-
-| Parameter  | Description  |
-|---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-| **recovery_owner_address** <br> **Required**   | This will be the recovery public addres generated. |
-
-
-<u>**Success Response**</u><br>
-
-This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `recovery_owner`.<br><br>
-
-The value of `data.result_type` property will be `recovery_owner` and recovery_owner object will be available under `data.recovery_owner` property. The example response is given on the right hand side. 
-
-> Get Recovery Owner - Example Response
-
-```json
-{
-   "success": true,
-   "data": {
-     "result_type": "recovery_owner",
-     "recovery_owner": {
-        "user_id": "{user_id}", //UUID V4
-        "address": "0x...", //Address
-        "status": "AUTHORIZATION_FAILED/AUTHORIZING/AUTHORIZED/REVOKING/REVOKED", //String
-        "updated_timestamp": "12344.." //Timestamp
-    }
-  } 
-}
-
-```
-
-
 
 
 
 
 # Rules 
+
+When executing a token transfer, a user's TokenHolder contract interacts with a token rule contract. A token economy can have multiple token rule contracts. To enable a user to execute a token transfer, you need to start with fetching details of registered rule contracts, understanding their methods and the corresponding parameters passed in those methods.
 
 ## Rules Object
 
@@ -2406,7 +1267,7 @@ The value of `data.result_type` property will be `recovery_owner` and recovery_o
 |  **id** <br> **Integer**| Integer identifier of the rule |
 | **token_id**  <br> **Integer** | Token id is the unique identifier for your brand token.  |
 | **name** <br> **String** | Name of the rule smart contract.  |
-| **address** <br> **String** [**\<Address\>**](/platform/docs/glossary/#contract-address)  | This will be the rule smart contract address.   |
+| **address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address)  | This will be the rule smart contract address.   |
 |  **abi** <br> **String** | [Abi object](https://solidity.readthedocs.io/en/develop/abi-spec.html)  for rule smart contract.  |
 
 ## List all Rules
@@ -3230,6 +2091,1126 @@ The value of `data.result_type` property will be `price_point` and price point o
 
 
 
+
+
+
+# Transactions
+`Transactions` API allows you to do company-to-user transactions. You can also `get` a user's transaction and `list` all user's transaction.
+
+
+
+## Transaction Object
+
+| Attribute  | Description  |
+|---|---|
+| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique Indentifeir of transaction   |
+| **transaction_hash** <br> **String [**\<tx hash\>**](/platform/docs/additional_resources/glossary/#tx-hash), <br> **default is null** | Hash of the transaction in blockchain  |
+|  **from**  <br> **String**,  [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address),<br> **default is null** | Sender address of transaction on blockchain.  |
+|  **to** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) |   This will be the TokenHolder contract address of transaction initiator.|
+|  **nonce** <br> **Integer**, <br> **default is null**| Transaction counter of sender address which helps prevents replay attacks.  |
+| **value**  <br> **String \<BigInt\>**, <br> **default is null**| Transfered [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) amount.   |
+| **gas_price**<br> **String \<BigInt\>** | The [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) per unit of gas provided by the sender. |
+| **gas_used** <br> **Integer**, <br> **default is null**| Gas used by this transaction  |
+| **transaction_fee** <br> **String \<BigInt\>**, <br> **default is null** | This is calculated by multiplying `gas_price` and `gas_used` (gas_price * gas_used) in [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost)  |
+| **block_confirmation** <br>  **Integer**, <br> **default is null**| Number of blocks mined after the transaction was mined  |
+| **status**  <br> **String**| Status can take one of the following values: <br> CREATED / SUBMITTED / MINED / SUCCESS / FAILED <br> `CREATED`: Transaction is accepted by OST Platform.<br> `SUBMITTED`: Transaction is submitted on blockchain. <br> `MINED`: Transaction is successful but waiting for 6 block confirmation. At this stage transaction is not be visible in the ledger of `to` address of `transfers`.<br>`SUCCESS`: Transaction succeeded<br>`FAILED`: Transaction failed. |
+| **updated_timestamp** <br>  **EPOCH \<time in seconds\>**| Last update timestamp.   |
+| **block_timestamp** <br>  **EPOCH \<time in seconds\>**, <br> **default is null** | Timestamp when the block was collated  |
+| **block_number** <br> **Integer** , <br> **default is null**| Block number in which the transaction was present.  |
+| **rule_name** <br> **String**, <br> **default is null**| Name of the rule which is to be executed.  |
+| **transfers** <br> **Array** <br> <span class="child-table-toggle" data-target="transaction-transfers">Show child attributes</span>| Array of transfer details object. A transaction may include multiple transfers. |
+| **meta_property** <br> **Hash** <br> <span class="child-table-toggle" data-target="transaction-meta-property-1">Show child attributes</span>| Extra information about the transfer.   |
+
+
+<table id="transaction-transfers" style="display:none;">
+  <tr class="transaction-transfers child-row" >
+    <td>
+      <strong>From</strong> 
+      <br> 
+      <strong>String</strong> <a href="/platform/docs/additional_resources/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
+    </td>
+
+    <td>
+     Brand Token sender's address.
+    </td>
+
+  </tr>
+
+  <tr class="transaction-transfers child-row" >
+    <td>
+      <strong>from_user_id</strong>
+      <br> 
+      <strong>String 	&lt;uuid v4&gt;</strong>
+      , <br> <strong>default is null</strong>
+    </td>
+
+    <td>
+    <code>User id</code> of <code>from</code> address if the user is known.
+    </td>
+  </tr>
+
+  <tr class="transaction-transfers child-row" >
+    <td>
+      <strong>to </strong>
+      <br> 
+      <strong>String</strong> <a href="/platform/docs/additional_resources/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
+    </td>
+
+    <td>
+    Brand Token receiver address
+    </td>
+  </tr>
+
+  <tr class="transaction-transfers child-row" >
+    <td>
+      <strong>to_user_id</strong>
+      <br> 
+      <strong>String 	&lt;uuid v4&gt;</strong>
+      , <br> <strong>default is null</strong>
+    </td>
+
+    <td>
+     <code>User id</code> of <code>to</code> address if the user is known.
+    </td>
+  </tr>
+
+  <tr class="transaction-transfers child-row" >
+    <td>
+      <strong>amount</strong>
+      <br> 
+      <strong>String &lt;BigInt&gt; </strong> 
+    </td>
+
+    <td>
+    Transferred amount in [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token).
+    </td>
+  </tr>
+
+  <tr class="transaction-transfers child-row" >
+    <td>
+      <strong>kind</strong>
+      <br> 
+      <strong>String</strong>
+    </td>
+
+    <td>
+    The value for this will be <code>transfer</code>
+    </td>
+  </tr>
+
+</table>
+
+
+<table id="transaction-meta-property-1" style="display:none;">
+  <tr class="transaction-meta-property-1 child-row" >
+    <td>
+      <strong>name</strong> 
+      <br> 
+      <strong>String</strong>
+      
+      
+    </td>
+
+    <td>
+      Name for the transaction. Only numbers, alphabets, spaces, "-" and "_" are allowed.<br> <strong>Max length is 25 characters</strong> .
+    </td>
+
+  </tr>
+
+  <tr class="transaction-meta-property-1 child-row" >
+    <td>
+      <strong>type</strong>
+      <br> 
+      <strong>String</strong>
+    </td>
+
+    <td>
+    String representing the type of transaction. It can have one of the following value: 
+    <code>user_to_user</code>, <code>company_to_user</code> and <code>user_to_company</code>.
+    </td>
+  </tr>
+
+  <tr class="transaction-meta-property-1 child-row" >
+    <td>
+      <strong>details</strong>
+      <br> 
+      <strong>String</strong>
+    </td>
+
+    <td>
+    String value having some extra information about transaction. <br> <strong>Max length is 120 characters</strong> .
+    </td>
+  </tr>
+</table>
+
+
+## Execute a transaction
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$transactionService = $ostObj->services->transactions;
+
+$executeParams = array();
+
+
+// Direct Brand Token Transfer 
+$executeParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
+$executeParams['to'] = '0x64315ba1018307d6bc0380fa8eb8af210991ccbc';
+$rawCallData = array();
+$transferTo = array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496");
+$transferAmount = array("10");
+$rawCallData['method'] = 'directTransfers';
+$rawCallData['parameters'] = array($transferTo, $transferAmount);
+$metaProperty['details']='this is test';
+$metaProperty['type']='company_to_user';
+$metaProperty['name']='download_download_';
+$executeParams['meta_property']=$metaProperty;
+$executeParams['raw_calldata'] = json_encode($rawCallData);
+$response = $transactionService->execute($executeParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+
+// Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
+$transactionService = $ostObj->services->transactions;
+$executeParams = array();
+$executeParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
+$executeParams['to'] = '0x1a83bc05cc3ae1b19f2359d847e2589d9d91fb90';
+$rawCallData = array();
+$transferTo = array("0xE0b6B80d7f1f492410C53c10f279051Ec5B836a2");
+$transferAmount = array("1000000000000000000");
+$rawCallData['method'] = 'pay';
+$tokenHolderAddress = '0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee';
+$payCurrencyCode = 'USD';
+$ostToUsdInatto = '1000000000000';
+$rawCallData['parameters'] = array($tokenHolderAddress, $transferTo, $transferAmount, $payCurrencyCode, $ostToUsdInatto);
+$executeParams['raw_calldata'] = json_encode($rawCallData);
+echo json_encode($executeParams, JSON_PRETTY_PRINT);
+$response = $transactionService->execute($executeParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+
+
+?>
+```
+
+#### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/transactions
+
+
+* Execute transaction API allows you to do `company-to-user` transactions. `user` initiated transactions will be managed by Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)). <br>
+
+
+* Rules decides the token behaviour during the transfer. You will have to get the rules details using [Rules API](/platform/docs/api/#rules) and then choose which rule you want to use to perform the transfer. It is important to  understand their methods and their parameters. There will be 2 rules available by default. Read more about these 2 rules in [execute transaction guide](/platform/docs/guides/execute_transaction/#rules-contract).
+
+
+* Details of method parameters are also available in [execute transaction guide](/platform/docs/guides/execute_transaction/#directtransfers-method-parameters).
+
+
+* Read the [execute company-to-user transaction guide](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions) to undertstand the complete `company-to-user` flow.
+
+
+
+
+<u>**URL Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+
+
+<u>**POST Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **to** <br> **Required**   | Rule address. You can get the rule address by using [list all rules](/platform/docs/api/#list-all-rules) API.  |
+| **raw_calldata** <br> **Required** <br> <span class="child-table-toggle" data-target="transaction-row-calldata">Show child attributes</span>  | Parameters required for rule execution. Parameter details are explained in [execute transaction guide](/platform/docs/guides/execute_transaction/#rules-contract) |
+| **meta_property** <br> **Required** <br> <span class="child-table-toggle" data-target="transaction-meta-property-2">Show child attributes</span>  | Extra information about the transfer.  |
+
+<table id="transaction-row-calldata" style="display:none;">
+  <tr class="transaction-row-calldata child-row" >
+    <td>
+      <strong>method</strong> 
+      <br> 
+      <strong>Required</strong>
+    </td>
+    <td>
+      Method can take one of the two possibe values:<br>
+      1. <code>directTransfer</code>: It is a method that enables a user or a company to directly transfer Brand Tokens to a beneficiary. <br>
+      2. <code>pay</code>:This method used to transfer the amount of brand token based on fiat amount. You will have to specify the fiat currency code and the amount in fiat currency. This amount will then be converted into brand token and then the transfer will happen in brand token.
+    </td>
+  </tr>
+
+  <tr class="transaction-row-calldata child-row" >
+    <td>
+      <strong>parameters</strong>
+      <br> 
+      <strong>Required</strong>
+    </td>
+
+    <td>
+    Array of parameters to be sent to the method. <br> [['0xasd..', '0xasas..'], ['121212', '232323']].
+    <br>
+    These parameters will be different for different rule methods. <br>Method parameters are explained in <a target="_blank" src="/platform/docs/guides/execute_transaction/#rules-contract">execute transaction guide</a>
+    </td>
+  </tr>
+</table>
+
+<table id="transaction-meta-property-2" style="display:none;">
+  <tr class="transaction-meta-property-2 child-row" >
+    <td>
+      <strong>name</strong> 
+      <br> 
+      <strong>String</strong>
+      
+      
+    </td>
+
+    <td>
+      Name for the transaction. Only numbers, alphabets, spaces, "-" and "_" are allowed.<br> <strong>Max length is 25 characters</strong> .
+    </td>
+  </tr>
+
+  <tr class="transaction-meta-property-2 child-row" >
+    <td>
+      <strong>type</strong>
+      <br> 
+      <strong>String</strong>
+    </td>
+
+    <td>
+      String representing the type of transaction. It can have one of the following value: 
+      <code>user_to_user</code>, <code>company_to_user</code> and <code>user_to_company</code>.
+    </td>
+  </tr>
+
+  <tr class="transaction-meta-property-2 child-row" >
+     <td>
+      <strong>details</strong>
+      <br> 
+      <strong>String</strong>
+    </td>
+
+    <td>
+    String value having some extra information about transaction. <br> <strong>Max length is 120 characters</strong> .
+    </td>
+  </tr>
+</table>
+
+<u>**Success Response**</u><br>
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `transaction`.<br><br>
+
+The value of `data.result_type` property will be `transaction` and transaction object will be available under `data.transaction` property. The example response is given on the right hand side. 
+
+> directTransfer Execute Transaction - Example Response
+
+```json
+{
+  "success":true,
+  "data":{
+    "result_type":"transaction",
+    "transaction":{
+      "id":"e2c6cba9-ef2a-4da2-8a23-f6b3421a938c",
+      "transaction_hash":null,
+      "from":null,
+      "to":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
+      "nonce":null,
+      "value":null,
+      "gas_price":"1000000000",
+      "gas_used":null,
+      "transaction_fee":null,
+      "block_confirmation":null,
+      "status":"CREATED",
+      "updated_timestamp":1552536269,
+      "block_timestamp":null,
+      "block_number":null,
+      "rule_name":null,
+      "meta_property":{
+        "name":"download_download_",
+        "type":"company_to_user",
+        "details":"this is test"
+      },
+      "transfers":[
+        {
+          "from":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
+          "from_user_id":"724ed66c-8a0a-477e-b303-b0486e2a3797",
+          "to":"0xc3b9b4a5c1997d73cd8d9d0fb95aa945e68e0496",
+          "to_user_id":"9e847ac4-1bd8-498f-b601-51a56bbca076",
+          "kind":"transfer"
+        }
+      ]
+    }
+  }
+}
+```
+
+
+> pay Execute Transaction  - Example response
+
+```json
+{
+  "success":true,
+  "data":{
+    "result_type":"transaction",
+    "transaction":{
+      "id":"217f8731-0215-4fb6-85b0-a37bb40e0c3d",
+      "transaction_hash":null,
+      "from":null,
+      "to":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
+      "nonce":null,
+      "value":null,
+      "gas_price":"1000000000",
+      "gas_used":null,
+      "transaction_fee":null,
+      "block_confirmation":null,
+      "status":"CREATED",
+      "updated_timestamp":1552502121,
+      "block_timestamp":null,
+      "block_number":null,
+      "rule_name":null,
+      "meta_property":[
+
+      ],
+      "transfers":[
+        {
+          "from":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
+          "from_user_id":"724ed66c-8a0a-477e-b303-b0486e2a3797",
+          "to":"0xe0b6b80d7f1f492410c53c10f279051ec5b836a2",
+          "to_user_id":"80fad9b8-d25c-45d9-a6a8-38ca4f6ece5d",
+          "kind":"transfer"
+        }
+      ]
+    }
+  }
+}
+```
+
+## Get a transaction details
+
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+
+$transactionService = $ostObj->services->transactions;
+
+
+$getParams = array();
+$getParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
+$getParams['transaction_id'] = 'c03dde62-5baa-417d-8e64-8cd94dc950e9';
+$response = $transactionService->get($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+
+?>
+```
+
+#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions/{transaction_id}
+
+
+
+<u>**URL Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **transaction_id** <br> **Required**   | Unique Identifier of the transaction to be retrieved  |
+
+
+
+<u>**Success Response**</u><br>
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `transaction`.<br><br>
+
+The value of `data.result_type` property will be `transaction` and transaction object will be available under `data.transaction` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
+
+> Get Transaction - Example Response
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+
+$transactionService = $ostObj->services->transactions;
+
+
+$getParams = array();
+$getParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
+$getParams['transaction_id'] = 'c03dde62-5baa-417d-8e64-8cd94dc950e9';
+$response = $transactionService->get($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+
+?>
+```
+
+```json
+{
+  "success":true,
+  "data":{
+    "result_type":"transaction",
+    "transaction":{
+      "id":"c03dde62-5baa-417d-8e64-8cd94dc950e9",
+      "transaction_hash":"0x635e685f0c7d0c376c181ae277937b222bd2d0f4f06500975713ee32a5300429",
+      "from":"0x27b071bd8d486bf54e13a449127f2625b8da96b6",
+      "to":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
+      "nonce":261,
+      "value":"0",
+      "gas_price":"1000000000",
+      "gas_used":109931,
+      "transaction_fee":"109931000000000",
+      "block_confirmation":77940,
+      "status":"SUCCESS",
+      "updated_timestamp":1552302936,
+      "block_timestamp":1552302935,
+      "block_number":400120,
+      "rule_name":"Direct Transfer",
+      "meta_property":{
+        "name":"test name",
+        "type":"user_to_user",
+        "details":"verifying meta property"
+      },
+      "transfers":[
+        {
+          "from":"0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
+          "from_user_id":"724ed66c-8a0a-477e-b303-b0486e2a3797",
+          "to":"0xa7261667e6ec6768f6309c7d907dcad7acf0bafa",
+          "to_user_id":"8caa6412-ab11-41d6-8177-2928e948a9a8",
+          "amount":"5",
+          "kind":"transfer"
+        }
+      ]
+    }
+  }
+}
+```
+
+## Get all User's Transactions
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$transactionService = $ostObj->services->transactions;
+
+$getParams = array();
+$getParams['user_id'] = '10543373-5eb5-4dce-8fac-dff38ba941ba';
+$getParams['limit']='2';
+//$getParams['status']=array('FAILED');
+//$getParams['pagination_identifier'] = 'eyJmcm9tIjoyLCJsaW1pdCI6MSwibWV0YV9wcm9wZXJ0eSI6W10sInN0YXR1cyI6WyJGQUlMRUQiXX0=';
+$response = $transactionService->getList($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+
+?>
+```
+
+#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions
+
+
+<u>**URL Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+
+<u>**Query Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **meta_property** <br> **Optional**   | List of meta properties. |
+| **status** <br> **Optional**   | List of status values. |
+| **limit** <br> **Optional**   |  Limit on the number of transactions to be returned. Max limit is 25.  **Default value of limit is 10**. |
+
+<u>**Success Response**</u><br>
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `transactions` and `meta`.<br><br>
+
+The value of `data.result_type` property will be `transactions` and list of transactions will be available under `data.transactions` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
+
+> List all Transactions - Example Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "transactions",
+    "transactions": [
+      {
+        "id": "5247144a-5773-4aa8-95df-e50900744e89",
+        "transaction_hash": "0xcb66cfeb819c7516a1599eee05b482b47360b85849d725fec65f3bcb19069673",
+        "from": "0x27b071bd8d486bf54e13a449127f2625b8da96b6",
+        "to": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
+        "nonce": 87,
+        "value": "0",
+        "gas_price": "1000000000",
+        "gas_used": 171526,
+        "transaction_fee": "171526000000000",
+        "block_confirmation": 175101,
+        "status": "SUCCESS",
+        "updated_timestamp": 1551977293,
+        "block_timestamp": 1551977290,
+        "block_number": 291588,
+        "rule_name": "Direct Transfer",
+        "meta_property": [],
+        "transfers": [
+          {
+            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
+            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
+            "to": "0xa8a4849aee244aad079dde66c32f333a8b1cb83c",
+            "to_user_id": "dc2a3554-ec6b-4a90-aa13-4ce243512e60",
+            "amount": "1",
+            "kind": "transfer"
+          },
+          {
+            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
+            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
+            "to": "0xccb16ddecf1f1d9630d41403727262f21a2f78d4",
+            "to_user_id": "11b928e7-12c6-47f6-9892-ac1beb375e29",
+            "amount": "1",
+            "kind": "transfer"
+          },
+          {
+            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
+            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
+            "to": "0xe41663ed79b7ba0bcb79a7314277cb53d3833467",
+            "to_user_id": "9ea4ae81-c866-44b4-afb4-2c9ca7081bd7",
+            "amount": "1",
+            "kind": "transfer"
+          }
+        ]
+      },
+      {
+        "id": "fdad6521-2ae1-4e71-b955-f33f426e6755",
+        "transaction_hash": "0x9c63556c8daf9affdcb25c762ce652df5cd929b244b63aa300689f3a5d86de5b",
+        "from": "0x27b071bd8d486bf54e13a449127f2625b8da96b6",
+        "to": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
+        "nonce": 85,
+        "value": "0",
+        "gas_price": "1000000000",
+        "gas_used": 148228,
+        "transaction_fee": "148228000000000",
+        "block_confirmation": 176048,
+        "status": "SUCCESS",
+        "updated_timestamp": 1551974451,
+        "block_timestamp": 1551974449,
+        "block_number": 290641,
+        "rule_name": "Direct Transfer",
+        "meta_property": [],
+        "transfers": [
+          {
+            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
+            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
+            "to": "0xccb16ddecf1f1d9630d41403727262f21a2f78d4",
+            "to_user_id": "11b928e7-12c6-47f6-9892-ac1beb375e29",
+            "amount": "1",
+            "kind": "transfer"
+          },
+          {
+            "from": "0xb72adba79137132f59e8f75cf9e471088771e1bd",
+            "from_user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
+            "to": "0x8b31c35d65b15ff7b0e2f625d136051f5cc7f69c",
+            "to_user_id": "96814662-ae0b-461d-a85f-73a8c4706769",
+            "amount": "3",
+            "kind": "transfer"
+          }
+        ]
+      }
+    ],
+    "meta": {
+      "next_page_payload": {
+        "pagination_identifier": "eyJmcm9tIjoyLCJsaW1pdCI6MiwibWV0YV9wcm9wZXJ0eSI6W10sInN0YXR1cyI6W119"
+      },
+      "total_no": 22
+    }
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+# Balance
+Balance API offers the functionality to view a user’s balances.
+
+## Balance Object
+
+| Attribute  | Description  |
+|---|---|
+| **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **total_balance** <br> **String \<BigInt\>**| Settled `Brand Token` balance in [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token).  |
+| **available_balance** <br> **String \<BigInt\>** | Total brand token balance minus unsettled debits in [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token)  |
+| **unsettled_debit** <br> **String \<BigInt\>** | Unsettled brand token balance in [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token). When the transaction is initiated brand token sender's balance gets [pessimistically debited](). When transaction is either successful or failed, usettled debits are settled.   |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
+
+
+## Get users balance
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$balanceService = $ostObj->services->balances;
+
+$getParams = array();
+$getParams['user_id'] = '10543373-5eb5-4dce-8fac-dff38ba941ba';
+$response = $balanceService->get($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+```
+#### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/balance
+
+
+<u>**URL Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+
+
+<u>**Success Response**</u><br>
+
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `balance`.<br><br>
+
+The value of `data.result_type` property will be `balance` and balance object will be available under `data.balance` property. The example response is given on the right hand side. 
+
+> Get Balance - Example Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "balance",
+    "balance": {
+      "user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
+      "total_balance": "2100001999999999954",
+      "available_balance": "2100001999999999954",
+      "unsettled_debit": "0",
+      "updated_timestamp": 1552302438
+    }
+  }
+}
+
+```
+
+
+
+
+
+
+
+# Token
+
+Token object contains details about economy and various contract addresses. One economy will have only one `token` object. This object is created during economy setup in dashboard so using API you can only make a `GET` request.
+
+## Token Object
+
+
+| Attribute  | Description  |
+|---|---|
+| **id** <br> **Integer**  | Unique identifier of token.  |
+| **name** <br> **String** | Token name |
+| **symbol** <br> **String** | Token symbol |
+| **conversion_factor** <br> **Float**  | Number of Brand Token in one OST.  |
+| **total_supply** <br> **String \<BigInt\>** | Total supply of Brand Tokens  |
+| **decimals** <br> **Integer** | `10^decimals` [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token) makes one Brand Token  |
+| **origin_chains** <br> **Hash** <br> <span class="child-table-toggle" data-target="token-origin-chain">Show child attributes</span>| Origin chain details  |
+| **auxiliary_chain** <br> **Array** <br> <span class="child-table-toggle" data-target="token-auxiliary-chain">Show child attributes</span> | List of auxiliary chain details  |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
+
+
+<table id="token-origin-chain" style="display:none;">
+  <tr class="token-origin-chain child-row" >
+    <td>
+      <strong>chain_id</strong> 
+      <br> 
+      <strong>Integer</strong>
+    </td>
+
+    <td>
+    Unique identifier for origin chain. For ethereum it is 1, for ropsten it is 3.
+
+    </td>
+  </tr>
+
+  <tr class="token-origin-chain child-row" >
+    <td>
+      <strong>branded_token</strong>
+      <br> 
+      <strong>String</strong> <a href="/platform/docs/additional_resources/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
+    </td>
+
+    <td>
+      Brand Token contract address on origin chain 
+    </td>
+  </tr>
+
+
+  <tr class="token-origin-chain child-row" >
+    <td>
+      <strong>organization</strong>
+      <br> 
+      <strong>Hash</strong>
+
+      <br> <span class="child-table-toggle" data-target="origin-org">Show child attributes</span>
+    </td>
+
+    <td>
+      Brand Token organization contract details
+    </td>
+  </tr>
+
+
+  <tr class="token-origin-chain child-row" >
+    <td>
+      <strong>stakers</strong>
+      <br> 
+      <strong>Array</strong>
+    </td>
+
+    <td>
+      List of addresses that can stake and mint brand tokens.
+    </td>
+  </tr>
+
+  
+</table>
+
+<table id="token-auxiliary-chain" style="display:none;">
+  <tr class="token-auxiliary-chain child-row" >
+    <td>
+      <strong>chain_id</strong> 
+      <br> 
+      <strong>Integer</strong>
+    </td>
+
+    <td>
+     Unique identifier for auxiliary chain
+    </td>
+  </tr>
+
+  <tr class="token-auxiliary-chain child-row" >
+    <td>
+      <strong>utility_branded_token</strong>
+      <br> 
+      <strong>String</strong> <a href="/platform/docs/additional_resources/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
+    </td>
+
+    <td>
+      Uitility brand token contract address on auxiliary chain.
+    </td>
+  </tr>
+
+  <tr class="token-auxiliary-chain child-row" >
+    <td>
+      <strong>company_token_holders</strong>
+      <br> 
+      <strong>Array</strong> 
+    </td>
+
+    <td>
+      Company TokenHolder contract addresses.
+    </td>
+  </tr>
+
+  <tr class="token-auxiliary-chain child-row" >
+    <td>
+      <strong>organization</strong>
+      <br> 
+      <strong>Hash</strong> 
+    </td>
+
+    <td>
+      Utility Brand Token organization contract details
+    </td>
+  </tr>
+
+</table>
+
+
+<table id="origin-org" style="display:none;">
+  <tr class="origin-org child-row" >
+    <td>
+      <strong>name</strong> 
+      <br> 
+      <strong>String</strong>
+      
+      
+    </td>
+
+    <td>
+      Name for the transaction. Only numbers, alphabets, spaces, "-" and "_" are allowed.<br> <strong>Max length is 25 characters</strong> .
+    </td>
+  </tr>
+
+  <tr class="origin-org child-row" >
+    <td>
+      <strong>type</strong>
+      <br> 
+      <strong>String</strong>
+    </td>
+
+    <td>
+      String representing the type of transaction. It can have one of the following value: 
+      <code>user_to_user</code>, <code>company_to_user</code> and <code>user_to_company</code>.
+    </td>
+  </tr>
+
+</table>
+
+
+## Get Token
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$tokenService = $ostObj->services->tokens;
+
+$getParams = array();
+$response = $tokenService->get($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+
+?>
+```
+
+#### <span> GET </span> &nbsp; &nbsp; /tokens
+
+
+<u>**Success Response**</u><br>
+
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `token`.<br><br>
+
+The value of `data.result_type` property will be `token` and token object will be available under `data.token` property. The example response is given on the right hand side. 
+
+
+> Get Token - Example Response
+
+```json
+{
+  "success": true,
+  "data": {
+      "result_type": "token",
+      "token": {
+          "id": 1085,
+          "name": "OSTD",
+          "symbol": "OSTD",
+          "conversion_factor": 1,
+          "total_supply": "20000000000000000000000",
+          "decimals": 18,
+          "origin_chain": {
+              "chain_id": 3,
+              "branded_token": "0xd31756555d3a28c990c39fb85087e41afc09ff7a",
+              "organization": {
+                  "contract": "0x0a886e74747f5fed2db45c53df5e0c7b2bacc3d7",
+                  "owner": "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
+              },
+              "stakers": [
+                  "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
+              ]
+          },
+          "auxiliary_chains": [
+              {
+                  "chain_id": 199,
+                  "utility_branded_token": "0xdd7df6a4ec6a0c2edd051da875ab9a32e9567869",
+                  "company_token_holders": [
+                      "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee"
+                  ],
+                  "organization": {
+                      "contract": "0x5e0c62d0f3f286461ef70e1a01e26bc766107912",
+                      "owner": "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
+                  }
+              }
+          ],
+          "updated_timestamp": 1551870482
+      }
+  }
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Recovery Owner
+
+A user’s Brand Tokens are held by a [TokenHolder contract](/platform/docs/additional_resources/glossary/#tokenholder-contracts) that is controlled ("owned") by a [Device Manager](/platform/docs/additional_resources/glossary/#device-manager-a-multisig-contract); the device manager is controlled ("owned") by [device keys](/platform/docs/additional_resources/glossary/#owner-key-device-key) created and held by the user in their wallets and if any of those keys is lost, the Device Manager (which is a multi-signature contract) is programmed to allow the replacement of a key by the recovery owner key for the user, via the `DelayedRecoveryModule`, which is deployed at the time of the creation of the user's initial wallet.
+
+This API is used to get the status of newly created recovery owner key
+
+## Recovery Owner Object
+
+| Attribute  | Description  |
+|---|---|
+| **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **address**  <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | This is the public address knowns as recovery owner address. This key has authorization to replace the lost device address key using `DelayedRecoveryModule`. |
+| **status** <br> **String** | Status can be one of the following values: <br> AUTHORIZATION_FAILED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED <br> `AUTHORIZING`: Default status when the recovery owner is created during user activation.<br>`AUTHORIZED`: Status when recovery owner address is authorized successfully during user activation. <br>  |
+
+
+
+## Get recovery owner
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$recoveryOwnersService = $ostObj->services->recoveryOwners;
+
+$getParams = array();
+$getParams['user_id'] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9';
+$response = $recoveryOwnersService->get($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+```
+
+#### <span>GET</span> &nbsp; &nbsp; /users/{user_id}/recovery-owners/{recovery_owner_address}
+
+<u>**URL Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **recovery_owner_address** <br> **Required**   | This will be the recovery public addres generated. |
+
+
+<u>**Success Response**</u><br>
+
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `recovery_owner`.<br><br>
+
+The value of `data.result_type` property will be `recovery_owner` and recovery_owner object will be available under `data.recovery_owner` property. The example response is given on the right hand side. 
+
+> Get Recovery Owner - Example Response
+
+```json
+{
+   "success": true,
+   "data": {
+     "result_type": "recovery_owner",
+     "recovery_owner": {
+        "user_id": "{user_id}", //UUID V4
+        "address": "0x...", //Address
+        "status": "AUTHORIZATION_FAILED/AUTHORIZING/AUTHORIZED/REVOKING/REVOKED", //String
+        "updated_timestamp": "12344.." //Timestamp
+    }
+  } 
+}
+
+```
+
+
+
+
+
+
 # Chains
 Chains API provides information about origin and auxiliary chains used by your brand token economy.
 
@@ -3326,8 +3307,8 @@ This API allows you to get the device manager information.
 
 | Attribute  | Description  |
 |---|---|
-| **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | User id of the `user` to which this device manager belongs.  |
-|  **address** <br> **String** \<[**Address**](/platform/docs/glossary/#contract-address)\>  |  Address of [device manager contract](/platform/docs/wallet/fundamentals/#device-manager-a-multisig-contract)   |
+| **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | User id of the `user` to which this device manager belongs.  |
+|  **address** <br> **String** \<[**Address**](/platform/docs/additional_resources/glossary/#contract-address)\>  |  Address of [device manager contract](/platform/docs/additional_resources/glossary/#device-manager-a-multisig-contract)   |
 |  **requirement** <br> **Integer** | Minimum number of signatures needed to execute multi sig operations.  |
 |  **nonce** <br> **Integer** | Transaction counter to be used for multi sig operations which helps prevents replay attacks.  |
 |  **status** <br> **String** | Only value possible is `ACTIVATED`   |
@@ -3372,7 +3353,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**Success Response**</u><br>

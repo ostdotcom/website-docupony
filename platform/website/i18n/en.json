@@ -9,10 +9,6 @@
         "title": "Glossary",
         "sidebar_label": "Glossary"
       },
-      "additional_resources/wallet_ux_guide": {
-        "title": "Wallet UX Guide",
-        "sidebar_label": "Wallet UX Guide"
-      },
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
@@ -20,21 +16,33 @@
         "title": "Introduction",
         "sidebar_label": "Introduction"
       },
+      "getting_started/platform_benefits": {
+        "title": "Platform Benefits",
+        "sidebar_label": "Platform Benefits"
+      },
       "getting_started/platform_overview": {
         "title": "Platform Overview",
         "sidebar_label": "Platform Overview"
       },
       "guides/create_token": {
         "title": "Create Token Guide",
-        "sidebar_label": "Create Token Guide"
+        "sidebar_label": "Create Token"
       },
       "guides/create_wallet": {
-        "title": "Create Wallet",
+        "title": "Create Wallet Guide",
         "sidebar_label": "Create Wallet"
       },
       "guides/execute_transaction": {
-        "title": "Execute Transaction",
+        "title": "Execute Transaction Guide",
         "sidebar_label": "Execute Transaction"
+      },
+      "guides/wallet_ux_guide": {
+        "title": "Wallet UX Guidelines",
+        "sidebar_label": "Wallet UX"
+      },
+      "release-notes/2.0.0": {
+        "title": "2.0.0 Release (March 2019)",
+        "sidebar_label": "2.0.0 Release"
       },
       "server_sdk_setup/php": {
         "title": "PHP SDK Quickstart Guide",
@@ -42,11 +50,11 @@
       },
       "wallet_sdk_setup/android": {
         "title": "Android SDK Setup",
-        "sidebar_label": "Android SDK"
+        "sidebar_label": "Android"
       },
       "wallet_sdk_setup/iOS": {
         "title": "iOS SDK Setup",
-        "sidebar_label": "iOS SDK"
+        "sidebar_label": "iOS"
       },
       "wallet/introduction": {
         "title": "Wallet Introduction",
@@ -62,7 +70,9 @@
       }
     },
     "links": {
-      "OST PLATFORM": "OST PLATFORM",
+      "Docs": "Docs",
+      "SDK References": "SDK References",
+      "API References": "API References",
       "Support": "Support"
     },
     "categories": {
@@ -70,7 +80,8 @@
       "Server SDK Setup": "Server SDK Setup",
       "Wallet SDK Setup": "Wallet SDK Setup",
       "Guides": "Guides",
-      "Additional Resources": "Additional Resources"
+      "Additional Resources": "Additional Resources",
+      "Release Notes": "Release Notes"
     }
   },
   "pages-strings": {

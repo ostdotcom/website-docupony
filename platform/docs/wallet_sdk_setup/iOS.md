@@ -1,11 +1,11 @@
 ---
 id: iOS
 title: iOS SDK Setup
-sidebar_label: iOS SDK
+sidebar_label: iOS
 ---
 
 ## 1. Prerequisite 
-You will need to integrate server side sdk on your server. You can use one of the avialable server side sdk: [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby), [Java](https://github.com/ostdotcom/ost-sdk-java), [Node.js](https://github.com/ostdotcom/ost-sdk-js).
+You will need to integrate server side SDK on your server. You can use one of the avialable server side SDKs: [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0), [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0), [Node.js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0).
 
 
 
@@ -31,7 +31,7 @@ Get [Carthage](https://github.com/Carthage/Carthage) by running following comman
 You can also choose [other methods](https://github.com/Carthage/Carthage/#installing-carthage) to install [Carthage](https://github.com/Carthage/Carthage)
 
 <br>
-#### ii). Downloading wallet sdk using Carthage
+#### ii). Downloading wallet SDK using Carthage
 Carthage looks at a file called `Cartfile` to determine which libraries to install. Create a file in the same directory as your Xcode project called `Cartfile` and enter the following to tell Carthage which dependencies we want:
 
 Add following entry in your `Cartfile`
@@ -45,28 +45,27 @@ A `Cartfile.resolved` file and a `Carthage` directory will appear in the same di
 
 
 <br>
-#### iii). Copying the `OstWalletSdk.framework` file in your xcode project
+#### iii). Copying the `OstWalletSdk.framework` file in your Xcode project
 
 
 
 Open your project in Xcode, click on the project file in the left section of the screen and scroll down to the `Linked Frameworks and Libraries` section in Xcode.
 
-`Carthage` folder will have the `.framework` files that we will add in xcode project.
+`Carthage` folder will have the `.framework` files that we will add in Xcode project.
 
 Now open the `Carthage/Build/iOS` folder in Finder:
 
 Run this command
 > open Carthage/Build/iOS
 
-
 Open application target, under General tab, drag the built `OstWalletSdk.framework` binary from `Carthage/Build/iOS` folder into Linked Frameworks and Libraries section.
 
 ![copy-framework-file](/platform/docs/sdk/assets/copy-framework-file.png)
 
-#### iv). Adding the `OstWalletSdk` dependencies in your xcode project
+#### iv). Adding the `OstWalletSdk` dependencies in your Xcode project
 We need to add the `.framework` files of dependencies present inside `Carthage/Build/iOS`.
 
-Open `application targets` in xcode. Under `Build Phases` click `+` icon and choose `New Run Script Phase`. Add the following command.
+Open `application targets` in Xcode. Under `Build Phases` click `+` icon and choose `New Run Script Phase`. Add the following command.
 
 > /usr/local/bin/carthage copy-frameworks
 
@@ -155,18 +154,16 @@ This will be the base API URL we need to provide to SDK while initializing.
 **Production endpoint**: "api.ost.com/mainnet/v2"
 
 
-## 5. Setting up communication between App and Wallet SDK
+## 5. Setting up communication between app and wallet SDK
 
-iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet realted actions. 
-The communication between app and iOS wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback function is provided in `OstWorkFlowDelegate` protocol.
-
+iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet realted actions. Communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowDelegate` protocol.
 
 ![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
 
-### a). Implementing the `OstWorkFlowDelegate` protocol
-There are different ways to implement `OstWorkFlowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkFlowDelegate` protocol. We will use this class to create object that can be passped in SDK workflows as callback. 
+### a). Implementing the `OstWorkflowDelegate` protocol
+There are different ways to implement `OstWorkflowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkflowDelegate` protocol. We will use this class to create object that can be passped in SDK workflows as callback. 
 
-Sample Implementation of [ OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [demo app ](https://github.com/ostdotcom/ios-demo-app/tree/develop).
+Sample Implementation of [OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [demo app ](https://github.com/ostdotcom/ios-demo-app/tree/develop).
 
 
 ```swift

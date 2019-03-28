@@ -1,24 +1,23 @@
 ---
 id: android
 title: Android SDK Setup
-sidebar_label: Android SDK
+sidebar_label: Android
 ---
 
 ## 1. Overview
 
 
 ### Interfaces and workflows
-Android Wallet SDK consists of `workflows` and `interface`. <br><br>
+Android Wallet SDK consists of an `interface` and `workflows`. <br><br>
 
-**Interface**: Callback functions are used for communication between app and wallet SDK. 
+**Interface**: callback functions are used for communication between app and wallet SDK. 
 <br> In Android wallet SDK these callback functions are provided as an interface.
 <br><br>
 
-**Workflows**: Workflows are functions that can be used to perform wallet related tasks. App developers will be calling these functions to execute different tasks
+**Workflows**: Workflows are functions that can be used to perform wallet related tasks. App developers will be call these functions to execute different tasks.
 
 ### Prerequisite
-You should complete one of the server SDK Guides ([PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby), [Node.js](https://github.com/ostdotcom/ost-sdk-js), [Java](https://github.com/ostdotcom/ost-sdk-java))
-
+You should complete one of the server SDK Guides ([PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0), [Node.js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0), [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)) Note: just the PHP quickstart guide exists at the moment, others will follow soon.
 <br>
 
 ## 2. Requirements
@@ -125,10 +124,10 @@ public class App extends Application {
 <br>
 
 
-## 5. Setting up communication between App and Wallet SDK
+## 5. Setting up communication between app and wallet SDK
 
-Wallet SDK provides `workflows` that can be called by any android activity class or fragment class to perform wallet realted actions. 
-The communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback function is provided in `OstWorkFlowCallback` interface.
+Wallet SDK provides `workflows` that can be called by any Android activity class or fragment class to perform wallet related actions. 
+Communication between app and wallet SDK happens through callback functions. We need to pass these callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowCallback` interface.
 
 ![walletSDKCommunication](/platform/docs/sdk/assets/wallet-sdk-communication.png)
 
@@ -137,9 +136,9 @@ The communication between app and wallet SDK happens through callback functions.
 ### a). Implementing the `OstWorkFlowCallback` interface
 There are different ways to pass these callback functions in workflows. We will create a `BaseFragment` for reusability purpose which will implement `OstWorkFlowCallback` interface.
 
-The Wallet SDK <u>does not hold strong reference of workflow callbacks.</u> It only has a <u>weak reference of workflow callback.</u> This is done to avoid any memory leaks. The app should hold therference of the calbacks as long as it needs.
+The Wallet SDK <u>does not hold strong reference of workflow callbacks.</u> It only has a <u>weak reference of workflow callback.</u> This is done to avoid any memory leaks. The app should hold the reference of the calbacks as long as it needs.
 
-Sample Implementation of [ BaseFragment class](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/app/src/main/java/ost/com/sampleostsdkapplication/fragments/BaseFragment.java) is available as a part of [demo app ](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/app).
+Sample Implementation of [ BaseFragment class](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.0/app/src/main/java/ost/com/sampleostsdkapplication/fragments/BaseFragment.java) is available as a part of [demo app ](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app).
 
 ```java
 
@@ -181,14 +180,13 @@ public class BaseFragment extends Fragment, OstWorkFlowCallback {
 
 
 ### b). Creating new fragment.
-We can now create new fragment that will inherit `BaseFragment` and override definition of **callback functions**. This new fragment can now call workflow function to perform any wallet realted task.
+You can now create new fragment that will inherit `BaseFragment` and override definition of **callback functions**. This new fragment can now call workflow function to perform any wallet realted task.
 
-[Sample implementation inheriting `BaseFragment`](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/app/src/main/java/ost/com/sampleostsdkapplication/fragments/LoginFragment.java)
+[Sample implementation inheriting `BaseFragment`](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.0/app/src/main/java/ost/com/sampleostsdkapplication/fragments/LoginFragment.java)
 
 
 ## Demo App
-To provide developers with sample integration of wallet SDK, a [demo android app ](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/app) is available on github. 
-
+To provide developers with sample integration of wallet SDK, a [demo Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app) is available on github.
 
 ## Next Steps
 

@@ -8,7 +8,7 @@ sidebar_label: PHP
 ## Introduction
 The OST PHP SDK is a PHP wrapper for the OST API. This Quick Start Guide will show you how to use the OST PHP SDK for a simple flow.
 
-You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
+You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
 Signup on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/guides/create_token/) to complete the token setup.
@@ -17,10 +17,9 @@ Signup on [platform.ost.com](https://platform.ost.com) to create an account. Fol
 
 
 ## 2. Get Credentials
-Once token setup is complete, go to [Developers page](https://patform.ost.com/testnet/developer) inside OST Platform dashboard to get access to API key and API secret.
+Once token setup is complete, go to [Developers page](https://patform.ost.com/testnet/developer) inside OST Platform dashboard to get access to your API key and API secret.
 
-Every account is provided with two pairs of keys: one for sandbox environment and one for production environment.
-Use only your sandbox environment API keys for testing and development. This ensures that you don't modify your live production data.
+Every account is provided with two pairs of keys: one for sandbox environment and one for production environment. Use your sandbox environment API keys for testing and development.
 
 
 
@@ -33,7 +32,7 @@ To install the SDK run the following command <br>
 ### Installing composer
 > curl -sS https://getcomposer.org/installer | php
 
-**Source code:** [Github - PHP SDK](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
+**Source code:** [Github - PHP SDK](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0)
 
 ### Install the latest stable version of the SDK:
 > php composer.phar require ostdotcom/ost-sdk-php:dev-release-2.0
@@ -43,13 +42,12 @@ To install the SDK run the following command <br>
 
 
 ## 4. Get Token Information
-To get the information about the newly created Brand Token we will have to use `tokens` service provided by php server SDK.
-
+To get the information about the newly created Brand Token, you will use `tokens` service provided by [PHP](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0) Server Side SDK.
 
 
 ### Instantiating the SDK object
-Before using any service of SDK we will have to provide API key and API secret to instantiate new SDK object.
-We will be using this new SDK object
+Before using any service of SDK you will have to provide API key and API secret to instantiate new SDK object. You will be using this new SDK object Instantiating The SDK Samlpe Code
+
 **Instantiating The SDK Samlpe Code**
 
 ```php
@@ -72,7 +70,7 @@ $ostObj = new OSTSdk($params);
 ```
 
 ### Call `tokens` service
-Now we can call any of the service provided by server SDK. We will call `tokens` service to get the tokens details. 
+Now you can call any of the service provided by Server Side SDK. You will call `tokens` service to get the tokens details.
 
 **Get Tokens Details Sample Code**
 
@@ -133,12 +131,12 @@ Token entity has important information about your token which we recommend you t
 > Congratulation! You have completed your first API call from server side SDK.
 
 ## 5. Register User
-We can create users in OST Platform. These user object do not have any personal information about your application users. OST Platform deploys smart contracts for every user in the economy and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4). 
+You can setup your users in OST Platform. User objects in OST Platform do not have any personal information about your application users. OST Platform deploys smart contracts for every user in the economy and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4).
 
-client companies will have to create users from their servers and they will be responsible to maintain the mapping between thier application user and OST Platform users.
+Developers will create users from your servers and you will be responsible to maintain the mapping between your application user and OST Platform users.
 
 ### Create User
-To create the user object we will use the `user` service. No input parameters are needed to create user.
+To create the user object you will use the user service. No input parameters are needed to create user.
 
 ```php
 <?php
@@ -171,11 +169,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
     }
 }
 ```
-Ideally after user creation you should map the user's `id` with unique identifier of you application user. 
-Ex: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
+Ideally after user creation you should map the user's id with unique identifier of you application user. E.g.: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
 
 
-A detail explanation about each attribute of user is availaible on [user object](/platform/docs/api/?php#user-object) section of [API docs](/platform/docs/api/?php#user-object).
+A detailed explanation about each attribute of user is availaible on user object section in [API docs](/platform/docs/api/?php#user-object).
 
 
 ## Next Steps
