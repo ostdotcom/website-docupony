@@ -8,7 +8,7 @@ sidebar_label: PHP
 ## Introduction
 The OST PHP SDK is a PHP wrapper for the OST API. This Quick Start Guide will show you how to use the OST PHP SDK for a simple flow.
 
-You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
+You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
 Signup on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/guides/create_token/) to complete the token setup.
@@ -32,7 +32,7 @@ To install the SDK run the following command <br>
 ### Installing composer
 > curl -sS https://getcomposer.org/installer | php
 
-**Source code:** [Github - PHP SDK](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
+**Source code:** [Github - PHP SDK](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0)
 
 ### Install the latest stable version of the SDK:
 > php composer.phar require ostdotcom/ost-sdk-php:dev-release-2.0
@@ -42,7 +42,7 @@ To install the SDK run the following command <br>
 
 
 ## 4. Get Token Information
-To get the information about the newly created Brand Token, you will use `tokens` service provided by [PHP](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0) Server Side SDK.
+To get the information about the newly created Brand Token, you will use `tokens` service provided by [PHP](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0) Server Side SDK.
 
 
 ### Instantiating the SDK object

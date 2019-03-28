@@ -33,9 +33,9 @@ A number of platform-specific SDKs are available to integrate OST APIs and walle
 The following SDKs are actively maintained and supported:
 
 * [PHP](/platform/docs/server_sdk_setup/php/)  for server-side applications
-* [Ruby](https://github.com/ostdotcom/ost-sdk-ruby) for server-side applications
-* [Node](https://github.com/ostdotcom/ost-sdk-js).js for server-side applications
-* [Java](https://github.com/ostdotcom/ost-sdk-java) for server-side applications
+* [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0) for server-side applications
+* [Node](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0).js for server-side applications
+* [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0) for server-side applications
 
 For wallet integration, we provide mobile wallet SDKs for Android and iOS applications.
 

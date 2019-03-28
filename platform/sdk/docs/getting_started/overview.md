@@ -12,7 +12,7 @@ We provide mobile wallet SDKs and server side SDKs to complete your integration:
 
 * The OST Platform Server SDKs provide your application with various methods for different services like users, tokens, wallet services corresponding to an end-user of the economy. 
 
-	Server SDK is available for  [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby), [Java](https://github.com/ostdotcom/ost-sdk-java), [Node.js](https://github.com/ostdotcom/ost-sdk-js).
+	Server SDK is available for  [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0), [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0), [Node.js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0).
 
 * The Wallet SDK adds support for users to own their tokens without requiring them to directly manage their private crypto keys. This essentially means providing private key management, authorization and recovery services in addition to authentication.
 	
@@ -32,6 +32,6 @@ The following SDK guides are designed to help you get familiarized with the bare
 ## Sample Apps
 This section shares the sample applications that we put together for your reference to show how integration with wallet SDK works.
 
-* [Android sample application](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/app)
+* [Android sample application](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app)
 * [iOS sample application](https://github.com/ostdotcom/ios-demo-app/tree/develop)
                      

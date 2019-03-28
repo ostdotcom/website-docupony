@@ -21,7 +21,7 @@ The CTA on this page is for the user to update the App to the latest version whi
 
 ![Update](/platform/docs/assets/wallet-ux-guide/0-Onboarding.jpg)
 
-![onbaording](/platform/docs/assets/wallet-ux-guide/0-Update-to-2.0.jpg)
+![onbaording](/platform/docs/assets/wallet-ux-guide/01-Update-to-2.0.jpg)
 
 
 ## Workflow: 
@@ -113,7 +113,7 @@ The user enters their mnemonic phrase on a new device to authorize that device.
 
 Oh no, a user lost the phone they had your application on. Thankfully, recovering access to funds is made painless with OST’s Wallet SDK.   
 
-![image](/platform/docs/assets/wallet-ux-guide/10-Recover-Wallet.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/9-Recover-Wallet.jpg)
 
 
 
