@@ -32,7 +32,7 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 ## Create Wallet Sequence Diagram
 <br>
 
-[![create-wallet-create-wallet](/platform/docs/assets/create-wallet-sequence-diagram.svg)](/platform/docs/assets/create-wallet-sequence-diagram.svg)
+[![create-wallet-create-wallet](/platform/docs/assets/sequence-diagrams/create-wallet.svg)](/platform/docs/assets/sequence-diagrams/create-wallet.svg)
 
 
 <br> 
@@ -232,7 +232,6 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 **expiryAfterInSecs**: Recommended is 2 weeks, however, you can choose to more or less time.
 
 **spendingLimitinWei**: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. atto Brand Token = 10^18 Brand Token.
-
 
 #### Finally calling `activateUser` workflow
 

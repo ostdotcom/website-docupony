@@ -9,10 +9,10 @@ sidebar_label: Execute Transaction
 | S. No. | Section  |
 |---|---|
 | 1  | [Types Of Transactions](#types-of-transactions)  |
-| 2  | [Rules Contract](#rules-contract)  |
-| 3  | [Generating QRCode with Transaction Data](#generating-qrcode-with-transaction-data)  |
-| 4  | [Wei Conversions(to OST, to Brant Token, to USD)](#wei-conversions)  |
-| 5  | [Executing company-to-user Transactions](/#executing-company-to-user-transactions)  |
+| 2  | [Atto Conversions (OST to Atto OST, BT to Atto BT, USD to Atto USD)](#conversions-to-atto)  |
+| 3  | [Rules Contract](#rules-contract)  |
+| 4  | [Generating QRCode with Transaction Data](#generating-qrcode-with-transaction-data)  |
+| 5  | [Executing company-to-user Transactions](#executing-company-to-user-transactions)  |
 | 6  | [Executing `user` intiated transactions](#executing-user-initiated-transactions) |
 
 
@@ -27,6 +27,34 @@ There are 2 different types of transaction possible in an economy based on the t
 | **company-to-user Transaction** | It is the transaction where the client company is the sender and the economy user is the receiver. <br>**To do company-to-user transactions, you will have to user Server Side SDK (available in [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby), [Node.js](https://github.com/ostdotcom/ost-sdk-js), [Java](https://github.com/ostdotcom/ost-sdk-java)).** |
 | **user initiated Transaction** | It is the transaction where the economy user is the sender and another economy user or compay is the receiver. <br> **Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)) facilitates signing of transactions on users behalf.** |
 
+
+
+<br>
+
+> ## Conversions to Atto:
+
+Atto is the smallest denomination used in OST Platform. OST Platform API and SDK accept value in `Atto`, so it is important to understand the conversions to `Atto`.
+
+**You need to multiply any currency with 10^18 to convert it into its Atto denomination.**
+
+
+### Converting `Brand Token` to  `Atto Brand Token`
+To convert `brand token` into `atto brand token`, we will have to multiply amount of brand token with 10^18.
+
+Example: 10 Brand Token = 10 * (10^18) Atto Brand Token.
+
+### Converting `USD` to `Atto USD`
+To convert `USD` into `Atto USD`, we will have to multiply the USD amount with 10^18.
+
+Example: 25 USD = 25*10^18 Atto USD.
+
+### Converting `OST` to `Atto OST`
+To convert `OST` into `Atto OST`, we will have to multiply the OST amount with 10^18.
+
+Example: 7 OST = 7*10^18 Atto OST.
+
+
+
 <br>
 
 > ## Rules Contract
@@ -39,11 +67,13 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 1. **Direct Transfer**: `directTransfers` is a method that enables a user or a company to directly transfer Brand Tokens to a beneficiary. 
 <br>
 
+### `directTransfers` Method Parameters
+
 | Rule Method | Method Inputs | Inputs Description |
 |---|---|---|
 |  **directTransfers**  |  |  |
 |  | **transfersTo** <br> **Array of Address**   | Array of token holder addresses. |
-|  | **transfersAmount** <br> **Array of amounts in Wei** | Array of **amounts in Wei** that are to be transfered to the addresses listed in **transfersTo** array. These amounts should be in the same sequence  |
+|  | **transfersAmount** <br> **Array of amounts in Atto** | Array of **amounts in [Atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transfered to the addresses listed in **transfersTo** array. These amounts should be in the same sequence as the addresses in **transfersTo** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 
 
 <br>
@@ -51,14 +81,15 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 2. **Pricer**: `Pricer` rule contract can be used to transfer the amount of brand token based on fiat amount. You will have to specify the fiat currency code and the amount in fiat currency. This amount will then be converted into brand token and then the transfer will happen in brand token.
 
 
+### `pay` Method Parameters
 | Rule Method | Method Inputs | Inputs Description |
 |---|---|---|
 |  **pay**  |  |  |
 |  | **from** <br> **Address**   | Transaction executor's address |
-|  | **toList** <br> **Array of amounts in Wei** | Array of receiver's token holder address. |
-|  | **amountList** <br> **Array of amounts in Wei** | Array of transfer amount in pay currency(USD) converted into wei. These amounts should be in the same sequence as the **toList** addresses are. |
-|  | **payCurrencyCode** <br> **Array of amounts in Wei** | Pay Currency code. It's possible value for now will be USD.  |
-|  | **baseCurrencyIntendedPrice** <br> **Array of amounts in Wei** | This is the pay currency(USD) value in Wei for 1 OST. Example: 1 OST = 0.5 USD, then this value will be 0.5 * (7,371,679,598,998,000) Wei, where 7,371,679,598,998,000 will be the value 1 USD in Wei.   |
+|  | **toList** <br> **Array of addresses** | Array of receiver's token holder address. |
+|  | **amountList** <br> **Array of amounts in Atto** | Array of **amounts in [Atto USD](#converting-usd-to-atto-usd)** that are to be transfered to the addresses listed in **toList** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|  | **payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
+|  | **baseCurrencyIntendedPrice** <br> **Integer** | This is the pay currency(USD) value in Atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 Atto USD = 5*10^17 Atto USD   |
 
 
 <br>
@@ -79,12 +110,12 @@ The QRCode data for executing transactions via web application should be a JSON 
 |   | **Property**  | **Description** |
 |   | **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer`.  |
 |   | **ads**  <br> **Array** | Array of receiver's Token Holder Addresses. |
-|   | **ams**  <br> **Array** | Array of amounts in Wei to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in Wei.  |
+|   | **ams**  <br> **Array** | Array of amounts in Atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in Atto.  |
 |   | **tid**  <br> **String** | token_id of your Brand Token. |
 
 <br>
 
-> Example JSON data for QRCode. The amounts are in Wei. [Wei conversions](/platform/docs/guides/execute_transaction/#wei-conversions) are explained in [next section](/platform/docs/guides/execute_transaction/#wei-conversions).
+> Example JSON data for QRCode. The amounts are in Atto. [Wei conversions](/platform/docs/guides/execute_transaction/#wei-conversions) are explained in [next section](/platform/docs/guides/execute_transaction/#wei-conversions).
 
 ```js
 // Direct Transfer JSON data used to generate QRCode
@@ -94,28 +125,12 @@ The QRCode data for executing transactions via web application should be a JSON 
     "d": {
         "rn": "Direct Transfer", // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's Token Holder Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in Wei (In the same squence as the addresses in "ams" array are. 
+        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in Atto (In the same squence as the addresses in "ams" array are. 
         "tid": "123"     // token_id of your Brand Token
     }
 }
 ```
 
-<br>
-
-> ## Wei Conversions:
-
-You need to multiply the Brand Token or OST or USD value with 10^18 to convert it into Wei.
-
-Example: <br> 
-
-1. Converting 10 Brand token to Wei: 
-    10 * 10^18 = 10^19 Wei
-
-2. Converting 25 USD to Wei:
-    25 * 10^18 = 25*10^18 Wei
-
-3. Converting 7 OST to Wei:
-    7 * 10^18 = 7*10^18 Wei
 
 
 <br>
@@ -128,11 +143,11 @@ Please refer API references for details on the [input parameters of execute comp
 
 
 
-Sample code for executing a directTransfer is shown below.
+Sample code for executing a `directTransfer` is shown below.
 
 Brand token to transfer: 10 Brand Token
 
-Converting Brand token to Wei = `10 *10^18` = `10^19`
+Converting `Brand token` to `Atto Brand Token` = `10 *10^18` = `10^19` Atto Brand Token
 
 
 
@@ -167,8 +182,8 @@ $executeParams = array(
             // First array is of receiver's token holder addresses 
             array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496"),
             
-            // Second array is of receiver's amounts in Wei 
-            // (10 Brand Token = 10^19 Wei)
+            // Second array is of receiver's amounts in Atto 
+            // (10 Brand Token = 10^19 Atto)
             array("10000000000000000000")
         );
     )),
@@ -224,7 +239,7 @@ To generate QRCode with transaction data follow the steps expained in [above sec
     "d": {
         "rn": "Direct Transfer", // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's Token Holder Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in Wei (In the same squence as the addresses in "ams" array are. 
+        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in Atto (In the same squence as the addresses in "ams" array are. 
         "tid": "123"     // token_id of your Brand Token
     }
 }
