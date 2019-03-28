@@ -80,7 +80,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} <a href="https://ost.com" target="_blank">OST.com</a> Ltd., All Rights Reserved.`,
+  copyright: `Copyright © ${new Date().getFullYear()} <a href="https://ost.com" target="_blank">OST.com</a> Inc., All Rights Reserved.`,
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     theme: 'default',

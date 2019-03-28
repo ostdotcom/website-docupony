@@ -34,7 +34,7 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 ## Create Wallet Sequence Diagram
 <br>
 
-[![create-wallet-create-wallet](/platform/docs/assets/create-wallet-sequence-diagram.svg)](/platform/docs/assets/create-wallet-sequence-diagram.svg)
+[![create-wallet-create-wallet](/platform/docs/assets/sequence-diagrams/create-wallet.svg)](/platform/docs/assets/sequence-diagrams/create-wallet.svg)
 
 
 <br> 
@@ -144,7 +144,7 @@ public class App extends Application {
 ### Calling `setupDevice` workflow
 In order to intiate the device registeration from you mobile app, you need to call `setupDevice` workflow.
 <br>
-`setupDevice` workflow needs `userId` and `tokenId` so `setupDevice` should be called after your app login or signup is successfull. 
+`setupDevice` workflow needs `userId` and `tokenId` so `setupDevice` should be called after your app login or signup is successful.
 Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId` (Unique identifier for your token economy).
 
 **If the user is logged in, then `setupDevice` should be called everytime the app launches, this ensures that the current device is registered before communicating with OST Platform server.**
@@ -199,7 +199,7 @@ To activate the user we will have to call **activateUser** workflow which requir
 3. passphrasePrefix : a unique string for each user  with high entropy, generated on your server.
 4. expiryAfterInSecs :  A TokenHolder contract that holds user's tokens is one of the three contracts that are deployed on blockchain during user activation. TokenHolder contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on user's behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each user's session key as well as the spending limit.  Recommended is 2 weeks you can choose to keep more or less.
 
-5. spendingLimitinWei : Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in Wei. 
+5. spendingLimitinWei : Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in Atto. 
 
 #### Getting passphrasePrefix from your server
 
@@ -237,7 +237,7 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 
 **expiryAfterInSecs** :  Recommended is 2 weeks you can choose to keep more or less.
 
-**spendingLimitinWei** : Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in Wei.  
+**spendingLimitinWei** : Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in Atto.  
 
 
 #### Finally calling `activateUser` workflow
