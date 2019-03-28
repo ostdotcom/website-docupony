@@ -387,3 +387,15 @@ span.p {
     background: transparent;
     outline: none;
 }
+
+body {
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 370px){ 
+
+    div.navigationWrapper.navigationSlider ul li a {
+        padding: 5px;
+    }
+
+}
