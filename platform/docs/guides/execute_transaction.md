@@ -24,7 +24,7 @@ There are 2 different types of transaction possible in an economy based on the t
 
 | Type Of Transaction | Description |
 |---|---|
-| **company-to-user Transaction** | It is the transaction where the client company is the sender and the economy user is the receiver. <br>**To do company-to-user transactions, you will have to user Server Side SDK (available in [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby), [Node.js](https://github.com/ostdotcom/ost-sdk-js), [Java](https://github.com/ostdotcom/ost-sdk-java)).** |
+| **company-to-user Transaction** | It is the transaction where the client company is the sender and the economy user is the receiver. <br>**To do company-to-user transactions, you will have to use Server Side SDK (available in [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby), [Node.js](https://github.com/ostdotcom/ost-sdk-js), [Java](https://github.com/ostdotcom/ost-sdk-java)).** |
 | **user initiated Transaction** | It is the transaction where the economy user is the sender and another economy user or compay is the receiver. <br> **Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)) facilitates signing of transactions on users behalf.** |
 
 
@@ -58,8 +58,7 @@ Example: 7 OST = 7*10^18 Atto OST.
 <br>
 
 > ## Rules Contract
-
-OpenST protocol includes Rules Contract and TokenRules Contract to enable you to define the behavior of token transfer and thus design custom Rules that align with your economy goals. OST has written one rule contract, the `PricerRule Contract` for you to use.
+OpenST Protocol includes Rules Contract and TokenRules Contract to enable you to define the behavior of token transfer and thus design custom Rules that align with your economy goals. OST has written one rule contract, the PricerRule Contract for you to use.
 
 You can optionally choose to get information about Rules  by sending a GET to `/rules` endpoint. Alternatively the table below lists the two rules deployed with the rule names and rule parameters which are to be sent as input parameter for executing a transaction.
 
@@ -78,7 +77,7 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 
 <br>
 
-2. **Pricer**: `Pricer` rule contract can be used to transfer the amount of brand token based on fiat amount. You will have to specify the fiat currency code and the amount in fiat currency. This amount will then be converted into brand token and then the transfer will happen in brand token.
+2. **Pricer**: `PricerRule` Contract can be used to transfer an amount of brand tokens based on fiat amount. You will have to specify the fiat currency code and the amount in fiat currency. This amount will then be converted into brand token and then the transfer will happen in brand token.
 
 
 ### `pay` Method Parameters
@@ -108,7 +107,7 @@ The QRCode data for executing transactions via web application should be a JSON 
 | **ddv** <br> **String**  | Data Definition Version. Current version is `1.0.0`  |   |
 |  **d** <br> **JSON Object** |   |   |
 |   | **Property**  | **Description** |
-|   | **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer`.  |
+|   | **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer` |
 |   | **ads**  <br> **Array** | Array of receiver's Token Holder Addresses. |
 |   | **ams**  <br> **Array** | Array of amounts in Atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in Atto.  |
 |   | **tid**  <br> **String** | token_id of your Brand Token. |
@@ -209,16 +208,15 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 > ## Executing `user` initiated transactions
 * `User` initiated transactions needs to be signed by the user's device keys. 
 
-* User's device keys are created and stored in their mobile device. So, user initiated transactions(`user-to-company`, `user-to-user`) needs to be executed in the Mobile App using wallet SDK (available for Android and iOS). 
+* User's device keys are created and stored in their mobile device. So, user initiated transactions (`user-to-company`, `user-to-user`) needs to be executed in the mobile app using wallet SDK (available for Android and iOS).
 
 * To execute the transaction using wallet SDK, you will have to use `executeTransaction` workflow. 
 
 
 
 > ## Executing `user` intiated transactions in web.
-To execute the `user` initiated transactions in web, you will have to create QRCode with transaction data and then you need to build a QRCode scanner in your app to scan it. After scanning the QRCode, your application will have the transaction data. As a last step, you need to pass the 
-transaction data to `performQRAction` workflow using wallet SDK..
 
+To execute the `user` initiated transactions in web, you will have to create QRCode with transaction data and then you need to build a QRCode scanner in your app to scan it. After scanning the QRCode, your application will have the transaction data. As a last step, you need to pass the transaction data to `performQRAction` workflow using wallet SDK.
 
 1. Generate QRCode with transaction data.
 2. Scan QRCode with mobile app.
@@ -248,9 +246,9 @@ To generate QRCode with transaction data follow the steps expained in [above sec
 <br>
 
 ### 2. Scan QRCode with mobile app.
-You need to provide a functionality to scan the QRCode. You can use 3rd party libraries to create the QRCode scanner.
+You need to provide functionality to scan a QRCode. You can use 3rd party libraries to create the QRCode scanner.
 
-**Android 3rd party libraries**
+**Android 3rd party libraries to scan QRCode**
 
 * https://github.com/zxing/zxing
 
@@ -277,7 +275,7 @@ OstWalletSdk.performQRAction(userId, QRCodeData, this);
 
 * `performQRAction` workflow will then read the data and will call `verifyData` callback function.
 
-* You will get the transaction data as one of the argument of `verifyData` with name `ostContextEntity` .
+* You will get the transaction data as one of the argument of `verifyData` with name `ostContextEntity`.
 
 Arguments of verifyData (Android Wallet SDK Example)
 
@@ -319,11 +317,10 @@ Sample verifyData code (Android Wallet SDK)
    }
 ```
 
-### Verify Transaction Satatus
+### Verify Transaction Status
 
 #### Receiving `performQRAction` workflow status callbacks
-
-There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in [android wallet SDK](/platform/docs/wallet_sdk_setup/android/)) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/wallet_sdk_setup/iOS/)) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/wallet_sdk_setup/android/)) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/wallet_sdk_setup/iOS/)) for communication between mobile app and Wallet SDK. 
 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
