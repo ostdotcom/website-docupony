@@ -9,10 +9,10 @@ OST servers authenticate your API requests using your account’s API keys. If y
 
 Every account is provided with separate keys for sandbox environment and for production environment. All API requests exist in either sandbox mode or production mode, and entities—users, devices, sessions, and so forth—in one mode cannot be manipulated by entities in the other.
 
-There is a key pair: API KEY and API SECRET.
+There is a key pair: API key and API secret
 
-* API keys are meant to identify your account with OST, they aren’t secret. In other words, they can safely be published in an Android or iPhone app. 
-* API SECRTE should be kept confidential and only stored on your own servers. Your account’s secret API key can perform any API request to OST.
+* API keys are meant to identify your account with OST, they aren’t secret. In other words, they can safely be published in an Android or iOS app. 
+* API secret should be kept confidential and only stored on your own servers. Your account's secret API key can perform any API request to OST.
 
 **Every account is provided with two pairs of keys: one for sandbox environment and one for production environment.**
 
@@ -25,10 +25,10 @@ Your API keys are available in the Developers Page in OST Platform.
 ### Sandbox and Production mode
 The sandbox and production modes function almost identically, with a few necessary differences:
 
-* In sandbox mode, OST-Test are used to mint Brand Tokens. We grant 10000 test OST for you to get started.
-* You can view blockchain data of both environments on view by selecting Testnet in dropdown for sandbox and Mainnet for production.
+* In sandbox mode, OST-Test is used to mint Brand Tokens. We grant 10,000 OST-Test for you to get started.
+* You can view blockchain data of both environments on OST View by selecting either Testnet in dropdown for sandbox or Mainnet for production.
 
-You can view test data by toggling the OST Platforms Sandbox mode option.
+You can view test data by toggling back to OST Platform Sandbox mode.
 
 ### Keeping your keys safe
 
@@ -42,7 +42,6 @@ When rolling an API key, you can choose to delete the old key immediately or all
 
 
 ## Wallet SDK Authentication
-OST has created Wallet SDK, providing private key management, authorization and recovery of user wallet services from an Android app / iOS app. With our SDK, we shoulder the burden of creating a wallet for users to own their tokens without requiring them to directly manage their private crypto keys. The private keys are limited to the device and the person with access to the device. And our wallet SDK uses “Personal” sign authentication to communicates to our servers.
+OST has created Wallet SDK, providing private key management, authorization and recovery of user wallet services from an Android app or iOS app. With our wallet SDK, OST shoulders the burden of creating a wallet for users to own their tokens without requiring them to directly manage their private crypto keys. The private keys are limited to the device and the person with access to the device. And our wallet SDK uses “Personal” sign authentication to communicates to our servers.
 
-Your app will receive a token created by Wallet SDK which we call as ‘Api Signer’, which your app can then send the token to an endpoint on your server, where it can be used to register a device on OST Platform server. Once the ‘Api Signer’ token is registered, the wallet SDK can directly start communicating with OST APIs. The SDK ‘Personal’ signs the Api request using the ‘Api Signer’. The OST Platform validates the ‘personal’ signed Api call by recovering the Api Key address.
-
+Your app will receive a token created by Wallet SDK which we call ‘Api Signer’. Your app can then send the token to an endpoint on your server, where it can be used to register a device on OST Platform server. Once the ‘Api Signer’ token is registered, the wallet SDK can directly start communicating with OST APIs. The SDK ‘Personal’ signs the API request using the ‘Api Signer’. The OST Platform validates the ‘personal’ signed API call by recovering the API key address.
