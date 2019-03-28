@@ -35,7 +35,7 @@ You can also choose [other methods](https://github.com/Carthage/Carthage/#instal
 Carthage looks at a file called `Cartfile` to determine which libraries to install. Create a file in the same directory as your Xcode project called `Cartfile` and enter the following to tell Carthage which dependencies we want:
 
 Add following entry in your `Cartfile`
-> github "ostdotcom/ost-wallet-sdk-ios" "v0.1.0-beta.1"
+> github "ostdotcom/ost-wallet-sdk-ios" "v2.0.0"
 
 Now to actually install everything run the following in your terminal:
 
