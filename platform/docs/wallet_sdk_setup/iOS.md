@@ -158,13 +158,13 @@ This will be the base API URL we need to provide to SDK while initializing.
 ## 5. Setting up communication between App and Wallet SDK
 
 iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet realted actions. 
-The communication between app and iOS wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback function is provided in `OstWorkFlowDelegate` protocol.
+The communication between app and iOS wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback function is provided in `OstWorkflowDelegate` protocol.
 
 
 ![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
 
-### a). Implementing the `OstWorkFlowDelegate` protocol
-There are different ways to implement `OstWorkFlowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkFlowDelegate` protocol. We will use this class to create object that can be passped in SDK workflows as callback. 
+### a). Implementing the `OstWorkflowDelegate` protocol
+There are different ways to implement `OstWorkflowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkflowDelegate` protocol. We will use this class to create object that can be passped in SDK workflows as callback. 
 
 Sample Implementation of [ OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [demo app ](https://github.com/ostdotcom/ios-demo-app/tree/develop).
 

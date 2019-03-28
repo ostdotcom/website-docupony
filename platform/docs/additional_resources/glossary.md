@@ -87,24 +87,19 @@ Steps outlined above in creating a wallet section. When end-users register on a 
 
 An Ethereum address represents an account. For external owned accounts, the address is derived as the last 20 bytes of the hash of the public key controlling the account, e.g., cd2a3d9f938e13cd947ec05abc7fe734df8dd826. This is a hexadecimal format (base 16 notation), which is often indicated explicitly by prepending 0x to the address. Since each byte of the address is represented by 2 hex characters, a prefixed address is 42 characters long.
 
-<!-- 
-## Auxiliary chain
-
-
-## Origin Chain
 
 ## uuid v4
-
+Each and every bit of a UUID v4 is generated randomly and with no inherent logic.
 
 ## Tx Hash
+Transaction hash is an identifier used to uniquely identify a particular transaction. All on-chain transactions have a unique transaction hash that can be seen in transaction details. A transaction hash usually looks like a random set of letters and numbers.
 
-
-## BigInt
 
 
 ## Pessimistic Debit
+For a sender in OST platform the step of a transaction in OST Platform is pessimistic debit. Pessimistic debit is a temporary debit from senders account, the debit will be settled once the transaction is confirmed on [origin chain](#origin-chain).
 
 
-## Recovery Owner Key
 
-## Smart Contract -->
+
+

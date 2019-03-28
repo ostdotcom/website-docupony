@@ -172,7 +172,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 }
 ```
 Ideally after user creation you should map the user's `id` with unique identifier of you application user. 
-Ex: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
+Example: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
 
 
 A detail explanation about each attribute of user is availaible on [user object](/platform/docs/api/?php#user-object) section of [API docs](/platform/docs/api/?php#user-object).

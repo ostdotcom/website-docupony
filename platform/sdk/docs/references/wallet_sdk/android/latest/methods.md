@@ -61,7 +61,7 @@ public class App extends Application {
 
 <br>
 ### 2. setupDevice
-This workflow needs `userId` and `tokenId` so `setupDevice` should be called after your app login or signup is successfull. 
+This workflow needs `userId` and `tokenId` so `setupDevice` should be called after your app login or signup is successful.
 Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId`.
 
 **If the user is logged in, then `setupDevice` should be called everytime the app launches, this ensures that the current device is registered before communicating with OST Platform server.**
@@ -95,7 +95,7 @@ void activateUser(UserPassphrase passphrase,
 |---|---|
 | **userPassPhrase** <br> **UserPassphrase**	| A simple struct to hold and transfer pin information via app and Sdk. |
 | **expiresAfterInSecs** <br> **long**	| Expire time of session key in seconds. |
-| **spendingLimitInWei** <br> **String**	| Spending limit of session key in Wei.  |
+| **spendingLimitInWei** <br> **String**	| Spending limit of session key in Atto.  |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/).  |
 
 
@@ -115,7 +115,7 @@ This workflow will create and authorize the session key that is needed to do the
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform  |
 | **expiresAfterInSecs** <br> **long**	| Expire time of session key in seconds.  |
-| **spendingLimitInWei** <br> **String**	| Spending limit of session key in Wei.   |
+| **spendingLimitInWei** <br> **String**	| Spending limit of session key in Atto.   |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/).   |
 
 
@@ -175,7 +175,7 @@ void executeTransaction(String userId,
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform |
 | **tokenId** <br> **String**	| Unique identifier for the token economy |
 | **tokenHolderAddresses** <br> **List**	| Token holder addresses of amount receiver |
-| **amounts** <br> **List**	| Amoun to be transfered in Wei.  |
+| **amounts** <br> **List**	| Amoun to be transfered in Atto.  |
 | **ruleName** <br> **String**	|  Rule name to be executed.  |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	|An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/).  |
 

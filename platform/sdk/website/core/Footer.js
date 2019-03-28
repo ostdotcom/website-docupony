@@ -35,7 +35,7 @@ class Footer extends React.Component {
             <a href="/platform/docs/sdk">
               SDK References
             </a>
-            <a href="platform/docs/api">
+            <a href="/platform/docs/api">
               API References
             </a>
           </div>
@@ -109,7 +109,7 @@ class Footer extends React.Component {
           </div>
 
         </section>
-        <section className="copyright">Copyright © 2019 <a href="https://ost.com" target="_blank">OST.com</a> Ltd. All Rights Reserved.</section>
+        <section className="copyright">Copyright © 2019 <a href="https://ost.com" target="_blank">OST.com</a> Inc. All Rights Reserved.</section>
       </footer>
     );
   }
