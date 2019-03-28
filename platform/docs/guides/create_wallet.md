@@ -191,13 +191,19 @@ Make sure you implement the callback function `registerDevice` in the class call
 To activate the user you will have to call **activateUser** workflow which requires 5 inputs parameters given below:
 
 1. A 6-digit PIN set by user
+
 2. User Id: User id of economy user in OST Platform
+
 3. passphrasePrefix: a unique string for each user with high entropy, generated on your server.
+
 4. expiryAfterInSecs: A TokenHolder contract that holds a users tokens is one of three contracts that are deployed on blockchain during user activation. TokenHolder contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each users session key as well as the spending limit. It is recommened to set expriation time to 2 weeks, however, you can choose to more or less time.
-5. spendingLimitinWei: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. atto Brand Token = 10^18 Brand Token.
+
+5. spendingLimitinWei: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
+
 
 #### Getting passphrasePrefix from your server
 You should request your server to get the `passphrasePrefix` generated in [generating passphrasePrefix section](#generating-passphaseprefix).
+
 
 
 
@@ -231,7 +237,8 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 
 **expiryAfterInSecs**: Recommended is 2 weeks, however, you can choose to more or less time.
 
-**spendingLimitinWei**: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. atto Brand Token = 10^18 Brand Token.
+
+**spendingLimitinWei**: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
 
 #### Finally calling `activateUser` workflow
 

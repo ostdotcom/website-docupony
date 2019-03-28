@@ -37,7 +37,7 @@ MetaMask is required to participate in OST Platform.
 * MetaMask provides a browser plugin to create a wallet and receive an initial allotment of OST-Test on sandbox environment. This wallet is further used to sign for token creation transactions on Ropsten Test Network.
 * On Production environment, we use MetaMask’s Interface to connect to two widely used hardware wallets: Trezor and Ledger.
 
-![Two-Factor Authentication](/platform/docs/assets/token-setup/install_metamask.png)
+![Two-Factor Authentication](/platform/docs/assets/token-setup/Install_metamask.png)
 
 
 **Account Owner Address**
@@ -47,7 +47,7 @@ MetaMask is required to participate in OST Platform.
 
 Once you associate the owner address the token setup process starts. This process involves running multiple blockchain transactions on Ethereum blockchain and OpenST Side Chains, so the process takes several minutes to complete.
 
-![create-account](/platform/docs/assets/token-setup/Confirm_address.png)
+![create-account](/platform/docs/assets/token-setup/Account_setup.png)
 
 
 ## 5. Mint Tokens

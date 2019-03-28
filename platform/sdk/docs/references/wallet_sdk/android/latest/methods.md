@@ -87,7 +87,7 @@ It `authorizes` the registered device and activates the user. User activation de
 ```
 void activateUser(UserPassphrase passphrase, 
                   long expiresAfterInSecs, 
-                  String spendingLimitInWei, 
+                  String spendingLimit, 
                   OstWorkFlowCallback callback)
 ```
 
@@ -95,7 +95,7 @@ void activateUser(UserPassphrase passphrase,
 |---|---|
 | **userPassPhrase** <br> **UserPassphrase**	| A simple struct to hold and transfer pin information via app and Sdk. |
 | **expiresAfterInSecs** <br> **long**	| Expire time of session key in seconds. |
-| **spendingLimitInWei** <br> **String**	| Spending limit of session key in Atto.  |
+| **spendingLimit** <br> **String**	| Spending limit of session key in [atto BT](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token).  |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/).  |
 
 
@@ -107,7 +107,7 @@ This workflow will create and authorize the session key that is needed to do the
 ```
  void addSession( String userId, 
                   long expireAfterInSecs, 
-                  String spendingLimitInWei, 
+                  String spendingLimit, 
                   OstWorkFlowCallback workFlowCallback)
 ```
 
@@ -115,7 +115,7 @@ This workflow will create and authorize the session key that is needed to do the
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform  |
 | **expiresAfterInSecs** <br> **long**	| Expire time of session key in seconds.  |
-| **spendingLimitInWei** <br> **String**	| Spending limit of session key in Atto.   |
+| **spendingLimit** <br> **String**	| Spending limit of session key in [atto BT](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token).   |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/).   |
 
 
@@ -175,7 +175,7 @@ void executeTransaction(String userId,
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform |
 | **tokenId** <br> **String**	| Unique identifier for the token economy |
 | **tokenHolderAddresses** <br> **List**	| Token holder addresses of amount receiver |
-| **amounts** <br> **List**	| Amoun to be transfered in Atto.  |
+| **amounts** <br> **List**	| Amoun to be transfered in atto.  |
 | **ruleName** <br> **String**	|  Rule name to be executed.  |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	|An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/).  |
 
