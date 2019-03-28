@@ -832,6 +832,7 @@ Devices are the wallet devices that are added by a user. `Devices` API allows yo
 |  **linked_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null** | Address that points to the device's address in the device manager contract's linked list of `owners`. This is used during recovery.  |
 |  **api\_signer_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | Will be used to validate the request coming from the wallet SDK.  |
 |   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Status when client company registers device with OST. <br>`AUTHORIZING `: Status when device address is being authorized in user's device manager contract. <br>`AUTHORIZED `: Status when the authorization is complete.<br>`REVOKING `: Status when device is being revoked from user's device manager contract.<br>`REVOKED `: Status when revocation of the device address is complete. <br> `RECOVERING`: Status when device address is being revoked and a replacement address is being authorized in user's device manager contract (recovery). <br> `ABORTING`: Status when recovery is being aborted. |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
 
@@ -993,12 +994,15 @@ $configParams["timeout"] = 15;
 $params["config"] = $configParams;
 
 $ostObj = new OSTSdk($params);
+
 $deviceService = $ostObj->services->devices;
 
 $getParams = array();
-$getParams['user_id'] = '5ff57c15-f54f-45fe-acf5-6c6fbfdf815a';
+$getParams['user_id'] = 'cdbea777-2296-4220-a2e2-d35ac22e6d0b';
 
-// This will list all the devices of the above user. 
+// limiting the number of 
+$getParams['limit'] = '2';
+
 $response = $deviceService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
@@ -1030,25 +1034,39 @@ The value of `data.result_type` property will be `devices` and list of devices w
 > List all Devices - Example Response
 
 ```json
-{
-  "success": true,
-  "data": {
-    "result_type": "devices",
-    "devices": [
-      {
-        "user_id": "5ff57c15-f54f-45fe-acf5-6c6fbfdf815a",
-        "address": "0x2ea365269a3e6c8fa492eca9a531bfac8ba1649c",
-        "linked_address": null,
-        "api_signer_address": "0x5f860598383868e8e8ee0ffc5add92369db37455",
-        "status": "REGISTERED",
-        "updated_timestamp": 1552291023
-      }
-    ],
-    "meta": {
-      "next_page_payload": []
+```{
+    "success": true,
+    "data": {
+        "result_type": "devices",
+        "devices": [
+            {
+                "user_id": "cdbea777-2296-4220-a2e2-d35ac22e6d0b",
+                "address": "0x70856388901ae5613483fd3ad117b87c749194c4",
+                "linked_address": "0x0000000000000000000000000000000000000001",
+                "api_signer_address": "0xff39a9374d61236ff5ba98da8542416a03690766",
+                "device_name": "Xiaomiriva",
+                "device_uuid": "2713ae2d-2861-4c7f-a8b5-f98232a9608f",
+                "status": "AUTHORIZED",
+                "updated_timestamp": 1552407684
+            },
+            {
+                "user_id": "cdbea777-2296-4220-a2e2-d35ac22e6d0b",
+                "address": "0x1f9e06a5c4abec36a68bdc976fde54127d024866",
+                "linked_address": null,
+                "api_signer_address": "0xe39534e792aa90e86e6195006c6117bbb4b0c9b8",
+                "device_name": "motorolasanders_n",
+                "device_uuid": "6152c446-d593-498d-bb51-046c6484b546",
+                "status": "REVOKED",
+                "updated_timestamp": 1552407684
+            }
+        ],
+        "meta": {
+            "next_page_payload": {
+                "pagination_identifier": "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiY2RiZWE3NzctMjI5Ni00MjIwLWEyZTItZDM1YWMyMmU2ZDBiIn0sIndhIjp7IlMiOiIweDFmOWUwNmE1YzRhYmVjMzZhNjhiZGM5NzZmZGU1NDEyN2QwMjQ4NjYifX0sInBhZ2UiOjIsImxpbWl0IjoyfQ=="
+            }
+        }
     }
-  }
-}
+}```
 ```
 
 
@@ -1168,7 +1186,7 @@ $sessionService = $ostObj->services->sessions;
 
 $getParams = array();
 $getParams['user_id'] = '10543373-5eb5-4dce-8fac-dff38ba941ba';
-
+$getParams['limit']='2'
 $response = $sessionService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
@@ -1223,40 +1241,12 @@ The value of `data.result_type` property will be `sessions` and list of sessions
             "nonce": 0,
             "status": "AUTHORIZED",
             "updated_timestamp": 1551958755
-          },
-          {
-            "user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "address": "0x9e2b6e125ed05f5c78695095124da8bff16c00f1",
-            "expiration_height": 10948394,
-            "approx_expiration_timestamp": 1583947735,
-            "spending_limit": "10000",
-            "nonce": 0,
-            "status": "AUTHORIZED",
-            "updated_timestamp": 1552066139
-          },
-          {
-            "user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "address": "0x760ee642bab9c80b4ed27e437cd6e4515c4764a7",
-            "expiration_height": 10948295,
-            "approx_expiration_timestamp": 1583947438,
-            "spending_limit": "100000",
-            "nonce": 1,
-            "status": "AUTHORIZED",
-            "updated_timestamp": 1552065841
-          },
-          {
-            "user_id": "10543373-5eb5-4dce-8fac-dff38ba941ba",
-            "address": "0x24845e9cd9dde48eaa28c9c2bc7a3c9dc39922c9",
-            "expiration_height": 31821558,
-            "approx_expiration_timestamp": 1646567227,
-            "spending_limit": "123",
-            "nonce": 9,
-            "status": "AUTHORIZED",
-            "updated_timestamp": 1551959229
           }
       ],
       "meta": {
-          "next_page_payload": []
+          "next_page_payload": {
+            "pagination_identifier": "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiY2RiZWE3NzctMjI5Ni00MjIwLWEyZTItZDM1YWMyMmU2ZDBiIn0sIndhIjp7IlMiOiIweDFmOWUwNmE1YzRhYmVjMzZhNjhiZGM5NzZmZGU1NDEyN2QwMjQ4NjYifX0sInBhZ2UiOjIsImxpbWl0IjoyfQ=="
+          }
       }
   }
 }
