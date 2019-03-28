@@ -9,7 +9,7 @@ sidebar_label: Execute Transaction
 | S. No. | Section  |
 |---|---|
 | 1  | [Types Of Transactions](#types-of-transactions)  |
-| 2  | [Atto Conversions (OST to Atto OST, BT to Atto BT, USD to Atto USD)](#conversions-to-atto)  |
+| 2  | [atto Conversions (OST to atto OST, BT to atto BT, USD to atto USD)](#conversions-to-atto)  |
 | 3  | [Rules Contract](#rules-contract)  |
 | 4  | [Generating QRCode with Transaction Data](#generating-qrcode-with-transaction-data)  |
 | 5  | [Executing company-to-user Transactions](#executing-company-to-user-transactions)  |
@@ -31,27 +31,27 @@ There are 2 different types of transaction possible in an economy based on the t
 
 <br>
 
-> ## Conversions to Atto:
+> ## Conversions to atto:
 
-Atto is the smallest denomination used in OST Platform. OST Platform API and SDK accept value in `Atto`, so it is important to understand the conversions to `Atto`.
+atto is the smallest denomination used in OST Platform. OST Platform API and SDK accept value in `atto`, so it is important to understand the conversions to `atto`.
 
-**You need to multiply any currency with 10^18 to convert it into its Atto denomination.**
+**You need to multiply any currency with 10^18 to convert it into its atto denomination.**
 
 
-### Converting `Brand Token` to  `Atto Brand Token`
+### Converting `Brand Token` to  `atto Brand Token`
 To convert `brand token` into `atto brand token`, we will have to multiply amount of brand token with 10^18.
 
-Example: 10 Brand Token = 10 * (10^18) Atto Brand Token.
+Example: 10 Brand Token = 10 * (10^18) atto Brand Token.
 
-### Converting `USD` to `Atto USD`
-To convert `USD` into `Atto USD`, we will have to multiply the USD amount with 10^18.
+### Converting `USD` to `atto USD`
+To convert `USD` into `atto USD`, we will have to multiply the USD amount with 10^18.
 
-Example: 25 USD = 25*10^18 Atto USD.
+Example: 25 USD = 25*10^18 atto USD.
 
-### Converting `OST` to `Atto OST`
-To convert `OST` into `Atto OST`, we will have to multiply the OST amount with 10^18.
+### Converting `OST` to `atto OST`
+To convert `OST` into `atto OST`, we will have to multiply the OST amount with 10^18.
 
-Example: 7 OST = 7*10^18 Atto OST.
+Example: 7 OST = 7*10^18 atto OST.
 
 
 
@@ -73,7 +73,7 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 |---|---|---|
 |  **directTransfers**  |  |  |
 |  | **transfersTo** <br> **Array of Address**   | Array of token holder addresses. |
-|  | **transfersAmount** <br> **Array of amounts in Atto** | Array of **amounts in [Atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transfered to the addresses listed in **transfersTo** array. These amounts should be in the same sequence as the addresses in **transfersTo** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|  | **transfersAmount** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transfered to the addresses listed in **transfersTo** array. These amounts should be in the same sequence as the addresses in **transfersTo** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 
 
 <br>
@@ -87,9 +87,9 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 |  **pay**  |  |  |
 |  | **from** <br> **Address**   | Transaction executor's address |
 |  | **toList** <br> **Array of addresses** | Array of receiver's token holder address. |
-|  | **amountList** <br> **Array of amounts in Atto** | Array of **amounts in [Atto USD](#converting-usd-to-atto-usd)** that are to be transfered to the addresses listed in **toList** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|  | **amountList** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transfered to the addresses listed in **toList** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 |  | **payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
-|  | **baseCurrencyIntendedPrice** <br> **Integer** | This is the pay currency(USD) value in Atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 Atto USD = 5*10^17 Atto USD   |
+|  | **baseCurrencyIntendedPrice** <br> **Integer** | This is the pay currency(USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
 
 
 <br>
@@ -110,12 +110,12 @@ The QRCode data for executing transactions via web application should be a JSON 
 |   | **Property**  | **Description** |
 |   | **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer`.  |
 |   | **ads**  <br> **Array** | Array of receiver's Token Holder Addresses. |
-|   | **ams**  <br> **Array** | Array of amounts in Atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in Atto.  |
+|   | **ams**  <br> **Array** | Array of amounts in atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in atto.  |
 |   | **tid**  <br> **String** | token_id of your Brand Token. |
 
 <br>
 
-> Example JSON data for QRCode. The amounts are in Atto. [Wei conversions](/platform/docs/guides/execute_transaction/#wei-conversions) are explained in [next section](/platform/docs/guides/execute_transaction/#wei-conversions).
+> Example JSON data for QRCode. The amounts are in atto. [Wei conversions](/platform/docs/guides/execute_transaction/#wei-conversions) are explained in [next section](/platform/docs/guides/execute_transaction/#wei-conversions).
 
 ```js
 // Direct Transfer JSON data used to generate QRCode
@@ -125,7 +125,7 @@ The QRCode data for executing transactions via web application should be a JSON 
     "d": {
         "rn": "Direct Transfer", // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's Token Holder Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in Atto (In the same squence as the addresses in "ams" array are. 
+        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
         "tid": "123"     // token_id of your Brand Token
     }
 }
@@ -147,7 +147,7 @@ Sample code for executing a `directTransfer` is shown below.
 
 Brand token to transfer: 10 Brand Token
 
-Converting `Brand token` to `Atto Brand Token` = `10 *10^18` = `10^19` Atto Brand Token
+Converting `Brand token` to `atto Brand Token` = `10 *10^18` = `10^19` atto Brand Token
 
 
 
@@ -182,8 +182,8 @@ $executeParams = array(
             // First array is of receiver's token holder addresses 
             array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496"),
             
-            // Second array is of receiver's amounts in Atto 
-            // (10 Brand Token = 10^19 Atto)
+            // Second array is of receiver's amounts in atto 
+            // (10 Brand Token = 10^19 atto)
             array("10000000000000000000")
         );
     )),
@@ -239,7 +239,7 @@ To generate QRCode with transaction data follow the steps expained in [above sec
     "d": {
         "rn": "Direct Transfer", // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's Token Holder Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in Atto (In the same squence as the addresses in "ams" array are. 
+        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
         "tid": "123"     // token_id of your Brand Token
     }
 }

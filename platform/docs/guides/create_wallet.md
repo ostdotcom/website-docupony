@@ -199,7 +199,7 @@ To activate the user we will have to call **activateUser** workflow which requir
 3. passphrasePrefix : a unique string for each user  with high entropy, generated on your server.
 4. expiryAfterInSecs :  A TokenHolder contract that holds user's tokens is one of the three contracts that are deployed on blockchain during user activation. TokenHolder contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on user's behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each user's session key as well as the spending limit.  Recommended is 2 weeks you can choose to keep more or less.
 
-5. spendingLimitinWei : Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in Atto. 
+5. spendingLimitinWei : Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto. 
 
 #### Getting passphrasePrefix from your server
 
@@ -237,7 +237,7 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 
 **expiryAfterInSecs** :  Recommended is 2 weeks you can choose to keep more or less.
 
-**spendingLimitinWei** : Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in Atto.  
+**spendingLimitinWei** : Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto.  
 
 
 #### Finally calling `activateUser` workflow
