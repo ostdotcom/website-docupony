@@ -4,7 +4,7 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-![KitIndexImage]( /platform/docs/assets/introduction-header.png)
+![KitIndexImage]( /platform/docs/assets/getting-started/intro.png)
 
 OST Platform provides everything you need to test, integrate, and deploy your brand currency. Our APIs, SDKs, and dashboards enable fast and painless integration into any app, without requiring any in-house blockchain expertise -- so you can focus on your business and leave the blockchain bits to us.
 

@@ -21,7 +21,7 @@ The CTA on this page is for the user to update the App to the latest version whi
 
 ![Update](/platform/docs/assets/wallet-ux-guide/0-Onboarding.jpg)
 
-![onbaording](/platform/docs/assets/wallet-ux-guide/01-Update-to-2.0.jpg)
+![onbaording](/platform/docs/assets/wallet-ux-guide/0.1-Update-to-2.0.jpg)
 
 
 ## Workflow: 
