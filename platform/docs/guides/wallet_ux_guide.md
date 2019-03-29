@@ -7,7 +7,7 @@ sidebar_label: Wallet UX
 ![UX Guide Title](/platform/docs/assets/wallet-ux-guide/Wallet-UX-Guidelines-Hero.jpg)
 
 
-In this guide, we use an example of a fictitious restaurant recommendation application, “OpenSpoon” to illustrate how a Brand could use the Wallet SDK to integrate the functionality of a user-friendly non-custodial Brand Token wallet into their application. The UX case study aims to serve as a reference for Brand developers and to help create a faster and smoother implementation of the Wallet SDK with the application.
+In this guide, we use an example of a fictitious restaurant recommendation application, “Spoon” to illustrate how a Brand could use the Wallet SDK to integrate the functionality of a user-friendly non-custodial Brand Token wallet into their application. The UX case study aims to serve as a reference for Brand developers and to help create a faster and smoother implementation of the Wallet SDK with the application.
 
 We’ll be using user stories around sharing favorite local food experiences to illustrate the key concepts of the Wallet SDK implementation and to present some basic ideas for Tokenization.
 
@@ -70,7 +70,10 @@ To keep your users engaged and strengthen the perception of your Brand, use spen
 
 ![image](/platform/docs/assets/wallet-ux-guide/5-Spending-Options.jpg)
 
-If your token economy has a web app, spend actions can be authorized by using the Mobile Wallet QR. 
+<br>
+
+If your token economy has a web app, spend actions can be authorized by using the Mobile Wallet QR.  
+The suggested way to generate QR codes is to use a library that generates QR codes on the machine without making any external requests or without connecting to any third-party services. Here are a few examples of such libraries in [PHP](https://github.com/endroid/qr-code) , [NodeJS/Javascript](https://github.com/neocotic/qrious) and [Java/Android](https://github.com/zxing/zxing) 
 
 ![image](/platform/docs/assets/wallet-ux-guide/5-WebStore.jpg)
 
