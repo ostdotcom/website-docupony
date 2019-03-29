@@ -12,10 +12,10 @@ With the OST Platform:
  * A company can easily deploy a Brand Token Economy
  * Users can hold keys securely
  * Users enjoy a seamless user experience
- * A company can easily to integrate blockchain-based Tokens into their application
+ * A company can easily integrate blockchain-based Tokens into their application
 
 ## A company can easily deploy a Brand Token Economy
-OOST Platform's user interface enables companies to create their Brand Tokens by choosing a Token Name, Token Identifier and a conversion rate between the Brand Token and OST.
+OST Platform's user interface enables companies to create their Brand Tokens by choosing a Token Name, Token Identifier and a conversion rate between the Brand Token and OST.
 
 OST Platform enables companies to deploy contracts and transact without worrying about calculating gas.
 
