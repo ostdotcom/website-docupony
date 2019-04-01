@@ -92,6 +92,10 @@ const siteConfig = {
     '/platform/docs/sdk/js/custom.js'
   ],
 
+  gaTrackingId: 'UA-115768918-6',
+
+  gaGtag: true,
+
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
   // No .html extensions for paths.

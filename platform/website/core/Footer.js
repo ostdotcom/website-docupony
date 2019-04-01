@@ -110,6 +110,9 @@ class Footer extends React.Component {
 
         </section>
         <section className="copyright">Copyright © 2019 <a href="https://ost.com" target="_blank">OST.com</a> Inc. All Rights Reserved.</section>
+      
+      
+      
       </footer>
     );
   }

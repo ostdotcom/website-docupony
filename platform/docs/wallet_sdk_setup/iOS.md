@@ -119,7 +119,7 @@ Copy paste this configuration file.
 ```
 
 1. BlockGenerationTime: The time in seconds it takes to mine a block on auxiliary chain.
-2. PricePointTokenSymbol: This is the symbol of base currency. So it's value will be `OST`.
+2. PricePointTokenSymbol: This is the symbol of base currency. So its value will be `OST`.
 3. PricePointCurrencySymbol: It is the symbol of quote currency used in price conversion. 
 4. RequestTimeoutDuration: Request timeout in seconds for https calls made by ostWalletSdk.
 5. PinMaxRetryCount: Maximum retry count to get the wallet Pin from user.
@@ -156,7 +156,7 @@ This will be the base API URL we need to provide to SDK while initializing.
 
 ## 5. Setting up communication between app and wallet SDK
 
-iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet realted actions. Communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowDelegate` protocol.
+iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet related actions. Communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowDelegate` protocol.
 
 ![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
 

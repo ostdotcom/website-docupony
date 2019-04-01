@@ -25,7 +25,7 @@ There are 2 different types of transaction possible in an economy based on the t
 | Type Of Transaction | Description |
 |---|---|
 | **company-to-user Transaction** | It is the transaction where the client company is the sender and the economy user is the receiver. <br>**To do company-to-user transactions, you will have to use Server Side SDK (available in [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0), [Node.js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0), [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)).** |
-| **user initiated Transaction** | It is the transaction where the economy user is the sender and another economy user or compay is the receiver. <br> **Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)) facilitates signing of transactions on users behalf.** |
+| **user initiated Transaction** | It is the transaction where the economy user is the sender and another economy user or company is the receiver. <br> **Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)) facilitates signing of transactions on users behalf.** |
 
 
 
@@ -58,7 +58,7 @@ Example: 7 OST = 7*10^18 atto OST.
 <br>
 
 > ## Rules Contract
-OpenST Protocol includes Rules Contract and TokenRules Contract to enable you to define the behavior of token transfer and thus design custom Rules that align with your economy goals. OST has written one rule contract, the PricerRule Contract for you to use.
+OpenST Protocol includes Rules Contract and TokenRules Contract to enable you to define the behavior of token transfer and thus design custom Rules that align with your economy goals. OST has written one rule contract, the PricerRule Contract, for you to use.
 
 You can optionally choose to get information about Rules  by sending a GET to `/rules` endpoint. Alternatively the table below lists the two rules deployed with the rule names and rule parameters which are to be sent as input parameter for executing a transaction.
 
@@ -206,9 +206,9 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 
 > ## Executing `user` initiated transactions
-* `User` initiated transactions needs to be signed by the user's device keys. 
+* `User` initiated transactions need to be signed by the user's device keys. 
 
-* User's device keys are created and stored in their mobile device. So, user initiated transactions (`user-to-company`, `user-to-user`) needs to be executed in the mobile app using wallet SDK (available for Android and iOS).
+* User's device keys are created and stored in their mobile device. So, user initiated transactions (`user-to-company`, `user-to-user`) need to be executed in the mobile app using wallet SDK (available for Android and iOS).
 
 * To execute the transaction using wallet SDK, you will have to use `executeTransaction` workflow. 
 

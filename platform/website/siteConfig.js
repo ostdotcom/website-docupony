@@ -102,6 +102,11 @@ const siteConfig = {
   ogImage: 'img/docusaurus.png',
   twitterImage: 'img/docusaurus.png',
 
+
+  gaTrackingId: 'UA-115768918-6',
+
+  gaGtag: true,
+
   // docsSideNavCollapsible: true,
 
   // scrollToTop: true,
