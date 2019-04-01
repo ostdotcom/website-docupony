@@ -64,7 +64,7 @@ public class App extends Application {
 This workflow needs `userId` and `tokenId` so `setupDevice` should be called after your app login or signup is successful.
 Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId`.
 
-**If the user is logged in, then `setupDevice` should be called everytime the app launches, this ensures that the current device is registered before communicating with OST Platform server.**
+**If the user is logged in, then `setupDevice` should be called every time the app launches, this ensures that the current device is registered before communicating with OST Platform server.**
 
 
 ```

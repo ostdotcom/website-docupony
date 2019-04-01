@@ -22,7 +22,7 @@ We provide mobile wallet SDKs and server side SDKs to complete your integration:
 The following SDK guides are designed to help you get familiarized with the bare necessities, giving you a quick and clean approach to getting up and running.
 
 * Integrate the OST server side SDK with quickstart guide available for [PHP](/platform/docs/sdk/getting_started/server_sdk_quickstart_guide/php/)
-* Setup the Wallet SDK on [android](/platform/docs/sdk/getting_started/wallet_sdk_setup/android/) or [iOS](/platform/docs/sdk/getting_started/wallet_sdk_setup/iOS/) devices.
+* set up the Wallet SDK on [android](/platform/docs/sdk/getting_started/wallet_sdk_setup/android/) or [iOS](/platform/docs/sdk/getting_started/wallet_sdk_setup/iOS/) devices.
 * [Create a wallet for a user](/platform/docs/guides/create_wallet/) 
 * [Send some tokens to the user](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions)
 * [Test a user initiated transaction](/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web)

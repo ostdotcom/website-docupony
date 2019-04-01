@@ -88,7 +88,7 @@ The Balance and Ledger APIs allow the user to look at their current Brand Token 
 
 ### 7. Authorizing another device via a QR code (Optional)
 
-The OST Wallet SDK supports multiple devices accessing the same Wallet using the same PIN. Take advantage of the modular device management options by encouraging users to add devices. A QR code is a quick and easy way to setup a new device from an existing Wallet.  Enable users to scan the QR code to authorize the new device. Once the existing authorized device approves the request, the new device is also authorized and can use the same user PIN. Note: The user will have to setup biometrics again on the new device.
+The OST Wallet SDK supports multiple devices accessing the same Wallet using the same PIN. Take advantage of the modular device management options by encouraging users to add devices. A QR code is a quick and easy way to set up a new device from an existing Wallet.  Enable users to scan the QR code to authorize the new device. Once the existing authorized device approves the request, the new device is also authorized and can use the same user PIN. Note: The user will have to set up biometrics again on the new device.
 
 ![image](/platform/docs/assets/wallet-ux-guide/7-Multi-Device.jpg)
 

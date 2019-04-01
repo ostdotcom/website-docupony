@@ -5,7 +5,7 @@ sidebar_label: Create Token
 ---
 
 ## 1. Create an account
-The first thing you need to get started with OST Platform is to [register for a free account](https://platform.ost.com/sign-up). You will have to activate your account using the activation link sent to you upon registration.
+The first thing you need to do to get started with OST Platform is to [register for a free account](https://platform.ost.com/sign-up). You will have to activate your account using the activation link sent to you upon registration.
 
 
 ![create-account](/platform/docs/assets/token-setup/Register.png)
@@ -25,8 +25,8 @@ Once the QR code has been scanned, you will be able to see your OST Platform acc
 
 
 
-## 3. Setup Brand Token
-During token setup you will setup the Token Name (only letters, numbers, spaces allowed, at max 20 characters and 3 words) and select a Token Identifier (at max 4 letters or numbers, at min 1 letter required, no special characters allowed) for your brand token. You also need to set the conversion rate between your Brand Token and the staked value token (e.g. OST Token).
+## 3. Set Up Brand Token
+During token setup you will set up the Token Name (only letters, numbers, spaces allowed, at max 20 characters and 3 words) and select a Token Identifier (at max 4 letters or numbers, at min 1 letter required, no special characters allowed) for your brand token. You also need to set the conversion rate between your Brand Token and the staked value token (e.g. OST Token).
 
 ![create-account](/platform/docs/assets/token-setup/Token_setup.png)
 
@@ -42,10 +42,10 @@ MetaMask is required to participate in OST Platform.
 
 **Account Owner Address**
 
-* This is an important address. If you lose the associated private key, you will loose access to Brand Tokens you mint. It can be the public address of your metamask account or you can choose to associate a hardware wallet address via metamask as the owner address of the OST Platform account.
+* This is an important address. If you lose the associated private key, you will lose access to Brand Tokens you mint. It can be the public address of your metamask account or you can choose to associate a hardware wallet address via metamask as the owner address of the OST Platform account.
 * You associate the owner address with OST Platform by doing a personal signature. This signature is to ensure you as a user are the owner of the metamask account and it's real.
 
-Once you associate the owner address the token setup process starts. This process involves running multiple blockchain transactions on Ethereum blockchain and OpenST Side Chains, so the process takes several minutes to complete.
+Once you associate the owner address the token set up process starts. This process involves running multiple blockchain transactions on Ethereum blockchain and OpenST Side Chains, so the process takes several minutes to complete.
 
 ![create-account](/platform/docs/assets/token-setup/Account_setup.png)
 

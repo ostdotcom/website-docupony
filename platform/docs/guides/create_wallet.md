@@ -24,7 +24,7 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 ## Prerequisite
 * Make sure you've created your Brand Token via [OST Platform interface](https://platform.ost.com). This [token creation](/platform/docs/guides/create_token/) guide walks you through the token creation flow. Go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to API key and API secret.
 * Integrate one of the available OST Platform Server SDK into your application. SDKs are available for [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0), [Node.Js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0) and [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0).
-* Setup the Wallet SDK by following one of the Wallet Setup Guides. Wallet SDKs are available for [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/).
+* Set up the Wallet SDK by following one of the Wallet set up Guides. Wallet SDKs are available for [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/).
 
 <br>
 
@@ -139,12 +139,12 @@ public class App extends Application {
 ```
 
 ### Calling `setupDevice` workflow
-In order to intiate the device registeration from you mobile app, you need to call `setupDevice` workflow.
+In order to intiate the device registration from you mobile app, you need to call `setupDevice` workflow.
 <br>
 
-`setupDevice` workflow needs `userId` and `tokenId` so `setupDevice` should be called after app login or signup is successfull. Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId` (unique identifier for your token economy).
+`setupDevice` workflow needs `userId` and `tokenId` so `setupDevice` should be called after app login or signup is successful. Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId` (unique identifier for your token economy).
 
-**If the user is logged in, then `setupDevice` should be called everytime the app launches, this ensures that the current device is registered before communicating with OST Platform server.**
+**If the user is logged in, then `setupDevice` should be called every time the app launches, this ensures that the current device is registered before communicating with OST Platform server.**
 
 ```java
 
@@ -188,7 +188,7 @@ Make sure you implement the callback function `registerDevice` in the class call
 
 
 #### Input parameter for `activateUser`
-To activate the user you will have to call **activateUser** workflow which requires 5 inputs parameters given below:
+To activate the user you will have to call **activateUser** workflow which requires 5 input parameters given below:
 
 1. A 6-digit PIN set by user
 
@@ -196,7 +196,7 @@ To activate the user you will have to call **activateUser** workflow which requi
 
 3. passphrasePrefix: a unique string for each user with high entropy, generated on your server.
 
-4. expiryAfterInSecs: A TokenHolder contract that holds a users tokens is one of three contracts that are deployed on blockchain during user activation. TokenHolder contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each users session key as well as the spending limit. It is recommened to set expriation time to 2 weeks, however, you can choose to more or less time.
+4. expiryAfterInSecs: A TokenHolder contract that holds a users tokens is one of three contracts that are deployed on blockchain during user activation. TokenHolder contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each users session key as well as the spending limit. It is recommened to set expriation time to 2 weeks, however, you can choose more or less time.
 
 5. spendingLimitinWei: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
 
@@ -235,7 +235,7 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 
 #### Set expiryAfterInSecs and spendingLimitinWei
 
-**expiryAfterInSecs**: Recommended is 2 weeks, however, you can choose to more or less time.
+**expiryAfterInSecs**: Recommended is 2 weeks, however, you can choose more or less time.
 
 
 **spendingLimitinWei**: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
