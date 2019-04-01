@@ -35,7 +35,7 @@ To install the SDK run the following command <br>
 **Source code:** [Github - PHP SDK](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0)
 
 ### Install the latest stable version of the SDK:
-> php composer.phar require ostdotcom/ost-sdk-php:dev-release-2.0
+> php composer.phar require ostdotcom/ost-sdk-php
 
 
 
