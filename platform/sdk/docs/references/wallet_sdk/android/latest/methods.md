@@ -82,7 +82,7 @@ void setupDevice( String userId,
 <br>
 
 ### 3. activateUser
-It `authorizes` the registered device and activates the user. User activation deploys Token Holder, Device manager  contracts on blockchain. Session keys are also created and authorized during `activateUser` workflow. So after `user activation`, users can perform wallet actions like executing transactions and reset pin. 
+It `authorizes` the registered device and activates the user. User activation deploys  **TokenHolder**, Device manager  contracts on blockchain. Session keys are also created and authorized during `activateUser` workflow. So after `user activation`, users can perform wallet actions like executing transactions and reset pin. 
 
 ```
 void activateUser(UserPassphrase passphrase, 
@@ -174,7 +174,7 @@ void executeTransaction(String userId,
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform |
 | **tokenId** <br> **String**	| Unique identifier for the token economy |
-| **tokenHolderAddresses** <br> **List**	| Token holder addresses of amount receiver |
+| **tokenHolderAddresses** <br> **List**	|  **TokenHolder**  addresses of amount receiver |
 | **amounts** <br> **List**	| Amoun to be transfered in atto.  |
 | **ruleName** <br> **String**	|  Rule name to be executed.  |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	|An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/).  |

@@ -18,12 +18,12 @@ Typically, and as a decentralization matter, access to the seed phrase that was 
 Generally, anyone with access to a private key can access the funds held by it. Generally, anyone with access to the seed phrase can regenerate that private key.
 
 ## Components
-In the context of Brand Tokens used in OST's client economies, the public address is represented by a TokenHolder contract. The configured owner of a TokenHolder contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend-per-transaction.
+In the context of Brand Tokens used in OST's client economies, the public address is represented by a  **TokenHolder** contract. The configured owner of a  **TokenHolder** contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend-per-transaction.
 
 1. These ephemeral sessionKeys obviate the need for the user to sign every transaction within the application thereby creating a more seamless user experience. 
 2. The authorization of ephemeral sessionKeys requires the owner to sign the transaction.
 
-A multi-signature contract, the MultiSig, is configured as the owner of the TokenHolder contract and one or more keys are configured as owners to that MultiSig. This means that multiple owner keys can have authority over a TokenHolder contract.  Therefore, a user can have owner keys present on multiple devices (such as mobile phones and tablets), so that when moving between devices, the keys are not shared. 
+A multi-signature contract, the MultiSig, is configured as the owner of the  **TokenHolder** contract and one or more keys are configured as owners to that MultiSig. This means that multiple owner keys can have authority over a  **TokenHolder** contract.  Therefore, a user can have owner keys present on multiple devices (such as mobile phones and tablets), so that when moving between devices, the keys are not shared. 
 
 1. To add additional, remove or replace owner keys, a pre-agreed number of existing owners must sign the transaction.
 2. This pre-agreed number is required signatures is intuitively called the threshold of the MultiSig. 
@@ -60,7 +60,7 @@ These inputs are put through a cryptographically-sound key generation process (s
 In order to create a user wallet in a Brand Token economy, the following contracts are deployed
 
 A MultiSig contract. The public addresses from certain keys generated on the user's devices are set as owners for the MultiSig.
-A TokenHolder contract. The MultiSig controls the TokenHolder contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the TokenHolder.
+A  **TokenHolder** contract. The MultiSig controls the  **TokenHolder** contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the TokenHolder.
 A DelayedRecoveryModule contract. The public addresses of the recoveryOwner and the recoveryController are stored on this contract. A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay. 
 
 

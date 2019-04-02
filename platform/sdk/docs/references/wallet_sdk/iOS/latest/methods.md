@@ -76,7 +76,7 @@ OstWalletSdk.setupDevice(
 <br>
 
 ### 3. activateUser
-It `authorizes` the registered device and activates the user. User activation deploys Token Holder, Device manager  contracts on blockchain. Session keys are also created and authorized during `activateUser` workflow. So after `user activation`, users can perform wallet actions like executing transactions and reset pin. 
+It `authorizes` the registered device and activates the user. User activation deploys  **TokenHolder**, Device manager  contracts on blockchain. Session keys are also created and authorized during `activateUser` workflow. So after `user activation`, users can perform wallet actions like executing transactions and reset pin. 
 
 ```
 OstWalletSdk.activateUser(
@@ -181,7 +181,7 @@ OstWalletSdk.executeTransaction(
 | Parameter | Description |
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform|
-| **tokenHolderAddresses** <br> **[String]**	| Token Holder addresses of beneficiary users.  |
+| **tokenHolderAddresses** <br> **[String]**	|  **TokenHolder**  addresses of beneficiary users.  |
 | **amounts** <br> **[String]**	| Arrya of Amount to be transfered in atto.  |
 | **transactionType** <br> **OstExecuteTransactionType**	| Transaction type can take 1 o fthe two values: <br> 1. `DirectTransfer`:  In this type of transaction, the amount of brand token will be transfered directly to the receiver user. <br> 2. `Pay`: In this type of transaction the amount of fiat passed will first be converted into brand token and after this conversion the transfer will happen in converted brand token amount.|
 | **meta** <br> **[String: String]**	| Dictionary object having extra information that a developer can pass about the transfer. This dictionary object can have 3 properties. <br><br>Example meta:  <br>[<br>&nbsp; &nbsp;"name":"Thanks for like", <br>&nbsp; &nbsp;"type": "user_to_user", <br>&nbsp; &nbsp;  "details": "like"<br>] |
