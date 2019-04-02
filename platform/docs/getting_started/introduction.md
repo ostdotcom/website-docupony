@@ -35,10 +35,10 @@ Integrating with OST Platform involves interacting with several services and tec
 
 | Steps | Process |
 |---|---|
-| Register on OST Platform | Login to your OST Platform account and [setup your token](https://platform.ost.com/sign-up) |
+| Register on OST Platform | Log in to your OST Platform account and [set up your token](https://platform.ost.com/sign-up) |
 | | Get access to your [API Key and API secret](https://platform.ost.com/testnet/developer) from `Developer` tab in OST Platform Dashboard.  |
 | Integrate OST Platform Server Side SDK | Make your first call with server SDKs available in [PHP](/platform/docs/server_sdk_setup/php/),[Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0),[Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0),[Node.js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0) |
-| Integrate Wallet SDK into your app | Setup the [Android](/platform/docs/wallet_sdk_setup/android/) and/or [iOS](/platform/docs/wallet_sdk_setup/iOS/) Wallet SDk in your mobile app. |
+| Integrate Wallet SDK into your app | Set up the [Android](/platform/docs/wallet_sdk_setup/android/) and/or [iOS](/platform/docs/wallet_sdk_setup/iOS/) Wallet SDk in your mobile app. |
 | |  [Create a wallet for a user](/platform/docs/guides/create_wallet/)|
 | | [Send some tokens to the user](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions).|
 | | [Test a user initiated transaction](/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web)|

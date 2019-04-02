@@ -69,7 +69,7 @@ Steps outlined above in creating a wallet section. When end-users register on a 
 
 
 ## Steps for executing a token trasnfer
- Its important to understand the token economy setup and user setup outlined above before a client company can execute their first transaction. If client company wants to transfer tokens worth 5$ to a user the following sequence of events occur:
+ Its important to understand the token economy set up and user set up outlined above before a client company can execute their first transaction. If client company wants to transfer tokens worth 5$ to a user the following sequence of events occur:
 	1. Company's TokenHolder contract initiates “execute pricer rule” request to client company's  PricerRule Contract. The TokenHolder contract also approves company's TokenRules Contract to spend tokens on its behalf.
 	2.  Company's PriceRule Contract applies “conversion from USD to tokens rules”.   The PriceRule Contract will pass all this information after applying rules to the TokenRules Contract.
 	3. The TokenRules Contract executes the transfer between all concerned parties as specified by the company's PriceRule Contract.

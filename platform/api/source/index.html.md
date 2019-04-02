@@ -2871,7 +2871,7 @@ The value of `data.result_type` property will be `balance` and balance object wi
 
 # Token
 
-Token object contains details about economy and various contract addresses. One economy will have only one `token` object. This object is created during economy setup in dashboard so using API you can only make a `GET` request.
+Token object contains details about economy and various contract addresses. One economy will have only one `token` object. This object is created during economy set up in dashboard so using API you can only make a `GET` request.
 
 ## Token Object
 
