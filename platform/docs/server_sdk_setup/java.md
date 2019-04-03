@@ -1,14 +1,14 @@
 ---
-id: php
-title: PHP SDK Quickstart Guide
-sidebar_label: PHP
+id: java
+title: Java SDK Quickstart Guide
+sidebar_label: Java
 ---
 
 
 ## Introduction
-The PHP SDK is a PHP wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the PHP SDK.
+The Java SDK is a Java wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the Java SDK.
 
-You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
+You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-java/tree/release-2.0)
 
 ## 1. Create Token On OST Platform
 Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/guides/create_token/) to complete the token setup.
@@ -26,47 +26,84 @@ Every account is provided with two pairs of keys: one for sandbox environment an
 
 ## 3. Install SDK
 
-To install the SDK run the following command <br>
+### a) Installation using [Apache Maven](https://maven.apache.org/index.html)
+
+To install the SDK follow these steps <br>
+
+1. **Adding dependency in POM file of your project**
+
+```xml
+<dependency>
+  <groupId>com.ost</groupId>
+  <artifactId>ost-sdk-java</artifactId>
+  <version>2.0.0</version>
+</dependency>
+```
+
+2. **Installing SDK using maven command**
+
+> mvn install
 
 
-### Installing composer
-> curl -sS https://getcomposer.org/installer | php
+### b) Building jar from source
 
-**Source code:** [PHP SDK - Github Repo](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0)
-
-### Install the latest stable version of the SDK:
-> php composer.phar require ostdotcom/ost-sdk-php
+To build the Jar file of SDK from source follow these steps:
 
 
+1. **Clone the repository**
 
+> git clone https://github.com/ostdotcom/ost-sdk-java.git
+
+> cd ost-sdk-java
+
+2. **Package using MVN**
+
+    Packaging without dependencies
+
+    > mvn clean pacakge -DskipTests
+
+
+    Packaging with dependencies
+
+    > mvn clean compile assembly:single -DskipTests
+
+
+3. The jar can be found in `target` folder.
+
+
+**Source code:** [Java SDK Github Repo](https://github.com/ostdotcom/ost-sdk-java/tree/release-2.0)
 
 
 ## 4. Get Token Information
-To get the information about your Brand Token, you will have to use `tokens` service provided by PHP SDK.
+To get the information about your Brand Token, you will have to use `tokens` service provided by Java SDK.
 
 
 ### Instantiating the SDK object
-Before using any service of SDK you will have to provide API key and API secret to instantiate new SDK object.
+Before using any service of SDK, you will have to provide API key and API secret to instantiate new SDK object.
 
 **Instantiating The SDK Samlpe Code**
 
-```php
-<?php
-require 'vendor/autoload.php';
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
 
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+public class Test {
+    public static void main(String args[]) {
 
-// The config field is optional
-$configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
+        HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+        sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+        sdkConfig.put("apiKey","[YOUR_API_KEY]");
+        sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
 
-$ostObj = new OSTSdk($params);
-?>
+        HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+        nestedparam.put("timeout", (long) 60);
+        sdkConfig.put("config", nestedparam);
+
+        OSTSDK ostObj = new OSTSDK(sdkConfig);
+        com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+    }
+}
 ```
 
 ### Call `tokens` service
@@ -74,13 +111,14 @@ Now you can call any of the service provided by Server Side SDK. You will call `
 
 **Get Tokens Details Sample Code**
 
-```
-<?php
-$tokenService = $ostObj->services->tokens;
+```java
 
-$response = $tokenService->get()->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-?>
+com.ost.services.Tokens tokensService = services.tokens;
+
+HashMap <String,Object> params = new HashMap<String,Object>();
+JsonObject response = tokensService.get( params );
+System.out.println("response: " + response.toString() );
+
 ```
 
 ### Tokens Information 
@@ -138,15 +176,14 @@ Developers will create users from your servers and you will be responsible to ma
 ### Create User
 To create the user object you will use the user service. No input parameters are needed to create user.
 
-```php
-<?php
+```java
 
-$userService = $ostObj->services->users;
+com.ost.services.Users usersService = services.users;
 
-$createParams = array();
-$response = $userService->create($createParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-?>
+HashMap <String,Object> params = new HashMap<String,Object>();
+JsonObject response = usersService.create( params );
+System.out.println("response: " + response.toString() );
+
 ```
 
 ### Response (User Object)
@@ -172,7 +209,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 Ideally after user creation you should map the user's id with unique identifier of your application user. E.g.: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
 
 
-A detailed explanation about each attribute of user is availaible on user object section in [API docs](/platform/docs/api/?php#user-object).
+A detailed explanation about each attribute of user is availaible on user object section in [API docs](/platform/docs/api/#user-object).
 
 
 ## Next Steps

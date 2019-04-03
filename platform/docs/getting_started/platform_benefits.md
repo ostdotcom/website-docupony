@@ -35,7 +35,7 @@ The OST Wallet SDK natively supports multi-device access. Thus a user can have i
 
 The user input -assumed to be a 6 digit PIN- is also used to guard access to sensitive operations such as authorizing devices, viewing the mnemonic phrase, etc.  
 
-![OSTWalletRecovery](/platform/docs/assets/ERD-User-Setup-Daigram.png)
+![OSTWalletRecovery](/platform/docs/assets/ERD-User-Setup-Daigram.jpg)
 
 ## Seamless user experience
 A user can use a 6 digit PIN to authorize a sessionKey. These ephemeral sessionKeys, which remain active for a period of time chosen by the user or developer of the application (based on the implementation) obviate the need for the user to sign every transaction within the application thereby creating a more seamless user experience. Thus, the user can engage with the Brand Token economy without interruption during an authorized session. When a session expires, they may use the 6 digit PIN to authorize a new session.

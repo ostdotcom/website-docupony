@@ -399,3 +399,24 @@ body {
     }
 
 }
+
+.lang-selector a.active{
+    background: transparent;
+    color: #e4b030;
+    border-bottom: 2px solid #e4b030;
+}
+
+.lang-selector a:hover {
+    color: #e4b030;
+} 
+
+.lang-selector a:focus  {
+    background: transparent;
+}
+.page-wrapper .lang-selector {
+    border-bottom: none;
+}
+
+.content pre {
+    padding: 2.3em 28px;
+}

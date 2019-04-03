@@ -1,14 +1,14 @@
 ---
-id: php
-title: PHP SDK Quickstart Guide
-sidebar_label: PHP
+id: nodejs
+title: Node.js SDK Quickstart Guide
+sidebar_label: Node.js
 ---
 
 
 ## Introduction
-The PHP SDK is a PHP wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the PHP SDK.
+The Node.js SDK is a JavaScript wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the Node.js SDK.
 
-You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
+You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-js/tree/release-2.0)
 
 ## 1. Create Token On OST Platform
 Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/guides/create_token/) to complete the token setup.
@@ -28,21 +28,19 @@ Every account is provided with two pairs of keys: one for sandbox environment an
 
 To install the SDK run the following command <br>
 
+> npm install @ostdotcom/ost-sdk-js
 
-### Installing composer
-> curl -sS https://getcomposer.org/installer | php
+**Source code:** [Node.js SDK Github Repo](https://github.com/ostdotcom/ost-sdk-js/tree/release-2.0)
 
-**Source code:** [PHP SDK - Github Repo](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0)
 
-### Install the latest stable version of the SDK:
-> php composer.phar require ostdotcom/ost-sdk-php
 
 
 
 
 
 ## 4. Get Token Information
-To get the information about your Brand Token, you will have to use `tokens` service provided by PHP SDK.
+To get the information about your Brand Token, you will have to use `tokens` service provided by Node.js SDK.
+
 
 
 ### Instantiating the SDK object
@@ -50,23 +48,15 @@ Before using any service of SDK you will have to provide API key and API secret 
 
 **Instantiating The SDK Samlpe Code**
 
-```php
-<?php
-require 'vendor/autoload.php';
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
-$params = array();
-$params['apiKey']='65e20fcfce72f4c34546338a70518478';
-$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
-$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
-
-// The config field is optional
-$configParams = array();
-// This is the timeout in seconds for which the socket connection will remain open
-$configParams["timeout"] = 15;
-$params["config"] = $configParams;
-
-$ostObj = new OSTSdk($params);
-?>
+const ostObj = new OSTSDK({
+                            apiKey: <api_key>, 
+                            apiSecret: <api_secret>, 
+                            apiEndpoint: <api_endpoint>,
+                            config: {timeout: <request_timeout_in_seconds>}
+                        });
 ```
 
 ### Call `tokens` service
@@ -74,13 +64,18 @@ Now you can call any of the service provided by Server Side SDK. You will call `
 
 **Get Tokens Details Sample Code**
 
-```
-<?php
-$tokenService = $ostObj->services->tokens;
+```javascript
 
-$response = $tokenService->get()->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-?>
+const tokensService = ostObj.services.tokens;
+
+tokensService.get({})
+    .then(function(res) { 
+        console.log(JSON.stringify(res)); 
+    })
+    .catch(function(err) { 
+        console.log(JSON.stringify(err)); 
+    });
+
 ```
 
 ### Tokens Information 
@@ -138,15 +133,18 @@ Developers will create users from your servers and you will be responsible to ma
 ### Create User
 To create the user object you will use the user service. No input parameters are needed to create user.
 
-```php
-<?php
+```javascript
 
-$userService = $ostObj->services->users;
+const usersService = ostObj.services.users;
 
-$createParams = array();
-$response = $userService->create($createParams)->wait();
-echo json_encode($response, JSON_PRETTY_PRINT);
-?>
+usersService.create({})
+    .then(function(res) { 
+        console.log(JSON.stringify(res)); 
+    })
+    .catch(function(err) { 
+        console.log(JSON.stringify(err)); 
+    });
+
 ```
 
 ### Response (User Object)
@@ -169,10 +167,11 @@ echo json_encode($response, JSON_PRETTY_PRINT);
     }
 }
 ```
+
 Ideally after user creation you should map the user's id with unique identifier of your application user. E.g.: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
 
 
-A detailed explanation about each attribute of user is availaible on user object section in [API docs](/platform/docs/api/?php#user-object).
+A detailed explanation about each attribute of user is availaible on user object section in [API docs](/platform/docs/api/#user-object).
 
 
 ## Next Steps

@@ -9,7 +9,12 @@
     ],
 
     "Server SDK Setup": [
-      "server_sdk_setup/php"
+      "server_sdk_setup/php",
+      "server_sdk_setup/ruby",
+      "server_sdk_setup/nodejs",
+      "server_sdk_setup/java"
+
+
     ],
 
     "Wallet SDK Setup": [
