@@ -829,9 +829,9 @@ Devices are the wallet devices that are added by a user. `Devices` API allows yo
 |---|---|
 |  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4)| uuid of the user in the token economy.  |
 |  **address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | This will be the address of the device's key in user's [TokenHolder Contract](/platform/docs/additional_resources/glossary/#tokenholder-contracts).  |
-|  **linked_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null** | Address that points to the device's address in the device manager contract's linked list of `owners`. This is used during recovery.  |
+|  **linked_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null** | Address that points to the device's address in the **device manager contract's** linked list of `owners`. This is used during recovery.  |
 |  **api\_signer_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | Will be used to validate the request coming from the wallet SDK.  |
-|   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Status when client company registers device with OST. <br>`AUTHORIZING `: Status when device address is being authorized in user's device manager contract. <br>`AUTHORIZED `: Status when the authorization is complete.<br>`REVOKING `: Status when device is being revoked from user's device manager contract.<br>`REVOKED `: Status when revocation of the device address is complete. <br> `RECOVERING`: Status when device address is being revoked and a replacement address is being authorized in user's device manager contract (recovery). <br> `ABORTING`: Status when recovery is being aborted. |
+|   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Status when client company registers device with OST. <br>`AUTHORIZING `: Status when device address is being authorized in user's **device manager contract**. <br>`AUTHORIZED `: Status when the authorization is complete.<br>`REVOKING `: Status when device is being revoked from user's **device manager contract**.<br>`REVOKED `: Status when revocation of the device address is complete. <br> `RECOVERING`: Status when device address is being revoked and a replacement address is being authorized in user's **device manager contract** (recovery). <br> `ABORTING`: Status when recovery is being aborted. |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
@@ -1258,7 +1258,7 @@ The value of `data.result_type` property will be `sessions` and list of sessions
 
 # Rules 
 
-When executing a token transfer, a user's TokenHolder contract interacts with a token rule contract. A token economy can have multiple token rule contracts. To enable a user to execute a token transfer, you need to start with fetching details of registered rule contracts, understanding their methods and the corresponding parameters passed in those methods.
+When executing a token transfer, a user's  **TokenHolder** contract interacts with a token rule contract. A token economy can have multiple token rule contracts. To enable a user to execute a token transfer, you need to start with fetching details of registered rule contracts, understanding their methods and the corresponding parameters passed in those methods.
 
 ## Rules Object
 
@@ -2106,7 +2106,7 @@ The value of `data.result_type` property will be `price_point` and price point o
 | **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique Indentifeir of transaction   |
 | **transaction_hash** <br> **String [**\<tx hash\>**](/platform/docs/additional_resources/glossary/#tx-hash), <br> **default is null** | Hash of the transaction in blockchain  |
 |  **from**  <br> **String**,  [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address),<br> **default is null** | Sender address of transaction on blockchain.  |
-|  **to** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) |   This will be the TokenHolder contract address of transaction initiator.|
+|  **to** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) |   This will be the  **TokenHolder** contract address of transaction initiator.|
 |  **nonce** <br> **Integer**, <br> **default is null**| Transaction counter of sender address which helps prevents replay attacks.  |
 | **value**  <br> **String \<BigInt\>**, <br> **default is null**| Transfered [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) amount.   |
 | **gas_price**<br> **String \<BigInt\>** | The [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) per unit of gas provided by the sender. |
@@ -2979,7 +2979,7 @@ Token object contains details about economy and various contract addresses. One 
     </td>
 
     <td>
-      Company TokenHolder contract addresses.
+      Company  **TokenHolder** contract addresses.
     </td>
   </tr>
 

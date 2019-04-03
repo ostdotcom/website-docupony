@@ -10,8 +10,8 @@ This guide describes the ways in which application developers can work with the 
 
 The current features of OST's key management solution that enable recovery are:
  
-1. The user's funds are held in a smart contract on the blockchain. This contract called the TokenHolder contract serves as the public address where the balances sit. 
-2. The TokenHolder contract is owned by a Multisig contract. Multiple private keys that sit on the user's mobile devices can own the multisig contract
+1. The user's funds are held in a smart contract on the blockchain. This contract called the  **TokenHolder** contract serves as the public address where the balances sit. 
+2. The  **TokenHolder** contract is owned by a Multisig contract. Multiple private keys that sit on the user's mobile devices can own the multisig contract
 3. Each user's Wallet also includes a recovery module that is owned by a key that is created using inputs from the user (a 6 digit PIN) , the client and OST. 
 
 
@@ -36,7 +36,7 @@ Thus, there is the process of adding a and additional device which must happen b
 ![recovery-using-additional-device](/platform/docs/assets/qr-scan.png)
 
 
-To add a device as an owner of the TokenHolder contract, an existing owner must sign the transaction to add the device. To create the transaction to add a new key, a  QR code is generated on the new device; the user can scan this code with their old device and confirm the details to authorize the new device. 
+To add a device as an owner of the  **TokenHolder** contract, an existing owner must sign the transaction to add the device. To create the transaction to add a new key, a  QR code is generated on the new device; the user can scan this code with their old device and confirm the details to authorize the new device. 
 
 
 To remove a device as an owner, the user would need to go to a device management page and choose the device to revoke. Upon signing a confirmation the compromised device would cease to be an owner. 

@@ -44,9 +44,21 @@
         "title": "2.0.0 Release (March 2019)",
         "sidebar_label": "2.0.0 Release"
       },
+      "server_sdk_setup/java": {
+        "title": "Java SDK Quickstart Guide",
+        "sidebar_label": "Java"
+      },
+      "server_sdk_setup/nodejs": {
+        "title": "Node.js SDK Quickstart Guide",
+        "sidebar_label": "Node.js"
+      },
       "server_sdk_setup/php": {
         "title": "PHP SDK Quickstart Guide",
         "sidebar_label": "PHP"
+      },
+      "server_sdk_setup/ruby": {
+        "title": "Ruby SDK Quickstart Guide",
+        "sidebar_label": "Ruby"
       },
       "wallet_sdk_setup/android": {
         "title": "Android SDK Setup",
