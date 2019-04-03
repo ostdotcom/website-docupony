@@ -58,7 +58,7 @@ Example: 7 OST = 7*10^18 atto OST.
 <br>
 
 > ## Rules Contract
-OpenST Protocol includes Rules Contract and TokenRules Contract to enable you to define the behavior of token transfer and thus design custom Rules that align with your economy goals. OST has written one rule contract, the PricerRule Contract, for you to use.
+OpenST Protocol includes **Rules Contract** and **TokenRules Contract** to enable you to define the behavior of token transfer and thus design custom Rules that align with your economy goals. OST has written one rule contract, the PricerRule Contract, for you to use.
 
 You can optionally choose to get information about Rules  by sending a GET to `/rules` endpoint. Alternatively the table below lists the two rules deployed with the rule names and rule parameters which are to be sent as input parameter for executing a transaction.
 
@@ -71,7 +71,7 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 | Rule Method | Method Inputs | Inputs Description |
 |---|---|---|
 |  **directTransfers**  |  |  |
-|  | **transfersTo** <br> **Array of Address**   | Array of token holder addresses. |
+|  | **transfersTo** <br> **Array of Address**   | Array of  **TokenHolder**  addresses. |
 |  | **transfersAmount** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transfered to the addresses listed in **transfersTo** array. These amounts should be in the same sequence as the addresses in **transfersTo** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 
 
@@ -85,7 +85,7 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 |---|---|---|
 |  **pay**  |  |  |
 |  | **from** <br> **Address**   | Transaction executor's address |
-|  | **toList** <br> **Array of addresses** | Array of receiver's token holder address. |
+|  | **toList** <br> **Array of addresses** | Array of receiver's  **TokenHolder**  address. |
 |  | **amountList** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transfered to the addresses listed in **toList** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 |  | **payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
 |  | **baseCurrencyIntendedPrice** <br> **Integer** | This is the pay currency(USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
@@ -108,7 +108,7 @@ The QRCode data for executing transactions via web application should be a JSON 
 |  **d** <br> **JSON Object** |   |   |
 |   | **Property**  | **Description** |
 |   | **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer` |
-|   | **ads**  <br> **Array** | Array of receiver's Token Holder Addresses. |
+|   | **ads**  <br> **Array** | Array of receiver's  **TokenHolder**  Addresses. |
 |   | **ams**  <br> **Array** | Array of amounts in atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in atto.  |
 |   | **tid**  <br> **String** | token_id of your Brand Token. |
 
@@ -123,7 +123,7 @@ The QRCode data for executing transactions via web application should be a JSON 
     "ddv": "1.0.0", // Data Definition Version
     "d": {
         "rn": "Direct Transfer", // Rule Name
-        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's Token Holder Addresses
+        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  **TokenHolder**  Addresses
         "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
         "tid": "123"     // token_id of your Brand Token
     }
@@ -178,7 +178,7 @@ $executeParams = array(
 
         // These are method parameters in rule contract
         'parameters' => array(
-            // First array is of receiver's token holder addresses 
+            // First array is of receiver's  **TokenHolder**  addresses 
             array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496"),
             
             // Second array is of receiver's amounts in atto 
@@ -236,7 +236,7 @@ To generate QRCode with transaction data follow the steps expained in [above sec
     "ddv": "1.0.0", // Data Definition Version
     "d": {
         "rn": "Direct Transfer", // Rule Name
-        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's Token Holder Addresses
+        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  **TokenHolder**  Addresses
         "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
         "tid": "123"     // token_id of your Brand Token
     }

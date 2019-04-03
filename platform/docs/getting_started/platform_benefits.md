@@ -31,11 +31,11 @@ The Platform also deploys contracts that are used to manage the Brand Token Econ
 ## Users can hold keys securely
 The OST Wallet SDK supports non-custodial wallets, where users hold the keys and can transact with the Brand Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using the secure enclave (on iOS) or keystore (on Android).
 
-The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same tokenHolder contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a 6 digit PIN), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Brand Tokens and authorize a new device. 
+The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same  **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a 6 digit PIN), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Brand Tokens and authorize a new device. 
 
 The user input -assumed to be a 6 digit PIN- is also used to guard access to sensitive operations such as authorizing devices, viewing the mnemonic phrase, etc.  
 
-![OSTWalletRecovery](/platform/docs/assets/ERD-User-Setup-Daigram.png)
+![OSTWalletRecovery](/platform/docs/assets/ERD-User-Setup-Daigram.jpg)
 
 ## Seamless user experience
 A user can use a 6 digit PIN to authorize a sessionKey. These ephemeral sessionKeys, which remain active for a period of time chosen by the user or developer of the application (based on the implementation) obviate the need for the user to sign every transaction within the application thereby creating a more seamless user experience. Thus, the user can engage with the Brand Token economy without interruption during an authorized session. When a session expires, they may use the 6 digit PIN to authorize a new session.
