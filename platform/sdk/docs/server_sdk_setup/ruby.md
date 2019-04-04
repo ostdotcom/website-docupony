@@ -1,14 +1,14 @@
 ---
-id: nodejs
-title: Node.js SDK Quickstart Guide
-sidebar_label: Node.js
+id: ruby
+title: Ruby SDK Quickstart Guide
+sidebar_label: Ruby
 ---
 
 
 ## Introduction
-The Node.js SDK is a JavaScript wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the Node.js SDK.
+The Ruby SDK is a Ruby wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the Ruby SDK.
 
-You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-js/tree/release-2.0)
+You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-ruby/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
 Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/guides/create_token/) to complete the token setup.
@@ -28,9 +28,9 @@ Every account is provided with two pairs of keys: one for sandbox environment an
 
 To install the SDK run the following command <br>
 
-> npm install @ostdotcom/ost-sdk-js
+> gem install ost-sdk-ruby
 
-**Source code:** [Node.js SDK Github Repo](https://github.com/ostdotcom/ost-sdk-js/tree/release-2.0)
+**Source code:** [Ruby SDK Github Repo](https://github.com/ostdotcom/ost-sdk-ruby/tree/v2.0.0)
 
 
 
@@ -39,7 +39,7 @@ To install the SDK run the following command <br>
 
 
 ## 4. Get Token Information
-To get the information about your Brand Token, you will have to use `tokens` service provided by Node.js SDK.
+To get the information about your Brand Token, you will have to use `tokens` service provided by Ruby SDK.
 
 
 
@@ -48,15 +48,16 @@ Before using any service of SDK you will have to provide API key and API secret 
 
 **Instantiating The SDK Samlpe Code**
 
-```javascript
-const OSTSDK = require('@ostdotcom/ost-sdk-js');
+```ruby
+require('ost-sdk-ruby')
 
-const ostObj = new OSTSDK({
-                            apiKey: <api_key>, 
-                            apiSecret: <api_secret>, 
-                            apiEndpoint: <api_endpoint>,
-                            config: {timeout: <request_timeout_in_seconds>}
-                        });
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <request_timeout_in_seconds>}
+                                    })
+
 ```
 
 ### Call `tokens` service
@@ -64,18 +65,11 @@ Now you can call any of the service provided by Server Side SDK. You will call `
 
 **Get Tokens Details Sample Code**
 
-```javascript
+```ruby
+tokens_service = ost_sdk.services.tokens
 
-const tokensService = ostObj.services.tokens;
-
-tokensService.get({})
-    .then(function(res) { 
-        console.log(JSON.stringify(res)); 
-    })
-    .catch(function(err) { 
-        console.log(JSON.stringify(err)); 
-    });
-
+get_params = {}
+response = tokens_service.get()
 ```
 
 ### Tokens Information 
@@ -133,17 +127,11 @@ Developers will create users from your servers and you will be responsible to ma
 ### Create User
 To create the user object you will use the user service. No input parameters are needed to create user.
 
-```javascript
+```ruby
 
-const usersService = ostObj.services.users;
-
-usersService.create({})
-    .then(function(res) { 
-        console.log(JSON.stringify(res)); 
-    })
-    .catch(function(err) { 
-        console.log(JSON.stringify(err)); 
-    });
+users_service = ost_sdk.services.users
+create_params = {}
+response = users_service.create(create_params)
 
 ```
 
@@ -167,7 +155,6 @@ usersService.create({})
     }
 }
 ```
-
 Ideally after user creation you should map the user's id with unique identifier of your application user. E.g.: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
 
 

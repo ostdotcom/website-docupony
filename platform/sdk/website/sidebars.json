@@ -5,6 +5,19 @@
       "getting_started/authentication",
       "getting_started/security_guidelines"
     ],
+
+    "Server SDK Setup": [
+      "server_sdk_setup/php",
+      "server_sdk_setup/ruby",
+      "server_sdk_setup/nodejs",
+      "server_sdk_setup/java"
+    ],
+
+    "Wallet SDK Setup": [
+      "wallet_sdk_setup/android",
+      "wallet_sdk_setup/iOS"
+    ],
+
     "Android SDK Reference": [
       "references/wallet_sdk/android/latest/methods",
       "references/wallet_sdk/android/latest/interfaces",

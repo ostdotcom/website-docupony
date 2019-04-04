@@ -8,7 +8,7 @@ sidebar_label: PHP
 ## Introduction
 The PHP SDK is a PHP wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the PHP SDK.
 
-You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/release-2.0)
+You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-php/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
 Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/guides/create_token/) to complete the token setup.
