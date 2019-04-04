@@ -12,13 +12,17 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
+      "getting_started/integration_steps": {
+        "title": "Integration Steps",
+        "sidebar_label": "Integration Steps"
+      },
       "getting_started/introduction": {
         "title": "Introduction",
         "sidebar_label": "Introduction"
       },
-      "getting_started/platform_benefits": {
-        "title": "Platform Benefits",
-        "sidebar_label": "Platform Benefits"
+      "getting_started/platform_overview_old": {
+        "title": "Platform Overview",
+        "sidebar_label": "Platform Overview"
       },
       "getting_started/platform_overview": {
         "title": "Platform Overview",
