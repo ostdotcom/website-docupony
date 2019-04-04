@@ -8,7 +8,7 @@ sidebar_label: Java
 ## Introduction
 The Java SDK is a Java wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the Java SDK.
 
-You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-java/tree/release-2.0)
+You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
 Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/guides/create_token/) to complete the token setup.
@@ -71,7 +71,7 @@ To build the Jar file of SDK from source follow these steps:
 3. The jar can be found in `target` folder.
 
 
-**Source code:** [Java SDK Github Repo](https://github.com/ostdotcom/ost-sdk-java/tree/release-2.0)
+**Source code:** [Java SDK Github Repo](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
 
 
 ## 4. Get Token Information

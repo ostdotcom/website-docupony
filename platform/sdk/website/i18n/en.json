@@ -47,6 +47,30 @@
       "references/wallet_sdk/iOS/latest/protocols": {
         "title": "iOS SDK protocols",
         "sidebar_label": "Protocols"
+      },
+      "server_sdk_setup/java": {
+        "title": "Java SDK Quickstart Guide",
+        "sidebar_label": "Java"
+      },
+      "server_sdk_setup/nodejs": {
+        "title": "Node.js SDK Quickstart Guide",
+        "sidebar_label": "Node.js"
+      },
+      "server_sdk_setup/php": {
+        "title": "PHP SDK Quickstart Guide",
+        "sidebar_label": "PHP"
+      },
+      "server_sdk_setup/ruby": {
+        "title": "Ruby SDK Quickstart Guide",
+        "sidebar_label": "Ruby"
+      },
+      "wallet_sdk_setup/android": {
+        "title": "Android SDK Setup",
+        "sidebar_label": "Android"
+      },
+      "wallet_sdk_setup/iOS": {
+        "title": "iOS SDK Setup",
+        "sidebar_label": "iOS"
       }
     },
     "links": {
@@ -57,6 +81,8 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
+      "Server SDK Setup": "Server SDK Setup",
+      "Wallet SDK Setup": "Wallet SDK Setup",
       "Android SDK Reference": "Android SDK Reference",
       "iOS SDK Reference": "iOS SDK Reference"
     }

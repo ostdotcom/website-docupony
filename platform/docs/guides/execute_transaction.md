@@ -24,7 +24,7 @@ There are 2 different types of transaction possible in an economy based on the t
 
 | Type Of Transaction | Description |
 |---|---|
-| **company-to-user Transaction** | It is the transaction where the client company is the sender and the economy user is the receiver. <br>**To do company-to-user transactions, you will have to use Server Side SDK (available in [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0), [Node.js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0), [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)).** |
+| **company-to-user Transaction** | It is the transaction where the client company is the sender and the economy user is the receiver. <br>**To do company-to-user transactions, you will have to use Server Side SDK (available in [PHP](/platform/docs/sdk/server_sdk_setup/php//), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/), [Java](/platform/docs/sdk/server_sdk_setup/java/)).** |
 | **user initiated Transaction** | It is the transaction where the economy user is the sender and another economy user or company is the receiver. <br> **Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)) facilitates signing of transactions on users behalf.** |
 
 
@@ -136,7 +136,7 @@ The QRCode data for executing transactions via web application should be a JSON 
 
 
 > ## Executing company-to-user Transactions
-`company-to-user` transactions can be executed using using Server Side SDK (available in [PHP](/platform/docs/server_sdk_setup/php/), [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0), [Node.js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0)). 
+`company-to-user` transactions can be executed using using Server Side SDK (available in [PHP](/platform/docs/sdk/server_sdk_setup/php//), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/)). 
 
 Please refer API references for details on the [input parameters of execute company-to-user transaction](/platform/docs/api/#execute-a-transaction). 
 
