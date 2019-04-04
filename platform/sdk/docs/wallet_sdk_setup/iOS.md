@@ -5,7 +5,7 @@ sidebar_label: iOS
 ---
 
 ## 1. Prerequisite 
-You will need to integrate server side SDK on your server. You can use one of the avialable server side SDKs: [PHP](/platform/docs/server_sdk_setup/php/), [Ruby](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0), [Java](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0), [Node.js](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0).
+You will need to integrate server side SDK on your server. You can use one of the avialable server side SDKs: [PHP](/platform/docs/sdk/server_sdk_setup/php//), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/).
 
 
 
