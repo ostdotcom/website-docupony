@@ -114,6 +114,8 @@ Copy paste this configuration file.
     <integer>3</integer>
     <key>SessionBufferTime</key>
     <integer>3600</integer>
+    <key>UseSeedPassword</key>
+	<true/>
  </dict>
  </plist>
 ```
@@ -128,13 +130,14 @@ Copy paste this configuration file.
 
 #### vi). Adding `NSFaceIDUsageDescription` description in `info.plist`
 
-iOS Wallet SDK can use faceID if the hardware supports it. But to protect user privacy, your iOS app that links on or after iOS 11, must statically declare the intent to use faceID.
+iOS Wallet SDK can use faceID if the hardware supports it. To support faceID, you need to include the [NSFaceIDUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription) key in your app's `info.plist` file and provide a purpose string for this key.
 
-Include the `NSFaceIDUsageDescription` key in your app's `info.plist` file and provide a purpose string for this key. In iOS Wallet SDK the purpose would be to check user presence using faceID instead of a PIN or Biometric.
+
+In iOS Wallet SDK the purpose would be to check the user presence using faceID instead of a PIN or Biometric.
 
 If you use iOS Wallet SDK without a corresponding purpose string on iOS 11 and later, your mobile app may exit unexpectedly. 
 
-**Note: `NSFaceIDUsageDescription` key is supported in iOS 11 and later.**
+**Note: [NSFaceIDUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription) key is supported in iOS 11 and later.**
 
 
 ## 4. Initialize the wallet SDK
