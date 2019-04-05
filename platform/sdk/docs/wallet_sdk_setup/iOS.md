@@ -126,6 +126,7 @@ Copy paste this configuration file.
 4. RequestTimeoutDuration: Request timeout in seconds for https calls made by ostWalletSdk.
 5. PinMaxRetryCount: Maximum retry count to get the wallet Pin from user.
 6. SessionBufferTime: Buffer expiration time for session keys in seconds.
+7. UseSeedPassword: Uses mnemonics and password to generate seed.
 
 
 #### vi). Adding `NSFaceIDUsageDescription` description in `info.plist`
