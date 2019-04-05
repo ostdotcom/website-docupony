@@ -5,18 +5,20 @@ sidebar_label: Integration Steps
 ---
 
 
-Integrating with OST Platform involves interacting with several services and technologies. This section shows each of the steps you need to follow and offers guidance on how to complete the steps.
+1. [Register on OST Platform](https://platform.ost.com/sign-up) and get access to [API key and API secret](https://platform.ost.com/developer). When you signup you will be in sandbox mode by default. It is recommended to test your integrations in sandbox mode.
 
-| Steps | Process |
-|---|---|
-| Register on OST Platform | Log in to your OST Platform account and [set up your token](https://platform.ost.com/sign-up) |
-| | Get access to your [API Key and API secret](https://platform.ost.com/testnet/developer) from `Developer` tab in OST Platform Dashboard.  |
-| Integrate OST Platform Server Side SDK | Make your first call with server SDKs available in [PHP](/platform/docs/sdk/server_sdk_setup/php//),[Ruby](/platform/docs/sdk/server_sdk_setup/ruby/),[Java](/platform/docs/sdk/server_sdk_setup/java/),[Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/) |
-| Integrate Wallet SDK into your app | Set up the [Android](/platform/docs/wallet_sdk_setup/android/) and/or [iOS](/platform/docs/wallet_sdk_setup/iOS/) Wallet SDK in your mobile app. |
-| |  [Create a wallet for a user](/platform/docs/guides/create_wallet/)|
-| | [Send some tokens to the user](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions).|
-| | [Test a user initiated transaction](/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web)|
-| | Review the [API](/platform/docs/api/#introduction) and [SDK](/platform/docs/sdk/getting_started/overview/) References. |
-|  | Take a look at [sample applications](/platform/docs/sdk/getting_started/overview/#sample-apps) |
-| Ensure you've implemented and tested all flows |
-| Go Live | Get in touch with OST team. |
+2. Follow the quickstart guide to get started with Server Side SDK. Server Side SDK is available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/) and [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/). If Server Side SDK is not available in your choice of programming language then you can directly use [OST Platform API](/platform/docs/api).
+
+3. Follow [Android Wallet SDK](/platform/docs/wallet_sdk_setup/android/) or [iOS Wallet SDK](;) setup guide to integrate it in your mobile application.
+
+4. [Create a wallet for a user]((/platform/docs/guides/create_wallet/)).
+
+5. [Send some Brand Tokens to the users]((/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions)).
+
+6. [Test a user initiated transaction]((/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web)).
+
+7. Read [API](/platform/docs/api/) and [SDK](/platform/docs/sdk/) references.
+
+8. Ensure you have implemented and tested all the flows.
+
+9. To move to production environment you need to get in touch with OST Platform team. OST Platform team will enable your production switch and then can you move to production environment using the switch avaialable in [OST Platform dashboard](https://platform.ost.com).
