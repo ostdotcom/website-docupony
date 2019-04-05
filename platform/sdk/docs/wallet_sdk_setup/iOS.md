@@ -114,6 +114,8 @@ Copy paste this configuration file.
     <integer>3</integer>
     <key>SessionBufferTime</key>
     <integer>3600</integer>
+    <key>UseSeedPassword</key>
+	<true/>
  </dict>
  </plist>
 ```
