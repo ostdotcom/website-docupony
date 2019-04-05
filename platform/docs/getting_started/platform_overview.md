@@ -59,4 +59,4 @@ When you integrate Brand Tokens into your application, please remember to:
  * Create and maintain a map of OST Platform user_id to the user's profile on their app
  * [Generate and safely store a 30 character "secret" for each user](https://dev.stagingost.com/platform/docs/guides/create_wallet/#generating-passphaseprefix). This "secret" is used for the recovery and thus must be unique to each user. 
 
-To integrate using the SDKs, start with the quick-start guides [PHP](/platform/docs/sdk/server_sdk_setup/php//), [iOS](/platform/docs/wallet_sdk_setup/iOS/) and [Android](/platform/docs/wallet_sdk_setup/android/). 
+To integrate using the SDKs, start with the quick-start guides [PHP](/platform/docs/sdk/server_sdk_setup/php/), [iOS](/platform/docs/wallet_sdk_setup/iOS/) and [Android](/platform/docs/wallet_sdk_setup/android/). 
