@@ -59,7 +59,7 @@ compileOptions {
 
 ```
 dependencies {
-        implementation 'com.ost:ost-wallet-sdk-android:2.0.0'
+        implementation 'com.ost:ost-wallet-sdk-android:2.0.1'
         ...
         ...
         ...
@@ -79,7 +79,8 @@ Paste following contents in `app/src/main/assets/ost-mobilesdk.json` file
        "REQUEST_TIMEOUT_DURATION": 60,
        "SESSION_BUFFER_TIME": 3600,
        "PRICE_POINT_TOKEN_SYMBOL": "OST",
-       "PRICE_POINT_CURRENCY_SYMBOL": "USD"
+       "PRICE_POINT_CURRENCY_SYMBOL": "USD",
+       "USE_SEED_PASSWORD": true
  }
 ```
 
