@@ -35,7 +35,7 @@ You can also choose [other methods](https://github.com/Carthage/Carthage/#instal
 Carthage looks at a file called `Cartfile` to determine which libraries to install. Create a file in the same directory as your Xcode project called `Cartfile` and enter the following to tell Carthage which dependencies we want:
 
 Add following entry in your `Cartfile`
-> github "ostdotcom/ost-wallet-sdk-ios" "v2.0.0"
+> github "ostdotcom/ost-wallet-sdk-ios"
 
 Now to actually install everything run the following in your terminal:
 
@@ -126,6 +126,15 @@ Copy paste this configuration file.
 6. SessionBufferTime: Buffer expiration time for session keys in seconds.
 
 
+#### vi). Adding `NSFaceIDUsageDescription` description in `info.plist`
+
+iOS Wallet SDK can use faceID if the hardware supports it. But to protect user privacy, your iOS app that links on or after iOS 11, must statically declare the intent to use faceID.
+
+Include the `NSFaceIDUsageDescription` key in your app's `info.plist` file and provide a purpose string for this key. In iOS Wallet SDK the purpose would be to check user presence using faceID instead of a PIN or Biometric.
+
+If you use iOS Wallet SDK without a corresponding purpose string on iOS 11 and later, your mobile app may exit unexpectedly. 
+
+**Note: `NSFaceIDUsageDescription` key is supported in iOS 11 and later.**
 
 
 ## 4. Initialize the wallet SDK
@@ -156,7 +165,7 @@ This will be the base API URL we need to provide to SDK while initializing.
 
 ## 5. Setting up communication between app and wallet SDK
 
-iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet related actions. Communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowDelegate` protocol.
+iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet related actions. Communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkflowDelegate` protocol.
 
 ![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
 
