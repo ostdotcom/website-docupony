@@ -26,7 +26,7 @@ Once the QR code has been scanned, you will be able to see your OST Platform acc
 
 
 ## 3. Set Up Brand Token
-During token setup you will set up the Token Name (only letters, numbers, spaces allowed, at max 20 characters and 3 words) and select a Token Identifier (at max 4 letters or numbers, at min 1 letter required, no special characters allowed) for your brand token. You also need to set the conversion rate between your Brand Token and the staked value token (e.g. OST Token).
+During token setup you will set up Token Name (only letters, numbers, spaces allowed, at max 20 characters and 3 words) and select a Token Identifier (at max 4 letters or numbers, at min 1 letter required, no special characters allowed) for your brand token. You also need to set the conversion rate between your Brand Token and the staked value token (e.g. OST Token).
 
 ![create-account](/platform/docs/assets/token-setup/Token_setup.png)
 

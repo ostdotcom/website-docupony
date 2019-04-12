@@ -62,7 +62,7 @@ public private(set) var entityType: OstEntityType
 This class provides context about the current [workflow](/platform/docs/sdk/references/wallet_sdk/iOS/latest/methods/#workflows). Callback function that needs to know about the current [workflow](/platform/docs/sdk/references/wallet_sdk/iOS/latest/methods/#workflows) will get the object of this class as an argument.
 
 
-`workflowType` property will take one of the value from this enum.
+`workflowType` property will take one of the values from this enum.
 
 ```swift
 public enum OstWorkflowType {

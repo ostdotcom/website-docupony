@@ -4,9 +4,14 @@ title: Android SDK Classes
 sidebar_label: Classes
 ---
 
-1. OstError 
+1. OST Error Classes
 2. OstContextEntity
 3. OstWorkflowContext
+
+
+## 1. OST Error Classes
+There are 2 error classes `OstError` and `OstErrors`. 
+
 
 ## 1. OstError
 This class is used to provide error details in [flowInterrupt](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/#2-flowinterrupt) callback function. 
@@ -41,7 +46,7 @@ This class provides context about the current [workflow](/platform/docs/sdk/refe
 You can call [methods](#i-methods-2) on this object to get more details about the current [workflow](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/#workflows).
 
 
-The `getWorkflow_type()` methods will return the one of the strings from this enum.
+The `getWorkflow_type()` methods will return one of the strings from this enum.
 
 ```java
 public enum WORKFLOW_TYPE {
