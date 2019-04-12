@@ -115,7 +115,7 @@ Copy paste this configuration file.
     <key>SessionBufferTime</key>
     <integer>3600</integer>
     <key>UseSeedPassword</key>
-	<true/>
+	<false/>
  </dict>
  </plist>
 ```
@@ -128,6 +128,7 @@ Copy paste this configuration file.
 6. SessionBufferTime: Buffer expiration time for session keys in seconds.
 7. UseSeedPassword: Uses mnemonics and password to generate seed.
 
+**These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.**
 
 #### vi). Add `NSFaceIDUsageDescription` description in `info.plist`
 
