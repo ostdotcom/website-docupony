@@ -10,7 +10,7 @@ sidebar_label: Android
 ### Interfaces and workflows
 Android Wallet SDK consists of an `interface` and `workflows`. <br><br>
 
-**Interface**: callback functions are used for communication between app and wallet SDK. 
+**Interface**: callback functions are used for communication between app and wallet SDK.
 <br> In Android wallet SDK these callback functions are provided as an interface.
 <br><br>
 
@@ -24,7 +24,7 @@ You should complete one of the server SDK Guides ([PHP](/platform/docs/sdk/serve
 
 Android supported version: 22 and Above
 <br>
-Java Compile version: 1.7 
+Java Compile version: 1.7
 
 
 <br>
@@ -59,7 +59,7 @@ compileOptions {
 
 ```
 dependencies {
-        implementation 'com.ost:ost-wallet-sdk-android:2.0.1'
+        implementation 'com.ost:ost-wallet-sdk-android:2.0.2'
         ...
         ...
         ...
@@ -80,19 +80,24 @@ Paste following contents in `app/src/main/assets/ost-mobilesdk.json` file
        "SESSION_BUFFER_TIME": 3600,
        "PRICE_POINT_TOKEN_SYMBOL": "OST",
        "PRICE_POINT_CURRENCY_SYMBOL": "USD",
-       "USE_SEED_PASSWORD": true
+       "USE_SEED_PASSWORD": false
  }
 ```
+Block_Generation_Time: The time in seconds it takes to mine a block on auxiliary chain.
+PIN_MAX_RETRY_COUNT: Maximum retry count to get the wallet Pin from user.
+REQUEST_TIMEOUT_DURATION: Request timeout in seconds for https calls made by ostWalletSdk.
+SESSION_BUFFER_TIME: Buffer expiration time for session keys in seconds.
+PRICE_POINT_TOKEN_SYMBOL: This is the symbol of base currency. So its value will be OST.
+PRICE_POINT_CURRENCY_SYMBOL: It is the symbol of quote currency used in price conversion.
+USE_SEED_PASSWORD: Uses mnemonics and password to generate seed.
 
-
-
-
+**NOTE: These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.**
 
 <br>
 
 
 ## 4. Initialize the wallet SDK
-SDK initialization should happen before calling any other `workflow`. To initialize the SDK, we need to call `initialize` method of wallet SDK. 
+SDK initialization should happen before calling any other `workflow`. To initialize the SDK, we need to call `initialize` method of wallet SDK.
 
 **Recommended location to call init() is in Application sub-class.**
 
@@ -127,7 +132,7 @@ public class App extends Application {
 
 ## 5. Setting up communication between app and wallet SDK
 
-Wallet SDK provides `workflows` that can be called by any Android activity class or fragment class to perform wallet related actions. 
+Wallet SDK provides `workflows` that can be called by any Android activity class or fragment class to perform wallet related actions.
 Communication between app and wallet SDK happens through callback functions. We need to pass these callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowCallback` interface.
 
 ![walletSDKCommunication](/platform/docs/sdk/assets/wallet-sdk-communication.png)
@@ -159,7 +164,7 @@ public class BaseFragment extends Fragment, OstWorkFlowCallback {
 
   @Override
   public void flowInterrupt(
-  OstWorkflowContext ostWorkflowContext, 
+  OstWorkflowContext ostWorkflowContext,
   OstError ostError) {
 
     String workflowType = ostWorkflowContext.getWorkflow_type();
@@ -194,4 +199,3 @@ To provide developers with sample integration of wallet SDK, a [demo Android app
 1. [Create Wallet Guide](/platform/docs/guides/create_wallet/)
 2. [Execute Transaction Guide](/platform/docs/guides/execute_transaction/)
 3. Android Wallet SDK [Methods](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/),  [Interfaces](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) and [Classes](/platform/docs/sdk/references/wallet_sdk/android/latest/classes/)
-
