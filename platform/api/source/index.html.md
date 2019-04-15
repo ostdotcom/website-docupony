@@ -520,10 +520,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 users_service = ost_sdk.services.users
@@ -531,6 +531,28 @@ create_params = {}
 
 response = users_service.create(create_params)
 ```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const usersService = ostObj.services.users;
+
+usersService.create({})
+    .then(function(res) { 
+        console.log(JSON.stringify(res)); 
+    })
+    .catch(function(err) { 
+        console.log(JSON.stringify(err)); 
+    });                    
+```
+
 
 #### <span> POST </span> &nbsp; &nbsp; /users
 
@@ -597,10 +619,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 users_service = ost_sdk.services.users
@@ -608,6 +630,27 @@ users_service = ost_sdk.services.users
 get_params = {}
 get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
 response = users_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const usersService = ostObj.services.users;
+
+usersService.get({user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7'})
+  .then(function(res) { 
+    console.log(JSON.stringify(res)); 
+  })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+  });                  
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}
@@ -700,10 +743,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 users_service = ost_sdk.services.users
@@ -713,6 +756,30 @@ get_params = {}
 # get_params[:limit] = 10
 response = users_service.get_list(get_params)
 ```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const usersService = ostObj.services.users;
+
+usersService.getList({ 
+ // ids: ["c2c6fbb2-2531-4c80-9e43-e67195bb01c7", "d2c6fbb2-2531-4c80-9e43-e67195bb01c7"]
+ // limit: 10 
+}).then(function(res) { 
+    console.log(JSON.stringify(res)); 
+  })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+  });                 
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /users
 
 
@@ -923,10 +990,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 devices_service = ost_sdk.services.devices
@@ -939,6 +1006,30 @@ create_params[:api_signer_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455
 response = devices_service.create(create_params)
 ```
 
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const devicesService = ostObj.services.devices;
+
+devicesService.create({
+    user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7', 
+    address: '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E',
+    api_signer_address: '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
+    })
+    .then(function(res) { 
+      console.log(JSON.stringify(res)); 
+    })
+    .catch(function(err) { 
+      console.log(JSON.stringify(err)); 
+    });                
+```
 
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/devices
 
@@ -1015,10 +1106,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 devices_service = ost_sdk.services.devices
@@ -1027,6 +1118,29 @@ get_params = {}
 get_params[:user_id] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9'
 get_params[:device_address] = '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E'
 response = devices_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const devicesService = ostObj.services.devices;
+
+devicesService.get({
+   user_id: "d194aa75-acd5-4f40-b3fb-e73a7cf7c0d9",
+   device_address: "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E"
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});               
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/devices/{device_address}
@@ -1104,10 +1218,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 devices_service = ost_sdk.services.devices
@@ -1118,6 +1232,30 @@ get_params[:user_id] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9'
 # get_params[:addresses] = ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"]
 # get_params[:limit] = 10
 response = devices_service.get_list(get_params)
+```
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const devicesService = ostObj.services.devices;
+
+devicesService.getList({user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7',
+// pagination_identifier: 'eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19',
+// addresses: ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"]
+// limit: 10 
+})
+.then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});               
 ```
 
 
@@ -1244,10 +1382,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 sessions_service = ost_sdk.services.sessions
@@ -1256,6 +1394,29 @@ get_params = {}
 get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
 get_params[:session_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
 response = sessions_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const sessionsService = ostObj.services.sessions;
+
+sessionsService.get({
+  user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7', 
+  session_address: '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E'
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});              
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/sessions/{session_address}
@@ -1328,10 +1489,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 sessions_service = ost_sdk.services.sessions
@@ -1341,6 +1502,31 @@ get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
 # get_params[:addresses] = ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"]
 # get_params[:limit] = 10
 response = sessions_service.get_list(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const sessionsService = ostObj.services.sessions;
+
+sessionsService.getList({
+  user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7', 
+    // addresses: ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"],
+    // pagination_identifier: 'eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19',
+    // limit: 10 
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});              
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/sessions
@@ -1452,16 +1638,37 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 rules_service = ost_sdk.services.rules
 
 get_params = {}
 response = rules_service.get_list(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const rulesService = ostObj.services.rules;
+
+rulesService.getList({})
+.then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});             
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /rules
@@ -2219,10 +2426,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 price_points_service = ost_sdk.services.price_points
@@ -2230,6 +2437,28 @@ price_points_service = ost_sdk.services.price_points
 get_params = {}
 get_params[:chain_id] = 2000
 response = price_points_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const pricePoints = ostObj.services.price_points;
+
+pricePoints.get({
+  chain_id: 2000
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});            
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /chains/{chain_id}/price-points
@@ -2496,10 +2725,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 transactions_service = ost_sdk.services.transactions
@@ -2544,6 +2773,86 @@ meta_property = {
 # execute_params[:meta_property] = meta_property
 response = transactions_service.execute(execute_params)
 
+```
+
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const transactionsService = ostObj.services.transactions;
+
+
+
+
+// Direct Brand Token Transfer 
+let transferTo = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4",
+transferAmount = '1',
+let raw_calldata = JSON.stringify({
+            method: "directTransfers",  
+            parameters: [[transferTo],[transferAmount]]
+        });
+   meta_property = {
+      "name": "transaction_name" , //like, download
+      "type": "user_to_user", // user_to_user, company_to_user, user_to_company
+      "details" : "" // memo field to add additional info about the transaction
+    }     
+        
+
+let executeParams = {
+    user_id: "ee89965c-2fdb-41b5-8b6f-94f441463c7b",
+    to: "0xe37906219ad67cc1301b970539c9860f9ce8d991",
+    raw_calldata: raw_calldata,
+   //meta_property: meta_property
+};
+
+transactionsService.execute(executeParams)
+.then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});      
+
+
+// Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
+
+let transferTo = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4",
+transferAmount = '1',
+tokenHolderSender = "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
+payCurrencyCode = "USD",
+ostToUsd = "23757000000000000" // get price-point response
+raw_calldata = JSON.stringify({
+            method: "pay",  
+            parameters: [tokenHolderSender, [transferTo],[transferAmount], payCurrencyCode, ostToUsd]
+        });
+   meta_property = {
+      "name": "transaction_name" , //like, download
+      "type": "user_to_user", // user_to_user, company_to_user, user_to_company
+      "details" : "" // memo field to add additional info about the transaction
+    }     
+        
+
+let executeParams = {
+    user_id: "ee89965c-2fdb-41b5-8b6f-94f441463c7b",
+    to: "0xe37906219ad67cc1301b970539c9860f9ce8d991",
+    raw_calldata: raw_calldata,
+    
+   //meta_property: meta_property
+};
+
+transactionsService.execute(executeParams)
+.then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});
 ```
 
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/transactions
@@ -2775,10 +3084,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 transactions_service = ost_sdk.services.transactions
@@ -2787,6 +3096,29 @@ get_params = {}
 get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
 get_params[:transaction_id] = 't43g990c-32wa-ff3r-n553-9f1ew2t32rt1'
 response = transactions_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const transactionsService = ostObj.services.transactions;
+
+transactionsService.get({ 
+  user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7', 
+  transaction_id: 'f1d6fbb2-2531-4c80-9e43-e67195bb01c7' 
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});         
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions/{transaction_id}
@@ -2918,10 +3250,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 transactions_service = ost_sdk.services.transactions
@@ -2939,6 +3271,38 @@ meta_properties = [{
 # get_params[:limit] = 10
  
 response = transactions_service.get_list(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const transactionsService = ostObj.services.transactions;
+
+var metaPropertiesArray =  JSON.stringify(
+        [{
+        "name":  "transaction_name" , //like, download IMP : Max length 25 characters (numbers alphabets spaces _ - allowed)
+        "type":  "user_to_user", // user_to_user, company_to_user, user_to_company
+        "details" : "test" // memo field to add additional info about the transaction .  IMP : Max length 120 characters (numbers alphabets spaces _ - allowed)
+        }
+       ]);
+
+transactionsService.getList({ 
+    user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7',
+    // statuses: ["CREATED", "SUBMITTED", "SUCCESS", "FAILED"],
+    // meta_properties: metaPropertiesArray,
+    // limit: 10
+ }).then(function(res) { 
+   console.log(JSON.stringify(res)); 
+  }).catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+  });      
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions
@@ -3117,10 +3481,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 balances_service = ost_sdk.services.balance
@@ -3128,6 +3492,27 @@ balances_service = ost_sdk.services.balance
 get_params = {}
 get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
 response = balances_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const balancesService = ostObj.services.balance;
+
+balancesService.get({
+            user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7'
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});           
 ```
 
 
@@ -3365,16 +3750,35 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 tokens_service = ost_sdk.services.tokens
 
 get_params = {}
 response = tokens_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const tokensService = ostObj.services.tokens;
+
+tokensService.get({}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});          
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /tokens
@@ -3495,10 +3899,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 recovery_owners_service = ost_sdk.services.recovery_owners
@@ -3507,6 +3911,29 @@ get_params = {}
 get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
 get_params[:recovery_owner_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
 response = recovery_owners_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const recoveryOwnersService = ostObj.services.recovery_owners;
+
+recoveryOwnersService.get({
+            user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7',
+            recovery_owner_address: '0xe37906219ad67cc1301b970539c9860f9ce8d991'
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});       
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /users/{user_id}/recovery-owners/{recovery_owner_address}
@@ -3595,10 +4022,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 chains_service = ost_sdk.services.chains
@@ -3606,6 +4033,27 @@ chains_service = ost_sdk.services.chains
 get_params = {}
 get_params[:chain_id] = 2000
 response = chains_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const chainsService = ostObj.services.chains;
+
+chainsService.get({
+  chain_id: 2000
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});      
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /chains/{chain_id}
@@ -3703,10 +4151,10 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 require('ost-sdk-ruby')
 
 ost_sdk = OSTSdk::Saas::Services.new({
-                                      api_key: <api_key>, 
-                                      api_secret: <api_secret>, 
-                                      api_base_url: <api_base_url>, 
-                                      config: {timeout: <timeout_in_seconds>}
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
                                     })
 
 device_managers_service = ost_sdk.services.device_managers
@@ -3714,6 +4162,28 @@ device_managers_service = ost_sdk.services.device_managers
 get_params = {}
 get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
 response = device_managers_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const deviceManagersService = ostObj.services.device_managers;
+
+deviceManagersService.get({
+  user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7'
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});     
 ```
 
 
