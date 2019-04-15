@@ -14,7 +14,7 @@ sidebar_label: Glossary
 
 ## Owner/Device Key:
 * This is a private key created on the mobile device from where the end user participates in the economy. This private key is limited to the device and the person with access to the device. It has a corresponding public key, which in-turn has a corresponding public address.
-* This public address ---also known as device address--- can be configured as the owner of the user's  **TokenHolder** contract.
+* This public address ---also known as device address--- can be configured as the owner of the user's **TokenHolder** contract.
 
 ## Session Key:
 * In order to create a seamless user experience so that users don't have to sign a new transaction at every move we came up with the concept of disposable sessionKeys.
@@ -36,7 +36,7 @@ sidebar_label: Glossary
 2. The private key in each pair is encrypted and stored on the device.
 A MultiSig contract is deployed on the blockchain. The public addresses from device keys generated on the user's devices are set as owners for the MultiSig.
 3. A  **TokenHolder** contract is deployed on the blockchain. The MultiSig controls the  **TokenHolder** contract, as its owner.
-4. The sessionKey is created on the user's mobile device and is authorized by device key in TokenHolder.
+4. The sessionKey is created on the user's mobile device and is authorized by device key in **TokenHolder**.
 5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's  **TokenHolder** contract. 
 6. The  **TokenHolder** contract verifies that the request is initiated by an authorized sessionKey and executes the transfer.
 
@@ -53,7 +53,7 @@ To enable client companies to design custom Rules that align with their economy 
 
 ## TokenRules Contract:
 * **TokenRules contract** maintains a list of the Rules contracts that can execute transfers in a given Token Economy.
-* It enable developers to register and de-register specific Rules contracts.
+* It enables developers to register and deregister specific Rules contracts.
 * One Economy will have one **TokenRules Contract** deployed on the auxiliary chain.
 
 
@@ -65,11 +65,11 @@ To enable client companies to design custom Rules that align with their economy 
 2. OST writes a PricerRule Contract and registers the rule with **TokenRules Contract** on its auxiliary chain.
 
 ## Setting up user in the economy
-Steps outlined above in creating a wallet section. When end-users register on a client company application a  **TokenHolder** Contract and a DeviceManager(MultiSig) Contract for each of them will be created and deployed by client company via APIs.
+Steps outlined above in creating a wallet section. When end-users register on a client company application a **TokenHolder** Contract and a DeviceManager (MultiSig) Contract for each of them will be created and deployed by client company via APIs.
 
 
-## Steps for executing a token trasnfer
- Its important to understand the token economy set up and user set up outlined above before a client company can execute their first transaction. If client company wants to transfer tokens worth 5$ to a user the following sequence of events occur:
+## Steps for executing a token transfer
+ It is important to understand the token economy set up and user set up outlined above before a client company can execute their first transaction. If client company wants to transfer tokens worth $5 to a user the following sequence of events occur:
 	1. Company's  **TokenHolder** contract initiates “execute pricer rule” request to client company's  PricerRule Contract. The  **TokenHolder** contract also approves company's **TokenRules Contract** to spend tokens on its behalf.
 	2.  Company's PriceRule Contract applies “conversion from USD to tokens rules”.   The PriceRule Contract will pass all this information after applying rules to the **TokenRules Contract**.
 	3. The **TokenRules Contract** executes the transfer between all concerned parties as specified by the company's PriceRule Contract.

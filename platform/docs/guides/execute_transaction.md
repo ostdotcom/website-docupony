@@ -35,7 +35,7 @@ There are 2 different types of transaction possible in an economy based on the t
 
 atto is the smallest denomination used in OST Platform. OST Platform API and SDK accept value in `atto`, so it is important to understand the conversions to `atto`.
 
-**You need to multiply any currency with 10^18 to convert it into its atto denomination.**
+**You need to multiply your brand token or currency by 10^18 to convert it into its atto denomination.**
 
 
 ### Converting `Brand Token` to  `atto Brand Token`
@@ -58,9 +58,9 @@ Example: 7 OST = 7*10^18 atto OST.
 <br>
 
 > ## Rules Contract
-OpenST Protocol includes **Rules Contract** and **TokenRules Contract** to enable you to define the behavior of token transfer and thus design custom Rules that align with your economy goals. OST has written one rule contract, the PricerRule Contract, for you to use.
+OpenST Protocol includes **Rules Contract** and **TokenRules Contract** to enable you to define the behavior of token transfer and thus design custom rules that align with your economy goals. OST has written one rule contract, the PricerRule Contract, for you to use.
 
-You can optionally choose to get information about Rules  by sending a GET to `/rules` endpoint. Alternatively the table below lists the two rules deployed with the rule names and rule parameters which are to be sent as input parameter for executing a transaction.
+You can optionally choose to get information about rules  by sending a GET to `/rules` endpoint. Alternatively the table below lists the two rules deployed with the rule names and rule parameters which are to be sent as input parameter for executing a transaction.
 
 
 1. **Direct Transfer**: `directTransfers` is a method that enables a user or a company to directly transfer Brand Tokens to a beneficiary. 
@@ -72,7 +72,7 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 |---|---|---|
 |  **directTransfers**  |  |  |
 |  | **transfersTo** <br> **Array of Address**   | Array of  **TokenHolder**  addresses. |
-|  | **transfersAmount** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transfered to the addresses listed in **transfersTo** array. These amounts should be in the same sequence as the addresses in **transfersTo** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|  | **transfersAmount** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transfersTo** array. These amounts should be in the same sequence as the addresses in **transfersTo** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 
 
 <br>
@@ -86,7 +86,7 @@ You can optionally choose to get information about Rules  by sending a GET to `/
 |  **pay**  |  |  |
 |  | **from** <br> **Address**   | Transaction executor's address |
 |  | **toList** <br> **Array of addresses** | Array of receiver's  **TokenHolder**  address. |
-|  | **amountList** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transfered to the addresses listed in **toList** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|  | **amountList** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **toList** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 |  | **payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
 |  | **baseCurrencyIntendedPrice** <br> **Integer** | This is the pay currency(USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
 
@@ -136,9 +136,9 @@ The QRCode data for executing transactions via web application should be a JSON 
 
 
 > ## Executing company-to-user Transactions
-`company-to-user` transactions can be executed using using Server Side SDK (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/)). 
+`company-to-user` transactions can be executed using Server Side SDK (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/)). 
 
-Please refer API references for details on the [input parameters of execute company-to-user transaction](/platform/docs/api/#execute-a-transaction). 
+Please refer to API References for details on the [input parameters of execute company-to-user transaction](/platform/docs/api/#execute-a-transaction). 
 
 
 
@@ -214,7 +214,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 
 
-> ## Executing `user` intiated transactions in web.
+> ## Executing `user` initiated transactions in web.
 
 To execute the `user` initiated transactions in web, you will have to create QRCode with transaction data and then you need to build a QRCode scanner in your app to scan it. After scanning the QRCode, your application will have the transaction data. As a last step, you need to pass the transaction data to `performQRAction` workflow using wallet SDK.
 
@@ -225,7 +225,7 @@ To execute the `user` initiated transactions in web, you will have to create QRC
 <br>
 ### 1. Generate QRCode with transaction data.
 
-To generate QRCode with transaction data follow the steps expained in [above section.](#generating-qrcode-with-transaction-data) 
+To generate QRCode with transaction data follow the steps explained in the [above section.](#generating-qrcode-with-transaction-data)
 
 **Sample QRCode Data**
 
@@ -275,7 +275,7 @@ OstWalletSdk.performQRAction(userId, QRCodeData, this);
 
 * `performQRAction` workflow will then read the data and will call `verifyData` callback function.
 
-* You will get the transaction data as one of the argument of `verifyData` with name `ostContextEntity`.
+* You will get the transaction data as one of the arguments of `verifyData` with name `ostContextEntity`.
 
 Arguments of verifyData (Android Wallet SDK Example)
 
@@ -332,7 +332,7 @@ Sample code (Android Wallet SDK)
 ```java
 public void flowComplete(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity) {
         String completeString = String.format("Workflow %s complete entity %s ",
-                ostWorkflowContext.getWorkflow_type(), null == ostContextEntity ? "null" : ostContextEntity.getEntityType());
+                ostWorkflowContext.getWorkflow_type(), null == ostContextEntity ? "null": ostContextEntity.getEntityType());
  
         Toast.makeText(OstWalletSdk.getContext(), "Work Flow Successful", Toast.LENGTH_SHORT).show();
         ....

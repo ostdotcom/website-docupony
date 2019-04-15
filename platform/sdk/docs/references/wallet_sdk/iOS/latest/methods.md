@@ -16,7 +16,7 @@ sidebar_label: Methods
 
 
 
-## Wokrflows
+## Workflows
 
 ### 1. initialize
 
@@ -93,7 +93,7 @@ OstWalletSdk.activateUser(
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform  |
 | **userPin** <br> **String**	| User's PIN created during wallet setup.|
-| **passphrasePrefix** <br> **String**	| A constant unique identifier for a your user. |
+| **passphrasePrefix** <br> **String**	| A constant unique identifier for your user. |
 | **spendingLimit** <br> **String**	| Spending limit of session key in [atto BT](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token).  |
 | **expireAfterInSec** <br> **TimeInterval**	| Expire time of session key in seconds. |
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/).  |
@@ -126,7 +126,7 @@ OstWalletSdk.addSession(
 
 <br>
 ### 5. perfromQRAction
-This workflow will perform operations after reading data from a QRCode. This workflow can used to add a new device and to do the transactions.
+This workflow will perform operations after reading data from a QRCode. This workflow can be used to add a new device and to do the transactions.
 
 ```
 OstWalletSdk.perfromQRAction(
@@ -182,8 +182,8 @@ OstWalletSdk.executeTransaction(
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform|
 | **tokenHolderAddresses** <br> **[String]**	|  **TokenHolder**  addresses of beneficiary users.  |
-| **amounts** <br> **[String]**	| Arrya of Amount to be transfered in atto.  |
-| **transactionType** <br> **OstExecuteTransactionType**	| Transaction type can take 1 o fthe two values: <br> 1. `DirectTransfer`:  In this type of transaction, the amount of brand token will be transfered directly to the receiver user. <br> 2. `Pay`: In this type of transaction the amount of fiat passed will first be converted into brand token and after this conversion the transfer will happen in converted brand token amount.|
+| **amounts** <br> **[String]**	| Array of Amount to be transferred in atto.  |
+| **transactionType** <br> **OstExecuteTransactionType**	| Transaction type can take one of the two values: <br> 1. `DirectTransfer`:  In this type of transaction, the amount of brand token will be transferred directly to the receiver user. <br> 2. `Pay`: In this type of transaction the amount of fiat passed will first be converted into brand token and after this conversion the transfer will happen in converted brand token amount.|
 | **meta** <br> **[String: String]**	| Dictionary object having extra information that a developer can pass about the transfer. This dictionary object can have 3 properties. <br><br>Example meta:  <br>[<br>&nbsp; &nbsp;"name":"Thanks for like", <br>&nbsp; &nbsp;"type": "user_to_user", <br>&nbsp; &nbsp;  "details": "like"<br>] |
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/). |
 
@@ -220,7 +220,7 @@ OstWalletSdk.authorizeCurrentDeviceWithMnemonics(
 ### 9. resetPin
 This workflow can be used to change the PIN.
 
-**User will have to provide the current PIN in order to change the it.**
+**User will have to provide the current PIN in order to change it.**
 
 ```
 OstWalletSdk.resetPin(
@@ -240,6 +240,69 @@ OstWalletSdk.resetPin(
 | **oldUserPin** <br> **String**	| Current wallet PIN  |
 | **newUserPin** <br> **String**	| New wallet PIN |
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/).  |
+
+
+
+### 10. initiateDeviceRecovery
+A user can control their Brand Tokens using their authorized devices. If they lose their authorized device, they can recover access to their Brand Tokens by authorizing a new device by initiating the recovery process.
+
+```swift
+OstWalletSdk.initiateDeviceRecovery(
+    userId: String,
+    recoverDeviceAddress: String,
+    userPin: String,
+    passphrasePrefix: String,
+    delegate: OstWorkflowDelegate
+    )
+```
+
+| Parameter | Description |
+|---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
+| **recoverDeviceAddress** <br> **String**	| Unique identifier for the user of economy |
+| **userPin** <br> **String**	| User's Wallet PIN  |
+| **passPhrasePrefix** <br> **String**	| A constant unique identifier for a your user. |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/).  |
+
+
+
+
+### 11. abortDeviceRecovery
+This workflow can be used to abort the initiated device recovery.
+
+```swift
+OstWalletSdk.abortDeviceRecovery(
+    userId: String,
+    userPin: String,
+    passphrasePrefix: String,
+    delegate: OstWorkflowDelegate)
+```
+
+| Parameter | Description |
+|---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
+| **userPin** <br> **String**	| User's Wallet PIN  |
+| **passPhrasePrefix** <br> **String**	| A constant unique identifier for a your user. |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/).  |
+
+
+
+### 12. logoutAllSessions
+This workflow will revoke all the sessions associated with the provided userId.
+
+```swift
+OstWalletSdk.logoutAllSessions(
+    userId: String,
+    delegate: OstWorkflowDelegate)
+```
+
+
+| Parameter | Description |
+|---|---|
+| **userId** <br> **String**	| Unique identifier for the user of economy |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/).  |
+
+
 
 
 ## Getters

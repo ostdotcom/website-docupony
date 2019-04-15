@@ -342,7 +342,7 @@ div.navigationWrapper.navigationSlider ul li {
     flex: none;
 }
 
-div.navigationWrapper.navigationSlider ul li:last-child {
+div.navigationWrapper.navigationSlider ul li:nth-last-child(2) {
     margin-left: auto;
 }
 
