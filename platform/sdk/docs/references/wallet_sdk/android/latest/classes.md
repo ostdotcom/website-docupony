@@ -4,13 +4,9 @@ title: Android SDK Classes
 sidebar_label: Classes
 ---
 
-1. OST Error Classes
+1. OstError
 2. OstContextEntity
 3. OstWorkflowContext
-
-
-## 1. OST Error Classes
-There are 2 error classes `OstError` and `OstErrors`. 
 
 
 ## 1. OstError

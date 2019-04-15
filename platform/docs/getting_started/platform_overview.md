@@ -17,6 +17,8 @@ The sections below highlight what you can do with OST Platform.
 ## Easily deploy a Brand Token Economy
 OST Platform's user interface enables companies to create Brand Tokens by choosing a Token Name, Token Identifier and a conversion rate between the Brand Token and OST.
 
+You can follow the [create token guide](/platform/docs/guides/create_token/) to deploy a Brand Token economy.
+
 OST Platform enables companies to deploy contracts and transact without worrying about calculating gas.
 
 The Platform infrastructure handles the deployment of various smart-contracts to create these tokens such as: 

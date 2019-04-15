@@ -209,7 +209,11 @@ This workflow can be used to change the PIN.
 **User will have to provide the current PIN in order to change it.**
 
 ```
-  void resetPin(String userId,  String appSalt, String currentPin, String newPin, OstWorkFlowCallback workFlowCallback)
+  void resetPin(String userId,  
+                String appSalt, 
+                String currentPin, 
+                String newPin, 
+                OstWorkFlowCallback workFlowCallback)
 ```
 
 
@@ -226,7 +230,10 @@ This workflow can be used to change the PIN.
 A user can control their Brand Tokens using their authorized devices. If they lose their authorized device, they can recover access to their Brand Tokens by authorizing a new device by initiating the recovery process.
 
 ```java
-void initiateDeviceRecovery(String userId, UserPassphrase passphrase, String deviceAddressToRecover, OstWorkFlowCallback workFlowCallback)
+void initiateDeviceRecovery(String userId, 
+                            UserPassphrase passphrase, 
+                            String deviceAddressToRecover, 
+                            OstWorkFlowCallback workFlowCallback)
 ```
 
 | Parameter | Description |
@@ -243,7 +250,9 @@ void initiateDeviceRecovery(String userId, UserPassphrase passphrase, String dev
 This workflow can be used to abort the initiated device recovery.
 
 ```java
-void abortDeviceRecovery(String userId, UserPassphrase passphrase, OstWorkFlowCallback workFlowCallback)
+void abortDeviceRecovery(String userId, 
+                        UserPassphrase passphrase, 
+                        OstWorkFlowCallback workFlowCallback)
 ```
 
 | Parameter | Description |
@@ -259,7 +268,8 @@ void abortDeviceRecovery(String userId, UserPassphrase passphrase, OstWorkFlowCa
 This workflow will revoke all the sessions associated with the provided userId.
 
 ```java
-void logoutAllSessions(String userId, OstWorkFlowCallback workFlowCallback)
+void logoutAllSessions(String userId, 
+                       OstWorkFlowCallback workFlowCallback)
 ```
 
 | Parameter | Description |

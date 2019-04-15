@@ -6,8 +6,6 @@ sidebar_label: Overview
 
 ![platform-overview](/platform/docs/assets/Platform-Integrations.jpg)
 
-
-
 We provide Server Side SDKs mobile and Wallet SDKs to complete your integration:
 
 * The OST Platform Server Side SDKs provide your application with various methods for different services like users, tokens, wallet services corresponding to an end-user of your economy. 
@@ -34,4 +32,3 @@ This section shares the sample applications that we put together for your refere
 
 * [Android sample application](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app)
 * [iOS sample application](https://github.com/ostdotcom/ios-demo-app/tree/develop)
-                     

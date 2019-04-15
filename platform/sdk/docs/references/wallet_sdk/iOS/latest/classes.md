@@ -4,24 +4,45 @@ title: iOS SDK Classes
 sidebar_label: Classes
 ---
 
-1. OstError 
+1. Error Classes 
 2. OstContextEntity
 3. OstWorkflowContext
 
-## 1. OstError
-This class is used to provide error details in [flowInterrupt](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/#2-flowinterrupt) callback function. 
+## 1. Error Classes
+There two error classes. 
+
+1. OstApiError
+2. OstError
+
+### i). OstApiError
+This class is used to provide API related error details in [flowInterrupt](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/#2-flowinterrupt) callback function. 
 
 
-You can call [methods](#i-methods) on this object to get more details about the error.
+You can call following [methods](#i-methods) on the object of this class to get more details about the error.
 
-### i). Methods
+#### A). Methods
 
-1. `public func getApiErrorCode() -> String? `
+1. `public func getApiErrorCode() -> String?`
 2. `public func getApiErrorMessage() -> String?`
 3. `public func getApiInternalId() -> String?`
 4. `public func isBadRequest() -> Bool`
 5. `public func isDeviceTimeOutOfSync() -> Bool`
 6. `public func isApiSignerUnauthorized() -> Bool`
+
+
+### ii). OstError
+This class is used to provide error details in [flowInterrupt](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/#2-flowinterrupt) callback function. 
+
+You can read following properties on the object of this class to get more details about the error.
+
+#### A). Properties
+
+1. public internal(set) var isApiError = false
+2. public let internalCode:String
+3. public let errorMessage:String
+4. public let messageTextCode:OstErrorText;
+5. public var errorInfo: [String: Any]? = nil
+
 
 
 ## 2. OstContextEntity
