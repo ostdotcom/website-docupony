@@ -4,6 +4,7 @@ title: OST Platform API Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - php: PHP
   - ruby: Ruby
+  - javascript: Node.js
 
 toc_footers:
   - Documentation Powered by Slate
