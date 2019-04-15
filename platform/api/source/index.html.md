@@ -5,6 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - php: PHP
   - ruby: Ruby
   - javascript: Node.js
+  - java: Java
 
 toc_footers:
   - Documentation Powered by Slate
@@ -555,6 +556,41 @@ usersService.create({})
 ```
 
 
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Users usersService = services.users;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    JsonObject response = usersService.create( params );
+    System.out.println("response: " + response.toString() );
+
+
+    }
+}
+```
+
+
 #### <span> POST </span> &nbsp; &nbsp; /users
 
 
@@ -652,6 +688,42 @@ usersService.get({user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7'})
   .catch(function(err) { 
     console.log(JSON.stringify(err)); 
   });                  
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Users usersService = services.users;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    JsonObject response = usersService.get( params );
+    System.out.println("response: " + response.toString() );
+
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}
@@ -779,6 +851,45 @@ usersService.getList({
   .catch(function(err) { 
     console.log(JSON.stringify(err)); 
   });                 
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Users usersService = services.users;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    //ArrayList<Object> idsArray = new ArrayList<Object>();
+    //idsArray.add("29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    //idsArray.add("12f57b59-60af-4579-9d6c-2ebcb36a9123");
+    //params.put("ids", idsArray);
+    //params.put("limit", 10);
+    JsonObject response = usersService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users
@@ -1032,6 +1143,42 @@ devicesService.create({
     });                
 ```
 
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Devices devicesService = services.devices;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("address", "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E");
+    params.put("api_signer_address", "0x5F860598383868e8E8Ee0ffC5ADD92369Db37455");
+    JsonObject response = devicesService.create( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/devices
 
 <u>**URL Parameters**</u>
@@ -1142,6 +1289,42 @@ devicesService.get({
 .catch(function(err) { 
   console.log(JSON.stringify(err)); 
 });               
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Devices devicesService = services.devices;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("device_address", "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E");
+    JsonObject response = devicesService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/devices/{device_address}
@@ -1257,6 +1440,48 @@ devicesService.getList({user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7',
 .catch(function(err) { 
   console.log(JSON.stringify(err)); 
 });               
+```
+
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Devices devicesService = services.devices;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    //params.put("pagination_identifier", "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19");
+    //ArrayList<Object> addressesArray = new ArrayList<Object>();
+    //addressesArray.add("0x5906ae461eb6283cf15b0257d3206e74d83a6bd4");
+    //addressesArray.add("0xab248ef66ee49f80e75266595aa160c8c1abdd5a");
+    //params.put("addresses", addressesArray);
+    //params.put("limit", 10);
+    JsonObject response = devicesService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 
@@ -1420,6 +1645,42 @@ sessionsService.get({
 });              
 ```
 
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Sessions sessionsService = services.sessions;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("session_address", "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E");
+    JsonObject response = sessionsService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/sessions/{session_address}
 
 <u>**URL Parameters**</u>
@@ -1528,6 +1789,47 @@ sessionsService.getList({
 .catch(function(err) { 
   console.log(JSON.stringify(err)); 
 });              
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Sessions sessionsService = services.sessions;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    //params.put("pagination_identifier", "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19");
+    //ArrayList<Object> addressesArray = new ArrayList<Object>();
+    //addressesArray.add("0x5906ae461eb6283cf15b0257d3206e74d83a6bd4");
+    //addressesArray.add("0xab248ef66ee49f80e75266595aa160c8c1abdd5a");
+    //params.put("addresses", addressesArray);
+    //params.put("limit", 10);
+    JsonObject response = sessionsService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/sessions
@@ -1670,6 +1972,39 @@ rulesService.getList({})
 .catch(function(err) { 
   console.log(JSON.stringify(err)); 
 });             
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Rules rulesService = services.rules;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    JsonObject response = rulesService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /rules
@@ -2462,6 +2797,40 @@ pricePoints.get({
 });            
 ```
 
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.PricePoints pricePointsService = services.pricePoints;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("chain_id", "200");
+    JsonObject response = pricePointsService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span>GET</span> &nbsp; &nbsp; /chains/{chain_id}/price-points
 
 
@@ -2856,6 +3225,110 @@ transactionsService.execute(executeParams)
 });
 ```
 
+
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Transactions transactionsService = services.transactions;
+
+
+//  Driect Transfer
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    HashMap <String,Object> nestedparams = new HashMap<String,Object>();
+    String userId = "29f57b59-60af-4579-9d6c-2ebcb36a9142";
+    String toAddress = "0xe37906219ad67cc1301b970539c9860f9ce8d991";
+    String user2TokenHolderAddress = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4";
+    String amount = "1";
+    params.put("user_id", userId);
+    params.put("to", toAddress);
+    nestedparams.put("method", "directTransfers");
+    ArrayList<ArrayList> nestedarraylist = new ArrayList<ArrayList>();
+    ArrayList<Object> arrayListForUser2TokenHolderAddress = new ArrayList<Object>();
+    arrayListForUser2TokenHolderAddress.add(user2TokenHolderAddress);
+    ArrayList<Object> arrayListAmount = new ArrayList<Object>();
+    arrayListAmount.add(amount);
+    Gson gsonObj = new Gson();
+    nestedarraylist.add(arrayListForUser2TokenHolderAddress);
+    nestedarraylist.add(arrayListAmount);
+    nestedparams.put("parameters", nestedarraylist);
+    String jsonStr = gsonObj.toJson(nestedparams);
+    params.put("raw_calldata", jsonStr);
+    //params.put("meta_property", metaProperty);
+    JsonObject response = transactionsService.execute( params );
+    System.out.println("response: " + response.toString() );
+
+
+
+
+
+
+
+
+    // Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    HashMap <String,Object> nestedparams = new HashMap<String,Object>();
+
+    //HashMap <String,Object> metaProperty = new HashMap<String,Object>();
+    //metaProperty.put("name", "transaction_name"); // like, download
+    //metaProperty.put("type", "user_to_user"); // user_to_user, company_to_user, user_to_company
+    //metaProperty.put("details", "test"); // memo field to add additional info about the transaction
+
+
+    String userId = "29f57b59-60af-4579-9d6c-2ebcb36a9142";
+    String toAddress = "0xe37906219ad67cc1301b970539c9860f9ce8d991";
+    String user2TokenHolderAddress = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4";
+    String amount = "1";
+    params.put("user_id", userId);
+    params.put("to", toAddress);
+    nestedparams.put("method", "pay");
+    ArrayList<Object> nestedarraylist = new ArrayList<Object>();
+    ArrayList<Object> arrayListForUser2TokenHolderAddress = new ArrayList<Object>();
+    arrayListForUser2TokenHolderAddress.add(user2TokenHolderAddress);
+    ArrayList<Object> arrayListAmount = new ArrayList<Object>();
+    arrayListAmount.add(amount);
+    Gson gsonObj = new Gson();
+    String tokenHolderSender = "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee";
+    String payCurrencyCode = "USD";
+    String ostToUsd = "23757000000000000";
+    nestedarraylist.add(tokenHolderSender);
+    nestedarraylist.add(arrayListForUser2TokenHolderAddress);
+    nestedarraylist.add(arrayListAmount);
+    nestedarraylist.add(payCurrencyCode);
+    nestedarraylist.add(ostToUsd);
+    nestedparams.put("parameters", nestedarraylist);
+    String jsonStr = gsonObj.toJson(nestedparams);
+    params.put("raw_calldata", jsonStr);
+    //params.put("meta_property", metaProperty);
+    JsonObject response = transactionsService.execute( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/transactions
 
 
@@ -3122,6 +3595,42 @@ transactionsService.get({
 });         
 ```
 
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Transactions transactionsService = services.transactions;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("transaction_id", "e96450b8-f46a-40ee-adf1-9d65a4b53241");
+    JsonObject response = transactionsService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions/{transaction_id}
 
 
@@ -3304,6 +3813,59 @@ transactionsService.getList({
   }).catch(function(err) { 
     console.log(JSON.stringify(err)); 
   });      
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Transactions transactionsService = services.transactions;
+
+    //ArrayList<HashMap<String, Object>> metaPropertyArray = new ArrayList<HashMap<String, Object>>();
+    //HashMap <String,Object> metaPropertyArrayParams = new HashMap<String,Object>();
+    //metaPropertyArrayParams.put("name", "transaction_name"); //like, download IMP : Max length 25 characters (numbers alphabets spaces _ - allowed)
+    //metaPropertyArrayParams.put("type", "user_to_user"); // user_to_user, company_to_user, user_to_company
+    //metaPropertyArrayParams.put("details", "test"); // memo field to add additional info about the transaction .  IMP : Max length 120 characters (numbers alphabets spaces _ - allowed)
+    //metaPropertyArray.add(metaPropertyArrayParams);
+    //Gson gsonObj = new Gson();
+    //String metaPropertyArrayJsonStr = gsonObj.toJson(metaPropertyArray);
+
+    //ArrayList<Object> statusArray = new ArrayList<Object>();
+    //statusArray.add("CREATED");
+    //statusArray.add("SUBMITTED");
+    //statusArray.add("SUCCESS");
+    //statusArray.add("FAILED");
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    //params.put("status", statusArray);
+    //params.put("meta_property", metaPropertyArrayJsonStr);
+    //params.put("limit", 10);
+    JsonObject response = transactionsService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions
@@ -3514,6 +4076,42 @@ balancesService.get({
 }).catch(function(err) { 
   console.log(JSON.stringify(err)); 
 });           
+```
+
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Balance balancesService = services.balance;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    JsonObject response = balancesService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 
@@ -3782,6 +4380,40 @@ tokensService.get({}).then(function(res) {
 });          
 ```
 
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Tokens tokensService = services.tokens;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    JsonObject response = tokensService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /tokens
 
 
@@ -3937,6 +4569,41 @@ recoveryOwnersService.get({
 });       
 ```
 
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.RecoveryOwners recoveryOwnersService = services.recoveryOwners;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("recovery_owner_address", "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E");
+    JsonObject response = recoveryOwnersService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span>GET</span> &nbsp; &nbsp; /users/{user_id}/recovery-owners/{recovery_owner_address}
 
 <u>**URL Parameters**</u>
@@ -4055,6 +4722,40 @@ chainsService.get({
 }).catch(function(err) { 
   console.log(JSON.stringify(err)); 
 });      
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Chains chainsService = services.chains;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("chain_id", "200");
+    JsonObject response = chainsService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /chains/{chain_id}
@@ -4185,6 +4886,41 @@ deviceManagersService.get({
 }).catch(function(err) { 
   console.log(JSON.stringify(err)); 
 });     
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.DeviceManagers deviceManagersService = services.deviceManagers;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    JsonObject response = deviceManagersService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 
