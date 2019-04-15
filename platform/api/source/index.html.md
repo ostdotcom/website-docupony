@@ -294,7 +294,7 @@ The value of `data.result_type` property will be `users` and list of users will 
 
 ### Requesting next page
 
-If next page is not present, `next_page_payload` will be empty hash and `pagination_identifier` key won't be present
+If next page is not present, `next_page_payload` will be empty hash and `pagination_identifier` key won't be present.
 
 > Pagination Exmaple: Requesting next page users
 
@@ -303,6 +303,7 @@ If next page is not present, `next_page_payload` will be empty hash and `paginat
 require 'vendor/autoload.php';
 
 $params = array();
+
 $params['apiKey']='65e20fcfce72f4c34546338a70518478';
 $params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
 $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
