@@ -46,7 +46,7 @@ To get the information about your Brand Token, you will have to use `tokens` ser
 ### Instantiating the SDK object
 Before using any service of SDK you will have to provide API key and API secret to instantiate new SDK object.
 
-**Instantiating The SDK Samlpe Code**
+**Instantiating The SDK Sample Code**
 
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
@@ -123,7 +123,7 @@ Token entity has important information about your token which we recommend you t
 }
 ```
 
-> Congratulation! You have completed your first API call from server side SDK.
+> Congratulation! You have completed your first API call from Server Side SDK.
 
 ## 5. Register User
 You can set up your users in OST Platform. User objects in OST Platform do not have any personal information about your application users. OST Platform deploys smart contracts for every user in the economy and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4).
@@ -171,7 +171,7 @@ usersService.create({})
 Ideally after user creation you should map the user's id with unique identifier of your application user. E.g.: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
 
 
-A detailed explanation about each attribute of user is availaible on user object section in [API docs](/platform/docs/api/#user-object).
+A detailed explanation about each attribute of user is available on user object section in [API References](/platform/docs/api/#user-object).
 
 
 ## Next Steps

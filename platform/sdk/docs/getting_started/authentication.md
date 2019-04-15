@@ -4,7 +4,7 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-## Server API Authentication
+## Server Side API Authentication
 OST servers authenticate your API requests using your account’s API keys. If you do not include your key when making an API request, or use one that is incorrect or outdated, OST Platform API returns an error.
 
 Every account is provided with separate keys for sandbox environment and for production environment. All API requests exist in either sandbox mode or production mode, and entities—users, devices, sessions, and so forth—in one mode cannot be manipulated by entities in the other.
@@ -18,7 +18,7 @@ There is a key pair: API key and API secret
 
 ### Obtaining your API keys
 
-Your API keys are available in the Developers Page in OST Platform. 
+Your API keys are available in the Developers page in OST Platform. 
 
 **Use only your sandbox environment API keys for testing and development.** This ensures that you don't modify your live production data.
 

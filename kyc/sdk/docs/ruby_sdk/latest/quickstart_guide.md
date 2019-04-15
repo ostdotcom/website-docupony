@@ -96,7 +96,7 @@ signed_urls = users_kyc_service.get_presigned_url_post(params).to_json
 }
 ```
 
-**We have recieved to objects for each document.**
+**We have received to objects for each document.**
 1. **URL:** We will be using the URL field to make a PUT (from server) or POST (from browser) request.
 2. **Fields:** We will be using only `key` field while submiting other details for user's KYC.
 
@@ -152,7 +152,7 @@ signed_urls = users_kyc_service.get_presigned_url_put(params).to_json
 }
 ```
 
-**We have recieved to objects for each document.**
+**We have received to objects for each document.**
 1. **URL:** We will be using the URL field to make a PUT (from server) or POST (from browser) request.
 2. **Fields:** We will be using only `key` field while submiting other details for user's KYC.
 

@@ -38,10 +38,10 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 <br> 
 
 > ## Server Side
-In this sections we will focus on server side logic. You will have to use OST Platform Server Side SDK (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.Js](/platform/docs/sdk/server_sdk_setup/nodejs/)) to communicate with OST Platform. 
+In this section we focus on server side logic. You will have to use OST Platform Server Side SDK (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.Js](/platform/docs/sdk/server_sdk_setup/nodejs/)) to communicate with OST Platform. 
 
 ### Create User
-The first step to create a user's wallet is to create the user on OST Platform. Use one of the available server side SDKs or [API]((/platform/docs/api)) directly to register a user.
+The first step to create a user's wallet is to create the user on OST Platform. Use one of the available Server Side SDKs or [API]((/platform/docs/api)) directly to register a user.
 
 **User Registration Tips**
 
@@ -75,7 +75,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ### Generating passphasePrefix
 
-`passphasePrefix` is a string with minimum length 30 used in the process of creating recovery key for your economy users. You will have to generate `passphasePrefix` on your server for each user with high randomness. You should keep a mapping between the `passPhrasePrefix` and other user information. Your server should communicate this passPhrasePrefix to your app when needed.
+`passphasePrefix` is a string with minimum length 30 used in the process of creating recovery key for your economy users. You will have to generate `passphasePrefix` on your server for each user with high randomness. You should keep a mapping between the `passPhrasePrefix` and other user information. Your server should communicate this passphrasePrefix to your app when needed.
 
 [Security Guidelines for generating passphasePrefix](/platform/docs/sdk/getting_started/security_guidelines/#server-side-sdk)
 
@@ -113,7 +113,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 <br>
 
 > ## Mobile App
-In your mobile application, you should use one of the Wallet SDKs (available in [Android](/platform/docs/wallet_sdk_setup/android/) and iOS(/platform/docs/wallet_sdk_setup/iOS/)).
+In your mobile application, you should use one of the Wallet SDKs (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/).
 
 ### Initializing Wallet SDK
 SDK initialization should happen before calling any other `workflow`. To initialize the SDK, you need to call `initialize` method of wallet SDK. 
@@ -139,7 +139,7 @@ public class App extends Application {
 ```
 
 ### Calling `setupDevice` workflow
-In order to intiate the device registration from you mobile app, you need to call `setupDevice` workflow.
+In order to initiate the device registration from you mobile app, you need to call `setupDevice` workflow.
 <br>
 
 `setupDevice` workflow needs `userId` and `tokenId` so `setupDevice` should be called after app login or signup is successful. Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId` (unique identifier for your token economy).
@@ -196,7 +196,7 @@ To activate the user you will have to call **activateUser** workflow which requi
 
 3. passphrasePrefix: a unique string for each user with high entropy, generated on your server.
 
-4. expiryAfterInSecs: A  **TokenHolder** contract that holds a users tokens is one of three contracts that are deployed on blockchain during user activation.  **TokenHolder** contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each users session key as well as the spending limit. It is recommened to set expriation time to 2 weeks, however, you can choose more or less time.
+4. expiryAfterInSecs: A  **TokenHolder** contract that holds a users tokens is one of three contracts that are deployed on blockchain during user activation.  **TokenHolder** contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each users session key as well as the spending limit. It is recommended to set expiration time to 2 weeks, however, you can choose more or less time.
 
 5. spendingLimitinWei: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
 
@@ -226,7 +226,7 @@ The other input required to create user's wallet recovery key comes from the use
 ```
 
 #### Create UserPassphrase object 
-Your app will create a UserPassphrase object which will contain user Id, user pin and `passphrasePrefix ` shown in below step.
+Your app will create a UserPassphrase object which will contain user id, user pin and `passphrasePrefix ` shown in below step.
 
 ```java
 UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix);
@@ -276,6 +276,7 @@ Your mobile app should call `activateUser` workflow using wallet SDK with the in
 The SDK provides an interface that should be implemented by the application so that it can receive the workflow status details.
 
 **Receiving callback calls**
+
 There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
 
 
@@ -287,7 +288,7 @@ To show you an example, we will just implement 2 functions to get the workflow s
 ```java
 public void flowComplete(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity) {
        String completeString = String.format("Workflow %s complete entity %s ",
-               ostWorkflowContext.getWorkflow_type(), null == ostContextEntity ? "null" : ostContextEntity.getEntityType());
+               ostWorkflowContext.getWorkflow_type(), null == ostContextEntity ? "null": ostContextEntity.getEntityType());
  
        Toast.makeText(OstWalletSdk.getContext(), "Work Flow Successful", Toast.LENGTH_SHORT).show();
        ....
