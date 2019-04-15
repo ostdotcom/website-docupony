@@ -420,6 +420,18 @@ div.navigationWrapper.navigationSlider ul li.active a{
 
 }
 
+@media screen and (max-width: 420px) {
+
+    div.navigationWrapper.navigationSlider ul li:nth-last-child(2) {
+        display: none;
+    };
+
+    div.navigationWrapper.navigationSlider ul li:last-child {
+        margin-left: auto;
+    }
+
+}
+
 
 
 
