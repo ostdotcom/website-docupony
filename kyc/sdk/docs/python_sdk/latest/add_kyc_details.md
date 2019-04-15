@@ -217,7 +217,7 @@ users_kyc_service.get_pre_signed_url_put({'files': {
 
 
 ## Add KYC details:
-We have recieved AWS S3 file paths where we have uploaded KYC documents. We can now start adding the KYC details like name, address, documents file paths (S3 paths)
+We have received AWS S3 file paths where we have uploaded KYC documents. We can now start adding the KYC details like name, address, documents file paths (S3 paths)
 
 
 ### Sample Code

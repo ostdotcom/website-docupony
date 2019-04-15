@@ -3,6 +3,9 @@ title: OST Platform API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - php: PHP
+  - ruby: Ruby
+  - javascript: Node.js
+  - java: Java
 
 toc_footers:
   - Documentation Powered by Slate
@@ -23,10 +26,10 @@ This API library includes API calls that will be used by client company's server
 
 Available Server Side SDKs:
 
-1. [PHP SDK](/platform/docs/server_sdk_setup/php/)
-2. [Ruby SDK](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0)
-3. [Java SDK](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
-4. [Node.js SDK](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0)
+1. [PHP SDK](/platform/docs/sdk/server_sdk_setup/php//)
+2. [Ruby SDK](/platform/docs/sdk/server_sdk_setup/ruby/)
+3. [Java SDK](/platform/docs/sdk/server_sdk_setup/java/)
+4. [Node.js SDK](/platform/docs/sdk/server_sdk_setup/nodejs/)
 
 
 ## Access
@@ -291,7 +294,7 @@ The value of `data.result_type` property will be `users` and list of users will 
 
 ### Requesting next page
 
-If next page is not present, `next_page_payload` will be empty hash and `pagination_identifier` key won't be present
+If next page is not present, `next_page_payload` will be empty hash and `pagination_identifier` key won't be present.
 
 > Pagination Exmaple: Requesting next page users
 
@@ -300,6 +303,7 @@ If next page is not present, `next_page_payload` will be empty hash and `paginat
 require 'vendor/autoload.php';
 
 $params = array();
+
 $params['apiKey']='65e20fcfce72f4c34546338a70518478';
 $params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
 $params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
@@ -316,7 +320,7 @@ $userService = $ostObj->services->users;
 
 $getParams = array();
 
-// Requesting next page using the pagination_identifier recieved in last page under `meta` attribute.
+// Requesting next page using the pagination_identifier received in last page under `meta` attribute.
 $getParams['pagination_identifier'] = 'eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InRpZCI6eyJOIjoiMTA4NSJ9LCJ1aWQiOnsiUyI6ImU2NmQ5MjEwLTlmNDctNGJkZi1hYjQ5LTM0ZDVjYTJlZGI5YiJ9fSwicGFnZSI6MiwibGltaXQiOjEwfQ==';
 $response = $userService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
@@ -515,6 +519,79 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+users_service = ost_sdk.services.users
+create_params = {}
+
+response = users_service.create(create_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const usersService = ostObj.services.users;
+
+usersService.create({})
+    .then(function(res) { 
+        console.log(JSON.stringify(res)); 
+    })
+    .catch(function(err) { 
+        console.log(JSON.stringify(err)); 
+    });                    
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Users usersService = services.users;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    JsonObject response = usersService.create( params );
+    System.out.println("response: " + response.toString() );
+
+
+    }
+}
+```
+
+
 #### <span> POST </span> &nbsp; &nbsp; /users
 
 
@@ -574,6 +651,80 @@ $response = $userService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+users_service = ost_sdk.services.users
+
+get_params = {}
+get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
+response = users_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const usersService = ostObj.services.users;
+
+usersService.get({user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7'})
+  .then(function(res) { 
+    console.log(JSON.stringify(res)); 
+  })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+  });                  
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Users usersService = services.users;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    JsonObject response = usersService.get( params );
+    System.out.println("response: " + response.toString() );
+
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}
@@ -661,6 +812,87 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
 ```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+users_service = ost_sdk.services.users
+
+get_params = {}
+# get_params[:ids] = ['91263ebd-6b2d-4001-b732-4024430ca758', '45673ebd-6b2d-4001-b732-4024430ca758']
+# get_params[:limit] = 10
+response = users_service.get_list(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const usersService = ostObj.services.users;
+
+usersService.getList({ 
+ // ids: ["c2c6fbb2-2531-4c80-9e43-e67195bb01c7", "d2c6fbb2-2531-4c80-9e43-e67195bb01c7"]
+ // limit: 10 
+}).then(function(res) { 
+    console.log(JSON.stringify(res)); 
+  })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+  });                 
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Users usersService = services.users;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    //ArrayList<Object> idsArray = new ArrayList<Object>();
+    //idsArray.add("29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    //idsArray.add("12f57b59-60af-4579-9d6c-2ebcb36a9123");
+    //params.put("ids", idsArray);
+    //params.put("limit", 10);
+    JsonObject response = usersService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+
+    }
+}
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /users
 
 
@@ -867,6 +1099,87 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+devices_service = ost_sdk.services.devices
+
+create_params = {}
+create_params[:user_id] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9'
+create_params[:address] = '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E'
+create_params[:api_signer_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
+
+response = devices_service.create(create_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const devicesService = ostObj.services.devices;
+
+devicesService.create({
+    user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7', 
+    address: '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E',
+    api_signer_address: '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
+    })
+    .then(function(res) { 
+      console.log(JSON.stringify(res)); 
+    })
+    .catch(function(err) { 
+      console.log(JSON.stringify(err)); 
+    });                
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Devices devicesService = services.devices;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("address", "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E");
+    params.put("api_signer_address", "0x5F860598383868e8E8Ee0ffC5ADD92369Db37455");
+    JsonObject response = devicesService.create( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/devices
 
 <u>**URL Parameters**</u>
@@ -936,6 +1249,83 @@ $response = $deviceService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+devices_service = ost_sdk.services.devices
+
+get_params = {}
+get_params[:user_id] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9'
+get_params[:device_address] = '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E'
+response = devices_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const devicesService = ostObj.services.devices;
+
+devicesService.get({
+   user_id: "d194aa75-acd5-4f40-b3fb-e73a7cf7c0d9",
+   device_address: "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E"
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});               
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Devices devicesService = services.devices;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("device_address", "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E");
+    JsonObject response = devicesService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/devices/{device_address}
@@ -1008,6 +1398,93 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
 ```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+devices_service = ost_sdk.services.devices
+
+get_params = {}
+get_params[:user_id] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9'
+# get_params[:pagination_identifier] = "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19"
+# get_params[:addresses] = ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"]
+# get_params[:limit] = 10
+response = devices_service.get_list(get_params)
+```
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const devicesService = ostObj.services.devices;
+
+devicesService.getList({user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7',
+// pagination_identifier: 'eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19',
+// addresses: ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"]
+// limit: 10 
+})
+.then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});               
+```
+
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Devices devicesService = services.devices;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    //params.put("pagination_identifier", "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19");
+    //ArrayList<Object> addressesArray = new ArrayList<Object>();
+    //addressesArray.add("0x5906ae461eb6283cf15b0257d3206e74d83a6bd4");
+    //addressesArray.add("0xab248ef66ee49f80e75266595aa160c8c1abdd5a");
+    //params.put("addresses", addressesArray);
+    //params.put("limit", 10);
+    JsonObject response = devicesService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/devices
 
@@ -1092,7 +1569,7 @@ API you can `get` and `list` user's sessions. Sessions are generated by wallet S
 |  **address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address)  | This will be the [session key address](/platform/docs/additional_resources/glossary/#session-key).   |
 |  **expiration_height** <br> **Integer** | Block height when the session address will expire |
 |   **approx\_expiration\_timestamp** <br> **EPOCH \<time in seconds\>**, <br> **default is null**| Approximate time at which the session address will expire.  |
-|  **spending_limit** <br> **String \<BigInt\>** | Maximum allowed [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token) that can be transfered in one transaction by this session address. |
+|  **spending_limit** <br> **String \<BigInt\>** | Maximum allowed [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token) that can be transferred in one transaction by this session address. |
 |   **nonce** <br> **Integer**,<br> **default is null**| Transaction counter of session address which helps prevents replay attacks.  |
 |  **status** <br> **String**| Status gives us status of session key. It can take one of these values. INITIALIZING / AUTHORIZED / REVOKING / REVOKED <br> `INITIALIZING`: Status when the session address is being authorized in user's device manager(multisig) contract. <br>`AUTHORIZED`: Status when the authorization is complete <br> `REVOKING`: Status when the session is being revoked from device manager(multisig) contract<br> `REVOKED`: Status when the session revocation is complete|
 |  **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
@@ -1125,6 +1602,84 @@ $response = $sessionService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+sessions_service = ost_sdk.services.sessions
+
+get_params = {}
+get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+get_params[:session_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
+response = sessions_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const sessionsService = ostObj.services.sessions;
+
+sessionsService.get({
+  user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7', 
+  session_address: '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E'
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});              
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Sessions sessionsService = services.sessions;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("session_address", "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E");
+    JsonObject response = sessionsService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/sessions/{session_address}
@@ -1191,6 +1746,91 @@ $response = $sessionService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+sessions_service = ost_sdk.services.sessions
+get_params = {}
+get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+# get_params[:pagination_identifier] = "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19"
+# get_params[:addresses] = ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"]
+# get_params[:limit] = 10
+response = sessions_service.get_list(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const sessionsService = ostObj.services.sessions;
+
+sessionsService.getList({
+  user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7', 
+    // addresses: ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"],
+    // pagination_identifier: 'eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19',
+    // limit: 10 
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});              
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Sessions sessionsService = services.sessions;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    //params.put("pagination_identifier", "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19");
+    //ArrayList<Object> addressesArray = new ArrayList<Object>();
+    //addressesArray.add("0x5906ae461eb6283cf15b0257d3206e74d83a6bd4");
+    //addressesArray.add("0xab248ef66ee49f80e75266595aa160c8c1abdd5a");
+    //params.put("addresses", addressesArray);
+    //params.put("limit", 10);
+    JsonObject response = sessionsService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/sessions
@@ -1296,6 +1936,76 @@ $response = $rulesService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+rules_service = ost_sdk.services.rules
+
+get_params = {}
+response = rules_service.get_list(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const rulesService = ostObj.services.rules;
+
+rulesService.getList({})
+.then(function(res) { 
+  console.log(JSON.stringify(res)); 
+})
+.catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});             
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Rules rulesService = services.rules;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    JsonObject response = rulesService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /rules
@@ -2048,6 +2758,80 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+price_points_service = ost_sdk.services.price_points
+
+get_params = {}
+get_params[:chain_id] = 2000
+response = price_points_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const pricePoints = ostObj.services.price_points;
+
+pricePoints.get({
+  chain_id: 2000
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});            
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.PricePoints pricePointsService = services.pricePoints;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("chain_id", "200");
+    JsonObject response = pricePointsService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span>GET</span> &nbsp; &nbsp; /chains/{chain_id}/price-points
 
 
@@ -2108,7 +2892,7 @@ The value of `data.result_type` property will be `price_point` and price point o
 |  **from**  <br> **String**,  [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address),<br> **default is null** | Sender address of transaction on blockchain.  |
 |  **to** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) |   This will be the  **TokenHolder** contract address of transaction initiator.|
 |  **nonce** <br> **Integer**, <br> **default is null**| Transaction counter of sender address which helps prevents replay attacks.  |
-| **value**  <br> **String \<BigInt\>**, <br> **default is null**| Transfered [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) amount.   |
+| **value**  <br> **String \<BigInt\>**, <br> **default is null**| Transferred [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) amount.   |
 | **gas_price**<br> **String \<BigInt\>** | The [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) per unit of gas provided by the sender. |
 | **gas_used** <br> **Integer**, <br> **default is null**| Gas used by this transaction  |
 | **transaction_fee** <br> **String \<BigInt\>**, <br> **default is null** | This is calculated by multiplying `gas_price` and `gas_used` (gas_price * gas_used) in [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost)  |
@@ -2306,6 +3090,244 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+transactions_service = ost_sdk.services.transactions
+
+
+
+# Direct Brand Token Transfer 
+execute_params = {}
+execute_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+execute_params[:to] = '0x4e9314f004026F89Fc52790c3357b2D34FBA93b0'
+raw_calldata = {}
+raw_calldata[:method] = "directTransfers" # or "pay" 
+raw_calldata[:parameters] = [["0x4e9314f004026F89Fc52790c3357b2D34FBA93b0", "0xe37906219ad67cc1301b970539c9860f9ce8d991"],['1','1']] 
+execute_params[:raw_calldata] = raw_calldata.to_json
+
+meta_property = {
+      name: "transaction_name" , #like, download
+      type: "user_to_user", # user_to_user, company_to_user, user_to_company
+      details: "test"  # memo field to add additional info about the transaction
+    }     
+
+# execute_params[:meta_property] = meta_property
+response = transactions_service.execute(execute_params)
+
+
+# Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
+
+execute_params = {}
+execute_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+execute_params[:to] = '0x4e9314f004026F89Fc52790c3357b2D34FBA93b0'
+raw_calldata = {}
+raw_calldata[:method] = "pay" 
+raw_calldata[:parameters] = ["0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee", ["0x4e9314f004026F89Fc52790c3357b2D34FBA93b0", "0xe37906219ad67cc1301b970539c9860f9ce8d991"],['1','1'], "USD", "23757000000000000"] 
+execute_params[:raw_calldata] = raw_calldata.to_json
+
+meta_property = {
+      name: "transaction_name" ,
+      type: "user_to_user",
+      details: ""
+    }
+
+# execute_params[:meta_property] = meta_property
+response = transactions_service.execute(execute_params)
+
+```
+
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const transactionsService = ostObj.services.transactions;
+
+
+
+
+// Direct Brand Token Transfer 
+let transferTo = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4",
+transferAmount = '1',
+let raw_calldata = JSON.stringify({
+            method: "directTransfers",  
+            parameters: [[transferTo],[transferAmount]]
+        });
+   meta_property = {
+      "name": "transaction_name" , //like, download
+      "type": "user_to_user", // user_to_user, company_to_user, user_to_company
+      "details" : "" // memo field to add additional info about the transaction
+    }     
+        
+
+let executeParams = {
+    user_id: "ee89965c-2fdb-41b5-8b6f-94f441463c7b",
+    to: "0xe37906219ad67cc1301b970539c9860f9ce8d991",
+    raw_calldata: raw_calldata,
+   //meta_property: meta_property
+};
+
+transactionsService.execute(executeParams)
+.then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});      
+
+
+// Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
+
+let transferTo = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4",
+transferAmount = '1',
+tokenHolderSender = "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
+payCurrencyCode = "USD",
+ostToUsd = "23757000000000000" // get price-point response
+raw_calldata = JSON.stringify({
+            method: "pay",  
+            parameters: [tokenHolderSender, [transferTo],[transferAmount], payCurrencyCode, ostToUsd]
+        });
+   meta_property = {
+      "name": "transaction_name" , //like, download
+      "type": "user_to_user", // user_to_user, company_to_user, user_to_company
+      "details" : "" // memo field to add additional info about the transaction
+    }     
+        
+
+let executeParams = {
+    user_id: "ee89965c-2fdb-41b5-8b6f-94f441463c7b",
+    to: "0xe37906219ad67cc1301b970539c9860f9ce8d991",
+    raw_calldata: raw_calldata,
+    
+   //meta_property: meta_property
+};
+
+transactionsService.execute(executeParams)
+.then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});
+```
+
+
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Transactions transactionsService = services.transactions;
+
+
+//  Driect Transfer
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    HashMap <String,Object> nestedparams = new HashMap<String,Object>();
+    String userId = "29f57b59-60af-4579-9d6c-2ebcb36a9142";
+    String toAddress = "0xe37906219ad67cc1301b970539c9860f9ce8d991";
+    String user2TokenHolderAddress = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4";
+    String amount = "1";
+    params.put("user_id", userId);
+    params.put("to", toAddress);
+    nestedparams.put("method", "directTransfers");
+    ArrayList<ArrayList> nestedarraylist = new ArrayList<ArrayList>();
+    ArrayList<Object> arrayListForUser2TokenHolderAddress = new ArrayList<Object>();
+    arrayListForUser2TokenHolderAddress.add(user2TokenHolderAddress);
+    ArrayList<Object> arrayListAmount = new ArrayList<Object>();
+    arrayListAmount.add(amount);
+    Gson gsonObj = new Gson();
+    nestedarraylist.add(arrayListForUser2TokenHolderAddress);
+    nestedarraylist.add(arrayListAmount);
+    nestedparams.put("parameters", nestedarraylist);
+    String jsonStr = gsonObj.toJson(nestedparams);
+    params.put("raw_calldata", jsonStr);
+    //params.put("meta_property", metaProperty);
+    JsonObject response = transactionsService.execute( params );
+    System.out.println("response: " + response.toString() );
+
+
+
+
+
+
+
+
+    // Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    HashMap <String,Object> nestedparams = new HashMap<String,Object>();
+
+    //HashMap <String,Object> metaProperty = new HashMap<String,Object>();
+    //metaProperty.put("name", "transaction_name"); // like, download
+    //metaProperty.put("type", "user_to_user"); // user_to_user, company_to_user, user_to_company
+    //metaProperty.put("details", "test"); // memo field to add additional info about the transaction
+
+
+    String userId = "29f57b59-60af-4579-9d6c-2ebcb36a9142";
+    String toAddress = "0xe37906219ad67cc1301b970539c9860f9ce8d991";
+    String user2TokenHolderAddress = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4";
+    String amount = "1";
+    params.put("user_id", userId);
+    params.put("to", toAddress);
+    nestedparams.put("method", "pay");
+    ArrayList<Object> nestedarraylist = new ArrayList<Object>();
+    ArrayList<Object> arrayListForUser2TokenHolderAddress = new ArrayList<Object>();
+    arrayListForUser2TokenHolderAddress.add(user2TokenHolderAddress);
+    ArrayList<Object> arrayListAmount = new ArrayList<Object>();
+    arrayListAmount.add(amount);
+    Gson gsonObj = new Gson();
+    String tokenHolderSender = "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee";
+    String payCurrencyCode = "USD";
+    String ostToUsd = "23757000000000000";
+    nestedarraylist.add(tokenHolderSender);
+    nestedarraylist.add(arrayListForUser2TokenHolderAddress);
+    nestedarraylist.add(arrayListAmount);
+    nestedarraylist.add(payCurrencyCode);
+    nestedarraylist.add(ostToUsd);
+    nestedparams.put("parameters", nestedarraylist);
+    String jsonStr = gsonObj.toJson(nestedparams);
+    params.put("raw_calldata", jsonStr);
+    //params.put("meta_property", metaProperty);
+    JsonObject response = transactionsService.execute( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/transactions
@@ -2532,6 +3554,84 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+transactions_service = ost_sdk.services.transactions
+
+get_params = {}
+get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+get_params[:transaction_id] = 't43g990c-32wa-ff3r-n553-9f1ew2t32rt1'
+response = transactions_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const transactionsService = ostObj.services.transactions;
+
+transactionsService.get({ 
+  user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7', 
+  transaction_id: 'f1d6fbb2-2531-4c80-9e43-e67195bb01c7' 
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});         
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Transactions transactionsService = services.transactions;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("transaction_id", "e96450b8-f46a-40ee-adf1-9d65a4b53241");
+    JsonObject response = transactionsService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions/{transaction_id}
 
 
@@ -2655,6 +3755,118 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+transactions_service = ost_sdk.services.transactions
+
+get_params = {}
+get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+
+meta_properties = [{
+      name: "transaction_name" ,
+      type: "user_to_user",
+      details: "test"
+    }]
+# get_params[:statuses] = ["CREATED", "SUBMITTED", "SUCCESS", "FAILED"]
+# get_params[:meta_properties] = meta_properties.to_json
+# get_params[:limit] = 10
+ 
+response = transactions_service.get_list(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const transactionsService = ostObj.services.transactions;
+
+var metaPropertiesArray =  JSON.stringify(
+        [{
+        "name":  "transaction_name" , //like, download IMP : Max length 25 characters (numbers alphabets spaces _ - allowed)
+        "type":  "user_to_user", // user_to_user, company_to_user, user_to_company
+        "details" : "test" // memo field to add additional info about the transaction .  IMP : Max length 120 characters (numbers alphabets spaces _ - allowed)
+        }
+       ]);
+
+transactionsService.getList({ 
+    user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7',
+    // statuses: ["CREATED", "SUBMITTED", "SUCCESS", "FAILED"],
+    // meta_properties: metaPropertiesArray,
+    // limit: 10
+ }).then(function(res) { 
+   console.log(JSON.stringify(res)); 
+  }).catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+  });      
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Transactions transactionsService = services.transactions;
+
+    //ArrayList<HashMap<String, Object>> metaPropertyArray = new ArrayList<HashMap<String, Object>>();
+    //HashMap <String,Object> metaPropertyArrayParams = new HashMap<String,Object>();
+    //metaPropertyArrayParams.put("name", "transaction_name"); //like, download IMP : Max length 25 characters (numbers alphabets spaces _ - allowed)
+    //metaPropertyArrayParams.put("type", "user_to_user"); // user_to_user, company_to_user, user_to_company
+    //metaPropertyArrayParams.put("details", "test"); // memo field to add additional info about the transaction .  IMP : Max length 120 characters (numbers alphabets spaces _ - allowed)
+    //metaPropertyArray.add(metaPropertyArrayParams);
+    //Gson gsonObj = new Gson();
+    //String metaPropertyArrayJsonStr = gsonObj.toJson(metaPropertyArray);
+
+    //ArrayList<Object> statusArray = new ArrayList<Object>();
+    //statusArray.add("CREATED");
+    //statusArray.add("SUBMITTED");
+    //statusArray.add("SUCCESS");
+    //statusArray.add("FAILED");
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    //params.put("status", statusArray);
+    //params.put("meta_property", metaPropertyArrayJsonStr);
+    //params.put("limit", 10);
+    JsonObject response = transactionsService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions
@@ -2828,6 +4040,82 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
 ```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+balances_service = ost_sdk.services.balance
+
+get_params = {}
+get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
+response = balances_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const balancesService = ostObj.services.balance;
+
+balancesService.get({
+            user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7'
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});           
+```
+
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Balance balancesService = services.balance;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    JsonObject response = balancesService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
+
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/balance
 
 
@@ -3058,6 +4346,75 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+tokens_service = ost_sdk.services.tokens
+
+get_params = {}
+response = tokens_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const tokensService = ostObj.services.tokens;
+
+tokensService.get({}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});          
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Tokens tokensService = services.tokens;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    JsonObject response = tokensService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /tokens
 
 
@@ -3172,6 +4529,82 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+recovery_owners_service = ost_sdk.services.recovery_owners
+
+get_params = {}
+get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
+get_params[:recovery_owner_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
+response = recovery_owners_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const recoveryOwnersService = ostObj.services.recovery_owners;
+
+recoveryOwnersService.get({
+            user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7',
+            recovery_owner_address: '0xe37906219ad67cc1301b970539c9860f9ce8d991'
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});       
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.RecoveryOwners recoveryOwnersService = services.recoveryOwners;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    params.put("recovery_owner_address", "0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E");
+    JsonObject response = recoveryOwnersService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
 #### <span>GET</span> &nbsp; &nbsp; /users/{user_id}/recovery-owners/{recovery_owner_address}
 
 <u>**URL Parameters**</u>
@@ -3252,6 +4685,78 @@ $response = $chainsService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+chains_service = ost_sdk.services.chains
+
+get_params = {}
+get_params[:chain_id] = 2000
+response = chains_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const chainsService = ostObj.services.chains;
+
+chainsService.get({
+  chain_id: 2000
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});      
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.Chains chainsService = services.chains;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("chain_id", "200");
+    JsonObject response = chainsService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /chains/{chain_id}
@@ -3343,6 +4848,80 @@ $response = $deviceManagersService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+device_managers_service = ost_sdk.services.device_managers
+
+get_params = {}
+get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
+response = device_managers_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const deviceManagersService = ostObj.services.device_managers;
+
+deviceManagersService.get({
+  user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7'
+}).then(function(res) { 
+  console.log(JSON.stringify(res)); 
+}).catch(function(err) { 
+  console.log(JSON.stringify(err)); 
+});     
+```
+
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.DeviceManagers deviceManagersService = services.deviceManagers;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    params.put("user_id", "29f57b59-60af-4579-9d6c-2ebcb36a9142");
+    JsonObject response = deviceManagersService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
 ```
 
 

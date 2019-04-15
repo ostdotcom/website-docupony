@@ -1,6 +1,6 @@
 (function (){
   ((window.gitter = {}).chat = {}).options = {
-    room: 'OpenSTFoundation/SimpleToken'
+    room: 'ostdotcom/OST-Platform'
   };
   if ( window.location.pathname == '/') window.location.pathname = '/platform/';
 

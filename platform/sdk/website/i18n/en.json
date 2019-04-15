@@ -45,7 +45,7 @@
         "sidebar_label": "Methods"
       },
       "references/wallet_sdk/iOS/latest/protocols": {
-        "title": "iOS SDK protocols",
+        "title": "iOS SDK Protocols",
         "sidebar_label": "Protocols"
       },
       "server_sdk_setup/java": {
@@ -77,6 +77,7 @@
       "Docs": "Docs",
       "SDK References": "SDK References",
       "API References": "API References",
+      "Login": "Login",
       "Support": "Support"
     },
     "categories": {

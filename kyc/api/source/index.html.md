@@ -63,9 +63,9 @@ request_params = base_params(endpoint, custom_params)
 
 Every API request on `https://kyc.ost.com/api/v2` requires hash-based message authentication. Every request has three mandatory parameters that must be included:
 
-* api_key :  the API key as provided post KYC client account activation.
-* request_timestamp : the current unix timestamp in seconds.
-* signature : the signature as the sha256 digest of the API secret and the correctly formatted query string as described below.
+* api_key:  the API key as provided post KYC client account activation.
+* request_timestamp: the current unix timestamp in seconds.
+* signature: the signature as the sha256 digest of the API secret and the correctly formatted query string as described below.
 
 <aside class="warning">The request timestamp will be valid for up to ten seconds. Your computer clock must therefore be synchronised for authentication to succeed.</aside>
 
@@ -2160,7 +2160,7 @@ For api calls to `/ethereum-address-validation` a success `true` is sent if the 
 
 # WebHooks
 
- Webhooks will notify a URL of your choice with information about events that occur while a user registers or user's KYC is being processed. You can use this data to delete users, determine when a double opt-in is done by a user, react to when a user adds or updates their KYC information, identify when status of a KYC entry is updated, determine when an ethereum address is updated. With different `Event Type` and `Source` parameters we provide, you can filter events that can be recieved on a URL which will help you give a clear structure to your KYC processes and flows.
+ Webhooks will notify a URL of your choice with information about events that occur while a user registers or user's KYC is being processed. You can use this data to delete users, determine when a double opt-in is done by a user, react to when a user adds or updates their KYC information, identify when status of a KYC entry is updated, determine when an ethereum address is updated. With different `Event Type` and `Source` parameters we provide, you can filter events that can be received on a URL which will help you give a clear structure to your KYC processes and flows.
 
 | Source  | Description | 
 -----------|------------------
@@ -2175,13 +2175,13 @@ For api calls to `/ethereum-address-validation` a success `true` is sent if the 
  1. Go to the [<u>OST KYC Dashboard</u>](https://kyc.ost.com/admin/login).
  2. In the Window, click on to your profile at top-right, open Settings > WebHooks
  3. Click on Add New Webhook.
- 4. In the URL field, paste the unique URL that you want to recieve events on.
- 5. Select the Filters based on Event Source and Event Type whose notifications you would like to recieve.
+ 4. In the URL field, paste the unique URL that you want to receive events on.
+ 5. Select the Filters based on Event Source and Event Type whose notifications you would like to receive.
  6. Click the ADD button to save these updates.
 
 <aside class="success">Each webhook has a Secret Key that does not changes when a webhook is updated. If you wish to change the secret key you will have to independently hit the refresh icon beside the `SECRET KEY` field.</aside>
 
-<aside class="warning">You can configure upto 3 URLs to recieve OST KYC Events information.</aside>
+<aside class="warning">You can configure upto 3 URLs to receive OST KYC Events information.</aside>
 
 ## Important Details
 
@@ -2194,8 +2194,8 @@ Failed events will be retried upto 6 times at an interval of 1 hour increasing e
 ## Signature Generation
 Every request sent will have two mandatory parameters mentioned below:
 
-* request_timestamp : the current unix timestamp in seconds.
-* signature : the signature as the sha256 digest of the secret key and the correctly formatted query string as described below.
+* request_timestamp: the current unix timestamp in seconds.
+* signature: the signature as the sha256 digest of the secret key and the correctly formatted query string as described below.
 
 ### 1. Creating the string to sign.
 
@@ -2501,7 +2501,7 @@ User KYC events indicate the status of user's KYC entry in the system at a given
 | kyc_submit | user\_kyc | User has added or updated the KYC information in the system. |
 | update\_ethereum\_address | user\_kyc | User's ethereum address has been updated. |
 | kyc_reopen | user\_kyc |  An approved or rejected KYC application of a user has been re-opened. |
-| kyc\_status\_update| user\_kyc | Status of KYC entry changes in following cases <br> `aml_status` :  When AML status for a KYC entry changes the event is triggered. <br> `admin_action_types` : When admin reports any issue against a KYC entry in the OST KYC dashboard the event is triggered. <br> `admin_status` : Whenever the admin qualifies or denies the KYC entry the event is triggered. <br> `whitelist_status` :  When the whitelist status for a KYC entry changes after kyc is approved the event is triggered. |
+| kyc\_status\_update| user\_kyc | Status of KYC entry changes in following cases <br> `aml_status`:  When AML status for a KYC entry changes the event is triggered. <br> `admin_action_types`: When admin reports any issue against a KYC entry in the OST KYC dashboard the event is triggered. <br> `admin_status`: Whenever the admin qualifies or denies the KYC entry the event is triggered. <br> `whitelist_status`:  When the whitelist status for a KYC entry changes after kyc is approved the event is triggered. |
 
 
 

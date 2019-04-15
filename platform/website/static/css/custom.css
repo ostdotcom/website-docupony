@@ -342,7 +342,7 @@ div.navigationWrapper.navigationSlider ul li {
     flex: none;
 }
 
-div.navigationWrapper.navigationSlider ul li:last-child {
+div.navigationWrapper.navigationSlider ul li:nth-last-child(2) {
     margin-left: auto;
 }
 
@@ -416,6 +416,18 @@ div.navigationWrapper.navigationSlider ul li.active a{
 @media screen and (max-width: 1024px) and (min-width: 510px){
     .fixedHeaderContainer, .mainContainer .post {
         padding: 0 20px;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+
+    div.navigationWrapper.navigationSlider ul li:nth-last-child(2) {
+        display: none;
+    };
+
+    div.navigationWrapper.navigationSlider ul li:last-child {
+        margin-left: auto;
     }
 
 }

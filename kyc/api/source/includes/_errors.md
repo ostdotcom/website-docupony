@@ -2,7 +2,7 @@
 
 We use HTTP response status codes to indicate the success or failure of an API request. OST KYC returns `4xx` or `5xx` status codes.
 
-> In reponse to failed requests an error object is included in the response body that includes additional error details in this format : 
+> In reponse to failed requests an error object is included in the response body that includes additional error details in this format: 
 
 ```json
 {
@@ -33,4 +33,4 @@ We return following HTTP status codes and corresponding short string codes for f
 | 403 |FORBIDDEN | Access to the resource is not permitted for some reason besides authentication| Check for permission issues. |
 | 404 | NOT_FOUND    | The requested resource could not be located. | Please check the information provided. The server did not find anything that matches the request URI. Either the URI is incorrect or the resource is not available. For example, in-correct 'id' passed while retrieving a user. |
 | 422 | UNPROCESSABLE_ENTITY | An error occurred while processing the request.  |  The API cannot complete the requested action, might require interaction with processes outside of the current request OR is failing business validations thats not a 400 type of validation. Check the information provided or get in touch on [<u>help.ost.com</u>](https://help.ost.com)|
-| 429 | TOO\_MANY\_REQUESTS | Too many requests recieved.| Too many requests recieved. | 
+| 429 | TOO\_MANY\_REQUESTS | Too many requests received.| Too many requests received. | 

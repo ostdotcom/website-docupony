@@ -61,7 +61,7 @@ void flowInterrupt(OstWorkflowContext ostWorkflowContext, OstError ostError)
 
 
 ### 3. requestAcknowledged
-This function will be called by wallet SDK when the core API request was successful which happens during the execution of workflows. At this stage the workflow is not completed but it shows that the main communication between the wallet SDK and OST Platform server is complete. <br>Once the workflow is complete the `app` will recieve the details in `flowComplete`(described below) function. 
+This function will be called by wallet SDK when the core API request was successful which happens during the execution of workflows. At this stage the workflow is not completed but it shows that the main communication between the wallet SDK and OST Platform server is complete. <br>Once the workflow is complete the `app` will receive the details in `flowComplete` (described below) function. 
 
 ```
 void requestAcknowledged(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity)
@@ -115,7 +115,7 @@ void pinValidated(String userId)
 
 
 ### 6. invalidPin
-This function will be called by wallet SDK when the last entered PIN was wrong and `app` user has to provide the PIN again. Developer are expected to repeat the `getPin` method here and pass back the PIN again back to the SDK by calling  **ostPinAcceptInterface.pinEntered()** .
+This function will be called by wallet SDK when the last entered PIN was wrong and `app` user has to provide the PIN again. Developers are expected to repeat the `getPin` method here and pass back the PIN again back to the SDK by calling  **ostPinAcceptInterface.pinEntered()** .
 
 ```
 void invalidPin(String userId, OstPinAcceptInterface ostPinAcceptInterface)
@@ -131,7 +131,7 @@ void invalidPin(String userId, OstPinAcceptInterface ostPinAcceptInterface)
 
 
 ### 7. registerDevice
-This function will be called by wallet SDK to register the device.<br>**Expected Function Definition:** Developers of client company are expected to register the device by communicating with client company's server. On client company's server they can use `Server SDK` to register this device in OST Platform. Once device is registered on OST Platform client company's server will recieve the newly created `device` entity. This device entity should be passed back to the `app`.<br>
+This function will be called by wallet SDK to register the device.<br>**Expected Function Definition:** Developers of client company are expected to register the device by communicating with client company's server. On client company's server they can use `Server SDK` to register this device in OST Platform. Once the device is registered on OST Platform client company's server will receive the newly created `device` entity. This device entity should be passed back to the `app`.<br>
 Finally they should pass back this newly created device entity back to the wallet SDK by calling **OstDeviceRegisteredInterface.deviceRegistered(JSONObject newDeviceEntity )**.
 
 ```

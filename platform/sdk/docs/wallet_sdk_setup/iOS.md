@@ -4,16 +4,20 @@ title: iOS SDK Setup
 sidebar_label: iOS
 ---
 
-## 1. Prerequisite
-You will need to integrate server side SDK on your server. You can use one of the avialable server side SDKs: [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/).
+
+## 1. Prerequisite 
+You will need to integrate server side SDK on your server. You can use one of the available server side SDKs: [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/).
+
 
 
 
 ## 2. Requirements
 
-iOS version : 9.0 and above
+iOS version: 9.0 and above
 
-Recommended iOS version : 10.3
+
+Recommended iOS version: 10.3 
+
 
 Swift version: 4.2
 
@@ -24,7 +28,7 @@ Swift version: 4.2
 ### A). Installing iOS Wallet SDK using [Carthage](https://github.com/Carthage/Carthage)
 #### i). Installing [Carthage](https://github.com/Carthage/Carthage)
 
-Get [Carthage](https://github.com/Carthage/Carthage) by running following command on terminal
+Get [Carthage](https://github.com/Carthage/Carthage) by running the following command on terminal
 
 >  brew install carthage
 
@@ -170,7 +174,9 @@ iOS Wallet SDK provides `workflows` that can be called by any controller class t
 ![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
 
 ### a). Implementing the `OstWorkflowDelegate` protocol
-There are different ways to implement `OstWorkflowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkflowDelegate` protocol. We will use this class to create object that can be passped in SDK workflows as callback.
+
+There are different ways to implement `OstWorkflowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkflowDelegate` protocol. We will use this class to create object that can be passed in SDK workflows as callback. 
+
 
 Sample Implementation of [OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [demo app ](https://github.com/ostdotcom/ios-demo-app/tree/develop).
 
@@ -186,7 +192,7 @@ class OstWalletSdkInteract: BaseModel, OstWorkFlowCallbackProtocol {
 
         func flowComplete(workflowContext: OstWorkflowContext, ostContextEntity: OstContextEntity) {
 
-            var eventData:[String : Any] = [:];
+            var eventData:[String: Any] = [:];
             eventData["eventType"] = WorkflowEventType.flowComplete;
             eventData["workflowContext"] = workflowContext;
             eventData["ostContextEntity"] = ostContextEntity;
@@ -194,8 +200,8 @@ class OstWalletSdkInteract: BaseModel, OstWorkFlowCallbackProtocol {
         }
 
         func flowInterrupted(workflowContext: OstWorkflowContext, error: OstError) {
-
-            var eventData:[String : Any] = [:];
+        
+            var eventData:[String: Any] = [:];
             eventData["eventType"] = WorkflowEventType.flowInterrupt;
             eventData["workflow"] = workflowContext.workflowType;
             eventData["workflowContext"] = workflowContext;
@@ -234,7 +240,7 @@ In the example below, we are calling `OstWalletSdk.addSession` workflow and pass
                     delegate: self.sdkInteract)
 ```
 
-[Sample code](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/Views/Wallet/AddSessionView.swift) showing above example in detail is availale on github
+[Sample code](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/Views/Wallet/AddSessionView.swift) showing above example in detail is available on github.
 
 
 ## Demo App

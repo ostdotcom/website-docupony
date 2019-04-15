@@ -1,6 +1,6 @@
 ---
 id: protocols
-title: iOS SDK protocols
+title: iOS SDK Protocols
 sidebar_label: Protocols
 ---
 
@@ -63,7 +63,7 @@ func flowInterrupted(
 
 
 ### 3. requestAcknowledged
-This function will be called by wallet SDK when the core API request was successful which happens during the execution of workflows. At this stage the workflow is not completed but it shows that the main communication between the wallet SDK and OST Platform server is complete. <br>Once the workflow is complete, the `app` will recieve the details in `flowComplete` function and if the workflow fails then app will recieve the details in `flowInterrupt` function. 
+This function will be called by wallet SDK when the core API request was successful which happens during the execution of workflows. At this stage the workflow is not completed but it shows that the main communication between the wallet SDK and OST Platform server is complete. <br>Once the workflow is complete, the `app` will receive the details in `flowComplete` function and if the workflow fails then app will receive the details in `flowInterrupt` function. 
 
 ```
 func requestAcknowledged(
@@ -122,7 +122,7 @@ func pinValidated(_ userId: String)
 
 
 ### 6. invalidPin
-This function will be called by wallet SDK when the entered PIN was wrong and `app` user has to provide the PIN again. Developer is expected get the PIN from user again and pass back the PIN back to the SDK by calling  **delegate.pinEntered(_ userPin: String, passphrasePrefix: String)** .
+This function will be called by wallet SDK when the entered PIN was wrong and `app` user has to provide the PIN again. Developers are expected to get the PIN from user again and pass back the PIN back to the SDK by calling  **delegate.pinEntered(_ userPin: String, passphrasePrefix: String)** .
 
 ```
 func invalidPin(
@@ -141,13 +141,13 @@ func invalidPin(
 
 
 ### 7. registerDevice
-This function will be called by wallet SDK to register the device.<br>**Expected Function Definition:** Developers of client company are expected to register the device by communicating with their company's server. On client company's server they can use `Server SDK` to register this device in OST Platform. Once device is registered on OST client company's server will recieve the newly created `device` entity. This device entity should be passed back to the `app`.<br>
+This function will be called by wallet SDK to register the device.<br>**Expected Function Definition:** Developers of client company are expected to register the device by communicating with their company's server. On client company's server they can use `Server SDK` to register this device in OST Platform. Once device is registered on OST client company's server will receive the newly created `device` entity. This device entity should be passed back to the `app`.<br>
 Finally they should pass back this newly created device entity back to the wallet SDK by calling **delegate.deviceRegistered(_ apiResponse: [String: Any])**.
 
 ```
 func registerDevice(
         _ apiParams: [String: Any], 
-        delegate : OstDeviceRegisteredDelegate
+        delegate: OstDeviceRegisteredDelegate
         )
 ```
 
