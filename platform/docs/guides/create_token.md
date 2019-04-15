@@ -14,11 +14,15 @@ The first thing you need to do to get started with OST Platform is to [register 
 ## 2. Two-Factor Authentication
 OST supports two-factor authentication to provide increased login security for users connecting to OST Platform. It is automatically enabled for all accounts. You need to download an authentication app like Google Authenticator, a free app that is readily available on both [Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en) and the [Apple App](https://itunes.apple.com/in/app/google-authenticator/id388497605?mt=8) Store. See the [installation guide](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en) for more information.
 
+
+
 The app will ask you to Add an Account by Scanning a barcode.
 
 On OST Platform interface you will  see a QR code. Scan this QR code through the Google Authenticator app on your smartphone by selecting the option ‘Scan a barcode’. 
 
 Once the QR code has been scanned, you will be able to see your OST Platform account added to the list of accounts inside your Google Authenticator app.
+
+**This step is optional in sandbox mode.**
 
 ![Two-Factor Authentication](/platform/docs/assets/token-setup/2FA.png)
 
