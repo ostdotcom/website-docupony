@@ -3,6 +3,7 @@ title: OST Platform API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - php: PHP
+  - ruby: Ruby
 
 toc_footers:
   - Documentation Powered by Slate
@@ -23,10 +24,10 @@ This API library includes API calls that will be used by client company's server
 
 Available Server Side SDKs:
 
-1. [PHP SDK](/platform/docs/server_sdk_setup/php/)
-2. [Ruby SDK](https://github.com/ostdotcom/ost-sdk-ruby/tree/release-2.0)
-3. [Java SDK](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
-4. [Node.js SDK](https://github.com/ostdotcom/ost-sdk-js/tree/v2.0.0)
+1. [PHP SDK](/platform/docs/sdk/server_sdk_setup/php//)
+2. [Ruby SDK](/platform/docs/sdk/server_sdk_setup/ruby/)
+3. [Java SDK](/platform/docs/sdk/server_sdk_setup/java/)
+4. [Node.js SDK](/platform/docs/sdk/server_sdk_setup/nodejs/)
 
 
 ## Access
@@ -515,6 +516,22 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+users_service = ost_sdk.services.users
+create_params = {}
+
+response = users_service.create(create_params)
+```
+
 #### <span> POST </span> &nbsp; &nbsp; /users
 
 
@@ -574,6 +591,23 @@ $response = $userService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+users_service = ost_sdk.services.users
+
+get_params = {}
+get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
+response = users_service.get(get_params)
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}
@@ -660,6 +694,24 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 // 
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+users_service = ost_sdk.services.users
+
+get_params = {}
+# get_params[:ids] = ['91263ebd-6b2d-4001-b732-4024430ca758', '45673ebd-6b2d-4001-b732-4024430ca758']
+# get_params[:limit] = 10
+response = users_service.get_list(get_params)
 ```
 #### <span> GET </span> &nbsp; &nbsp; /users
 
@@ -867,6 +919,27 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+devices_service = ost_sdk.services.devices
+
+create_params = {}
+create_params[:user_id] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9'
+create_params[:address] = '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E'
+create_params[:api_signer_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
+
+response = devices_service.create(create_params)
+```
+
+
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/devices
 
 <u>**URL Parameters**</u>
@@ -936,6 +1009,24 @@ $response = $deviceService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+devices_service = ost_sdk.services.devices
+
+get_params = {}
+get_params[:user_id] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9'
+get_params[:device_address] = '0x1Ea365269A3e6c8fa492eca9A531BFaC8bA1649E'
+response = devices_service.get(get_params)
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/devices/{device_address}
@@ -1008,6 +1099,27 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
 ```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+devices_service = ost_sdk.services.devices
+
+get_params = {}
+get_params[:user_id] = 'd194aa75-acd5-4f40-b3fb-e73a7cf7c0d9'
+# get_params[:pagination_identifier] = "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19"
+# get_params[:addresses] = ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"]
+# get_params[:limit] = 10
+response = devices_service.get_list(get_params)
+```
+
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/devices
 
@@ -1127,6 +1239,25 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+sessions_service = ost_sdk.services.sessions
+
+get_params = {}
+get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+get_params[:session_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
+response = sessions_service.get(get_params)
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/sessions/{session_address}
 
 <u>**URL Parameters**</u>
@@ -1191,6 +1322,25 @@ $response = $sessionService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+sessions_service = ost_sdk.services.sessions
+get_params = {}
+get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+# get_params[:pagination_identifier] = "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19"
+# get_params[:addresses] = ["0x5906ae461eb6283cf15b0257d3206e74d83a6bd4","0xab248ef66ee49f80e75266595aa160c8c1abdd5a"]
+# get_params[:limit] = 10
+response = sessions_service.get_list(get_params)
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/sessions
@@ -1296,6 +1446,22 @@ $response = $rulesService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+rules_service = ost_sdk.services.rules
+
+get_params = {}
+response = rules_service.get_list(get_params)
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /rules
@@ -2048,6 +2214,24 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+price_points_service = ost_sdk.services.price_points
+
+get_params = {}
+get_params[:chain_id] = 2000
+response = price_points_service.get(get_params)
+```
+
 #### <span>GET</span> &nbsp; &nbsp; /chains/{chain_id}/price-points
 
 
@@ -2308,6 +2492,60 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+transactions_service = ost_sdk.services.transactions
+
+
+
+# Direct Brand Token Transfer 
+execute_params = {}
+execute_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+execute_params[:to] = '0x4e9314f004026F89Fc52790c3357b2D34FBA93b0'
+raw_calldata = {}
+raw_calldata[:method] = "directTransfers" # or "pay" 
+raw_calldata[:parameters] = [["0x4e9314f004026F89Fc52790c3357b2D34FBA93b0", "0xe37906219ad67cc1301b970539c9860f9ce8d991"],['1','1']] 
+execute_params[:raw_calldata] = raw_calldata.to_json
+
+meta_property = {
+      name: "transaction_name" , #like, download
+      type: "user_to_user", # user_to_user, company_to_user, user_to_company
+      details: "test"  # memo field to add additional info about the transaction
+    }     
+
+# execute_params[:meta_property] = meta_property
+response = transactions_service.execute(execute_params)
+
+
+# Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
+
+execute_params = {}
+execute_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+execute_params[:to] = '0x4e9314f004026F89Fc52790c3357b2D34FBA93b0'
+raw_calldata = {}
+raw_calldata[:method] = "pay" 
+raw_calldata[:parameters] = ["0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee", ["0x4e9314f004026F89Fc52790c3357b2D34FBA93b0", "0xe37906219ad67cc1301b970539c9860f9ce8d991"],['1','1'], "USD", "23757000000000000"] 
+execute_params[:raw_calldata] = raw_calldata.to_json
+
+meta_property = {
+      name: "transaction_name" ,
+      type: "user_to_user",
+      details: ""
+    }
+
+# execute_params[:meta_property] = meta_property
+response = transactions_service.execute(execute_params)
+
+```
+
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/transactions
 
 
@@ -2532,6 +2770,25 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+transactions_service = ost_sdk.services.transactions
+
+get_params = {}
+get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+get_params[:transaction_id] = 't43g990c-32wa-ff3r-n553-9f1ew2t32rt1'
+response = transactions_service.get(get_params)
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions/{transaction_id}
 
 
@@ -2655,6 +2912,33 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+transactions_service = ost_sdk.services.transactions
+
+get_params = {}
+get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
+
+meta_properties = [{
+      name: "transaction_name" ,
+      type: "user_to_user",
+      details: "test"
+    }]
+# get_params[:statuses] = ["CREATED", "SUBMITTED", "SUCCESS", "FAILED"]
+# get_params[:meta_properties] = meta_properties.to_json
+# get_params[:limit] = 10
+ 
+response = transactions_service.get_list(get_params)
 ```
 
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/transactions
@@ -2828,6 +3112,25 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
 ```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+balances_service = ost_sdk.services.balance
+
+get_params = {}
+get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
+response = balances_service.get(get_params)
+```
+
+
 #### <span> GET </span> &nbsp; &nbsp; /users/{user_id}/balance
 
 
@@ -3058,6 +3361,22 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+tokens_service = ost_sdk.services.tokens
+
+get_params = {}
+response = tokens_service.get(get_params)
+```
+
 #### <span> GET </span> &nbsp; &nbsp; /tokens
 
 
@@ -3172,6 +3491,24 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+recovery_owners_service = ost_sdk.services.recovery_owners
+
+get_params = {}
+get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
+get_params[:recovery_owner_address] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455'
+response = recovery_owners_service.get(get_params)
+```
+
 #### <span>GET</span> &nbsp; &nbsp; /users/{user_id}/recovery-owners/{recovery_owner_address}
 
 <u>**URL Parameters**</u>
@@ -3252,6 +3589,23 @@ $response = $chainsService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+chains_service = ost_sdk.services.chains
+
+get_params = {}
+get_params[:chain_id] = 2000
+response = chains_service.get(get_params)
 ```
 
 #### <span>GET</span> &nbsp; &nbsp; /chains/{chain_id}
@@ -3343,6 +3697,23 @@ $response = $deviceManagersService->get($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
 ?>
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      api_key: <api_key>, 
+                                      api_secret: <api_secret>, 
+                                      api_base_url: <api_base_url>, 
+                                      config: {timeout: <timeout_in_seconds>}
+                                    })
+
+device_managers_service = ost_sdk.services.device_managers
+
+get_params = {}
+get_params[:user_id] = '91263ebd-6b2d-4001-b732-4024430ca758'
+response = device_managers_service.get(get_params)
 ```
 
 
