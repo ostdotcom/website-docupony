@@ -28,6 +28,10 @@
         "title": "Platform Overview",
         "sidebar_label": "Platform Overview"
       },
+      "guides/add_session": {
+        "title": "Create Token Guide",
+        "sidebar_label": "Create Token"
+      },
       "guides/create_token": {
         "title": "Create Token Guide",
         "sidebar_label": "Create Token"

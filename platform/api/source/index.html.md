@@ -3049,44 +3049,106 @@ $ostObj = new OSTSdk($params);
 
 $transactionService = $ostObj->services->transactions;
 
-$executeParams = array();
 
 
-// Direct Brand Token Transfer 
-$executeParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
-$executeParams['to'] = '0x64315ba1018307d6bc0380fa8eb8af210991ccbc';
-$rawCallData = array();
-$transferTo = array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496");
-$transferAmount = array("10");
-$rawCallData['method'] = 'directTransfers';
-$rawCallData['parameters'] = array($transferTo, $transferAmount);
-$metaProperty['details']='this is test';
-$metaProperty['type']='company_to_user';
-$metaProperty['name']='download_download_';
-$executeParams['meta_property']=$metaProperty;
-$executeParams['raw_calldata'] = json_encode($rawCallData);
+// ===== Direct Transfer start
+
+$transferToAddresses = array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496");
+
+// Transfer amount in atto USD.
+// In this example, we want to transfer 10 USD. 
+// Converting USD to atto USD: Multiply by 10^18
+// atto USD = 10 * 10^18 = 10^19
+$transferAmountsInAtto = array("10000000000000000000");
+
+$executeParams = array(
+  'user_id' => '724ed66c-8a0a-477e-b303-b0486e2a3797',
+  // This will be the rule address to be executed. 
+  // Send GET request at '/rules', you will get the rules information.
+  'to' => '0x64315ba1018307d6bc0380fa8eb8af210991ccbc',
+  'meta_property' => array(
+    'details' => 'this is test',
+    'type' => 'company_to_user',
+    'name' => 'download'
+  ),
+  'raw_calldata' => json_encode(array(
+    // Method to be executed in rule contract. 
+    // Its value should be 'directTransfers'. 
+    'method' => 'directTransfers',
+  
+    'parameters' => array( 
+      $transferToAddresses,
+      $transferAmountsInAtto
+    );
+  ))
+)
+
 $response = $transactionService->execute($executeParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
 
+// ===== Direct Transfer end
 
-// Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
-$transactionService = $ostObj->services->transactions;
-$executeParams = array();
-$executeParams['user_id'] = '724ed66c-8a0a-477e-b303-b0486e2a3797';
-$executeParams['to'] = '0x1a83bc05cc3ae1b19f2359d847e2589d9d91fb90';
-$rawCallData = array();
-$transferTo = array("0xE0b6B80d7f1f492410C53c10f279051Ec5B836a2");
-$transferAmount = array("1000000000000000000");
-$rawCallData['method'] = 'pay';
-$tokenHolderAddress = '0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee';
+
+
+
+// ===== 'pay' transfer start
+// Brand Token Transfer Based On Fiat Value. 
+// We will take an example of USD as fiat value.
+
+
+// Company's TokenHolder address
+$fromTokenHolderAddress = '0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee';
+
+$transferToAddresses = array("0xE0b6B80d7f1f492410C53c10f279051Ec5B836a2");
+
+// Transfer amount in atto USD.
+// In this example, we want to transfer 10 USD. 
+// Converting USD to atto USD: Multiply by 10^18
+// atto USD = 10 * 10^18 = 10^19
+$transferAmountsinAtto = array("10000000000000000000");
+
 $payCurrencyCode = 'USD';
-$ostToUsdInatto = '1000000000000';
-$rawCallData['parameters'] = array($tokenHolderAddress, $transferTo, $transferAmount, $payCurrencyCode, $ostToUsdInatto);
-$executeParams['raw_calldata'] = json_encode($rawCallData);
+
+// This is intended conversion of OST to pay currency (atto denomination) which is USD in this example.
+// You can get the conversion rate using price point API. 
+// This values needs to be converted into atto. 
+// Checkout execute transaction guide for more information about atto conversion.
+// OST to USD => 0.027441 (this is the price point value at the time of writing this code)
+// Converting (OST to USD) ratio to (OST to atto USD): Multiply by 10^18.
+// OST to atto USD = (OST to USD) * 10^18 
+// OST to atto USD = 0.027441 * 10^18 = 27441000000000000
+// Read pay rule method parameter given on the left hand side for more details
+$attoUSDIntendedPrice = '27441000000000000';
+
+$executeParams = array(
+  'user_id' => '724ed66c-8a0a-477e-b303-b0486e2a3797',
+  // This is rule address, in this case this will be 'pricer' rule address.
+  // Send GET request at '/rules', you will get the rules information.
+  'to' => '0x64315ba1018307d6bc0380fa8eb8af210991ccbc',
+  'meta_property' => array(
+    'details' => 'this is test',
+    'type' => 'company_to_user',
+    'name' => 'download'
+  ),
+  'raw_calldata' => json_encode(array(
+    // Method to be executed in rule contract. 
+    // Its value should be 'pay'.
+    'method' => 'pay',
+    'parameters' => array( 
+      $fromTokenHolderAddress, 
+      $transferToAddresses, 
+      $transferAmountsinAtto, 
+      $payCurrencyCode, 
+      $attoUSDIntendedPrice
+    );
+  ))
+)
+
+
 echo json_encode($executeParams, JSON_PRETTY_PRINT);
 $response = $transactionService->execute($executeParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
-
+// ===== 'pay' transfer end
 
 
 ?>
@@ -3335,15 +3397,7 @@ public class Test {
 
 * Execute transaction API allows you to do `company-to-user` transactions. `user` initiated transactions will be managed by Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)). <br>
 
-
-* Rules decides the token behaviour during the transfer. You will have to get the rules details using [Rules API](/platform/docs/api/#rules) and then choose which rule you want to use to perform the transfer. It is important to  understand their methods and their parameters. There will be 2 rules available by default. Read more about these 2 rules in [execute transaction guide](/platform/docs/guides/execute_transaction/#rules-contract).
-
-
-* Details of method parameters are also available in [execute transaction guide](/platform/docs/guides/execute_transaction/#directtransfers-method-parameters).
-
-
 * Read the [execute company-to-user transaction guide](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions) to undertstand the complete `company-to-user` flow.
-
 
 
 
@@ -3431,6 +3485,28 @@ public class Test {
     </td>
   </tr>
 </table>
+
+
+**Rules decides the token behaviour during the transfer. It is important to understand rules methods and their parameters which are explained below.**
+
+#### directTransfer Method Parameters
+
+| Parameter Name | Parameter Description |
+|---|---|
+| **transferToAddresses** <br> **Array of Address**   | Array of receiver's **TokenHolder**  addresses. |
+| **transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address-1` will get the `amount-1`, `address-2` will get the `amount-2` and `address-3` will get the `amount-3` |
+
+
+#### pay Method Parameters
+
+| Parameter Name | Parameter Description |
+|---|---|
+|**fromTokenHolderAddress** <br> **Address**   | Transaction executor's **TokenHolder** address |
+|**transferToAddresses** <br> **Array of addresses** | Array of receiver's  **TokenHolder**  address. |
+|**transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transferAmountsinAtto** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|**payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
+|**attoUSDIntendedPrice** <br> **Integer** | This is intended conversion of OST to pay currency (in atto denomination) which is USD in this example. This value will be used to calculate the deviation from actual conversion rate at the time of execution of transaction. If this deviation is more than the threshold value ($1) than the transaction will be cancelled. This is to avoid transactions from happening during high deviation periods. This is the pay currency(USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
+
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `transaction`.<br><br>

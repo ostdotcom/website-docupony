@@ -68,11 +68,10 @@ You can optionally choose to get information about rules  by sending a GET to `/
 
 ### `directTransfers` Method Parameters
 
-| Rule Method | Method Inputs | Inputs Description |
-|---|---|---|
-|  **directTransfers**  |  |  |
-|  | **transfersTo** <br> **Array of Address**   | Array of  **TokenHolder**  addresses. |
-|  | **transfersAmount** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transfersTo** array. These amounts should be in the same sequence as the addresses in **transfersTo** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+| Parameter Name | Parameter Description |
+|---|---|
+| **transferToAddresses** <br> **Array of Address**   | Array of receiver's **TokenHolder**  addresses. |
+| **transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address-1` will get the `amount-1`, `address-2` will get the `amount-2` and `address-3` will get the `amount-3` |
 
 
 <br>
@@ -81,14 +80,13 @@ You can optionally choose to get information about rules  by sending a GET to `/
 
 
 ### `pay` Method Parameters
-| Rule Method | Method Inputs | Inputs Description |
-|---|---|---|
-|  **pay**  |  |  |
-|  | **from** <br> **Address**   | Transaction executor's address |
-|  | **toList** <br> **Array of addresses** | Array of receiver's  **TokenHolder**  address. |
-|  | **amountList** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **toList** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
-|  | **payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
-|  | **baseCurrencyIntendedPrice** <br> **Integer** | This is the pay currency(USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
+| Parameter Name | Parameter Description |
+|---|---|
+|**fromTokenHolderAddress** <br> **Address**   | Transaction executor's **TokenHolder** address |
+|**transferToAddresses** <br> **Array of addresses** | Array of receiver's  **TokenHolder**  address. |
+|**transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transferAmountsinAtto** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|**payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
+|**attoUSDIntendedPrice** <br> **Integer** | This is intended conversion of OST to pay currency (in atto denomination) which is USD in this example. This value will be used to calculate the deviation from actual conversion rate at the time of execution of transaction. If this deviation is more than the threshold value ($1) than the transaction will be cancelled. This is to avoid transactions from happening during high deviation periods. This is the pay currency(USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
 
 
 <br>
