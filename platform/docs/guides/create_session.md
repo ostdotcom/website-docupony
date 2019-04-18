@@ -6,6 +6,9 @@ sidebar_label: Create New Session
 
 Session keys are used to sign transactions in Mobile Applications. They have an expiry time and a spending limit. Developers will have to create session keys when session key is expired or not present. To create a new session key and authorize it, you need to use [addSession](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/#4-addsession) workflow available in Wallet SDK ([Android](/platform/docs/sdk/wallet_sdk_setup/android/)/[iOS](/platform/docs/sdk/wallet_sdk_setup/iOS/)) 
 
+
+
+
 ## Steps to Create a New Session Key
 
 1. Calling addSession Workflow
