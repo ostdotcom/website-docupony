@@ -9,6 +9,6 @@
     "rename-version": "docusaurus-rename-version"
   },
   "dependencies": {
-    "docusaurus": "^1.5.0"
+    "docusaurus": "^1.8.0"
   }
 }

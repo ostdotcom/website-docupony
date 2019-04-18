@@ -3059,7 +3059,7 @@ $transferToAddresses = array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496");
 // In this example, we want to transfer 10 USD. 
 // Converting USD to atto USD: Multiply by 10^18
 // atto USD = 10 * 10^18 = 10^19
-$transferAmountsInAtto = array("10000000000000000000");
+$transferAmounts = array("10000000000000000000");
 
 $executeParams = array(
   'user_id' => '724ed66c-8a0a-477e-b303-b0486e2a3797',
@@ -3078,7 +3078,7 @@ $executeParams = array(
   
     'parameters' => array( 
       $transferToAddresses,
-      $transferAmountsInAtto
+      $transferAmounts
     );
   ))
 )
@@ -3105,7 +3105,7 @@ $transferToAddresses = array("0xE0b6B80d7f1f492410C53c10f279051Ec5B836a2");
 // In this example, we want to transfer 10 USD. 
 // Converting USD to atto USD: Multiply by 10^18
 // atto USD = 10 * 10^18 = 10^19
-$transferAmountsinAtto = array("10000000000000000000");
+$transferAmounts = array("10000000000000000000");
 
 $payCurrencyCode = 'USD';
 
@@ -3118,7 +3118,7 @@ $payCurrencyCode = 'USD';
 // OST to atto USD = (OST to USD) * 10^18 
 // OST to atto USD = 0.027441 * 10^18 = 27441000000000000
 // Read pay rule method parameter given on the left hand side for more details
-$attoUSDIntendedPrice = '27441000000000000';
+$IntendedPricePoint = '27441000000000000';
 
 $executeParams = array(
   'user_id' => '724ed66c-8a0a-477e-b303-b0486e2a3797',
@@ -3137,9 +3137,9 @@ $executeParams = array(
     'parameters' => array( 
       $fromTokenHolderAddress, 
       $transferToAddresses, 
-      $transferAmountsinAtto, 
+      $transferAmounts, 
       $payCurrencyCode, 
-      $attoUSDIntendedPrice
+      $IntendedPricePoint
     );
   ))
 )
@@ -3440,7 +3440,7 @@ public class Test {
     <td>
     Array of parameters to be sent to the method. <br> [['0xasd..', '0xasas..'], ['121212', '232323']].
     <br>
-    These parameters will be different for different rule methods. <br>Method parameters are explained in <a target="_blank" src="/platform/docs/guides/execute_transaction/#rules-contract">execute transaction guide</a>
+    These parameters will be different for different rule methods. <br>Method parameters are explained below.
     </td>
   </tr>
 </table>
@@ -3491,22 +3491,38 @@ public class Test {
 
 #### directTransfer Method Parameters
 
+To transfer Brand Tokens to users in your economy `directTransfer` method should be used.
+
 | Parameter Name | Parameter Description |
 |---|---|
 | **transferToAddresses** <br> **Array of Address**   | Array of receiver's **TokenHolder**  addresses. |
-| **transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address-1` will get the `amount-1`, `address-2` will get the `amount-2` and `address-3` will get the `amount-3` |
+| **transferAmounts** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transfersAmounts** = [amount1, amount2, amount3] <br> <br> `address-1` will get the `amount-1`, `address-2` will get the `amount-2` and `address-3` will get the `amount-3` |
 
 
 #### pay Method Parameters
+
+There can be a use case where you want to transfer Brand Tokens worth $ 10. For such usecases, `pay` method can be used. The input amount for this method will be in pay currency (fiat currency like USD) which will then be converted into Brand Tokens. The transfer happens in Brand Tokens.
+
 
 | Parameter Name | Parameter Description |
 |---|---|
 |**fromTokenHolderAddress** <br> **Address**   | Transaction executor's **TokenHolder** address |
 |**transferToAddresses** <br> **Array of addresses** | Array of receiver's  **TokenHolder**  address. |
-|**transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transferAmountsinAtto** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|**transferAmounts** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transferAmounts** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 |**payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
-|**attoUSDIntendedPrice** <br> **Integer** | This is intended conversion of OST to pay currency (in atto denomination) which is USD in this example. This value will be used to calculate the deviation from actual conversion rate at the time of execution of transaction. If this deviation is more than the threshold value ($1) than the transaction will be cancelled. This is to avoid transactions from happening during high deviation periods. This is the pay currency(USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
+|**IntendedPricePoint** <br> **Integer** | In `pay` transaction, the transfer amounts are in pay currency (fiat currency like USD) which then are converted into Brand Tokens. So there is a conversion of pay currency to Brand Token during the execution of this transaction. <br>As the market is volatile, the conversion is also volatile. So, we need an acceptable range of conversion within which the transaction can be executed. If the conversion goes out of range the transaction fails. <br> To device the range, we ask developers to provide us with the OST to USD price point (`IntendedPricePoint`) at the time of singing the transaction.<br>The given price point (`IntendedPricePoint`) is compared with the price point which OST fetches at the time of execution of the transaction. If the difference falls in the default range ($ 1 for now) then the transaction will go through else it will fail. To get current price point you can use the price point API endpoint. We need to convert it into atto by multiplying it by 10^18 <br> Example: OST to USD price point = 0.027942 (Value received from price point API) <br> Converting price point into atto denomination: 0.027942 * 10^18 = 27942000000000000  |
 
+
+In a transaction where pay rule has to be executed we pass the transaction value in fiat (USD) which is converted into Brand Token value.
+
+As the market is volatile, we need an acceptable range within which the transaction can be executed. If the conversion goes out of range the transaction fails.
+
+To device the range, we ask developers to provide us with the OST to USD price point (`ostToUsdInatto`) at the time of singing the transaction.
+Range is (+ - $1 ) of the given price point.
+
+The given price point (`ostToUsdInatto`) is compared with the price point which OST fetches at the time of execution of the transaction. If the difference falls in the default range ($ 1 for now) then the transaction will go through else it will fail.
+
+To get current price point you can use the price point API endpoint.
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `transaction`.<br><br>
