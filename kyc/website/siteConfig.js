@@ -23,7 +23,7 @@ const users = [
 const siteConfig = {
   title: '' /* title for your website */,
   tagline: 'Developer Documentation',
-  url: 'localhost:8000/' /* your website url */,
+  url: 'https://dev.ost.com/' /* your website url */,
   baseUrl: '/kyc/' /* base url for your project */,
   projectName: 'kyc',
   // organizationName: 'facebook',
