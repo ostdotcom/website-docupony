@@ -318,7 +318,7 @@ Sample verifyData code (Android Wallet SDK)
 ### Verify Transaction Status
 
 #### Receiving `performQRAction` workflow status callbacks
-There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/wallet_sdk_setup/android/)) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/wallet_sdk_setup/iOS/)) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdk/wallet_sdk_setup/android/)) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/sdk/wallet_sdk_setup/iOS/)) for communication between mobile app and Wallet SDK. 
 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
