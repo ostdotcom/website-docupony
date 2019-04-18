@@ -28,9 +28,9 @@
         "title": "Platform Overview",
         "sidebar_label": "Platform Overview"
       },
-      "guides/add_session": {
-        "title": "Create Token Guide",
-        "sidebar_label": "Create Token"
+      "guides/create_session": {
+        "title": "Create New Session Guide",
+        "sidebar_label": "Create New Session"
       },
       "guides/create_token": {
         "title": "Create Token Guide",
