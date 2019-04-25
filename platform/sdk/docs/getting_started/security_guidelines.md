@@ -27,7 +27,10 @@ sidebar_label: Security Guidelines
 
     * The App must never store/cache user pin in any form (not even in encrypted form).
 
+4. Read the [android app security checklist](https://github.com/b-mueller/android_app_security_checklist).
 
 ## iOS Wallet SDK
 
 1. Applications should enable general data protection on the app's provisioning profile, and then setting the `Sharing and Permissions to Complete Protection`, which will enable app-wide file system protection.
+
+2. Read the official [iOS security guide](https://www.apple.com/business/site/docs/iOS_Security_Guide.pdf).
