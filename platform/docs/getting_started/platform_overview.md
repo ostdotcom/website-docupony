@@ -22,8 +22,8 @@ You can follow the [create token guide](/platform/docs/guides/create_token/) to 
 OST Platform enables companies to deploy contracts and transact without worrying about calculating gas.
 
 The Platform infrastructure handles the deployment of various smart-contracts to create these tokens such as: 
- * BrandedToken: Mainstream application’s value-backed token, designed specifically for its application’s context
- * UtilityBrandedToken: Representation of a BrandedToken on a sidechain, utilized in transactions within an application
+ * **BrandedToken**: Mainstream application’s value-backed token, designed specifically for its application’s context
+ * **UtilityBrandedToken**: Representation of a BrandedToken on a sidechain, utilized in transactions within an application
 
 The Platform also deploys contracts that are used to manage the Brand Token Economy, such as: 
  * TokenRules: Enables defining a token economy by registering token rules for transfers
@@ -31,7 +31,7 @@ The Platform also deploys contracts that are used to manage the Brand Token Econ
 
 
 ## Users can hold keys securely
-The OST Wallet SDK supports non-custodial wallets, where users hold the keys and can transact with Brand Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android).
+The OST Wallet SDK supports non-custodial wallets, where users hold the keys and can transact with Brand Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android). Read [create wallet guide](/platform/docs/guides/create_wallet/) to know more.
 
 The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same  **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a 6 digit PIN), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Brand Tokens and authorize a new device. 
 
@@ -40,9 +40,9 @@ The user input -assumed to be a 6 digit PIN- is also used to guard access to sen
 ![OSTWalletRecovery](/platform/docs/assets/ERD-User-Setup-Daigram.jpg)
 
 ## Seamless user experience
-A user can use a 6 digit PIN to authorize a sessionKey. These ephemeral sessionKeys, which remain active for a period of time chosen by the user or developer of the application (based on the implementation) obviate the need for the user to sign every transaction within the application thereby creating a more seamless user experience. Thus, the user can engage with the Brand Token economy without interruption during an authorized session. When a session expires, they may use the 6 digit PIN to authorize a new session.
+A user can use a 6 digit PIN to authorize a sessionKey. These ephemeral sessionKeys, which remain active for a period of time chosen by the user or developer of the application (based on the implementation) obviate the need for the user to sign every transaction within the application thereby creating a more seamless user experience. Thus, the user can engage with the Brand Token economy without interruption during an authorized session. When a session expires, they may use the 6 digit PIN to authorize a new session. 
 
-To further reduce friction, the Wallet SDK also supports the use of biometrics for the second level of authentication of the user, i.e. a user can use biometrics to authorize a session, request a mnemonic phrase etc.
+To further reduce friction, the Wallet SDK also supports the use of biometrics for the second level of authentication of the user, i.e. a user can use biometrics to authorize a session, request a mnemonic phrase etc. Read [Wallet UX Guide](/platform/docs/guides/wallet_ux_guide/) to understand the possible flows with recommended UX.
 
 The intended user experience is that most users will set a 6 digit PIN and then add their biometrics, from that point on all day-to-day usage of the wallet (e.g. spend tokens with the client company) can be done with the biometrics. The PIN is only used thereafter for recovery or if the biometrics are not functioning. (Note: The user does not need to use her PIN or biometrics to view her wallet balance or ledger, rather only to re-authorize a session to spend tokens.)
 

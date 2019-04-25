@@ -20,12 +20,42 @@ Android Wallet SDK consists of an `interface` and `workflows`. <br><br>
 You should complete one of the server SDK Guides ([PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/), [Java](/platform/docs/sdk/server_sdk_setup/java/))
 <br>
 
-## 2. Requirements
+## 2a) Requirements
 
 Android supported version: 22 and Above
 <br>
 Java Compile version: 1.7
 
+
+## 2b) Using SDK for Android apps that supports Android version below 22.
+Wallet SDK cannot work in android apps with version 21 and below, the minimum android SDK version it can work with is 22. 
+
+If your Android app supports minimum android version lower than Lolilop (Android SDK 22), Wallet SDK will work for Lolipop and above versions of android and Wallet SDK will break for users running android versions lower than Lolipop (Android SDK 22). 
+
+To fix th issue, you need to follow the below steps.
+
+1. By default, when importing a library with a minSdkVersion value that's higher than the main manifest file, an error occurs and the library cannot be imported. To make the merger tool ignore this conflict and import the library while keeping your app's lower minSdkVersion value, add the overrideLibrary attribute to the <uses-sdk> tag.
+
+
+```xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.app"
+          xmlns:tools="http://schemas.android.com/tools">
+    ...
+    ...
+    ...
+
+
+  <uses-sdk tools:overrideLibrary="com.example.lib1, com.example.lib2"/>
+```
+
+2.  Use conditional initialization for Andriod api version 22 and above.
+
+```java
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            OstSdk.initialize(getApplicationContext(), getBaseUrlOstPlatform());
+ }
+```
 
 <br>
 
@@ -50,8 +80,8 @@ Add following code in your `build.gradle` file
 
 ```
 compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
     }
 ```
 
@@ -59,10 +89,10 @@ compileOptions {
 
 ```
 dependencies {
-        implementation 'com.ost:ost-wallet-sdk-android:2.0.2'
-        ...
-        ...
-        ...
+    implementation 'com.ost:ost-wallet-sdk-android:2.0.2'
+    ...
+    ...
+    ...
 }
 ```
 
@@ -74,13 +104,13 @@ Paste following contents in `app/src/main/assets/ost-mobilesdk.json` file
 
 ```json
  {
-       "BLOCK_GENERATION_TIME": 3,
-       "PIN_MAX_RETRY_COUNT": 3,
-       "REQUEST_TIMEOUT_DURATION": 60,
-       "SESSION_BUFFER_TIME": 3600,
-       "PRICE_POINT_TOKEN_SYMBOL": "OST",
-       "PRICE_POINT_CURRENCY_SYMBOL": "USD",
-       "USE_SEED_PASSWORD": false
+    "BLOCK_GENERATION_TIME": 3,
+    "PIN_MAX_RETRY_COUNT": 3,
+    "REQUEST_TIMEOUT_DURATION": 60,
+    "SESSION_BUFFER_TIME": 3600,
+    "PRICE_POINT_TOKEN_SYMBOL": "OST",
+    "PRICE_POINT_CURRENCY_SYMBOL": "USD",
+    "USE_SEED_PASSWORD": false
  }
 ```
 Block_Generation_Time: The time in seconds it takes to mine a block on auxiliary chain.
