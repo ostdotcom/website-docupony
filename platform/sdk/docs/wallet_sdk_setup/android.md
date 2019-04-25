@@ -45,15 +45,16 @@ To fix th issue, you need to follow the below steps.
     ...
     ...
 
-
-  <uses-sdk tools:overrideLibrary="com.example.lib1, com.example.lib2"/>
+  <uses-sdk tools:overrideLibrary="com.ost.walletsdk"/>
 ```
 
 2.  Use conditional initialization for Andriod api version 22 and above.
 
 ```java
+public static final String OST_PLATFORM_API_BASE_URL = "https://api.ost.com/testnet/v2";
+
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-            OstSdk.initialize(getApplicationContext(), getBaseUrlOstPlatform());
+            OstSdk.initialize(getApplicationContext(), OST_PLATFORM_API_BASE_URL);
  }
 ```
 
@@ -139,7 +140,6 @@ import com.ost.mobilesdk.OstWalletSdk;
 public class App extends Application {
 
     public static final String OST_PLATFORM_API_BASE_URL = "https://api.ost.com/testnet/v2";
-    private LogInUser loggedUser;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -147,13 +147,6 @@ public class App extends Application {
         OstWalletSdk.initialize(getApplicationContext(), OST_PLATFORM_API_BASE_URL);
     }
 
-    public LogInUser getLoggedUser() {
-        return loggedUser;
-    }
-
-    public void setLoggedUser(LogInUser loggedUser) {
-        this.loggedUser = loggedUser;
-    }
 }
 ```
 
