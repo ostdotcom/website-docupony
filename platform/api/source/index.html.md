@@ -67,7 +67,7 @@ For other languages you can implement the signature generation by computing the 
 Every API request on `https://api.ost.com/testnet/v2/` or `https://api.ost.com/mainnet/v2/` requires hash-based message authentication.
 
 Every request has 4 mandatory parameters that must be included: <br>
-- `api_key`, the API key as provided from [developers page](https://patform.ost.com/testnet/developer) inside OST Platform dashboard.<br>
+- `api_key`, the API key as provided from [developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard.<br>
 - `api_request_timestamp`, the current unix timestamp in seconds.<br>
 - `api_signature`, the signature as the sha256 digest of the shared API secret and the correctly formatted query string as described below.<br>
 - `api_signature_kind`, the value for this parameter should be `OST1-HMAC-SHA256`.
@@ -83,7 +83,7 @@ The reason for these 4 mandatory parameters in each request is to ensure that th
 To generate the signature you must first form the string to sign. This string to sign can be formed by concatenation of the following elements
 
 -  Resource endpoint without trailing slash("/"). Example: `/users`, `/users/{id}/devices`
--  `api_key`, the API key is provided from [Developers Tab](https://patform.ost.com/testnet/developer) in OST Platform.
+-  `api_key`, the API key is provided from [Developers Tab](https://platform.ost.com/testnet/developer) in OST Platform.
 -  `api_request_timestamp`, the current unix timestamp in seconds.
 -  `api_signature_kind`, the value for this parameter should be `OST1-HMAC-SHA256`
 -   API parameters.
@@ -1521,8 +1521,6 @@ The value of `data.result_type` property will be `devices` and list of devices w
                 "address": "0x70856388901ae5613483fd3ad117b87c749194c4",
                 "linked_address": "0x0000000000000000000000000000000000000001",
                 "api_signer_address": "0xff39a9374d61236ff5ba98da8542416a03690766",
-                "device_name": "Xiaomiriva",
-                "device_uuid": "2713ae2d-2861-4c7f-a8b5-f98232a9608f",
                 "status": "AUTHORIZED",
                 "updated_timestamp": 1552407684
             },
@@ -1531,8 +1529,6 @@ The value of `data.result_type` property will be `devices` and list of devices w
                 "address": "0x1f9e06a5c4abec36a68bdc976fde54127d024866",
                 "linked_address": null,
                 "api_signer_address": "0xe39534e792aa90e86e6195006c6117bbb4b0c9b8",
-                "device_name": "motorolasanders_n",
-                "device_uuid": "6152c446-d593-498d-bb51-046c6484b546",
                 "status": "REVOKED",
                 "updated_timestamp": 1552407684
             }
