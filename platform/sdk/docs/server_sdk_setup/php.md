@@ -17,7 +17,7 @@ Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Fo
 
 
 ## 2. Get Credentials
-Once token set up is complete, go to [Developers page](https://patform.ost.com/testnet/developer) inside OST Platform dashboard to get access to your API key and API secret.
+Once token set up is complete, go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to your API key and API secret.
 
 Every account is provided with two pairs of keys: one for sandbox environment and one for production environment. Use your sandbox environment API keys for testing and development.
 
