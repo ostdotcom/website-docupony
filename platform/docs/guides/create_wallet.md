@@ -32,7 +32,7 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 ## Create Wallet Sequence Diagram
 <br>
 
-[![create-wallet-create-wallet](/platform/docs/assets/sequence-diagrams/create-wallet.svg)](/platform/docs/assets/sequence-diagrams/create-wallet.svg)
+![image](/platform/docs/assets/sequence-diagrams/create-wallet.png)
 
 
 <br> 
@@ -102,9 +102,9 @@ $createParams = array();
 $createParams['user_id'] = '5ff57c15-f54f-45fe-acf5-6c6fbfdf815a';
 $createParams['address'] = '0x2Ea365269A3e6c8fa492eca9A531BFaC8bA1649C';
 $createParams['api_signer_address'] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455';
-$createParams['device_uuid'] = '593a967f-87bd-49a6-976c-52edf46c4df4';
-$createParams['device_name'] = 'Iphone S';
+
 $response = $deviceService->create($createParams)->wait();
+
 echo json_encode($response, JSON_PRETTY_PRINT);
  
 ?>
