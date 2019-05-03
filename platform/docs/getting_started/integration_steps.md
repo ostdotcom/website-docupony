@@ -11,11 +11,11 @@ sidebar_label: Integration Steps
 
 3. Follow [Android Wallet SDK](/platform/docs/wallet_sdk_setup/android/) and/or [iOS Wallet SDK](;) setup guide to integrate it in your mobile application.
 
-4. [Create a wallet for a user]((/platform/docs/guides/create_wallet/)).
+4. [Create a wallet for a user](/platform/docs/guides/create_wallet/).
 
-5. [Send some Brand Tokens to your users]((/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions)).
+5. [Send some Brand Tokens to your users](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions).
 
-6. [Test a user initiated transaction]((/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web)).
+6. [Test a user initiated transaction](/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web).
 
 7. Read [API](/platform/docs/api/) and [SDK](/platform/docs/sdk/) References.
 
