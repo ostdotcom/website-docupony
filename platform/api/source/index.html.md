@@ -26,7 +26,7 @@ This API library includes API calls that will be used by client company's server
 
 Available Server Side SDKs:
 
-1. [PHP SDK](/platform/docs/sdk/server_sdk_setup/php//)
+1. [PHP SDK](/platform/docs/sdk/server_sdk_setup/php/)
 2. [Ruby SDK](/platform/docs/sdk/server_sdk_setup/ruby/)
 3. [Java SDK](/platform/docs/sdk/server_sdk_setup/java/)
 4. [Node.js SDK](/platform/docs/sdk/server_sdk_setup/nodejs/)
