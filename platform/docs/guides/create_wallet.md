@@ -32,7 +32,7 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 ## Create Wallet Sequence Diagram
 <br>
 
-[![create-wallet-create-wallet](/platform/docs/assets/sequence-diagrams/create-wallet.svg)](/platform/docs/assets/sequence-diagrams/create-wallet.svg)
+![image](/platform/docs/assets/sequence-diagrams/create-wallet.png)
 
 
 <br> 
@@ -41,7 +41,7 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 In this section we focus on server side logic. You will have to use OST Platform Server Side SDK (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.Js](/platform/docs/sdk/server_sdk_setup/nodejs/)) to communicate with OST Platform. 
 
 ### Create User
-The first step to create a user's wallet is to create the user on OST Platform. Use one of the available Server Side SDKs or [API]((/platform/docs/api)) directly to register a user.
+The first step to create a user's wallet is to create the user on OST Platform. Use one of the available Server Side SDKs or [API](/platform/docs/api)) directly to register a user.
 
 **User Registration Tips**
 
@@ -81,7 +81,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 
 ### Register Device
-Your server should receive the device information from your mobile app. To register the device on OST Platform you can use the devices service provided in the Server Side SDKs (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby]((/platform/docs/sdk/server_sdk_setup/ruby/)), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.Js](/platform/docs/sdk/server_sdk_setup/nodejs/)).
+Your server should receive the device information from your mobile app. To register the device on OST Platform you can use the devices service provided in the Server Side SDKs (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/)), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.Js](/platform/docs/sdk/server_sdk_setup/nodejs/)).
 
 Sample code to register the device using PHP SDK.
 
@@ -102,9 +102,9 @@ $createParams = array();
 $createParams['user_id'] = '5ff57c15-f54f-45fe-acf5-6c6fbfdf815a';
 $createParams['address'] = '0x2Ea365269A3e6c8fa492eca9A531BFaC8bA1649C';
 $createParams['api_signer_address'] = '0x5F860598383868e8E8Ee0ffC5ADD92369Db37455';
-$createParams['device_uuid'] = '593a967f-87bd-49a6-976c-52edf46c4df4';
-$createParams['device_name'] = 'Iphone S';
+
 $response = $deviceService->create($createParams)->wait();
+
 echo json_encode($response, JSON_PRETTY_PRINT);
  
 ?>

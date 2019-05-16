@@ -19,8 +19,8 @@ We provide Server Side SDKs mobile and Wallet SDKs to complete your integration:
 ## Getting Started
 The following SDK guides are designed to help you get familiarized with the bare necessities, giving you a quick and clean approach to getting up and running.
 
-* Integrate the OST Server Side SDK with quickstart guide available for [PHP](/platform/docs/sdk/getting_started/server_sdk_quickstart_guide/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/) and [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/).
-* Set up Wallet SDK on [Android](/platform/docs/sdk/getting_started/wallet_sdk_setup/android/) and/or [iOS](/platform/docs/sdk/getting_started/wallet_sdk_setup/iOS/) devices.
+* Integrate the OST Server Side SDK with quickstart guide available for [PHP](platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/) and [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/).
+* Set up Wallet SDK on [Android](/platform/docs/sdk/wallet_sdk_setup/android/) and/or [iOS](/platform/docs/sdk/wallet_sdk_setup/iOS/) devices.
 * [Create a wallet for a user](/platform/docs/guides/create_wallet/) 
 * [Send some tokens to the user](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions)
 * [Test a user initiated transaction](/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web)

@@ -119,6 +119,43 @@ Oh no, a user lost the phone they had your application on. Thankfully, recoverin
 ![image](/platform/docs/assets/wallet-ux-guide/9-Recover-Wallet.jpg)
 
 
+**Recommended: Notify users via Email to inform about the initiation and completion of the recovery process.**
 
 
-**To learn more about how the OST Wallet SDK Recovery from PIN and Smart Contract is made possible in a safe and secure manner, please review the OST Wallet SDK Recovery documentation.**
+![image](/platform/docs/assets/wallet-ux-guide/9.1-recovery-emails-2.jpg)
+
+![image](/platform/docs/assets/wallet-ux-guide/9.2-wallet-abort.jpg)
+
+
+
+### 10. Progress Indicators
+Progress indicators help users understand the status and follow of an activity. Users usually notice when an activity takes more than 1-2 seconds.  (Usability studies - https://www.nngroup.com/articles/progress-indicators/). We’ll look at Fast and Long action guidelines.
+
+**Fast Actions - In-app actions, transactions, etc (2-5 seconds or less)** 
+
+If the operation completes under 5 seconds, use a looping animation to indicate the progress. The animated loop offers enough feedback that the action has been initiated, but it doesn’t give any information on user wait times. A progress bar for a fast action would be confusing. Do not use stationary progress indicators as they may confuse the users and cause them to worry that the process has stalled
+
+![image](/platform/docs/assets/wallet-ux-guide/10.1-progress-tx.jpg)
+
+**Long Actions - Creating & Recovering Wallet, Authorizing Sessions (10-30 seconds or more)**
+
+If the operation a very lengthy where the users are more interested in the completion of the action than progress,  use notifications or snack bars instead of blocking the UI with progress indicators. Allow users to continue with other tasks instead of actively monitoring the progress without any disruption. Let’s take a look at a couple of these long operations including PIN verification for first session authorization and Wallet recovery initiation. 
+
+![image](/platform/docs/assets/wallet-ux-guide/10.2-progress-tx-2.jpg)
+
+
+* **Progress Indicator UX Studies** - https://www.nngroup.com/articles/progress-indicators/
+
+* **Material Design** - https://material.io/design/components/progress-indicators.html#usage
+
+* **iOS** - https://developer.apple.com/design/human-interface-guidelines/ios/controls/progress-indicators/ 
+
+### 11. Transaction Error States
+
+Good error messages allow users to be informed about the error that occurred and allow them to perform an action or change behavior as a result of the error i.e If a transaction fails, explain to users on why it failed and allow them to retry it (or) if a user doesn’t have enough token balance to complete the transaction ask the user to get more tokens.
+
+
+![image](/platform/docs/assets/wallet-ux-guide/11-Failed_TX.jpg)
+
+
+To learn more about how the OST Wallet SDK Recovery from PIN and Smart Contract is made possible in a safe and secure manner, please review the OST Wallet SDK Recovery documentation. 
