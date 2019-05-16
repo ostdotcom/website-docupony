@@ -16,9 +16,9 @@
         "title": "Overview",
         "sidebar_label": "Overview"
       },
-      "getting_started/security_guidelines": {
-        "title": "Security Guidelines",
-        "sidebar_label": "Security Guidelines"
+      "getting_started/security_and_ux_requirements": {
+        "title": "Security and UX Requirements",
+        "sidebar_label": "Security and UX Requirements"
       },
       "references/overview": {
         "title": "Refrences",
