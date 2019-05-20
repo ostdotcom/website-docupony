@@ -77,7 +77,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 `passphasePrefix` is a string with minimum length 30 used in the process of creating recovery key for your economy users. You will have to generate `passphasePrefix` on your server for each user with high randomness. You should keep a mapping between the `passPhrasePrefix` and other user information. Your server should communicate this passphrasePrefix to your app when needed.
 
-[Security Guidelines for generating passphasePrefix](/platform/docs/sdk/getting_started/security_guidelines/#server-side-sdk)
+[Security Guidelines for generating passphasePrefix](/platform/docs/sdk/getting_started/security_and_ux_requirements/#application-s-server-side)
 
 
 ### Register Device

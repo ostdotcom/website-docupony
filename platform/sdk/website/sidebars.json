@@ -3,7 +3,7 @@
     "Getting Started": [
       "getting_started/overview",
       "getting_started/authentication",
-      "getting_started/security_guidelines"
+      "getting_started/security_and_ux_requirements"
     ],
 
     "Server SDK Setup": [
