@@ -2686,7 +2686,7 @@ The value of `data.result_type` property will be `rules` and rules array will be
 
 
 # Price Point
-Price point API is used to get the conversion rate between OST and USD. They can use [token information](/platform/docs/api/#get-token) to get the conversion rate between thier brand token and OST. So essentially client company can calculate conversion rate between brand token and USD. Now they can use this information to perform [directTransfer](/platform/docs/api/#execute-a-transaction)  transactions.
+Price point API is used to get the conversion rate between Base Token ERC 20 and fiat currency. They can use [token information](/platform/docs/api/#get-token) to get the conversion rate between thier brand token and Base Token. So essentially client company can calculate conversion rate between brand token and USD. Now they can use this information to perform [directTransfer](/platform/docs/api/#execute-a-transaction)  transactions.
 
 
 ## Price Point Object
@@ -3722,6 +3722,7 @@ public class Test {
 
 
 
+
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `transaction`.<br><br>
 
@@ -4240,13 +4241,13 @@ Token object contains details about economy and various contract addresses. One 
 
 ## Token Object
 
-
 | Attribute  | Description  |
 |---|---|
 | **id** <br> **Integer**  | Unique identifier of token.  |
 | **name** <br> **String** | Token name |
 | **symbol** <br> **String** | Token symbol |
-| **conversion_factor** <br> **Float**  | Number of Brand Token in one OST.  |
+| **base_token** <br> **String** | The ERC 20 Token used for staking.  |
+| **conversion_factor** <br> **Float**  | Number of Brand Token in one Base Token.  |
 | **total_supply** <br> **String \<BigInt\>** | Total supply of Brand Tokens  |
 | **decimals** <br> **Integer** | `10^decimals` [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token) makes one Brand Token  |
 | **origin_chains** <br> **Hash** <br> <span class="child-table-toggle" data-target="token-origin-chain">Show child attributes</span>| Origin chain details  |
