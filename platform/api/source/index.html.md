@@ -2848,6 +2848,8 @@ The value of `data.result_type` property will be `price_point` and price point o
 > Get Price Point - Example Response
 
 ```json
+
+// with OST as Base Token
 {
     "success": true,
     "data": {
@@ -2861,6 +2863,23 @@ The value of `data.result_type` property will be `price_point` and price point o
         }
     }
 }
+
+
+// with USDC as Base Token
+{
+   "success": true,
+   "data": {
+        "result_type": "price_point",
+        "price_point": {
+               "USDC": {
+                    "USD": 0.995481,
+                    "decimals": 6, 
+                    "update_timestamp": 1552352460
+                }
+        }
+    }
+}
+
 
 ```
 
@@ -4313,6 +4332,7 @@ Token object contains details about economy and various contract addresses. One 
 </table>
 
 <table id="token-auxiliary-chain" style="display:none;">
+
   <tr class="token-auxiliary-chain child-row" >
     <td>
       <strong>chain_id</strong> 
@@ -5033,6 +5053,227 @@ The value of `data.result_type` property will be `device_manager` and device man
             "nonce": 0,
             "status": "ACTIVATED",
             "updated_timestamp": 1552354981
+        }
+    }
+}
+
+```
+
+# Base Token
+To get information about the value tokens (such as OST, USDC) available on the OST Platform interface, use services provided by the Base Tokens module. You can use this service to obtain the value token details on OST Platform interface.
+
+
+## Base Token Object
+| Attribute  | Description  |
+|---|---|
+| **OST** <br> **String** <br> <span class="child-table-toggle" data-target="base-token-ost">Show child attributes</span> | Open Simple Token is an ERC 20 token available for staking in OST Platform. |
+|  **USDC** <br> **String** <br> <span class="child-table-toggle" data-target="base-token-usdc">Show child attributes</span> | USD Coin is an ERC 20 token available for staking in OST Platform. |
+
+
+<table id="base-token-ost" style="display:none;">
+  <tr class="base-token-ost child-row" >
+    <td>
+      <strong>name</strong> 
+      <br> 
+      <strong>String</strong>
+    </td>
+
+    <td>
+      Open Simple Token
+    </td>
+  </tr>
+
+  <tr class="base-token-ost child-row" >
+    <td>
+      <strong>decimals</strong> 
+      <br> 
+      <strong>Integer</strong>
+    </td>
+
+    <td>
+      18, Number of decimals allowed to represent OST value.
+    </td>
+  </tr>
+
+  <tr class="base-token-ost child-row" >
+    <td>
+      <strong>origin_chain_erc20token_contract_address</strong> 
+      <br> 
+      <strong>Address</strong>
+    </td>
+
+    <td>
+      Address of OST base token contract on origin chain.
+    </td>
+  </tr>
+
+</table>
+
+
+<table id="base-token-usdc" style="display:none;">
+  <tr class="base-token-usdc child-row" >
+    <td>
+      <strong>name</strong> 
+      <br> 
+      <strong>String</strong>
+    </td>
+
+    <td>
+      USD Coin
+    </td>
+  </tr>
+
+  <tr class="base-token-usdc child-row" >
+    <td>
+      <strong>decimals</strong> 
+      <br> 
+      <strong>Integer</strong>
+    </td>
+
+    <td>
+      6, Number of decimals allowed to represent USDC value.
+    </td>
+  </tr>
+
+  <tr class="base-token-usdc child-row" >
+    <td>
+      <strong>origin_chain_erc20token_contract_address</strong> 
+      <br> 
+      <strong>Address</strong>
+    </td>
+
+    <td>
+      Address of USDC base token contract on origin chain.
+    </td>
+  </tr>  
+</table>
+
+## Get Available Base Tokens
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$baseTokensService = $ostObj->services->baseTokens;
+
+$getParams = array();
+$response = $baseTokensService->get($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+```
+
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+base_tokens_service = ost_sdk.services.base_tokens
+
+get_params = {}
+response = base_tokens_service.get(get_params)
+```
+
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const baseTokensService = ostObj.services.base_tokens;
+
+baseTokensService.get({})
+  .then(function(res) { 
+    console.log(JSON.stringify(res)); 
+  })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+  });    
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
+    sdkConfig.put("apiKey","[YOUR_API_KEY]");
+    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+
+
+    com.ost.services.BaseTokens baseTokensService = services.baseTokens;
+
+    HashMap <String,Object> params = new HashMap<String,Object>();
+    JsonObject response = baseTokensService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
+#### <span>GET</span> &nbsp; &nbsp; /base-tokens
+
+<u>**Success Response**</u><br>
+
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `base_tokens`.<br><br>
+
+The value of `data.result_type` property will be `base_tokens` and base token object will be available under `data.base_tokens` property. The example response is given on the right hand side. 
+
+> Get Price Point - Example Response
+
+```json
+{
+   "success": true,
+   "data": {
+        "result_type": "base_tokens",
+        "base_tokens": {
+                "OST": {
+                    "name": "Simple Token",
+                    "decimals": 18, 
+                    "origin_chain_erc20token_contract_address": "0xACe...", 
+                },
+               "USDC": {
+                    "name": "USD Coin",
+                    "decimals": 6, 
+                    "origin_chain_erc20token_contract_address": "0xACe...", 
+                }
         }
     }
 }

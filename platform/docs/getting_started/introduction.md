@@ -8,7 +8,7 @@ sidebar_label: Introduction
 
 OST Platform provides everything you need to test, integrate, and deploy your brand currency. Our Server Side SDKs and Wallet SDKs together enable fast and painless integration into any app, without requiring any in-house blockchain expertise -- so you can focus on your business and leave the blockchain bits to us.
 
-At the core of OST is the concept of OST-powered Brand Tokens. Brand Tokens are white-label cryptocurrency tokens running on highly-scalable OST sidechains, backed by staking value tokens (such as the OST Token) on Ethereum mainnet. This enables companies to deploy Brand Token that function like rewards points, which can be deployed to incentivize and reward users and to drive growth and retention. 
+Brand Tokens are white-label cryptocurrency tokens running on highly-scalable OST sidechains, backed by staking value tokens (such as the OST Token) on Ethereum mainnet. This enables companies to deploy Brand Token that function like rewards points, which can be deployed to incentivize and reward users and to drive growth and retention. 
 
 
 
