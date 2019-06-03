@@ -90,7 +90,7 @@ div.navigationWrapper.navigationSlider ul li a{font-size:14px;}
 
 // Overriding existing slate styles
 
-.toc-wrapper .toc-link.active { 
+.toc-wrapper .toc-link.active {
     background: none;
     color: #e7bc4e;
 }
@@ -110,7 +110,7 @@ div.navigationWrapper.navigationSlider ul li a{font-size:14px;}
 li.sub-nav-li.active a {
     line-height: 30px;
     font-weight: 500;
-    padding-bottom: 9px; 
+    padding-bottom: 9px;
 }
 
 .toc-wrapper > .search input {
@@ -118,7 +118,7 @@ li.sub-nav-li.active a {
 }
 
 .content {
-    padding-top: 70px; 
+    padding-top: 70px;
     color: #24292e;
 }
 .content p{
@@ -131,7 +131,7 @@ li.sub-nav-li.active a {
         font-weight: 600;
         color: #438BAD;
     }
-    
+
     h1 {
         font-size: 32px;
         margin-top: 1em;
@@ -142,9 +142,9 @@ li.sub-nav-li.active a {
         font-size: 20px;
         margin-top: 2em;
         margin-bottom: 0.6em;
-        padding-bottom: 0; 
+        padding-bottom: 0;
     }
-    
+
 }
 .toc-link, .toc-footer li {
     color: #393939;
@@ -298,13 +298,11 @@ span.p {
     margin-top: 15px;
     margin-left: 27px;
     margin-bottom: 25px;
+    margin-right: 27px;
     padding: 10px;
     padding-left: 16px;
-    padding-right: 30px;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    min-width: 350px;
+    min-width: auto;
+    overflow-x: scroll;
     border-left: 2px solid #84aec2;
 }
 
@@ -332,7 +330,7 @@ span.p {
     }
 
     .fixedHeaderContainer a {
-        margin-top: 3px; 
+        margin-top: 3px;
     }
 
     .toc-wrapper {
@@ -392,7 +390,7 @@ body {
     overflow-x: hidden;
 }
 
-@media screen and (max-width: 370px){ 
+@media screen and (max-width: 370px){
 
     div.navigationWrapper.navigationSlider ul li a {
         padding: 5px;
@@ -408,7 +406,7 @@ body {
 
 .lang-selector a:hover {
     color: #e4b030;
-} 
+}
 
 .lang-selector a:focus  {
     background: transparent;
