@@ -15,7 +15,8 @@
 
     "Wallet SDK Setup": [
       "wallet_sdk_setup/android",
-      "wallet_sdk_setup/iOS"
+      "wallet_sdk_setup/iOS",
+      "wallet_sdk_setup/react-native"
     ],
 
     "Android SDK Reference": [
