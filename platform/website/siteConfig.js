@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: '' /* title for your website */,
+  title: 'OST Platform Docs' /* title for your website */,
   tagline: 'Developer Documentation',
   url: 'https://dev.ost.com' /* your website url */,
   baseUrl: '/platform/' /* base url for your project */,

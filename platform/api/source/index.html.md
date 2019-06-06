@@ -4920,8 +4920,11 @@ This API allows you to get the device manager information.
 
 
 ## Get device manager
-
-```php
+```json
+//---------------------------------------------------------------------------------------------------------------------------//
+```
+                       
+```php     
 <?php
 require 'vendor/autoload.php';
 

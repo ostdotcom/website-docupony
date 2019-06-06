@@ -519,3 +519,7 @@ div.navigationWrapper.navigationSlider ul li.active a{
 
 /*  [END]=== Defaul Docusaurus Header Modifications =========================== */
 
+
+.headerTitleWithLogo {
+    display: none !important;
+}
