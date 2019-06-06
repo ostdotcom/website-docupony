@@ -71,6 +71,10 @@
       "wallet_sdk_setup/iOS": {
         "title": "iOS SDK Setup",
         "sidebar_label": "iOS"
+      },
+      "wallet_sdk_setup/react-native": {
+        "title": "React Native Wallet SDK Setup",
+        "sidebar_label": "React Native"
       }
     },
     "links": {
