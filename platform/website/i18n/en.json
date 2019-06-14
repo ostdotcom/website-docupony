@@ -20,6 +20,10 @@
         "title": "Introduction",
         "sidebar_label": "Introduction"
       },
+      "getting_started/ost_wallet_app": {
+        "title": "OST Wallet App",
+        "sidebar_label": "OST Wallet App"
+      },
       "getting_started/platform_overview_old": {
         "title": "Platform Overview",
         "sidebar_label": "Platform Overview"
