@@ -4,11 +4,7 @@ title: OST Wallet App
 sidebar_label: OST Wallet App
 ---
 
-OST Platform enables brands to create white-label value backed "Brand Tokens" backed by the OST token or USDC-stablecoin.
-
-The OST Wallet App enables you to send and receive Brand Tokens and to explore other features enabled through the OST Wallet SDK.
-
-Use the OST Wallet to test transactions in your Brand Token Economy before integrating into your own app(s).
+The OST Wallet is a non-custodial wallet for Brand Tokens minted using the OST Platform. This beta release enables users to join Brand Token economies to send and receive tokens. Users can also test out Wallet security and recovery features
 
 ## iOS 
 
