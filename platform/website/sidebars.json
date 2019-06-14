@@ -21,7 +21,9 @@
     ],
 
     "Release Notes": [
+      "release-notes/2.1.0",
       "release-notes/2.0.0"
+     
 
     ]
   }
