@@ -30,7 +30,7 @@ Java Compile version: 1.7
 ### [Optional] Using SDK for Android Apps that supports Android API versions below 22
 Wallet SDK cannot work in Android Apps with version 21 and below, the minimum Android API version it can work with is 22 (Android Lolipop).
 
-If your Android App supports minimum Android API version lower than Lolilop (Android API 22), the Wallet SDK will work for Lolipop and above versions of Android API and Wallet SDK will break for users running Android API versions lower than Lolipop (Android API 22). 
+If your Android App supports minimum Android API version lower than Lolilop (Android API 22), the Wallet SDK will work for Lolipop and above versions of Android API and Wallet SDK will break for users running Android API versions lower than Lolipop (Android API 22).
 
 To use the SDK with an application that supports Android API below 22, please follow the steps below:
 
@@ -90,7 +90,7 @@ compileOptions {
 
 ```
 dependencies {
-    implementation 'com.ost:ost-wallet-sdk-android:2.0.2'
+    implementation 'com.ost:ost-wallet-sdk-android:2.1.0'
     ...
     ...
     ...
