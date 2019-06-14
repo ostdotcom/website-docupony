@@ -77,6 +77,14 @@ The suggested way to generate QR codes is to use a library that generates QR cod
 
 ![image](/platform/docs/assets/wallet-ux-guide/5-WebStore.jpg)
 
+
+
+An alternate way of performing transactions in web is via push notification. You can send the transaction data to the mobile app using push notification. Your mobile application can then use the transaction data to show the transaction confirmation dialog to the app user, who then can confirm or cancel the transaction. An image is shown below to give you an example.
+
+![image](/platform/docs/assets/wallet-ux-guide/5.3-WebStore.jpg)
+
+
+
 ### 6. Balances and Activity history
 
 The Balance and Ledger APIs allow the user to look at their current Brand Token balance and transaction history. Whenever the user views their balances, we recommend showing them how to earn more tokens or options for how they could spend their tokens.
