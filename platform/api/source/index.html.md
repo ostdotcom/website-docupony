@@ -567,9 +567,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -702,9 +702,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -864,9 +864,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -1154,9 +1154,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -1303,9 +1303,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -1455,9 +1455,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -1653,9 +1653,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -1799,9 +1799,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -1981,9 +1981,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -2686,14 +2686,14 @@ The value of `data.result_type` property will be `rules` and rules array will be
 
 
 # Price Point
-Price point API is used to get the conversion rate between Base Token ERC 20 and fiat currency. They can use [token information](/platform/docs/api/#get-token) to get the conversion rate between thier brand token and Base Token. So essentially client company can calculate conversion rate between brand token and USD. Now they can use this information to perform [directTransfer](/platform/docs/api/#execute-a-transaction)  transactions.
+Price point API is used to get the conversion rate between Base Token ERC 20 and pay currency (i.e. USD, EUR, GBP). They can use [token information](/platform/docs/api/#get-token) to get the conversion rate between thier brand token and Base Token. So essentially client company can calculate conversion rate between brand token and pay currency (i.e. USD, EUR, GBP). Now they can use this information to perform [directTransfer](/platform/docs/api/#execute-a-transaction)  transactions.
 
 
 ## Price Point Object
 
 | Attribute  | Description  |
 |---|---|
-| **OST** <br> **Hash** <br> <span class="child-table-toggle" data-target="price-point-ost">Show child attributes</span> |   |
+| **OST or USDC** <br> **Hash** <br> <span class="child-table-toggle" data-target="price-point-ost">Show child attributes</span> | Base currency based on your Brand Token setup.   |
 
 
 <table id="price-point-ost" style="display:none;">
@@ -2705,7 +2705,31 @@ Price point API is used to get the conversion rate between Base Token ERC 20 and
     </td>
 
     <td>
-     
+     <code>OST to USD</code> or <code>USDC to USD</code> conversion.
+    </td>
+  </tr>
+
+  <tr class="price-point-ost child-row" >
+    <td>
+      <strong>EUR</strong> 
+      <br> 
+      <strong>Float</strong>
+    </td>
+
+    <td>
+     <code>OST to EUR</code> or <code>USDC to EUR</code> conversion.
+    </td>
+  </tr>
+
+  <tr class="price-point-ost child-row" >
+    <td>
+      <strong>GBP</strong> 
+      <br> 
+      <strong>Float</strong>
+    </td>
+
+    <td>
+     <code>OST to GBP</code> or <code>USDC to GBP</code> conversion.
     </td>
   </tr>
 
@@ -2804,9 +2828,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -2856,26 +2880,29 @@ The value of `data.result_type` property will be `price_point` and price point o
         "result_type": "price_point",
         "price_point": {
             "OST": {
-                "USD": 0.025231,
+                "USD": 0.0287037823,
+                "EUR": 0.0256089979,
+                "GBP": 0.0228108958,
                 "decimals": 18,
-                "updated_timestamp": 1552352460
+                "updated_timestamp": 1560754512
             }
         }
     }
 }
 
-
 // with USDC as Base Token
 {
-   "success": true,
-   "data": {
+    "success": true,
+    "data": {
         "result_type": "price_point",
         "price_point": {
-               "USDC": {
-                    "USD": 0.995481,
-                    "decimals": 6, 
-                    "update_timestamp": 1552352460
-                }
+            "USDC": {
+                "USD": 1.0008170106,
+                "EUR": 0.8908459741,
+                "GBP": 0.7948815995,
+                "decimals": 18,
+                "updated_timestamp": 1560779758
+            }
         }
     }
 }
@@ -3316,9 +3343,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -3703,9 +3730,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -3924,9 +3951,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -4188,9 +4215,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -4365,7 +4392,19 @@ Token object contains details about economy and various contract addresses. One 
     </td>
 
     <td>
-      Company  **TokenHolder** contract addresses.
+      Company  <strong>TokenHolder</strong> contract addresses.
+    </td>
+  </tr>
+
+  <tr class="token-auxiliary-chain child-row" >
+    <td>
+      <strong>company_uuids</strong>
+      <br> 
+      <strong>Array</strong> 
+    </td>
+
+    <td>
+      Array of company UUID strings.
     </td>
   </tr>
 
@@ -4490,9 +4529,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -4527,43 +4566,47 @@ The value of `data.result_type` property will be `token` and token object will b
 
 ```json
 {
-  "success": true,
-  "data": {
-      "result_type": "token",
-      "token": {
-          "id": 1085,
-          "name": "OSTD",
-          "symbol": "OSTD",
-          "conversion_factor": 1,
-          "total_supply": "20000000000000000000000",
-          "decimals": 18,
-          "origin_chain": {
-              "chain_id": 3,
-              "branded_token": "0xd31756555d3a28c990c39fb85087e41afc09ff7a",
-              "organization": {
-                  "contract": "0x0a886e74747f5fed2db45c53df5e0c7b2bacc3d7",
-                  "owner": "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
-              },
-              "stakers": [
-                  "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
-              ]
-          },
-          "auxiliary_chains": [
-              {
-                  "chain_id": 199,
-                  "utility_branded_token": "0xdd7df6a4ec6a0c2edd051da875ab9a32e9567869",
-                  "company_token_holders": [
-                      "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee"
-                  ],
-                  "organization": {
-                      "contract": "0x5e0c62d0f3f286461ef70e1a01e26bc766107912",
-                      "owner": "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"
-                  }
-              }
-          ],
-          "updated_timestamp": 1551870482
-      }
-  }
+    "success": true,
+    "data": {
+        "result_type": "token",
+        "token": {
+            "id": 1143,
+            "name": "lm01",
+            "symbol": "LM01",
+            "base_token": "USDC",
+            "conversion_factor": 10,
+            "total_supply": "80100000000",
+            "decimals": 6,
+            "origin_chain": {
+                "chain_id": 3,
+                "branded_token": "0xc035182420c202035ee3db8c288ff7e0cc30bfa0",
+                "organization": {
+                    "contract": "0xd59ed2ac42e69249da42ca11f95ccf74c8536832",
+                    "owner": "0x905ac8252722eb58d21f63645e54751aea4d23df"
+                },
+                "stakers": [
+                    "0x905ac8252722eb58d21f63645e54751aea4d23df"
+                ]
+            },
+            "auxiliary_chains": [
+                {
+                    "chain_id": 197,
+                    "utility_branded_token": "0xfabd41e56a4cc568a449fdeeef452debfd06e3c0",
+                    "company_token_holders": [
+                        "0x5ca103d5db984993de179cab0ce112a7763db4d7"
+                    ],
+                    "company_uuids": [
+                        "191a361f-43d7-4bf9-a981-245fde53d1c8"
+                    ],
+                    "organization": {
+                        "contract": "0xfe9b06ea16049c5fe97626e76a8d82badd38d02e",
+                        "owner": "0x905ac8252722eb58d21f63645e54751aea4d23df"
+                    }
+                }
+            ],
+            "updated_timestamp": 1560167796
+        }
+    }
 }
 
 ```
@@ -4678,9 +4721,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -4833,9 +4876,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -5001,9 +5044,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -5228,9 +5271,9 @@ public class Test {
   public static void main(String args[]) {
 
     HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
-    sdkConfig.put("apiEndpoint","[YOUR_API_ENDPOINT]");
-    sdkConfig.put("apiKey","[YOUR_API_KEY]");
-    sdkConfig.put("apiSecret","[YOUR_API_SECRET]");
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
 
     HashMap <String,Object> nestedparam = new HashMap<String,Object>();
     nestedparam.put("timeout", (long) 60);
@@ -5281,4 +5324,1087 @@ The value of `data.result_type` property will be `base_tokens` and base token ob
     }
 }
 
+```
+
+
+# Webhooks
+You can use a webhook to subscribe the notifications of different events (also called as `Topics`) in OST Platform. Once you recieve the notification for a subscribed `topic`, you can then execute any code in your server application.
+
+**Example:** If you subscribe to `users/activation_success` topic then once a `user` is activated in OST Platform, you will recieve the notification following to which you can execute any logic, for example: you can update the user entity with updated user entity in your database. 
+
+
+
+## Webhook Object
+
+| Attribute  | Description  |
+|---|---|
+| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for webhook |
+|  **url** <br> **String** | URL where you want to recieve the event notifications.  |
+|  **format** <br> **String** | Response format of webhook  |
+|  **status** <br> **String** <br> **default is active** | Status of a webhook. It can take one of the two values `active` and `inactive`. The default value is `active`.  |
+|  **topics** <br> **Array ['string']** | Array of topics having one or more topics.  <br> Take a look at [list of available topics](/platform/docs/api/#webhook-topics). |
+| **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
+
+
+## Webhook Topics
+
+### Transaction
+
+* transactions/initiate
+* transactions/success
+* transactions/failure
+
+### User
+
+* users/activation_initiate
+* users/activation_success
+* users/activation_failure
+
+### Device
+
+* devices/authorization_initiate
+* devices/authorization_success
+* devices/authorization_failure
+* devices/revocation_initiate
+* devices/revocation_success
+* devices/revocation_failure
+* devices/recovery_initiate
+* devices/recovery_failure
+* devices/recovery_abort_success
+* devices/recovery_abort_failure
+* devices/recovery_success
+
+### Sessions
+
+* sessions/authorization_initiate
+* sessions/authorization_success
+* sessions/authorization_failure
+* sessions/revocation_initiate
+* sessions/revocation_success
+* sessions/revocation_failure
+* sessions/logoutall_initiate
+* sessions/logoutall_success
+* sessions/logoutall_failure
+
+
+## Webhook Event Data
+
+> Example Webhook Event Data for transaction/success
+
+```json
+{
+  "id": "54e3cd1c-afd7-4dcf-9c78-137c56a53582",
+  "topic": "transactions/success",
+  "created_at": 1560838772,
+  "webhook_id": "0823a4ea-5d87-44cf-8ca8-1e5a31bf8e46",
+  "version": "v2",
+  "data": {
+    "result_type": "transaction",
+    "transaction": {
+      "id": "ddebe817-b94f-4b51-9227-f543fae4715a",
+      "transaction_hash": "0x7ee737db22b58dc4da3f4ea4830ca709b388d84f31e77106cb79ee09fc6448f9",
+      "from": "0x69a581096dbddf6d1e0fff7ebc1254bb7a2647c6",
+      "to": "0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47",
+      "nonce": 3,
+      "value": "0",
+      "gas_price": "1000000000",
+      "gas_used": 120558,
+      "transaction_fee": "120558000000000",
+      "block_confirmation": 24,
+      "status": "SUCCESS",
+      "updated_timestamp": 1560838699,
+      "block_timestamp": 1560838698,
+      "block_number": 1554246,
+      "rule_name": "Pricer",
+      "meta_property": {},
+      "transfers": [
+        {
+          "from": "0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47",
+          "from_user_id": "acfdea7d-278e-4ffc-aacb-4a21398a280c",
+          "to": "0x0a754aaab96d634337aac6556312de396a0ca46a",
+          "to_user_id": "7bc8e0bd-6761-4604-8f8e-e33f86f81309",
+          "amount": "112325386",
+          "kind": "transfer"
+        }
+      ]
+    }
+  }
+}
+
+```
+
+Webhook event data format is explained below:
+
+
+| Attribute  | Description  |
+|---|---|
+| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for this event. This `id` is different than `webhook_id` |
+| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for webhook |
+|  **topic** <br> **String** | The topic for which the event has occured. <br> Take a look at [list of available topics](/platform/docs/api/#webhook-topics). |
+|  **version** <br> **String** | Verion string. Current value of version is v2 |
+| **created_at** <br> **EPOCH \<time in seconds\>**| Event creation timestamp.  |
+| **data** <br> **Hash**| Entity hash that has been changed in this event. Entity will represent its final state after |
+
+
+## Validating Webhook Event Data Using Signature
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$webhooksService = $ostObj->services->webhooks;
+
+$params = array();
+// Get webhoook version from webhook events data.
+$params["version"] = "v2";
+$params["webhook_secret"] = "mySecret";
+$data = array();
+$data["hello"] = "hello";
+$params["stringified_data"] = json_encode($data);
+// Get ost-timestamp from the response received in event.
+$params["request_timestamp"] = "1559902637";
+// Get signature from the response received in event.
+$params["signature"] = "2c56c143550c603a6ff47054803f03ee4755c9c707986ae27f7ca1dd1c92a824";
+$response = $webhooksService->verifySignature($params);
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+```
+
+```ruby
+
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+webhooks_service = ost_sdk.services.webhooks
+
+signature_params = {}
+# Get webhoook version from webhook events data.
+signature_params[:version] = "2"
+signature_params[:webhook_secret] = 'mySecret'
+data = {}
+data[:hello] = 'hello'
+signature_params[:stringified_data] = data.to_json
+# Get ost-timestamp from the response received in event.
+signature_params[:request_timestamp] = '1559902637'
+# Get signature from the response received in event.
+signature_params[:signature] = '2c56c143550c603a6ff47054803f03ee4755c9c707986ae27f7ca1dd1c92a824'
+response = webhooks_service.verify_signature(signature_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const webhooksService = ostObj.services.webhooks;
+
+webhookEventData = JSON.stringify({"id":"54e3cd1c-afd7-4dcf-9c78-137c56a53582","topic":"transactions/success","created_at":1560838772,"webhook_id":"0823a4ea-5d87-44cf-8ca8-1e5a31bf8e46","version":"v2","data":{"result_type":"transaction","transaction":{"id":"ddebe817-b94f-4b51-9227-f543fae4715a","transaction_hash":"0x7ee737db22b58dc4da3f4ea4830ca709b388d84f31e77106cb79ee09fc6448f9","from":"0x69a581096dbddf6d1e0fff7ebc1254bb7a2647c6","to":"0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47","nonce":3,"value":"0","gas_price":"1000000000","gas_used":120558,"transaction_fee":"120558000000000","block_confirmation":24,"status":"SUCCESS","updated_timestamp":1560838699,"block_timestamp":1560838698,"block_number":1554246,"rule_name":"Pricer","meta_property":{},"transfers":[{"from":"0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47","from_user_id":"acfdea7d-278e-4ffc-aacb-4a21398a280c","to":"0x0a754aaab96d634337aac6556312de396a0ca46a","to_user_id":"7bc8e0bd-6761-4604-8f8e-e33f86f81309","amount":"112325386","kind":"transfer"}]}}});
+
+// Get webhoook version from webhook events data.
+version = "v2";
+
+// Get ost-timestamp from the response received in event.
+requestTimestamp = '1559902637';
+
+// Get signature from the response received in event.
+signature = '2c56c143550c603a6ff47054803f03ee4755c9c707986ae27f7ca1dd1c92a824';
+
+stringifiedData = webhookEventData;
+webhookSecret = 'mySecret';
+let resp = webhooksService.verifySignature(version, stringifiedData,requestTimestamp, signature, webhookSecret);
+console.log(resp);
+
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+    com.ost.services.Webhooks webhooksService = services.webhooks;
+
+    String webhookEventData = '{"id":"54e3cd1c-afd7-4dcf-9c78-137c56a53582","topic":"transactions/success","created_at":1560838772,"webhook_id":"0823a4ea-5d87-44cf-8ca8-1e5a31bf8e46","version":"v2","data":{"result_type":"transaction","transaction":{"id":"ddebe817-b94f-4b51-9227-f543fae4715a","transaction_hash":"0x7ee737db22b58dc4da3f4ea4830ca709b388d84f31e77106cb79ee09fc6448f9","from":"0x69a581096dbddf6d1e0fff7ebc1254bb7a2647c6","to":"0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47","nonce":3,"value":"0","gas_price":"1000000000","gas_used":120558,"transaction_fee":"120558000000000","block_confirmation":24,"status":"SUCCESS","updated_timestamp":1560838699,"block_timestamp":1560838698,"block_number":1554246,"rule_name":"Pricer","meta_property":{},"transfers":[{"from":"0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47","from_user_id":"acfdea7d-278e-4ffc-aacb-4a21398a280c","to":"0x0a754aaab96d634337aac6556312de396a0ca46a","to_user_id":"7bc8e0bd-6761-4604-8f8e-e33f86f81309","amount":"112325386","kind":"transfer"}]}}}' // webhook response should be here
+
+    // Get webhoook version from webhook events data.
+    String version = "v2";
+
+    // Get ost-timestamp from the response received in event.
+    String requestTimestamp = "1559902637";
+
+    // Get signature from the response received in event.
+    String signature = "e9206f9feecccd8f9653a4bdb56ea74531e6528bae8f6de1797aa77dc5235923";
+
+    String webhookSecret = "09121ae7614856777fa36d63aca828e0ef14be77fb48fa149e0c0b50fec847a7";
+    String stringifiedData = webhookEventData;
+    Boolean response = webhooksService.verifySignature( version, stringifiedData, requestTimestamp, signature, webhookSecret );
+    System.out.println("response: " + response );
+
+    }
+}
+```
+
+Webhook event data is validated by creating a digital signature of webhook event data. Each webhook event data request includes a `header` with name `ost-signature` which is generated using webhook secret. You can find your webhook secret in the OST Platform dashboard inside developers page.
+
+**Sample code is available on right hand side**
+
+Steps to validate the webhook event data:
+
+1. Extract these 3 headers values from webhook event data request `ost-timestamp`, `ost-signature`, `ost-version`.
+2. Pass these 3 values along with `webhook event data` and `webhook secret`. You can find your webhook secret in the OST Platform dashboard inside developers page.
+
+
+
+## Create a Webhook
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$webhooksService = $ostObj->services->webhooks;
+
+$createParams = array();
+$createParams['topics'] =  array("transactions/initiate", "transactions/success");
+$createParams['url'] =  "https://testingWebhooks.com";
+// $createParams['status'] =  "inactive";
+$response = $webhooksService->create($createParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+webhooks_service = ost_sdk.services.webhooks
+
+create_params = {}
+create_params[:topics] = ['transactions/initiate', 'transactions/success']
+create_params[:url] =  'https://testingWebhooks.com'
+# create_params[:status] =  'inactive'
+response = webhooks_service.create(create_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const webhooksService = ostObj.services.webhooks;
+
+topicParams = ['transactions/initiate','transactions/success'];
+webhooksService.create({
+    topics: topicParams , 
+    url:"https://www.testingWebhooks.com", 
+    status:"active"})
+  .then(function(res) { 
+    console.log(JSON.stringify(res)); 
+    })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+    }); 
+
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+    com.ost.services.Webhooks webhooksService = services.webhooks;
+
+    HashMap<String, Object> params = new HashMap<String, Object>();
+    ArrayList<String> arrayListofTopics = new ArrayList<String>();
+    arrayListofTopics.add("devices/authorization_initiate");
+    params.put("url", "https://www.yourdomain12345.com");
+    params.put("status", "active");
+    params.put("topics", arrayListofTopics);
+    JsonObject response = webhooksService.create( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
+#### <span> POST </span> &nbsp; &nbsp; /webhooks
+
+
+
+
+<u>**POST Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **[topics]** <br> **Required**   | A topic denotes a unique event in OST Platform. A list of topics is expected as an input. <br> Example: `transactions/success`, `users/activation_success`, `sessions/authorization_initiate`. <br> Take a look at [list of available topics](/platform/docs/api/#webhook-topics) |
+| **url** <br> **Required**   | URL where you want to recieve the event notifications.  |
+| **status** <br> **Optional**   | Status of a webhook. It can take one of the two values `active` and `inactive`. The default value is `active`. |
+
+<u>**Success Response**</u><br>
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `webhook`.<br><br>
+
+The value of `data.result_type` property will be `webhook` and webhook object will be available under `data.webhook` property. The example response is given on the right hand side. 
+
+> Create Webhook - Example Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "webhook",
+    "webhook": {
+        "id": "d3b61179-4f20-43db-92f8-a79342ac82a1",
+        "url": "https://webhook.site/eeda5dad-d06f-443c-b4e3-9d74c22b9b73",
+        "format": "json",
+        "status": "active",
+        "updated_timestamp": 1560507747,
+        "topics": [
+          "transactions/initiate",
+          "transactions/success",
+          "transactions/failure"
+        ]
+      }
+    }
+}
+```
+
+## Get a Webhook
+
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$webhooksService = $ostObj->services->webhooks;
+
+$getParams = array();
+$getParams['webhook_id'] = "04ebb6be-8673-4999-8878-95ad047ddd73";
+$response = $webhooksService->get($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+webhooks_service = ost_sdk.services.webhooks
+
+get_params = {}
+get_params[:webhook_id] = 'b036aff5-75a3-466d-a20c-a956b198fd14'
+response = webhooks_service.get(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const webhooksService = ostObj.services.webhooks;
+
+topicParams = ['transactions/initiate','transactions/success'];
+
+webhooksService.get({
+  webhook_id:'842276e3-f520-4a70-94dc-ad409b70c481'
+  })
+  .then(function(res) { 
+    console.log(JSON.stringify(res)); 
+    })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+    }); 
+
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+    com.ost.services.Webhooks webhooksService = services.webhooks;
+
+    HashMap<String, Object> params = new HashMap<String, Object>();
+    params.put("webhook_id", "4107e308-0146-4c6f-b2f3-617e2c0d2354");
+    JsonObject response = webhooksService.get( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
+#### <span> Get </span> &nbsp; &nbsp; /webhooks/{webhook-id}
+
+
+
+
+<u>**URL Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for a webhook |
+
+<u>**Success Response**</u><br>
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `webhook`.<br><br>
+
+The value of `data.result_type` property will be `webhook` and webhook object will be available under `data.webhook` property. The example response is given on the right hand side. 
+
+> Get Webhook - Example Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "webhook",
+    "webhook": {
+        "id": "d3b61179-4f20-43db-92f8-a79342ac82a1",
+        "url": "https://webhook.site/eeda5dad-d06f-443c-b4e3-9d74c22b9b73",
+        "format": "json",
+        "status": "active",
+        "updated_timestamp": 1560507747,
+        "topics": [
+          "transactions/initiate",
+          "transactions/success",
+          "transactions/failure"
+        ]
+      }
+    }
+}
+```
+
+
+## List all Webhooks
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$webhooksService = $ostObj->services->webhooks;
+
+$getParams = array();
+// $getParams['limit'] = 1;
+// $getParams['pagination_identifier'] = "eyJwYWdlIjoyLCJsaW1pdCI6MX0=";
+$response = $webhooksService->getList($getParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+webhooks_service = ost_sdk.services.webhooks
+
+get_params = {}
+# get_params[:limit] = 1
+# get_params[:pagination_identifier] = 'eyJwYWdlIjoyLCJsaW1pdCI6MX0='
+response = webhooks_service.get_list(get_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const webhooksService = ostObj.services.webhooks;
+
+const limit=1;
+webhooksService.getList({
+  limit:1
+  })
+  .then(function(res) { 
+    console.log(JSON.stringify(res)); 
+    })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+    });
+
+
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+    com.ost.services.Webhooks webhooksService = services.webhooks;
+
+    HashMap<String, Object> params = new HashMap<String, Object>();
+    //params.put("limit", 10);
+    //params.put("pagination_identifier", "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7InVpZCI6eyJTIjoiZDE5NGFhNzUtYWNkNS00ZjQwLWIzZmItZTczYTdjZjdjMGQ5In0sIndhIjp7IlMiOiIweDU4YjQxMDY0NzQ4OWI4ODYzNTliNThmZTIyMjYwZWIxOTYwN2IwZjYifX19");
+    JsonObject response = webhooksService.getList( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
+#### <span> Get </span> &nbsp; &nbsp; /webhooks/
+
+
+
+<u>**Query Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **limit** <br> **Optional**   |  Limit on the number of webhooks to be returned. Max limit is 25.  **Default value of limit is 10**. |
+
+
+<u>**Success Response**</u><br>
+
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `webhook` and `meta`.<br><br>
+
+The value of `data.result_type` property will be `webhook` and list of webhook will be available under `data.webhook` property. The pagination data will be available under `data.meta` property. The example response is given on the right hand side. 
+
+> List Webhook - Example Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "webhook",
+    "webhook": [
+      {
+        "id": "d3b61179-4f20-43db-92f8-a79342ac82a1",
+        "url": "https://webhook.site/eeda5dad-d06f-443c-b4e3-9d74c22b9b73",
+        "format": "json",
+        "status": "active",
+        "updated_timestamp": 1560507747,
+        "topics": [
+          "transactions/initiate",
+          "transactions/success",
+          "transactions/failure"
+        ]
+      },
+      {
+        "id": "79dda487-448f-4883-8052-aac81a8d38b2",
+        "url": "https://webhook.site/5745c1a8-ad3b-4052-b055-ca2f0f35cd35",
+        "format": "json",
+        "status": "inactive",
+        "updated_timestamp": 1560507747,
+        "topics": [
+          "users/activation_initiate",
+          "users/activation_success",
+          "users/activation_failure"
+        ]
+      },
+      {
+        "id": "331ef063-ee8a-428f-b26b-a56f8afa37ba",
+        "url": "https://webhook.site/95b2257c-6b51-4c09-ba91-f7e9125e5b40",
+        "format": "json",
+        "status": "active",
+        "updated_timestamp": 1560507747,
+        "topics": [
+          "devices/recovery_initiate",
+          "devices/authorization_initiate",
+          "devices/authorization_success",
+          "devices/authorization_failure",
+          "devices/revocation_initiate",
+          "devices/revocation_success",
+          "devices/revocation_failure",
+          "devices/recovery_failure",
+          "devices/recovery_abort_success",
+          "devices/recovery_abort_failure",
+          "devices/recovery_success"
+        ]
+      },
+      {
+        "id": "270006af-5099-4364-a740-d33db2caebd8",
+        "url": "https://webhook.site/05e193ad-17eb-4660-9e0f-b75f1333c7d1",
+        "format": "json",
+        "status": "active",
+        "updated_timestamp": 1560507747,
+        "topics": [
+          "sessions/authorization_initiate",
+          "sessions/revocation_initiate",
+          "sessions/revocation_success",
+          "sessions/authorization_success",
+          "sessions/logoutall_initiate",
+          "sessions/authorization_failure",
+          "sessions/logoutall_success",
+          "sessions/logoutall_failure",
+          "sessions/revocation_failure"
+        ]
+      }
+    ],
+    "meta": {
+      "next_page_payload": {
+      }
+    }
+  }
+}
+```
+
+
+## Update a Webhook
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$webhooksService = $ostObj->services->webhooks;
+
+$updateParams = array();
+$updateParams['webhook_id'] = "04ebb6be-8673-4999-8878-95ad047ddd73";
+$updateParams['topics'] =  array("transactions/initiate", "transactions/success", "transactions/failure");
+$updateParams['status'] =  "inactive";
+$response = $webhooksService->update($updateParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+webhooks_service = ost_sdk.services.webhooks
+
+update_params = {}
+update_params[:webhook_id] = 'b036aff5-75a3-466d-a20c-a956b198fd14'
+update_params[:topics] =  ['transactions/initiate', 'transactions/success', 'transactions/failure']
+update_params[:status] =  'inactive'
+response = webhooks_service.update(update_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const webhooksService = ostObj.services.webhooks;
+
+const topicParams = ['transactions/initiate','transactions/success','transactions/failure'];
+
+webhooksService.update({
+  webhook_id: 'a743ab9a-2555-409f-aae4-f30c84071c56', 
+  topics:topicParams, 
+  status:"active"
+  })
+  .then(function(res) { 
+    console.log(JSON.stringify(res)); 
+    })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+    }); 
+
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+    com.ost.services.Webhooks webhooksService = services.webhooks;
+
+    HashMap<String, Object> params = new HashMap<String, Object>();
+    ArrayList<String> arrayListofTopics = new ArrayList<String>();
+    arrayListofTopics.add("devices/authorization_initiate");
+    params.put("webhook_id", "4107e308-0146-4c6f-b2f3-617e2c0d2354");
+    params.put("status", "active");
+    params.put("topics", arrayListofTopics);
+    JsonObject response = webhooksService.update( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
+#### <span> POST </span> &nbsp; &nbsp; /webhooks/{webhook-id}
+
+
+<u>**URL Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **webhook_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for a webhook   |
+
+<u>**Query Parameters**</u>
+
+**At least one query parameter is required**
+
+| Parameter  | Description  |
+|---|---|
+| **[topics]** <br> **Required**   | A topic denotes a unique event in OST Platform. A list of topics is expected as an input. **This new list of topics will replace the old list of topics**. <br> Example: `transactions/success`, `users/activation_success`, `sessions/authorization_initiate`. <br> Take a look at [list of available topics](/platform/docs/api/#webhook-topics) |
+| **status** <br> **Optional**   | Status of a webhook. It can take one of the two values `active` and `inactive`. The default value is `active`. |
+
+
+<u>**Success Response**</u><br>
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `webhook`.<br><br>
+
+The value of `data.result_type` property will be `webhook` and webhook object will be available under `data.webhook` property. The example response is given on the right hand side. 
+
+> Update Webhook - Example Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "webhook",
+    "webhook": {
+        "id": "d3b61179-4f20-43db-92f8-a79342ac82a1",
+        "url": "https://webhook.site/eeda5dad-d06f-443c-b4e3-9d74c22b9b73",
+        "format": "json",
+        "status": "active",
+        "updated_timestamp": 1560507747,
+        "topics": [
+          "transactions/initiate",
+          "transactions/success",
+          "transactions/failure"
+        ]
+      }
+    }
+}
+```
+
+
+## Delete a Webhook
+
+
+
+```php
+<?php
+require 'vendor/autoload.php';
+
+$params = array();
+$params['apiKey']='65e20fcfce72f4c34546338a70518478';
+$params['apiSecret']='f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';
+$params['apiBaseUrl']='https://api.ost.com/testnet/v2/';
+
+// The config field is optional
+$configParams = array();
+// Request timeout in seconds. Default is 10 seconds.
+$configParams["timeout"] = 15;
+$params["config"] = $configParams;
+
+$ostObj = new OSTSdk($params);
+
+$webhooksService = $ostObj->services->webhooks;
+
+$deleteParams = array();
+$deleteParams['webhook_id'] = "415510fa-d57c-4c66-8c90-fd29ab7468b9";
+$response = $webhooksService->delete($deleteParams)->wait();
+echo json_encode($response, JSON_PRETTY_PRINT);
+
+?>
+
+```
+
+```ruby
+require('ost-sdk-ruby')
+
+ost_sdk = OSTSdk::Saas::Services.new({
+                                      "api_key": '65e20fcfce72f4c34546338a70518478', 
+                                      "api_secret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                                      "api_base_url": 'https://api.ost.com/testnet/v2/', 
+                                      "config": {"timeout": 15}
+                                    })
+
+webhooks_service = ost_sdk.services.webhooks
+
+delete_params = {}
+delete_params[:webhook_id] = 'b036aff5-75a3-466d-a20c-a956b198fd14'
+response = webhooks_service.delete(delete_params)
+```
+
+```javascript
+const OSTSDK = require('@ostdotcom/ost-sdk-js');
+
+const ostObj = new OSTSDK({
+                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
+                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
+                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "config": {"timeout": 15}
+                        });
+
+const webhooksService = ostObj.services.webhooks;
+
+topicParams = ['transactions/initiate','transactions/success'];
+
+webhooksService.deleteWebhook({
+  webhook_id:'a743ab9a-2555-409f-aae4-f30c84071c56'
+  })
+  .then(function(res) { 
+    console.log(JSON.stringify(res)); 
+    })
+  .catch(function(err) { 
+    console.log(JSON.stringify(err)); 
+    }); 
+
+```
+
+```java
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.ost.OSTSDK;
+
+public class Test {
+
+  public static void main(String args[]) {
+
+    HashMap<String,Object> sdkConfig = new HashMap<String,Object>();
+    sdkConfig.put("apiEndpoint","https://api.ost.com/testnet/v2/");
+    sdkConfig.put("apiKey","65e20fcfce72f4c34546338a70518478");
+    sdkConfig.put("apiSecret","f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0");
+
+    HashMap <String,Object> nestedparam = new HashMap<String,Object>();
+    nestedparam.put("timeout", (long) 60);
+    sdkConfig.put("config", nestedparam);
+
+    OSTSDK ostObj = new OSTSDK(sdkConfig);
+    com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;
+
+    com.ost.services.Webhooks webhooksService = services.webhooks;
+
+    HashMap<String, Object> params = new HashMap<String, Object>();
+    params.put("webhook_id", "4107e308-0146-4c6f-b2f3-617e2c0d2354");
+    JsonObject response = webhooksService.deleteWebhook( params );
+    System.out.println("response: " + response.toString() );
+
+    }
+}
+```
+
+#### <span> DELETE </span> &nbsp; &nbsp; /webhooks/{webhook-id}
+
+
+
+
+<u>**URL Parameters**</u>
+
+| Parameter  | Description  |
+|---|---|
+| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for a webhook |
+
+<u>**Success Response**</u><br>
+This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `webhook`.<br><br>
+
+The value of `data.result_type` property will be `webhook` and webhook object will be available under `data.webhook` property. The example response is given on the right hand side. 
+
+> Delete Webhook - Example Response
+
+```json
+{
+  "success": true,
+  "data": {
+    "result_type": "webhook",
+    "webhook": {
+        "id": "d3b61179-4f20-43db-92f8-a79342ac82a1",
+        "url": "https://webhook.site/eeda5dad-d06f-443c-b4e3-9d74c22b9b73",
+        "format": "json",
+        "status": "active",
+        "updated_timestamp": 1560507747,
+        "topics": [
+          "transactions/initiate",
+          "transactions/success",
+          "transactions/failure"
+        ]
+      }
+    }
+}
 ```
