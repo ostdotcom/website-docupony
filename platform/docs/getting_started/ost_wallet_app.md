@@ -4,7 +4,7 @@ title: OST Wallet App
 sidebar_label: OST Wallet App
 ---
 
-The OST Wallet App is a non-custodial wallet for Brand Tokens minted on OST Platform. The current version of the app (beta release) allows users to connect their Brand Token economy, invite users, and send and receive tokens. Users can also check out wallet setting & other features enabled through OST Wallet SDK.
+The OST Wallet App is a non-custodial wallet for Brand Tokens minted on OST Platform. The current version of the app (beta release) allows users to connect their Brand Token economy, invite users, and send and receive tokens. Users can also check out wallet settings & other features enabled through OST Wallet SDK.
 
 ## iOS 
 
