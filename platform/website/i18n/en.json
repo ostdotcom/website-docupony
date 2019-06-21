@@ -52,6 +52,18 @@
         "title": "Wallet UX Guidelines",
         "sidebar_label": "Wallet UX"
       },
+      "release-notes/1_May_2019": {
+        "title": "1 May 2019 Release",
+        "sidebar_label": "1 May 2019"
+      },
+      "release-notes/15_April_2019": {
+        "title": "15 April 2019 Release",
+        "sidebar_label": "15 April 2019"
+      },
+      "release-notes/18_June_2019": {
+        "title": "18 June 2019 Release",
+        "sidebar_label": "18 June 2019"
+      },
       "release-notes/2.0.0": {
         "title": "2.0.0 Release (March 2019)",
         "sidebar_label": "2.0.0 Release"
@@ -59,6 +71,14 @@
       "release-notes/2.1.0": {
         "title": "2.1.0 Release (June 2019)",
         "sidebar_label": "2.1.0 Release"
+      },
+      "release-notes/27_March_2019": {
+        "title": "27 March 2019 Release",
+        "sidebar_label": "27 March 2019"
+      },
+      "release-notes/3_June_2019": {
+        "title": "3 June 2019 Release",
+        "sidebar_label": "3 June 2019"
       },
       "wallet/introduction": {
         "title": "Wallet Introduction",

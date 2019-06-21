@@ -21,10 +21,11 @@
     ],
 
     "Release Notes": [
-      "release-notes/2.1.0",
-      "release-notes/2.0.0"
-     
-
+      "release-notes/18_June_2019",
+      "release-notes/3_June_2019",
+      "release-notes/1_May_2019",
+      "release-notes/15_April_2019",
+      "release-notes/27_March_2019"
     ]
   }
 }
