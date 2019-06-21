@@ -14,7 +14,7 @@ To use the iOS OST Wallet application follow these steps:
 2. Download the OST Wallet App in TestFlight using the link below
     * [Download OST Wallet App - iOS](;)
 
-3. If you haven't already set-up your Brand Token, then follow the [Create Token guide](/platform/docs/guides/create_token/).
+3. If you haven't already set-up your Brand Token, then follow the [Create Token guide](/platform/docs/guides/create_token/)
 
 4. Select `Wallet` in OST Platform 
     * [https://platform.ost.com/testnet/wallet](https://platform.ost.com/testnet/wallet)
@@ -30,7 +30,7 @@ To use the Android OST Wallet application follow these steps:
 1. Download the application using the below link:
     * [Download OST Wallet App - Android](;)
     
-2. If you haven't already set-up your Brand Token, then follow the [Create Token guide](/platform/docs/guides/create_token/).
+2. If you haven't already set-up your Brand Token, then follow the [Create Token guide](/platform/docs/guides/create_token/)
 
 3. Select `Wallet` in OST Platform
     * [https://platform.ost.com/testnet/wallet](https://platform.ost.com/testnet/wallet)
