@@ -7,6 +7,10 @@ sidebar_label: OST Wallet App
 # Introduction
 The OST Wallet App is a non-custodial wallet for Brand Tokens minted on OST Platform. The current version of the app lets users connect their Brand Token economy to the app, invite users and send and receive tokens. Users can also explore all of the wallet features enabled through the OST Wallet SDK.
 
+```
+Note: iPhone users need to first download the TestFlight app from Apple to download the OST Wallet App
+```
+
 ## Getting Started
 To use the OST Wallet App follow these steps:
 
@@ -21,13 +25,12 @@ To use the OST Wallet App follow these steps:
 4. Select `Connect` to add your Brand Token economy to the OST Wallet App
     * You will receive an email with instructions to download the app and join your Brand Token Economy
 
-5. Next, invite your colleagues so you can start to send and receive tokens to each other!
+5. Next, invite your colleagues and start sending and receiving tokens to each other!
 
 6. Explore other areas of the app, in particular the `Settings` tab
 
-**Notes:** 
-* iPhone users need to first download the TestFlight app from Apple to download the OST Wallet App
-* If you have any feedback, please raise a ticket at [help.ost.com](https://help.ost.com) or contact us at support@ost.com
-
 ## Learn More
 To learn more about the OST Wallet App, please refer to our [FAQ](https://help.ost.com/support/solutions/folders/35000214781).
+
+## Let Us Know What You Think 
+We would love to hear your feedback. If you have any comments or suggestions, please contact us at [help.ost.com](https://help.ost.com) or send an email to support@ost.com.
