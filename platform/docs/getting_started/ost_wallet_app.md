@@ -31,7 +31,4 @@ To use the OST Wallet App follow these steps:
 6. Explore other areas of the app, in particular the `Settings` tab
 
 ## Learn More
-To learn more about the OST Wallet App, please refer to our [FAQ](https://help.ost.com/support/solutions/folders/35000214781).
-
-## Let Us Know What You Think 
-We would love to hear your feedback. If you have any comments or suggestions, please contact us at [help.ost.com](https://help.ost.com) or send an email to support@ost.com.
+To learn more about the OST Wallet App, please refer to our [FAQ](https://help.ost.com/support/solutions/folders/35000214781). If you have any comments or suggestions, please contact us at [help.ost.com](https://help.ost.com) or send an email to support@ost.com.
