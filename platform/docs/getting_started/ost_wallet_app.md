@@ -7,11 +7,12 @@ sidebar_label: OST Wallet App
 # Introduction
 The OST Wallet App is a non-custodial wallet for Brand Tokens minted on OST Platform. The current version of the app lets users connect their Brand Token economy to the app, invite users and send and receive tokens. Users can also explore all of the wallet features enabled through the OST Wallet SDK.
 
+## Getting Started
+
 ```
 Note: iPhone users need to first download the TestFlight app from Apple to download the OST Wallet App
 ```
 
-## Getting Started
 To use the OST Wallet App follow these steps:
 
 1. Log in to [OST Platfrom](https://platform.ost.com/login)
