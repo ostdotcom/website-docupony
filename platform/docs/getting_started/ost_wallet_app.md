@@ -22,13 +22,13 @@ The OST Wallet simulates integrations for your Brand Token in Sandbox mode. To u
     * Mint some Brand Tokens
 
 3. Once you mint some Brand Tokens in sandbox mode, the `Wallet` option in the left-navigation is activated.
-![ConnectWalletImage](/platform/docs/assets/Wallet/SetupWallet.png)
+![ConnectWalletImage](/platform/docs/assets/Wallet%20/SetupWallet.png)
 
 4. Select `Connect` to add your Brand Token economy to the OST Wallet App
     * You will receive an email with instructions to download the app and join your Brand Token Economy
 
 5. Next, invite your colleagues and start sending and receiving tokens to each other!
-![InviteUsers](/platform/docs/assets/Wallet/InviteUsers.png)
+![InviteUsers](/platform/docs/assets/Wallet%20/InviteUsers.png)
 
 6. Explore other areas of the app, in particular the `Settings` tab
 
