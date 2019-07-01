@@ -3098,9 +3098,9 @@ $transactionService = $ostObj->services->transactions;
 $transferToAddresses = array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496");
 
 // Transfer amount in atto USD.
-// In this example, we want to transfer 10 USD. 
-// Converting USD to atto USD: Multiply by 10^18
-// atto USD = 10 * 10^18 = 10^19
+// In this example, we want to transfer 10 BT. 
+// Converting BT to atto BT: Multiply by 10^18
+// atto BT = 10 * 10^18 = 10^19
 $transferAmounts = array("10000000000000000000");
 
 $executeParams = array(
