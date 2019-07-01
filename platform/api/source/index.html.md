@@ -2688,6 +2688,7 @@ The value of `data.result_type` property will be `rules` and rules array will be
 # Price Point
 Price point API is used to get the conversion rate between Base Token ERC 20 and pay currency (i.e. USD, EUR, GBP). They can use [token information](/platform/docs/api/#get-token) to get the conversion rate between thier brand token and Base Token. So essentially client company can calculate conversion rate between brand token and pay currency (i.e. USD, EUR, GBP). Now they can use this information to perform [directTransfer](/platform/docs/api/#execute-a-transaction)  transactions.
 
+**If you want to perform transactions in a payment currency other than USD, EUR or GBP, please let us know at <support@ost.com>**
 
 ## Price Point Object
 
