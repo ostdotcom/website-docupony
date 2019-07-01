@@ -9,9 +9,9 @@ The OST Wallet App is a non-custodial wallet for Brand Tokens minted on OST Plat
 
 ## Getting Started
 
-```
-Note: iPhone users need to first download the TestFlight app from Apple to download the OST Wallet App
-```
+
+> Note: iPhone users need to first download the TestFlight app from Apple to download the OST Wallet App
+
 
 To use the OST Wallet App follow these steps:
 
