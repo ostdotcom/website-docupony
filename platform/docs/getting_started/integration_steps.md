@@ -9,7 +9,7 @@ sidebar_label: Integration Steps
 
 2. Follow the quickstart guide to get started with Server Side SDK. Server Side SDK is available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/) and [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/). If Server Side SDK is not available in your choice of programming language then you can directly use [OST Platform API](/platform/docs/api).
 
-3. Follow [Android Wallet SDK](/platform/docs/wallet_sdk_setup/android/) and/or [iOS Wallet SDK](;) setup guide to integrate it in your mobile application. 
+3. Follow [Android Wallet SDK](/platform/docs/wallet_sdk_setup/android/) and/or [iOS Wallet SDK](/platform/docs/sdk/wallet_sdk_setup/iOS/) setup guide to integrate it in your mobile application. 
 
 4. You can optionaly follow [React Native Wallet SDK](/platform/docs/sdk/wallet_sdk_setup/react-native/). 
 
