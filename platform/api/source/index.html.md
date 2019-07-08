@@ -3271,15 +3271,15 @@ const transactionsService = ostObj.services.transactions;
 // Direct Brand Token Transfer 
 let transferTo = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4",
 transferAmount = '1',
-let raw_calldata = JSON.stringify({
+raw_calldata = JSON.stringify({
             method: "directTransfers",  
             parameters: [[transferTo],[transferAmount]]
         });
-   meta_property = {
-      "name": "transaction_name" , //like, download
-      "type": "user_to_user", // user_to_user, company_to_user, user_to_company
-      "details" : "" // memo field to add additional info about the transaction
-    }     
+meta_property = {
+  "name": "transaction_name" , //like, download
+  "type": "user_to_user", // user_to_user, company_to_user, user_to_company
+  "details" : "Details about transaction" // memo field to add additional info about the transaction
+};   
         
 
 let executeParams = {
@@ -3307,13 +3307,12 @@ ostToUsd = "23757000000000000" // get price-point response
 raw_calldata = JSON.stringify({
             method: "pay",  
             parameters: [tokenHolderSender, [transferTo],[transferAmount], payCurrencyCode, ostToUsd]
-        });
-   meta_property = {
-      "name": "transaction_name" , //like, download
-      "type": "user_to_user", // user_to_user, company_to_user, user_to_company
-      "details" : "" // memo field to add additional info about the transaction
-    }     
-        
+        }),
+meta_property = {
+  "name": "transaction_name" , //like, download
+  "type": "user_to_user", // user_to_user, company_to_user, user_to_company
+  "details" : "Details about transaction" // memo field to add additional info about the transaction
+};
 
 let executeParams = {
     user_id: "ee89965c-2fdb-41b5-8b6f-94f441463c7b",
