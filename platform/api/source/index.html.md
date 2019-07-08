@@ -3274,7 +3274,7 @@ transferAmount = '1',
 raw_calldata = JSON.stringify({
             method: "directTransfers",  
             parameters: [[transferTo],[transferAmount]]
-        });
+        }),
 meta_property = {
   "name": "transaction_name" , //like, download
   "type": "user_to_user", // user_to_user, company_to_user, user_to_company
