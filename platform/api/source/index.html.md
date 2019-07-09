@@ -3269,65 +3269,114 @@ const transactionsService = ostObj.services.transactions;
 
 
 // Direct Brand Token Transfer 
-let transferTo = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4",
-transferAmount = '1',
-raw_calldata = JSON.stringify({
-            method: "directTransfers",  
-            parameters: [[transferTo],[transferAmount]]
-        }),
-meta_property = {
-  "name": "transaction_name" , //like, download
-  "type": "user_to_user", // user_to_user, company_to_user, user_to_company
-  "details" : "Details about transaction" // memo field to add additional info about the transaction
-};   
-        
+
+// token holder address of receiver 
+let transferTo = "0xced071365a63ba20ca8b50391c62c23aa1831422";
+
+// Amount of Brand Token to be transferred
+let transferAmount = 1;
+
+// To convert this ammount in atto, multiply the transferAmount to 10^18
+let transferAmountInAtto = 10^18 * transferAmount;
+
+// Transfer amount should be in string;
+transferAmountInAtto = '1000000000000000000';
+
+
+let raw_calldata = JSON.stringify({
+    method: "directTransfers",   // Rule Name
+    parameters: [[transferTo],[transferAmountInAtto]]
+});
+
+
+// All the fields of meta_property are compulsory but meta_property as a parameter is optional.
+let meta_property = {
+    "name": "Name for this transaction" , // `like`, `download`
+    "type": "company_to_user", // `company_to_user`
+    "details" : "Details about the transaction" // memo field to add additional info about the transaction
+};
 
 let executeParams = {
-    user_id: "ee89965c-2fdb-41b5-8b6f-94f441463c7b",
-    to: "0xe37906219ad67cc1301b970539c9860f9ce8d991",
+    
+    // user_id of the company [user_id of sender, in this case company is sending money to a user]
+    // You can find this information from tokens API.
+    user_id: '0da818c0-2b0c-4d65-943b-75a58b6d0b89',
+    
+    //  Address of DirectTransfer rule. Use list rules API to get the address of rules.
+    to: '0x3d456c6d0f114140d062e6845347366b3a3b32cf',
+    
+    // Signed transaction data 
     raw_calldata: raw_calldata,
-   //meta_property: meta_property
+    
+    // meta_property is optional
+    meta_property: meta_property 
 };
 
 transactionsService.execute(executeParams)
 .then(function(res) { 
-  console.log(JSON.stringify(res)); 
+    console.log(JSON.stringify(res)); 
 }).catch(function(err) { 
-  console.log(JSON.stringify(err)); 
+    console.log(JSON.stringify(err)); 
 });      
+    
 
 
 // Brand Token Transfer Based On Fiat Value. We will take an example of USD as fiat value.
+let transferTo = "0xced071365a63ba20ca8b50391c62c23aa1831422";
 
-let transferTo = "0xa31e988eebc89d0bc3e4a9a5463545ea534593e4",
-transferAmount = '1',
-tokenHolderSender = "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee",
-payCurrencyCode = "USD",
-ostToUsd = "23757000000000000" // get price-point response
-raw_calldata = JSON.stringify({
-            method: "pay",  
-            parameters: [tokenHolderSender, [transferTo],[transferAmount], payCurrencyCode, ostToUsd]
-        }),
-meta_property = {
-  "name": "transaction_name" , //like, download
-  "type": "user_to_user", // user_to_user, company_to_user, user_to_company
-  "details" : "Details about transaction" // memo field to add additional info about the transaction
+let transferAmount = 1; // 1 USD
+
+let transferAmountInAtto = 10^18 * transferAmount;
+
+// Transfer amount should be in string;
+transferAmountInAtto = '1000000000000000000';
+
+let tokenHolderSender = "0xfef1ef76f6dbc69218368fb27b91bd26e983a828";
+let payCurrencyCode = "USD";
+
+
+// Get this value from price point API
+let ostToUsd = 0.020606673;
+
+ostToUsd = 10^18 * 0.020606673;
+
+// This value should be a string
+ostToUsdInAtto = "20606673000000000";
+
+let raw_calldata = JSON.stringify({
+    method: "pay",  
+    parameters: [tokenHolderSender, [transferTo],[transferAmountInAtto], payCurrencyCode, ostToUsdInAtto]
+});
+
+let meta_property = {
+    "name": "Name for this transaction" , // `like`, `download`
+    "type": "company_to_user", // `company_to_user`
+    "details" : "Details about the transaction" // memo field to add additional info about the transaction
 };
 
 let executeParams = {
-    user_id: "ee89965c-2fdb-41b5-8b6f-94f441463c7b",
-    to: "0xe37906219ad67cc1301b970539c9860f9ce8d991",
-    raw_calldata: raw_calldata,
+    // user_id of the company [user_id of sender, in this case company is sending money to a user]
+    // You can find this information from tokens API.   
+    user_id: "0da818c0-2b0c-4d65-943b-75a58b6d0b89",
     
-   //meta_property: meta_property
+    //  Address of DirectTransfer rule. Use list rules API to get the address of rules.
+    to: "0xf992dae85ae86f8c6a96f522408bafc77280d24a",
+    
+    // Signed transaction data 
+    raw_calldata: raw_calldata,
+
+    // meta_property is optional
+    meta_property: meta_property
 };
+
 
 transactionsService.execute(executeParams)
 .then(function(res) { 
-  console.log(JSON.stringify(res)); 
+    console.log(JSON.stringify(res)); 
 }).catch(function(err) { 
-  console.log(JSON.stringify(err)); 
+    console.log(JSON.stringify(err)); 
 });
+
 ```
 
 
