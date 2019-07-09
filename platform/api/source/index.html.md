@@ -3496,7 +3496,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | User id of sender. Server SDK allows you to do company to user transactions so you need to pass company's user_id. Use [tokens](/platform/docs/api/#get-token) api to get company's id.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | User id of sender. Server SDK allows you to do company to user transactions so you need to pass company's `uuid`. Use [tokens](/platform/docs/api/#get-token) api to get company's `uuid`.  |
 
 
 <u>**POST Parameters**</u>
@@ -3599,7 +3599,7 @@ There can be a use case where you want to transfer Brand Tokens worth $ 10. For 
 |---|---|
 |**fromTokenHolderAddress** <br> **Address**   | Transaction executor's **TokenHolder** address |
 |**transferToAddresses** <br> **Array of addresses** | Array of receiver's  **TokenHolder**  address. |
-|**transferAmounts** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transferAmounts** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
+|**transferAmounts** <br> **Array of amounts in atto** | Array of **amounts in pay currency. If the pay currency is USD you need to pass [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transferAmounts** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 |**payCurrencyCode** <br> **String** | Pay Currency code. It's possible value for now will be `USD`.  |
 |**IntendedPricePoint** <br> **Integer** | In `pay` transaction, the transfer amounts are in pay currency (fiat currency like USD) which then are converted into Brand Tokens. So there is a conversion of pay currency to Brand Token during the execution of this transaction. <br>As the market is volatile, the conversion is also volatile. So, we need an acceptable range of conversion within which the transaction can be executed. If the conversion goes out of range the transaction fails. <br> To device the range, we ask developers to provide us with the OST to USD price point (`IntendedPricePoint`) at the time of singing the transaction.<br>The given price point (`IntendedPricePoint`) is compared with the price point which OST fetches at the time of execution of the transaction. If the difference falls in the default range ($ 1 for now) then the transaction will go through else it will fail. To get current price point you can use the price point API endpoint. We need to convert it into atto by multiplying it by 10^18 <br> Example: OST to USD price point = 0.027942 (Value received from price point API) <br> Converting price point into atto denomination: 0.027942 * 10^18 = 27942000000000000  |
 
