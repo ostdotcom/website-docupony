@@ -3496,7 +3496,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | User id of sender. Server SDK allows you to do company to user transactions so you need to pass company's user_id. Use [tokens](/platform/docs/api/#token) api to get company's id.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | User id of sender. Server SDK allows you to do company to user transactions so you need to pass company's user_id. Use [tokens](/platform/docs/api/#get-token) api to get company's id.  |
 
 
 <u>**POST Parameters**</u>
