@@ -33,6 +33,9 @@ var path = {
 var docusaurus_build_cmd_with_setup = ['npm install', 'npm run build'];
 var slate_build_cmd_with_setup = ['bundle install', 'bundle exec middleman build --clean'];
 
+var docusaurus_setup = ['npm install'];
+var slate_setup = ['bundle install'];
+
 var docusaurus_build_cmd = ['npm run build'];
 var slate_build_cmd = ['bundle exec middleman build --clean'];
 
@@ -63,6 +66,17 @@ gulp.task('build-kyc-sdk', run(docusaurus_build_cmd, {cwd: './kyc/sdk/website'})
 
 gulp.task('build-kyc-api', run(slate_build_cmd, {cwd: './kyc/api'}));
 
+
+
+// SETUP PLATFORM
+gulp.task('setup-kyc-sdk', run(docusaurus_setup), {cwd: './kyc/sdk/website'});
+
+gulp.task('setup-kyc-api', run(slate_setup), {cwd: './kyc/api'});
+
+gulp.task('setup-kyc-docs', run(docusaurus_setup), {cwd: './kyc/website'});
+
+
+gulp.task("setup-kyc", gulp.series('setup-kyc-docs', 'setup-kyc-api', 'setup-kyc-sdk'));
 
 
 
@@ -121,6 +135,18 @@ gulp.task('build-platform-sdk-with-setup', run(docusaurus_build_cmd_with_setup, 
 
 gulp.task('build-platform-api-with-setup', run(slate_build_cmd_with_setup, {cwd: './platform/api'}));
 
+// SETUP PLATFORM
+gulp.task('setup-platform-sdk', run(docusaurus_setup), {cwd: './platform/sdk/website'});
+
+gulp.task('setup-platform-api', run(slate_setup), {cwd: './platform/api'});
+
+gulp.task('setup-platform-docs', run(docusaurus_setup), {cwd: './platform/website'});
+
+
+gulp.task("setup-platform", gulp.series('setup-platform-docs', 'setup-platform-api', 'setup-platform-sdk'));
+
+
+
 
 gulp.task('build-platform-docs', run(docusaurus_build_cmd, {cwd: './platform/website'}));
 
@@ -167,8 +193,7 @@ gulp.task('clean-all', gulp.parallel('clean-platform', 'clean-kyc'));
 gulp.task('generate-all-docs', gulp.parallel('generate-platform-docs', 'generate-kyc-docs'));
 
 
-gulp.task('generate-all-docs-local', gulp.parallel('generate-platform-docs-local', 'generate-kyc-docs-local'))
-
+gulp.task('generate-all-docs-local', gulp.parallel('generate-platform-docs-local', 'generate-kyc-docs-local'));
 
 
 // ================================== LOCAL DEV TASKS =======================================
@@ -249,3 +274,5 @@ gulp.task('serve-dev', function() {
 })
 
 gulp.task('generate-all-docs-local-server', gulp.series('generate-all-docs-local', 'serve-dev'));
+
+gulp.task('setup', gulp.parallel('setup-platform', 'setup-kyc'));
