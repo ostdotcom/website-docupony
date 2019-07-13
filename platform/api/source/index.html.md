@@ -1,5 +1,5 @@
 ---
-title: OST Platform API Reference
+title: API References
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - php: PHP
@@ -24,12 +24,12 @@ This API library includes API calls that will be used by client company's server
 <!-- ![platform-sdk-overview](images/Platform-Integration-blur.jpg) -->
 
 
-Available Server Side SDKs:
+Available Server Side sdk:
 
-1. [PHP SDK](/platform/sdks/server_sdk_setup/php/)
-2. [Ruby SDK](/platform/sdks/server_sdk_setup/ruby/)
-3. [Java SDK](/platform/sdks/server_sdk_setup/java/)
-4. [Node.js SDK](/platform/sdks/server_sdk_setup/nodejs/)
+1. [PHP SDK](/platform/docs/sdk/server_sdk_setup/php/)
+2. [Ruby SDK](/platform/docs/sdk/server_sdk_setup/ruby/)
+3. [Java SDK](/platform/docs/sdk/server_sdk_setup/java/)
+4. [Node.js SDK](/platform/docs/sdk/server_sdk_setup/nodejs/)
 
 
 ## Access
@@ -60,7 +60,7 @@ A toggle switch will be enabled that can be used to switch back to sandbox mode.
 
 
 ## Authentication
-All the server side SDKs will handle authentication for you. You just need to provide your API key and API secret while initializing the Server side SDKs. If you are going to use one of the SDK then you can skip this section.
+All the server side sdk will handle authentication for you. You just need to provide your API key and API secret while initializing the Server side sdk. If you are going to use one of the SDK then you can skip this section.
 
 For other languages you can implement the signature generation by computing the `sha256` digest of the API secret and the query string. The resulting signature must be then included in the request.
 

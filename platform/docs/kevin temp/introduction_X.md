@@ -10,15 +10,15 @@ Brand tokens are ideal for micro-transactions and open up a whole new world of c
 
 Our documentation is designed to give an overview of OST Platform and how it all fits together. _It is a non-technical view of things._
 
-Our Server Side SDKs and mobile Wallet SDKs together enable fast and painless integration into any app, without requiring in-house blockchain expertise -- so you can focus on your business and leave the blockchain bits to us.
+Our Server Side sdk and mobile Wallet sdk together enable fast and painless integration into any app, without requiring in-house blockchain expertise -- so you can focus on your business and leave the blockchain bits to us.
 
 
 
 
-### 1. API and Server Side SDKs:  
+### 1. API and Server Side sdk:  
 
-* Server Side SDKs will allow developers to create users in your economy, perform company-to-user transactions and register wallet devices (mobile devices) on OST Platform.
-* Server Side SDK sample codes are available on [API References](/platform/docs/api) page. Server Side SDKs are available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/) and [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/)
+* Server Side sdk will allow developers to create users in your economy, perform company-to-user transactions and register wallet devices (mobile devices) on OST Platform.
+* Server Side SDK sample codes are available on [API References](/platform/docs/api) page. Server Side sdk are available in [PHP](/platform/sdkserver_sdk_setup/php/), [Ruby](/platform/sdkserver_sdk_setup/ruby/), [Java](/platform/sdkserver_sdk_setup/java/) and [Node.js](/platform/sdkserver_sdk_setup/nodejs/)
 * You can choose to use API directly if the Server Side SDK is not available for your choice of programming language.
 
 

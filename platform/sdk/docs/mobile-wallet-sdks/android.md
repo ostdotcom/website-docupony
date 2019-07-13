@@ -17,7 +17,7 @@ Android Wallet SDK consists of an `interface` and `workflows`. <br><br>
 **Workflows**: Workflows are functions that can be used to perform wallet related tasks. App developers will be call these functions to execute different tasks.
 
 ### Prerequisite
-You should complete one of the server SDK Guides ([PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/), [Java](/platform/docs/sdk/server_sdk_setup/java/))
+You should complete one of the server SDK Guides ([PHP](/platform/sdkserver_sdk_setup/php/), [Ruby](/platform/sdkserver_sdk_setup/ruby/), [Node.js](/platform/sdkserver_sdk_setup/nodejs/), [Java](/platform/sdkserver_sdk_setup/java/))
 <br>
 
 ## 2 Requirements
@@ -158,7 +158,7 @@ public class App extends Application {
 Wallet SDK provides `workflows` that can be called by any Android activity class or fragment class to perform wallet related actions.
 Communication between app and wallet SDK happens through callback functions. We need to pass these callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowCallback` interface.
 
-![walletSDKCommunication](/platform/docs/sdk/assets/wallet-sdk-communication.png)
+![walletSDKCommunication](/platform/sdkassets/wallet-sdk-communication.png)
 
 <br>
 
@@ -221,4 +221,4 @@ To provide developers with sample integration of wallet SDK, a [demo Android app
 
 1. [Create Wallet Guide](/platform/docs/guides/create_wallet/)
 2. [Execute Transaction Guide](/platform/docs/guides/execute_transaction/)
-3. Android Wallet SDK [Methods](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/),  [Interfaces](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) and [Classes](/platform/docs/sdk/references/wallet_sdk/android/latest/classes/)
+3. Android Wallet SDK [Methods](/platform/sdkreferences/wallet_sdk/android/latest/methods/),  [Interfaces](/platform/sdkreferences/wallet_sdk/android/latest/interfaces/) and [Classes](/platform/sdkreferences/wallet_sdk/android/latest/classes/)

@@ -9,9 +9,9 @@ The diagram below illustrates how OST Server Side SDK and OST Wallet SDK work to
 
 ![platform-interaction](/platform/docs/assets/Platform-Integrations.jpg)
 
-The **OST Platform** is designed to provide everything businesses with millions of users need to deploy Brand Tokens to drive engagement. It’s a complete set of developer tools that any company can integrate without any blockchain expertise. As a developer exploring the OST platform, we hope you enjoy engaging with the technology and interacting with the OST blockchain protocols, contracts, APIs, and SDKs.
+The **OST Platform** is designed to provide everything businesses with millions of users need to deploy Brand Tokens to drive engagement. It’s a complete set of developer tools that any company can integrate without any blockchain expertise. As a developer exploring the OST platform, we hope you enjoy engaging with the technology and interacting with the OST blockchain protocols, contracts, APIs, and sdk.
 
-The **Server Side APIs and SDKs** provide various endpoints/methods that can be used by developers to design and manage their Brand Token Economies. The **OST Wallet SDKs** enable end-users to safely interact with Brand Tokens.
+The **Server Side APIs and sdk** provide various endpoints/methods that can be used by developers to design and manage their Brand Token Economies. The **OST Wallet sdk** enable end-users to safely interact with Brand Tokens.
 
 The sections below highlight what you can do with OST Platform.
  * A company can easily deploy a Brand Token Economy
@@ -60,10 +60,10 @@ Optionally OST clients can also enable experiences for their users to recover ac
 
 
 ## Easy to integrate
-All the functionality above is bundled into [iOS](https://dev.ost.com/platform/docs/sdk/references/wallet_sdk/iOS/latest/methods/) and [Android](https://dev.ost.com/platform/docs/sdk/references/wallet_sdk/android/latest/methods/) SDKs that a Brand can use to integrate this functionality into their application. Also provided is a [UX case study](https://dev.stagingost.com/platform/docs/guides/wallet_ux_guide/) with screens and flows and helpful suggestions and a reference implementation in the form of [sample iOS app](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/release-2.0/demo-app) and [sample Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app). 
+All the functionality above is bundled into [iOS](https://dev.ost.com/platform/sdkreferences/wallet_sdk/iOS/latest/methods/) and [Android](https://dev.ost.com/platform/sdkreferences/wallet_sdk/android/latest/methods/) sdk that a Brand can use to integrate this functionality into their application. Also provided is a [UX case study](https://dev.stagingost.com/platform/docs/guides/wallet_ux_guide/) with screens and flows and helpful suggestions and a reference implementation in the form of [sample iOS app](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/release-2.0/demo-app) and [sample Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app). 
 
 When you integrate Brand Tokens into your application, please remember to:
  * Create and maintain a map of OST Platform user_id to the user's profile on their app
  * [Generate and safely store a 30 character "secret" for each user](https://dev.stagingost.com/platform/docs/guides/create_wallet/#generating-passphaseprefix). This "secret" is used for the recovery and thus must be unique to each user.
 
-To integrate using the SDKs, start with the quick-start guides [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](https://dev.ost.com/platform/docs/sdk/server_sdk_setup/java/), [Node.js](https://dev.ost.com/platform/docs/sdk/server_sdk_setup/nodejs/), [iOS](/platform/docs/wallet_sdk_setup/iOS/) and [Android](/platform/docs/wallet_sdk_setup/android/).
+To integrate using the sdk, start with the quick-start guides [PHP](/platform/sdkserver_sdk_setup/php/), [Ruby](/platform/sdkserver_sdk_setup/ruby/), [Java](https://dev.ost.com/platform/sdkserver_sdk_setup/java/), [Node.js](https://dev.ost.com/platform/sdkserver_sdk_setup/nodejs/), [iOS](/platform/docs/wallet_sdk_setup/iOS/) and [Android](/platform/docs/wallet_sdk_setup/android/).

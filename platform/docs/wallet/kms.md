@@ -32,7 +32,7 @@ A multi-signature contract, the MultiSig, is configured as the owner of the  **T
 
 
 ## Creating a user's Brand Token wallet on the blockchain 
-It is a 3 step process. [Wallet SDK](/platform/docs/sdk/wallet_sdk/overview/) provides a number of functions called as workflows
+It is a 3 step process. [Wallet SDK](/platform/sdkwallet_sdk/overview/) provides a number of functions called as workflows
 
 ### Step 1: init
 Calling `init` function of wallet SDK will initialize the SDK.

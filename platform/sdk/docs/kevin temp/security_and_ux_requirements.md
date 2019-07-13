@@ -4,7 +4,7 @@ title: Security and UX Requirements
 sidebar_label: Security and UX Requirements
 ---
 
-This is a security and UX implementation requirements checklist for OST Platform’s clients to confirm the readiness of their application’s integration with our SDKs. 
+This is a security and UX implementation requirements checklist for OST Platform’s clients to confirm the readiness of their application’s integration with our sdk. 
 
 Once you are ready to move to production, you will need to confirm that you have followed and implemented these requirements in your application.
 
@@ -64,8 +64,8 @@ Please write to us at support@ost.com if you face any issues in fulfilling these
     * The Recovery PIN is not be saved/stored by the client
 
 * The SDK is implemented without any modifications as described here:
-    * [Android Wallet SDK](https://dev.stagingost.com/platform/docs/sdk/wallet_sdk_setup/android/)
-    * [iOS Wallet SDK](https://dev.stagingost.com/platform/docs/sdk/wallet_sdk_setup/iOS/)
+    * [Android Wallet SDK](https://dev.stagingost.com/platform/sdkwallet_sdk_setup/android/)
+    * [iOS Wallet SDK](https://dev.stagingost.com/platform/sdkwallet_sdk_setup/iOS/)
 
 
 

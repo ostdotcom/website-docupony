@@ -9,7 +9,7 @@ iOS Wallet SDK provides a protocol named `OstWorkflowDelegate` as a massaging co
 
 
 
-![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
+![walletSDKCommunication](/platform/sdkassets/communication-ios-sdk.png)
 
 
 ## Protocol Functions

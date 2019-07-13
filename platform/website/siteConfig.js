@@ -41,7 +41,7 @@ const siteConfig = {
 
   headerLinks: [
     {href: '/platform/', label: 'Docs'},
-    {href: '/platform/sdk/', label: 'SDKs'},
+    {href: '/platform/docs/sdk/', label: 'SDKs'},
     {href: '/platform/docs/api', label: 'API References'},
     {href: 'https://platform.ost.com/login', external: true,  label: 'Login'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}

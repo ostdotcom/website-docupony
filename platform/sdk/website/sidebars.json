@@ -1,29 +1,29 @@
 {
   "OST Platform": {
-    "OST Platform SDKs": [
+    "OST SDKs": [
       "introduction",
       "getting_started",
       "authentication",
       "requirements_checklist"
-    ],
 
+    ],
     "Server Sides SDKs": [
-      "server_side_sdks/php",
-      "server_side_sdks/ruby",
-      "server_side_sdks/nodejs",
-      "server_side_sdks/java"
+      "server-side-sdks/php",
+      "server-side-sdks/ruby",
+      "server-side-sdks/nodejs",
+      "server-side-sdks/java"
     ],
-
+    
     "Mobile Wallet SDKs": [
-      "mobile_wallet_sdks/android",
-      "mobile_wallet_sdks/android/latest/methods",
-      "mobile_wallet_sdks/android/latest/interfaces",
-      "mobile_wallet_sdks/android/latest/classes",
-      "mobile_wallet_sdks/iOS",
-      "mobile_wallet_sdks/iOS/latest/methods",
-      "mobile_wallet_sdks/iOS/latest/protocols",
-      "mobile_wallet_sdks/iOS/latest/classes",
-      "mobile_wallet_sdks/react-native"
+      "mobile-wallet-sdks/android",
+      "mobile-wallet-sdks/android/latest/methods",
+      "mobile-wallet-sdks/android/latest/interfaces",
+      "mobile-wallet-sdks/android/latest/classes",
+      "mobile-wallet-sdks/iOS",
+      "mobile-wallet-sdks/iOS/latest/methods",
+      "mobile-wallet-sdks/iOS/latest/protocols",
+      "mobile-wallet-sdks/iOS/latest/classes",
+      "mobile-wallet-sdks/react-native"
     ]
 
   }

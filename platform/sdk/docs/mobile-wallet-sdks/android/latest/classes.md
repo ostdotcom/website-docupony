@@ -10,7 +10,7 @@ sidebar_label: Classes
 
 
 ## 1. OstError
-This class is used to provide error details in [flowInterrupt](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/#2-flowinterrupt) callback function. 
+This class is used to provide error details in [flowInterrupt](/platform/sdkreferences/wallet_sdk/android/latest/interfaces/#2-flowinterrupt) callback function. 
 
 
 You can call [methods](#i-methods) on this object to get more details about the error.
@@ -22,7 +22,7 @@ You can call [methods](#i-methods) on this object to get more details about the 
 3. `public boolean isApiError()`
 
 ## 2. OstContextEntity
-This class provides context about the `entity` that is being changed during a [workflow](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/#workflows). Callback functions that needs to know about the `entity` will receive an object of this class as an argument. 
+This class provides context about the `entity` that is being changed during a [workflow](/platform/sdkreferences/wallet_sdk/android/latest/methods/#workflows). Callback functions that needs to know about the `entity` will receive an object of this class as an argument. 
 
 
 You can call [methods](#i-methods-1) on this object to get more details about the entity.
@@ -37,9 +37,9 @@ You can call [methods](#i-methods-1) on this object to get more details about th
 
 
 ## 3. OstWorkflowContext
-This class provides context about the current [workflow](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/#workflows). Callback function that needs to know about the current [workflow](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/#workflows) will get the object of this class as an argument.
+This class provides context about the current [workflow](/platform/sdkreferences/wallet_sdk/android/latest/methods/#workflows). Callback function that needs to know about the current [workflow](/platform/sdkreferences/wallet_sdk/android/latest/methods/#workflows) will get the object of this class as an argument.
 
-You can call [methods](#i-methods-2) on this object to get more details about the current [workflow](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/#workflows).
+You can call [methods](#i-methods-2) on this object to get more details about the current [workflow](/platform/sdkreferences/wallet_sdk/android/latest/methods/#workflows).
 
 
 The `getWorkflow_type()` methods will return one of the strings from this enum.

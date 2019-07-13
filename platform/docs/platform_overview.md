@@ -6,8 +6,8 @@ sidebar_label: Platform Overview
 
 ## Platform Components
 
-## Server Side SDKs
+## Server Side sdk
 
-## Mobile Wallet SDKs
+## Mobile Wallet sdk
 
 ## Bringing it all together
