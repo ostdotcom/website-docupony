@@ -1,6 +1,6 @@
 ---
 id: introduction
-title: Introduction
+title: Introduction to OST Platform
 sidebar_label: Introduction
 ---
 

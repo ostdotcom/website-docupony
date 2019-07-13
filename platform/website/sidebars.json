@@ -1,25 +1,20 @@
 {
-  "KIT": {
+  "OST Platform": {
 
-    "Getting Started": [
-      "getting_started/introduction",
-      "getting_started/platform_overview",
-      "getting_started/integration_steps",
-      "getting_started/ost_wallet_app"
+    "Documentation": [
+      "introduction",
+      "getting_started",
+      "platform_overview",
+      "explore_wallet_app",
+      "transactions_guide",
+      "create_token",
+      "create_user_wallet",
+      "execute_transactions",
+      "explore_transactions",
+      "mobile_wallet_ux_guide",
+      "glossary"
     ],
-    
-    "Guides": [
-      "guides/create_token",
-      "guides/wallet_ux_guide",
-      "guides/create_wallet",
-      "guides/execute_transaction",
-      "guides/create_session"
-    ],
-
-    "Additional Resources": [
-      "additional_resources/glossary"
-    ],
-
+      
     "Release Notes": [
       "release-notes/18_June_2019",
       "release-notes/15_June_2019",

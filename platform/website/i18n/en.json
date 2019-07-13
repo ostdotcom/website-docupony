@@ -5,52 +5,88 @@
     "previous": "Previous",
     "tagline": "Developer Documentation",
     "docs": {
-      "additional_resources/glossary": {
-        "title": "Glossary",
-        "sidebar_label": "Glossary"
-      },
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "getting_started/integration_steps": {
-        "title": "Steps to Integrating with OST Platform",
+      "create_token": {
+        "title": "Create Your Own Token",
+        "sidebar_label": "Create Your Own Token"
+      },
+      "create_user_wallet": {
+        "title": "Technical Guide to Creating a User Wallet",
+        "sidebar_label": "Create a User Wallet"
+      },
+      "execute_transactions": {
+        "title": "Technical Guide to Executing Transactions",
+        "sidebar_label": "Execute Transactions"
+      },
+      "explore_transactions": {
+        "title": "Explore Transactions on OST View",
+        "sidebar_label": "Explore Transactions"
+      },
+      "explore_wallet_app": {
+        "title": "Explore OST Wallet App and SDKs",
+        "sidebar_label": "Explore OST Wallet"
+      },
+      "getting_started": {
+        "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
-      "getting_started/introduction": {
-        "title": "Introduction",
+      "introduction": {
+        "title": "Introduction to OST Platform",
         "sidebar_label": "Introduction"
       },
-      "getting_started/ost_wallet_app": {
-        "title": "OST Wallet App",
-        "sidebar_label": "OST Wallet App"
-      },
-      "getting_started/platform_overview_old": {
-        "title": "Platform Overview",
-        "sidebar_label": "Platform Overview"
-      },
-      "getting_started/platform_overview": {
-        "title": "Platform Overview",
-        "sidebar_label": "OST Platform Overview"
-      },
-      "guides/create_session": {
+      "kevin temp/create_session": {
         "title": "Create New Session Guide",
         "sidebar_label": "Create New Session"
       },
-      "guides/create_token": {
+      "kevin temp/create_token": {
         "title": "Create Token Guide",
         "sidebar_label": "Create Token"
       },
-      "guides/create_wallet": {
+      "kevin temp/create_wallet": {
         "title": "Create Wallet Guide",
         "sidebar_label": "Create Wallet"
       },
-      "guides/execute_transaction": {
+      "kevin temp/execute_transaction": {
         "title": "Execute Transaction Guide",
         "sidebar_label": "Execute Transaction"
       },
-      "guides/wallet_ux_guide": {
+      "kevin temp/glossary": {
+        "title": "Glossary",
+        "sidebar_label": "Glossary"
+      },
+      "kevin temp/integration_steps": {
+        "title": "Steps to Integrating with OST Platform",
+        "sidebar_label": "Getting Started"
+      },
+      "kevin temp/introduction": {
+        "title": "Introduction to OST Platform",
+        "sidebar_label": "Introduction"
+      },
+      "kevin temp/ost_wallet_app": {
+        "title": "OST Wallet App",
+        "sidebar_label": "OST Wallet App"
+      },
+      "kevin temp/platform_overview_old": {
+        "title": "Platform Overview",
+        "sidebar_label": "Platform Overview"
+      },
+      "kevin temp/platform_overview": {
+        "title": "Platform Overview",
+        "sidebar_label": "OST Platform Overview"
+      },
+      "kevin temp/wallet_ux_guide": {
         "title": "Wallet UX Guidelines",
         "sidebar_label": "Wallet UX"
+      },
+      "mobile_wallet_ux_guide": {
+        "title": "Suggestions for Your Mobile Wallet Design",
+        "sidebar_label": "Mobile Wallet UX Guide"
+      },
+      "platform_overview": {
+        "title": "Platform Overview",
+        "sidebar_label": "Platform Overview"
       },
       "release-notes/18_June_2019": {
         "title": "18 June 2019 Release",
@@ -72,6 +108,10 @@
         "title": "3 June 2019 Release",
         "sidebar_label": "3 June 2019"
       },
+      "transactions_guide": {
+        "title": "Overview of Transactions in OST Platform",
+        "sidebar_label": "Transactions Guide"
+      },
       "wallet/introduction": {
         "title": "Wallet Introduction",
         "sidebar_label": "Introduction"
@@ -87,15 +127,13 @@
     },
     "links": {
       "Docs": "Docs",
-      "SDK References": "SDK References",
+      "SDKs": "SDKs",
       "API References": "API References",
       "Login": "Login",
       "Support": "Support"
     },
     "categories": {
-      "Getting Started": "Getting Started",
-      "Guides": "Guides",
-      "Additional Resources": "Additional Resources",
+      "Documentation": "Documentation",
       "Release Notes": "Release Notes"
     }
   },

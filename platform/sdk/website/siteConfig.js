@@ -21,11 +21,11 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'OST Platform SDK Reference' /* title for your website */,
+  title: 'OST Platform SDKs' /* title for your website */,
   tagline: 'Developer Documentation',
   url: 'https://dev.ost.com/' /* your website url */,
-  baseUrl: '/platform/docs/sdk/' /* base url for your project */,
-  projectName: 'sdk',
+  baseUrl: '/platform/sdk/' /* base url for your project */,
+  projectName: 'sdks',
   // organizationName: 'facebook',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
@@ -41,7 +41,7 @@ const siteConfig = {
 
   headerLinks: [
     {href: '/platform/', label: 'Docs'},
-    {href: '/platform/docs/sdk', label: 'SDK References'},
+    {href: '/platform/sdk', label: 'SDKs'},
     {href: '/platform/docs/api', label: 'API References'},
     {href: 'https://platform.ost.com/login', external: true,  label: 'Login'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
