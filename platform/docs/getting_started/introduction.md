@@ -4,40 +4,10 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
+OST Platform provides everything you need to create, integrate, test and deploy brand tokens. Brand tokens are created by first staking a value token (such as the OST token or USDC token) on Ethereum mainnet and then deploying the value backed brand tokens on scalable [OpenST](https://openst.org/) side-chains on Ethereum.
+
+**Brand tokens on OST side-chains are ideal for micro-transactions** and open up a whole new world of customer engagement and monetization. The possibilities are endless and we look forward to seeing new and creative use cases in action!
+
+> This documentation is designed to give an indepth overview of OST Platform and how it all fits together. Sitting alongside our docs are our API References and SDKs which provide everything you need to know to integrate with OST Platform.
+
 ![KitIndexImage]( /platform/docs/assets/getting-started/intro.png)
-
-OST Platform provides everything you need to test, integrate, and deploy your brand currency. Our Server Side SDKs and Wallet SDKs together enable fast and painless integration into any app, without requiring any in-house blockchain expertise -- so you can focus on your business and leave the blockchain bits to us.
-
-Brand Tokens are white-label cryptocurrency tokens running on highly-scalable OST sidechains, backed by staking value tokens (such as the OST Token) on Ethereum mainnet. This enables companies to deploy Brand Token that function like rewards points, which can be deployed to incentivize and reward users and to drive growth and retention. 
-
-
-
-## OST Platform Components
-
-![platform-interaction](/platform/docs/assets/Platform-Integrations.jpg)
-The diagram above illustrates how the OST Server Side SDK and OST Wallet SDK work together and interact with your technology.
-
-
-### 1. API and Server Side SDKs:  
-
-* Server Side SDKs will allow developers to create users in your economy, perform company-to-user transactions and register wallet devices (mobile devices) on OST Platform.
-* Server Side SDK sample codes are available on [API References](/platform/docs/api) page. Server Side SDKs are available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/) and [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/)
-* You can choose to use API directly if the Server Side SDK is not available for your choice of programming language.
-
-
-### 2. Wallet SDK:
-    
-* Wallet SDK enables users to transact with Brand Tokens within your mobile app, without requiring them to manage their private crypto keys. 
-* Wallet SDK provides private key management, authorization and recovery services in addition to authentication.
-
-
-
-The OST Platform is built on OpenST Protocol. The protocol enables the creation of BTs and allows BT economies to scale to billions of transactions. You can learn more about the OpenST Protocol at [OpenST.org](https://openst.org/).
-
-
-## Next Steps
-
-1. Read [Platform Overview](/platform/docs/getting_started/platform_overview/) to get a better understanding of OST Platform.
-2. Read [Integration Steps](/platform/docs/getting_started/integration_steps/) to follow a recommended integration flow.
-
-

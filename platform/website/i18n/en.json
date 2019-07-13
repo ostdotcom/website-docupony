@@ -13,8 +13,8 @@
         "title": "assets/kit_index"
       },
       "getting_started/integration_steps": {
-        "title": "Integration Steps",
-        "sidebar_label": "Integration Steps"
+        "title": "Steps to Integrating with OST Platform",
+        "sidebar_label": "Getting Started"
       },
       "getting_started/introduction": {
         "title": "Introduction",
@@ -30,7 +30,7 @@
       },
       "getting_started/platform_overview": {
         "title": "Platform Overview",
-        "sidebar_label": "Platform Overview"
+        "sidebar_label": "OST Platform Overview"
       },
       "guides/create_session": {
         "title": "Create New Session Guide",

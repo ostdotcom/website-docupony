@@ -1,8 +1,13 @@
 ---
 id: platform_overview
 title: Platform Overview
-sidebar_label: Platform Overview
+sidebar_label: OST Platform Overview
 ---
+
+## OST Platform Components
+The diagram below illustrates how OST Server Side SDK and OST Wallet SDK work together and interact with partner tech stacks.
+
+![platform-interaction](/platform/docs/assets/Platform-Integrations.jpg)
 
 The **OST Platform** is designed to provide everything businesses with millions of users need to deploy Brand Tokens to drive engagement. It’s a complete set of developer tools that any company can integrate without any blockchain expertise. As a developer exploring the OST platform, we hope you enjoy engaging with the technology and interacting with the OST blockchain protocols, contracts, APIs, and SDKs.
 

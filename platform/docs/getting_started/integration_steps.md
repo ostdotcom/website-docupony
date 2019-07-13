@@ -1,7 +1,7 @@
 ---
 id: integration_steps
-title: Integration Steps
-sidebar_label: Integration Steps
+title: Steps to Integrating with OST Platform
+sidebar_label: Getting Started
 ---
 
 
