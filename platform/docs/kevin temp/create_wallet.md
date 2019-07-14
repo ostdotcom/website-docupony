@@ -23,7 +23,7 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 
 ## Prerequisite
 * Make sure you've created your Brand Token via [OST Platform interface](https://platform.ost.com). This [token creation](/platform/docs/guides/create_token/) guide walks you through the token creation flow. Go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to API key and API secret.
-* Integrate one of the available OST Platform Server SDK into your application. sdk are available for [PHP](/platform/sdkserver_sdk_setup/php/), [Ruby](/platform/sdkserver_sdk_setup/ruby/), [Node.Js](/platform/sdkserver_sdk_setup/nodejs/) and [Java](/platform/sdkserver_sdk_setup/java/).
+* Integrate one of the available OST Platform Server SDK into your application. sdk are available for [PHP](/platform/docs/sdkerver_sdk_setup/php/), [Ruby](/platform/docs/sdkerver_sdk_setup/ruby/), [Node.Js](/platform/docs/sdkerver_sdk_setup/nodejs/) and [Java](/platform/docs/sdkerver_sdk_setup/java/).
 * Set up the Wallet SDK by following one of the Wallet set up Guides. Wallet sdk are available for [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/).
 
 <br>
@@ -38,7 +38,7 @@ This guide is divided into 2 major sections, **Server Side** section and **Mobil
 <br> 
 
 > ## Server Side
-In this section we focus on server side logic. You will have to use OST Platform Server Side SDK (available in [PHP](/platform/sdkserver_sdk_setup/php/), [Java](/platform/sdkserver_sdk_setup/java/), [Ruby](/platform/sdkserver_sdk_setup/ruby/), [Node.Js](/platform/sdkserver_sdk_setup/nodejs/)) to communicate with OST Platform. 
+In this section we focus on server side logic. You will have to use OST Platform Server Side SDK (available in [PHP](/platform/docs/sdkerver_sdk_setup/php/), [Java](/platform/docs/sdkerver_sdk_setup/java/), [Ruby](/platform/docs/sdkerver_sdk_setup/ruby/), [Node.Js](/platform/docs/sdkerver_sdk_setup/nodejs/)) to communicate with OST Platform. 
 
 ### Create User
 The first step to create a user's wallet is to create the user on OST Platform. Use one of the available Server Side sdk or [API](/platform/docs/api)) directly to register a user.
@@ -77,11 +77,11 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 `passphasePrefix` is a string with minimum length 30 used in the process of creating recovery key for your economy users. You will have to generate `passphasePrefix` on your server for each user with high randomness. You should keep a mapping between the `passPhrasePrefix` and other user information. Your server should communicate this passphrasePrefix to your app when needed.
 
-[Security Guidelines for generating passphasePrefix](/platform/sdkgetting_started/security_guidelines/#server-side-sdk)
+[Security Guidelines for generating passphasePrefix](/platform/docs/sdkgetting_started/security_guidelines/#server-side-sdk)
 
 
 ### Register Device
-Your server should receive the device information from your mobile app. To register the device on OST Platform you can use the devices service provided in the Server Side sdk (available in [PHP](/platform/sdkserver_sdk_setup/php/), [Ruby](/platform/sdkserver_sdk_setup/ruby/)), [Java](/platform/sdkserver_sdk_setup/java/), [Node.Js](/platform/sdkserver_sdk_setup/nodejs/)).
+Your server should receive the device information from your mobile app. To register the device on OST Platform you can use the devices service provided in the Server Side sdk (available in [PHP](/platform/docs/sdkerver_sdk_setup/php/), [Ruby](/platform/docs/sdkerver_sdk_setup/ruby/)), [Java](/platform/docs/sdkerver_sdk_setup/java/), [Node.Js](/platform/docs/sdkerver_sdk_setup/nodejs/)).
 
 Sample code to register the device using PHP SDK.
 
@@ -277,7 +277,7 @@ The SDK provides an interface that should be implemented by the application so t
 
 **Receiving callback calls**
 
-There is a list of methods available as [interface](/platform/sdkreferences/wallet_sdk/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/sdkreferences/wallet_sdk/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdkreferences/wallet_sdk/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdkreferences/wallet_sdk/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
 
 
 To show you an example, we will just implement 2 functions to get the workflow status.

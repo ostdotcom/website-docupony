@@ -32,10 +32,10 @@ A number of platform-specific sdk are available to integrate OST APIs and wallet
 
 The following sdk are actively maintained and supported:
 
-* [PHP](/platform/sdkserver_sdk_setup/php/)  for server-side applications
-* [Ruby](/platform/sdkserver_sdk_setup/ruby/) for server-side applications
-* [Node](/platform/sdkserver_sdk_setup/nodejs/).js for server-side applications
-* [Java](/platform/sdkserver_sdk_setup/java/) for server-side applications
+* [PHP](/platform/docs/sdkerver_sdk_setup/php/)  for server-side applications
+* [Ruby](/platform/docs/sdkerver_sdk_setup/ruby/) for server-side applications
+* [Node](/platform/docs/sdkerver_sdk_setup/nodejs/).js for server-side applications
+* [Java](/platform/docs/sdkerver_sdk_setup/java/) for server-side applications
 
 For wallet integration, we provide mobile wallet sdk for Android and iOS applications.
 
@@ -47,8 +47,8 @@ For wallet integration, we provide mobile wallet sdk for Android and iOS applica
 
 | Authentication | Description |
 |---|---|
-| HMAC: hash-based message authentication | Every API request on OST Platform API Endpoint requires hash-based message authentication. You can obtain your API key and shared API secret for your brand token from the OST Platform [Developers page](https://platform.ost.com/testnet/developer) <br><br> When using the Server Side sdk, authentication is handled for you. In other languages you have to implement the signature generation by computing the HMAC sha256 digest of the API secret. You can find the details of the [server side authentication process here.](/platform/sdkgetting_started/authentication/#server-api-authentication)  |
-| Personal Signing  |**Wallet SDK** provides secure authentication by signing of data from user's mobile device. The SDK ensures a high level of privacy and trust, since the private keys with which it signs data never have to leave the mobile device. You can find the details of the [authentication process within wallet SDK here.](/platform/sdkgetting_started/authentication/#wallet-sdk-authentication)|
+| HMAC: hash-based message authentication | Every API request on OST Platform API Endpoint requires hash-based message authentication. You can obtain your API key and shared API secret for your brand token from the OST Platform [Developers page](https://platform.ost.com/testnet/developer) <br><br> When using the Server Side sdk, authentication is handled for you. In other languages you have to implement the signature generation by computing the HMAC sha256 digest of the API secret. You can find the details of the [server side authentication process here.](/platform/docs/sdkgetting_started/authentication/#server-api-authentication)  |
+| Personal Signing  |**Wallet SDK** provides secure authentication by signing of data from user's mobile device. The SDK ensures a high level of privacy and trust, since the private keys with which it signs data never have to leave the mobile device. You can find the details of the [authentication process within wallet SDK here.](/platform/docs/sdkgetting_started/authentication/#wallet-sdk-authentication)|
 | Smartphone application | Within client company's native application where client company demands the user to authenticate before the user authorizes sessions or devices. |
 
 

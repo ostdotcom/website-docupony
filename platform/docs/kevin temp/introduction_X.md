@@ -18,7 +18,7 @@ Our Server Side sdk and mobile Wallet sdk together enable fast and painless inte
 ### 1. API and Server Side sdk:  
 
 * Server Side sdk will allow developers to create users in your economy, perform company-to-user transactions and register wallet devices (mobile devices) on OST Platform.
-* Server Side SDK sample codes are available on [API References](/platform/docs/api) page. Server Side sdk are available in [PHP](/platform/sdkserver_sdk_setup/php/), [Ruby](/platform/sdkserver_sdk_setup/ruby/), [Java](/platform/sdkserver_sdk_setup/java/) and [Node.js](/platform/sdkserver_sdk_setup/nodejs/)
+* Server Side SDK sample codes are available on [API References](/platform/docs/api) page. Server Side sdk are available in [PHP](/platform/docs/sdkerver_sdk_setup/php/), [Ruby](/platform/docs/sdkerver_sdk_setup/ruby/), [Java](/platform/docs/sdkerver_sdk_setup/java/) and [Node.js](/platform/docs/sdkerver_sdk_setup/nodejs/)
 * You can choose to use API directly if the Server Side SDK is not available for your choice of programming language.
 
 

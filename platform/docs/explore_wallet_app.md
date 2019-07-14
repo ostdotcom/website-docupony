@@ -1,6 +1,6 @@
 ---
 id: explore_wallet_app
-title: Explore OST Wallet App and sdk
+title: Explore OST Wallet App and Wallet SDKs
 sidebar_label: Explore OST Wallet
 ---
 

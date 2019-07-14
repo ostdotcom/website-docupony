@@ -6,9 +6,9 @@ sidebar_label: Introduction
 
 ## What is OST Platform?
 
-## Create your own Brand Token
+## "Brand Tokens" Explained
 
-## Add micropayments to your platform
+## Microtransactions and how OST Platform makes them possible
 
 ## Not a developer?
 

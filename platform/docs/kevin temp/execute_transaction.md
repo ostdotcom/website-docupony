@@ -24,7 +24,7 @@ There are 2 different types of transaction possible in an economy based on the t
 
 | Type Of Transaction | Description |
 |---|---|
-| **company-to-user Transaction** | It is the transaction where the client company is the sender and the economy user is the receiver. <br>**To do company-to-user transactions, you will have to use Server Side SDK (available in [PHP](/platform/sdkserver_sdk_setup/php/), [Ruby](/platform/sdkserver_sdk_setup/ruby/), [Node.js](/platform/sdkserver_sdk_setup/nodejs/), [Java](/platform/sdkserver_sdk_setup/java/)).** |
+| **company-to-user Transaction** | It is the transaction where the client company is the sender and the economy user is the receiver. <br>**To do company-to-user transactions, you will have to use Server Side SDK (available in [PHP](/platform/docs/sdkerver_sdk_setup/php/), [Ruby](/platform/docs/sdkerver_sdk_setup/ruby/), [Node.js](/platform/docs/sdkerver_sdk_setup/nodejs/), [Java](/platform/docs/sdkerver_sdk_setup/java/)).** |
 | **user initiated Transaction** | It is the transaction where the economy user is the sender and another economy user or company is the receiver. <br> **Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)) facilitates signing of transactions on users behalf.** |
 
 
@@ -134,7 +134,7 @@ The QRCode data for executing transactions via web application should be a JSON 
 
 
 > ## Executing company-to-user Transactions
-`company-to-user` transactions can be executed using Server Side SDK (available in [PHP](/platform/sdkserver_sdk_setup/php/), [Java](/platform/sdkserver_sdk_setup/java/), [Node.js](/platform/sdkserver_sdk_setup/nodejs/), [Ruby](/platform/sdkserver_sdk_setup/ruby/)). 
+`company-to-user` transactions can be executed using Server Side SDK (available in [PHP](/platform/docs/sdkerver_sdk_setup/php/), [Java](/platform/docs/sdkerver_sdk_setup/java/), [Node.js](/platform/docs/sdkerver_sdk_setup/nodejs/), [Ruby](/platform/docs/sdkerver_sdk_setup/ruby/)). 
 
 Please refer to API References for details on the [input parameters of execute company-to-user transaction](/platform/docs/api/#execute-a-transaction). 
 
@@ -318,7 +318,7 @@ Sample verifyData code (Android Wallet SDK)
 ### Verify Transaction Status
 
 #### Receiving `performQRAction` workflow status callbacks
-There is a list of methods available as [interface](/platform/sdkreferences/wallet_sdk/android/latest/interfaces/) (in [Android wallet SDK](/platform/sdkwallet_sdk_setup/android/)) and as [protocol](/platform/sdkreferences/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/sdkwallet_sdk_setup/iOS/)) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdkreferences/wallet_sdk/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdkwallet_sdk_setup/android/)) and as [protocol](/platform/docs/sdkreferences/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/sdkwallet_sdk_setup/iOS/)) for communication between mobile app and Wallet SDK. 
 
 
 To show you an example, we will just implement 2 functions to get the workflow status.

@@ -4,8 +4,9 @@
       "introduction",
       "getting_started",
       "authentication",
-      "requirements_checklist"
-
+      "requirements_checklist",
+      "sample_apps"
+      
     ],
     "Server Sides SDKs": [
       "server-side-sdks/php",
@@ -15,16 +16,36 @@
     ],
     
     "Mobile Wallet SDKs": [
-      "mobile-wallet-sdks/android",
-      "mobile-wallet-sdks/android/latest/methods",
-      "mobile-wallet-sdks/android/latest/interfaces",
-      "mobile-wallet-sdks/android/latest/classes",
-      "mobile-wallet-sdks/iOS",
-      "mobile-wallet-sdks/iOS/latest/methods",
-      "mobile-wallet-sdks/iOS/latest/protocols",
-      "mobile-wallet-sdks/iOS/latest/classes",
-      "mobile-wallet-sdks/react-native"
-    ]
 
+      {
+        "type": "subcategory",
+        "label": "Android",
+        "ids": [
+          "mobile-wallet-sdks/android",
+          "mobile-wallet-sdks/android/latest/methods",
+          "mobile-wallet-sdks/android/latest/interfaces",
+          "mobile-wallet-sdks/android/latest/classes"
+        ]
+      },
+
+      {
+        "type": "subcategory",
+        "label": "iOS",
+        "ids": [
+          "mobile-wallet-sdks/iOS",
+          "mobile-wallet-sdks/iOS/latest/methods",
+          "mobile-wallet-sdks/iOS/latest/protocols",
+          "mobile-wallet-sdks/iOS/latest/classes"
+        ]
+      },
+
+      {
+        "type": "subcategory",
+        "label": "Non-Native",
+        "ids": [
+          "mobile-wallet-sdks/react-native"
+        ]
+      }
+    ]
   }
 }

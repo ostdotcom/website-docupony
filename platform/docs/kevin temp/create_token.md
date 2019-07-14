@@ -50,7 +50,7 @@ OST Platform enables you to easily and safely create your own Brand Tokens on hi
 
 ## Next Steps
 
-1. [Obtain your API keys](/platform/sdkgetting_started/authentication/#obtaining-your-api-keys)
+1. [Obtain your API keys](/platform/docs/sdkgetting_started/authentication/#obtaining-your-api-keys)
 
 2. [Create Wallet Guide](/platform/docs/guides/create_wallet/)
 

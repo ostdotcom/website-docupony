@@ -11,6 +11,7 @@
       "create_user_wallet",
       "execute_transactions",
       "explore_transactions",
+      "moving_to_mainnet",
       "mobile_wallet_ux_guide",
       "glossary"
     ],

@@ -19,7 +19,7 @@ Wallet SDK will take care of key management solution (to learn more about key ma
     <div class="content-block">
         <div class="section-promo">
         <a target="_blank" href="/kyc/sdkpython_sdk/latest/quickstart_guide/">
-            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/sdkassets/android.png" >
+            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/docs/sdkassets/android.png" >
             <h3 class="accent-color text-center">Android SDK</h3>
         </a>
         </div>
@@ -27,7 +27,7 @@ Wallet SDK will take care of key management solution (to learn more about key ma
     <div class="content-block">
         <div class="section-promo">
         <a target="_blank" href="/kyc/sdkruby_sdk/latest/quickstart_guide/">
-            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/sdkassets/xcode-ios.png" >
+            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/docs/sdkassets/xcode-ios.png" >
             <h3 class="accent-color text-center">iOS SDK</h3>
         </a>
         </div>
@@ -37,7 +37,7 @@ Wallet SDK will take care of key management solution (to learn more about key ma
 
 ## Server side SDK
 
-Server side SDK's are an alternative to [REST API](/platform/docs/api/). Server SDK's will work along with [wallet SDK](/platform/sdkwallet_sdk/overview/). Some of the services provided by server side sdk includes "user registration", "device registration" and executing "company-to-user transactions". A full list of services and their details are available [here](/platform/docs/api/).
+Server side SDK's are an alternative to [REST API](/platform/docs/api/). Server SDK's will work along with [wallet SDK](/platform/docs/sdkwallet_sdk/overview/). Some of the services provided by server side sdk includes "user registration", "device registration" and executing "company-to-user transactions". A full list of services and their details are available [here](/platform/docs/api/).
 
 
 ## Server Side API Reference
@@ -46,8 +46,8 @@ Server side SDK's are an alternative to [REST API](/platform/docs/api/). Server 
 
 <div class="content-block">
     <div class="section-promo">
-       <a target="_blank" href="/platform/sdkserver_sdk/php/latest/quickstart_guide/">
-        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/sdkassets/php.png">
+       <a target="_blank" href="/platform/docs/sdkerver_sdk/php/latest/quickstart_guide/">
+        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/docs/sdkassets/php.png">
         <h3 class="accent-color text-center">PHP SDK</h3>
       </a>
     </div>

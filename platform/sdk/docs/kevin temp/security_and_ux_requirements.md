@@ -64,8 +64,8 @@ Please write to us at support@ost.com if you face any issues in fulfilling these
     * The Recovery PIN is not be saved/stored by the client
 
 * The SDK is implemented without any modifications as described here:
-    * [Android Wallet SDK](https://dev.stagingost.com/platform/sdkwallet_sdk_setup/android/)
-    * [iOS Wallet SDK](https://dev.stagingost.com/platform/sdkwallet_sdk_setup/iOS/)
+    * [Android Wallet SDK](https://dev.stagingost.com/platform/docs/sdkwallet_sdk_setup/android/)
+    * [iOS Wallet SDK](https://dev.stagingost.com/platform/docs/sdkwallet_sdk_setup/iOS/)
 
 
 

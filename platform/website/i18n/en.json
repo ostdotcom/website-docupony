@@ -25,12 +25,16 @@
         "sidebar_label": "Explore Transactions"
       },
       "explore_wallet_app": {
-        "title": "Explore OST Wallet App and sdk",
+        "title": "Explore OST Wallet App and Wallet SDKs",
         "sidebar_label": "Explore OST Wallet"
       },
       "getting_started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
+      },
+      "glossary": {
+        "title": "Glossary",
+        "sidebar_label": "Glossary"
       },
       "introduction": {
         "title": "Introduction to OST Platform",
@@ -51,10 +55,6 @@
       "kevin temp/execute_transaction": {
         "title": "Execute Transaction Guide",
         "sidebar_label": "Execute Transaction"
-      },
-      "kevin temp/glossary": {
-        "title": "Glossary",
-        "sidebar_label": "Glossary"
       },
       "kevin temp/integration_steps": {
         "title": "Steps to Integrating with OST Platform",
@@ -83,6 +83,10 @@
       "mobile_wallet_ux_guide": {
         "title": "Suggestions for Your Mobile Wallet Design",
         "sidebar_label": "Mobile Wallet UX Guide"
+      },
+      "moving_to_mainnet": {
+        "title": "Moving from Sandbox (testnet) to Production (Mainnet)",
+        "sidebar_label": "Moving to Mainnet"
       },
       "platform_overview": {
         "title": "Platform Overview",
