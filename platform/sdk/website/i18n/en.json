@@ -16,10 +16,6 @@
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
-      "introduction": {
-        "title": "Introduction to OST Platform",
-        "sidebar_label": "Introduction"
-      },
       "kevin temp/authentication": {
         "title": "Authentication",
         "sidebar_label": "Authentication"
@@ -101,7 +97,7 @@
       "Support": "Support"
     },
     "categories": {
-      "OST SDKs": "OST SDKs",
+      "Introduction": "Introduction",
       "Server Sides SDKs": "Server Sides SDKs",
       "Mobile Wallet SDKs": "Mobile Wallet SDKs"
     }

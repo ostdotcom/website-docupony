@@ -10,11 +10,15 @@
       },
       "create_token": {
         "title": "Create Your Own Token",
-        "sidebar_label": "Create Your Own Token"
+        "sidebar_label": "Create Token"
       },
       "create_user_wallet": {
         "title": "Technical Guide to Creating a User Wallet",
-        "sidebar_label": "Create a User Wallet"
+        "sidebar_label": "Create User Wallet"
+      },
+      "distributing_tokens": {
+        "title": "Distribute Tokens to Your Consumers",
+        "sidebar_label": "Distribute Tokens"
       },
       "execute_transactions": {
         "title": "Technical Guide to Executing Transactions",
@@ -22,11 +26,11 @@
       },
       "explore_transactions": {
         "title": "Explore Transactions on OST View",
-        "sidebar_label": "Explore Transactions"
+        "sidebar_label": "OST VIEW (Explorer)"
       },
       "explore_wallet_app": {
         "title": "Explore OST Wallet App and Wallet SDKs",
-        "sidebar_label": "Explore OST Wallet"
+        "sidebar_label": "OST Wallet App"
       },
       "getting_started": {
         "title": "Getting Started",
@@ -36,9 +40,13 @@
         "title": "Glossary",
         "sidebar_label": "Glossary"
       },
+      "hornet-lgbt": {
+        "title": "Abc",
+        "sidebar_label": "Hornet LGBT"
+      },
       "introduction": {
         "title": "Introduction to OST Platform",
-        "sidebar_label": "Introduction"
+        "sidebar_label": "What is OST Platform?"
       },
       "kevin temp/create_session": {
         "title": "Create New Session Guide",
@@ -82,19 +90,27 @@
       },
       "mobile_wallet_ux_guide": {
         "title": "Suggestions for Your Mobile Wallet Design",
-        "sidebar_label": "Mobile Wallet UX Guide"
+        "sidebar_label": "Spoon Tokens"
       },
       "moving_to_mainnet": {
         "title": "Moving from Sandbox (testnet) to Production (Mainnet)",
-        "sidebar_label": "Moving to Mainnet"
+        "sidebar_label": "Move to Mainnet"
       },
       "platform_overview": {
         "title": "Platform Overview",
-        "sidebar_label": "Platform Overview"
+        "sidebar_label": "OST Platform"
       },
-      "release-notes/18_June_2019": {
+      "popcorn-pop": {
+        "title": "Abc",
+        "sidebar_label": "Popcorn"
+      },
+      "release-notes/03_Jun_2019": {
+        "title": "03 June 2019 Release",
+        "sidebar_label": "03-Jun-2019"
+      },
+      "release-notes/18_Jun_2019": {
         "title": "18 June 2019 Release",
-        "sidebar_label": "18 June 2019"
+        "sidebar_label": "18-Jun-2019"
       },
       "release-notes/2.0.0": {
         "title": "2.0.0 Release (March 2019)",
@@ -104,17 +120,17 @@
         "title": "2.1.0 Release (June 2019)",
         "sidebar_label": "2.1.0 Release"
       },
-      "release-notes/27_March_2019": {
+      "release-notes/27_Mar_2019": {
         "title": "27 March 2019 Release",
-        "sidebar_label": "27 March 2019"
+        "sidebar_label": "27-Mar-2019"
       },
-      "release-notes/3_June_2019": {
-        "title": "3 June 2019 Release",
-        "sidebar_label": "3 June 2019"
+      "spoon-spoo": {
+        "title": "Abc",
+        "sidebar_label": "Spoon Tokens"
       },
       "transactions_guide": {
         "title": "Overview of Transactions in OST Platform",
-        "sidebar_label": "Transactions Guide"
+        "sidebar_label": "Transactions"
       },
       "wallet/introduction": {
         "title": "Wallet Introduction",
@@ -137,7 +153,9 @@
       "Support": "Support"
     },
     "categories": {
-      "Documentation": "Documentation",
+      "Introduction": "Introduction",
+      "Illustrative Use Cases": "Illustrative Use Cases",
+      "Implementation Guides": "Implementation Guides",
       "Release Notes": "Release Notes"
     }
   },

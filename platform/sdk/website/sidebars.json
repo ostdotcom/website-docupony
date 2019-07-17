@@ -1,13 +1,13 @@
 {
   "OST Platform": {
-    "OST SDKs": [
-      "introduction",
+    "Introduction": [
       "getting_started",
       "authentication",
       "requirements_checklist",
       "sample_apps"
       
     ],
+    
     "Server Sides SDKs": [
       "server-side-sdks/php",
       "server-side-sdks/ruby",

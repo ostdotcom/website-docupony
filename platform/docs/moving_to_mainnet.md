@@ -1,6 +1,6 @@
 ---
 id: moving_to_mainnet
 title: Moving from Sandbox (testnet) to Production (Mainnet)
-sidebar_label: Moving to Mainnet
+sidebar_label: Move to Mainnet
 ---
 

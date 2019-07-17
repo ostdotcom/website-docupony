@@ -1,7 +1,7 @@
 ---
 id: introduction
 title: Introduction to OST Platform
-sidebar_label: Introduction
+sidebar_label: What is OST Platform?
 ---
 
 ## What is OST Platform?

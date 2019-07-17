@@ -1,26 +1,35 @@
 {
   "OST Platform": {
-
-    "Documentation": [
+    "Introduction": [
       "introduction",
       "getting_started",
       "platform_overview",
       "explore_wallet_app",
-      "transactions_guide",
+      "explore_transactions",
+      "glossary"
+    ],
+
+    "Illustrative Use Cases": [
+      "hornet-lgbt",
+      "spoon-spoo",
+      "popcorn-pop"
+
+    ],
+    
+    "Implementation Guides": [
+      "transactions",
       "create_token",
       "create_user_wallet",
       "execute_transactions",
-      "explore_transactions",
-      "moving_to_mainnet",
+      "distribute_tokens",
       "mobile_wallet_ux_guide",
-      "glossary"
+      "moving_to_mainnet"
     ],
       
     "Release Notes": [
-      "release-notes/18_June_2019",
-      "release-notes/15_June_2019",
-      "release-notes/3_June_2019",
-      "release-notes/27_March_2019"
+      "release-notes/18_Jun_2019",
+      "release-notes/03_Jun_2019",
+      "release-notes/27_Mar_2019"
     ]
   }
 }

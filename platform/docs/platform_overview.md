@@ -1,7 +1,7 @@
 ---
 id: platform_overview
 title: Platform Overview
-sidebar_label: Platform Overview
+sidebar_label: OST Platform
 ---
 
 ## Platform Components
