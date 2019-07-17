@@ -2,10 +2,7 @@
   "OST Platform": {
     "Introduction": [
       "getting_started",
-      "authentication",
-      "requirements_checklist",
-      "sample_apps"
-      
+      "authentication"
     ],
     
     "Server Sides SDKs": [

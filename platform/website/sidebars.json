@@ -12,18 +12,19 @@
     "Illustrative Use Cases": [
       "hornet-lgbt",
       "spoon-spoo",
-      "popcorn-pop"
-
+      "popcorn-pop",
+      "mobile_wallet_ux_guide"
     ],
     
     "Implementation Guides": [
       "transactions",
       "create_token",
+      "stake_and_mint",
       "create_user_wallet",
       "execute_transactions",
       "distribute_tokens",
-      "mobile_wallet_ux_guide",
-      "moving_to_mainnet"
+      "moving_to_mainnet",
+      "golive_checklist"
     ],
       
     "Release Notes": [

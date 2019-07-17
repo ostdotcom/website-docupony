@@ -40,6 +40,10 @@
         "title": "Glossary",
         "sidebar_label": "Glossary"
       },
+      "golive_checklist": {
+        "title": "Pre-Go-Live Checklist",
+        "sidebar_label": "Go-Live Checklist"
+      },
       "hornet-lgbt": {
         "title": "Abc",
         "sidebar_label": "Hornet LGBT"
@@ -90,7 +94,7 @@
       },
       "mobile_wallet_ux_guide": {
         "title": "Suggestions for Your Mobile Wallet Design",
-        "sidebar_label": "Spoon Tokens"
+        "sidebar_label": "Mobile (Wallet) UX"
       },
       "moving_to_mainnet": {
         "title": "Moving from Sandbox (testnet) to Production (Mainnet)",
@@ -127,6 +131,10 @@
       "spoon-spoo": {
         "title": "Abc",
         "sidebar_label": "Spoon Tokens"
+      },
+      "stake_and_mint": {
+        "title": "Stake and Mint",
+        "sidebar_label": "Stake and Mint"
       },
       "transactions_guide": {
         "title": "Overview of Transactions in OST Platform",

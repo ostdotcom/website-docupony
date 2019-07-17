@@ -64,14 +64,6 @@
         "title": "React Native Wallet SDK Setup",
         "sidebar_label": "React Native SDK"
       },
-      "requirements_checklist": {
-        "title": "Pre-Go-Live Checklist",
-        "sidebar_label": "Checklist"
-      },
-      "sample_apps": {
-        "title": "Sample Apps Built on OST Wallet SDKs",
-        "sidebar_label": "Sample Apps"
-      },
       "server-side-sdks/java": {
         "title": "Java SDK Quickstart Guide",
         "sidebar_label": "Java"
