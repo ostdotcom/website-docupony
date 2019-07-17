@@ -136,7 +136,7 @@
         "title": "Stake and Mint",
         "sidebar_label": "Stake and Mint"
       },
-      "transactions_guide": {
+      "transactions": {
         "title": "Overview of Transactions in OST Platform",
         "sidebar_label": "Transactions"
       },
