@@ -26,6 +26,7 @@ const siteConfig = {
   url: 'https://dev.ost.com' /* your website url */,
   baseUrl: '/platform/' /* base url for your project */,
   projectName: 'platform',
+  docsSideNavCollapsible: true,
   // organizationName: 'facebook',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...

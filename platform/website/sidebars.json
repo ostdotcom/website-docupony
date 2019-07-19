@@ -9,14 +9,7 @@
       "glossary"
     ],
 
-    "TEST IS A TEST": [
-     "platform-overview/wallet/introduction",
-     "platform-overview/wallet/sdk",
-     "platform-overview/wallet/kms",
-     "platform-overview/wallet/recovery"
-   ],
-
-    "Platform Overview": [
+    "Detailed Overview": [
 
      {
        "type": "subcategory",
@@ -46,14 +39,14 @@
      }
    ],
 
-    "Illustrative Use Cases": [
+    "Sample Use Cases": [
       "use-cases/lgbt",
       "use-cases/spoo",
       "use-cases/pop",
       "use-cases/mobile_wallet_ux_guide"
     ],
     
-    "Implementation Guides": [
+    "Implementation": [
       "guides/transactions",
       "guides/create_token",
       "guides/stake_and_mint",
