@@ -1,5 +1,5 @@
 ---
-id: introduction
+id: sdk
 title: Wallet Introduction
 sidebar_label: Introduction
 ---

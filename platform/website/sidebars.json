@@ -9,6 +9,43 @@
       "glossary"
     ],
 
+    "TEST IS A TEST": [
+     "platform-overview/wallet/introduction",
+     "platform-overview/wallet/sdk",
+     "platform-overview/wallet/kms",
+     "platform-overview/wallet/recovery"
+   ],
+
+    "Platform Overview": [
+
+     {
+       "type": "subcategory",
+       "label": "OST Platform",
+       "ids": [
+         "platform/introduction"
+       ]
+     },
+
+     {
+       "type": "subcategory",
+       "label": "OST Wallet",
+       "ids": [
+        "platform/wallet/introduction",
+        "platform/wallet/sdk",
+        "platform/wallet/kms",
+        "platform/wallet/recovery"
+       ]
+     },
+
+     {
+       "type": "subcategory",
+       "label": "OST View",
+       "ids": [
+        "platform/view/introduction"
+       ]
+     }
+   ],
+
     "Illustrative Use Cases": [
       "use-cases/lgbt",
       "use-cases/spoo",

@@ -38,7 +38,7 @@
 
       {
         "type": "subcategory",
-        "label": "Non-Native",
+        "label": "React Native",
         "ids": [
           "mobile-wallet-sdks/react-native"
         ]

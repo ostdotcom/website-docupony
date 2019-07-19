@@ -62,7 +62,7 @@
       },
       "mobile-wallet-sdks/react-native": {
         "title": "React Native Wallet SDK Setup",
-        "sidebar_label": "React Native SDK"
+        "sidebar_label": "Setup"
       },
       "server-side-sdks/java": {
         "title": "Java SDK Quickstart Guide",

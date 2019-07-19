@@ -104,6 +104,30 @@
         "title": "Wallet UX Guidelines",
         "sidebar_label": "Wallet UX"
       },
+      "platform-overview/introduction": {
+        "title": "Introduction to OST Platform",
+        "sidebar_label": "Introduction"
+      },
+      "platform-overview/view/introduction": {
+        "title": "Introduction to OST VIEW",
+        "sidebar_label": "Introduction"
+      },
+      "platform-overview/wallet/introduction": {
+        "title": "Introduction to OST Wallet",
+        "sidebar_label": "Introduction"
+      },
+      "platform-overview/wallet/kms": {
+        "title": "Key Management Solution",
+        "sidebar_label": "Key Management Solution"
+      },
+      "platform-overview/wallet/recovery": {
+        "title": "Wallet recovery",
+        "sidebar_label": "Wallet recovery"
+      },
+      "platform-overview/wallet/sdk": {
+        "title": "Wallet Introduction",
+        "sidebar_label": "Introduction"
+      },
       "release-notes/03_Jun_2019": {
         "title": "03 June 2019 Release",
         "sidebar_label": "03-Jun-2019"
@@ -139,18 +163,6 @@
       "use-cases/spoo": {
         "title": "Abc",
         "sidebar_label": "Spoon Tokens"
-      },
-      "wallet/kms": {
-        "title": "Key Management Solution",
-        "sidebar_label": "Key Management Solution"
-      },
-      "wallet/recovery": {
-        "title": "Wallet recovery",
-        "sidebar_label": "Wallet recovery"
-      },
-      "wallet/introduction": {
-        "title": "Wallet Introduction",
-        "sidebar_label": "Introduction"
       }
     },
     "links": {
@@ -162,6 +174,8 @@
     },
     "categories": {
       "Introduction": "Introduction",
+      "TEST IS A TEST": "TEST IS A TEST",
+      "Platform Overview": "Platform Overview",
       "Illustrative Use Cases": "Illustrative Use Cases",
       "Implementation Guides": "Implementation Guides",
       "Release Notes": "Release Notes"
