@@ -4,6 +4,9 @@ title: Wallet recovery
 sidebar_label: Wallet recovery
 ---
 
+https://medium.com/ostdotcom/ost-wallet-recovery-solutions-features-technical-challenges-and-implementation-c4092bdbfc07
+
+
 With the Wallet SDK, OST supports its clients in integrating the functionality of a non-custodial cryptocurrency wallet into their mobile applications. The users' private keys are generated and stored on their mobile device.
 
 This guide describes the ways in which application developers can work with the OST Wallet SDK to enable their users to regain access to their funds in case they lose access to their mobile device. 

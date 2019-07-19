@@ -9,7 +9,7 @@
       "glossary"
     ],
 
-    "Detailed Overview": [
+    "Learn More": [
 
      {
        "type": "subcategory",
@@ -39,7 +39,7 @@
      }
    ],
 
-    "Sample Use Cases": [
+    "Token Use Cases": [
       "use-cases/lgbt",
       "use-cases/spoo",
       "use-cases/pop",

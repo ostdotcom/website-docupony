@@ -174,8 +174,8 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Detailed Overview": "Detailed Overview",
-      "Sample Use Cases": "Sample Use Cases",
+      "Learn More": "Learn More",
+      "Token Use Cases": "Token Use Cases",
       "Implementation": "Implementation",
       "Release Notes": "Release Notes"
     }
