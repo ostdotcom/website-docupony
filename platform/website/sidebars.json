@@ -3,28 +3,28 @@
     "Introduction": [
       "introduction",
       "getting_started",
-      "platform_overview",
-      "explore_wallet_app",
-      "explore_transactions",
+      "ost_platform",
+      "ost_wallet",
+      "ost_view",
       "glossary"
     ],
 
     "Illustrative Use Cases": [
-      "hornet-lgbt",
-      "spoon-spoo",
-      "popcorn-pop",
-      "mobile_wallet_ux_guide"
+      "use-cases/lgbt",
+      "use-cases/spoo",
+      "use-cases/pop",
+      "use-cases/mobile_wallet_ux_guide"
     ],
     
     "Implementation Guides": [
-      "transactions",
-      "create_token",
-      "stake_and_mint",
-      "create_user_wallet",
-      "execute_transactions",
-      "distribute_tokens",
-      "moving_to_mainnet",
-      "golive_checklist"
+      "guides/transactions",
+      "guides/create_token",
+      "guides/stake_and_mint",
+      "guides/create_user_wallet",
+      "guides/execute_transactions",
+      "guides/distribute_tokens",
+      "guides/move_to_mainnet",
+      "guides/golive_checklist"
     ],
       
     "Release Notes": [
