@@ -109,11 +109,18 @@ footer .fbOpenSource {
 
 .footer-social-telegram-icon {
     background-position: -306px -92.8px;
-
 }
 
 .footer-social-telegram-icon:hover {
     background-position: -352.4px -92.8px;
+}
+
+.footer-social-slack-icon {
+ background-position: -306px -92.8px;
+}
+
+.footer-social-slack-icon:hover {
+ background-position: -352.4px -92.8px;
 }
 
 .footer-social-twitter-icon {

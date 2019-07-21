@@ -8,16 +8,20 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
+      "definitions": {
+        "title": "Definition Of Terms",
+        "sidebar_label": "Definitions"
+      },
       "getting_started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
-      "glossary": {
-        "title": "Glossary",
-        "sidebar_label": "Glossary"
+      "guides/create_session": {
+        "title": "Create New Session Guide",
+        "sidebar_label": "Create New Session"
       },
       "guides/create_token": {
-        "title": "Create Your Own Token",
+        "title": "Create Token Guide",
         "sidebar_label": "Create Token"
       },
       "guides/create_user_wallet": {
@@ -52,46 +56,6 @@
         "title": "Introduction to OST Platform",
         "sidebar_label": "What is OST Platform?"
       },
-      "kevin temp/create_session": {
-        "title": "Create New Session Guide",
-        "sidebar_label": "Create New Session"
-      },
-      "kevin temp/create_token": {
-        "title": "Create Token Guide",
-        "sidebar_label": "Create Token"
-      },
-      "kevin temp/create_wallet": {
-        "title": "Create Wallet Guide",
-        "sidebar_label": "Create Wallet"
-      },
-      "kevin temp/execute_transaction": {
-        "title": "Execute Transaction Guide",
-        "sidebar_label": "Execute Transaction"
-      },
-      "kevin temp/integration_steps": {
-        "title": "Steps to Integrating with OST Platform",
-        "sidebar_label": "Getting Started"
-      },
-      "kevin temp/introduction": {
-        "title": "Introduction to OST Platform",
-        "sidebar_label": "Introduction"
-      },
-      "kevin temp/ost_wallet_app": {
-        "title": "OST Wallet App",
-        "sidebar_label": "OST Wallet App"
-      },
-      "kevin temp/platform_overview_old": {
-        "title": "Platform Overview",
-        "sidebar_label": "Platform Overview"
-      },
-      "kevin temp/platform_overview": {
-        "title": "Platform Overview",
-        "sidebar_label": "OST Platform Overview"
-      },
-      "kevin temp/wallet_ux_guide": {
-        "title": "Wallet UX Guidelines",
-        "sidebar_label": "Wallet UX"
-      },
       "ost_platform": {
         "title": "Platform Overview",
         "sidebar_label": "OST Platform"
@@ -104,13 +68,17 @@
         "title": "Explore OST Wallet App and Wallet SDKs",
         "sidebar_label": "OST Wallet App"
       },
-      "platform/introduction": {
-        "title": "Introduction to OST Platform",
-        "sidebar_label": "Introduction"
+      "platform/components": {
+        "title": "OST Platform Overview",
+        "sidebar_label": "Components"
       },
-      "platform/view/introduction": {
+      "platform/ost-view": {
         "title": "Introduction to OST VIEW",
-        "sidebar_label": "Introduction"
+        "sidebar_label": "OST VIEW"
+      },
+      "platform/overview": {
+        "title": "OST Platform Overview",
+        "sidebar_label": "Overview"
       },
       "platform/wallet/introduction": {
         "title": "Introduction to OST Wallet",
@@ -174,9 +142,8 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Learn More": "Learn More",
       "Token Use Cases": "Token Use Cases",
-      "Implementation": "Implementation",
+      "Implementation Guides": "Implementation Guides",
       "Release Notes": "Release Notes"
     }
   },

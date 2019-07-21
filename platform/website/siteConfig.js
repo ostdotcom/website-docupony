@@ -50,8 +50,12 @@ const siteConfig = {
 
   secondryHeaderLinks: [
   
-
   ],
+
+  markdownPlugins: [
+   // Highlight admonitions.
+   require('remarkable-admonitions')({ icon: 'svg-inline' })
+ ],
 
   // If you have users set above, you add it here:
   // users,

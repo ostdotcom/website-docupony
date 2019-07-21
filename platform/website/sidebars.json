@@ -3,23 +3,19 @@
     "Introduction": [
       "introduction",
       "getting_started",
-      "ost_platform",
-      "ost_wallet",
-      "ost_view",
-      "glossary"
-    ],
+      "definitions",
 
-    "Learn More": [
-
-     {
+      {
        "type": "subcategory",
        "label": "OST Platform",
        "ids": [
-         "platform/introduction"
+        "platform/overview",
+        "platform/components",
+        "platform/ost-view"
        ]
      },
-
-     {
+     
+      {
        "type": "subcategory",
        "label": "OST Wallet",
        "ids": [
@@ -28,16 +24,8 @@
         "platform/wallet/kms",
         "platform/wallet/recovery"
        ]
-     },
-
-     {
-       "type": "subcategory",
-       "label": "OST View",
-       "ids": [
-        "platform/view/introduction"
-       ]
      }
-   ],
+    ],
 
     "Token Use Cases": [
       "use-cases/lgbt",
@@ -46,11 +34,12 @@
       "use-cases/mobile_wallet_ux_guide"
     ],
     
-    "Implementation": [
+    "Implementation Guides": [
       "guides/transactions",
       "guides/create_token",
       "guides/stake_and_mint",
       "guides/create_user_wallet",
+      "guides/create_session",
       "guides/execute_transactions",
       "guides/distribute_tokens",
       "guides/move_to_mainnet",

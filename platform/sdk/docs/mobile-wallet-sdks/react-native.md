@@ -1,7 +1,7 @@
 ---
 id: react-native
 title: React Native Wallet SDK Setup
-sidebar_label: Setup
+sidebar_label: React Native
 ---
 
 

@@ -15,7 +15,7 @@ The interface name is `OstWorkFlowCallback`
 import com.ost.mobilesdk.workflows.interfaces.OstWorkFlowCallback;
 ```
 
-![walletSDKCommunication](/platform/docs/sdkassets/wallet-sdk-communication.png)
+![walletSDKCommunication](/platform/docs/sdk/assets/wallet-sdk-communication.png)
 
 
 ## Interface Functions

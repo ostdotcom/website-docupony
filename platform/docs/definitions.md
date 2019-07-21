@@ -1,9 +1,8 @@
 ---
-id: glossary
-title: Glossary
-sidebar_label: Glossary
+id: definitions
+title: Definition Of Terms
+sidebar_label: Definitions
 ---
-
 
 ##  **TokenHolder** Contracts:
 * In the context of your token economy, each user in the economy will be represented by a smart contract. This smart contract is the  **TokenHolder** contract.

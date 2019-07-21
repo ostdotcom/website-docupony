@@ -4,13 +4,11 @@ title: Introduction to OST Wallet
 sidebar_label: Introduction
 ---
 
-With the OST Wallet SDK the user can set a 6 digit PIN to authorize Session Keys. These ephemeral Session Keys, which remain active for a period of time, remove the need for users to sign every transaction within the application. When a session expires, the user may use the 6 digit PIN to authorize a new session.
+# Introduction
+The OST Wallet App is a non-custodial wallet for Brand Tokens minted on OST Platform. The current version of the app lets users connect their Brand Token economy to the app, invite users and send and receive tokens. Users can also explore all of the wallet features enabled through the OST Wallet SDK.
 
-To further reduce friction, the OST Wallet SDK also supports the use of biometrics.
+## Getting Started
 
-The intended user experience is that most users will set a 6 digit PIN and then add their biometrics. From that point on all day-to-day usage of the wallet (e.g. spend tokens ) can be done with the biometrics. The PIN is only used thereafter for recovery or if the biometrics are not functioning. (Note: The user does not need to use her PIN or biometrics to view her wallet balance or ledger, rather only to re-authorize a session to spend tokens.)
 
-Wallet Recovery With PIN + Smart Contract
-OST Platform enables users to use fully functional wallets with only setting 6 digit PINs for recovery. Normally a 6 digit PIN, on its own, does not provide enough entropy to be secure. The OST Wallet SDK achieves security by combining inputs from the user (PIN), an encrypted secret from the company, and from OST. The concatenated string undergoes a transformation through a cryptographically secure process to generate a recoveryKey that can be used to request recovery using a smart-contract. The recovery smart contract (known as the delayedRecoveryModule) enforces a 12 hour waiting period during which the user can abort the recovery request using any of their authorized devices, further protecting the user from malicious recovery requests. We encourage you to learn more about OST’s innovative wallet recovery model by reviewing the detailed specifications and SDK.
-
-(Optionally OST clients can also enable experiences for their users to recover access to their Brand Tokens from a second device and/or recover from 12 written words, however, these are optional implementations.)
+## Learn More
+To learn more about the OST Wallet App, please refer to our [FAQ](https://help.ost.com/support/solutions/folders/35000214781). If you have any comments or suggestions, please contact us at [help.ost.com](https://help.ost.com) or send an email to support@ost.com.

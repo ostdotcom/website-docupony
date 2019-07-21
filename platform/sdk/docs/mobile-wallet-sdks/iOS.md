@@ -1,12 +1,12 @@
 ---
 id: iOS
 title: iOS SDK Setup
-sidebar_label: Setup
+sidebar_label: iOS
 ---
 
 
 ## 1. Prerequisite 
-You will need to integrate server side SDK on your server. You can use one of the available server side sdk: [PHP](/platform/docs/sdkerver_sdk_setup/php/), [Ruby](/platform/docs/sdkerver_sdk_setup/ruby/), [Java](/platform/docs/sdkerver_sdk_setup/java/), [Node.js](/platform/docs/sdkerver_sdk_setup/nodejs/).
+You will need to integrate server side SDK on your server. You can use one of the available server side SDKs: [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/).
 
 
 
@@ -64,7 +64,7 @@ Run this command
 
 Open application target, under General tab, drag the built `OstWalletSdk.framework` binary from `Carthage/Build/iOS` folder into Linked Frameworks and Libraries section.
 
-![copy-framework-file](/platform/docs/sdkassets/copy-framework-file.png)
+![copy-framework-file](/platform/docs/sdk/assets/copy-framework-file.png)
 
 #### iv). Adding the `OstWalletSdk` dependencies in your Xcode project
 We need to add the `.framework` files of dependencies present inside `Carthage/Build/iOS`.
@@ -90,7 +90,7 @@ $(SRCROOT)/Carthage/Build/iOS/OstWalletSdk.framework
 
 <br>
 
-![copy-framework-file](/platform/docs/sdkassets/add-dependency-framework-files.png)
+![copy-framework-file](/platform/docs/sdk/assets/add-dependency-framework-files.png)
 
 
 
@@ -171,7 +171,7 @@ This will be the base API URL we need to provide to SDK while initializing.
 
 iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet related actions. Communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkflowDelegate` protocol.
 
-![walletSDKCommunication](/platform/docs/sdkassets/communication-ios-sdk.png)
+![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
 
 ### a). Implementing the `OstWorkflowDelegate` protocol
 
@@ -251,4 +251,4 @@ To provide developers with sample integration of wallet SDK, a [demo iOS app ](h
 
 1. [Create Wallet Guide](/platform/docs/guides/create_wallet/)
 2. [Execute Transaction Guide](/platform/docs/guides/execute_transaction/)
-3. iOS Wallet SDK [Methods](/platform/docs/sdkreferences/wallet_sdk/iOS/latest/methods/),  [Protocol](/platform/docs/sdkreferences/wallet_sdk/iOS/latest/protocols/) and [Classes](/platform/docs/sdkreferences/wallet_sdk/iOS/latest/classes/)
+3. iOS Wallet SDK [Methods](/platform/docs/sdk/references/wallet_sdk/iOS/latest/methods/),  [Protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) and [Classes](/platform/docs/sdk/references/wallet_sdk/iOS/latest/classes/)

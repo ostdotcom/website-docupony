@@ -1,7 +1,7 @@
 ---
-id: introduction
+id: ost-view
 title: Introduction to OST VIEW
-sidebar_label: Introduction
+sidebar_label: OST VIEW
 ---
 
 OST VIEW is the block explorer for viewing Brand Token transactions and contracts on the OST blockchains. You can toggle between OST Platform Sandbox (testnet) and Production (mainnet) views.

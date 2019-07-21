@@ -4,9 +4,7 @@ title: Create New Session Guide
 sidebar_label: Create New Session
 ---
 
-Session keys are used to sign transactions in Mobile Applications. They have an expiry time and a spending limit. Developers will have to create session keys when session key is expired or not present. To create a new session key and authorize it, you need to use [addSession](/platform/docs/sdkreferences/wallet_sdk/android/latest/methods/#4-addsession) workflow available in Wallet SDK ([Android](/platform/docs/sdkwallet_sdk_setup/android/)/[iOS](/platform/docs/sdkwallet_sdk_setup/iOS/)) 
-
-
+Session keys are used to sign transactions in Mobile Applications. They have an expiry time and a spending limit. Developers will have to create session keys when session key is expired or not present. To create a new session key and authorize it, you need to use [addSession](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/#4-addsession) workflow available in Wallet SDK ([Android](/platform/docs/sdk/wallet_sdk_setup/android/)/[iOS](/platform/docs/sdk/wallet_sdk_setup/iOS/)) 
 
 
 ## Steps to Create a New Session Key
@@ -17,7 +15,7 @@ Session keys are used to sign transactions in Mobile Applications. They have an 
 
 ## 1. Calling addSession Workflow
 
-You can call the `addSession` workflow (available in [Android](/platform/docs/sdkwallet_sdk_setup/android/) and [iOS](/platform/docs/sdkwallet_sdk_setup/iOS/) Wallet SDK) to create and authorize the newly created session key.
+You can call the `addSession` workflow (available in [Android](/platform/docs/sdk/wallet_sdk_setup/android/) and [iOS](/platform/docs/sdk/wallet_sdk_setup/iOS/) Wallet SDK) to create and authorize the newly created session key.
 
 
 ### Sample Android Wallet SDK Code
@@ -36,7 +34,7 @@ Above shown sample code is a part of [Android sample application](https://github
 
 
 #### Receiving `addSession` workflow status callbacks
-There is a list of methods available as [interface](/platform/docs/sdkreferences/wallet_sdk/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdkwallet_sdk_setup/android/)) and as [protocol](/platform/docs/sdkreferences/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/sdkwallet_sdk_setup/iOS/)) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdk/wallet_sdk_setup/android/)) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/sdk/wallet_sdk_setup/iOS/)) for communication between mobile app and Wallet SDK. 
 
 
 To show you an example, we will just implement 2 functions to get the workflow status.

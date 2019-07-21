@@ -1,14 +1,11 @@
 ---
-id: introduction
-title: Introduction to OST Platform
-sidebar_label: Introduction
+id: components
+title: OST Platform Overview
+sidebar_label: Components
 ---
 
-OST Platform is a complete technology solution enabling businesses to easily launch blockchain-based economies without requiring blockchain development. Developers can use OST Platform to create, test and launch Brand Tokens backed by value tokens such as the OST Token.
-
-OST Platform is the first full-featured “no-code” blockchain platform — a set of unified dashboards, APIs, SDKs, wallets, and protocols that any business can use to easily deploy their own brand currency without requiring any in-house blockchain development.
-
-The diagram below illustrates how the different integration components of OST Platform work together and interact with your technology.
+![platform-interaction](/platform/docs/assets/Platform-Integrations.jpg)
+The diagram above illustrates how the OST Server Side SDK and OST Wallet SDK work together and interact with your technology.
 
 OST APIs and Server Side SDKs make it simple and easy for developers to integrate brand tokens into their apps. The SDKs provide various methods and URLs for different services like users, tokens, transactions, wallet services corresponding to an end-user of the economy.
 
