@@ -5435,6 +5435,12 @@ You can use a webhook to subscribe the notifications of different events (also c
 * sessions/logoutall_success
 * sessions/logoutall_failure
 
+### Price Points
+
+* price_points/usd_update
+* price_points/eur_update
+* price_points/gbp_update
+
 
 ## Webhook Event Data
 
