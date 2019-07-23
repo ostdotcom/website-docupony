@@ -3277,7 +3277,7 @@ let transferTo = "0xced071365a63ba20ca8b50391c62c23aa1831422";
 let transferAmount = 1;
 
 // To convert this ammount in atto, multiply the transferAmount to 10^18
-let transferAmountInAtto = 10^18 * transferAmount;
+let transferAmountInAtto = 10**18 * transferAmount;
 
 // Transfer amount should be in string;
 transferAmountInAtto = '1000000000000000000';
@@ -3326,7 +3326,7 @@ let transferTo = "0xced071365a63ba20ca8b50391c62c23aa1831422";
 
 let transferAmount = 1; // 1 USD
 
-let transferAmountInAtto = 10^18 * transferAmount;
+let transferAmountInAtto = 10**18 * transferAmount;
 
 // Transfer amount should be in string;
 transferAmountInAtto = '1000000000000000000';
