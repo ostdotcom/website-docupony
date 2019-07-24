@@ -249,6 +249,6 @@ To provide developers with sample integration of wallet SDK, a [demo iOS app ](h
 
 ## Next Steps
 
-1. [Create Wallet Guide](/platform/docs/guides/create_wallet/)
-2. [Execute Transaction Guide](/platform/docs/guides/execute_transaction/)
-3. iOS Wallet SDK [Methods](/platform/docs/sdk/references/wallet_sdk/iOS/latest/methods/),  [Protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) and [Classes](/platform/docs/sdk/references/wallet_sdk/iOS/latest/classes/)
+1. [Create Wallet Guide](/platform/docs/1-create)
+2. [Execute Transaction Guide](/platform/docs/guides/execute-transactions/)
+3. iOS Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/),  [Protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/classes/)

@@ -67,8 +67,8 @@ class Footer extends React.Component {
               <h6 className="text-uppercase">Join The Community</h6>
               <ul className="footer-nav list-unstyled">
                 <li>
-                  <a href="https://slack.com/" target="_blank" title="OST - Slack">
-                    <span className="footer-social-slack-icon social-icons"></span>
+                  <a href="https://t.me/ostdotcom" target="_blank" title="OST - Telegram">
+                    <span className="footer-social-telegram-icon social-icons"></span>
                   </a>
                 </li>
                 <li>

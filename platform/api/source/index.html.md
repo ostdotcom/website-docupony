@@ -49,7 +49,7 @@ Available Server Side sdk:
 ### Sandbox Environment
 You can signup on [OST Platform](https://platform.ost.com/) to create your account. By default you will land in sandbox mode. You can create an economy in sandbox mode to test the API. <br><br>
 
-Once you have created your token (refer [create token guide](/platform/docs/guides/create_token/)) to create token, then you can head over to [developers page ](https://platform.ost.com/testnet/developer/) to get access to API key and API secret.
+Once you have created your token (refer [create token guide](/platform/docs/1-create/)) to create token, then you can head over to [developers page ](https://platform.ost.com/testnet/developer/) to get access to API key and API secret.
 
 
 ### Production Environment
@@ -480,12 +480,12 @@ This is version 2 (v2) OST Platform API. Earlier versions have been removed from
 
 | Attribute  | Description  |
 |---|---|
-| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4)  | UUID V4  |
+| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4)  | UUID V4  |
 | **token_id** <br> **Integer** | Unique integer for the token |
-|  **token\_holder\_address** <br> **String**,  [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address),<br> **default is null** | This will be the address of [token-holder contract](/platform/docs/additional_resources/glossary/#**TokenHolder**-contracts).|
-| **device\_manager\_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null**   | This will be the address of [device manager contract](/platform/docs/additional_resources/glossary/#device-manager-a-**MultiSig**-contract) contract.   |
-|  **recovery_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null**  | This will be the address of recovery contract.  |
-| **recovery\_owner\_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null**  | This will be the recovery owner address.  |
+|  **token\_holder\_address** <br> **String**,  [**\<Address\>**](/platform/docs/definitions/#contract-address),<br> **default is null** | This will be the address of [token-holder contract](/platform/docs/definitions/#tokenholder-contract).|
+| **device\_manager\_address** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address), <br> **default is null**   | This will be the address of [device manager contract](/platform/docs/definitions/#devicemanager-multisig-contract) contract.   |
+|  **recovery_address** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address), <br> **default is null**  | This will be the address of recovery contract.  |
+| **recovery\_owner\_address** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address), <br> **default is null**  | This will be the recovery owner address.  |
 | **type** <br> **String** | `type` string will determine the type of user. It can have two possible values `user` and `company`. <br> `user`: All economy users will be of type `user`<br> `company`: Accounts used by client companies will have type `company`   |
 | **status** <br> **String**| CREATED / ACTIVATING / ACTIVATED. <br> `CREATED`: This will be the default status when a user is created. At this stage there are no smart contracts deployed on blockchain.  <br> `ACTIVATING`: This will be the user's status when smart contracts for the user are being deployed. <br> `ACTIVATED`: This will be the user's status when all the smart contracts for the user are deployed and user now can now perform the wallet actions.|
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
@@ -733,7 +733,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `user`.<br><br>
@@ -1059,10 +1059,10 @@ Devices are the wallet devices that are added by a user. `Devices` API allows yo
 
 | Attribute  | Description  |
 |---|---|
-|  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4)| uuid of the user in the token economy.  |
-|  **address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | This will be the address of the device's key in user's [**TokenHolder** Contract](/platform/docs/additional_resources/glossary/#**TokenHolder**-contracts).  |
-|  **linked_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address), <br> **default is null** | Address that points to the device's address in the **device manager contract's** linked list of `owners`. This is used during recovery.  |
-|  **api\_signer_address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | Will be used to validate the request coming from the wallet SDK.  |
+|  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4)| uuid of the user in the token economy.  |
+|  **address** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address) | This will be the address of the device's key in user's [**TokenHolder** Contract](/platform/docs/definitions/#**TokenHolder**-contracts).  |
+|  **linked_address** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address), <br> **default is null** | Address that points to the device's address in the **device manager contract's** linked list of `owners`. This is used during recovery.  |
+|  **api\_signer_address** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address) | Will be used to validate the request coming from the wallet SDK.  |
 |   **status** <br> **String**| REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING. <br> `REGISTERED`: Status when client company registers device with OST. <br>`AUTHORIZING `: Status when device address is being authorized in user's **device manager Contract. <br>`AUTHORIZED `: Status when the authorization is complete.<br>`REVOKING `: Status when device is being revoked from user's **device manager Contract.<br>`REVOKED `: Status when revocation of the device address is complete. <br> `RECOVERING`: Status when device address is being revoked and a replacement address is being authorized in user's **device manager Contract (recovery). <br> `ABORTING`: Status when recovery is being aborted. |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
@@ -1186,7 +1186,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**POST Parameters**</u>
@@ -1337,7 +1337,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 | **device_address** <br> **Required**   | Device address |
 
 <u>**Success Response**</u><br>
@@ -1493,7 +1493,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**Query Parameters**</u>
@@ -1561,11 +1561,11 @@ API you can `get` and `list` user's sessions. Sessions are generated by wallet S
 
 | Attribute  | Description  |
 |---|---|
-|  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.   |
-|  **address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address)  | This will be the [session key address](/platform/docs/additional_resources/glossary/#session-key).   |
+|  **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.   |
+|  **address** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address)  | This will be the [session key address](/platform/docs/definitions/#session-key).   |
 |  **expiration_height** <br> **Integer** | Block height when the session address will expire |
 |   **approx\_expiration\_timestamp** <br> **EPOCH \<time in seconds\>**, <br> **default is null**| Approximate time at which the session address will expire.  |
-|  **spending_limit** <br> **String \<BigInt\>** | Maximum allowed [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token) that can be transferred in one transaction by this session address. |
+|  **spending_limit** <br> **String \<BigInt\>** | Maximum allowed [atto Brand Token](/platform/docs/guides/execute-transactions/#converting-brand-token-to-atto-brand-token) that can be transferred in one transaction by this session address. |
 |   **nonce** <br> **Integer**,<br> **default is null**| Transaction counter of session address which helps prevents replay attacks.  |
 |  **status** <br> **String**| Status gives us status of session key. It can take one of these values. INITIALIZING / AUTHORIZED / REVOKING / REVOKED <br> `INITIALIZING`: Status when the session address is being authorized in user's device manager(**MultiSig**) contract. <br>`AUTHORIZED`: Status when the authorization is complete <br> `REVOKING`: Status when the session is being revoked from device manager(**MultiSig**) contract<br> `REVOKED`: Status when the session revocation is complete|
 |  **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
@@ -1684,7 +1684,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 | **session_address** <br> **Required**   | Session address |
 
 
@@ -1836,7 +1836,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 
 <u>**Query Parameters**</u>
 
@@ -1903,7 +1903,7 @@ When executing a token transfer, a user's  **TokenHolder** contract interacts wi
 |  **id** <br> **Integer**| Integer identifier of the rule |
 | **token_id**  <br> **Integer** | Token id is the unique identifier for your brand token.  |
 | **name** <br> **String** | Name of the rule smart contract.  |
-| **address** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address)  | This will be the rule smart contract address.   |
+| **address** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address)  | This will be the rule smart contract address.   |
 |  **abi** <br> **String** | [Abi object](https://solidity.readthedocs.io/en/develop/abi-spec.html)  for rule smart contract.  |
 
 ## List all Rules
@@ -2930,15 +2930,15 @@ The value of `data.result_type` property will be `price_point` and price point o
 
 | Attribute  | Description  |
 |---|---|
-| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique Indentifeir of transaction   |
-| **transaction_hash** <br> **String [**\<tx hash\>**](/platform/docs/additional_resources/glossary/#tx-hash), <br> **default is null** | Hash of the transaction in blockchain  |
-|  **from**  <br> **String**,  [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address),<br> **default is null** | Sender address of transaction on blockchain.  |
-|  **to** <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) |   This will be the  **TokenHolder** contract address of transaction initiator.|
+| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | Unique Indentifeir of transaction   |
+| **transaction_hash** <br> **String [**\<tx hash\>**](/platform/docs/definitions/#tx-hash), <br> **default is null** | Hash of the transaction in blockchain  |
+|  **from**  <br> **String**,  [**\<Address\>**](/platform/docs/definitions/#contract-address),<br> **default is null** | Sender address of transaction on blockchain.  |
+|  **to** <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address) |   This will be the  **TokenHolder** contract address of transaction initiator.|
 |  **nonce** <br> **Integer**, <br> **default is null**| Transaction counter of sender address which helps prevents replay attacks.  |
-| **value**  <br> **String \<BigInt\>**, <br> **default is null**| Transferred [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) amount.   |
-| **gas_price**<br> **String \<BigInt\>** | The [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost) per unit of gas provided by the sender. |
+| **value**  <br> **String \<BigInt\>**, <br> **default is null**| Transferred [atto OST](/platform/docs/guides/execute-transactions/#converting-ost-to-atto-ost) amount.   |
+| **gas_price**<br> **String \<BigInt\>** | The [atto OST](/platform/docs/guides/execute-transactions/#converting-ost-to-atto-ost) per unit of gas provided by the sender. |
 | **gas_used** <br> **Integer**, <br> **default is null**| Gas used by this transaction  |
-| **transaction_fee** <br> **String \<BigInt\>**, <br> **default is null** | This is calculated by multiplying `gas_price` and `gas_used` (gas_price * gas_used) in [atto OST](/platform/docs/guides/execute_transaction/#converting-ost-to-atto-ost)  |
+| **transaction_fee** <br> **String \<BigInt\>**, <br> **default is null** | This is calculated by multiplying `gas_price` and `gas_used` (gas_price * gas_used) in [atto OST](/platform/docs/guides/execute-transactions/#converting-ost-to-atto-ost)  |
 | **block_confirmation** <br>  **Integer**, <br> **default is null**| Number of blocks mined after the transaction was mined  |
 | **status**  <br> **String**| Status can take one of the following values: <br> CREATED / SUBMITTED / MINED / SUCCESS / FAILED <br> `CREATED`: Transaction is accepted by OST Platform.<br> `SUBMITTED`: Transaction is submitted on blockchain. <br> `MINED`: Transaction is successful but waiting for 6 block confirmation. At this stage transaction is not be visible in the ledger of `to` address of `transfers`.<br>`SUCCESS`: Transaction succeeded<br>`FAILED`: Transaction failed. |
 | **updated_timestamp** <br>  **EPOCH \<time in seconds\>**| Last update timestamp.   |
@@ -2954,7 +2954,7 @@ The value of `data.result_type` property will be `price_point` and price point o
     <td>
       <strong>From</strong> 
       <br> 
-      <strong>String</strong> <a href="/platform/docs/additional_resources/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
+      <strong>String</strong> <a href="/platform/docs/definitions/#contract-address"><strong>&lt;Address&gt;</strong></a>
     </td>
 
     <td>
@@ -2980,7 +2980,7 @@ The value of `data.result_type` property will be `price_point` and price point o
     <td>
       <strong>to </strong>
       <br> 
-      <strong>String</strong> <a href="/platform/docs/additional_resources/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
+      <strong>String</strong> <a href="/platform/docs/definitions/#contract-address"><strong>&lt;Address&gt;</strong></a>
     </td>
 
     <td>
@@ -3009,7 +3009,7 @@ The value of `data.result_type` property will be `price_point` and price point o
     </td>
 
     <td>
-    Transferred amount in [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token).
+    Transferred amount in [atto Brand Token](/platform/docs/guides/execute-transactions/#converting-brand-token-to-atto-brand-token).
     </td>
   </tr>
 
@@ -3276,8 +3276,8 @@ let transferTo = "0xced071365a63ba20ca8b50391c62c23aa1831422";
 // Amount of Brand Token to be transferred
 let transferAmount = 1;
 
-// To convert this ammount in atto, multiply the transferAmount to 10^18
-let transferAmountInAtto = 10^18 * transferAmount;
+// mobile-wallet-sdks
+let transferAmountInAtto = 10**18 * transferAmount;
 
 // Transfer amount should be in string;
 transferAmountInAtto = '1000000000000000000';
@@ -3326,7 +3326,7 @@ let transferTo = "0xced071365a63ba20ca8b50391c62c23aa1831422";
 
 let transferAmount = 1; // 1 USD
 
-let transferAmountInAtto = 10^18 * transferAmount;
+let transferAmountInAtto = 10**18 * transferAmount;
 
 // Transfer amount should be in string;
 transferAmountInAtto = '1000000000000000000';
@@ -3486,9 +3486,9 @@ public class Test {
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/transactions
 
 
-* Execute transaction API allows you to do `company-to-user` transactions. `user` initiated transactions will be managed by Wallet SDK (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)). <br>
+* Execute transaction API allows you to do `company-to-user` transactions. `user` initiated transactions will be managed by Wallet SDK (available in [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) and [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/)). <br>
 
-* Read the [execute company-to-user transaction guide](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions) to undertstand the complete `company-to-user` flow.
+* Read the [execute company-to-user transaction guide](/platform/docs/guides/execute-transactions/#executing-company-to-user-transactions) to undertstand the complete `company-to-user` flow.
 
 
 
@@ -3496,7 +3496,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | User id of sender. Server SDK allows you to do company to user transactions so you need to pass company's `uuid`. Use [tokens](/platform/docs/api/#get-token) api to get company's `uuid`.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | User id of sender. Server SDK allows you to do company to user transactions so you need to pass company's `uuid`. Use [tokens](/platform/docs/api/#get-token) api to get company's `uuid`.  |
 
 
 <u>**POST Parameters**</u>
@@ -3504,7 +3504,7 @@ public class Test {
 | Parameter  | Description  |
 |---|---|
 | **to** <br> **Required**   | Rule address. You can get the rule address by using [list all rules](/platform/docs/api/#list-all-rules) API.  |
-| **raw_calldata** <br> **Required** <br> <span class="child-table-toggle" data-target="transaction-row-calldata">Show child attributes</span>  | Parameters required for rule execution. Parameter details are explained in [execute transaction guide](/platform/docs/guides/execute_transaction/#rules-contract) |
+| **raw_calldata** <br> **Required** <br> <span class="child-table-toggle" data-target="transaction-row-calldata">Show child attributes</span>  | Parameters required for rule execution. Parameter details are explained in [execute transaction guide](/platform/docs/guides/execute-transactions/#rules-contract) |
 | **meta_property** <br> **Required** <br> <span class="child-table-toggle" data-target="transaction-meta-property-2">Show child attributes</span>  | Extra information about the transfer.  |
 
 <table id="transaction-row-calldata" style="display:none;">
@@ -3812,7 +3812,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 | **transaction_id** <br> **Required**   | Unique Identifier of the transaction to be retrieved  |
 
 
@@ -4049,7 +4049,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 
 <u>**Query Parameters**</u>
 
@@ -4178,10 +4178,10 @@ Balance API offers the functionality to view a user’s balances.
 
 | Attribute  | Description  |
 |---|---|
-| **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-| **total_balance** <br> **String \<BigInt\>**| Settled `Brand Token` balance in [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token).  |
-| **available_balance** <br> **String \<BigInt\>** | Total brand token balance minus unsettled debits in [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token)  |
-| **unsettled_debit** <br> **String \<BigInt\>** | Unsettled brand token balance in [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token). When the transaction is initiated brand token sender's balance gets [pessimistically debited](). When transaction is either successful or failed, usettled debits are settled.   |
+| **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
+| **total_balance** <br> **String \<BigInt\>**| Settled `Brand Token` balance in [atto Brand Token](/platform/docs/guides/execute-transactions/#converting-brand-token-to-atto-brand-token).  |
+| **available_balance** <br> **String \<BigInt\>** | Total brand token balance minus unsettled debits in [atto Brand Token](/platform/docs/guides/execute-transactions/#converting-brand-token-to-atto-brand-token)  |
+| **unsettled_debit** <br> **String \<BigInt\>** | Unsettled brand token balance in [atto Brand Token](/platform/docs/guides/execute-transactions/#converting-brand-token-to-atto-brand-token). When the transaction is initiated brand token sender's balance gets [pessimistically debited](). When transaction is either successful or failed, usettled debits are settled.   |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
 
 
@@ -4296,7 +4296,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**Success Response**</u><br>
@@ -4344,7 +4344,7 @@ Token object contains details about economy and various contract addresses. One 
 | **base_token** <br> **String** | The ERC 20 Token used for staking.  |
 | **conversion_factor** <br> **Float**  | Number of Brand Token in one Base Token.  |
 | **total_supply** <br> **String \<BigInt\>** | Total supply of Brand Tokens  |
-| **decimals** <br> **Integer** | `10^decimals` [atto Brand Token](/platform/docs/guides/execute_transaction/#converting-brand-token-to-atto-brand-token) makes one Brand Token  |
+| **decimals** <br> **Integer** | `10^decimals` [atto Brand Token](/platform/docs/guides/execute-transactions/#converting-brand-token-to-atto-brand-token) makes one Brand Token  |
 | **origin_chains** <br> **Hash** <br> <span class="child-table-toggle" data-target="token-origin-chain">Show child attributes</span>| Origin chain details  |
 | **auxiliary_chain** <br> **Array** <br> <span class="child-table-toggle" data-target="token-auxiliary-chain">Show child attributes</span> | List of auxiliary chain details  |
 | **updated_timestamp** <br> **EPOCH \<time in seconds\>**| Last update timestamp.  |
@@ -4368,7 +4368,7 @@ Token object contains details about economy and various contract addresses. One 
     <td>
       <strong>branded_token</strong>
       <br> 
-      <strong>String</strong> <a href="/platform/docs/additional_resources/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
+      <strong>String</strong> <a href="/platform/docs/definitions/#contract-address"><strong>&lt;Address&gt;</strong></a>
     </td>
 
     <td>
@@ -4425,7 +4425,7 @@ Token object contains details about economy and various contract addresses. One 
     <td>
       <strong>utility_branded_token</strong>
       <br> 
-      <strong>String</strong> <a href="/platform/docs/additional_resources/glossary/#contract-address"><strong>&lt;Address&gt;</strong></a>
+      <strong>String</strong> <a href="/platform/docs/definitions/#contract-address"><strong>&lt;Address&gt;</strong></a>
     </td>
 
     <td>
@@ -4676,7 +4676,7 @@ The value of `data.result_type` property will be `token` and token object will b
 
 # Recovery Owner
 
-A user’s Brand Tokens are held by a [**TokenHolder** contract](/platform/docs/additional_resources/glossary/#**TokenHolder**-contracts) that is controlled ("owned") by a [Device Manager](/platform/docs/additional_resources/glossary/#device-manager-a-**MultiSig**-contract); the device manager is controlled ("owned") by [device keys](/platform/docs/additional_resources/glossary/#owner-key-device-key) created and held by the user in their wallets and if any of those keys is lost, the Device Manager (which is a multi-signature contract) is programmed to allow the replacement of a key by the recovery owner key for the user, via the `**DelayedRecoveryModule**`, which is deployed at the time of the creation of the user's initial wallet.
+A user’s Brand Tokens are held by a [**TokenHolder** contract](/platform/docs/definitions/#**TokenHolder**-contracts) that is controlled ("owned") by a [Device Manager](/platform/docs/definitions/#device-manager-a-**MultiSig**-contract); the device manager is controlled ("owned") by [device keys](/platform/docs/definitions/#owner-key-device-key) created and held by the user in their wallets and if any of those keys is lost, the Device Manager (which is a multi-signature contract) is programmed to allow the replacement of a key by the recovery owner key for the user, via the `**DelayedRecoveryModule**`, which is deployed at the time of the creation of the user's initial wallet.
 
 This API is used to get the status of newly created recovery owner key
 
@@ -4684,8 +4684,8 @@ This API is used to get the status of newly created recovery owner key
 
 | Attribute  | Description  |
 |---|---|
-| **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
-| **address**  <br> **String** [**\<Address\>**](/platform/docs/additional_resources/glossary/#contract-address) | This is the public address knowns as recovery owner address. This key has authorization to replace the lost device address key using `**DelayedRecoveryModule**`. |
+| **user_id**  <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
+| **address**  <br> **String** [**\<Address\>**](/platform/docs/definitions/#contract-address) | This is the public address knowns as recovery owner address. This key has authorization to replace the lost device address key using `**DelayedRecoveryModule**`. |
 | **status** <br> **String** | Status can be one of the following values: <br> AUTHORIZATION_FAILED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED <br> `AUTHORIZING`: Default status when the recovery owner is created during user activation.<br>`AUTHORIZED`: Status when recovery owner address is authorized successfully during user activation. <br>  |
 
 
@@ -4801,7 +4801,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 | **recovery_owner_address** <br> **Required**   | This will be the recovery public addres generated. |
 
 
@@ -5002,8 +5002,8 @@ This API allows you to get the device manager information.
 
 | Attribute  | Description  |
 |---|---|
-| **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | User id of the `user` to which this device manager belongs.  |
-|  **address** <br> **String** \<[**Address**](/platform/docs/additional_resources/glossary/#contract-address)\>  |  Address of [device manager contract](/platform/docs/additional_resources/glossary/#device-manager-a-**MultiSig**-contract)   |
+| **user_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | User id of the `user` to which this device manager belongs.  |
+|  **address** <br> **String** \<[**Address**](/platform/docs/definitions/#contract-address)\>  |  Address of [device manager contract](/platform/docs/definitions/#device-manager-a-**MultiSig**-contract)   |
 |  **requirement** <br> **Integer** | Minimum number of signatures needed to execute multi sig operations.  |
 |  **nonce** <br> **Integer** | Transaction counter to be used for multi sig operations which helps prevents replay attacks.  |
 |  **status** <br> **String** | Only value possible is `ACTIVATED`   |
@@ -5125,7 +5125,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | uuid of the user in the token economy.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the user in the token economy.  |
 
 
 <u>**Success Response**</u><br>
@@ -5387,7 +5387,7 @@ You can use a webhook to subscribe the notifications of different events (also c
 
 | Attribute  | Description  |
 |---|---|
-| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for webhook |
+| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | Unique identifier for webhook |
 |  **url** <br> **String** | URL where you want to recieve the event notifications.  |
 |  **format** <br> **String** | Response format of webhook  |
 |  **status** <br> **String** <br> **default is active** | Status of a webhook. It can take one of the two values `active` and `inactive`. The default value is `active`.  |
@@ -5435,6 +5435,11 @@ You can use a webhook to subscribe the notifications of different events (also c
 * sessions/logoutall_success
 * sessions/logoutall_failure
 
+### Price Points
+
+* price_points/usd_update
+* price_points/eur_update
+* price_points/gbp_update
 
 ## Webhook Event Data
 
@@ -5487,8 +5492,8 @@ Webhook event data format is explained below:
 
 | Attribute  | Description  |
 |---|---|
-| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for this event. This `id` is different than `webhook_id` |
-| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for webhook |
+| **id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | Unique identifier for this event. This `id` is different than `webhook_id` |
+| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | Unique identifier for webhook |
 |  **topic** <br> **String** | The topic for which the event has occured. <br> Take a look at [list of available topics](/platform/docs/api/#webhook-topics). |
 |  **version** <br> **String** | Verion string. Current value of version is v2 |
 | **created_at** <br> **EPOCH \<time in seconds\>**| Event creation timestamp.  |
@@ -5913,7 +5918,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for a webhook |
+| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | Unique identifier for a webhook |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `webhook`.<br><br>
@@ -6271,7 +6276,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **webhook_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for a webhook   |
+| **webhook_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | Unique identifier for a webhook   |
 
 <u>**Query Parameters**</u>
 
@@ -6428,7 +6433,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/additional_resources/glossary/#uuid-v4) | Unique identifier for a webhook |
+| **webhook_id** <br> **String**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | Unique identifier for a webhook |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 2 child properties `result_type` and `webhook`.<br><br>

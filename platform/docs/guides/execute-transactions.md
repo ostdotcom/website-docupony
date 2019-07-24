@@ -72,7 +72,7 @@ The QRCode data for executing transactions via web applications should be a JSON
 ### Example JSON data for QRCode
 
 :::note The amounts are in atto 
-[Wei conversions](/platform/docs/guides/execute_transaction/#wei-conversions) are explained in [next section](/platform/docs/guides/execute_transaction/#wei-conversions)
+[Wei conversions](/platform/docs/guides/execute-transactions/#wei-conversions) are explained in [next section](/platform/docs/guides/execute-transactions/#wei-conversions)
 :::
 
 ```js
@@ -256,7 +256,7 @@ Sample verifyData code (Android Wallet SDK)
 ### Verify Transaction Status
 
 #### Receiving `performQRAction` workflow status callbacks
-There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdk/wallet_sdk_setup/android/)) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/sdk/wallet_sdk_setup/iOS/)) for communication between mobile app and OST Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/android/)) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/ios/)) for communication between mobile app and OST Wallet SDK. 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
 

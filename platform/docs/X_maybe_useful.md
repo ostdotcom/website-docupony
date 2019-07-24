@@ -44,12 +44,12 @@ Warning
 
 6. Choose your preferred Server Side SDK: [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/). Optionally, you can choose to work direct with [OST Platform APIs](/platform/docs/api).
 
-7. Choose your Mobile Wallet SDK(s): [Android](/platform/docs/wallet_sdk_setup/android/), [iOS](/platform/docs/sdk/wallet_sdk_setup/iOS/), [React Native](/platform/docs/sdk/wallet_sdk_setup/react-native/)
+7. Choose your Mobile Wallet SDK(s): [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/ios/), [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)
 
 8. Start your development work and integration with OST Platform SDKs! First, test in our Sandbox then request to move to Production. We recommend following these steps to get started:
-    * [Create a wallet for a user](/platform/docs/guides/create_wallet/)
-    * [Send Brand Tokens to your users](/platform/docs/guides/execute_transaction/#executing-company-to-user-transactions)
-    * [Test a user initiated transaction](/platform/docs/guides/execute_transaction/#executing-user-intiated-transactions-in-web)
+    * [Create a wallet for a user](/platform/docs/1-create)
+    * [Send Brand Tokens to your users](/platform/docs/guides/execute-transactions/#executing-company-to-user-transactions)
+    * [Test a user initiated transaction](/platform/docs/guides/execute-transactions/#executing-user-intiated-transactions-in-web)
 
 
 Stake and Mint is the process of first **staking** a value token on Ethereum mainnet and then using that stake to **mint** your Brand Tokens. Your Brand Tokens are backed by what is staked. This gives them value and differentiates them from traditional rewards points.

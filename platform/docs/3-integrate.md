@@ -18,8 +18,8 @@ Check-out our technical implementation guides for an overview of how to approach
 ### Server Side SDKs
 * [PHP](/platform/docs/sdk/server-side-sdks/php/)
 * [Ruby](/platform/docs/sdk/server-side-sdks/ruby/)
-* [Java](https://dev.ost.com/platform/docs/sdk/server-side-sdks/java/)
-* [Node.js](https://dev.ost.com/platform/docs/sdk/server-side-sdks/nodejs/)
+* [Java](/platform/docs/sdk/server-side-sdks/java/)
+* [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/)
 
 ### Mobile Wallet SDKs
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
@@ -32,7 +32,7 @@ Check-out the OST Wallet App for a sample implementation of the OST Wallet SDKs
 :::important user_ID Map
 When you integrate Brand Tokens into your application, please remember to:
  * Create and maintain a map of OST Platform user_id to the user's profile on their app
- * [Generate and safely store a 30 character "secret" for each user](https://dev.stagingost.com/platform/docs/guides/create_wallet/#generating-passphaseprefix). This "secret" is used for the recovery and thus must be unique to each user.
+ * [Generate and safely store a 30 character "secret" for each user](/platform/docs/guides/create-user-wallet/#generate-passphaseprefix). This "secret" is used for the recovery and thus must be unique to each user.
 :::
 
 ## c. Perform test transactions

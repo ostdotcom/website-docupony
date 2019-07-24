@@ -7,14 +7,14 @@ sidebar_label: Features
 OST Wallet SDK comes packed with useful featuers designed for mainstream users. This page gives a descriptive account of each of the features.
 
 ## Non-Custodial 
-**Users Hold Their Private Keys.** The [OST Wallet SDK](https://dev.ost.com/platform/docs/guides/create_wallet/) supports non-custodial wallets, where users hold the keys and can transact with Brand Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android).
+**Users Hold Their Private Keys.** The [OST Wallet SDK](/platform/docs/1-create/) supports non-custodial wallets, where users hold the keys and can transact with Brand Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android).
 
 ## Multi-Device
 The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a **6 digit PIN**), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Brand Tokens and authorize a new device.
 
 The user input ---assumed to be a **6 digit PIN**--- is also used to guard access to sensitive operations such as authorizing devices, viewing the mnemonic phrase, etc.  
 
-![ERDUserSetupDiagram](/platform/docs/assets/ERD-User-Setup-Daigram.jpg)
+![ERDUserSetupDiagram](/platform/docs/assets/ERD_user_setup.jpg)
 
 ## Ephemeral Session Keys
 In the context of Brand Tokens used in OST's client economies, the public address is represented by a **TokenHolder** contract. The configured owner of a **TokenHolder** contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend per transaction.

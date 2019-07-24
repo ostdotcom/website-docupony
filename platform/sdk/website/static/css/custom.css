@@ -1,525 +1,205 @@
 /* your custom css */
-@media only screen and (min-width: 1400px) {
-     .docMainWrapper.wrapper{
-         max-width: 1400px;
-         margin: 0 auto!important;
-     }
- }
- 
 
+@media only screen and (min-width: 1400px) {
+ .docMainWrapper.wrapper{
+     max-width: 1400px;
+     margin: 0 auto!important;
+ }
+}
 
 @media only screen and (min-width: 1024px) {
-    .content-block {
-        margin-right: 20px;
-        width: calc(33.33% - 20px);
-        display: grid;
-    }
+.content-block {
+    margin-right: 20px;
+    width: calc(33.33% - 20px);
+    display: grid;
+}
 }
 
 @media only screen and (max-width: 1023px) {
-    .content-block {
-        /*margin-right: 20px;*/
-        width: 100%;
-        display: grid;
-    }
+.content-block {
+    /*margin-right: 20px;*/
+    width: 100%;
+    display: grid;
+}
 
 }
 
 
 /** Side Nav Fixes **/
 
-
 nav.toc .toggleNav ul li a {
-    border: none;
-    color: #34445B !important;
-    display: inline-block;
-    font-size: 16px;
-    line-height: 1.5em;
-    margin: 2px 10px 5px;
-    padding: 5px 0 2px;
-    transition: color 0.3s;
+color: #34445B !important;
+display: block-inline;
+font-size: 14px;
+border-width: initial;
+border-style: none;
+border-color: initial;
+border-image: initial;
+padding: 4px 0px;
+margin: 0;
+transition: color 0.3s ease 0s;
 }
+
+nav.toc .toggleNav .navGroup .navGroupCategoryTitle {
+color: #393939;
+font-size: 16px;
+font-weight: 500;
+line-height: 1.2em;
+margin-top: 0;
+margin-bottom: 0;
+}
+
+nav.toc .toggleNav .navGroup .navGroupCategoryTitle .collapsible {
+color: #393939;
+font-size: 16px;
+font-weight: 500;
+line-height: 1.2em;
+margin-top: 0;
+margin-bottom: 0;
+}
+
+.toc .toggleNav .navGroup .navGroupSubcategoryTitle {
+color: #393939;
+font-size: 14px;
+font-weight: 500;
+line-height: 1.2em;
+margin-top: 5px;
+margin-bottom: 0;
+/* padding: 4px 0; */
+}
+
 nav.toc .toggleNav ul li a:hover, nav.toc .toggleNav ul li a:focus {
-    color: #438CAD !important;
+color: #438CAD !important;
 }
 
 nav.toc .toggleNav ul li a.navItemActive {
-    color: #34445B !important;
-    font-weight: bold;
+color: #34445B !important;
+font-weight: bold;
 }
 
 /** H1, H2, H3 **/
 .mainContainer .wrapper .post .postHeader h1 {
-    font-size: 250%;
-    font-weight: 500;
-    color: #438BAD !important;
-}
-
-
-.container .wrapper h3 {
-    color: #438CAD;
-    font-size: 18px;
-    margin-top: 10px;
-    padding: 10px 0;
+font-size: 150%;
+font-weight: 500;
+color: #438BAD !important;
 }
 
 .mainContainer .wrapper .post h2 {
-    font-size: 130%;
-    color: #438CAD;
+font-size: 130%;
+color: #438CAD;
 }
 .mainContainer .wrapper .post h3 {
-    font-size: 110%;
-    color: #438CAD;
+font-size: 115%;
+color: #438CAD;
+}
+.mainContainer .wrapper .post h4 {
+font-size: 105%;
+font-weight: 300;
+color: #438CAD;
 }
 .mainContainer .wrapper .post h5 {
-    font-weight: 300;
-    color: #438CAD;
-    font-style: italic;
+font-weight: 300;
+color: #438CAD;
+font-style: italic;
 }
-
-/** Top Nav and Header **/
-.navigationSlider .slidingNav ul li a {
-    border: 0;
-    color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.2em;
-    padding: 6px 10px;
-    height: 32px;
-    font-size: 1em;
-}
-.navigationSlider .slidingNav ul li a:hover {
-    color: #fff;
-}
-
-.fixedHeaderContainer header h2 {
-    display: block;
-    color: #34445B !important;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
-    line-height: 0px !important;
-    position: relative;
-    z-index: 9999;
-}
-.fixedHeaderContainer header h3 {
-    text-decoration: underline;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
-    color: white;
-    margin-left: 10px;
-    font-size: 16px;
-}
-
 
 /* custom styling for header*/
 .wrapper{
-    max-width: 100%;
+max-width: 100%;
 }
 .toc .toggleNav ul li.navListItemActive a, nav.toc .toggleNav ul li a:hover  {
-    color: $secondaryColor! important;
+color: secondaryColor! important;
 }
 
 .content-blocks {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 5px;
+display: flex;
+flex-wrap: wrap;
+margin-top: 5px;
 }
-
 
 .section-promo {
-    background-color: #f3f3f3;
-    margin-bottom: 30px;
+background-color: #f3f3f3;
+margin-bottom: 30px;
 }
 img.center-block {
-    margin: 20px auto;
-    display: block;
-    max-width: 70%;
-    height: fit-content;
+margin: 20px auto;
+display: block;
+max-width: 70%;
+height: fit-content;
 }
 .text-center{
-    text-align: center;
+text-align: center;
 
 }
 
 aside.gitter-chat-embed{
-    z-index: 100000;
+z-index: 100000;
 }
-
-
-
-/* Secondry Header Navigation styles */
-.sub-nav {
-    border-bottom: 1px solid #9fc0cf3b;
-    background: #fff;
-}
-
-.sub-nav ul {
-    display: block;
-    float: left;
-    margin-bottom: 0;
-}
-
-li.sub-nav-li {
-    height: 50px;
-    font-size: 20px;
-    list-style: none;
-    display: inline-block;
-    padding: 10px 20px 0 20px;
-    margin-top: 0;
-}
-
-li.sub-nav-li.active a{
-    color:#e6b847;
-    border-bottom: 2px solid #e6b847;
-    padding-bottom: 9px;
-}
-
-
 
 
 
 /* Sidebar Fix */
 .navigationSlider {
-    margin-left: 0;
-    padding-left: 40px;
+margin-left: 0;
+padding-left: 40px;
 }
 
 .docMainWrapper.wrapper {
-    padding-left: 0;
-    margin-left: 0;
+padding-left: 0;
+margin-left: 0;
 }
 
-.container.docsNavContainer {
-    padding-left: 40px;
-    background: #f9fafa;
-}
+/* .container.docsNavContainer {
+padding-left: 40px;
+background: #f9fafa;
+} */
+
 
 .container.mainContainer article a, .container.mainContainer article a:hover {
-    color: #e4b030;
+color: #27B9D2;
 }
-
 
 
 /* Changes to beautify docusaurus */
 
 * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    color: #34445b
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+color: #34445b
 }
 
 .mainContainer { 
-    padding: 25px 0;
+padding: 25px inherit;
 }
 
 @media only screen and (min-width: 1024px) {
-    .toc {
-        padding: 25px 0;
-    }
+.toc {
+    padding: 25px 0;
+}
 }
 
 .page-wrap {
-    max-width: 1400px;
-    margin: auto;
+max-width: 1400px;
+margin: auto;
 }
 
 .navPusher {
-    display: block;
+display: block;
 }
 
-
-/*
- * The Typekit service used to deliver this font or fonts for use on websites
- * is provided by Adobe and is subject to these Terms of Use
- * http://www.adobe.com/products/eulas/tou_typekit. For font license
- * information, see the list below.
- *
- * quasimoda:
- *   - http://typekit.com/eulas/00000000000000003b9af974
- *   - http://typekit.com/eulas/00000000000000003b9af978
- *   - http://typekit.com/eulas/00000000000000003b9af97a
- *   - http://typekit.com/eulas/00000000000000003b9af97b
- *   - http://typekit.com/eulas/00000000000000003b9af97c
- *   - http://typekit.com/eulas/00000000000000003b9af97e
- *   - http://typekit.com/eulas/00000000000000003b9af980
- *
- * © 2009-2019 Adobe Systems Incorporated. All Rights Reserved.
- */
-/*{"last_published":"2018-04-12 14:46:13 UTC"}*/
-
-@import url("https://p.typekit.net/p.css?s=1&k=lde7yjs&ht=tk&f=34089.34093.34095.34096.34097.34099.34101&a=8724613&app=typekit&e=css");
-
-@font-face {
-font-family:"quasimoda";
-src:url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff2"),url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("woff"),url("https://use.typekit.net/af/d42d93/00000000000000003b9af974/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3") format("opentype");
-font-style:normal;font-weight:100;
+.container .wrapper h3 {
+color: #438CAD;
+font-size: 18px;
+margin-top: 10px;
+padding: 5px 0;
 }
 
-@font-face {
-font-family:"quasimoda";
-src:url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/59e684/00000000000000003b9af978/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
-font-style:normal;font-weight:300;
+.onPageNav .toc-headings>li>a.active {
+font-weight: 600;
+color:#eb4d4a;
 }
 
-@font-face {
-font-family:"quasimoda";
-src:url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/753661/00000000000000003b9af97a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
-font-style:normal;font-weight:400;
-}
-
-@font-face {
-font-family:"quasimoda";
-src:url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/9ff84e/00000000000000003b9af97b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
-font-style:italic;font-weight:400;
-}
-
-@font-face {
-font-family:"quasimoda";
-src:url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/6e514a/00000000000000003b9af97c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
-font-style:normal;font-weight:500;
-}
-
-@font-face {
-font-family:"quasimoda";
-src:url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"),url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"),url("https://use.typekit.net/af/21fbce/00000000000000003b9af97e/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");
-font-style:normal;font-weight:600;
-}
-
-@font-face {
-font-family:"quasimoda";
-src:url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/e7ad03/00000000000000003b9af980/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
-font-style:normal;font-weight:700;
-}
-
-.tk-quasimoda { font-family: "quasimoda",sans-serif; }
-
-body:not(pre) {
-    font-family: "quasimoda",sans-serif;
-}
-
-.onPageNav {
-    font-weight: 500;
-}
-
-.toc .toggleNav .navGroup .navGroupSubcategoryTitle {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.docs-prevnext a:hover span{
-    color: #fff;
-}
-
-td:first-child br ~ strong {
-    font-size: 14px;
-    color: #36455980;
-    margin: 0;
-    padding: 0;
-    /* margin-top: -1px; */
-    display: inline;
-}
-
-td:first-child br ~ a strong {
-    font-size: 14px;
-    color: #e7bc4e;
-    margin: 0;
-    padding: 0;
-    /* margin-top: -1px; */
-    display: inline;
-    text-decoration: underline;
-}
-
-table tr:nth-child(2n) {
-    background: none;
-}
-
-table thead {
-    border-bottom: 1px solid #808080;
-}
-
-.container.docsNavContainer {
-    padding-left: 30px;
-}
-
-
-
-
-
-/*  [START]=== Defaul Docusaurus Header Modifications =========================== */
-
-.navigationSlider .slidingNav ul {
-    background: #fff;
-    color: #33445b;
-    overflow-x: visible;
-
-}
-
-
-@media screen and (min-width: 1024px) {
-    .navPusher {
-        padding-top: 60px;
-    }
-}
-
-header > a {
-    transition: 100ms;
-    -webkit-transition: 100ms;
-    max-width: 245px;
-}
-
-.navigationSlider {
-    padding-left: 48px;
-}
-
-img.logo {
-    margin-top: 5px;
-}
-
-div.navigationWrapper.navigationSlider, div.navigationWrapper.navigationSlider ul {
-    width:100%;
-}
-
-div.navigationWrapper.navigationSlider ul li {
-    flex: none;
-}
-
-div.navigationWrapper.navigationSlider ul li:nth-last-child(2)  {
-    margin-left: auto;
-}
-
-.fixedHeaderContainer {
-    min-height: 60px;
-    background: #fff;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-div.navigationWrapper.navigationSlider ul li a:hover {
-    color:#e6b847;
-
-    background:transparent;
-
-}
-
-div.navigationWrapper.navigationSlider ul li a{
-    transition: 200ms;
-    -webkit-transition: 200ms;
-    height: 52px;
-    color: #34445b;
-    font-weight: 400;
-    padding-bottom: 14px;
-}
-
-div.navigationWrapper.navigationSlider ul li {
-    height: 42px;
-    font-size: 18px;
-    list-style: none;
-    display: inline-block;
-    padding: 0px 14px 0;
-    margin-top: 0;
-    color: #33445b;
-}
-
-div.navigationWrapper.navigationSlider ul li.active a{
-    color:#e6b847;
-    border-bottom: 2px solid #e6b847;
-}
-
-@media screen and (max-width: 1024px) {
-    div.navigationWrapper.navigationSlider ul li {
-        height: 32px;
-    }
-
-    .fixedHeaderContainer {
-        min-height: 50px;
-    }
-}
-
-@media screen and (max-width: 1024px){
-    header > a {
-        transition: 100ms;
-        -webkit-transition: 100ms;
-        max-width: 360px;
-    }
-    ul.nav-site.nav-site-internal {
-        height: 50px;
-    }
-
-    .container.docsNavContainer {
-        padding-left: 0;
-    }
-
-    .mainContainer .wrapper {
-        padding-top: 30px;
-    }
-    
-
-
-}
-
-@media screen and (max-width: 1024px) and (min-width: 510px){
-    .fixedHeaderContainer, .mainContainer .post {
-        padding: 0 20px;
-    }
-
-}
-
-
-
-
-@media screen and (max-width: 510px){
-    div.navigationWrapper.navigationSlider ul li {
-        padding: 0;
-    }
-    div.navigationWrapper.navigationSlider ul li a {
-        font-size: 14px;
-    }
-
-    .fixedHeaderContainer, .mainContainer .post {
-        padding: 0 14px;
-    }
-
-    .fixedHeaderContainer .headerWrapper.wrapper {
-        padding: 0;
-    }
-
-   
-}
-
-
-.tocToggler {
-    margin-right: 0;
-}
-.navigationSlider .slidingNav ul li>a:focus, .navigationSlider .slidingNav ul li>a:hover {
-    background: transparent;
-    outline: none;
-}
-
-
-@media screen and (max-width: 370px){ 
-
-    div.navigationWrapper.navigationSlider ul li a {
-        padding: 5px;
-    }
-
-}
-
-@media screen and (max-width: 420px) {
-
-    div.navigationWrapper.navigationSlider ul li:nth-last-child(2) {
-        display: none;
-    };
-
-    div.navigationWrapper.navigationSlider ul li:last-child {
-        margin-left: auto;
-    }
-
-}
-
-/*  [END]=== Defaul Docusaurus Header Modifications =========================== */
-
-
-.headerTitleWithLogo {
-    display: none !important;
+.toc .toggleNav ul li.navListItemActive a, nav.toc .toggleNav ul li a:hover {
+color: #27B9D2!important;
 }

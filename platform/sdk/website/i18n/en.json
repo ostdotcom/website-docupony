@@ -12,7 +12,7 @@
         "title": "Authentication",
         "sidebar_label": "Authentication"
       },
-      "getting_started": {
+      "getting-started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
@@ -71,9 +71,6 @@
       "server-side-sdks/ruby": {
         "title": "Ruby SDK Quickstart Guide",
         "sidebar_label": "Ruby"
-      },
-      "X_maybe_useful": {
-        "title": "X_maybe_useful"
       }
     },
     "links": {

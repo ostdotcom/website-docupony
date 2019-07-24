@@ -89,11 +89,11 @@ nav.toc .toggleNav ul li a.navItemActive {
     color: #438CAD;
 }
 .mainContainer .wrapper .post h3 {
-    font-size: 120%;
+    font-size: 115%;
     color: #438CAD;
 }
 .mainContainer .wrapper .post h4 {
- font-size: 110%;
+ font-size: 105%;
  font-weight: 300;
  color: #438CAD;
 }
@@ -102,7 +102,6 @@ nav.toc .toggleNav ul li a.navItemActive {
     color: #438CAD;
     font-style: italic;
 }
-
 
 /* custom styling for header*/
 .wrapper{
@@ -157,7 +156,7 @@ aside.gitter-chat-embed{
 
 
 .container.mainContainer article a, .container.mainContainer article a:hover {
-    color: #e4b030;
+    color: #27B9D2;
 }
 
 
@@ -198,5 +197,9 @@ aside.gitter-chat-embed{
 
 .onPageNav .toc-headings>li>a.active {
  font-weight: 600;
- color: #2e8555;
+ color:#eb4d4a;
+}
+
+.toc .toggleNav ul li.navListItemActive a, nav.toc .toggleNav ul li a:hover {
+ color: #27B9D2!important;
 }

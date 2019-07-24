@@ -34,12 +34,12 @@ This guide is divided into two major sections, **Server Side** section and **Mob
 
 ## Prerequisites
 * Make sure you have created your Brand Token via [OST Platform](https://platform.ost.com)
-    * This [token creation](/platform/docs/guides/create_token/) guide walks you through the token creation flow 
+    * This [token creation](/platform/docs/1-create/) guide walks you through the token creation flow 
     * Go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to API key and API secret
 * Integrate one of the available OST Platform Server Side SDKs into your application 
     * SDKs are available for [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Node.Js](/platform/docs/sdk/server-side-sdks/nodejs/) and [Java](/platform/docs/sdk/server-side-sdks/java/)
 * Set-up the Mobile Wallet SDK by following one of the wallet set-up guides
-    * Wallet SDKs are available for [Android](/platform/docs/wallet_sdk_setup/android/), [iOS](/platform/docs/wallet_sdk_setup/iOS/), and [React Native](/platform/docs/wallet_sdk_setup/reactnative)
+    * Wallet SDKs are available for [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/reactnative)
 
 
 ## Create Wallet Sequence Diagram
@@ -89,7 +89,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 `passphasePrefix` is a string with minimum length 30 used in the process of creating recovery key for your users. You will have to generate `passphasePrefix` on your server for each user with high randomness. You should keep a mapping between the `passPhrasePrefix` and other user information. Your server should communicate this passphrasePrefix to your app when needed.
 
-[Security Guidelines for generating passphasePrefix](/platform/docs/sdk/getting_started/security_guidelines/#server-side-sdk)
+[Security Guidelines for generating passphasePrefix](/platform/docs/guides/golive-checklist/#server-side-checklist)
 
 ### Register Device
 Your server should receive the device information from your mobile app. To register the device on OST Platform you can use the devices service provided in the Server Side SDKs.
@@ -280,7 +280,7 @@ The SDK provides an interface that should be implemented by the application so t
 
 **Receiving callback calls**
 
-There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
 

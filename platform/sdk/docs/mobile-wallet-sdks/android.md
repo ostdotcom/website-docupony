@@ -206,19 +206,16 @@ public class BaseFragment extends Fragment, OstWorkFlowCallback {
 }
 ```
 
-
-
 ### b). Creating new fragment.
 You can now create new fragment that will inherit `BaseFragment` and override definition of **callback functions**. This new fragment can now call workflow function to perform any wallet related task.
 
 [Sample implementation inheriting `BaseFragment`](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.0/app/src/main/java/ost/com/sampleostsdkapplication/fragments/LoginFragment.java)
-
 
 ## Demo App
 To provide developers with sample integration of wallet SDK, a [demo Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app) is available on github.
 
 ## Next Steps
 
-1. [Create Wallet Guide](/platform/docs/guides/create_wallet/)
-2. [Execute Transaction Guide](/platform/docs/guides/execute_transaction/)
-3. Android Wallet SDK [Methods](/platform/docs/sdk/references/wallet_sdk/android/latest/methods/),  [Interfaces](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) and [Classes](/platform/docs/sdk/references/wallet_sdk/android/latest/classes/)
+1. [Create Wallet Guide](/platform/docs/guides/create-user-wallet/)
+2. [Execute Transaction Guide](/platform/docs/guides/execute-transactions/)
+3. Android Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/android/latest/methods/),  [Interfaces](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/android/latest/classes/)

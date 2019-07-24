@@ -6,7 +6,7 @@ sidebar_label: Components
 
 The diagram below illustrates how the OST Server Side SDK and OST Wallet SDK work together and interact with your technology.
 
-![platform-interaction](/platform/docs/assets/Platform-Integrations.jpg)
+![platform-interaction](/platform/docs/assets/platform-integrations.jpg)
 
 :::note OST Server Side SDKs
 **OST Server Side SDKs** are designed so that server side components can support different approaches. The SDKs will be used for server to server interactions and will be paired with the relevant Wallet SDK. They can also be paired with your web application.

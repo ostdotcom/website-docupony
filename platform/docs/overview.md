@@ -15,7 +15,7 @@ The **Server Side APIs and SDKs** provide various endpoints/methods that can be 
 ## Easily deploy a Brand Token Economy
 OST Platform's user interface enables companies to create Brand Tokens by choosing a Token Name, Token Identifier and a conversion rate between the Brand Token and OST.
 
-You can follow the [create token guide](/platform/docs/guides/create_token/) to deploy a Brand Token economy.
+You can follow the [create token guide](/platform/docs/1-create/) to deploy a Brand Token economy.
 
 OST Platform infrastructure handles the deployment of various smart-contracts to create Brand Tokens such as:
  * **BrandedToken**: Mainstream application’s value-backed token, designed specifically for its application’s context

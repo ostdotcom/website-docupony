@@ -11,7 +11,7 @@ The Java SDK is a Java wrapper for the [OST Platform API](/platform/docs/api). T
 You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
-Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/guides/create_token/) to complete the token setup.
+Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/1-create/) to complete the token setup.
 
 
 
@@ -214,8 +214,6 @@ A detailed explanation about each attribute of user is available on user object 
 
 ## Next Steps
 
-### [Android Wallet SDK Setup](/platform/docs/wallet_sdk_setup/android/)
-
-### [iOS Wallet SDK Setup](/platform/docs/wallet_sdk_setup/iOS/)
-
+### [Android Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/android/)
+### [iOS Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/iOS/)
 ### [API Reference](/platform/docs/api/)
