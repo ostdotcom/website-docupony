@@ -14,7 +14,7 @@ A **MultiSig** contract is deployed on the blockchain. The public addresses from
 6. The  **TokenHolder** contract verifies that the request is initiated by an authorized sessionKey and executes the transfer.
 
 ## Creating a user's Brand Token wallet on the blockchain 
-It is a 3 step process. [Wallet SDK](/platform/docs/sdkwallet_sdk/overview/) provides a number of functions called as workflows
+It is a 3 step process. [OST Wallet SDK](/platform/docs/wallet/sdk/) provides a number of functions called as workflows
 
 ### Step 1: init
 Calling `init` function of wallet SDK will initialize the SDK.

@@ -44,7 +44,7 @@ Warning
 
 6. Choose your preferred Server Side SDK: [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/). Optionally, you can choose to work direct with [OST Platform APIs](/platform/docs/api).
 
-7. Choose your Mobile Wallet SDK(s): [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/ios/), [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)
+7. Choose your Mobile Wallet SDK(s): [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/), [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)
 
 8. Start your development work and integration with OST Platform SDKs! First, test in our Sandbox then request to move to Production. We recommend following these steps to get started:
     * [Create a wallet for a user](/platform/docs/1-create)
@@ -78,3 +78,8 @@ If you build a product  or solution that requires third parties to purchase toke
     </iframe>
 </div>
 <br>
+
+android.md
+Sample Implementation of [BaseFragment class](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwalletsrc/main/java/ost/com/sampleostsdkapplication/fragments/BaseFragment.java) is available as a part of [OST Wallet App ](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet)
+
+[Sample implementation inheriting `BaseFragment`](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.0/app/src/main/java/ost/com/sampleostsdkapplication/fragments/LoginFragment.java)

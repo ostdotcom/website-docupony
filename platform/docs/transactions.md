@@ -10,7 +10,7 @@ There are two different types of transactions possible, company to user and user
 | Transaction Type | Description |
 |---|---|
 | **company-to-user** | Client company to end-user<br>**Our Server Side SDKs (available in [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/), [Java](/platform/docs/sdk/server-side-sdks/java/)). facilitate company-to-user transactions** |
-| **user initiated** | End-user to another user OR end-user to the client company <br> **Our Mobile Wallet SDKs (available in [Android](/platform/docs/mobile-wallet-sdks/android/) and [iOS](/platform/docs/mobile-wallet-sdks/iOS/)) facilitate user initiated transactions. The mobile wallet is used to sign transactions.** |
+| **user initiated** | End-user to another user OR end-user to the client company <br> **Our Mobile Wallet SDKs (available in [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) and [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/)) facilitate user initiated transactions. The mobile wallet is used to sign transactions.** |
 
 ![TransactionsExplained1]( /platform/docs/assets/transactions_explained_1.png)
 

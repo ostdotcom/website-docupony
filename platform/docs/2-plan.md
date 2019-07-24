@@ -20,7 +20,7 @@ The primary drivers in any economy are buy, earn, spend, and redeem. These must 
 | Spend | Payment for merch, other assets, services or tasks |
 | Redeem (cash-out) | Tokens are redeemed for gift cards, other crypto, or fiat |
 
-![TokenEconomyFlows](/platform/docs/assets/token_economy_flows.png)
+![TokenEconomyFlows](/platform/docs/assets/token-economy-flows.png)
 
 ## b. What to stake?
 With OST Platform you can stake either USDC (a stablecoin) or OST tokens.

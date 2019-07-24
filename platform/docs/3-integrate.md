@@ -23,7 +23,7 @@ Check-out our technical implementation guides for an overview of how to approach
 
 ### Mobile Wallet SDKs
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
-* [iOS](/platform/docs/sdk/mobile-wallet-sdks/ios/)
+* [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/)
 
 ::: note OST Wallet App
 Check-out the OST Wallet App for a sample implementation of the OST Wallet SDKs

@@ -8,7 +8,7 @@ OST Wallet is a non-custodial wallet solution for Brand Tokens minted on OST Pla
 
 **Mobile Wallet SDKs**
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
-* [iOS](/platform/docs/sdk/mobile-wallet-sdks/ios/)
+* [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/)
 
 OST Wallet is a **core component** of OST Platform. It enables users to take ownership of their tokens as well as participate in a Brand Token Economy and sign for user initiated transactions.
 

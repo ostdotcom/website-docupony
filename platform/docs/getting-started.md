@@ -19,7 +19,7 @@ While in Sandbox, Step 2 can be conducted in parallal with Step 3. Step 2 and St
 
 ## Technical Skills Requirement (Based on Recent Projects)
 | Skills Required | Language (if applicable) | Approx Duration |
-|---|---|---:|
+|---|---|:---:|
 | UX / UI designers | n/a | 2 weeks |
 | Front-end web developer | HTML, CSS, JavaScript | ~1 week |
 | Back-end web developer (server side SDKs) | Java, JavaScript, PHP, or Ruby | 1-2 weeks |
