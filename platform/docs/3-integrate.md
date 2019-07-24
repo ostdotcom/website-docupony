@@ -1,10 +1,10 @@
 ---
 id: 3-integrate
-title: 3. Start Integration
+title: Start Integration in Sandbox
 sidebar_label: Step 3. Start Integration
 ---
 
-:::tip Start Integration
+:::tip Create Token > Plan and Design > Start Integration > Launch to End-users!
 | Step | Description | Skillset |
 | --- | --- | --- |
 | **3. Start Integration** <br>(in Sandbox) | <ul><li>Review technical guides</li><li>Decide which APIs/SDKs to use</li><li>Perform test transactions</li><li>Request to move to Production</li></ul> | Technical |
@@ -42,5 +42,5 @@ Perform test transactions in Sandbox to ensure everything is working as expected
 To move from Sandbox to Production, click on the toggle switch in [OST Platform dashboard](https://platform.ost.com) and follow the instructions. At the moment, you are required to fill-out a Google Form.
 
 :::note Sandbox
-The Sandbox will still be available to you after you have been permitted to Production.
+The Sandbox will still be available to you after you have been permitted to Production
 :::

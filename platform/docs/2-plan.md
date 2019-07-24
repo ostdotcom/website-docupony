@@ -1,13 +1,17 @@
 ---
 id: 2-plan
-title: 2. Plan and Design
+title: Plan and Design Your Brand Token Economy
 sidebar_label: Step 2. Plan and Design
 ---
 
-:::tip Plan and Design
+:::tip Create Token > Plan and Design > Start Integration > Launch to End-users!
 | Step | Description | Skillset |
 | --- | --- | --- |
-| **2. Plan and Design** | <ul><li>Buy, earn, spend, redeem actions</li><li>What to stake?</li><li>Denomination/Conversion rate (this cannot be changed)</li><li>Mobile and web UX and design</li></ul> | Non-technical |
+| **2. Plan and Design** | <ul><li>Buy, earn, spend, redeem actions</li><li>What to stake</li><li>Conversion rate</li><li>Mobile and web UX and design</li></ul> | Non-technical |
+:::
+
+:::note Note
+Step 2 can be conducted in parallal with Step 3. Step 2 and Step 3 should both be finalised before moving to Production and launching to end-users.
 :::
 
 ## a. Buy, earn, spend, redeem actions
@@ -53,7 +57,3 @@ Things to consider when setting the conversion rate:
 
 ## d. Mobile and web UX and design
 We have provided [Wallet UX Guidelines](/platform/docs/wallet/ux/) with screens and flows and helpful suggestions to get you started! We are also working on making available UI screens through our Wallet SDKs. These will be available in Aug / Sep 2019.
-
-:::note
-Note: Whilst in Sandbox, Step 2 can be conducted in parallal with Step 3
-:::

@@ -54,6 +54,6 @@ This is a note
 This is a tip or instructions to follow
 :::
 
-:::warning Warning
-This is a warning! Take extra care.
+:::warning Caution
+This is an alert or caution. Read twice.
 :::

@@ -1,10 +1,10 @@
 ---
 id: 1-create
-title: 1. Create Token
+title: Create Token in Sandbox
 sidebar_label: Step 1. Create Token
 ---
 
-:::tip Create Token
+:::tip Create Token > Plan and Design > Start Integration > Launch to End-users!
 | Step | Description | Skillset |
 | --- | --- | --- |
 | **1. Create token** | <ul><li>Register on OST Platform</li><li>Choose token name and identifier</li><li>Associate an ETH address</li><li>Stake and mint</li><li>Connect to OST Wallet App (optional)</li></ul> | Non-technical |

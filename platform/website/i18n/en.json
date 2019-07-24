@@ -6,19 +6,19 @@
     "tagline": "Developer Documentation",
     "docs": {
       "1-create": {
-        "title": "1. Create Token",
+        "title": "Create Token in Sandbox",
         "sidebar_label": "Step 1. Create Token"
       },
       "2-plan": {
-        "title": "2. Plan and Design",
+        "title": "Plan and Design Your Brand Token Economy",
         "sidebar_label": "Step 2. Plan and Design"
       },
       "3-integrate": {
-        "title": "3. Start Integration",
+        "title": "Start Integration in Sandbox",
         "sidebar_label": "Step 3. Start Integration"
       },
       "4-launch": {
-        "title": "4. Launch to End-Users",
+        "title": "Launch to End-Users!",
         "sidebar_label": "Step 4. Launch to End-users"
       },
       "assets/kit_index": {
