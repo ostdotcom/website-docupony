@@ -10,11 +10,9 @@ The OST Wallet SDK enables end-users to interact with Brand Tokens within existi
 
 ![platform-overview](/platform/docs/assets/Platform-Integrations.jpg)
 
-We provide Server Side SDKs mobile and Wallet SDKs to complete your integration:
+We provide Server Side SDKs mobile and Wallet SDKs to complete your integration. The OST Platform Server Side SDKs provide your application with various methods for different services like users, tokens, wallet services corresponding to an end-user of your economy. 
 
-* The OST Platform Server Side SDKs provide your application with various methods for different services like users, tokens, wallet services corresponding to an end-user of your economy. 
-
-	Server SDKs are available for  [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/).
+Server SDKs are available for  [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/).
 
 **Using OST Platform SDKs provides a number of advantages**
 1. **Simplicity:** The SDKs reduce the complexity of integration by handling multiple authentication scenarios automatically, allowing for a more seamless user experience.
@@ -23,7 +21,7 @@ We provide Server Side SDKs mobile and Wallet SDKs to complete your integration:
 
 The Wallet SDK adds support for users to own their tokens without requiring them to directly manage their private crypto keys. This essentially means providing private key management, authorization and recovery services in addition to authentication.
 	
-	Wallet SDKs are available for [Android](https://github.com/ostdotcom/ost-client-android-sdk) and [iOS](https://github.com/ostdotcom/ost-client-ios-sdk). A [React Native Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/react-native/) is also available.
+Wallet SDKs are available for [Android](https://github.com/ostdotcom/ost-client-android-sdk) and [iOS](https://github.com/ostdotcom/ost-client-ios-sdk). A [React Native Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/react-native/) is also available.
 
 ## Guides
 The following SDK guides are designed to help you get familiarized with the bare necessities, giving you a quick and clean approach to getting up and running.

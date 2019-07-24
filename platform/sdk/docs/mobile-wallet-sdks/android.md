@@ -167,7 +167,7 @@ There are different ways to pass these callback functions in workflows. We will 
 
 The Wallet SDK <u>does not hold strong reference of workflow callbacks.</u> It only has a <u>weak reference of workflow callback.</u> This is done to avoid any memory leaks. The app should hold the reference of the callbacks as long as it needs.
 
-Sample Implementation of [ BaseFragment class](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.0/app/src/main/java/ost/com/sampleostsdkapplication/fragments/BaseFragment.java) is available as a part of [demo app ](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app).
+Sample Implementation of [ BaseFragment class](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwalletsrc/main/java/ost/com/sampleostsdkapplication/fragments/BaseFragment.java) is available as a part of [OST Wallet App ](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet).
 
 ```java
 
@@ -206,13 +206,13 @@ public class BaseFragment extends Fragment, OstWorkFlowCallback {
 }
 ```
 
-### b). Creating new fragment.
+### b). Creating new fragment
 You can now create new fragment that will inherit `BaseFragment` and override definition of **callback functions**. This new fragment can now call workflow function to perform any wallet related task.
 
 [Sample implementation inheriting `BaseFragment`](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.0/app/src/main/java/ost/com/sampleostsdkapplication/fragments/LoginFragment.java)
 
-## Demo App
-To provide developers with sample integration of wallet SDK, a [demo Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.0/app) is available on github.
+## OST Wallet App
+To provide developers with sample integration of wallet SDK, [OST Wallet Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet) is available on github.
 
 ## Next Steps
 

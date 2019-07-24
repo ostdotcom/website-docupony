@@ -178,7 +178,7 @@ iOS Wallet SDK provides `workflows` that can be called by any controller class t
 There are different ways to implement `OstWorkflowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkflowDelegate` protocol. We will use this class to create object that can be passed in SDK workflows as callback. 
 
 
-Sample Implementation of [OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [demo app ](https://github.com/ostdotcom/ios-demo-app/tree/develop).
+Sample Implementation of [OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [OST Wallet app ](https://github.com/ostdotcom/ios-demo-app/tree/develop).
 
 
 ```swift
@@ -243,8 +243,8 @@ In the example below, we are calling `OstWalletSdk.addSession` workflow and pass
 [Sample code](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/Views/Wallet/AddSessionView.swift) showing above example in detail is available on github.
 
 
-## Demo App
-To provide developers with sample integration of wallet SDK, a [demo iOS app ](https://github.com/ostdotcom/ios-demo-app/tree/develop) is available on github.
+## OST Wallet App
+To provide developers with sample integration of wallet SDK, a [OST Wallet iOS app ](https://github.com/ostdotcom/ios-demo-app/tree/develop) is available on github.
 
 
 ## Next Steps
