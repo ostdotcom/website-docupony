@@ -8,11 +8,11 @@ OST Wallet is a non-custodial wallet solution for Brand Tokens minted on OST Pla
 
 **Mobile Wallet SDKs**
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
-* [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/)
+* [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)
 
 OST Wallet is a **core component** of OST Platform. It enables users to take ownership of their tokens as well as participate in a Brand Token Economy and sign for user initiated transactions.
 
-:::important OST Wallet SDK is required to use OST Platform
+:::note OST Wallet SDK is required to use OST Platform
 You must have a mobile app and integrate the OST Wallet SDK to use OST Platform. OST Wallet SDK relies on core components (hardware) of a users mobile device and is required for a user to participate in a Brand Token Economy.
 :::
 
@@ -32,7 +32,7 @@ A user can use a **6 digit PIN** to authorize an ephemeral sessionKey. These eph
 
 To further reduce friction, the OST Wallet SDK also supports the use of **biometrics** for the second level of authentication of the user, i.e. a user can use **biometrics** to authorize a session, request a mnemonic phrase. Check the [Wallet UX Guidelines](/platform/docs/wallet/ux/) to understand the possible flows and recommended user experience (UX).
 
-:::important Intended User Experience
+:::note Intended User Experience
 The intended user experience is that most users will set a **6 digit PIN** and then add their **biometrics**, from that point on, all day-to-day usage of the wallet can be done with **biometrics**. The PIN is only used thereafter for recovery or if **biometrics** are not functioning. 
 
 **The user does not need to use her PIN or **biometrics** to view her wallet balance or ledger, rather only to re-authorize a session to spend tokens.**

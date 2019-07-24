@@ -179,6 +179,6 @@ A detailed explanation about each attribute of user is available on user object 
 
 ### [Android Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/android/)
 
-### [iOS Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/iOS/)
+### [iOS Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/iOS)
 
 ### [API Reference](/platform/docs/api/)

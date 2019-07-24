@@ -13,7 +13,7 @@ There are four major steps to getting started with OST platfrom. Follow these st
 | **3. Start Integration** <br>(in Sandbox) | <ul><li>Review technical guides</li><li>Decide which APIs/SDKs to use</li><li>Perform test transactions</li><li>Request to move to Production</li></ul> | Technical | Up to 4 weeks <br>(see below) |
 | **4. Launch to End-users!** | <ul><li>Conduct an initial pilot</li><li>Fine-tune token economics</li><li>Incorporate more use cases</li><li>Assess impact on KPIs e.g. NPS and Rentention</li></ul> | Non-technical | Project dependent | 
 
-:::important Plan And Design
+:::note Plan And Design
 While in Sandbox, Step 2 can be conducted in parallal with Step 3. Step 2 and Step 3 should both be finalised before moving to Production and launching to end-users.
 :::
 

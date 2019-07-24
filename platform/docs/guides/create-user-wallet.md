@@ -39,7 +39,7 @@ This guide is divided into two major sections, **Server Side** section and **Mob
 * Integrate one of the available OST Platform Server Side SDKs into your application 
     * SDKs are available for [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Node.Js](/platform/docs/sdk/server-side-sdks/nodejs/) and [Java](/platform/docs/sdk/server-side-sdks/java/)
 * Set-up the Mobile Wallet SDK by following one of the wallet set-up guides
-    * Wallet SDKs are available for [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)
+    * Wallet SDKs are available for [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)
 
 
 ## Create Wallet Sequence Diagram
@@ -127,7 +127,7 @@ In your mobile application, you should use one of the OST Wallet SDKs
 ### Initializing Wallet SDK
 SDK initialization should happen before calling any other `workflow`. To initialize the SDK, you need to call `initialize` method of wallet SDK.
 
-:::important `initialize` method
+:::note `initialize` method
 **Recommended location to call initialize() is in [Application](https://developer.android.com/reference/android/app/Application) sub-class.**
 :::
 
@@ -239,11 +239,11 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 
 #### Set expiryAfterInSecs and spendingLimitinWei
 
-:::important Expiry
+:::note Expiry
 **expiryAfterInSecs** Recommended is 2 weeks, however, you can choose more or less time
 :::
 
-:::important Per Transaction Spending Limit
+:::note Per Transaction Spending Limit
 **spendingLimitinWei** Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
 :::
 
@@ -270,7 +270,7 @@ Your mobile app should call `activateUser` workflow using wallet SDK with the in
 }
 ```
 
-:::important When to activate a user**
+:::note When to activate a user**
 * User activation deploys three contracts for each user on OpenST side blockchain so this process takes several seconds.
 * User activation is required before doing any wallet actions like executing transfers. Because of the time this process needs, it is recommended to avoid doing activation just before the first token transfer.
 :::
@@ -280,7 +280,7 @@ The SDK provides an interface that should be implemented by the application so t
 
 **Receiving callback calls**
 
-There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
 

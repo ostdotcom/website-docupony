@@ -23,13 +23,13 @@ Check-out our technical implementation guides for an overview of how to approach
 
 ### Mobile Wallet SDKs
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
-* [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/)
+* [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)
 
 ::: note OST Wallet App
 Check-out the OST Wallet App for a sample implementation of the OST Wallet SDKs
 :::
 
-:::important user_ID Map
+:::note user_ID Map
 When you integrate Brand Tokens into your application, please remember to:
  * Create and maintain a map of OST Platform user_id to the user's profile on their app
  * [Generate and safely store a 30 character "secret" for each user](/platform/docs/guides/create-user-wallet/#generate-passphaseprefix). This "secret" is used for the recovery and thus must be unique to each user.
@@ -41,6 +41,6 @@ Perform test transactions in Sandbox to ensure everything is working as expected
 ## d. Request to move to Production
 To move from Sandbox to Production, click on the toggle switch in [OST Platform dashboard](https://platform.ost.com) and follow the instructions. At the moment, you are required to fill-out a Google Form.
 
-:::important Sandbox
+:::note Sandbox
 The Sandbox will still be available to you after you have been permitted to Production.
 :::

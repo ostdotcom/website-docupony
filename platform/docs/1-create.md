@@ -24,7 +24,7 @@ During token setup you will set Token Name and select a Token Identifier for you
 
 ![create-account](/platform/docs/assets/token-setup/token_setup.png)
 
-:::important Character Restrictions
+:::note Character Restrictions
 * **Token Name:** Letters, numbers, spaces allowed, max 20 characters and 3 words
 * **Token Identifier:** No special characters allowed, Min 1 letter required, Max 4 letters or numbers
 :::
@@ -40,7 +40,7 @@ Things to consider when setting the conversion rate:
 
 ## c. Associate an ETH Address
 
-:::important Install MetaMask
+:::note Install MetaMask
 MetaMask is required to participate in OST Platform
 :::
 

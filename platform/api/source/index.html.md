@@ -3486,7 +3486,7 @@ public class Test {
 #### <span> POST </span> &nbsp; &nbsp; /users/{user_id}/transactions
 
 
-* Execute transaction API allows you to do `company-to-user` transactions. `user` initiated transactions will be managed by Wallet SDK (available in [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) and [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/)). <br>
+* Execute transaction API allows you to do `company-to-user` transactions. `user` initiated transactions will be managed by Wallet SDK (available in [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) and [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)). <br>
 
 * Read the [execute company-to-user transaction guide](/platform/docs/guides/execute-transactions/#executing-company-to-user-transactions) to undertstand the complete `company-to-user` flow.
 

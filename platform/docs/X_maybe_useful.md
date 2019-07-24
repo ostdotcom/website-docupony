@@ -4,11 +4,11 @@ caution, note, important, tip, warning.
 Caution
 :::
 
-:::important Note title
+:::note Note title
 Note
 :::
 
-:::important Important title
+:::note Important title
 Important
 :::
 
@@ -44,7 +44,7 @@ Warning
 
 6. Choose your preferred Server Side SDK: [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/). Optionally, you can choose to work direct with [OST Platform APIs](/platform/docs/api).
 
-7. Choose your Mobile Wallet SDK(s): [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/), [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)
+7. Choose your Mobile Wallet SDK(s): [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)
 
 8. Start your development work and integration with OST Platform SDKs! First, test in our Sandbox then request to move to Production. We recommend following these steps to get started:
     * [Create a wallet for a user](/platform/docs/1-create)
@@ -62,7 +62,7 @@ sidebar_label: Distribute Tokens
 
 You can distribute tokens to your end users through company-to-user transactions. To kick-start an economy and incentivise new users, companies often airdrop tokens to users after they activate their wallet.
 
-:::important 
+:::note 
 If you build a product  or solution that requires third parties to purchase tokens from you, those tokens can be distributed through traditional means e.g. like a prepaid phone card, sold online.
 :::
 

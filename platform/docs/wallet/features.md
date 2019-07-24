@@ -19,7 +19,7 @@ The user input ---assumed to be a **6 digit PIN**--- is also used to guard acces
 ## Ephemeral Session Keys
 In the context of Brand Tokens used in OST's client economies, the public address is represented by a **TokenHolder** contract. The configured owner of a **TokenHolder** contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend per transaction.
 
-:::important Ephemeral Session Keys
+:::note Ephemeral Session Keys
 1. Ephemeral sessionKeys obviate the need for users to sign every transaction within the application thereby creating a more seamless user experience
 2. The authorization of ephemeral sessionKeys requires the owner to sign a transaction
 :::
@@ -82,7 +82,7 @@ As with the recovery from the additional device, the user should have written do
 
 The process of regaining access to the Wallet using the seed phrase would involve typing the words in the correct order. When they do so, a valid key to their Wallet is generated and stored on their device. 
 
-:::important Logging in on a New Device
+:::note Logging in on a New Device
 When a user logs in to the application from a new device with no registered key stored on it, the user can either add the device using one of the two methods described above or, if they have no other devices or seed phrases, choose to recover access to their wallet using the **DelayedRecoveryModule** smart contract using their **6 digit PIN**.
 :::
 

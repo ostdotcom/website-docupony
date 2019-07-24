@@ -8,7 +8,7 @@ The OST Wallet App was built with the OST Wallet SDK to showcase what's possible
 
 ## Connect Your Brand Token to OST Wallet App
 
-:::important iPhone users and TestFlight 
+:::note iPhone users and TestFlight 
 iPhone users need to first download the TestFlight App from Apple to download the OST Wallet App
 :::
 
@@ -29,7 +29,7 @@ iPhone users need to first download the TestFlight App from Apple to download th
 
 6. Explore wallet features and settings in the `Settings` tab
 
-:::important Join our Public Slack space!
+:::note Join our Public Slack space!
 We would love to hear your feedback! Join our public slack space and let's chat. Click [here](https://join.slack.com/t/tryost/shared_invite/enQtNjk5MTI4NDY5MjIyLTFlZWYyODNhMjA0YmNmM2ZmMTJkZDM4MDU0NGJlNDc3ZWEwMjY5ZWNiNjNiZDcyOTIyZTljNGFmN2E2NzY2MDk).
 :::
 

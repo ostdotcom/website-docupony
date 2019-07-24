@@ -11,7 +11,7 @@ OST Platform is the first full-featured “no-code” blockchain platform — a 
 
 Our Server Side SDKs and Mobile Wallet SDKs together enable fast and painless integration into any app or platform, without requiring in-house blockchain expertise — so you can focus on your business and leave the blockchain bits to us.
 
-:::important Internet Grade
+:::note Internet Grade
 OST Platform is designed for internet-grade transaction volumes and speeds
 :::
 
@@ -22,14 +22,14 @@ OST Platform enables you to:
 * **Process microtransactions:** high volume, low value transfers at low cost (~US$0.001 per transaction)
 * **Impart value to, and empower, end-users through the OST Wallet**
 
-:::important Built on Ethereum
+:::note Built on Ethereum
 OST Platform APIs and SDKs enable businesses to build innovative solutions on Ethereum and leverage the benefits of its open, distributed, immutable blockchain.
 :::
 
 ## "Brand Tokens" Explained
 At the core of OST Platform is the concept of Brand Tokens. Brand Tokens are value-backed tokens created on Etherum and running on scalable side-chains. Brand Tokens serve as a medium of exchange and can be used to power all sorts of actions, increase user retention and drive growth.
 
-:::important Brand Tokens Have Real-Value
+:::note Brand Tokens Have Real-Value
 Brand Tokens are created by first staking real-value on Ethereum and using that as a basis to mint new tokens. The value of a Brand Token is directly linked to the value of the underlying stake.
 
 You can currently stake USDC and OST tokens on OST Platform.
@@ -46,7 +46,7 @@ The best way to explore OST Platform is by reading these pages and [signing-up](
 ## Color References
 Through-out these pages you will see different highlights, as indicated below. 
 
-:::important Note
+:::note Note
 This is a note
 :::
 

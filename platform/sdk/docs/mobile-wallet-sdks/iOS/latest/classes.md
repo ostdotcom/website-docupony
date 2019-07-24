@@ -15,7 +15,7 @@ There two error classes.
 2. OstError
 
 ### i). OstApiError
-This class is used to provide API related error details in [flowInterrupt](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/#2-flowinterrupt) callback function. 
+This class is used to provide API related error details in [flowInterrupt](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/#2-flowinterrupt) callback function. 
 
 
 You can call following [methods](#i-methods) on the object of this class to get more details about the error.
@@ -31,7 +31,7 @@ You can call following [methods](#i-methods) on the object of this class to get 
 
 
 ### ii). OstError
-This class is used to provide error details in [flowInterrupt](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/#2-flowinterrupt) callback function. 
+This class is used to provide error details in [flowInterrupt](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/#2-flowinterrupt) callback function. 
 
 You can read following properties on the object of this class to get more details about the error.
 
@@ -47,7 +47,7 @@ You can read following properties on the object of this class to get more detail
 
 ## 2. OstContextEntity
 
-This class provides context about the `entity` that is being changed during a [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/#workflows). Callback functions that needs to know about the `entity` will receive an object of this class as an argument. 
+This class provides context about the `entity` that is being changed during a [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/methods/#workflows). Callback functions that needs to know about the `entity` will receive an object of this class as an argument. 
 
 
 
@@ -80,7 +80,7 @@ public private(set) var entityType: OstEntityType
 
 
 ## 3. OstWorkflowContext
-This class provides context about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/#workflows). Callback function that needs to know about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/#workflows) will get the object of this class as an argument.
+This class provides context about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/methods/#workflows). Callback function that needs to know about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/methods/#workflows) will get the object of this class as an argument.
 
 
 `workflowType` property will take one of the values from this enum.
@@ -103,7 +103,7 @@ public enum OstWorkflowType {
 }
 ```
 
-You can read its [properties](#i-properties-1) to get more details about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/#workflows).
+You can read its [properties](#i-properties-1) to get more details about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/methods/#workflows).
 
 ### i) Properties
 

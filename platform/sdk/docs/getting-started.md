@@ -27,7 +27,7 @@ Wallet SDKs are available for [Android](https://github.com/ostdotcom/ost-client-
 The following SDK guides are designed to help you get familiarized with the bare necessities, giving you a quick and clean approach to getting up and running.
 
 * Integrate the OST Server Side SDK with quickstart guide available for [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Java](/platform/docs/sdk/server-side-sdks/java/) and [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/).
-* Set up Wallet SDK on [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) and/or [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/) devices.
+* Set up Wallet SDK on [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) and/or [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS) devices.
 * [React Native Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/react-native/) is also available.
 * [Create a wallet for a user](/platform/docs/1-create/) 
 * [Send some tokens to the user](/platform/docs/guides/execute-transactions/#executing-company-to-user-transactions)

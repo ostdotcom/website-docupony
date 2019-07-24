@@ -22,8 +22,8 @@
     "OST Platform": [
      "overview",
      "components",
-     "transactions",
      "smart-contracts",
+     "transactions",
      "view",
      
       {

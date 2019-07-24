@@ -9,7 +9,7 @@ sidebar_label: OST VIEW (Explorer)
 * Gives a view into human-readable block, transaction, and account information on OST sidechains
 * Provides individual and aggregate historical data, including statistics and charts, on Brand Token transfers in, and across OST-powered Brand Token economies
 
-:::important OST-TEST (OSTT)
+:::note OST-TEST (OSTT)
 On Testnet the ticker OSTT indicates the token OST-Test which is a test version of the OST Token used in Sandbox.
 :::
 

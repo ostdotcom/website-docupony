@@ -10,7 +10,7 @@ The [OST Wallet SDK](/platform/docs/guides/create-user-wallet/) supports non-cus
 
 Given that Brand Tokens are valuable, and that if keys are compromised it could result in the user being unable to access their tokens, OST promotes a mobile-first approach that leverages the security gained by the checks and audits associated with publishing an app via the app stores. Going mobile first also enables us to leverage the security features of modern mobile devices such as fingerprint and facial recognition, and secure enclave (iOS) and keystore (Android) to securely generate the required keys and encrypt them on a users device.
 
-:::important Wallet Recovery via 6 digit PIN
+:::note Wallet Recovery via 6 digit PIN
 These features are used in the OST Platform smart contract based recovery wherein a user input (which is minimally a **6 digit PIN**), an application or client input (which is minimally a 30 character string) and input from OST.com are combined in a cryptographically secure manner to prove the user's ownership of the Brand Tokens and authorize a new device.
 :::
 
