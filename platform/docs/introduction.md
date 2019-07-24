@@ -1,48 +1,53 @@
 ---
 id: introduction
-title: Introduction to OST Platform
-sidebar_label: What is OST Platform?
+title: Welcome to OST Platform
+sidebar_label: Welcome to OST Platform
 ---
 
-## What is OST Platform?
+These pages include technical and non-technical guides and API/SDK references that will serve as a complete resource for anyone looking to built on OST Platform.
 
-![KitIndexImage]( /platform/docs/assets/getting-started/intro.png)
+## What Is OST Platform?
+OST Platform is the first full-featured “no-code” blockchain platform — a set of unified dashboards, APIs, SDKs, and protocols that enable businesses to launch their own blockchain-based "Brand Token" and economies.
 
-OST Platform provides everything you need to test, integrate, and deploy your brand currency. Our Server Side SDKs and Wallet SDKs together enable fast and painless integration into any app, without requiring any in-house blockchain expertise -- so you can focus on your business and leave the blockchain bits to us.
+Our Server Side SDKs and Mobile Wallet SDKs together enable fast and painless integration into any app or platform, without requiring in-house blockchain expertise — so you can focus on your business and leave the blockchain bits to us.
 
-OST Platform enables businesses to easily integrate Brand Tokens into their apps to reward behaviors and increase engagement. OST Platform is the first full-featured “no-code” blockchain platform — a set of unified dashboards, APIs, SDKs, and protocols that any business can use to easily test and deploy their own brand currency without requiring any in-house blockchain development.
+:::note Internet Grade
+OST Platform is designed for internet-grade transaction volumes and speeds
+:::
 
-OST is designed for internet-grade transaction volumes and speeds. OST leads development of the OpenST Protocol for launching Brand Token economies for mainstream businesses and OpenST Mosaic, a scaling solution for finalizing many thousands of transactions per second asynchronously on Ethereum at low cost.
+## What Can I do with OST Platform?
+OST Platform enables you to:
+* **Create your own Brand Token**
+* **Embed value into any action** — be it an upvote, a like, a store visit, a contribution, or a 5-star review
+* **Process microtransactions:** high volume, low value transfers at low cost (~US$0.001 per transaction)
+* **Impart value to, and empower, end-users through the OST Wallet**
 
-OST Platform is the first full-featured “no-code” blockchain platform — a set of unified dashboards, APIs, SDKs, wallets, and protocols that any business can use to easily deploy their own brand currency without requiring any in-house blockchain development.
-
-OST Platform enables you to embed value into any user action — be it an upvote, a like, a content contribution, a 5 star review, a store visit, or a repeat purchase.
-
-We call this “programmable money” and it’s a really big deal. In the current Internet, payments (and money changing hands) comes only at the very end of the user journey. Now, with programmable money, value transfers can happen at any point throughout the user journey, triggered by action. This opens up new models for user engagement, content creation, revenue sharing, and monetization .
-
-The OST Platform is built on OpenST Protocol. The protocol enables the creation of BTs and allows BT economies to scale to billions of transactions. You can learn more about the OpenST Protocol at [OpenST.org](https://openst.org/).
-
-OST Platform is a complete technology solution enabling businesses to easily launch blockchain-based economies without requiring blockchain development. Developers can use OST Platform to create, test and launch Brand Tokens backed by value tokens such as the OST Token.
-
-OST Platform is the first full-featured “no-code” blockchain platform — a set of unified dashboards, APIs, SDKs, wallets, and protocols that any business can use to easily deploy their own brand currency without requiring any in-house blockchain development.
-
+:::note Built on Ethereum
+OST Platform APIs and SDKs enable businesses to build innovative solutions on Ethereum and leverage the benefits of its open, distributed, immutable blockchain.
+:::
 
 ## "Brand Tokens" Explained
-At the core of OST is the concept of OST-powered Brand Tokens (BTs). BTs are white-label cryptocurrency tokens running on highly-scalable OST sidechains, supported by staking value tokens (such as the OST Token) on Ethereum mainnet. This enables companies to deploy BTs that function like rewards points, which can be deployed to incentivize and reward users and to drive growth and retention.
+At the core of OST Platform is the concept of Brand Tokens. Brand Tokens are value-backed tokens created on Etherum and running on scalable side-chains. Brand Tokens serve as a medium of exchange and can be used to power all sorts of actions, increase user retention and drive growth.
 
-You can easily setup your Brand Tokens in the OST Platform SaaS dashboards before turning to the Developer Resources to work on your integration.
+:::important Brand Tokens Have Real-Value
+Brand Tokens are created by first staking real-value on Ethereum and using that as a basis to mint new tokens. The value of a Brand Token is directly linked to the value of the underlying stake.
 
-Brand Tokens are white-label cryptocurrency tokens running on highly-scalable OST sidechains, backed by staking value tokens (such as the OST Token) on Ethereum mainnet. This enables companies to deploy Brand Token that function like rewards points, which can be deployed to incentivize and reward users and to drive growth and retention. 
+You can currently stake USDC and OST tokens on OST Platform.
+:::
 
-## Microtransactions and how OST Platform makes them possible
-
-## Not a developer?
+## Where Do I Start?
+Use of OST Platform requires both business and technical expertise. Your starting point depends on your role. 
+* If you are a business person, the Getting Started section and and Case Studies will be of most use. 
+* If you are technical, then jump to the Technical Guides.
 
 ## We're here to help!
-The best way to explore the new OST Platform is by reading the new OST.com website, diving into the comprehensive Developer Resources and Guides, and just getting your hands dirty and start minting your own Brand Tokens.
+The best way to explore OST Platform is by reading these pages and [signing-up](https://platform.ost.com/signup) for an account. You can connect with us on Slack and Gitter and at our [Help Center](https://help.ost.com). **We are here to make you and your team be successful with OST Platform!**
 
-Got more questions? We’ve also updated the OST Platform FAQs.
-Got even more question? Want to schedule a personal demo? Please reach out to our commercial team.
+## Watch a Short Video on Our Developer Resources
 
-### Support
-Comprehensive documentation, guides, and API and SDK references. As a developer exploring the OST platform, we hope you enjoy engaging with the technology and interacting with the OST blockchain protocols, contracts, APIs, and SDKs.
+<div align="center">
+    <iframe width="680" height="384"
+        src="https://www.youtube.com/embed/AUgBHPDkYnU">
+    </iframe>
+</div>
+<br>

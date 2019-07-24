@@ -17,7 +17,7 @@ Android Wallet SDK consists of an `interface` and `workflows`. <br><br>
 **Workflows**: Workflows are functions that can be used to perform wallet related tasks. App developers will be call these functions to execute different tasks.
 
 ### Prerequisite
-You should complete one of the server SDK Guides ([PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/), [Java](/platform/docs/sdk/server_sdk_setup/java/))
+You should complete one of the server SDK Guides ([PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/), [Java](/platform/docs/sdk/server-side-sdks/java/))
 <br>
 
 ## 2 Requirements

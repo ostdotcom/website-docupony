@@ -164,7 +164,7 @@ Workflow should be used to do the `user-to-company` and `user-to-user` transacti
 ```java
 void executeTransaction(String userId, 
                         String tokenId, 
-                        List tokenHolderAddresses, 
+                        List **TokenHolder**Addresses, 
                         List amounts, 
                         String ruleName, 
                         Map<String,String> meta, 
@@ -176,7 +176,7 @@ void executeTransaction(String userId,
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform |
 | **tokenId** <br> **String**	| Unique identifier for the token economy |
-| **tokenHolderAddresses** <br> **List**	|  **TokenHolder**  addresses of amount receiver |
+| ****TokenHolder**Addresses** <br> **List**	|  **TokenHolder**  addresses of amount receiver |
 | **amounts** <br> **List**	| Amount to be transferred in atto.  |
 | **ruleName** <br> **String**	|  Rule name to be executed.  |
 | **meta** <br> **Map<String,String>**	|  Transaction Meta properties. <br> Example: `{"name": "transaction name","type": "user-to-user","details": "like"}`  |

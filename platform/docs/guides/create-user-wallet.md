@@ -1,57 +1,70 @@
 ---
-id: create_user_wallet
+id: create-user-wallet
 title: Technical Guide to Creating a User Wallet
 sidebar_label: Create User Wallet
 ---
 
-## Table of contents
-This guide is divided into 2 major sections, **Server Side** section and **Mobile App** section. The segregation of **server side** logic and **mobile app** logic will help developers understand the flows individually.
+## Creating a User Wallet
+1. Owner/Device key is created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device.
+2. The private key in each pair is encrypted and stored on the device.
+A **MultiSig** contract is deployed on the blockchain. The public addresses from device keys generated on the user's devices are set as owners for the **MultiSig**.
+3. A  **TokenHolder** contract is deployed on the blockchain. The **MultiSig** controls the  **TokenHolder** contract, as its owner.
+4. The sessionKey is created on the user's mobile device and is authorized by device key in **TokenHolder**.
+5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's  **TokenHolder** contract. 
+6. The  **TokenHolder** contract verifies that the request is initiated by an authorized sessionKey and executes the transfer.
+
+## Creating a user's Brand Token wallet on the blockchain 
+It is a 3 step process. [Wallet SDK](/platform/docs/sdkwallet_sdk/overview/) provides a number of functions called as workflows
+
+### Step 1: init
+Calling `init` function of wallet SDK will initialize the SDK.
+
+### Step 2: setupDevice
+Calling `setupDevice` will Generating public-private key pairs
+ 
+The ephemeral sessionKeys and owner keys are created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device. The private key in each pair is stored on the device and encrypted with secure enclave (or the equivalent in Android devices). 
 
 
-| Section  | Steps |
-|---|---|
-| **Server Side**  | 1. [Create User](/platform/docs/guides/create_wallet/#register-user)  |
-|   | 2. [Generating passphasePrefix](/platform/docs/guides/create_wallet/#generating-passphaseprefix) |
-|   | 3. [Register Device](/platform/docs/guides/create_wallet/#register-device) |
-| **Mobile App**  | 1. [Initializing Wallet SDK](/platform/docs/guides/create_wallet/#initializing-wallet-sdk)  |
-|   | 2. [Calling `setupDevice` workflow](/platform/docs/guides/create_wallet/#calling-setupdevice-workflow) |
-|   | 3. [Calling `activateUser` workflow](/platform/docs/guides/create_wallet/#calling-activateuser-workflow) |
+### Step 3: activateUser
+calling `activateUser ` function of wallet SDK will deploy smart contracts. Once the contract deployment is complete the `user` is `activated` and can perform transactions
 
+<hr>
 
+This guide is divided into two major sections, **Server Side** section and **Mobile App** section. The segregation of **Server Side** logic and **Mobile App** logic will help developers understand the flows individually.
 
-
-## Prerequisite
-* Make sure you've created your Brand Token via [OST Platform interface](https://platform.ost.com). This [token creation](/platform/docs/guides/create_token/) guide walks you through the token creation flow. Go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to API key and API secret.
-* Integrate one of the available OST Platform Server SDK into your application. SDKs are available for [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.Js](/platform/docs/sdk/server_sdk_setup/nodejs/) and [Java](/platform/docs/sdk/server_sdk_setup/java/).
-* Set up the Wallet SDK by following one of the Wallet set up Guides. Wallet SDKs are available for [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/).
-
-<br>
+## Prerequisites
+* Make sure you have created your Brand Token via [OST Platform](https://platform.ost.com)
+    * This [token creation](/platform/docs/guides/create_token/) guide walks you through the token creation flow 
+    * Go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to API key and API secret
+* Integrate one of the available OST Platform Server Side SDKs into your application 
+    * SDKs are available for [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Node.Js](/platform/docs/sdk/server-side-sdks/nodejs/) and [Java](/platform/docs/sdk/server-side-sdks/java/)
+* Set-up the Mobile Wallet SDK by following one of the wallet set-up guides
+    * Wallet SDKs are available for [Android](/platform/docs/wallet_sdk_setup/android/), [iOS](/platform/docs/wallet_sdk_setup/iOS/), and [React Native](/platform/docs/wallet_sdk_setup/reactnative)
 
 
 ## Create Wallet Sequence Diagram
 <br>
-
 ![image](/platform/docs/assets/sequence-diagrams/create-wallet.png)
+<br>
 
-
-<br> 
-
-> ## Server Side
-In this section we focus on server side logic. You will have to use OST Platform Server Side SDK (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Node.Js](/platform/docs/sdk/server_sdk_setup/nodejs/)) to communicate with OST Platform. 
+## Server Side
+In this section we focus on the server side logic. You will have to use one of the OST Platform Server Side SDKs to communicate with OST Platform.
 
 ### Create User
 The first step to create a user's wallet is to create the user on OST Platform. Use one of the available Server Side SDKs or [API](/platform/docs/api)) directly to register a user.
 
-**User Registration Tips**
+:::tip User Registration Tips
+* In case of existing users, you can choose to write a batch script to register multiple users in OST Platform
+* In case of new users, whenever a sign-up happens the user can be registered in OST Platform.                 
+:::
 
-* In case of existing users, you can choose to write a batch script to register multiple users in OST Platform.
-*  In case of new users, whenever a sign-up happens the user can be registered in OST Platform.                 
-
+:::caution
 **OST Platform does not ask for any information about the user during registration. As a client company, you will have to maintain the mapping between the `user_id` provided by OST Platform servers and user's personal data on your server.** 
+:::
 
 <br>
 
-Register one or more users in OST Platform.
+**Sample code to register one or more users in OST Platform**
 
 ```php
 <?php
@@ -72,17 +85,16 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-### Generating passphasePrefix
+### Generate passphasePrefix
 
-`passphasePrefix` is a string with minimum length 30 used in the process of creating recovery key for your economy users. You will have to generate `passphasePrefix` on your server for each user with high randomness. You should keep a mapping between the `passPhrasePrefix` and other user information. Your server should communicate this passphrasePrefix to your app when needed.
+`passphasePrefix` is a string with minimum length 30 used in the process of creating recovery key for your users. You will have to generate `passphasePrefix` on your server for each user with high randomness. You should keep a mapping between the `passPhrasePrefix` and other user information. Your server should communicate this passphrasePrefix to your app when needed.
 
 [Security Guidelines for generating passphasePrefix](/platform/docs/sdk/getting_started/security_guidelines/#server-side-sdk)
 
-
 ### Register Device
-Your server should receive the device information from your mobile app. To register the device on OST Platform you can use the devices service provided in the Server Side SDKs (available in [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/)), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.Js](/platform/docs/sdk/server_sdk_setup/nodejs/)).
+Your server should receive the device information from your mobile app. To register the device on OST Platform you can use the devices service provided in the Server Side SDKs.
 
-Sample code to register the device using PHP SDK.
+**Sample code to register a device using PHP SDK**
 
 ```php
 <?php
@@ -109,15 +121,16 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-<br>
-
-> ## Mobile App
-In your mobile application, you should use one of the Wallet SDKs (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/).
+## Mobile App
+In your mobile application, you should use one of the OST Wallet SDKs
 
 ### Initializing Wallet SDK
-SDK initialization should happen before calling any other `workflow`. To initialize the SDK, you need to call `initialize` method of wallet SDK. 
+SDK initialization should happen before calling any other `workflow`. To initialize the SDK, you need to call `initialize` method of wallet SDK.
 
+:::important `initialize` method
 **Recommended location to call initialize() is in [Application](https://developer.android.com/reference/android/app/Application) sub-class.**
+:::
+
 
 ```java
 import android.app.Application;
@@ -137,7 +150,7 @@ public class App extends Application {
 }
 ```
 
-### Calling `setupDevice` workflow
+### Call `setupDevice` workflow
 In order to initiate the device registration from you mobile app, you need to call `setupDevice` workflow.
 <br>
 
@@ -151,9 +164,9 @@ In order to initiate the device registration from you mobile app, you need to ca
 
 ```
 
-
-
-Make sure you implement the callback function `registerDevice` in the class calling this workflow. This function will get device information from wallet SDK and your app should communicate this information to your server to register the device. In case of successful device registration call `ostDeviceRegisteredInterface.deviceRegistered()`, in case of failure call `ostDeviceRegisteredInterface.cancelFlow()` . 
+:::caution Make sure you implement the callback function `registerDevice`
+Make sure you implement the callback function `registerDevice` in the class calling this workflow. This function will get device information from wallet SDK and your app should communicate this information to your server to register the device. In case of successful device registration call `ostDeviceRegisteredInterface.deviceRegistered()`, in case of failure call `ostDeviceRegisteredInterface.cancelFlow()` .
+::: 
 
 ```java
 @Override
@@ -180,16 +193,12 @@ Make sure you implement the callback function `registerDevice` in the class call
  }
 ```
 
-
-
-
 ### Calling `activateUser` workflow
-
 
 #### Input parameter for `activateUser`
 To activate the user you will have to call **activateUser** workflow which requires 5 input parameters given below:
 
-1. A 6-digit PIN set by user
+1. A **6 digit PIN** set by user
 
 2. User Id: User id of economy user in OST Platform
 
@@ -202,9 +211,6 @@ To activate the user you will have to call **activateUser** workflow which requi
 
 #### Getting passphrasePrefix from your server
 You should request your server to get the `passphrasePrefix` generated in [generating passphrasePrefix section](#generating-passphaseprefix).
-
-
-
 
 
 #### Getting PIN from user
@@ -231,18 +237,18 @@ Your app will create a UserPassphrase object which will contain user id, user pi
 UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix);
 ```
 
-
 #### Set expiryAfterInSecs and spendingLimitinWei
 
-**expiryAfterInSecs**: Recommended is 2 weeks, however, you can choose more or less time.
+:::note Expiry
+**expiryAfterInSecs** Recommended is 2 weeks, however, you can choose more or less time
+:::
 
-
-**spendingLimitinWei**: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
+:::note Per Transaction Spending Limit
+**spendingLimitinWei** Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
+:::
 
 #### Finally calling `activateUser` workflow
-
-Your mobile app should call `activateUser` workflow using wallet SDK with the input parameters from the [above step](#input-parameter-for-activateuser) .
-
+Your mobile app should call `activateUser` workflow using wallet SDK with the input parameters from the [above step](#input-parameter-for-activateuser)
 
 
 ```java
@@ -264,12 +270,10 @@ Your mobile app should call `activateUser` workflow using wallet SDK with the in
 }
 ```
 
-
-**When to activate a user**
-
+:::important When to activate a user**
 * User activation deploys three contracts for each user on OpenST side blockchain so this process takes several seconds.
-
 * User activation is required before doing any wallet actions like executing transfers. Because of the time this process needs, it is recommended to avoid doing activation just before the first token transfer.
+:::
 
 #### Verify Activation Status
 The SDK provides an interface that should be implemented by the application so that it can receive the workflow status details.
@@ -278,9 +282,7 @@ The SDK provides an interface that should be implemented by the application so t
 
 There is a list of methods available as [interface](/platform/docs/sdk/references/wallet_sdk/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/references/wallet_sdk/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
 
-
 To show you an example, we will just implement 2 functions to get the workflow status.
-
 
 1. **flowComplete**:  Callback function will be called if the workflow is completed successfully. The workflow details and the updated entity will be received in the arguments. `ostContextEntity` will be updated user entity. Once you receive this updated user entity, it is recommended that your app communicates the updated user entity to your server which stores the user's  **TokenHolder**  address with user info for further use. The user's updated status will be `ACTIVATED`.
 
@@ -295,7 +297,6 @@ public void flowComplete(OstWorkflowContext ostWorkflowContext, OstContextEntity
    }
 ```
 
-
 2. **flowInterrupt**: Callback function will be called if the workflow is failed because of some error or cancelled. The workflow details and **OstError** object will be received in the arguments. The error details will be available in **OstError** object.
 
 ```java
@@ -307,7 +308,3 @@ public void flowComplete(OstWorkflowContext ostWorkflowContext, OstContextEntity
         ...
     }
 ```
-
-## Next Steps
-
-1. [Execute Transaction](/platform/docs/guides/execute_transaction/)

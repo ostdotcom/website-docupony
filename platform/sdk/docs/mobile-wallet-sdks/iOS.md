@@ -6,7 +6,7 @@ sidebar_label: iOS
 
 
 ## 1. Prerequisite 
-You will need to integrate server side SDK on your server. You can use one of the available server side SDKs: [PHP](/platform/docs/sdk/server_sdk_setup/php/), [Ruby](/platform/docs/sdk/server_sdk_setup/ruby/), [Java](/platform/docs/sdk/server_sdk_setup/java/), [Node.js](/platform/docs/sdk/server_sdk_setup/nodejs/).
+You will need to integrate server side SDK on your server. You can use one of the available server side SDKs: [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/).
 
 
 

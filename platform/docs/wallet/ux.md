@@ -1,17 +1,12 @@
 ---
-id: mobile_wallet_ux_guide
-title: Suggestions for Your Mobile Wallet Design
-sidebar_label: Mobile (Wallet) UX
+id: ux
+title: Create a Seamless User Experience using the OST Wallet SDK
+sidebar_label: Wallet UX Guidelines
 ---
-
-![UX Guide Title](/platform/docs/assets/wallet-ux-guide/Wallet-UX-Guidelines-Hero.jpg)
-
 
 In this guide, we use an example of a fictitious restaurant recommendation application, “Spoon” to illustrate how a Brand could use the Wallet SDK to integrate the functionality of a user-friendly non-custodial Brand Token wallet into their application. The UX case study aims to serve as a reference for Brand developers and to help create a faster and smoother implementation of the Wallet SDK with the application.
 
 We’ll be using user stories around sharing favorite local food experiences to illustrate the key concepts of the Wallet SDK implementation and to present some basic ideas for Tokenization.
-
-<br>
 
 ## Workflow: Introduction and App Update
 
@@ -26,21 +21,21 @@ The CTA on this page is for the user to update the App to the latest version whi
 
 ## Workflow: 
 
-
 ### 1. Create a Wallet 
 
 A user needs a Brand Token wallet to participate in Brand Token economy.
 
-To create a Brand Token Wallet, the user needs to enter a PIN. Setting a PIN helps emphasize to your users the importance of securing their Brand Tokens. The PIN must be at least 6-digits. The same 6-digit PIN will also be used to recover the Wallet using OST’s Recovery from Smart Contract method which eliminates the need for users to write down a 12-word seed phrase or private key.  We describe the recovery process in more detail below.
+To create a Brand Token Wallet, the user needs to enter a PIN. Setting a PIN helps emphasize to your users the importance of securing their Brand Tokens. The PIN must be at least 6-digits. The same **6 digit PIN** will also be used to recover the Wallet using OST’s Recovery from Smart Contract method which eliminates the need for users to write down a 12-word seed phrase or private key.  We describe the recovery process in more detail below.
 
-
-**Note: Your users do not need to enter a PIN to create their wallet until they visit the wallet section of your app. Likewise, the user does not need to re-enter their Wallet PIN to use other parts of your app. You can decide when and where in your app that you want to first introduce the Wallet.**
+:::caution User Authentication
+Your users do not need to enter a PIN to create their wallet until they visit the wallet section of your app. Likewise, the user does not need to re-enter their Wallet PIN to use other parts of your app. You can decide when and where in your app that you want to first introduce the Wallet.
+:::
 
 ![create wallet](/platform/docs/assets/wallet-ux-guide/1-Create-a-Wallet.jpg)
 
 ### 2. Authorize a session 
 
-A helpful feature of the OST Wallet SDK is Session Keys. A session refers to a duration of time when sessionKeys can seamlessly sign a transaction on behalf of the user for in-app transactions under the authorized spending limit. The user’s 6-digit PIN can be used to authorize a session.
+A helpful feature of the OST Wallet SDK is Session Keys. A session refers to a duration of time when sessionKeys can seamlessly sign a transaction on behalf of the user for in-app transactions under the authorized spending limit. The user’s **6 digit PIN** can be used to authorize a session.
 
 The default duration for Sessions is 2 weeks. During those two weeks, once the user has authorized the session, she can confirm transactions without having to re-enter her PIN.  
 
@@ -49,7 +44,7 @@ The default duration for Sessions is 2 weeks. During those two weeks, once the u
 
 ### 3. Reduce friction using biometrics 
 
-A 6-digit PIN is a much nicer experience than a private key, but using biometrics on top of a 6-digit PIN gets your users the security they need with none of the hassles. 
+A **6 digit PIN** is a much nicer experience than a private key, but using biometrics on top of a **6 digit PIN** gets your users the security they need with none of the hassles. 
 
 ![image](/platform/docs/assets/wallet-ux-guide/3-Reduce-Friction.jpg)
 
@@ -77,20 +72,17 @@ The suggested way to generate QR codes is to use a library that generates QR cod
 
 ![image](/platform/docs/assets/wallet-ux-guide/5-WebStore.jpg)
 
-
-
 An alternate way of performing transactions in web is via push notification. You can send the transaction data to the mobile app using push notification. Your mobile application can then use the transaction data to show the transaction confirmation dialog to the app user, who then can confirm or cancel the transaction. An image is shown below to give you an example.
 
 ![image](/platform/docs/assets/wallet-ux-guide/5.3-WebStore.jpg)
-
-
 
 ### 6. Balances and Activity history
 
 The Balance and Ledger APIs allow the user to look at their current Brand Token balance and transaction history. Whenever the user views their balances, we recommend showing them how to earn more tokens or options for how they could spend their tokens.
 
-
-**Note: The user does not need to be authorized for a Wallet Session to view Balance and Ledger.** 
+:::caution User Authentication
+The user does not need to be authorized for a Wallet Session to view Balance and Ledger
+:::
 
 ![image](/platform/docs/assets/wallet-ux-guide/6-Balances-and-Activity.jpg)
 
@@ -100,20 +92,15 @@ The OST Wallet SDK supports multiple devices accessing the same Wallet using the
 
 ![image](/platform/docs/assets/wallet-ux-guide/7-Multi-Device.jpg)
 
-
 ### 8. Using mnemonic phrases to authorize a new device or recover a lost wallet (Optional) 
 
 One of the innovations of the OST Wallet SDK is that you do not need to require your users to write down 12 words to add a new device or recover a wallet. However, if you want to add an additional layer of security, for the crypto-savvier user you can enable authorizing a new device using a mnemonic phrase.
 
 To do so, an authorized device shows the mnemonic phrase (after verifying the PIN or biometrics, of course!)
 
-
-**Note: This is an optional feature.**
-
+**This is an optional feature.**
 
 ![image](/platform/docs/assets/wallet-ux-guide/8-Backup-Mnemonic.jpg)
-
-
 
 The user enters their mnemonic phrase on a new device to authorize that device.
 
@@ -121,19 +108,17 @@ The user enters their mnemonic phrase on a new device to authorize that device.
 
 ### 9.  Recovery With PIN (Required) or mnemonic phrase (Optional)
 
-
 Oh no, a user lost the phone they had your application on. Thankfully, recovering access to funds is made painless with OST’s Wallet SDK.   
 
 ![image](/platform/docs/assets/wallet-ux-guide/9-Recover-Wallet.jpg)
 
-
-**Recommended: Notify users via Email to inform about the initiation and completion of the recovery process.**
-
+:::tip Recovery Process
+Notify users via Email to inform about the initiation and completion of the recovery process
+:::
 
 ![image](/platform/docs/assets/wallet-ux-guide/9.1-recovery-emails-2.jpg)
 
 ![image](/platform/docs/assets/wallet-ux-guide/9.2-wallet-abort.jpg)
-
 
 
 ### 10. Progress Indicators
@@ -151,7 +136,6 @@ If the operation a very lengthy where the users are more interested in the compl
 
 ![image](/platform/docs/assets/wallet-ux-guide/10.2-progress-tx-2.jpg)
 
-
 * **Progress Indicator UX Studies** - https://www.nngroup.com/articles/progress-indicators/
 
 * **Material Design** - https://material.io/design/components/progress-indicators.html#usage
@@ -162,8 +146,15 @@ If the operation a very lengthy where the users are more interested in the compl
 
 Good error messages allow users to be informed about the error that occurred and allow them to perform an action or change behavior as a result of the error i.e If a transaction fails, explain to users on why it failed and allow them to retry it (or) if a user doesn’t have enough token balance to complete the transaction ask the user to get more tokens.
 
-
 ![image](/platform/docs/assets/wallet-ux-guide/11-Failed_TX.jpg)
 
+To learn more about how the OST Wallet SDK Recovery from PIN and Smart Contract is made possible in a safe and secure manner, please review the OST Wallet SDK Recovery documentation.
 
-To learn more about how the OST Wallet SDK Recovery from PIN and Smart Contract is made possible in a safe and secure manner, please review the OST Wallet SDK Recovery documentation. 
+<hr>
+
+## Watch a Video on the OST Wallet UX Guidelines
+<div align="center">
+    <iframe width="680" height="384"
+        src="https://www.youtube.com/embed/-wgG8raRoTA">
+    </iframe>
+</div>

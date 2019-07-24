@@ -71,6 +71,9 @@
       "server-side-sdks/ruby": {
         "title": "Ruby SDK Quickstart Guide",
         "sidebar_label": "Ruby"
+      },
+      "X_maybe_useful": {
+        "title": "X_maybe_useful"
       }
     },
     "links": {

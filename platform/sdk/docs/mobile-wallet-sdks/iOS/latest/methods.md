@@ -170,7 +170,7 @@ Workflow should be used to do the `user-to-company` and `user-to-user` transacti
 ```
 OstWalletSdk.executeTransaction(
     userId: String,
-    tokenHolderAddresses: [String],
+    **TokenHolder**Addresses: [String],
     amounts: [String],
     transactionType: OstExecuteTransactionType,
     meta: [String: String],
@@ -182,7 +182,7 @@ OstWalletSdk.executeTransaction(
 | Parameter | Description |
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform|
-| **tokenHolderAddresses** <br> **[String]**	|  **TokenHolder**  addresses of beneficiary users.  |
+| ****TokenHolder**Addresses** <br> **[String]**	|  **TokenHolder**  addresses of beneficiary users.  |
 | **amounts** <br> **[String]**	| Array of Amount to be transferred in atto.  |
 | **transactionType** <br> **OstExecuteTransactionType**	| Transaction type can take one of the two values: <br> 1. `DirectTransfer`:  In this type of transaction, the amount of brand token will be transferred directly to the receiver user. <br> 2. `Pay`: In this type of transaction the amount of fiat passed will first be converted into brand token and after this conversion the transfer will happen in converted brand token amount.|
 | **meta** <br> **[String: String]**	| Dictionary object having extra information that a developer can pass about the transfer. This dictionary object can have 3 properties. <br><br>Example meta:  <br>[<br>&nbsp; &nbsp;"name":"Thanks for like", <br>&nbsp; &nbsp;"type": "user_to_user", <br>&nbsp; &nbsp;  "details": "like"<br>] |

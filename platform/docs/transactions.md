@@ -1,0 +1,22 @@
+---
+id: transactions
+title: Overview of Transactions in OST Platform
+sidebar_label: Transactions Explained
+---
+
+## Transactions Types
+There are two different types of transactions possible, company to user and user initiated. The latter must be signed by the users private keys.
+
+| Transaction Type | Description |
+|---|---|
+| **company-to-user** | Client company to end-user<br>**Our Server Side SDKs (available in [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/), [Java](/platform/docs/sdk/server-side-sdks/java/)). facilitate company-to-user transactions** |
+| **user initiated** | End-user to another user OR end-user to the client company <br> **Our Mobile Wallet SDKs (available in [Android](/platform/docs/wallet_sdk_setup/android/) and [iOS](/platform/docs/wallet_sdk_setup/iOS/)) facilitate user initiated transactions. The mobile wallet is used to sign transactions.** |
+
+![TransactionsExplained1]( /platform/docs/assets/transactions_explained_1.png)
+
+## Transaction Currency
+If client company wants to transfer tokens worth $5 to a user the following sequence of events occur:
+	1. Company's **TokenHolder** contract initiates “execute pricer rule” request to client company's **PricerRule** contract. The **TokenHolder** contract also approves company's **TokenRules** contract to spend tokens on its behalf.
+	2. Company's **PricerRule** contract applies “conversion from USD to tokens rules”. The **PricerRule** contract will pass all this information after applying rules to the **TokenRules** contract.
+	3. The **TokenRules** contract executes the transfer between all concerned parties as specified by the company's **PricerRule** contract.
+

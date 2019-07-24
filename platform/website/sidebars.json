@@ -2,54 +2,60 @@
   "OST Platform": {
     "Introduction": [
       "introduction",
-      "getting_started",
-      "definitions",
 
       {
        "type": "subcategory",
-       "label": "OST Platform",
+       "label": "Getting Started",
        "ids": [
-        "platform/overview",
-        "platform/components",
-        "platform/ost-view"
+        "getting-started",
+        "1-create",
+        "2-plan",
+        "3-integrate",
+        "4-launch"
        ]
      },
+
+     "definitions"
+    ],
+
+    "OST Platform": [
+     "overview",
+     "components",
+     "transactions",
+     "smart-contracts",
+     "view",
      
       {
        "type": "subcategory",
        "label": "OST Wallet",
        "ids": [
-        "platform/wallet/introduction",
-        "platform/wallet/sdk",
-        "platform/wallet/kms",
-        "platform/wallet/recovery"
+        "wallet/introduction",
+        "wallet/sdk",
+        "wallet/app",
+        "wallet/features",
+        "wallet/ux"
        ]
      }
     ],
+    
+    "Technical Guides": [
+     "guides/create-user-wallet",
+     "guides/create-session",
+     "guides/execute-transactions",
+     "guides/golive-checklist"
+   ],
 
-    "Token Use Cases": [
+    "Case Studies": [
       "use-cases/lgbt",
       "use-cases/spoo",
       "use-cases/pop",
-      "use-cases/mobile_wallet_ux_guide"
-    ],
-    
-    "Implementation Guides": [
-      "guides/transactions",
-      "guides/create_token",
-      "guides/stake_and_mint",
-      "guides/create_user_wallet",
-      "guides/create_session",
-      "guides/execute_transactions",
-      "guides/distribute_tokens",
-      "guides/move_to_mainnet",
-      "guides/golive_checklist"
+      "use-cases/ux-guide"
     ],
       
     "Release Notes": [
-      "release-notes/18_Jun_2019",
-      "release-notes/03_Jun_2019",
-      "release-notes/27_Mar_2019"
+      "release-notes/18Jun2019",
+      "release-notes/03Jun2019",
+      "release-notes/27Mar2019"
     ]
   }
 }
