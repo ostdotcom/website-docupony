@@ -71,7 +71,7 @@ OstWalletSdk.setupDevice(
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform  |
 | **tokenId** <br> **String**	| Unique identifier of the token economy |
-| **delegate** <br> **OstWorkflowDelegate**	|An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/).<br> This object should implement `registerDevice` callback function. `registerDevice` will be called during the execution of this workflow.  |
+| **delegate** <br> **OstWorkflowDelegate**	|An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).<br> This object should implement `registerDevice` callback function. `registerDevice` will be called during the execution of this workflow.  |
 
 <br>
 
@@ -96,7 +96,7 @@ OstWalletSdk.activateUser(
 | **passphrasePrefix** <br> **String**	| A constant unique identifier for your user. |
 | **spendingLimit** <br> **String**	| Spending limit of session key in [atto BT](/platform/docs/guides/execute-transactions/#converting-brand-token-to-atto-brand-token).  |
 | **expireAfterInSec** <br> **TimeInterval**	| Expire time of session key in seconds. |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/).  |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
 
 
 
@@ -118,7 +118,7 @@ OstWalletSdk.addSession(
 | **userId** <br> **String**	|  Unique identifier of the user stored in OST Platform|
 | **spendingLimit** <br> **String**	| Spending limit of session key in [atto BT](/platform/docs/guides/execute-transactions/#converting-brand-token-to-atto-brand-token).   |
 | **expiresAfterInSecs** <br> **long**	| Expire time of session key in seconds.  |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/). |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/). |
 
 
 
@@ -140,7 +140,7 @@ OstWalletSdk.perfromQRAction(
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform|
 | **data** <br> **String**	| JSON object string scanned from QR code. <br> [Sample QRCode JSON](/platform/docs/guides/execute-transactions/#generating-qrcode-with-transaction-data) |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/). |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/). |
 
 
 
@@ -158,7 +158,7 @@ OstWalletSdk.getDeviceMnemonics(
 | Parameter | Description |
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/). |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/). |
 
 
 
@@ -187,7 +187,7 @@ OstWalletSdk.executeTransaction(
 | **transactionType** <br> **OstExecuteTransactionType**	| Transaction type can take one of the two values: <br> 1. `DirectTransfer`:  In this type of transaction, the amount of brand token will be transferred directly to the receiver user. <br> 2. `Pay`: In this type of transaction the amount of fiat passed will first be converted into brand token and after this conversion the transfer will happen in converted brand token amount.|
 | **meta** <br> **[String: String]**	| Dictionary object having extra information that a developer can pass about the transfer. This dictionary object can have 3 properties. <br><br>Example meta:  <br>[<br>&nbsp; &nbsp;"name":"Thanks for like", <br>&nbsp; &nbsp;"type": "user_to_user", <br>&nbsp; &nbsp;  "details": "like"<br>] |
 | **options** <br> **[String: Any]**	| Optional settings parameters. You can set following values: <br> 1. `currency_code`: Currency code for the pay currency. <br> 2. `wait_for_finalization`: If set `false` then SDK will stop polling for transaction status. By default the SDK will do polling to check the transaction status. <br> Example: `{"currency_code": "USD", "wait_for_finalization": false}`|
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/). |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/). |
 
 
 
@@ -209,7 +209,7 @@ OstWalletSdk.authorizeCurrentDeviceWithMnemonics(
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform|
 | **mnemonics** <br> **[String]**	| Array of String having 12 words |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/).  |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
 
 
 
@@ -241,7 +241,7 @@ OstWalletSdk.resetPin(
 | **passPhrasePrefix** <br> **String**	| A constant unique identifier for a your user. |
 | **oldUserPin** <br> **String**	| Current wallet PIN  |
 | **newUserPin** <br> **String**	| New wallet PIN |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/).  |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
 
 
 
@@ -264,7 +264,7 @@ OstWalletSdk.initiateDeviceRecovery(
 | **recoverDeviceAddress** <br> **String**	| Unique identifier for the user of economy |
 | **userPin** <br> **String**	| User's Wallet PIN  |
 | **passPhrasePrefix** <br> **String**	| A constant unique identifier for a your user. |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/).  |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
 
 
 
@@ -285,7 +285,7 @@ OstWalletSdk.abortDeviceRecovery(
 | **userId** <br> **String**	| Unique identifier for the user of economy |
 | **userPin** <br> **String**	| User's Wallet PIN  |
 | **passPhrasePrefix** <br> **String**	| A constant unique identifier for a your user. |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/).  |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
 
 
 
@@ -302,7 +302,7 @@ OstWalletSdk.logoutAllSessions(
 | Parameter | Description |
 |---|---|
 | **userId** <br> **String**	| Unique identifier for the user of economy |
-| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/).  |
+| **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
 
 
 

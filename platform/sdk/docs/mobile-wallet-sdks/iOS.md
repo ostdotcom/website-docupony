@@ -251,4 +251,4 @@ To provide developers with sample integration of wallet SDK, a [OST Wallet iOS a
 
 1. [Create Wallet Guide](/platform/docs/1-create)
 2. [Execute Transaction Guide](/platform/docs/guides/execute-transactions/)
-3. iOS Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/methods/),  [Protocol](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/classes/)
+3. iOS Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/),  [Protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/classes/)

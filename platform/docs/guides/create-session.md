@@ -30,7 +30,7 @@ Above shown sample code is a part of [Android sample application](https://github
 ### 2. Check Workflow Status
 
 #### Receiving `addSession` workflow status callbacks
-There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/android/)) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/) (in [iOS wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/iOS)) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/android/)) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/iOS)) for communication between mobile app and Wallet SDK. 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
 

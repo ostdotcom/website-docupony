@@ -280,7 +280,7 @@ The SDK provides an interface that should be implemented by the application so t
 
 **Receiving callback calls**
 
-There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOSlatest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
 
