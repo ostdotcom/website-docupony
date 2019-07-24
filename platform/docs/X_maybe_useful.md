@@ -67,3 +67,14 @@ If you build a product  or solution that requires third parties to purchase toke
 :::
 
 ![UX Guide Title](/platform/docs/assets/wallet-ux-guide/Wallet-UX-Guidelines-Hero.jpg)
+
+<hr>
+
+## Watch a Short Video on Our Developer Resources
+
+<div align="center">
+    <iframe width="680" height="384"
+        src="https://www.youtube.com/embed/AUgBHPDkYnU">
+    </iframe>
+</div>
+<br>

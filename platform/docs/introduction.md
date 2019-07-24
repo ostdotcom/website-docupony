@@ -57,14 +57,3 @@ This is a tip or instructions to follow
 :::warning Warning
 This is a warning! Take extra care.
 :::
-
-<hr>
-
-## Watch a Short Video on Our Developer Resources
-
-<div align="center">
-    <iframe width="680" height="384"
-        src="https://www.youtube.com/embed/AUgBHPDkYnU">
-    </iframe>
-</div>
-<br>
