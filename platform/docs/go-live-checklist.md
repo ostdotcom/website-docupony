@@ -1,7 +1,7 @@
 ---
 id: go-live-checklist
-title: Pre-Go-Live Checklist
-sidebar_label: Pre-Go-Live Checklist
+title: Go-Live Checklist
+sidebar_label: Go-Live Checklist
 ---
 
 This is a requirements checklist for OST Platform clients to check the readiness of their application’s integration with OST Platform SDKs. You will need to confirm that you have followed and implemented these requirements before being permitted to move to Production (mainnet).

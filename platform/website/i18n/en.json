@@ -36,6 +36,10 @@
         "title": "Four Steps to Success",
         "sidebar_label": "Four Steps to Success"
       },
+      "go-live-checklist": {
+        "title": "Go-Live Checklist",
+        "sidebar_label": "Go-Live Checklist"
+      },
       "guides/create-session": {
         "title": "Create Session Guide",
         "sidebar_label": "Create Session"
@@ -47,10 +51,6 @@
       "guides/execute-transactions": {
         "title": "Technical Guide to Executing Transactions",
         "sidebar_label": "Execute Transactions"
-      },
-      "guides/golive-checklist": {
-        "title": "Pre-Go-Live Checklist",
-        "sidebar_label": "Pre-Go-Live Checklist"
       },
       "introduction": {
         "title": "Welcome to OST Platform",

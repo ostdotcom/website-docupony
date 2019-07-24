@@ -15,7 +15,7 @@ Our Server Side SDKs and Mobile Wallet SDKs together enable fast and painless in
 OST Platform is designed for internet-grade transaction volumes and speeds
 :::
 
-## What Can I do with OST Platform?
+## What Can You do with OST Platform?
 OST Platform enables you to:
 * **Create your own Brand Token**
 * **Embed value into any action** — be it an upvote, a like, a store visit, a contribution, or a 5-star review
@@ -37,12 +37,13 @@ You can currently stake USDC and OST tokens on OST Platform.
 
 ## Where Do I Start?
 Use of OST Platform requires both business and technical expertise. Your starting point depends on your role. 
-* If you are a business person, the Getting Started section and and Case Studies will be of most use. 
+* If you are a business person, the Getting Started section and Case Studies will be of most use. 
 * If you are technical, then jump to the Technical Guides.
 
 ## We're here to help!
 The best way to explore OST Platform is by reading these pages and [signing-up](https://platform.ost.com/sign-up) for an account. You can connect with us on Slack and Gitter and at our [Help Center](https://help.ost.com). **We are here to make you and your team be successful with OST Platform!**
 
+## Color References
 Through-out these pages you will see different highlights, as indicated below. 
 
 :::important Note
@@ -58,6 +59,7 @@ This is a warning! Take extra care.
 :::
 
 <hr>
+
 ## Watch a Short Video on Our Developer Resources
 
 <div align="center">
