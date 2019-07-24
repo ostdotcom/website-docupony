@@ -4,7 +4,7 @@ title: OST Platform Overview
 sidebar_label: Overview
 ---
 
-:::note OST Platform is built on OpenST Protocol and OpenST Mosaic
+:::important OST Platform is built on OpenST Protocol and OpenST Mosaic
 OST Platform is built on [OpenST Protocol](https://openst.org/) and OpenST Mosaic. Together, these allow for the creation of _value-backed_ Brand Tokens on scalable side-chains on Etheruem, and finalizing thousands of transactions per second asynchronously to Ethereum at low cost.
 :::
 

@@ -1,5 +1,5 @@
 ---
-id: golive-checklist
+id: go-live-checklist
 title: Pre-Go-Live Checklist
 sidebar_label: Pre-Go-Live Checklist
 ---
@@ -37,7 +37,7 @@ This is a requirements checklist for OST Platform clients to check the readiness
 We strongly recommend that your application is reviewed by security assessors/auditors to evaluate the general security of the application and also an analysis of the security vulnerabilities caused by the usage of 3rd party libraries and other dependencies.
 :::
 
-:::note Contact us
+:::important Contact us
 Please write to us at support@ost.com if you face any issues fulfilling these requirements.
 :::
 

@@ -1,7 +1,7 @@
 ---
 id: iOS
-title: iOS SDK Setup
-sidebar_label: iOS
+title: iOS SDK Set-up
+sidebar_label: Set-up
 ---
 
 

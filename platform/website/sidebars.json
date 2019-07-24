@@ -15,6 +15,7 @@
        ]
      },
 
+     "go-live-checklist",
      "definitions"
     ],
 
@@ -42,14 +43,12 @@
      "guides/create-user-wallet",
      "guides/create-session",
      "guides/execute-transactions",
-     "guides/golive-checklist"
    ],
 
     "Case Studies": [
       "use-cases/lgbt",
       "use-cases/spoo",
-      "use-cases/pop",
-      "use-cases/ux-guide"
+      "use-cases/pop"
     ],
       
     "Release Notes": [

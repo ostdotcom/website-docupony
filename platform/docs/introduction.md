@@ -11,7 +11,7 @@ OST Platform is the first full-featured “no-code” blockchain platform — a 
 
 Our Server Side SDKs and Mobile Wallet SDKs together enable fast and painless integration into any app or platform, without requiring in-house blockchain expertise — so you can focus on your business and leave the blockchain bits to us.
 
-:::note Internet Grade
+:::important Internet Grade
 OST Platform is designed for internet-grade transaction volumes and speeds
 :::
 
@@ -22,7 +22,7 @@ OST Platform enables you to:
 * **Process microtransactions:** high volume, low value transfers at low cost (~US$0.001 per transaction)
 * **Impart value to, and empower, end-users through the OST Wallet**
 
-:::note Built on Ethereum
+:::important Built on Ethereum
 OST Platform APIs and SDKs enable businesses to build innovative solutions on Ethereum and leverage the benefits of its open, distributed, immutable blockchain.
 :::
 
@@ -41,8 +41,23 @@ Use of OST Platform requires both business and technical expertise. Your startin
 * If you are technical, then jump to the Technical Guides.
 
 ## We're here to help!
-The best way to explore OST Platform is by reading these pages and [signing-up](https://platform.ost.com/signup) for an account. You can connect with us on Slack and Gitter and at our [Help Center](https://help.ost.com). **We are here to make you and your team be successful with OST Platform!**
+The best way to explore OST Platform is by reading these pages and [signing-up](https://platform.ost.com/sign-up) for an account. You can connect with us on Slack and Gitter and at our [Help Center](https://help.ost.com). **We are here to make you and your team be successful with OST Platform!**
 
+Through-out these pages you will see different highlights, as indicated below. 
+
+:::important Note
+This is a note
+:::
+
+:::tip Tip
+This is a tip or instructions to follow
+:::
+
+:::warning Warning
+This is a warning! Take extra care.
+:::
+
+<hr>
 ## Watch a Short Video on Our Developer Resources
 
 <div align="center">

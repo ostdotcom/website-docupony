@@ -39,7 +39,7 @@ This guide is divided into two major sections, **Server Side** section and **Mob
 * Integrate one of the available OST Platform Server Side SDKs into your application 
     * SDKs are available for [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Node.Js](/platform/docs/sdk/server-side-sdks/nodejs/) and [Java](/platform/docs/sdk/server-side-sdks/java/)
 * Set-up the Mobile Wallet SDK by following one of the wallet set-up guides
-    * Wallet SDKs are available for [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/reactnative)
+    * Wallet SDKs are available for [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS/), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)
 
 
 ## Create Wallet Sequence Diagram
@@ -58,7 +58,7 @@ The first step to create a user's wallet is to create the user on OST Platform. 
 * In case of new users, whenever a sign-up happens the user can be registered in OST Platform.                 
 :::
 
-:::caution
+:::warning
 **OST Platform does not ask for any information about the user during registration. As a client company, you will have to maintain the mapping between the `user_id` provided by OST Platform servers and user's personal data on your server.** 
 :::
 
@@ -164,7 +164,7 @@ In order to initiate the device registration from you mobile app, you need to ca
 
 ```
 
-:::caution Make sure you implement the callback function `registerDevice`
+:::warning Make sure you implement the callback function `registerDevice`
 Make sure you implement the callback function `registerDevice` in the class calling this workflow. This function will get device information from wallet SDK and your app should communicate this information to your server to register the device. In case of successful device registration call `ostDeviceRegisteredInterface.deviceRegistered()`, in case of failure call `ostDeviceRegisteredInterface.cancelFlow()` .
 ::: 
 
@@ -239,11 +239,11 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 
 #### Set expiryAfterInSecs and spendingLimitinWei
 
-:::note Expiry
+:::important Expiry
 **expiryAfterInSecs** Recommended is 2 weeks, however, you can choose more or less time
 :::
 
-:::note Per Transaction Spending Limit
+:::important Per Transaction Spending Limit
 **spendingLimitinWei** Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
 :::
 

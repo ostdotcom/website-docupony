@@ -156,7 +156,7 @@ background: #f9fafa;
 
 
 .container.mainContainer article a, .container.mainContainer article a:hover {
-color: #27B9D2;
+color: #e4b030;
 }
 
 
@@ -201,5 +201,5 @@ color:#eb4d4a;
 }
 
 .toc .toggleNav ul li.navListItemActive a, nav.toc .toggleNav ul li a:hover {
-color: #27B9D2!important;
+color: #e4b030!important;
 }

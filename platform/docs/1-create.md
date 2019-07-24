@@ -24,12 +24,12 @@ During token setup you will set Token Name and select a Token Identifier for you
 
 ![create-account](/platform/docs/assets/token-setup/token_setup.png)
 
-:::note Character Restrictions
+:::important Character Restrictions
 * **Token Name:** Letters, numbers, spaces allowed, max 20 characters and 3 words
 * **Token Identifier:** No special characters allowed, Min 1 letter required, Max 4 letters or numbers
 :::
 
-:::caution Conversion Rate
+:::warning Conversion Rate
 We recommend using the default conversion rate in Sandbox i.e. 1 token = 1 OST. You can then make a more informed decision when setting-up your Brand Token in Production. If you need help setting the conversion rate, you can reach out to us at support@ost.com.
 
 Things to consider when setting the conversion rate:
@@ -66,7 +66,7 @@ Once you have staked something, the minting process is as simple as setting the 
 ![create-account](/platform/docs/assets/token-setup/mint_tokens.png)
 
 ## e. Connect to the OST Wallet App (Optional)
-Simply log-in to OST Platform, click on the **Wallet** tab and select Connect. For more detailed instructions, see [here](platform/docs/wallet/app/#connect-your-brand-token-to-ost-wallet-app).
+Simply log-in to OST Platform, click on the **Wallet** tab and select Connect. For more detailed instructions, see [here](/platform/docs/wallet/app/#connect-your-brand-token-to-ost-wallet-app).
 
 <hr>
 

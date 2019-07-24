@@ -27,7 +27,7 @@ A user needs a Brand Token wallet to participate in Brand Token economy.
 
 To create a Brand Token Wallet, the user needs to enter a PIN. Setting a PIN helps emphasize to your users the importance of securing their Brand Tokens. The PIN must be at least 6-digits. The same **6 digit PIN** will also be used to recover the Wallet using OST’s Recovery from Smart Contract method which eliminates the need for users to write down a 12-word seed phrase or private key.  We describe the recovery process in more detail below.
 
-:::caution User Authentication
+:::warning User Authentication
 Your users do not need to enter a PIN to create their wallet until they visit the wallet section of your app. Likewise, the user does not need to re-enter their Wallet PIN to use other parts of your app. You can decide when and where in your app that you want to first introduce the Wallet.
 :::
 
@@ -80,7 +80,7 @@ An alternate way of performing transactions in web is via push notification. You
 
 The Balance and Ledger APIs allow the user to look at their current Brand Token balance and transaction history. Whenever the user views their balances, we recommend showing them how to earn more tokens or options for how they could spend their tokens.
 
-:::caution User Authentication
+:::warning User Authentication
 The user does not need to be authorized for a Wallet Session to view Balance and Ledger
 :::
 

@@ -4,7 +4,7 @@ title: Technical Guide to Executing Transactions
 sidebar_label: Execute Transactions
 ---
 
-:::caution atto denomination
+:::warning atto denomination
 atto is the smallest denomination used in OST Platform. OST Platform APIs and SDKs accept value in `atto`, so it is important to understand the conversions to `atto`. 
 
 **To convert a standard amount to its atto denomination, multiply the amount by 10^18**
@@ -71,7 +71,7 @@ The QRCode data for executing transactions via web applications should be a JSON
 
 ### Example JSON data for QRCode
 
-:::note The amounts are in atto 
+:::important The amounts are in atto 
 [Wei conversions](/platform/docs/guides/execute-transactions/#wei-conversions) are explained in [next section](/platform/docs/guides/execute-transactions/#wei-conversions)
 :::
 

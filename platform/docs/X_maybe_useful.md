@@ -1,10 +1,10 @@
 caution, note, important, tip, warning.
 
-:::caution Caution title
+:::warning Caution title
 Caution
 :::
 
-:::note Note title
+:::important Note title
 Note
 :::
 

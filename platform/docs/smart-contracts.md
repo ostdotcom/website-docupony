@@ -17,7 +17,7 @@ During the set-up stage, multiple smart-contracts are deployed on Ethereum and O
 | **TokenRules** | - Maintains a list of the **Rules** contracts that can execute transfers in a given economy. <br>- Enables developers to register and deregister specific **Rules** contracts. <br>- Each Economy will have one **TokenRules** contract deployed on an auxiliary chain. <br>- For executing a token transfer, an end-users **TokenHolder** contract interacts with **TokenRules** and **Rules** contracts. | 
 | **DelayedRecoveryModule** | - Supports recovery via a **6 digit PIN**. <br>- The public addresses of the recoveryOwner and the recoveryController are stored on this contract. <br>- A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay. |
 
-:::note RecoveryOwner
+:::important RecoveryOwner
 The recoveryOwner is created using inputs from the client, OST and the user. The user's input is a **6 digit PIN**. The client and OST must provide pseudorandom inputs that are mapped to the user. For the sake of clarity, the client's input shall be referred to as the client User Secret and OST's input shall be referred to as OST User Salt. 
 
 These inputs are put through a cryptographically-sound key generation process (such as Scrypt) to create the private key that will be used as the recoveryOwner for the **DelayedRecoveryModule**.

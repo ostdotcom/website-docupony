@@ -30,7 +30,7 @@ By default, Brand Tokens (BTs) are backed by staking OST tokens on Ethereum main
 
 If you would like your BTs to have a stable value, you can back them by staking stablecoins instead of OST tokens. Stablecoins are cryptocurrencies designed to minimise the effects of market-driven price volatility by being backed by a fiat currency, such as US Dollars. By staking stablecoins, you minimize fluctuations in the value of your BT.
 
-:::note USDC
+:::important USDC
 USDC is a type of stablecoin where each USDC issued and in circulation is backed by $1 USD held in a bank account audited monthly. This backing means that 1 USDC can always be redeemed for US$1.00. This effectively gives USDC a stable price.
 :::
 
@@ -46,10 +46,10 @@ Things to consider when setting the conversion rate:
 * Fiat value of each action
 * Typical token denomination: 10s, 100s, 1000s?
 
-:::caution Conversion Rate
+:::warning Conversion Rate
 - Once you mint your token, the conversion rate is fixed and cannot be changed.
 - Conversion rates do not transfer from Sandbox to Production and must be set again during the token setup in the production environment.
 :::
 
 ## d. Mobile and web UX and design
-We have provided [Wallet UX Guidelines](platform/docs/wallet/ux/) with screens and flows and helpful suggestions to get you started! We are also working on making available UI screens through our Wallet SDKs. These will be available in Aug / Sep 2019.
+We have provided [Wallet UX Guidelines](/platform/docs/wallet/ux/) with screens and flows and helpful suggestions to get you started! We are also working on making available UI screens through our Wallet SDKs. These will be available in Aug / Sep 2019.

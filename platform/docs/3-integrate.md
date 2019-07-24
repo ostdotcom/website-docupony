@@ -41,6 +41,6 @@ Perform test transactions in Sandbox to ensure everything is working as expected
 ## d. Request to move to Production
 To move from Sandbox to Production, click on the toggle switch in [OST Platform dashboard](https://platform.ost.com) and follow the instructions. At the moment, you are required to fill-out a Google Form.
 
-:::note Sandbox
+:::important Sandbox
 The Sandbox will still be available to you after you have been permitted to Production.
 :::
