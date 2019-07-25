@@ -7,7 +7,7 @@ sidebar_label: Features
 OST Wallet SDK comes packed with useful featuers designed for mainstream users. This page gives a descriptive account of each of the features.
 
 ## Non-Custodial 
-**Users Hold Their Private Keys.** The [OST Wallet SDK](/platform/docs/1-create/) supports non-custodial wallets, where users hold the keys and can transact with Brand Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android).
+**Users Hold Their Private Keys.** The OST Wallet SDK supports non-custodial wallets, where users hold the keys and can transact with Brand Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android).
 
 ## Multi-Device
 The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a **6 digit PIN**), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Brand Tokens and authorize a new device.

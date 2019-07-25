@@ -214,4 +214,4 @@ To provide developers with sample integration of wallet SDK, [OST Wallet Android
 
 1. [Create Wallet Guide](/platform/docs/guides/create-user-wallet/)
 2. [Execute Transaction Guide](/platform/docs/guides/execute-transactions/)
-3. Android Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/android/latest/methods/),  [Interfaces](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/android/latest/classes/)
+3. Android Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/android/latest/methods/), [Interfaces](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/android/latest/classes/)

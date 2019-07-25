@@ -5,13 +5,13 @@ sidebar_label: Step 2. Plan and Design
 ---
 
 :::tip Create Token > Plan and Design > Start Integration > Launch to End-users!
-| Step | Description | Skillset |
-| --- | --- | --- |
-| **2. Plan and Design** | <ul><li>Buy, earn, spend, redeem actions</li><li>What to stake</li><li>Conversion rate</li><li>Mobile and web UX and design</li></ul> | Non-technical |
+| Step | Description | Skillset | Approx Duration | 
+| --- | --- | :---: | :---: |
+| **2. Plan and Design** | <ul><li>Buy, earn, spend, redeem actions</li><li>What to stake</li><li>Conversion rate</li><li>Mobile and web UX and design</li></ul> | Non-technical | ~1 week |
 :::
 
 :::note Note
-Step 2 can be conducted in parallal with Step 3. Step 2 and Step 3 should both be finalised before moving to Production and launching to end-users.
+Step 2 can be conducted in parallal with Step 3. Step 2 and Step 3 must be finalised before moving to Production and launching to end-users (Step 4).
 :::
 
 ## a. Buy, earn, spend, redeem actions

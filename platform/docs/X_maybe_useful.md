@@ -83,3 +83,5 @@ android.md
 Sample Implementation of [BaseFragment class](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwalletsrc/main/java/ost/com/sampleostsdkapplication/fragments/BaseFragment.java) is available as a part of [OST Wallet App ](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet)
 
 [Sample implementation inheriting `BaseFragment`](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.0/app/src/main/java/ost/com/sampleostsdkapplication/fragments/LoginFragment.java)
+
+

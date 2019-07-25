@@ -13,7 +13,7 @@ Session keys are used to sign transactions in Mobile Applications. They have an 
 
 ### 1. Call addSession Workflow
 
-You can call the `addSession` workflow (available in [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) and [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS) Wallet SDK) to create and authorize the newly created session key.
+You can call the `addSession` workflow (available in [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS) and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/) Wallet SDK) to create and authorize the newly created session key.
 
 #### Sample Android Wallet SDK Code
 ```java

@@ -51,9 +51,9 @@ This is a note
 :::
 
 :::tip Tip
-This is a tip or instructions to follow
+This is a tip or best practice
 :::
 
-:::warning Caution
-This is an alert or caution. Read twice.
+:::warning Alert
+This is an alert or caution. Read twice!
 :::

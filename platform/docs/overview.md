@@ -22,8 +22,8 @@ OST Platform infrastructure handles the deployment of various smart-contracts to
  * **UtilityBrandedToken**: Representation of a BrandedToken on a sidechain, utilized in transactions within an application
 
 The Platform also deploys contracts that are used to manage the Brand Token Economy, such as:
- * **TokenRules**:** Enables defining a token economy by registering token rules for transfers
- * ****PricerRule**:** Rule for transferring tokens in amounts equivalent to selected other currencies (EUR, GBP, USD)
+ * **TokenRules:** Enables defining a token economy by registering token rules for transfers
+ * **PricerRule:** Rule for transferring tokens in amounts equivalent to selected other currencies (EUR, GBP, USD)
 
  **You will learn more about these contracts as you explore these pages.**
 

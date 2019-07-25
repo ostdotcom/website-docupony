@@ -6,7 +6,7 @@
     "tagline": "Developer Documentation",
     "docs": {
       "1-create": {
-        "title": "Create Token in Sandbox",
+        "title": "Create Token in Sandbox and Connect to OST Wallet",
         "sidebar_label": "Step 1. Create Token"
       },
       "2-plan": {

@@ -1,23 +1,28 @@
 ---
 id: 1-create
-title: Create Token in Sandbox
+title: Create Token in Sandbox and Connect to OST Wallet
 sidebar_label: Step 1. Create Token
 ---
 
 :::tip Create Token > Plan and Design > Start Integration > Launch to End-users!
-| Step | Description | Skillset |
-| --- | --- | --- |
-| **1. Create token** | <ul><li>Register on OST Platform</li><li>Choose token name and identifier</li><li>Associate an ETH address</li><li>Stake and mint</li><li>Connect to OST Wallet App (optional)</li></ul> | Non-technical |
+| Step | Description | Skillset | Approx Duration | 
+| --- | --- | :---: | :---: |
+| **1. Create token** | <ul><li>Register on OST Platform</li><li>Choose token name and identifier</li><li>Associate an ETH address</li><li>Stake and mint</li><li>Connect to OST Wallet App</li></ul> | Non-technical | < 1 day |
 :::
 
-## a. Register on OST Platform 
-The first thing you need to do to get started with OST Platform is to [register for a free account](https://platform.ost.com/sign-up). You will have to activate your account using the activation link sent to you upon registration.
+## a. Sign-up on OST Platform 
+The first thing you need to do to get started with OST Platform is to [sign-up for an account](https://platform.ost.com/sign-up). You will have to activate your account using the activation link sent to you upon registration.
+
+:::note OST Platform is Available on Desktop Only
+Given the requirement to use MetaMask, OST Platform is available on **desktop only** using either Chrome or Firefox. If you navigate to the sign-up link above on mobile, you will be prompted to use a desktop browser.
+:::
 
 ![create-account](/platform/docs/assets/token-setup/register.png)
 
-To optimise your experience on OST Platform, we ask you to provide your company name, whether your product has a mobile application, and the current estimate of your monthly active users.
+To enhance your experience on OST Platform, we ask you to provide your company name, whether your product has a mobile application, and current estimate of monthly active users (MAU).
 
 ![create-account](/platform/docs/assets/token-setup/additional_information.png)
+
 
 ## b. Choose token name and identifier
 During token setup you will set Token Name and select a Token Identifier for your Brand Token. You also need to set the conversion rate between your Brand Token and the staked value token (e.g. OST Token, USDC).
@@ -66,11 +71,13 @@ Once you have staked something, the minting process is as simple as setting the 
 ![create-account](/platform/docs/assets/token-setup/mint_tokens.png)
 
 ## e. Connect to the OST Wallet App (Optional)
-Simply log-in to OST Platform, click on the **Wallet** tab and select Connect. For more detailed instructions, see [here](/platform/docs/wallet/app/#connect-your-brand-token-to-ost-wallet-app).
+The OST Wallet App provides a view into the OST Wallet SDK. Simply log-in to OST Platform, click on the **Wallet** tab and select Connect. 
+
+Check out our [Connect Your Brand Token to the OST Wallet App](/platform/docs/wallet/app/#connect-your-brand-token-to-ost-wallet-app) guide for more detailed instructions.
 
 <hr>
 
-## Watch a Short Video on How To Create Brand Tokens
+## Watch a Short Video on How To Create a Brand Token
 
 <div align="center">
     <iframe width="680" height="384"
