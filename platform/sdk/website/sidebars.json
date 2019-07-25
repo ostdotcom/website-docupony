@@ -1,34 +1,48 @@
 {
-  "KIT": {
-    "Getting Started": [
-      "getting_started/overview",
-      "getting_started/authentication",
-      "getting_started/security_and_ux_requirements"
+  "OST Platform": {
+    "Introduction": [
+      "getting-started",
+      "authentication"
     ],
-
-    "Server SDK Setup": [
-      "server_sdk_setup/php",
-      "server_sdk_setup/ruby",
-      "server_sdk_setup/nodejs",
-      "server_sdk_setup/java"
+    
+    "Server Sides SDKs": [
+      "server-side-sdks/php",
+      "server-side-sdks/ruby",
+      "server-side-sdks/nodejs",
+      "server-side-sdks/java"
     ],
+    
+    "Mobile Wallet SDKs": [
 
-    "Wallet SDK Setup": [
-      "wallet_sdk_setup/android",
-      "wallet_sdk_setup/iOS",
-      "wallet_sdk_setup/react-native"
-    ],
+      {
+        "type": "subcategory",
+        "label": "Android",
+        "ids": [
+          "mobile-wallet-sdks/android",
+          "mobile-wallet-sdks/android/latest/methods",
+          "mobile-wallet-sdks/android/latest/interfaces",
+          "mobile-wallet-sdks/android/latest/classes"
+        ]
+      },
 
-    "Android SDK Reference": [
-      "references/wallet_sdk/android/latest/methods",
-      "references/wallet_sdk/android/latest/interfaces",
-      "references/wallet_sdk/android/latest/classes"
+      {
+        "type": "subcategory",
+        "label": "iOS",
+        "ids": [
+          "mobile-wallet-sdks/iOS",
+          "mobile-wallet-sdks/iOS/latest/methods",
+          "mobile-wallet-sdks/iOS/latest/protocols",
+          "mobile-wallet-sdks/iOS/latest/classes"
+        ]
+      },
 
-    ],
-    "iOS SDK Reference": [
-      "references/wallet_sdk/iOS/latest/methods",
-      "references/wallet_sdk/iOS/latest/protocols",
-      "references/wallet_sdk/iOS/latest/classes"
+      {
+        "type": "subcategory",
+        "label": "React Native",
+        "ids": [
+          "mobile-wallet-sdks/react-native"
+        ]
+      }
     ]
   }
 }

@@ -26,6 +26,7 @@ const siteConfig = {
   url: 'https://dev.ost.com' /* your website url */,
   baseUrl: '/platform/' /* base url for your project */,
   projectName: 'platform',
+  docsSideNavCollapsible: true,
   // organizationName: 'facebook',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
@@ -41,7 +42,7 @@ const siteConfig = {
 
   headerLinks: [
     {href: '/platform/', label: 'Docs'},
-    {href: '/platform/docs/sdk/', label: 'SDK References'},
+    {href: '/platform/docs/sdk/', label: 'SDKs'},
     {href: '/platform/docs/api', label: 'API References'},
     {href: 'https://platform.ost.com/login', external: true,  label: 'Login'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
@@ -49,8 +50,12 @@ const siteConfig = {
 
   secondryHeaderLinks: [
   
-
   ],
+
+  markdownPlugins: [
+   // Highlight admonitions.
+   require('remarkable-admonitions')({ icon: 'svg-inline' })
+ ],
 
   // If you have users set above, you add it here:
   // users,

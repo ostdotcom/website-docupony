@@ -27,6 +27,7 @@
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-replace": "^1.0.0",
-    "gulp-run-command": "0.0.9"
+    "gulp-run-command": "0.0.9",
+    "remarkable-admonitions": "^0.2.1"
   }
 }

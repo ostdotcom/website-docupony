@@ -26,7 +26,7 @@ $(document).ready(function() {
             if(pathArray.length >= 6) {
                 var path = pathArray[5].toLowerCase();
             
-                if( path === 'api' || path === 'sdks' ) {
+                if( path === 'api' || path === 'sdk' ) {
                     lastPath = path;
                 }
             }

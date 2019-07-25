@@ -1,29 +1,54 @@
 {
-  "KIT": {
+  "OST Platform": {
+    "Introduction": [
+      "introduction",
+      "ux",
 
-    "Getting Started": [
-      "getting_started/introduction",
-      "getting_started/platform_overview",
-      "getting_started/integration_steps",
-      "getting_started/ost_wallet_app"
+      {
+       "type": "subcategory",
+       "label": "Getting Started",
+       "ids": [
+        "getting-started",
+        "1-create",
+        "2-plan",
+        "3-integrate",
+        "4-launch"
+       ]
+     },
+
+     "go-live-checklist",
+     "definitions"
+    ],
+
+    "OST Platform": [
+     "overview",
+     "components",
+     "smart-contracts",
+     "transactions",
+     "view",
+     
+      {
+       "type": "subcategory",
+       "label": "OST Wallet",
+       "ids": [
+        "wallet/introduction",
+        "wallet/sdk",
+        "wallet/app",
+        "wallet/features"
+       ]
+     }
     ],
     
-    "Guides": [
-      "guides/create_token",
-      "guides/wallet_ux_guide",
-      "guides/create_wallet",
-      "guides/execute_transaction",
-      "guides/create_session"
-    ],
-
-    "Additional Resources": [
-      "additional_resources/glossary"
-    ],
-
+    "Technical Guides": [
+     "guides/create-user-wallet",
+     "guides/create-session",
+     "guides/execute-transactions"
+   ],
+      
     "Release Notes": [
-      "release-notes/18_June_2019",
-      "release-notes/3_June_2019",
-      "release-notes/27_March_2019"
+      "release-notes/18Jun2019",
+      "release-notes/03Jun2019",
+      "release-notes/27Mar2019"
     ]
   }
 }

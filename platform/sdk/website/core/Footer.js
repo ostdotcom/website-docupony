@@ -33,7 +33,7 @@ class Footer extends React.Component {
               Docs
             </a>
             <a href="/platform/docs/sdk">
-              SDK References
+              SDKs
             </a>
             <a href="/platform/docs/api">
               API References

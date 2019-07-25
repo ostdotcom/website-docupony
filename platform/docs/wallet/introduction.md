@@ -1,28 +1,39 @@
 ---
 id: introduction
-title: Wallet Introduction
+title: Introduction to OST Wallet
 sidebar_label: Introduction
 ---
-The Wallet SDK enables businesses to integrate into their mobile applications users' wallets to hold their Brand Tokens and operate within a Token Economy.
 
-Balance and Ledger APIs offer the functionality to view into a chosen user’s activity and resulting balances. The Wallet SDK provides the additional support required for the ownership and management of Brand Tokens by end users so that they can keys and control their tokens.
+OST Wallet is a non-custodial wallet solution for Brand Tokens minted on OST Platform. It is made available through our Mobile Wallet SDKs and can be easily incorporated into any mobile app.
 
-Given that Brand Tokens are valuable, and that if keys are compromised it could result in the user being unable to access their tokens, OST promotes a mobile-first approach that leverages the security gained by the checks and audits associated with publishing an app via the app stores. Going mobile first also enables us to leverage the security features of modern mobile devices such as fingerprint and facial recognition, and the secure enclave to on-device encrypted storage. 
+**Mobile Wallet SDKs**
+* [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
+* [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)
 
-Once a user is created via API, a wallet can also be activated. Activating a wallet involves the deployment and registration of :
+OST Wallet is a **core component** of OST Platform. It enables users to take ownership of their tokens as well as participate in a Brand Token Economy and sign for user initiated transactions.
 
-* **TokenHolder contract** - where the user's balances sit,
-* **Multisig contract** - that controls the  **TokenHolder** contract, and 
-* **DelayedRecoveryModule contract** - that supports recovery via a 6 digit PIN. 
+:::note OST Wallet SDK is required to use OST Platform
+You must have a mobile app and integrate the OST Wallet SDK to use OST Platform. OST Wallet SDK relies on core components (hardware) of a users mobile device and is required for a user to participate in a Brand Token Economy.
+:::
 
-A user that has a  **TokenHolder** contract associated with their id can earn and spend tokens.  Tokens that belong to them are mapped to the address of the  **TokenHolder** contract. They can spend tokens by signing transactions using private keys on their registered mobile device. 
+## OST Wallet SDK Features
+For a more detailed overview of features, check the [Features](/platform/docs/wallet/features/) page.
+* Non-custodial: Users control their funds. All keys are stored on their devices.
+* Multi-device: No key sharing across devices
+* Session keys to allow for seamless in-app transactions: Pre-authorized sessions mean that in-app transactions within pre-defined time and value limits can be signed with no input from the user
+* Recovery mechanism: Users can recover access to their tokens using a **6 digit PIN**
+* Support for web transactions via QR code
+* Support for a [Seamless User Experience](/platform/docs/wallet/introduction/#seamless-user-experience)
+    * **6 digit PIN** for access and control
+    * **Biometrics**: The Wallet SDK uses fingerprint and facial recognition or the user **6 digit PIN** to secure access to wallet actions such as device and session authorization and revocation
 
-An activated user may authorize sessionKeys which enable seamless in-app transactions. They can authorize a session by using their 6 digit PIN. They may also choose to set up biometrics and use biometric authentication in place of the PIN.
+## Seamless User Experience
+A user can use a **6 digit PIN** to authorize an ephemeral sessionKey. These ephemeral sessionKeys, which remain active for a period of time chosen by the user or developer of the application (based on the implementation) obviate the need for the user to sign every transaction within the application thereby creating a more seamless user experience. When a session expires, the user can authorise a new session with **6 digit PIN**.
 
-The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same  **TokenHolder** contract. A user can authorize a new device by signing an authorization transaction with an authorized device. 
+To further reduce friction, the OST Wallet SDK also supports the use of **biometrics** for the second level of authentication of the user, i.e. a user can use **biometrics** to authorize a session, request a mnemonic phrase. Check the [Wallet UX Guidelines](/platform/docs/wallet/ux/) to understand the possible flows and recommended user experience (UX).
 
-A user can also choose to view and store a seed phrase and use the seed phrase to authorize a new device. 
+:::note Intended User Experience
+The intended user experience is that most users will set a **6 digit PIN** and then add their **biometrics**, from that point on, all day-to-day usage of the wallet can be done with **biometrics**. The PIN is only used thereafter for recovery or if **biometrics** are not functioning. 
 
-During an active session, transactions of a value lower than the spendingLimit are signed without explicit involvement from the user. We recommend that clients link the creation of these transactions to explicit user activity within their application. A user can also revoke active sessions, revoke other authorized devices and sign out of the  **TokenHolder** thereby revoking all sessions. 
-
-When a user logs in to the application from a new device [with no registered key stored on it](/platform/docs/wallet/recovery/), the user can either add the device using one of the two methods described above or, if they have no other devices or seed phrases, choose to recover access to their wallet using the DelayedRecoveryModule smart contract using their 6 digit PIN.
+**The user does not need to use her PIN or **biometrics** to view her wallet balance or ledger, rather only to re-authorize a session to spend tokens.**
+:::
