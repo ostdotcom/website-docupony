@@ -45,14 +45,14 @@ Things to consider when setting the conversion rate:
 
 ## c. Associate an ETH Address
 
-:::note Install MetaMask
-MetaMask is required to participate in OST Platform
+:::note Install MetaMask (in Production)
+MetaMask is required to participate in OST Platform in Production. **You can proceed without MetaMask in Sandbox.**
 :::
 
 * MetaMask provides a browser plugin to create an Etheruem address and wallet. You can opt to use your own Ethereum address if you have one. The address that you use will be the Account Owner Address.
 * The MetaMask wallet is used to sign for the token creation transactions on Ethereum ropsten test network.
-* In OST Platform Sandbox, you will receive an initial allotment / stake of OST-Test. You can use this stake to Mint your Brand Tokens in Sandbox.
-* In Production, you can choose to associate a hardware wallet address using MetaMask’s interface (two hardware wallets are supported: Trezor and Ledger)
+* In OST Platform Sandbox, you will receive an initial allotment / stake of USDC-Test or USDC-Test. You can use this stake to Mint your Brand Tokens in Sandbox.
+* In Production, you can choose to associate a hardware wallet address using MetaMask’s interface (two hardware wallets are supported: Trezor and Ledger).
 
 ![Two-Factor Authentication](/platform/docs/assets/token-setup/install_metamask.png)
 

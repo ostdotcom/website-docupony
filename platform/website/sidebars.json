@@ -2,6 +2,7 @@
   "OST Platform": {
     "Introduction": [
       "introduction",
+      "ux",
 
       {
        "type": "subcategory",
@@ -33,8 +34,7 @@
         "wallet/introduction",
         "wallet/sdk",
         "wallet/app",
-        "wallet/features",
-        "wallet/ux"
+        "wallet/features"
        ]
      }
     ],
@@ -44,12 +44,6 @@
      "guides/create-session",
      "guides/execute-transactions"
    ],
-
-    "Case Studies": [
-      "use-cases/lgbt",
-      "use-cases/spoo",
-      "use-cases/pop"
-    ],
       
     "Release Notes": [
       "release-notes/18Jun2019",

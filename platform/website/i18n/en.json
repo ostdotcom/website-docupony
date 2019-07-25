@@ -96,6 +96,10 @@
         "title": "Abc",
         "sidebar_label": "Spoon Tokens"
       },
+      "ux": {
+        "title": "An Example of What's Possible with OST Platform",
+        "sidebar_label": "Brand Token Example"
+      },
       "view": {
         "title": "Introduction to OST VIEW",
         "sidebar_label": "OST VIEW (Explorer)"
@@ -135,7 +139,6 @@
       "Introduction": "Introduction",
       "OST Platform": "OST Platform",
       "Technical Guides": "Technical Guides",
-      "Case Studies": "Case Studies",
       "Release Notes": "Release Notes"
     }
   },

@@ -84,4 +84,10 @@ Sample Implementation of [BaseFragment class](https://github.com/ostdotcom/ost-w
 
 [Sample implementation inheriting `BaseFragment`](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.0/app/src/main/java/ost/com/sampleostsdkapplication/fragments/LoginFragment.java)
 
+    // "Case Studies": [
+    //   "use-cases/lgbt",
+    //   "use-cases/spoo",
+    //   "use-cases/pop"
+    // ],
+
 

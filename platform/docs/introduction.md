@@ -4,6 +4,8 @@ title: Welcome to OST Platform
 sidebar_label: Welcome to OST Platform
 ---
 
+![intro](/platform/docs/assets/getting-started/intro.png)
+
 These pages include technical and non-technical guides and API/SDK references that will serve as a complete resource for anyone looking to built on OST Platform.
 
 ## What Is OST Platform?
@@ -15,7 +17,7 @@ Our Server Side SDKs and Mobile Wallet SDKs together enable fast and painless in
 OST Platform is designed for internet-grade transaction volumes and speeds
 :::
 
-## What Can You do with OST Platform?
+## What Can I do with OST Platform?
 OST Platform enables you to:
 * **Create your own Brand Token**
 * **Embed value into any action** — be it an upvote, a like, a store visit, a contribution, or a 5-star review
