@@ -4,15 +4,13 @@ title: Create Session Guide
 sidebar_label: Create Session
 ---
 
-Session keys are used to sign transactions in Mobile Applications. They have an expiry time and a per transaction spending limit. Developers will have to create session keys when session keys expire or are not present. To create a new session key and authorize it, you need to use [addSession](/platform/docs/sdk/mobile-wallet-sdks/android/latest/methods/#4-addsession) workflow available in Wallet SDK ([Android](/platform/docs/sdk/mobile-wallet-sdks/android/)/[iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS))
+Session keys are used to sign transactions in mobile applications that have incorporated OST Wallet SDK. They have an expiry time and a per transaction spending limit. Developers will have to create session keys when session keys expire or are not present. To create a new session key and authorize it, you need to use [addSession](/platform/docs/sdk/mobile-wallet-sdks/android/latest/methods/#4-addsession) workflow available in Wallet SDK ([Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native)).
 
 ## Steps to Create a New Session Key
-
 1. Call addSession Workflow
 2. Check Workflow Status
 
 ### 1. Call addSession Workflow
-
 You can call the `addSession` workflow (available in [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS) and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/) Wallet SDK) to create and authorize the newly created session key.
 
 #### Sample Android Wallet SDK Code
@@ -48,7 +46,7 @@ public void flowComplete(OstWorkflowContext ostWorkflowContext, OstContextEntity
     }
 ```
 
-2. **flowInterrupt**:  The workflow details and OstError object will be received in the arguments. The error details will be available in OstError object. 
+2. **flowInterrupt**: The workflow details and OstError object will be received in the arguments. The error details will be available in OstError object. 
 
 Sample code (Android Wallet SDK)
 ```java

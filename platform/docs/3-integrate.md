@@ -1,17 +1,17 @@
 ---
 id: 3-integrate
-title: Start Integration in Sandbox
+title: Start Your Integration in Sandbox
 sidebar_label: Step 3. Start Integration
 ---
 
 :::tip Create Token > Plan and Design > Start Integration > Launch to End-users!
 | Step | Description | Skillset | Approx Duration | 
 | --- | --- | :---: | :---: |
-| **3. Start Integration** <br>(in Sandbox) | <ul><li>Access your API key and API secret</li><li>Review technical guides</li><li>Decide which APIs/SDKs to use</li><li>Perform test transactions</li><li>Finalise development and design</li></ul> | Technical | Up to 4 weeks <br>(see below) |
+| **3. Start Integration** <br>(in Sandbox) | <ul><li>Access your API and WebHook keys and secrets</li><li>Review technical guides</li><li>Decide which APIs/SDKs to use</li><li>Perform test transactions</li><li>Finalise development and design</li></ul> | Technical | Up to 4 weeks <br>(see below) |
 :::
 
-## a. Access your API key and API secret
-Log-in to OST Platform and go to the **Developers** tab. There you can find your API key and API secret. You need to confirm your email address before getting access.
+## a. Access your API and WebHook keys and secrets
+Log-in to OST Platform and go to the **Developers** tab. There you can find your API and Webhook keys and secrets. You need to confirm your email address before getting access.
 
 ![create-account](/platform/docs/assets/developers_tab.png)
 

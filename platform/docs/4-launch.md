@@ -1,13 +1,13 @@
 ---
 id: 4-launch
-title: Launch to End-Users!
+title: Launch to Your End-Users!
 sidebar_label: Step 4. Launch to End-users
 ---
 
 :::tip Create Token > Plan and Design > Start Integration > Launch to End-users!
 | Step | Description | Skillset | Approx Duration | 
 | --- | --- | :---: | :---: |
-| **4. Launch to End-users!** | <ul><li>Request to move to Production</li><li>Conduct an initial pilot</li><li>Fine-tune token economics</li><li>Incorporate more use cases</li><li>Assess impact on KPIs, e.g. NPS and Rentention Rate</li></ul> | Non-technical | Project dependent | 
+| **4. Launch to End-Users!** | <ul><li>Request to move to Production</li><li>Conduct an initial pilot</li><li>Fine-tune token economics</li><li>Incorporate more use cases</li><li>Assess impact on KPIs, e.g. NPS and Rentention Rate</li></ul> | Non-technical | Project dependent | 
 :::
 
 ## a. Request to move to Production

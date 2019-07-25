@@ -44,7 +44,7 @@ In the context of a Brand Token Economy, each user in the economy is represented
 * In order to create a seamless user experience so that users don't have to sign a new transaction at every move we came up with the concept of disposable sessionKeys.
 * Disposable in the sense that they are used to sign messages on a users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction.
 * These keys are created on the mobile device from where the end user participates in the economy. 
-* The configured owner of a  **TokenHolder** contract can authorize sessionKeys.
+* The configured owner of a **TokenHolder** contract can authorize sessionKeys.
 
 ![entity-relationship](/platform/docs/assets/ERD_user_setup.jpg)
 

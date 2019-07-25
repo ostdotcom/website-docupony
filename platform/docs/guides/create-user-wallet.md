@@ -4,29 +4,24 @@ title: Technical Guide to Creating a User Wallet
 sidebar_label: Create User Wallet
 ---
 
-## Creating a User Wallet
-1. Owner/Device key is created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device.
-2. The private key in each pair is encrypted and stored on the device.
-A **MultiSig** contract is deployed on the blockchain. The public addresses from device keys generated on the user's devices are set as owners for the **MultiSig**.
-3. A  **TokenHolder** contract is deployed on the blockchain. The **MultiSig** controls the  **TokenHolder** contract, as its owner.
-4. The sessionKey is created on the user's mobile device and is authorized by device key in **TokenHolder**.
-5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's  **TokenHolder** contract. 
-6. The  **TokenHolder** contract verifies that the request is initiated by an authorized sessionKey and executes the transfer.
+1. Owner/device key is created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device
+2. The private key in each pair is encrypted and stored on device. A **MultiSig** contract is deployed on the blockchain. The public addresses from device keys generated on the user's device(s) are set as owners for the **MultiSig**.
+3. A **TokenHolder** contract is deployed on the blockchain. The **MultiSig** controls the **TokenHolder** contract, as its owner.
+4. A sessionKey is created on the user's device and is authorized by device key in **TokenHolder**
+5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's **TokenHolder** contract
+6. The **TokenHolder** contract verifies that the request is initiated by an authorized sessionKey and executes the transfer
 
 ## Creating a user's Brand Token wallet on the blockchain 
-It is a 3 step process. [OST Wallet SDK](/platform/docs/wallet/sdk/) provides a number of functions called as workflows
+It is a 3 step process. [OST Wallet SDK](/platform/docs/wallet/sdk/) provides a number of functions called as workflows.
 
 ### Step 1: init
-Calling `init` function of wallet SDK will initialize the SDK.
+Calling `init` function of wallet SDK will initialize the SDK
 
 ### Step 2: setupDevice
-Calling `setupDevice` will Generating public-private key pairs
- 
-The ephemeral sessionKeys and owner keys are created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device. The private key in each pair is stored on the device and encrypted with secure enclave (or the equivalent in Android devices). 
-
+Calling `setupDevice` will Generating public-private key pairs. The ephemeral sessionKeys and owner keys are created on the user's mobile device.
 
 ### Step 3: activateUser
-calling `activateUser ` function of wallet SDK will deploy smart contracts. Once the contract deployment is complete the `user` is `activated` and can perform transactions
+calling `activateUser ` function of wallet SDK will deploy smart contracts. Once the contract deployment is complete the `user` is `activated` and can perform transactions.
 
 <hr>
 
@@ -131,7 +126,6 @@ SDK initialization should happen before calling any other `workflow`. To initial
 **Recommended location to call initialize() is in [Application](https://developer.android.com/reference/android/app/Application) sub-class.**
 :::
 
-
 ```java
 import android.app.Application;
 import com.ost.mobilesdk.OstWalletSdk;
@@ -213,7 +207,7 @@ To activate the user you will have to call **activateUser** workflow which requi
 You should request your server to get the `passphrasePrefix` generated in [generating passphrasePrefix section](#generating-passphaseprefix).
 
 
-#### Getting PIN from user
+#### Getting a PIN from user
 The other input required to create user's wallet recovery key comes from the user. So you need to prompt the user to set a `pin` in your app. The `pin` entered by the user and the `passphrasePrefix` given by your server forms the input parameters for activating the user.
 
 ```java

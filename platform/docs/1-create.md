@@ -1,6 +1,6 @@
 ---
 id: 1-create
-title: Create Token in Sandbox and Connect to OST Wallet
+title: Create Your Brand Token in Sandbox and Connect to OST Wallet App
 sidebar_label: Step 1. Create Token
 ---
 

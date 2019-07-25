@@ -6,7 +6,7 @@
     "tagline": "Developer Documentation",
     "docs": {
       "1-create": {
-        "title": "Create Token in Sandbox and Connect to OST Wallet",
+        "title": "Create Your Brand Token in Sandbox and Connect to OST Wallet App",
         "sidebar_label": "Step 1. Create Token"
       },
       "2-plan": {
@@ -14,11 +14,11 @@
         "sidebar_label": "Step 2. Plan and Design"
       },
       "3-integrate": {
-        "title": "Start Integration in Sandbox",
+        "title": "Start Your Integration in Sandbox",
         "sidebar_label": "Step 3. Start Integration"
       },
       "4-launch": {
-        "title": "Launch to End-Users!",
+        "title": "Launch to Your End-Users!",
         "sidebar_label": "Step 4. Launch to End-users"
       },
       "assets/kit_index": {
@@ -39,6 +39,10 @@
       "go-live-checklist": {
         "title": "Go-Live Checklist",
         "sidebar_label": "Go-Live Checklist"
+      },
+      "guides/introduction": {
+        "title": "Introduction to Technical Guides",
+        "sidebar_label": "Introduction"
       },
       "guides/create-session": {
         "title": "Create Session Guide",

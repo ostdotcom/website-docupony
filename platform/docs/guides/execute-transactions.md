@@ -20,7 +20,7 @@ atto is the smallest denomination used in OST Platform. OST Platform APIs and SD
 ## Executing a Token Transfer
 Each transaction is defined by a **Rules** Contract. OST Platform, through the OpenST Protocol, includes a ****Rules** Contract and **TokenRules** Contract to enable you to define the behavior of token transfers and design custom rules that align with your goals. OST has written one **Rules** Contract, the **PricerRule** Contract, for you to use. This allows you (and your end-users) to send an amount in fiat (EUR, GBP, or USD). The equivalent amount of Brand Tokens is calculated and sent.
 
-![TransactionsExplained2]( /platform/docs/assets/transactions_explained_2.png)
+![TransactionsExplained2](/platform/docs/assets/transactions_explained_2.png)
 
 :::tip GET `/rules` endpoint
 You can choose to get information about rules by sending a GET to `/rules` endpoint.
@@ -49,7 +49,6 @@ The sections below lists the two rules deployed with the rule names and rule par
 |**transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transferAmountsinAtto** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 |**payCurrencyCode** <br> **String** | Pay Currency code. It's possible values are `EUR`, `GBP`, and `USD`.  |
 |**attoUSDIntendedPrice** <br> **Integer** | This is intended conversion of OST to pay currency (in atto denomination) which is USD in this example. This value will be used to calculate the deviation from actual conversion rate at the time of execution of transaction. If this deviation is more than the threshold value ($1), the transaction will be cancelled. This is to avoid transactions from happening during high deviation periods. This is the pay currency (USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
-
 
 ## Generating QRCode with Transaction Data
 To enable transaction execution from web applications we have supported QRCodes. For different operations there is a different QRCode data definition. 
@@ -151,9 +150,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ## Executing `user` initiated transactions
 * `User` initiated transactions need to be signed by the user's device keys
-
 * User's device keys are created and stored in their mobile device. So, user initiated transactions (`user-to-company`, `user-to-user`) need to be executed in the mobile app using wallet SDK (available for Android and iOS).
-
 * To execute the transaction using wallet SDK, you will have to use `executeTransaction` workflow. 
 
 ## Executing `user` initiated transactions in web
@@ -188,16 +185,11 @@ To generate QRCode with transaction data follow the steps explained in the [abov
 You need to provide functionality to scan a QRCode. You can use 3rd party libraries to create the QRCode scanner.
 
 **Android 3rd party libraries to scan QRCode**
-
 * https://github.com/zxing/zxing
-
 * Sample implementation: https://github.com/dm77/barcodescanner#simple-usage
 
-
 **iOS QRCode reader (iOS Native) API**
-
 * https://developer.apple.com/documentation/coreimage/cidetector
-
 * https://developer.apple.com/documentation/coreimage/cidetectortypeqrcode?language=objc
 
 ### 3. Call `performQRAction` workflow in mobile app
@@ -209,9 +201,8 @@ After scanning the QRCode, mobile app should pass this QRCode data to `performQR
 OstWalletSdk.performQRAction(userId, QRCodeData, this);
 ```
 
-* `performQRAction` workflow will then read the data and will call `verifyData` callback function.
-
-* You will get the transaction data as one of the arguments of `verifyData` with name `ostContextEntity`.
+* `performQRAction` workflow will then read the data and will call `verifyData` callback function
+* You will get the transaction data as one of the arguments of `verifyData` with name `ostContextEntity`
 
 Arguments of verifyData (Android Wallet SDK Example)
 
@@ -219,12 +210,9 @@ Arguments of verifyData (Android Wallet SDK Example)
 public void verifyData(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity, OstVerifyDataInterface ostVerifyDataInterface)
 ```
 
-* Now you can verify this information with your app user.
-
-* To successfully verify this information, call the `ostVerifyDataInterface.dataVerified()`.
-
-* To cancel the workflow call the `ostVerifyDataInterface.cancelFlow()`.
-
+* Now you can verify this information with your app user
+* To successfully verify this information, call the `ostVerifyDataInterface.dataVerified()`
+* To cancel the workflow call the `ostVerifyDataInterface.cancelFlow()`
 
 **After successful verification of data, `performQRAction` workflow will call `executeTransaction` using the data scanned from the QRCode. You don't have to call `executeTransaction` separately.**
 
