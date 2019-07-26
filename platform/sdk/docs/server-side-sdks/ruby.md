@@ -9,7 +9,7 @@ The Ruby SDK is a Ruby wrapper for the [OST Platform API](/platform/docs/api). T
 You can also view the source code on [GitHub](https://github.com/ostdotcom/ost-sdk-ruby/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
-Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/1-create/) to complete the token setup.
+Follow the [Create Brand Token guide](/platform/docs/1-create/) to complete token setup.
 
 ## 2. Get Credentials
 Once token set up is complete, go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to your API key and API secret.
@@ -17,7 +17,6 @@ Once token set up is complete, go to [Developers page](https://platform.ost.com/
 Every account is provided with two pairs of keys: one for sandbox environment and one for production environment. Use your sandbox environment API keys for testing and development.
 
 ## 3. Install SDK
-
 To install the SDK run the following command <br>
 
 > gem install ost-sdk-ruby

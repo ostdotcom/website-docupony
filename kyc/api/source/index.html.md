@@ -20,7 +20,7 @@ includes:
 
 # Introduction
 OST KYC is the first plug-and-play KYC/AML management solution for token sales to process
-thousands of applicants smoothly and securely. Once you sign up for the KYC services and an OST KYC client account is activated, the following details are provided :
+thousands of applicants smoothly and securely. Once you sign-up for the KYC services and an OST KYC client account is activated, the following details are provided :
 
 |Account Activation | Elements |
 -------------------|----------
