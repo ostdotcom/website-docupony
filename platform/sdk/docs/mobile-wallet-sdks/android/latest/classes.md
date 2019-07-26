@@ -8,10 +8,8 @@ sidebar_label: Classes
 2. OstContextEntity
 3. OstWorkflowContext
 
-
 ## 1. OstError
 This class is used to provide error details in [flowInterrupt](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/#2-flowinterrupt) callback function. 
-
 
 You can call [methods](#i-methods) on this object to get more details about the error.
 
@@ -23,7 +21,6 @@ You can call [methods](#i-methods) on this object to get more details about the 
 
 ## 2. OstContextEntity
 This class provides context about the `entity` that is being changed during a [workflow](/platform/docs/sdk/mobile-wallet-sdks/android/latest/methods/#workflows). Callback functions that needs to know about the `entity` will receive an object of this class as an argument. 
-
 
 You can call [methods](#i-methods-1) on this object to get more details about the entity.
 

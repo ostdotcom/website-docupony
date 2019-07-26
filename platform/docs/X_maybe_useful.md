@@ -90,4 +90,26 @@ Sample Implementation of [BaseFragment class](https://github.com/ostdotcom/ost-w
     //   "use-cases/pop"
     // ],
 
+r  Sorry Daan,
+I couldn't understand the issue.
+The method registerDevice never returned any value.
+The application needs to implement registerDevice method.
+This method is invoked by the SDK during setup device workflow.
+
+Also sent to the channel
+1d
+Daan van Tongeren  Sorry I meant method setupDevice in the Sdk
+1d
+r  Do, you mean setupDevice does not invoke registerDevice callback?
+As per intended behavior:
+If device already has registered device, sdk should not call registerDevice callback.
+1d
+Daan van Tongeren  No i mean we call the setupdevice method in the SDK when login but it does not return anything
+1d
+Daan van Tongeren  In the old demo app that process worked fine for us (login as well the signup)
+9h
+Daan van Tongeren  Just checked signup . Same issue when setupdevice is invoked
+8h
+Daan van Tongeren  @r how to move forward?
+
 

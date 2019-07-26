@@ -56,6 +56,8 @@ MetaMask is required to participate in OST Platform in Production. **You can pro
 
 ![Two-Factor Authentication](/platform/docs/assets/token-setup/install_metamask.png)
 
+![create-account](/platform/docs/assets/token-setup/account_setup.png)
+
 :::warning Account Owner Address
 * This is an important address. If you lose the associated private key, you will lose access to Brand Tokens you mint.
 * You associate the owner address with OST Platform by doing a personal signature. This signature is to ensure you as a user are the owner of the MetaMask account and it's real.
@@ -63,12 +65,36 @@ MetaMask is required to participate in OST Platform in Production. **You can pro
 
 Once you associate the owner address the token set-up process starts. This process involves running multiple blockchain transactions on Ethereum blockchain and OpenST Side Chains, so the process takes several minutes to complete.
 
-![create-account](/platform/docs/assets/token-setup/account_setup.png)
+### Blockchain Transactions: Token Set-up Steps
+
+| Steps | Description | 
+| ---: | --- |
+| 1 | 'Deploying organization contracts' |
+| 2 | 'Setting up conversion rate on origin chain' |
+| 3 | 'Deploying utility brand token contract' |
+| 4 | 'Deploying gateway contract on origin chain' |
+| 5 | 'Deploying co-gateway contract on auxiliary chain' |
+| 6 | 'Linking gateways' |
+| 7 | 'Verifying and finalizing token setup' |
+| 8 | 'Token setup completed' |
+| 9 | 'Initializing' |
+| 10 | 'Setting up Token Rules' |
+| 11 | 'Setting up Company Token Holder' |
 
 ## d. Stake and mint
 Once you have staked something, the minting process is as simple as setting the number of Brand Tokens to mint and confirming the mint request. 
 
 ![create-account](/platform/docs/assets/token-setup/mint_tokens.png)
+
+### Blockchain Transactions: Stake and Mint Steps
+
+| Steps | Description | 
+| ---: | --- |
+| 0 |	Approve gateway contract to stake OST |
+| 1 |	Accepting stake request |
+| 2 |	Proving stake transaction on auxiliary chain |
+| 3 |	Locking the tokens declared on origin chain |
+| 4 |	Minting tokens on auxiliary chain |
 
 ## e. Connect to the OST Wallet App (Optional)
 The OST Wallet App provides a view into the OST Wallet SDK. Simply log-in to OST Platform, click on the **Wallet** tab and select Connect. 

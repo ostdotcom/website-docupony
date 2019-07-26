@@ -47,7 +47,14 @@ const siteConfig = {
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
   ],
 
- 
+  secondryHeaderLinks: [
+  
+  ],
+
+  markdownPlugins: [
+   // Highlight admonitions.
+   require('remarkable-admonitions')({ icon: 'svg-inline' })
+ ],
 
   // If you have users set above, you add it here:
   users,

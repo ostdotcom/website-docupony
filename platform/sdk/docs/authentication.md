@@ -1,20 +1,20 @@
 ---
 id: authentication
-title: Authentication
+title: Server Side API Authentication
 sidebar_label: Authentication
 ---
 
-## Server Side API Authentication
 OST servers authenticate your API requests using your account’s API keys. If you do not include your key when making an API request, or use one that is incorrect or outdated, OST Platform API returns an error.
 
 Every account is provided with separate keys for sandbox environment and for production environment. All API requests exist in either sandbox mode or production mode, and entities—users, devices, sessions, and so forth—in one mode cannot be manipulated by entities in the other.
 
-There is a key pair: API key and API secret
-
+**There is a key pair: API key and API secret**
 * API keys are meant to identify your account with OST, they aren’t secret. In other words, they can safely be published in an Android or iOS app. 
 * API secret should be kept confidential and only stored on your own servers. Your account's secret API key can perform any API request to OST.
 
-**Every account is provided with two pairs of keys: one for sandbox environment and one for production environment.**
+:::note API keys in Sandbox and Production
+Every account is provided with two pairs of keys: one for Sandbox and one for Production
+:::
 
 ### Obtaining your API keys
 
@@ -31,11 +31,9 @@ The sandbox and production modes function almost identically, with a few necessa
 You can view test data by toggling back to OST Platform Sandbox mode.
 
 ### Keeping your keys safe
-
 Your secret API key can be used to make any API call on behalf of your account. You should only grant access to your API keys to those that need them. Ensure they are kept out of any version control system that you may be using.
 
 ### Rolling keys
-
 If an API key is compromised, roll the key in the Developers Page to block it and generate a new one.
 
 When rolling an API key, you can choose to delete the old key immediately or allow it to work for 24 hours, providing you with time to make the transitions. In either case, the new key can be used immediately.

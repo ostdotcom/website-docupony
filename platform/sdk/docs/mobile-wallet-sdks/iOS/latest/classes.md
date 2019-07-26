@@ -9,14 +9,12 @@ sidebar_label: Classes
 3. OstWorkflowContext
 
 ## 1. Error Classes
-There two error classes. 
-
+There two error classes
 1. OstApiError
 2. OstError
 
 ### i). OstApiError
 This class is used to provide API related error details in [flowInterrupt](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/#2-flowinterrupt) callback function. 
-
 
 You can call following [methods](#i-methods) on the object of this class to get more details about the error.
 
@@ -44,11 +42,9 @@ You can read following properties on the object of this class to get more detail
 5. public var errorInfo: [String: Any]? = nil
 
 
-
 ## 2. OstContextEntity
 
 This class provides context about the `entity` that is being changed during a [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/#workflows). Callback functions that needs to know about the `entity` will receive an object of this class as an argument. 
-
 
 
 `entityType` property will return one of the values from this enum.
@@ -75,9 +71,6 @@ You can read its [properties](#i-properties) to get more details about the entit
 public private(set) var entity: Any?
 public private(set) var entityType: OstEntityType
 ```
-
-
-
 
 ## 3. OstWorkflowContext
 This class provides context about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/#workflows). Callback function that needs to know about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/#workflows) will get the object of this class as an argument.
@@ -106,7 +99,6 @@ public enum OstWorkflowType {
 You can read its [properties](#i-properties-1) to get more details about the current [workflow](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/#workflows).
 
 ### i) Properties
-
 
 #### a) workflowType
 

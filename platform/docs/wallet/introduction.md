@@ -6,6 +6,17 @@ sidebar_label: Introduction
 
 OST Wallet is a non-custodial wallet solution for Brand Tokens minted on OST Platform. It is made available through our Mobile Wallet SDKs and can be easily incorporated into any mobile app.
 
+:::note Crypto Wallet Definition
+A cryptocurrency wallet is defined as something that stores public and private keys that can be used to receive or send cryptocurrency. 
+
+Specifically, the public key/address is the address used to receive cryptocurrency and the private key is the required to sign transactions to spend cryptocurrency from the public address that forms a pair with the private key.
+
+The term "wallet" is often overloaded. It may be any one of the following: 
+* a device that stores a private key (at least one of); this can be hardware, but can also simply be a piece of paper with the private key written down on it (a “paper wallet”) 
+* a device that stores a private key plus the ability to sign data such as transaction details or a message (a paper wallet would not meet this definition) 
+* a device that stores a private key plus the ability to transmit the signature
+:::
+
 **Mobile Wallet SDKs**
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
 * [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)

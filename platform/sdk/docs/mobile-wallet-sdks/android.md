@@ -1,41 +1,44 @@
 ---
 id: android
-title: Android SDK Set-up
-sidebar_label: Set-up
+title: Android SDK Setup
+sidebar_label: Setup
 ---
 
-## 1. Overview
+## 1. Interfaces and workflows
+Android Wallet SDK consists of an `interface` and `workflows`.
 
+### **Interface**
+**Callback functions are used for communication between app and wallet SDK**
+In Android wallet SDK these callback functions are provided as an interface
 
-### Interfaces and workflows
-Android Wallet SDK consists of an `interface` and `workflows`. <br><br>
-
-**Interface**: callback functions are used for communication between app and wallet SDK.
-<br> In Android wallet SDK these callback functions are provided as an interface.
-<br><br>
-
-**Workflows**: Workflows are functions that can be used to perform wallet related tasks. App developers will be call these functions to execute different tasks.
+### **Workflows** 
+Workflows are functions that can be used to perform wallet related tasks. App developers will call these functions to execute different tasks.
 
 ### Prerequisite
-You should complete one of the server SDK Guides ([PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/), [Java](/platform/docs/sdk/server-side-sdks/java/))
-<br>
+Install and complete integration with one of our Server Side SDKs
+* [PHP](/platform/docs/sdk/server-side-sdks/php/)
+* [Ruby](/platform/docs/sdk/server-side-sdks/ruby/)
+* [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/)
+* [Java](/platform/docs/sdk/server-side-sdks/java/)
 
-## 2 Requirements
+## 2. Requirements
 
-Android API supported version: 22 and Above
-<br>
-Java Compile version: 1.7
+| Item | Supported Version | 
+| --- | ---: |
+| Android API | 22 and above |
+| Java Compile | 1.7 |
 
+:::warning Android Apps that support Android API versions 21 and below
+OST Wallet SDK cannot work in Android Apps with version 21 and below, the minimum Android API version it can work with is 22 (Android Lolipop).
 
-### [Optional] Using SDK for Android Apps that supports Android API versions below 22
-Wallet SDK cannot work in Android Apps with version 21 and below, the minimum Android API version it can work with is 22 (Android Lolipop).
+If your Android App supports minimum Android API version lower than Lolilop (Android API 22), the Wallet SDK will break for users running Android API versions lower than Lolipop (Android API 22).
+:::
 
-If your Android App supports minimum Android API version lower than Lolilop (Android API 22), the Wallet SDK will work for Lolipop and above versions of Android API and Wallet SDK will break for users running Android API versions lower than Lolipop (Android API 22).
-
-To use the SDK with an application that supports Android API below 22, please follow the steps below:
+:::note Android API versions 21 and below
+To use the SDK with an application that supports Android API below 22, please follow the steps below
+:::
 
 1. By default, when importing a library with a `minSdkVersion` value that's higher than the main manifest file, an error occurs and the library cannot be imported. To make the merger tool ignore this conflict and import the library while keeping your App's lower `minSdkVersion` value, add the `overrideLibrary` attribute to the `<uses-sdk>` tag.
-
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -57,8 +60,6 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
             OstSdk.initialize(getApplicationContext(), OST_PLATFORM_API_BASE_URL);
  }
 ```
-
-<br>
 
 ## 3. Install Android Wallet SDK
 
@@ -97,8 +98,6 @@ dependencies {
 }
 ```
 
-<br>
-
 ### Create config file named `ost-mobilesdk.json` file in `app/src/main/assets/` path of your android project.
 
 Paste following contents in `app/src/main/assets/ost-mobilesdk.json` file
@@ -122,9 +121,9 @@ PRICE_POINT_TOKEN_SYMBOL: This is the symbol of base currency. So its value will
 PRICE_POINT_CURRENCY_SYMBOL: It is the symbol of quote currency used in price conversion.
 USE_SEED_PASSWORD: Uses mnemonics and password to generate seed.
 
-**NOTE: These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.**
-
-<br>
+:::warning
+These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.**
+:::
 
 
 ## 4. Initialize the wallet SDK
@@ -150,12 +149,10 @@ public class App extends Application {
 }
 ```
 
-<br>
-
-
 ## 5. Setting up communication between app and wallet SDK
 
 Wallet SDK provides `workflows` that can be called by any Android activity class or fragment class to perform wallet related actions.
+
 Communication between app and wallet SDK happens through callback functions. We need to pass these callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowCallback` interface.
 
 ![walletSDKCommunication](/platform/docs/sdk/assets/wallet-sdk-communication.png)
@@ -170,7 +167,6 @@ The Wallet SDK <u>does not hold strong reference of workflow callbacks.</u> It o
 ```java
 
 public class BaseFragment extends Fragment, OstWorkFlowCallback {
-
 
   @Override
   public void flowComplete(
@@ -208,10 +204,9 @@ public class BaseFragment extends Fragment, OstWorkFlowCallback {
 You can now create new fragment that will inherit `BaseFragment` and override definition of **callback functions**. This new fragment can now call workflow function to perform any wallet related task.
 
 ## OST Wallet App
-To provide developers with sample integration of wallet SDK, [OST Wallet Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet) is available on github.
+To provide developers with sample integration of wallet SDK, [OST Wallet Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet) is available on GitHub.
 
 ## Next Steps
-
 1. [Create Wallet Guide](/platform/docs/guides/create-user-wallet/)
 2. [Execute Transaction Guide](/platform/docs/guides/execute-transactions/)
 3. Android Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/android/latest/methods/), [Interfaces](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/android/latest/classes/)

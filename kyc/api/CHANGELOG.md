@@ -111,7 +111,7 @@ A small bugfix for incorrect whitespace in code blocks.
 
 We've upgraded Middleman and a number of other dependencies, which should fix quite a few bugs.
 
-Instead of `rake build` and `rake deploy`, you should now run `bundle exec middleman build --clean` to build your server, and `./deploy.sh` to deploy it to Github Pages.
+Instead of `rake build` and `rake deploy`, you should now run `bundle exec middleman build --clean` to build your server, and `./deploy.sh` to deploy it to GitHub Pages.
 
 ## Version 1.2
 

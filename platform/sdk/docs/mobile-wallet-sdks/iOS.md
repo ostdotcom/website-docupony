@@ -1,27 +1,24 @@
 ---
 id: iOS
-title: iOS SDK Set-up
-sidebar_label: Set-up
+title: iOS SDK Setup
+sidebar_label: Setup
 ---
 
-
 ## 1. Prerequisite 
-You will need to integrate server side SDK on your server. You can use one of the available server side SDKs: [PHP](/platform/docs/sdk/server-side-sdks/php/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/).
-
-
+Install and complete integration with one of our Server Side SDKs
+* [PHP](/platform/docs/sdk/server-side-sdks/php/)
+* [Ruby](/platform/docs/sdk/server-side-sdks/ruby/)
+* [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/)
+* [Java](/platform/docs/sdk/server-side-sdks/java/)
 
 
 ## 2. Requirements
 
-iOS version: 9.0 and above
+| Item | Supported Version | 
+| --- | ---: |
+| iOS | 9.0 and above. Recommended version: 10.3 |
+| Swift | 4.2 |
 
-
-Recommended iOS version: 10.3 
-
-
-Swift version: 4.2
-
-<br>
 
 ## 3. Install iOS Wallet SDK
 
@@ -34,7 +31,6 @@ Get [Carthage](https://github.com/Carthage/Carthage) by running the following co
 
 You can also choose [other methods](https://github.com/Carthage/Carthage/#installing-carthage) to install [Carthage](https://github.com/Carthage/Carthage)
 
-<br>
 #### ii). Downloading wallet SDK using Carthage
 Carthage looks at a file called `Cartfile` to determine which libraries to install. Create a file in the same directory as your Xcode project called `Cartfile` and enter the following to tell Carthage which dependencies we want:
 
@@ -47,12 +43,7 @@ Now to actually install everything run the following in your terminal:
 
 A `Cartfile.resolved` file and a `Carthage` directory will appear in the same directory where your `.xcodeproj` or `.xcworkspace` is.
 
-
-<br>
 #### iii). Copying the `OstWalletSdk.framework` file in your Xcode project
-
-
-
 Open your project in Xcode, click on the project file in the left section of the screen and scroll down to the `Linked Frameworks and Libraries` section in Xcode.
 
 `Carthage` folder will have the `.framework` files that we will add in Xcode project.
@@ -87,17 +78,12 @@ $(SRCROOT)/Carthage/Build/iOS/SipHash.framework
 $(SRCROOT)/Carthage/Build/iOS/OstWalletSdk.framework
 ```
 
-
 <br>
-
 ![copy-framework-file](/platform/docs/sdk/assets/add-dependency-framework-files.png)
-
-
 
 #### v). Adding SDK configuration file
 
 Create `OstWalletSdk.plist` file. This file has configuration attributes used by OstWalletSdk. You should copy paste the configuration values from below snippet.
-
 
 Copy paste this configuration file.
 
@@ -132,14 +118,15 @@ Copy paste this configuration file.
 6. SessionBufferTime: Buffer expiration time for session keys in seconds.
 7. UseSeedPassword: Uses mnemonics and password to generate seed.
 
-**These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.**
+:::warning
+These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.**
+:::
 
 #### vi). Add `NSFaceIDUsageDescription` description in `info.plist`
 
 The iOS Wallet SDK can use FaceID in lieu of fingerprint if the hardware supports it. To support faceID, please include  [NSFaceIDUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription) key in your application's `info.plist` file and describe its usage.
 
 **Note: [NSFaceIDUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription) key is supported in iOS 11 and later.**
-
 
 ## 4. Initialize the wallet SDK
 
@@ -166,7 +153,6 @@ This will be the base API URL we need to provide to SDK while initializing.
 
 **Production endpoint**: "api.ost.com/mainnet/v2"
 
-
 ## 5. Setting up communication between app and wallet SDK
 
 iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet related actions. Communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkflowDelegate` protocol.
@@ -176,7 +162,6 @@ iOS Wallet SDK provides `workflows` that can be called by any controller class t
 ### a). Implementing the `OstWorkflowDelegate` protocol
 
 There are different ways to implement `OstWorkflowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkflowDelegate` protocol. We will use this class to create object that can be passed in SDK workflows as callback. 
-
 
 Sample Implementation of [OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [OST Wallet app ](https://github.com/ostdotcom/ios-demo-app/tree/develop).
 
@@ -244,11 +229,9 @@ In the example below, we are calling `OstWalletSdk.addSession` workflow and pass
 
 
 ## OST Wallet App
-To provide developers with sample integration of wallet SDK, a [OST Wallet iOS app ](https://github.com/ostdotcom/ios-demo-app/tree/develop) is available on github.
-
+To provide developers with sample integration of wallet SDK, a [OST Wallet iOS app ](https://github.com/ostdotcom/ios-demo-app/tree/develop) is available on GitHub.
 
 ## Next Steps
-
 1. [Create Wallet Guide](/platform/docs/1-create)
 2. [Execute Transaction Guide](/platform/docs/guides/execute-transactions/)
 3. iOS Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/), [Protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/classes/)

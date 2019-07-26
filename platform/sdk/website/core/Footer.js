@@ -95,7 +95,7 @@ class Footer extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/ostdotcom" target="_blank" title="OST - Github">
+                  <a href="https://github.com/ostdotcom" target="_blank" title="OST - GitHub">
                     <span className="footer-social-github-icon social-icons "></span>
                   </a>
                 </li>

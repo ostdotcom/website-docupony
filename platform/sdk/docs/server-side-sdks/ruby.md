@@ -4,25 +4,17 @@ title: Ruby SDK Quickstart Guide
 sidebar_label: Ruby
 ---
 
-
-## Introduction
 The Ruby SDK is a Ruby wrapper for the [OST Platform API](/platform/docs/api). This Quick Start Guide will show you how to use the Ruby SDK.
 
-You can also view the source code on [Github](https://github.com/ostdotcom/ost-sdk-ruby/tree/v2.0.0)
+You can also view the source code on [GitHub](https://github.com/ostdotcom/ost-sdk-ruby/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
 Sign up on [platform.ost.com](https://platform.ost.com) to create an account. Follow the [create token guide](/platform/docs/1-create/) to complete the token setup.
-
-
-
 
 ## 2. Get Credentials
 Once token set up is complete, go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to your API key and API secret.
 
 Every account is provided with two pairs of keys: one for sandbox environment and one for production environment. Use your sandbox environment API keys for testing and development.
-
-
-
 
 ## 3. Install SDK
 
@@ -30,18 +22,11 @@ To install the SDK run the following command <br>
 
 > gem install ost-sdk-ruby
 
-**Source code:** [Ruby SDK Github Repo](https://github.com/ostdotcom/ost-sdk-ruby/tree/v2.0.0)
-
-
-
-
-
+**Source code:** [Ruby SDK GitHub Repo](https://github.com/ostdotcom/ost-sdk-ruby/tree/v2.0.0)
 
 
 ## 4. Get Token Information
 To get the information about your Brand Token, you will have to use `tokens` service provided by Ruby SDK.
-
-
 
 ### Instantiating the SDK object
 Before using any service of SDK you will have to provide API key and API secret to instantiate new SDK object.
@@ -117,7 +102,9 @@ Token entity has important information about your token which we recommend you t
 }
 ```
 
-> Congratulation! You have completed your first API call from Server Side SDK.
+:::note **Congratulations** 
+You have completed your first API call from Server Side SDK
+:::
 
 ## 5. Register User
 You can set up your users in OST Platform. User objects in OST Platform do not have any personal information about your application users. OST Platform deploys smart contracts for every user in the economy and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4).
@@ -157,14 +144,10 @@ response = users_service.create(create_params)
 ```
 Ideally after user creation you should map the user's id with unique identifier of your application user. E.g.: `jack.ryan@example.com` can be a unique identifier of your application user, this email can be mapped with newly created user's `id`.
 
-
 A detailed explanation about each attribute of user is available on user object section in [API References](/platform/docs/api/#user-object).
 
 
 ## Next Steps
-
-### [Android Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/android/)
-
-### [iOS Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/iOS)
-
-### [API Reference](/platform/docs/api/)
+1. [Android Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/android/)
+2. [iOS Wallet SDK Setup](/platform/docs/sdk/mobile-wallet-sdks/iOS)
+3. [API Reference](/platform/docs/api/)

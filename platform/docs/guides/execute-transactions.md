@@ -4,6 +4,13 @@ title: Technical Guide to Executing Transactions
 sidebar_label: Execute Transactions
 ---
 
+1. Owner/device key is created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device
+2. The private key in each pair is encrypted and stored on device. A **MultiSig** contract is deployed on the blockchain. The public addresses from device keys generated on the user's device(s) are set as owners for the **MultiSig**.
+3. A **TokenHolder** contract is deployed on the blockchain. The **MultiSig** controls the **TokenHolder** contract, as its owner.
+4. A sessionKey is created on the user's device and is authorized by device key in **TokenHolder**
+5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's **TokenHolder** contract
+6. The **TokenHolder** contract verifies that the request is initiated by an authorized sessionKey and executes the transfer
+
 :::warning atto denomination
 atto is the smallest denomination used in OST Platform. OST Platform APIs and SDKs accept value in `atto`, so it is important to understand the conversions to `atto`. 
 

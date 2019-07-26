@@ -4,23 +4,17 @@ title: iOS SDK Methods
 sidebar_label: Methods
 ---
 
-
-## Types of Methods
-
 1. `Workflows`: Workflows are the core functions provided by wallet SDK to do wallet related actions. Workflows can be called directly by importing the SDK.
 
-	* Application must confirm to `OstWorkflowDelegate` protocol. The `OstWorkflowDelegate` protocol defines methods that allow application to interact with `OstWalletSdk`.
-
+* Application must confirm to `OstWorkflowDelegate` protocol. The `OstWorkflowDelegate` protocol defines methods that allow application to interact with `OstWalletSdk`.
 
 2. `Getters`: These functions are synchronous and will return the value when requested.
-
-
 
 ## Workflows
 
 ### 1. initialize
 
-You must initialize the SDK before start using it.
+You must initialize the SDK before starting to use it.
 
 Recommended location to call **OstWalletSdk.initialize()** is in [application](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application) method of [UIApplicationDelegate](https://developer.apple.com/documentation/uikit/uiapplicationdelegate). 
 
@@ -49,15 +43,11 @@ didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: An
 }
 ```
 
-
-
-<br>
 ### 2. setupDevice
 This workflow needs `userId` and `tokenId` so `setupDevice` should be called after your app login or signup is successful.
 Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId`.
 
 **If the user is logged in, then `setupDevice` should be called every time the app launches, this ensures that the current device is registered before communicating with OST Platform server.**
-
 
 ```
 OstWalletSdk.setupDevice(
@@ -73,7 +63,6 @@ OstWalletSdk.setupDevice(
 | **tokenId** <br> **String**	| Unique identifier of the token economy |
 | **delegate** <br> **OstWorkflowDelegate**	|An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).<br> This object should implement `registerDevice` callback function. `registerDevice` will be called during the execution of this workflow.  |
 
-<br>
 
 ### 3. activateUser
 It `authorizes` the registered device and activates the user. User activation deploys  **TokenHolder**, Device manager  contracts on blockchain. Session keys are also created and authorized during `activateUser` workflow. So after `user activation`, users can perform wallet actions like executing transactions and reset pin. 
@@ -99,8 +88,6 @@ OstWalletSdk.activateUser(
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
 
 
-
-<br>
 ### 4. addSession
 This workflow will create and authorize the session key that is needed to do the transactions. This flow should be called if the session key is expired or not present. 
 
@@ -121,10 +108,6 @@ OstWalletSdk.addSession(
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/). |
 
 
-
-
-
-<br>
 ### 5. perfromQRAction
 This workflow will perform operations after reading data from a QRCode. This workflow can be used to add a new device and to do the transactions.
 
@@ -143,8 +126,6 @@ OstWalletSdk.perfromQRAction(
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/). |
 
 
-
-<br>
 ### 6. getDeviceMnemonics
 To get the 12 words recovery phrase of the current device key. Users will use it to prove that it is their wallet.  
 
@@ -160,9 +141,6 @@ OstWalletSdk.getDeviceMnemonics(
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform |
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/). |
 
-
-
-<br>
 
 ### 7. executeTransaction
 Workflow should be used to do the `user-to-company` and `user-to-user` transactions.
@@ -191,8 +169,6 @@ OstWalletSdk.executeTransaction(
 
 
 
-
-<br>
 ### 8. authorizeCurrentDeviceWithMnemonics
 This workflow should be used to add a new device using 12 words recovery phrase. 
 
@@ -211,14 +187,7 @@ OstWalletSdk.authorizeCurrentDeviceWithMnemonics(
 | **mnemonics** <br> **[String]**	| Array of String having 12 words |
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
 
-
-
-
-
-
-
-
-<br>    
+   
 ### 9. resetPin
 This workflow can be used to change the PIN.
 
@@ -233,7 +202,6 @@ OstWalletSdk.resetPin(
     delegate: OstWorkflowDelegate
 )
 ```
-
 
 | Parameter | Description |
 |---|---|
@@ -265,7 +233,6 @@ OstWalletSdk.initiateDeviceRecovery(
 | **userPin** <br> **String**	| User's Wallet PIN  |
 | **passPhrasePrefix** <br> **String**	| A constant unique identifier for a your user. |
 | **delegate** <br> **OstWorkflowDelegate**	| An object that implements the callback function available in `OstWorkflowDelegate` protocol. These callback functions are needed for communication between app and wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkflowDelegate protocol reference](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/).  |
-
 
 
 
@@ -306,9 +273,7 @@ OstWalletSdk.logoutAllSessions(
 
 
 
-
 ## Getters
-
 
 ### 1. getAddDeviceQRCode
 This workflow will return the QRCode in the form of [CIImage object](https://developer.apple.com/documentation/coreimage/ciimage) that can be used to show on screen. This QRCode can then be scanned to add the new device.
