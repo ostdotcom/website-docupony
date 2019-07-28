@@ -23,7 +23,7 @@ Step 2 can be conducted in parallal with Step 3. Step 2 and Step 3 must be final
 | UX / UI designers | n/a | ~1 week |
 | Front-end web developer | HTML, CSS, JavaScript | ~1 week |
 | Back-end web developer (server side SDKs) | Java, JavaScript, PHP, or Ruby | 1-2 weeks |
-| Android developer (wallet SDK) | Android (Java, C, C++) or React Native | 1-2 weeks |
-| iOS developer (wallet SDK) | Swift or React Native | 1-2 weeks |
+| Android developer (Wallet SDK) | Android (Java, C, C++) or React Native | 1-2 weeks |
+| iOS developer (Wallet SDK) | Swift or React Native | 1-2 weeks |
 
 **We are forever making improvements to our APIs, SDKs, and documentation and expect these times to reduce over time.**

@@ -157,8 +157,8 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 ## Executing `user` initiated transactions
 * `User` initiated transactions need to be signed by the user's device keys
-* User's device keys are created and stored in their mobile device. So, user initiated transactions (`user-to-company`, `user-to-user`) need to be executed in the mobile app using wallet SDK (available for Android and iOS).
-* To execute the transaction using wallet SDK, you will have to use `executeTransaction` workflow. 
+* User's device keys are created and stored in their mobile device. So, user initiated transactions (`user-to-company`, `user-to-user`) need to be executed in the mobile app using Wallet SDK (available for Android and iOS).
+* To execute the transaction using Wallet SDK, you will have to use `executeTransaction` workflow. 
 
 ## Executing `user` initiated transactions in web
 
@@ -251,7 +251,7 @@ Sample verifyData code (Android Wallet SDK)
 ### Verify Transaction Status
 
 #### Receiving `performQRAction` workflow status callbacks
-There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in [Android wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/android/)) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in [iOS wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/iOS)) for communication between mobile app and OST Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in [Android Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/android/)) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in [iOS Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/iOS)) for communication between mobile app and OST Wallet SDK. 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
 

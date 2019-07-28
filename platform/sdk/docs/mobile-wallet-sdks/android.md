@@ -8,8 +8,8 @@ sidebar_label: Setup
 Android Wallet SDK consists of an `interface` and `workflows`.
 
 ### **Interface**
-**Callback functions are used for communication between app and wallet SDK**
-In Android wallet SDK these callback functions are provided as an interface
+**Callback functions are used for communication between app and Wallet SDK**
+In Android Wallet SDK these callback functions are provided as an interface
 
 ### **Workflows** 
 Workflows are functions that can be used to perform wallet related tasks. App developers will call these functions to execute different tasks.
@@ -113,21 +113,24 @@ Paste following contents in `app/src/main/assets/ost-mobilesdk.json` file
     "USE_SEED_PASSWORD": false
  }
 ```
-Block_Generation_Time: The time in seconds it takes to mine a block on auxiliary chain.
-PIN_MAX_RETRY_COUNT: Maximum retry count to get the wallet Pin from user.
-REQUEST_TIMEOUT_DURATION: Request timeout in seconds for https calls made by ostWalletSdk.
-SESSION_BUFFER_TIME: Buffer expiration time for session keys in seconds.
-PRICE_POINT_TOKEN_SYMBOL: This is the symbol of base currency. So its value will be OST.
-PRICE_POINT_CURRENCY_SYMBOL: It is the symbol of quote currency used in price conversion.
-USE_SEED_PASSWORD: Uses mnemonics and password to generate seed.
+
+| Attribute | Description | 
+| --- | --- | 
+| BLOCK_GENERATION_TIME | The time in seconds it takes to mine a block on auxiliary chain. |
+| PIN_MAX_RETRY_COUNT | Maximum retry count to get the wallet Pin from user.|
+| REQUEST_TIMEOUT_DURATION | Request timeout in seconds for https calls made by ostWalletSdk. |
+| SESSION_BUFFER_TIME | Buffer expiration time for session keys in seconds.|
+| PRICE_POINT_TOKEN_SYMBOL | This is the symbol of base currency. So its value will be OST. |
+| PRICE_POINT_CURRENCY_SYMBOL | It is the symbol of quote currency used in price conversion. |
+| USE_SEED_PASSWORD | Uses mnemonics and password to generate seed. |
 
 :::warning
-These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.**
+These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.
 :::
 
 
-## 4. Initialize the wallet SDK
-SDK initialization should happen before calling any other `workflow`. To initialize the SDK, we need to call `initialize` method of wallet SDK.
+## 4. Initialize the Wallet SDK
+SDK initialization should happen before calling any other `workflow`. To initialize the SDK, we need to call `initialize` method of Wallet SDK.
 
 **Recommended location to call init() is in Application sub-class.**
 
@@ -149,13 +152,13 @@ public class App extends Application {
 }
 ```
 
-## 5. Setting up communication between app and wallet SDK
+## 5. Setting up communication between app and Wallet SDK
 
 Wallet SDK provides `workflows` that can be called by any Android activity class or fragment class to perform wallet related actions.
 
-Communication between app and wallet SDK happens through callback functions. We need to pass these callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkFlowCallback` interface.
+Communication between app and Wallet SDK happens through callback functions. We need to pass these callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and Wallet SDK is provided in `OstWorkFlowCallback` interface.
 
-![walletSDKCommunication](/platform/docs/sdk/assets/wallet-sdk-communication.png)
+![walletSDKCommunication](/platform/sdk/docs/assets/wallet-sdk-communication.png)
 
 <br>
 
@@ -204,7 +207,7 @@ public class BaseFragment extends Fragment, OstWorkFlowCallback {
 You can now create new fragment that will inherit `BaseFragment` and override definition of **callback functions**. This new fragment can now call workflow function to perform any wallet related task.
 
 ## OST Wallet App
-To provide developers with sample integration of wallet SDK, [OST Wallet Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet) is available on GitHub.
+To provide developers with sample integration of Wallet SDK, [OST Wallet Android app](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet) is available on GitHub.
 
 ## Next Steps
 1. [Create Wallet Guide](/platform/docs/guides/create-user-wallet/)

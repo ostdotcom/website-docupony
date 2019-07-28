@@ -12,9 +12,9 @@ You can also view the source code on [GitHub](https://github.com/ostdotcom/ost-s
 Follow the [Create Brand Token guide](/platform/docs/1-create/) to complete token setup.
 
 ## 2. Get Credentials
-Once token set up is complete, go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to your API key and API secret.
+Once token setup is complete, go to the [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to your API key and API secret.
 
-Every account is provided with two pairs of keys: one for sandbox environment and one for production environment. Use your sandbox environment API keys for testing and development.
+Every account is provided with two pairs of keys: one for Sandbox and one for Production. Use your Sandbox API keys for development and testing.
 
 ## 3. Install SDK
 To install the SDK run the following command <br>
@@ -55,7 +55,7 @@ $ostObj = new OSTSdk($params);
 ```
 
 ### Call `tokens` service
-Now you can call any of the service provided by Server Side SDK. You will call `tokens` service to get the tokens details.
+Now you can call any of the SDK. You will call `tokens` service to get the tokens details.
 
 **Get Tokens Details Sample Code**
 
@@ -68,7 +68,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-### Tokens Information 
+### Token Information 
 Token entity has important information about your token which we recommend you to save on your server for further use. 
 
 ```json
@@ -118,9 +118,11 @@ You have completed your first API call from Server Side SDK
 :::
 
 ## 5. Register User
-You can set up your users in OST Platform. User objects in OST Platform do not have any personal information about your application users. OST Platform deploys smart contracts for every user in the economy and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4).
+Next, you can set-up your users in OST Platform. User objects in OST Platform do not have any personal information about your application users. OST Platform deploys smart contracts for every user in the economy and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4).
 
-Developers will create users from your servers and you will be responsible to maintain the mapping between your application user and OST Platform users.
+:::note
+Create users from your servers. You will be responsible for maintaining the mapping between your application users and OST Platform users.
+:::
 
 ### Create User
 To create the user object you will use the user service. No input parameters are needed to create user.

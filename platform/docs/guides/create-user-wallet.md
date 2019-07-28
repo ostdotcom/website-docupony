@@ -17,13 +17,13 @@ sidebar_label: Create User Wallet
 It is a 3 step process. [OST Wallet SDK](/platform/docs/wallet/sdk/) provides a number of functions called as workflows.
 
 ### Step 1: init
-Calling `init` function of wallet SDK will initialize the SDK
+Calling `init` function of Wallet SDK will initialize the SDK
 
 ### Step 2: setupDevice
 Calling `setupDevice` will Generating public-private key pairs. The ephemeral sessionKeys and owner keys are created on the user's mobile device.
 
 ### Step 3: activateUser
-calling `activateUser ` function of wallet SDK will deploy smart contracts. Once the contract deployment is complete the `user` is `activated` and can perform transactions.
+calling `activateUser ` function of Wallet SDK will deploy smart contracts. Once the contract deployment is complete the `user` is `activated` and can perform transactions.
 
 <hr>
 
@@ -122,7 +122,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 In your mobile application, you should use one of the OST Wallet SDKs
 
 ### Initializing Wallet SDK
-SDK initialization should happen before calling any other `workflow`. To initialize the SDK, you need to call `initialize` method of wallet SDK.
+SDK initialization should happen before calling any other `workflow`. To initialize the SDK, you need to call `initialize` method of Wallet SDK.
 
 :::note `initialize` method
 **Recommended location to call initialize() is in [Application](https://developer.android.com/reference/android/app/Application) sub-class.**
@@ -161,7 +161,7 @@ In order to initiate the device registration from you mobile app, you need to ca
 ```
 
 :::warning Make sure you implement the callback function `registerDevice`
-Make sure you implement the callback function `registerDevice` in the class calling this workflow. This function will get device information from wallet SDK and your app should communicate this information to your server to register the device. In case of successful device registration call `ostDeviceRegisteredInterface.deviceRegistered()`, in case of failure call `ostDeviceRegisteredInterface.cancelFlow()` .
+Make sure you implement the callback function `registerDevice` in the class calling this workflow. This function will get device information from Wallet SDK and your app should communicate this information to your server to register the device. In case of successful device registration call `ostDeviceRegisteredInterface.deviceRegistered()`, in case of failure call `ostDeviceRegisteredInterface.cancelFlow()` .
 ::: 
 
 ```java
@@ -244,7 +244,7 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 :::
 
 #### Finally calling `activateUser` workflow
-Your mobile app should call `activateUser` workflow using wallet SDK with the input parameters from the [above step](#input-parameter-for-activateuser)
+Your mobile app should call `activateUser` workflow using Wallet SDK with the input parameters from the [above step](#input-parameter-for-activateuser)
 
 
 ```java
@@ -276,7 +276,7 @@ The SDK provides an interface that should be implemented by the application so t
 
 **Receiving callback calls**
 
-There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in Android wallet SDK) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in iOS wallet SDK) for communication between mobile app and Wallet SDK. 
+There is a list of methods available as [interface](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/) (in Android Wallet SDK) and as [protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) (in iOS Wallet SDK) for communication between mobile app and Wallet SDK. 
 
 To show you an example, we will just implement 2 functions to get the workflow status.
 

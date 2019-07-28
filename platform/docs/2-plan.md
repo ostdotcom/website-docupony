@@ -56,4 +56,4 @@ Things to consider when setting the conversion rate:
 :::
 
 ## d. Mobile and web UX and design
-We have provided [Wallet UX Guidelines](/platform/docs/wallet/ux/) with screens and flows and helpful suggestions to get you started! We are also working on making available UI screens through our Wallet SDKs. These will be available in Aug / Sep 2019.
+We have provided [Wallet UX Guidelines](/platform/docs/ux/) with screens and flows and helpful suggestions to get you started! We are also working on making available UI screens through our Wallet SDKs. These will be available in Aug / Sep 2019.

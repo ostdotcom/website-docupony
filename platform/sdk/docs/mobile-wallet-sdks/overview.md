@@ -19,7 +19,7 @@ Wallet SDK will take care of key management solution (to learn more about key ma
     <div class="content-block">
         <div class="section-promo">
         <a target="_blank" href="/kyc/docs/sdk/python_sdk/latest/quickstart_guide/">
-            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/docs/sdk/assets/android.png" >
+            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/sdk/docs/assets/android.png" >
             <h3 class="accent-color text-center">Android SDK</h3>
         </a>
         </div>
@@ -27,7 +27,7 @@ Wallet SDK will take care of key management solution (to learn more about key ma
     <div class="content-block">
         <div class="section-promo">
         <a target="_blank" href="/kyc/docs/sdk/ruby_sdk/latest/quickstart_guide/">
-            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/docs/sdk/assets/xcode-ios.png" >
+            <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/sdk/docs/assets/xcode-ios.png" >
             <h3 class="accent-color text-center">iOS SDK</h3>
         </a>
         </div>
@@ -47,7 +47,7 @@ Server side SDKs are an alternative to [REST API](/platform/docs/api/). Server S
 <div class="content-block">
     <div class="section-promo">
        <a target="_blank" href="/platform/docs/sdk/server-side-sdks/php/latest/quickstart_guide/">
-        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/docs/sdk/assets/php.png">
+        <img style="height: 100px;margin-top: 48px;"  class="center-block" src="/platform/sdk/docs/assets/php.png">
         <h3 class="accent-color text-center">PHP SDK</h3>
       </a>
     </div>

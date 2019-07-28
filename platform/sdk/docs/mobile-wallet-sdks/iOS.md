@@ -31,7 +31,7 @@ Get [Carthage](https://github.com/Carthage/Carthage) by running the following co
 
 You can also choose [other methods](https://github.com/Carthage/Carthage/#installing-carthage) to install [Carthage](https://github.com/Carthage/Carthage)
 
-#### ii). Downloading wallet SDK using Carthage
+#### ii). Downloading Wallet SDK using Carthage
 Carthage looks at a file called `Cartfile` to determine which libraries to install. Create a file in the same directory as your Xcode project called `Cartfile` and enter the following to tell Carthage which dependencies we want:
 
 Add following entry in your `Cartfile`
@@ -55,7 +55,7 @@ Run this command
 
 Open application target, under General tab, drag the built `OstWalletSdk.framework` binary from `Carthage/Build/iOS` folder into Linked Frameworks and Libraries section.
 
-![copy-framework-file](/platform/docs/sdk/assets/copy-framework-file.png)
+![copy-framework-file](/platform/sdk/docs/assets/copy-framework-file.png)
 
 #### iv). Adding the `OstWalletSdk` dependencies in your Xcode project
 We need to add the `.framework` files of dependencies present inside `Carthage/Build/iOS`.
@@ -79,13 +79,13 @@ $(SRCROOT)/Carthage/Build/iOS/OstWalletSdk.framework
 ```
 
 <br>
-![copy-framework-file](/platform/docs/sdk/assets/add-dependency-framework-files.png)
+![copy-framework-file](/platform/sdk/docs/assets/add-dependency-framework-files.png)
 
 #### v). Adding SDK configuration file
 
 Create `OstWalletSdk.plist` file. This file has configuration attributes used by OstWalletSdk. You should copy paste the configuration values from below snippet.
 
-Copy paste this configuration file.
+Copy paste this configuration file
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -110,16 +110,19 @@ Copy paste this configuration file.
  </plist>
 ```
 
-1. BlockGenerationTime: The time in seconds it takes to mine a block on auxiliary chain.
-2. PricePointTokenSymbol: This is the symbol of base currency. So its value will be `OST`.
-3. PricePointCurrencySymbol: It is the symbol of quote currency used in price conversion.
-4. RequestTimeoutDuration: Request timeout in seconds for https calls made by ostWalletSdk.
-5. PinMaxRetryCount: Maximum retry count to get the wallet Pin from user.
-6. SessionBufferTime: Buffer expiration time for session keys in seconds.
-7. UseSeedPassword: Uses mnemonics and password to generate seed.
+| Attribute | Description | 
+| --- | --- | 
+| BlockGenerationTime | The time in seconds it takes to mine a block on auxiliary chain. |
+| PricePointTokenSymbol | This is the symbol of base currency. So its value will be OST. |
+| PricePointCurrencySymbol | It is the symbol of quote currency used in price conversion. |
+| RequestTimeoutDuration | Request timeout in seconds for https calls made by ostWalletSdk. |
+| PinMaxRetryCount | Maximum retry count to get the wallet Pin from user.|
+| SessionBufferTime | Buffer expiration time for session keys in seconds.|
+| UseSeedPassword | Uses mnemonics and password to generate seed. |
+
 
 :::warning
-These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.**
+These configurations are MANDATORY for successful operation. Failing to set them will significantly impact usage.
 :::
 
 #### vi). Add `NSFaceIDUsageDescription` description in `info.plist`
@@ -128,9 +131,9 @@ The iOS Wallet SDK can use FaceID in lieu of fingerprint if the hardware support
 
 **Note: [NSFaceIDUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription) key is supported in iOS 11 and later.**
 
-## 4. Initialize the wallet SDK
+## 4. Initialize the Wallet SDK
 
-SDK initialization should happen before calling any other `workflow`. To initialize the SDK, we need to call `init` workflow of wallet SDK. It initializes all the required instances and run db migrations.
+SDK initialization should happen before calling any other `workflow`. To initialize the SDK, we need to call `init` workflow of Wallet SDK. It initializes all the required instances and run db migrations.
 
 Recommended location to call **OstWalletSdk.initialize()** is in [application](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application) method of [UIApplicationDelegate](https://developer.apple.com/documentation/uikit/uiapplicationdelegate).
 
@@ -153,17 +156,17 @@ This will be the base API URL we need to provide to SDK while initializing.
 
 **Production endpoint**: "api.ost.com/mainnet/v2"
 
-## 5. Setting up communication between app and wallet SDK
+## 5. Setting up communication between app and Wallet SDK
 
-iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet related actions. Communication between app and wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and wallet SDK is provided in `OstWorkflowDelegate` protocol.
+iOS Wallet SDK provides `workflows` that can be called by any controller class to perform wallet related actions. Communication between app and Wallet SDK happens through callback functions. We need to pass the callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and Wallet SDK is provided in `OstWorkflowDelegate` protocol.
 
-![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
+![walletSDKCommunication](/platform/sdk/docs/assets/communication-ios-sdk.png)
 
 ### a). Implementing the `OstWorkflowDelegate` protocol
 
 There are different ways to implement `OstWorkflowDelegate` and pass them while calling workflows. We will create a dedicated class with name `OstWalletSdkInteract`. This class will implement the `OstWorkflowDelegate` protocol. We will use this class to create object that can be passed in SDK workflows as callback. 
 
-Sample Implementation of [OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [OST Wallet app ](https://github.com/ostdotcom/ios-demo-app/tree/develop).
+Sample Implementation of [OstWalletSdkInteract class](https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift) is available as a part of [OST Wallet app](https://github.com/ostdotcom/ios-demo-app/tree/develop).
 
 
 ```swift
@@ -229,7 +232,7 @@ In the example below, we are calling `OstWalletSdk.addSession` workflow and pass
 
 
 ## OST Wallet App
-To provide developers with sample integration of wallet SDK, a [OST Wallet iOS app ](https://github.com/ostdotcom/ios-demo-app/tree/develop) is available on GitHub.
+To provide developers with sample integration of Wallet SDK, an [OST Wallet iOS app ](https://github.com/ostdotcom/ios-demo-app/tree/develop) is available on GitHub.
 
 ## Next Steps
 1. [Create Wallet Guide](/platform/docs/1-create)

@@ -4,15 +4,15 @@ title: iOS SDK Protocols
 sidebar_label: Protocols
 ---
 
-iOS Wallet SDK provides a protocol named `OstWorkflowDelegate` as a massaging contract between app and wallet SDK. This protocol will have to be implemented by the application before calling the `workflows`.
+iOS Wallet SDK provides a protocol named `OstWorkflowDelegate` as a massaging contract between app and Wallet SDK. This protocol will have to be implemented by the application before calling the `workflows`.
 
-![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
+![walletSDKCommunication](/platform/sdk/docs/assets/communication-ios-sdk.png)
 
 ## Protocol Functions
 
 ### 1. flowComplete
 
-This function will be called by wallet SDK when a workflow is completed. The details of workflow and the entity that was updated during the workflow will be available in arguments.
+This function will be called by Wallet SDK when a workflow is completed. The details of workflow and the entity that was updated during the workflow will be available in arguments.
 
 ```
 func flowComplete(
@@ -28,7 +28,7 @@ func flowComplete(
 
 
 ### 2. flowInterrupt
-This function will be called by wallet SDK when a workflow fails or cancelled. The workflow details and error details will be available in arguments.
+This function will be called by Wallet SDK when a workflow fails or cancelled. The workflow details and error details will be available in arguments.
 
 ```
 func flowInterrupted(
@@ -44,7 +44,7 @@ func flowInterrupted(
 
 
 ### 3. requestAcknowledged
-This function will be called by wallet SDK when the core API request was successful which happens during the execution of workflows. At this stage the workflow is not completed but it shows that the main communication between the wallet SDK and OST Platform server is complete. <br>Once the workflow is complete, the `app` will receive the details in `flowComplete` function and if the workflow fails then app will receive the details in `flowInterrupt` function. 
+This function will be called by Wallet SDK when the core API request was successful which happens during the execution of workflows. At this stage the workflow is not completed but it shows that the main communication between the Wallet SDK and OST Platform server is complete. <br>Once the workflow is complete, the `app` will receive the details in `flowComplete` function and if the workflow fails then app will receive the details in `flowInterrupt` function. 
 
 ```
 func requestAcknowledged(
@@ -60,7 +60,7 @@ func requestAcknowledged(
 
 
 ### 4. getPin
-This function will be called by wallet SDK when it needs to get the PIN from the `app` user to authenticate any authorized action.
+This function will be called by Wallet SDK when it needs to get the PIN from the `app` user to authenticate any authorized action.
 <br>**Expected Function Definition:** Developers of client company are expected to launch their UI to get the PIN from the user and pass back this PIN to SDK by calling **delegate.pinEntered(_ userPin: String, passphrasePrefix: String)** 
 
 ```
@@ -77,7 +77,7 @@ func getPin(
 
 
 ### 5. pinValidated
-This function will be called by wallet SDK when the PIN is validated. 
+This function will be called by Wallet SDK when the PIN is validated. 
 
 ```
 func pinValidated(_ userId: String)
@@ -89,7 +89,7 @@ func pinValidated(_ userId: String)
 
 
 ### 6. invalidPin
-This function will be called by wallet SDK when the entered PIN was wrong and `app` user has to provide the PIN again. Developers are expected to get the PIN from user again and pass back the PIN back to the SDK by calling  **delegate.pinEntered(_ userPin: String, passphrasePrefix: String)** .
+This function will be called by Wallet SDK when the entered PIN was wrong and `app` user has to provide the PIN again. Developers are expected to get the PIN from user again and pass back the PIN back to the SDK by calling  **delegate.pinEntered(_ userPin: String, passphrasePrefix: String)** .
 
 ```
 func invalidPin(
@@ -105,8 +105,8 @@ func invalidPin(
 
 
 ### 7. registerDevice
-This function will be called by wallet SDK to register the device.<br>**Expected Function Definition:** Developers of client company are expected to register the device by communicating with their company's server. On client company's server they can use `Server SDK` to register this device in OST Platform. Once device is registered on OST client company's server will receive the newly created `device` entity. This device entity should be passed back to the `app`.<br>
-Finally they should pass back this newly created device entity back to the wallet SDK by calling **delegate.deviceRegistered(_ apiResponse: [String: Any])**.
+This function will be called by Wallet SDK to register the device.<br>**Expected Function Definition:** Developers of client company are expected to register the device by communicating with their company's server. On client company's server they can use `Server SDK` to register this device in OST Platform. Once device is registered on OST client company's server will receive the newly created `device` entity. This device entity should be passed back to the `app`.<br>
+Finally they should pass back this newly created device entity back to the Wallet SDK by calling **delegate.deviceRegistered(_ apiResponse: [String: Any])**.
 
 ```
 func registerDevice(
@@ -122,7 +122,7 @@ func registerDevice(
 
 
 ### 8. verifyData
-This function will be called by wallet SDK to verify the data during `performQRAction` workflow.
+This function will be called by Wallet SDK to verify the data during `performQRAction` workflow.
 
 
 ```

@@ -41,7 +41,7 @@ For a more detailed overview of features, check the [Features](/platform/docs/wa
 ## Seamless User Experience
 A user can use a **6 digit PIN** to authorize an ephemeral sessionKey. These ephemeral sessionKeys, which remain active for a period of time chosen by the user or developer of the application (based on the implementation) obviate the need for the user to sign every transaction within the application thereby creating a more seamless user experience. When a session expires, the user can authorise a new session with **6 digit PIN**.
 
-To further reduce friction, the OST Wallet SDK also supports the use of **biometrics** for the second level of authentication of the user, i.e. a user can use **biometrics** to authorize a session, request a mnemonic phrase. Check the [Wallet UX Guidelines](/platform/docs/wallet/ux/) to understand the possible flows and recommended user experience (UX).
+To further reduce friction, the OST Wallet SDK also supports the use of **biometrics** for the second level of authentication of the user, i.e. a user can use **biometrics** to authorize a session, request a mnemonic phrase. Check the [Wallet UX Guidelines](/platform/docs/ux/) to understand the possible flows and recommended user experience (UX).
 
 :::note Intended User Experience
 The intended user experience is that most users will set a **6 digit PIN** and then add their **biometrics**, from that point on, all day-to-day usage of the wallet can be done with **biometrics**. The PIN is only used thereafter for recovery or if **biometrics** are not functioning. 
