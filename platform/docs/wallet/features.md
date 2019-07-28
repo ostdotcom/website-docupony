@@ -28,7 +28,7 @@ During an active session, transactions of a value lower than the spendingLimit a
 
 A multi-signature contract, the **MultiSig**, is configured as the owner of the **TokenHolder** contract and one or more keys are configured as owners to that **MultiSig**. This means that multiple owner keys can have authority over a **TokenHolder** contract.  Therefore, a user can have owner keys present on multiple devices (such as mobile phones and tablets), so that when moving between devices, the keys are not shared. 
 
-:::warning **MultiSig** Contract, Owner of **TokenHolder**
+:::warning MultiSig Contract, Owner of TokenHolder
 1. To add additional, remove or replace owner keys, a pre-agreed number of existing owners must sign the transaction
 2. This pre-agreed number is required signatures is intuitively called the threshold of the **MultiSig**
 3. To change the number of signatures required, the pre-agreed number of owners must sign the transaction.
