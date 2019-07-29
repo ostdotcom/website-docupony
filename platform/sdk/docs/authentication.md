@@ -1,21 +1,31 @@
 ---
 id: authentication
-title: Server Side API Authentication
+title: Authentication
 sidebar_label: Authentication
 ---
 
-OST servers authenticate your API requests using your account's API keys. If you do not include your key when making an API request or use a key that is incorrect or outdated, OST Platform API will return an error.
+OST servers authenticate your API requests using your accounts API keys. If you do not include your key when making an API request or use a key that is incorrect or outdated, OST Platform API will return an error.
 
-:::note Sandbox vs Production
-Every account is provided with separate keys for Sandbox and Production. All API requests exist in either Sandbox or Production. Entities in one environment: users, devices, sessions, and so forth cannot be manipulated by entities in the other.
-:::
-
-**Key pair: API key and API secret**
-* API keys are meant to identify your account with OST, they aren’t secret. In other words, they can safely be published in an Android or iOS app.
+**API key pair: API key and API secret**
+* API keys are meant to identify your account with OST, they aren’t secret
+* In other words, they can be safely published in an Android or iOS app
 * API secret should be kept confidential and only stored on your own servers. Your account's secret API key can perform any API request to OST.
 
+:::note Sandbox vs Production
+Every account is provided with separate keys for Sandbox and Production. Entities in one environment: users, devices, sessions, and so forth cannot be manipulated by entities in the other -- i.e. API requests exist in either Sandbox or Production.
+:::
+
+## Authentication Methods
+| Authentication Method	| Description |
+| --- | --- |
+| Hash-based message authentication (HMAC) | Every API request on OST Platform API Endpoint requires hash-based message authentication. When using the Server Side SDKs, authentication is handled for you. In other languages you have to implement the signature generation by computing the HMAC sha256 digest of the API secret. You can find the details of the server side authentication process here. |
+| Personal Signing	| Wallet SDK provides secure authentication by signing of data from user's mobile device. The SDK ensures a high level of privacy and trust, since the private keys with which it signs data never have to leave the mobile device. You can find the details of the authentication process within wallet SDK here. |
+| Smartphone application	| Within client company's native application where client company demands the user to authenticate before the user authorizes sessions or devices. |
+
 ## Obtaining your API keys
-Your API keys are available in the Developers page in OST Platform. 
+Your API keys are available in the Developers page in OST Platform
+
+![start-your-integration](/platform/docs/assets/dev_page.png)
 
 :::warning
 Use your Sandbox API keys for development and testing and keep them segregated from your Production keys. This will ensure that you don't accidentially manipulate Production data.
@@ -23,10 +33,8 @@ Use your Sandbox API keys for development and testing and keep them segregated f
 
 ## Sandbox and Production Environments
 Sandbox (testnet) and Production (mainnet) function almost identically, with a few necessary differences:
-
 * In Sandbox, either OST-Test (OSTT) or USDC-Test (USDCT) is used to mint Brand Tokens. We grant 10,000 OSTT or USDCT as a stake for you to get started.
 * You can view blockchain data for both environments on [OST VIEW](https://view.ost.com) -- select either Testnet or Mainnet in dropdown there.
-
 
 ## Keep your keys safe
 :::warning Keep your keys safe

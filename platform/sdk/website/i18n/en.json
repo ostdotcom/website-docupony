@@ -9,7 +9,7 @@
         "title": "assets/kit_index"
       },
       "authentication": {
-        "title": "Server Side API Authentication",
+        "title": "Authentication",
         "sidebar_label": "Authentication"
       },
       "getting-started": {
