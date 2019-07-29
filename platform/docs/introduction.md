@@ -13,10 +13,6 @@ OST Platform is the first full-featured “no-code” blockchain platform — a 
 
 Our Server Side SDKs and Mobile Wallet SDKs together enable fast and painless integration into any app or platform, without requiring in-house blockchain expertise — so you can focus on your business and leave the blockchain bits to us.
 
-:::note Internet Grade
-OST Platform is designed for internet-grade transaction volumes and speeds
-:::
-
 ## What Can I do with OST Platform?
 OST Platform enables you to:
 * **Create your own Brand Token**
@@ -25,7 +21,9 @@ OST Platform enables you to:
 * **Impart value to, and empower, end-users through the OST Wallet**
 
 :::note Built on Ethereum
-OST Platform APIs and SDKs enable businesses to build innovative solutions on Ethereum and leverage the benefits of its open, distributed, immutable blockchain.
+OST Platform APIs and SDKs enable businesses to build innovative solutions on Ethereum and leverage the benefits of it's open, distributed, immutable blockchain.
+
+OST Platform is designed for internet-grade transaction volumes and speeds.
 :::
 
 ## "Brand Tokens" Explained

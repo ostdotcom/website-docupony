@@ -4,14 +4,13 @@ title: Technical Guide to Creating a User Wallet
 sidebar_label: Create User Wallet
 ---
 
-1. The ephemeral sessionKeys and owner keys are created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device. The private key in each pair is stored on the device and encrypted with secure enclave (iOS) or keystore (Android).
-2. Creation of the recoveryOwner key pair: The recoveryOwner is created using inputs from the Partner, OST and the user. The user's input is a 6-digit pin. The Partner and OST must provide pseudorandom inputs that are mapped to the user. For the sake of clarity, the Partner's input shall be referred to as the Partner User Secret and OST's input shall be referred to as OST User Salt.
-3. These inputs are put through a cryptographically-sound key generation process (such as Scrypt) to create the private key that will be used as the recoveryOwner for the **DelayedRecoveryModule**.
-4. Generating the recoveryController key: This is a private key generated and stored in OST Platform's servers. _There may be more than one private key in the servers for use by different Partner companies._
-5. Creating the wallet: In order to create a user wallet in a Branded Token economy, the following contracts are deployed:
-    * A **MultiSig** contract. The public addresses from certain keys generated on the user's devices are set as owners for the MultiSig.
-    * A **TokenHolder** contract. The MultiSig controls the TokenHolder contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the TokenHolder.
-    * A **DelayedRecoveryModule** contract. The public addresses of the recoveryOwner and the recoveryController are stored on this contract. A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay.
+To create a user wallet in a Brand Token Economy, the following contracts are deployed
+
+| Contract | Description | 
+| --- | --- | 
+| **MultiSig** | The public addresses from certain keys generated on the user's devices are set as owners for the MultiSig. |
+| **TokenHolder** | The MultiSig controls the **TokenHolder** contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the **TokenHolder**. |
+| **DelayedRecoveryModule** | The public addresses of the recoveryOwner and the recoveryController are stored on this contract. A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay. | 
 
 ## Creating a user's Brand Token wallet on the blockchain 
 It is a 3 step process. [OST Wallet SDK](/platform/docs/wallet/sdk/) provides a number of functions called as workflows.
@@ -25,7 +24,7 @@ Calling `setupDevice` will Generating public-private key pairs. The ephemeral se
 ### Step 3: activateUser
 calling `activateUser ` function of Wallet SDK will deploy smart contracts. Once the contract deployment is complete the `user` is `activated` and can perform transactions.
 
-<hr>
+<hr> 
 
 This guide is divided into two major sections, **Server Side** section and **Mobile App** section. The segregation of **Server Side** logic and **Mobile App** logic will help developers understand the flows individually.
 

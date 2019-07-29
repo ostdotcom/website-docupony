@@ -12,7 +12,7 @@ Every account is provided with separate keys for Sandbox and Production. All API
 
 **Key pair: API key and API secret**
 * API keys are meant to identify your account with OST, they aren’t secret. In other words, they can safely be published in an Android or iOS app.
-* **API secret should be kept confidential and only stored on your own servers. Your account's secret API key can perform any API request to OST.**
+* API secret should be kept confidential and only stored on your own servers. Your account's secret API key can perform any API request to OST.
 
 ## Obtaining your API keys
 Your API keys are available in the Developers page in OST Platform. 
@@ -39,12 +39,12 @@ If an API key is compromised, roll the key in the OST Platform Developers page t
 When rolling an API key, you can choose to delete the old key immediately or allow it to work for 24 hours, providing you with time to make the transition. In either case, the new key can be used immediately.
 
 ## Wallet SDK Authentication
-OST has created Wallet SDKs, providing private key management, authorization and recovery of user wallet services from an Android or iOS app. **With our Mobile Wallet SDK, OST shoulders the burden of creating a wallet for users to own their tokens without requiring them to directly manage their private crypto keys.** The private keys are limited to the device and the person with access to the device. Our Wallet SDKs use“Personal” sign authentication to communicate with our servers.
+OST has created Wallet SDKs, providing private key management, authorization and recovery of user wallet services from an Android or iOS app. With our Mobile Wallet SDK, OST shoulders the burden of creating a wallet for users to own their tokens without requiring them to directly manage their private crypto keys. The private keys are limited to the device and the person with access to the device. Our Wallet SDKs use“Personal” sign authentication to communicate with our servers.
 
 :::note Wallet SDK 'Api Signer' token
 Your app will receive a token created by Wallet SDK which we call **‘Api Signer’**. 
 * Your app can then send the token to an endpoint on your server, where it can be used to register a device on OST Platform server
-* Once the ‘Api Signer’ token is registered, the Wallet SDK can directly start communicating with OST APIs
+* Once the ‘Api Signer’ token is registered, the Wallet SDK can start communicating with OST APIs
 * The Wallet SDK ‘Personal’ signs the API request using ‘Api Signer’
 * OST Platform validates ‘Personal’ signed API calls by recovering the API key address
 :::
