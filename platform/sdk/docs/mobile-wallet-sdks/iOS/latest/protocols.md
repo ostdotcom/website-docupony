@@ -6,7 +6,7 @@ sidebar_label: Protocols
 
 iOS Wallet SDK provides a protocol named `OstWorkflowDelegate` as a massaging contract between app and Wallet SDK. This protocol will have to be implemented by the application before calling the `workflows`.
 
-![walletSDKCommunication](/platform/sdk/docs/assets/communication-ios-sdk.png)
+![walletSDKCommunication](/platform/docs/sdk/assets/communication-ios-sdk.png)
 
 ## Protocol Functions
 

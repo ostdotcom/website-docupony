@@ -158,7 +158,7 @@ Wallet SDK provides `workflows` that can be called by any Android activity class
 
 Communication between app and Wallet SDK happens through callback functions. We need to pass these callback functions in `workflows` provided by SDK. The group of callback functions for communication between app and Wallet SDK is provided in `OstWorkFlowCallback` interface.
 
-![walletSDKCommunication](/platform/sdk/docs/assets/wallet-sdk-communication.png)
+![walletSDKCommunication](/platform/docs/sdk/assets/wallet-sdk-communication.png)
 
 <br>
 
