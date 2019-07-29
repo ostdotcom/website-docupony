@@ -22,7 +22,7 @@ This is a requirements checklist for OST Platform clients to check the readiness
 | | User PIN and Mnemonic phraser are explicitly wiped from App memory (specifically needed for Android) after its purpose and never stored/saved on device or server or any other medium in any form e.g. clear text or encrypted. Check [here](https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md#checking-memory-for-sensitive-data) for more information. |
 | | Sensitive information such as the user's PIN, Mnemonic phrase, recovery passphrase prefix, private keys are not logged or sent to third-party applications in any form (e.g. text, image, screen-grab, crash-report, analytics, etc). |
 | | Recovery flows are supported in the app <ul><li>The recovery UX indicates to the user that the recovery process will take ~12 hours</li><li>The recovery UX informs the user that their previously authorized device will be revoked</li><li>Recovery via PIN is implemented. Other methods of adding devices (i.e. Mnemonics, QR code) are optional</li><li>The Recovery PIN is not be saved/stored by the client</li></ul> |
-| | The SDK is implemented without any modifications as described here: <ul><li>[Android Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/android/)</li><li>[iOS Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/iOS)</li><li>[React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)</li></ul> |
+| | The SDK is implemented without any modifications as described here: <ul><li>[Android Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/android/)</li><li>[iOS Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/iOS/)</li><li>[React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native/)</li></ul> |
 
 
 ## User Experience Checklist

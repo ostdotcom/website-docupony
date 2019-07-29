@@ -49,7 +49,7 @@ The following SDK guides are designed to help you get familiarized with the bare
 * Integrate the Wallet SDK for 
     * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/)
     * [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)
-    * A [React Native Wallet SDK](/platform/docs/sdk/Amobile-wallet-sdks/react-native/) is also available
+    * A [React Native Wallet SDK](/platform/docs/sdk/mobile-wallet-sdks/react-native/) is also available
 * [Create a wallet for a user](/platform/docs/guides/create-user-wallet/)
 * [Send some tokens to the user](/platform/docs/guides/execute-transactions/#executing-company-to-user-transactions)
 * [Test a user initiated transaction](/platform/docs/guides/execute-transactions/#executing-user-intiated-transactions-in-web)

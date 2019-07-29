@@ -86,7 +86,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 
 `passphasePrefix` is a string with minimum length 30 used in the process of creating recovery key for your users. You will have to generate `passphasePrefix` on your server for each user with high randomness. You should keep a mapping between the `passPhrasePrefix` and other user information. Your server should communicate this passphrasePrefix to your app when needed.
 
-[Security Guidelines for generating passphasePrefix](/platform/docs/guides/golive-checklist/#server-side-checklist)
+[Security Guidelines for generating passphasePrefix](/platform/docs/guides/go-live-checklist/#server-side-checklist)
 
 ### Register Device
 Your server should receive the device information from your mobile app. To register the device on OST Platform you can use the devices service provided in the Server Side SDKs.
