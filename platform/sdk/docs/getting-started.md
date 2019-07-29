@@ -4,14 +4,13 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-Robust RESTful APIs and SDKs to integrate your Brand Token into your applications with ease while observing the highest security standards and without encumbering the user experience. No in-house blockchain expertise required!
+Robust RESTful APIs and SDKs to integrate your Brand Token into your applications with ease while observing the highest security standards and without encumbering the user experience. No in-house blockchain expertise required.
 
-**Server-Side APIs and SDKs** provide various endpoints/methods that can be used to design and manage Brand Token Economies. **Mobile Wallet SDKs** enable end-users to interact with Brand Tokens within your existing (mass-market) mobile apps.
+**Server-Side APIs and SDKs** provide various endpoints/methods that can be used to design and manage Brand Token Economies. **Mobile Wallet SDKs** enable end-users to interact with Brand Tokens within existing mobile apps.
 
 ![platform-overview](/platform/docs/assets/Platform-Integrations.jpg)
 
 ![platform-overview](/platform/docs/assets/ost-wallet-recovery.jpg)
-
 
 Server Side SDKs are available in 
 * [PHP](/platform/docs/sdk/server-side-sdks/php/)
@@ -20,12 +19,9 @@ Server Side SDKs are available in
 * [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/)
 
 **Using OST Platform SDKs has a number of advantages**
-1. **Simplicity** 
-<br>The SDKs reduce the complexity of integration by handling multiple authentication scenarios automatically, allowing for a more seamless user experience.
-2. **Performance** 
-<br>Caching, key management and nonce management ensure that end-users’ overall experience is smooth.
-3. **Security** 
-<br>Separating the Server Side API interactions from the Mobile Wallet SDK ensures that private keys are generated and stored securely on the user’s device and not shared across the network.
+* **Simplicity** The SDKs reduce the complexity of integration by handling multiple authentication scenarios automatically, allowing for a more seamless user experience.
+* **Performance** Caching, key management and nonce management ensure that end-users’ overall experience is smooth.
+* **Security** Separating the Server Side API interactions from the Mobile Wallet SDK ensures that private keys are generated and stored securely on the user’s device and not shared across the network.
 
 :::note User own their own Brand Tokens
 The Mobile Wallet SDK provides for users to <u>own</u> their Brand Tokens without requiring them to directly manage their private crypto keys. This essentially means providing private key management, authorization and recovery services in addition to authentication.

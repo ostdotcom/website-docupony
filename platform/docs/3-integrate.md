@@ -13,7 +13,7 @@ sidebar_label: Step 3. Start Integration
 ## a. Access your API and WebHook keys and secrets
 Log-in to OST Platform and go to the **Developers** tab. There you can find your API and Webhook keys and secrets. You need to confirm your email address before getting access.
 
-![create-account](/platform/docs/assets/developers_tab.png)
+![start-your-integration](/platform/docs/assets/dev_page.png)
 
 :::note API Requests
 Every API request has 4 mandatory parameters that must be included: 
