@@ -40,7 +40,7 @@ Check-out our technical implementation guides for an overview of how to approach
 * [ React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native)
 
 ## d. Perform test transactions
-Perform test transactions in Sandbox to ensure everything is working as expected! Check our [Go-Live Checklist](/platform/docs/guides/go-live-checklist/) for a list of things to consider.
+Perform test transactions in Sandbox to ensure everything is working as expected! Check our [Go-Live Checklist](/platform/docs/go-live-checklist/) for a list of things to consider.
 
 :::tip user_ID Map
 When you integrate Brand Tokens into your application, please remember to:
