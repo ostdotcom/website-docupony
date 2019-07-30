@@ -22,10 +22,10 @@
   "homepage": "https://github.com/ostdotcom/website-docupony#readme",
   "dependencies": {
     "@ostdotcom/ost-kyc-sdk-js": "^2.0.1",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-cli": "^2.0.1",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
     "gulp-replace": "^1.0.0",
     "gulp-run-command": "0.0.9",
     "remarkable-admonitions": "^0.2.1"
