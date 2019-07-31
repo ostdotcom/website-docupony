@@ -2,7 +2,8 @@
   "OST Platform": {
     "Introduction": [
       "getting-started",
-      "authentication"
+      "authentication",
+      "apis-in-sdks"
     ],
     
     "Server Sides SDKs": [

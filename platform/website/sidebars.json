@@ -40,7 +40,6 @@
     ],
     
     "Technical Guides": [
-      "guides/introduction",
      "guides/create-user-wallet",
      "guides/create-session",
      "guides/execute-transactions"
