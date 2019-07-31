@@ -10,42 +10,49 @@ This page provides an overview of where each of the API endpoint actions are ava
 
 ## API Endpoints
 
+:::warning `setupDevice` workflow
+* If Get User and Get Token methods are called before `setupDevice` workflow is completed, the methods will return null. Without `setupDevice`, Wallet SDK cannot make API calls. Hence, it is always important to perform `setupDevice` workflow before using other methods of SDK (only exception: `initialize`)
+:::
+
+:::note Internal Status
+Internal implies it is used for the Wallet SDK internal use and is not exposed to app.
+:::
+
 ### Users
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| Users | Create User | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
+| Users | Create User | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
 | | Get User | <span style="color:green"> Available </span> | <span style="color:green"> Available* </span> |
-| | List Users | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Activate User | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Get User's Token Holder | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Get User's Salt | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
+| | List Users | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+| | Activate User | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
+| | Get User's Token Holder | <span style="color:#eb4d4a">N/A</span> | Internal |
+| | Get User's Salt | <span style="color:#eb4d4a">N/A</span> | Internal |
 
-*Set-up Device must have been completed before this API call can be made, otherwise it will return `null`.
 
 ### Devices
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| Devices | Register Device | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
+| Devices | Register Device | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
 | | Get Device | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
-| | List Device | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Authorize Device | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Revoke Device | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Initiate Device Recovery | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Abort Device Recovery | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Get Pending Recovery | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
+| | List Device | <span style="color:green"> Available </span> | Coming Soon! |
+| | Authorize Device | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
+| | Revoke Device | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
+| | Initiate Device Recovery | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
+| | Abort Device Recovery | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
+| | Get Pending Recovery | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
 
 ### Sessions
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| Sessions | Authorize Session | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Get Session | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
-| | List Session | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Logout All Sessions | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
+| Sessions | Authorize Session | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
+| | Get Session | <span style="color:green"> Available </span> | Internal |
+| | List Session | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+| | Logout All Sessions | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
 
 ### Rules
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| Rules | List All Rules | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
+| Rules | List All Rules | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
 
 ### Price Point
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
@@ -55,11 +62,11 @@ This page provides an overview of where each of the API endpoint actions are ava
 ### Transactions
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| Transactions | Execute Company to User Transaction | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Execute User to Company Transaction | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Execute User to User Transaction | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
-| | Get Transaction | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
-| | List Transactions | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
+| Transactions | Execute Company to User Transaction | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+| | Execute User to Company Transaction | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
+| | Execute User to User Transaction | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
+| | Get Transaction | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+| | List Transactions (for current user for Wallet SDK) | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
 
 ### Balance
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
@@ -70,8 +77,6 @@ This page provides an overview of where each of the API endpoint actions are ava
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
 | Token | Get Token | <span style="color:green"> Available </span> | <span style="color:green"> Available* </span> |
-
-*Set-up Device must have been completed before this API call can be made, otherwise it will return `null`.
 
 ### Recovery Owner
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
@@ -86,7 +91,7 @@ This page provides an overview of where each of the API endpoint actions are ava
 ### Device Manager
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| Device Manager | Get Device Manager | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
+| Device Manager | Get Device Manager | <span style="color:green"> Available </span> | Internal |
 
 ### Base Token
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
@@ -96,8 +101,8 @@ This page provides an overview of where each of the API endpoint actions are ava
 ### WebHooks
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| WebHooks | Create WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Get WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | List WebHooks | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Update WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Delete WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
+| WebHooks | Create WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+| | Get WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+| | List WebHooks | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+| | Update WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+| | Delete WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
