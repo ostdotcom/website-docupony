@@ -14,18 +14,20 @@ This page provides an overview of where each of the API endpoint actions are ava
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
 | Users | Create User | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Get User | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
+| | Get User | <span style="color:green"> Available </span> | <span style="color:green"> Available* </span> |
 | | List Users | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
 | | Activate User | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
 | | Get User's Token Holder | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
 | | Get User's Salt | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
 
+*Set-up Device must have been completed before this API call can be made, otherwise it will return `null`.
+
 ### Devices
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| Devices | Create Device | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
+| Devices | Register Device | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
 | | Get Device | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
-| | List Device | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
+| | List Device | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
 | | Authorize Device | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
 | | Revoke Device | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
 | | Initiate Device Recovery | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
@@ -38,7 +40,6 @@ This page provides an overview of where each of the API endpoint actions are ava
 | Sessions | Authorize Session | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
 | | Get Session | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
 | | List Session | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">NA</span> |
-| | Revoke Session | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
 | | Logout All Sessions | <span style="color:#eb4d4a">NA</span> | <span style="color:green"> Available </span> |
 
 ### Rules
@@ -68,7 +69,9 @@ This page provides an overview of where each of the API endpoint actions are ava
 ### Token
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
 |---|---|---|---|
-| Token | Get Token | <span style="color:green"> Available </span> | <span style="color:green"> Available </span> |
+| Token | Get Token | <span style="color:green"> Available </span> | <span style="color:green"> Available* </span> |
+
+*Set-up Device must have been completed before this API call can be made, otherwise it will return `null`.
 
 ### Recovery Owner
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
