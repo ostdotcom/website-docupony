@@ -1,7 +1,7 @@
 ---
 id: ux
 title: An Example of What's Possible with OST Platform
-sidebar_label: Brand Token Example
+sidebar_label: Sample Use Case
 ---
 
 In this guide, we use an example of a fictitious restaurant recommendation application, “Spoon” to illustrate how a Brand could use the Wallet SDK to integrate the functionality of a user-friendly non-custodial Brand Token wallet into their application. The UX case study aims to serve as a reference for Brand developers and to help create a faster and smoother implementation of the Wallet SDK with the application.
