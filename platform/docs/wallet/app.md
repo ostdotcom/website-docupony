@@ -4,25 +4,25 @@ title: Introduction to the OST Wallet App
 sidebar_label: Wallet App
 ---
 
-The OST Wallet App was built with the OST Wallet SDK to showcase what's possible with OST Platform through using the OST Wallet SDK. The current version of the app lets you connect your Brand Token to the app, invite users and send and receive tokens. Users can also explore wallet features and settings enabled through the Wallet SDK.
+The OST Wallet App was built with the OST Wallet SDK to showcase what's possible with OST Platform through using the OST Wallet SDK. The current version of the app lets you connect your Token to the app, invite users and send and receive tokens. Users can also explore wallet features and settings enabled through the Wallet SDK.
 
-## Connect Your Brand Token to OST Wallet App
+## Connect Your Token to OST Wallet App
 
 :::note iPhone users and TestFlight 
 iPhone users need to first download the TestFlight App from Apple to download the OST Wallet App
 :::
 
-**The OST Wallet simulates integrations for your Brand Token in OST Platform Sandbox. To use the OST Wallet App follow these steps:**
+**The OST Wallet simulates integrations for your Token in OST Platform Sandbox. To use the OST Wallet App follow these steps:**
 
 1. Log in to [OST Platfrom](https://platform.ost.com/login)
 
-2. If you haven't already set-up your Brand Token, first follow the [Create Token guide](/platform/docs/1-create/)
+2. If you haven't already set-up your Token, first follow the [Create Token guide](/platform/docs/1-create/)
 
-3. Once you mint some Brand Tokens in Sandbox, the `Wallet` tab will be activated in the main menu
+3. Once you mint some Tokens in Sandbox, the `Wallet` tab will be activated in the main menu
 ![ConnectWalletImage](/platform/docs/assets/Wallet%20/SetupWallet.png)
 
-4. Select `Connect` to add your Brand Token Economy to the OST Wallet App
-    * You will receive an email with instructions to download the app and join your Brand Token Economy
+4. Select `Connect` to add your Token to the OST Wallet App
+    * You will receive an email with instructions to download the app
 
 5. Next, invite colleagues and start sending and receiving tokens to each other!
 ![InviteUsers](/platform/docs/assets/Wallet%20/InviteUsers.png)

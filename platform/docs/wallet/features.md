@@ -7,17 +7,17 @@ sidebar_label: Features
 OST Wallet SDK comes packed with useful featuers designed for mainstream users. This page gives a descriptive account of each of the features.
 
 ## Non-Custodial 
-**Users Hold Their Private Keys.** The OST Wallet SDK supports non-custodial wallets, where users hold the keys and can transact with Brand Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android).
+**Users Hold Their Private Keys.** The OST Wallet SDK supports non-custodial wallets, where users hold the keys and can transact with Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android).
 
 ## Multi-Device
-The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a **6 digit PIN**), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Brand Tokens and authorize a new device.
+The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a **6 digit PIN**), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Tokens and authorize a new device.
 
 The user input ---assumed to be a **6 digit PIN**--- is also used to guard access to sensitive operations such as authorizing devices, viewing the mnemonic phrase, etc.  
 
 ![ERDUserSetupDiagram](/platform/docs/assets/ERD_user_setup.jpg)
 
 ## Ephemeral Session Keys
-In the context of Brand Tokens used in OST's client economies, the public address is represented by a **TokenHolder** contract. The configured owner of a **TokenHolder** contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend per transaction.
+In the context of Tokens used in OST's client economies, the public address is represented by a **TokenHolder** contract. The configured owner of a **TokenHolder** contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend per transaction.
 
 :::note Ephemeral Session Keys
 1. Ephemeral sessionKeys obviate the need for users to sign every transaction within the application thereby creating a more seamless user experience
@@ -38,7 +38,7 @@ A multi-signature contract, the **MultiSig**, is configured as the owner of the 
 ## 6-digit User PIN
 **One of the core innovations of OST Wallet** is that is enables users to use wallets with only setting **6 digit PIN**s for recovery. Normally a **6 digit PIN**, on its own, does not provide enough entropy to be secure. The OST Wallet SDK achieves security by combining inputs from the user (PIN), an encrypted secret from the company, and from OST. The concatenated string undergoes a transformation through a cryptographically secure process to generate a recoveryKey that can be used to request recovery using a smart-contract. The recovery smart contract (known as the **DelayedRecoveryModule**) enforces a 12 hour waiting period during which the user can abort the recovery request using any of their authorized devices, further protecting the user from malicious recovery requests. 
 
-(Optionally OST clients can also enable experiences for their users to recover access to their Brand Tokens from a second device and/or recover from 12 written words, however, these are optional implementations.)
+(Optionally OST clients can also enable experiences for their users to recover access to their Tokens from a second device and/or recover from 12 written words, however, these are optional implementations.)
 
 **We encourage you to learn more about OST’s innovative wallet recovery model by reviewing the detailed specifications and SDK.**
 

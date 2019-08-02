@@ -34,11 +34,11 @@ Warning
 
 1. [Register on OST Platform](https://platform.ost.com/sign-up)
 
-2. Create your unique Brand Token
+2. Create your unique Token
 
-3. Launch your Brand Token in the OST Wallet app and explore the OST Wallet SDK
+3. Launch your Token in the OST Wallet app and explore the OST Wallet SDK
 
-4. Design your token economy (earn, spend, and redeem actions) and corresponding mobile and web screens
+4. Design your token ecosystem (earn, spend, and redeem actions) and corresponding mobile and web screens
 
 5. Get get access to your [API keys and API secret](https://platform.ost.com/testnet/developer)
 
@@ -48,11 +48,11 @@ Warning
 
 8. Start your development work and integration with OST Platform SDKs! First, test in our Sandbox then request to move to Production. We recommend following these steps to get started:
     * [Create a wallet for a user](/platform/docs/1-create)
-    * [Send Brand Tokens to your users](/platform/docs/guides/execute-transactions/#executing-company-to-user-transactions)
+    * [Send Tokens to your users](/platform/docs/guides/execute-transactions/#executing-company-to-user-transactions)
     * [Test a user initiated transaction](/platform/docs/guides/execute-transactions/#executing-user-intiated-transactions-in-web)
 
 
-Stake and Mint is the process of first **staking** a value token on Ethereum mainnet and then using that stake to **mint** your Brand Tokens. Your Brand Tokens are backed by what is staked. This gives them value and differentiates them from traditional rewards points.
+Stake and Mint is the process of first **staking** a value token on Ethereum mainnet and then using that stake to **mint** your Tokens. Your Tokens are backed by what is staked. This gives them value and differentiates them from traditional rewards points.
 
 ---
 id: distribute-tokens
@@ -60,7 +60,7 @@ title: Distribute Tokens to Your Users
 sidebar_label: Distribute Tokens
 ---
 
-You can distribute tokens to your end users through company-to-user transactions. To kick-start an economy and incentivise new users, companies often airdrop tokens to users after they activate their wallet.
+You can distribute tokens to your end users through company-to-user transactions. To kick-start an token ecosystem and incentivise new users, companies often airdrop tokens to users after they activate their wallet.
 
 :::note 
 If you build a product  or solution that requires third parties to purchase tokens from you, those tokens can be distributed through traditional means e.g. like a prepaid phone card, sold online.
@@ -116,7 +116,7 @@ Daan van Tongeren  @r how to move forward?
 2. Creation of the recoveryOwner key pair: The recoveryOwner is created using inputs from the Partner, OST and the user. The user's input is a 6-digit pin. The Partner and OST must provide pseudorandom inputs that are mapped to the user. For the sake of clarity, the Partner's input shall be referred to as the Partner User Secret and OST's input shall be referred to as OST User Salt.
 3. These inputs are put through a cryptographically-sound key generation process (such as Scrypt) to create the private key that will be used as the recoveryOwner for the **DelayedRecoveryModule**.
 4. Generating the recoveryController key: This is a private key generated and stored in OST Platform's servers. _There may be more than one private key in the servers for use by different Partner companies._
-5. Creating the wallet: In order to create a user wallet in a Branded Token economy, the following contracts are deployed:
+5. Creating the wallet: In order to create a user wallet in a, the following contracts are deployed:
     * A **MultiSig** contract. The public addresses from certain keys generated on the user's devices are set as owners for the MultiSig.
     * A **TokenHolder** contract. The MultiSig controls the TokenHolder contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the TokenHolder.
     * A **DelayedRecoveryModule** contract. The public addresses of the recoveryOwner and the recoveryController are stored on this contract. A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay.

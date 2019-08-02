@@ -67,7 +67,7 @@ void setupDevice( String userId,
 | Parameter | Description |
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform  |
-| **tokenId** <br> **String**	| Unique identifier for the token economy |
+| **tokenId** <br> **String**	| Unique identifier for the token |
 | **workFlowCallback** <br> **OstWorkFlowCallback**	| An object that implements the callback functions available in `OstWorkFlowCallback` interface. These callback functions are needed for communication between app and Wallet SDK. Implement `flowComplete` and `flowInterrupt` callback functions to get the workflow status. Details about other callback function can be found in [OstWorkFlowCallback interface reference](/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/).<br> This should implement `registerDevice` function. `registerDevice` will be called during the execution of this workflow.  |
 
 
@@ -154,7 +154,7 @@ void executeTransaction(String userId,
 | Parameter | Description |
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform |
-| **tokenId** <br> **String**	| Unique identifier for the token economy |
+| **tokenId** <br> **String**	| Unique identifier for the token |
 | ****TokenHolder**Addresses** <br> **List**	|  **TokenHolder**  addresses of amount receiver |
 | **amounts** <br> **List**	| Amount to be transferred in atto.  |
 | **ruleName** <br> **String**	|  Rule name to be executed.  |
@@ -204,7 +204,7 @@ This workflow can be used to change the PIN.
 
 
 ### 10. initiateDeviceRecovery
-A user can control their Brand Tokens using their authorized devices. If they lose their authorized device, they can recover access to their Brand Tokens by authorizing a new device by initiating the recovery process.
+A user can control their Tokens using their authorized devices. If they lose their authorized device, they can recover access to their Tokens by authorizing a new device by initiating the recovery process.
 
 ```java
 void initiateDeviceRecovery(String userId, 

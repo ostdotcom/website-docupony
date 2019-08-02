@@ -50,6 +50,6 @@ kyc_sdk = ost_kyc_sdk_python.Services({
 |--------------------|--------|---------|
 |   API key          |  string      | You can find this key in settings of KYC dashboard        |
 |   API Secret key   |  string      | You can find this key in settings of KYC dashboard        |
-|   API base URL     |  string      | For sandbox environment base URL will be: `https://kyc.sandboxost.com`     <br><br>   For production environment base URL will be: `https://kyc.ost.com`|
+|   API base URL     |  string      | For Sandbox environment base URL will be: `https://kyc.sandboxost.com`     <br><br>   For Production environment base URL will be: `https://kyc.ost.com`|
 |   Config           |  Dict      |  You can pass timeout with key as "timeout" and value as number (Will be considered as seconds) for http requests that SDK will make Ex: `config: {"timeout": 10}`    |
 

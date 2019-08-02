@@ -4,7 +4,7 @@ title: Technical Guide to Creating a User Wallet
 sidebar_label: Create User Wallet
 ---
 
-To create a user wallet in a Brand Token Economy, the following contracts are deployed
+To create a user wallet in a Token Economy, the following contracts are deployed
 
 | Contract | Description | 
 | --- | --- | 
@@ -12,7 +12,7 @@ To create a user wallet in a Brand Token Economy, the following contracts are de
 | **TokenHolder** | The MultiSig controls the **TokenHolder** contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the **TokenHolder**. |
 | **DelayedRecoveryModule** | The public addresses of the recoveryOwner and the recoveryController are stored on this contract. A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay. | 
 
-## Creating a user's Brand Token wallet on the blockchain 
+## Creating a user's Token wallet on the blockchain 
 It is a 3 step process. [OST Wallet SDK](/platform/docs/wallet/sdk/) provides a number of functions called as workflows.
 
 ### Step 1: init
@@ -29,7 +29,7 @@ calling `activateUser ` function of Wallet SDK will deploy smart contracts. Once
 This guide is divided into two major sections, **Server Side** section and **Mobile App** section. The segregation of **Server Side** logic and **Mobile App** logic will help developers understand the flows individually.
 
 ## Prerequisites
-* Make sure you have created your Brand Token via [OST Platform](https://platform.ost.com)
+* Make sure you have created your Token via [OST Platform](https://platform.ost.com)
     * This [token creation](/platform/docs/1-create/) guide walks you through the token creation flow 
     * Go to [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to API key and API secret
 * Integrate one of the available OST Platform Server Side SDKs into your application 
@@ -201,7 +201,7 @@ To activate the user you will have to call **activateUser** workflow which requi
 
 4. expiryAfterInSecs: A  **TokenHolder** contract that holds a users tokens is one of three contracts that are deployed on blockchain during user activation.  **TokenHolder** contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each users session key as well as the spending limit. It is recommended to set expiration time to 2 weeks, however, you can choose more or less time.
 
-5. spendingLimitinWei: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
+5. spendingLimitinWei: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Token. 1 Token = 10^18 atto Token.
 
 
 #### Getting passphrasePrefix from your server
@@ -239,7 +239,7 @@ UserPassphrase UserPassphrase = new UserPassphrase(userId, pin, passphrasePrefix
 :::
 
 :::note Per Transaction Spending Limit
-**spendingLimitinWei** Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Brand Token. 1 Brand Token = 10^18 atto Brand Token.
+**spendingLimitinWei** Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Token. 1 Token = 10^18 atto Token.
 :::
 
 #### Finally calling `activateUser` workflow

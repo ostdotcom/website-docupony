@@ -19,13 +19,13 @@ atto is the smallest denomination used in OST Platform. OST Platform APIs and SD
 
 | Conversion | Example | 
 | --- | --- |
-| `Brand Token` --> `atto Brand Token`, multiply amount of Brand Token by 10^18 | 10 Brand Token = 10*10^18 atto Brand Token |
+| `Token` --> `atto Token`, multiply amount of Token by 10^18 | 10 Token = 10*10^18 atto Token |
 | `USD` --> `atto USD`, multiply amount of USD by 10^18 | 25 USD = 25*10^18 atto USD |
 | `OST` --> `atto OST`, multiply amount of OST by 10^18 | 76 OST = 76*10^18 atto OST |
 
 
 ## Executing a Token Transfer
-Each transaction is defined by a **Rules** Contract. OST Platform, through the OpenST Protocol, includes a ****Rules** Contract and **TokenRules** Contract to enable you to define the behavior of token transfers and design custom rules that align with your goals. OST has written one **Rules** Contract, the **PricerRule** Contract, for you to use. This allows you (and your end-users) to send an amount in fiat (EUR, GBP, or USD). The equivalent amount of Brand Tokens is calculated and sent.
+Each transaction is defined by a **Rules** Contract. OST Platform, through the OpenST Protocol, includes a ****Rules** Contract and **TokenRules** Contract to enable you to define the behavior of token transfers and design custom rules that align with your goals. OST has written one **Rules** Contract, the **PricerRule** Contract, for you to use. This allows you (and your end-users) to send an amount in fiat (EUR, GBP, or USD). The equivalent amount of Tokens is calculated and sent.
 
 ![TransactionsExplained2](/platform/docs/assets/transactions_explained_2.png)
 
@@ -35,18 +35,18 @@ You can choose to get information about rules by sending a GET to `/rules` endpo
 
 The sections below lists the two rules deployed with the rule names and rule parameters which are to be sent as input parameter for executing a transaction.
 
-## Direct Transfers (Transfers in Brand Token amounts)
-`directTransfers` is a method that enables a user or a company to directly transfer Brand Tokens to a beneficiary. 
+## Direct Transfers (Transfers in Token amounts)
+`directTransfers` is a method that enables a user or a company to directly transfer Tokens to a beneficiary. 
 
 ### `directTransfers` Method Parameters
 
 | Parameter Name | Parameter Description |
 |---|---|
 | **transferToAddresses** <br> **Array of Address**   | Array of receivers **TokenHolder**  addresses |
-| **transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto Brand Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address-1` will get the `amount-1`, `address-2` will get the `amount-2` and `address-3` will get the `amount-3` |
+| **transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address-1` will get the `amount-1`, `address-2` will get the `amount-2` and `address-3` will get the `amount-3` |
 
 ## **PricerRule** Transfers (Transfers in Fiat amounts)
-`pay` OR " **PricerRule**" transfers can be used to transfer an amount of Brand Tokens based on fiat amount (in EUR, GBP or USD). You will have to specify the fiat currency code and the amount in fiat currency. This amount will then be converted into Brand Token amount and the Brand Tokens transferred.
+`pay` OR " **PricerRule**" transfers can be used to transfer an amount of Tokens based on fiat amount (in EUR, GBP or USD). You will have to specify the fiat currency code and the amount in fiat currency. This amount will then be converted into Token amount and the Tokens transferred.
 
 ### `pay` Method Parameters
 | Parameter Name | Parameter Description |
@@ -73,7 +73,7 @@ The QRCode data for executing transactions via web applications should be a JSON
 |   | **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer` |
 |   | **ads**  <br> **Array** | Array of receiver's  **TokenHolder**  Addresses |
 |   | **ams**  <br> **Array** | Array of amounts in atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in atto.  |
-|   | **tid**  <br> **String** | token_id of your Brand Token |
+|   | **tid**  <br> **String** | token_id of your Token |
 
 ### Example JSON data for QRCode
 
@@ -90,7 +90,7 @@ The QRCode data for executing transactions via web applications should be a JSON
         "rn": "Direct Transfer", // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  **TokenHolder**  Addresses
         "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
-        "tid": "123"     // token_id of your Brand Token
+        "tid": "123"     // token_id of your Token
     }
 }
 ```
@@ -102,9 +102,9 @@ Please refer to API References for details on the [input parameters of execute c
 
 Sample code for executing a `directTransfer` is shown below.
 
-Brand token to transfer: 10 Brand Token
+Brand token to transfer: 10 Token
 
-Converting `Brand token` to `atto Brand Token` = `10 *10^18` = `10^19` atto Brand Token
+Converting `Brand token` to `atto Token` = `10 *10^18` = `10^19` atto Token
 
 ```php
 <?php
@@ -121,7 +121,7 @@ $transactionService = $ostObj->services->transactions;
  
 $executeParams = array();
  
-// Direct Brand Token Transfer
+// Direct Token Transfer
 
 $executeParams = array(
     'user_id' => '724ed66c-8a0a-477e-b303-b0486e2a3797',
@@ -137,7 +137,7 @@ $executeParams = array(
             array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496"),
             
             // Second array is of receiver's amounts in atto 
-            // (10 Brand Token = 10^19 atto)
+            // (10 Token = 10^19 atto)
             array("10000000000000000000")
         );
     )),
@@ -183,7 +183,7 @@ To generate QRCode with transaction data follow the steps explained in the [abov
         "rn": "Direct Transfer", // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  **TokenHolder**  Addresses
         "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
-        "tid": "123"     // token_id of your Brand Token
+        "tid": "123"     // token_id of your Token
     }
 }
 ```

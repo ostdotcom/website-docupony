@@ -14,7 +14,7 @@ There are two different types of transactions possible, company to user and user
 
 
 Each transaction is defined by a **Rules** contract. OST provides two **Rules** contracts out of the box:
-* `directTransfer`: Transfer Brand Tokens
+* `directTransfer`: Transfer Tokens
 * `pay`: Transfer fiat value
 
 ![TransactionsExplained1]( /platform/docs/assets/transactions_explained_2.png)

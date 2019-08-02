@@ -9,7 +9,7 @@ The Java SDK is a Java wrapper for the [OST Platform API](/platform/docs/api). T
 You can also view the source code on [GitHub](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
 
 ## 1. Create Token On OST Platform
-Follow the [Create Brand Token guide](/platform/docs/1-create/) to complete token setup.
+Follow the [Create Token guide](/platform/docs/1-create/) to complete token setup.
 
 ## 2. Get Credentials
 Once token setup is complete, go to the [Developers page](https://platform.ost.com/testnet/developer) inside OST Platform dashboard to get access to your API key and API secret.
@@ -62,7 +62,7 @@ To build the Jar file of SDK from source follow these steps:
 **Source code:** [Java SDK GitHub Repo](https://github.com/ostdotcom/ost-sdk-java/tree/v2.0.0)
 
 ## 4. Get Token Information
-To get the information about your Brand Token, you will have to use `tokens` service provided by Java SDK.
+To get the information about your Token, you will have to use `tokens` service provided by Java SDK.
 
 ### Instantiating the SDK object
 Before using any service of SDK, you will have to provide API key and API secret to instantiate new SDK object.
@@ -157,7 +157,7 @@ You have completed your first API call from Server Side SDK
 :::
 
 ## 5. Register User
-Next, you can set-up your users in OST Platform. User objects in OST Platform do not have any personal information about your application users. OST Platform deploys smart contracts for every user in the economy and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4).
+Next, you can set-up your users in OST Platform. User objects in OST Platform do not have any personal information about your application users. OST Platform deploys smart contracts for every user and the user object holds the addresses of smart contracts and can be identified by a unique identifier (uuid v4).
 
 :::note
 Create users from your servers. You will be responsible for maintaining the mapping between your application users and OST Platform users.

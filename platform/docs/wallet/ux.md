@@ -4,15 +4,15 @@ title: Create a Seamless User Experience using the OST Wallet SDK
 sidebar_label: Wallet UX Guidelines
 ---
 
-In this guide, we use an example of a fictitious restaurant recommendation application, “Spoon” to illustrate how a Brand could use the Wallet SDK to integrate the functionality of a user-friendly non-custodial Brand Token wallet into their application. The UX case study aims to serve as a reference for Brand developers and to help create a faster and smoother implementation of the Wallet SDK with the application.
+In this guide, we use an example of a fictitious restaurant recommendation application, “Spoon” to illustrate how a Brand could use the Wallet SDK to integrate the functionality of a user-friendly non-custodial Token wallet into their application. The UX case study aims to serve as a reference for Brand developers and to help create a faster and smoother implementation of the Wallet SDK with the application.
 
 We’ll be using user stories around sharing favorite local food experiences to illustrate the key concepts of the Wallet SDK implementation and to present some basic ideas for Tokenization.
 
 ## Workflow: Introduction and App Update
 
-The goal of the splash screen is to introduce the user to Brand Tokens. Here, a Brand can introduce their Token economy and its benefits. 
+The goal of the splash screen is to introduce end users to your token and its benefits.
 
-The CTA on this page is for the user to update the App to the latest version which has the OST Wallet SDK integrated. (Note: Your users will be required to update the app from the app store before they can access the Brand Token wallet.)
+The CTA on this page is for the user to update the App to the latest version which has the OST Wallet SDK integrated. (Note: Your users will be required to update the app from the app store before they can access the Token wallet.)
 
 ![Update](/platform/docs/assets/wallet-ux-guide/0-Onboarding.jpg)
 
@@ -23,9 +23,9 @@ The CTA on this page is for the user to update the App to the latest version whi
 
 ### 1. Create a Wallet 
 
-A user needs a Brand Token wallet to participate in Brand Token economy.
+A user needs a Token wallet to participate in
 
-To create a Brand Token Wallet, the user needs to enter a PIN. Setting a PIN helps emphasize to your users the importance of securing their Brand Tokens. The PIN must be at least 6-digits. The same **6 digit PIN** will also be used to recover the Wallet using OST’s Recovery from Smart Contract method which eliminates the need for users to write down a 12-word seed phrase or private key.  We describe the recovery process in more detail below.
+To create a Token Wallet, the user needs to enter a PIN. Setting a PIN helps emphasize to your users the importance of securing their Tokens. The PIN must be at least 6-digits. The same **6 digit PIN** will also be used to recover the Wallet using OST’s Recovery from Smart Contract method which eliminates the need for users to write down a 12-word seed phrase or private key.  We describe the recovery process in more detail below.
 
 :::warning User Authentication
 Your users do not need to enter a PIN to create their wallet until they visit the wallet section of your app. Likewise, the user does not need to re-enter their Wallet PIN to use other parts of your app. You can decide when and where in your app that you want to first introduce the Wallet.
@@ -54,7 +54,7 @@ Once biometrics are implemented, the user can authorize new Sessions with her bi
 
 ### 4. Drive engagement with earning actions 
 
-Building a Brand economy lets you reward your users for engaging with your application and adding value to your application. 
+Building a token ecosystem lets you reward your users for engaging with your application and adding value to your application. 
 
 ![image](/platform/docs/assets/wallet-ux-guide/4-Drive-Engagement.jpg)
 
@@ -67,7 +67,7 @@ To keep your users engaged and strengthen the perception of your Brand, use spen
 
 <br>
 
-If your token economy has a web app, spend actions can be authorized by using the Mobile Wallet QR.  
+If your company has a web app, spend actions can be authorized by using the Mobile Wallet QR.  
 The suggested way to generate QR codes is to use a library that generates QR codes on the machine without making any external requests or without connecting to any third-party services. Here are a few examples of such libraries in [PHP](https://github.com/endroid/qr-code) , [NodeJS/Javascript](https://github.com/neocotic/qrious) and [Java/Android](https://github.com/zxing/zxing) 
 
 ![image](/platform/docs/assets/wallet-ux-guide/5-WebStore.jpg)
@@ -78,7 +78,7 @@ An alternate way of performing transactions in web is via push notification. You
 
 ### 6. Balances and Activity history
 
-The Balance and Ledger APIs allow the user to look at their current Brand Token balance and transaction history. Whenever the user views their balances, we recommend showing them how to earn more tokens or options for how they could spend their tokens.
+The Balance and Ledger APIs allow the user to look at their current Token balance and transaction history. Whenever the user views their balances, we recommend showing them how to earn more tokens or options for how they could spend their tokens.
 
 :::warning User Authentication
 The user does not need to be authorized for a Wallet Session to view Balance and Ledger

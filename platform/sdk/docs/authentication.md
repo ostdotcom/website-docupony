@@ -33,7 +33,7 @@ Use your Sandbox API keys for development and testing and keep them segregated f
 
 ## Sandbox and Production Environments
 Sandbox (testnet) and Production (mainnet) function almost identically, with a few necessary differences:
-* In Sandbox, either OST-Test (OSTT) or USDC-Test (USDCT) is used to mint Brand Tokens. We grant 10,000 OSTT or USDCT as a stake for you to get started.
+* In Sandbox, either OST-Test (OSTT) or USDC-Test (USDCT) is used to mint Tokens. We grant 10,000 OSTT or USDCT as a stake for you to get started.
 * You can view blockchain data for both environments on [OST VIEW](https://view.ost.com) -- select either Testnet or Mainnet in dropdown there.
 
 ## Keep your keys safe

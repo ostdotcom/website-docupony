@@ -4,7 +4,7 @@ title: Introduction to OST Wallet
 sidebar_label: Introduction
 ---
 
-OST Wallet is a non-custodial wallet solution for Brand Tokens minted on OST Platform. It is made available through our Mobile Wallet SDKs and can be easily incorporated into any mobile app.
+OST Wallet is a non-custodial wallet solution for Tokens minted on OST Platform. It is made available through our Mobile Wallet SDKs and can be easily incorporated into any mobile app.
 
 :::note Crypto Wallet Definition
 A cryptocurrency wallet is defined as something that stores public and private keys that can be used to receive or send cryptocurrency. 
@@ -21,10 +21,10 @@ The term "wallet" is often overloaded. It may be any one of the following:
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
 * [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)
 
-OST Wallet is a **core component** of OST Platform. It enables users to take ownership of their tokens as well as participate in a Brand Token Economy and sign for user initiated transactions.
+OST Wallet is a **core component** of OST Platform. It enables users to take ownership of their tokens and to sign for user initiated transactions.
 
 :::note OST Wallet SDK is required to use OST Platform
-You must have a mobile app and integrate the OST Wallet SDK to use OST Platform. OST Wallet SDK relies on core components (hardware) of a users mobile device and is required for a user to participate in a Brand Token Economy.
+You must have a mobile app and integrate the OST Wallet SDK to use OST Platform. OST Wallet SDK relies on core components (hardware) of a users mobile device and is required for a user to sign token transactions.
 :::
 
 ## OST Wallet SDK Features

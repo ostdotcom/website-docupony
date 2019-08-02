@@ -43,7 +43,7 @@ Check-out our technical implementation guides for an overview of how to approach
 Perform test transactions in Sandbox to ensure everything is working as expected! Check our [Go-Live Checklist](/platform/docs/go-live-checklist/) for a list of things to consider.
 
 :::tip user_ID Map
-When you integrate Brand Tokens into your application, please remember to:
+When you integrate Tokens into your application, please remember to:
  * Create and maintain a map of OST Platform user_id to the user's profile on their app
  * [Generate and safely store a 30 character "secret" for each user](/platform/docs/guides/create-user-wallet/#generate-passphaseprefix). This "secret" is used for the recovery and thus must be unique to each user.
 :::
@@ -52,5 +52,5 @@ When you integrate Brand Tokens into your application, please remember to:
 After you have conducted tests in Sandbox and have a better feel for the finalise these steps before moving to Step 4
 * **Token name and identifier** (in Production, does not need to match Sandbox)
 * **What to stake** and how much to stake to being with
-* **Conversion rate:** Brand Token to underlying stake / value token
+* **Conversion rate:** Token to underlying stake / value token
 * **Mobile and web UX and design and implementation**

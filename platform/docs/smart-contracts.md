@@ -45,5 +45,5 @@ As a result, owner keys do not need to the hold base currency to pay for gas.
 | --- | --- |
 | User | When an end-user registers on a client app a **TokenHolder** contract and a **DeviceManager** (**MultiSig**) contract is created and deployed by the client via OST Platform APIs/SDKs. | 
 | User Wallet | Activating a user wallet involves the deployment and registration of the following contracts: **TokenHolder**, **MultiSig**, **DelayedRecoveryModule** |
-| Brand Token Economy | OST writes and deploys the **TokenRules** contract for the Economy and writes a **PricerRule** contract and registers the rule with the **TokenRules** contract on the auxiliary sidechain. |
+| Token | OST writes and deploys the **TokenRules** contract for the Economy and writes a **PricerRule** contract and registers the rule with the **TokenRules** contract on the auxiliary sidechain. |
 | Execute Transaction | Users can spend tokens by signing transactions using private keys on their registered mobile device. | 

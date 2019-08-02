@@ -9,7 +9,7 @@ OST React Native Wallet SDK is the official OST Wallet SDK for React Native plat
 **The OST React Native Wallet SDK:**
 * Safely generates and stores keys on the user's mobile device
 * Signs ethereum transactions and data as defined by contracts using EIP-1077
-* Enables users to recover access to their Brand Tokens in case the user loses their authorized device
+* Enables users to recover access to their Tokens in case the user loses their authorized device
 
 ## Installing React Native SDK
 

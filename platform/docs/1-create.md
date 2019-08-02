@@ -1,6 +1,6 @@
 ---
 id: 1-create
-title: Create Your Brand Token in Sandbox and Explore OST Wallet App
+title: Create Your Token in Sandbox and Explore OST Wallet App
 sidebar_label: Step 1. Create Token
 ---
 
@@ -25,7 +25,7 @@ To enhance your experience on OST Platform, we ask you to provide your company n
 
 
 ## b. Choose token name and identifier
-During token setup you will set Token Name and select a Token Identifier for your Brand Token. You also need to set the conversion rate between your Brand Token and the staked value token (e.g. OST Token, USDC).
+During token setup you will set Token Name and select a Token Identifier for your Token. You also need to set the conversion rate between your Token and the staked value token (e.g. OST Token, USDC).
 
 ![create-account](/platform/docs/assets/token-setup/token_setup.png)
 
@@ -35,7 +35,7 @@ During token setup you will set Token Name and select a Token Identifier for you
 :::
 
 :::warning Conversion Rate
-We recommend using the default conversion rate in Sandbox i.e. 1 token = 1 OST. You can then make a more informed decision when setting-up your Brand Token in Production. If you need help setting the conversion rate, you can reach out to us at support@ost.com.
+We recommend using the default conversion rate in Sandbox i.e. 1 token = 1 OST. You can then make a more informed decision when setting-up your Token in Production. If you need help setting the conversion rate, you can reach out to us at support@ost.com.
 
 Things to consider when setting the conversion rate:
 * Fiat value of each token (this will be subject to change if you stake a non-stablecoin)
@@ -53,7 +53,7 @@ MetaMask is required to participate in OST Platform in Production. **You can pro
 
 * MetaMask provides a browser plugin to create an Etheruem address and wallet. You can opt to use your own Ethereum address if you have one. The address that you use will be the Account Owner Address.
 * The MetaMask wallet is used to sign for the token creation transactions on Ethereum ropsten test network.
-* In OST Platform Sandbox, you will receive an initial allotment / stake of USDC-Test or USDC-Test. You can use this stake to Mint your Brand Tokens in Sandbox.
+* In OST Platform Sandbox, you will receive an initial allotment / stake of USDC-Test or USDC-Test. You can use this stake to Mint your Tokens in Sandbox.
 * In Production, you can choose to associate a hardware wallet address using MetaMask’s interface (two hardware wallets are supported: Trezor and Ledger).
 
 ![Two-Factor Authentication](/platform/docs/assets/token-setup/install_metamask.png)
@@ -61,7 +61,7 @@ MetaMask is required to participate in OST Platform in Production. **You can pro
 ![create-account](/platform/docs/assets/token-setup/account_setup.png)
 
 :::warning Account Owner Address
-* This is an important address. If you lose the associated private key, you will lose access to Brand Tokens you mint.
+* This is an important address. If you lose the associated private key, you will lose access to Tokens you mint.
 * You associate the owner address with OST Platform by doing a personal signature. This signature is to ensure you as a user are the owner of the MetaMask account and it's real.
 :::
 
@@ -84,7 +84,7 @@ Once you associate the owner address the token set-up process starts. This proce
 | 11 | 'Setting up Company Token Holder' |
 
 ## d. Stake and mint
-Once you have staked something, the minting process is as simple as setting the number of Brand Tokens to mint and confirming the mint request. 
+Once you have staked something, the minting process is as simple as setting the number of Tokens to mint and confirming the mint request. 
 
 ![create-account](/platform/docs/assets/token-setup/mint_tokens.png)
 
@@ -101,11 +101,11 @@ Once you have staked something, the minting process is as simple as setting the 
 ## e. Connect to the OST Wallet App (Optional)
 The OST Wallet App provides a view into the OST Wallet SDK. Simply log-in to OST Platform, click on the **Wallet** tab and select Connect. 
 
-Check out our [Connect Your Brand Token to the OST Wallet App](/platform/docs/wallet/app/#connect-your-brand-token-to-ost-wallet-app) guide for more detailed instructions.
+Check out our [Connect Your Token to the OST Wallet App](/platform/docs/wallet/app/#connect-your-brand-token-to-ost-wallet-app) guide for more detailed instructions.
 
 <hr>
 
-## Watch a Short Video on How To Create a Brand Token
+## Watch a Short Video on How To Create a Token
 
 <div align="center">
     <iframe width="680" height="384"

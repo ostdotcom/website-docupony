@@ -18,10 +18,10 @@ The Sandbox will still be available to you after you have been permitted to Prod
 :::
 
 ## b. Conduct an initial pilot
-We recommend a phased launch and launching to <10,000 users to begin with. This is to ensure that your Brand Token Economy performs as expected. 
+We recommend a phased launch and launching to <10,000 users to begin with. This is to ensure that your Token performs as expected. 
 
 ## c. Fine-tune token economics
-* Is the supply of Brand Tokens sufficient
+* Is the supply of Tokens sufficient
 * Are the actions and token _rewards_ right? Should token _rewards_ be more or less?
 
 ## d. Incorporate more use cases
@@ -29,4 +29,4 @@ Following an initial launch, you can rollout to additional customer segments and
 
 ## e. Assess impact on KPIs e.g. NPS and Retention
 * Are goals and objectives being met?
-* Is your Brand Token having a material impact on customer engagement and satisfaction?
+* Is your Token having a material impact on customer engagement and satisfaction?

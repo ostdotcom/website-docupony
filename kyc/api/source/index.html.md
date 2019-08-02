@@ -110,7 +110,7 @@ For a Post request, the parameters are sent in the request body with default con
 
 |PARAMETER|TYPE|DESCRIPTION|
 ----------|----|------------
-|id|bigint| Unique identifier for the user |
+|id|bigint| Unique identifier for the end-user |
 |email| string | Email Id of the user|
 |properties|array<strings>|Properties of the user:<br> "kyc_submitted",<br> "doptin_mail_sent",<br> "doptin_done".<br> Remains empty when the user is created. |
 |created_at| timestamp |Timestamp at which user was created. (epoch time in seconds)|

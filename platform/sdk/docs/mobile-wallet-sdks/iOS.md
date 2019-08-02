@@ -152,7 +152,7 @@ func application(_ application: UIApplication,
 **OST_PLATFORM_API_ENDPOINT**:
 This will be the base API URL we need to provide to SDK while initializing.
 
-**Sandbox mode endpoint**: "api.ost.com/testnet/v2"
+**Sandbox environment endpoint**: "api.ost.com/testnet/v2"
 
 **Production endpoint**: "api.ost.com/mainnet/v2"
 

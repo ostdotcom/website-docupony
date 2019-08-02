@@ -6,11 +6,11 @@
     "tagline": "Developer Documentation",
     "docs": {
       "1-create": {
-        "title": "Create Your Brand Token in Sandbox and Explore OST Wallet App",
+        "title": "Create Your Token in Sandbox and Explore OST Wallet App",
         "sidebar_label": "Step 1. Create Token"
       },
       "2-plan": {
-        "title": "Plan and Design Your Brand Token Economy",
+        "title": "Plan and Design Your Token",
         "sidebar_label": "Step 2. Plan and Design"
       },
       "3-integrate": {
@@ -98,7 +98,7 @@
       },
       "ux": {
         "title": "An Example of What's Possible with OST Platform",
-        "sidebar_label": "Brand Token Example"
+        "sidebar_label": "Token Example"
       },
       "view": {
         "title": "Introduction to OST VIEW",

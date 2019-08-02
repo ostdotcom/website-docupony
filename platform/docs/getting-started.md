@@ -4,7 +4,7 @@ title: Four Steps to Success
 sidebar_label: Four Steps to Success
 ---
 
-There are four major steps to getting started with OST Platfrom. Follow these steps through to completion to create, test, and launch your own Brand Token in your app or platform.
+There are four major steps to getting started with OST Platfrom. Follow these steps through to completion to create, test, and launch your own Token in your app or platform.
 
 | Step | Description | Skillset | Approx Duration | 
 | --- | --- | :---: | :---: |

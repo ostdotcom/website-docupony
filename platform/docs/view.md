@@ -4,10 +4,10 @@ title: Introduction to OST VIEW
 sidebar_label: OST VIEW (Explorer)
 ---
 
-[OST VIEW](https://view.ost.com) is our block explorer for viewing Brand Token transactions and contracts on OST sidechains. You can toggle between OST Platform Sandbox (testnet) and Production (mainnet) views.
+[OST VIEW](https://view.ost.com) is our block explorer for viewing Token transactions and contracts on OST sidechains. You can toggle between OST Platform Sandbox (testnet) and Production (mainnet) views.
 * A multi-chain explorer, a search engine and a browser 
 * Gives a view into human-readable block, transaction, and account information on OST sidechains
-* Provides individual and aggregate historical data, including statistics and charts, on Brand Token transfers in, and across OST-powered Brand Token economies
+* Provides individual and aggregate historical data, including statistics and charts, on Token transfers in, and across OST-powered Token economies
 
 :::note OST-TEST (OSTT) and USDC-TEST
 In Sandbox (on Testnet) 
