@@ -17,8 +17,8 @@ In the inital beta version, you can configure the app logo image and app name. C
 | Workflow | UI Components | SDK Version | Theming | 
 | --- | --- | :---: | :---: |
 | activateUser | <ul><li>Create PIN</li><li>Confirm PIN</li><li>PIN Match Failed</li><li>Activating User Loader</li></ul> | Available v2.3.0 | Coming Soon! |
-| initiateDeviceRecovery | <ul><li>Device List</li><li>Start Recovery Button</li><li>Enter PIN</li><li>Recovering Wallet Loader</li><li>Success Alert</li></ul> | Available v2.3.0 | Coming Soon! | 
-| abortDeviceRecovery | <ul><li>Abort Recovery (Enter PIN)</li><li>Abort Recovery Confirmation</li></ul> | Available v2.3.0 | Coming Soon! | 
+| initiateDeviceRecovery | <ul><li>Device List</li><li>Start Recovery Button</li><li>Enter PIN</li><li>Recovering Wallet Loader</li><li>Initiate Recovery Success Message</li></ul> | Available v2.3.0 | Coming Soon! | 
+| abortDeviceRecovery | <ul><li>Abort Recovery (Enter PIN)</li><li>Abort Recovery Confirmation (Stop/Cancel)</li></ul> | Available v2.3.0 | Coming Soon! | 
 | addSession | <ul><li>Add Session (Enter PIN)</li><ul>| In Development | |  
 | resetPin | <ul><li>Enter Current PIN</li><li>Enter New PIN</li><li>Confirm PIN</li><li>PIN Match Failed</li></ul> | In Development | |
 | performQRAction | | |  |
