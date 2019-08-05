@@ -1,7 +1,7 @@
 ---
 id: sample-app
-title: Sample Application Built On OST Platform APIs and SDKs (OST Wallet App)
-sidebar_label: Sample Application
+title: Sample Application Built With OST Platform APIs and SDKs (OST Wallet App)
+sidebar_label: Sample App
 ---
 
 We have built and released a sample app to showcase what's possible with OST Platform. The sample app is available on both Android and iOS and is built using the [OST Wallet Reach-Native SDK](/platform/docs/sdk/mobile-wallet-sdks/react-native/).
@@ -21,9 +21,10 @@ If you get invited to use another token in the app and want to flip back to a pr
 ### 1. Claim POP Tokens
 The first approach is the most straight forward ⁠— just submit your email address on our [Homepage](https://ost.com). You will receive an email with links to download the app and a button to 'Claim Tokens'. The button links to our Popcorn (POP) Token which we created to allow anyone to experience the app without first having to create their own token.
 
-> Insert image 1: Hompage Explore OST Wallet
+![homepage-explore-ost-wallet](/platform/docs/assets/Wallet%20/homepage-explore-ost-wallet.png)
 
-> Insert image 2: Email invitation
+![email-invitation-ost-wallet](/platform/docs/assets/Wallet%20/email-invitation-ost-wallet.png)
+
 
 ### 2. Create Your Own Token
 The second approach is to create you own token and to add that to the sample app. Creating a token is straight forward and can be done via OST Platform. You will first need to register for a free account on [OST Platform](https://platform.ost.com/sign-up).

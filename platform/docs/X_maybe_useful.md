@@ -120,5 +120,37 @@ Daan van Tongeren  @r how to move forward?
     * A **MultiSig** contract. The public addresses from certain keys generated on the user's devices are set as owners for the MultiSig.
     * A **TokenHolder** contract. The MultiSig controls the TokenHolder contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the TokenHolder.
     * A **DelayedRecoveryModule** contract. The public addresses of the recoveryOwner and the recoveryController are stored on this contract. A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay.
+
+
+## OST Wallet
+11/ You can also download a demo app, OST Wallet, which provides an implementation of the transaction signing, wallet recovery, and device authorization, this is entirely usable today at
+
+12/ Nitty gritty details on how it all works:
+
+-The user is provided a an EIP1077 token holder contract with session keys for application sessions.
+
+-Private keys are generated on the user’s mobile device and encrypted using either secure enclave (iOS) or keystore (Android).
+
+14/ 
+
+-The user creates a 6 digit PIN to authorize a session Key. This mimics how users are familiar with interacting with apps. 
+
+-The ephemeral keys remain active for a period of time, eliminating need for user to sign every transaction in the app, enabling a more seamless UX
+
+15/ 
+
+-Thus, the user can use her wallet within an app without interruption during an authorized session. 
+
+-When her session expires, she uses her 6 digit PIN to authorize a new session.
+
+21/ If you are interested in wallet ux, I encourage you to check out OST Wallet: 
+
+layer-2 + ephemeral keys + recovery from smart contract 
+
+download beta app at https://ost.com and reviewing our docs at https://dev.ost.com 
+
+Feedback and criticism greatly appreciated
+
+
     
 

@@ -6,15 +6,7 @@ sidebar_label: Features
 
 OST Wallet SDK comes packed with useful featuers designed for mainstream users. This page gives a descriptive account of each of the features.
 
-## Non-Custodial 
-**Users Hold Their Private Keys.** The OST Wallet SDK supports non-custodial wallets, where users hold the keys and can transact with Tokens using their mobile devices. The mobile-first approach takes advantage of the security features of modern mobile devices to securely generate the required keys on the user's mobile device and encrypt them using either secure enclave (iOS) or keystore (Android).
 
-## Multi-Device
-The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a **6 digit PIN**), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Tokens and authorize a new device.
-
-The user input ---assumed to be a **6 digit PIN**--- is also used to guard access to sensitive operations such as authorizing devices, viewing the mnemonic phrase, etc.  
-
-![ERDUserSetupDiagram](/platform/docs/assets/ERD_user_setup.jpg)
 
 ## Ephemeral Session Keys
 In the context of Tokens used in OST's client economies, the public address is represented by a **TokenHolder** contract. The configured owner of a **TokenHolder** contract can authorize "ephemeral" keys, sessionKeys, to transact on the user's behalf for a predetermined amount of time and with a defined maximum spend per transaction.
@@ -40,8 +32,6 @@ A multi-signature contract, the **MultiSig**, is configured as the owner of the 
 
 (Optionally OST clients can also enable experiences for their users to recover access to their Tokens from a second device and/or recover from 12 written words, however, these are optional implementations.)
 
-**We encourage you to learn more about OST’s innovative wallet recovery model by reviewing the detailed specifications and SDK.**
-
 ## Wallet Recovery
 With the Wallet SDK, OST supports its clients in integrating the functionality of a non-custodial cryptocurrency wallet into their mobile applications. The users' private keys are generated and stored on their mobile device.
 
@@ -49,9 +39,9 @@ This guide describes the ways in which application developers can work with the 
 
 The current features of OST's key management solution that enable recovery are:
  
-1. The user's funds are held in a smart contract on the blockchain. This contract called the  **TokenHolder** contract serves as the public address where the balances sit. 
+1. The user's funds are held in a smart contract on the blockchain. This contract called the **TokenHolder** contract serves as the public address where the balances sit. 
 2. The  **TokenHolder** contract is owned by a **MultiSig** contract. Multiple private keys that sit on the user's mobile devices can own the **MultiSig** contract
-3. Each user's Wallet also includes a recovery module that is owned by a key that is created using inputs from the user (a **6 digit PIN**) , the client and OST. 
+3. Each user's Wallet also includes a recovery module that is owned by a key that is created using inputs from the user (a **6 digit PIN**), the client and OST. 
 
 ![OSTWalletRecovery](/platform/docs/assets/ost-wallet-recovery.jpg)
 
@@ -74,7 +64,7 @@ To add a device as an owner of the  **TokenHolder** contract, an existing owner 
 To remove a device as an owner, the user would need to go to a device management page and choose the device to revoke. Upon signing a confirmation the compromised device would cease to be an owner. 
 
 ### Recovery using 12 words 
-Writing down a 12-word recovery key is pretty much the best-known way to back up crypto-currency wallets. The 12-word seed-phrase that is displayed by a device represents an additional device. Therefore, if a user writes down their seed phrase and confirms that they have secured it, from a smart-contract perspective, it is equivalent to having a second device with a key on it.
+Writing down a 12-word recovery key is pretty much the best-known way to back up cryptocurrency wallets. The 12-word seed-phrase that is displayed by a device represents an additional device. Therefore, if a user writes down their seed phrase and confirms that they have secured it, from a smart-contract perspective, it is equivalent to having a second device with a key on it.
 
 As with the recovery from the additional device, the user should have written down their seed-phrase before losing their device.
 
@@ -98,3 +88,11 @@ Typically, when someone sets up a cryptocurrency wallet, she will be shown the s
 Typically, and as a decentralization matter, access to the seed phrase that was used to generate private keys is limited to the wallet and the person with access to the wallet—although a service may have provided the wallet, that service does not have access to the seed phrase or any private keys generated from that seed phrase.
 
 Generally, anyone with access to a private key can access the funds held by it. Generally, anyone with access to the seed phrase can regenerate that private key.
+
+
+## Multi-Device
+The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised. These features are used in the OST smart-contract based recovery wherein a user input (which is minimally a **6 digit PIN**), an application or client input (which is minimally a 30 character string) and input from OST are combined in a cryptographically secure manner to prove the user's ownership of the Tokens and authorize a new device.
+
+The user input -assumed to be a **6 digit PIN**- is also used to guard access to sensitive operations such as authorizing devices, viewing the mnemonic phrase, etc.  
+
+![ERDUserSetupDiagram](/platform/docs/assets/ERD_user_setup.jpg)

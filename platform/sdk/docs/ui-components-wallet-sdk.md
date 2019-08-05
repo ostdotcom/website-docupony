@@ -1,7 +1,7 @@
 ---
 id: ui-components-wallet-sdk
 title: User Interface Components in the OST Wallet SDKs
-sidebar_label: User Interface Components Available
+sidebar_label: User Interface Components
 ---
 
 Beginning in version 2.3.0 of our Mobile Wallet SDKs, we have started to add user-interface components to the SDKs. The intent is to add components for each workflow to make easier for app developers to integrate the Wallet SDKs into their apps. The UI components will be available in each SDK [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native). 
@@ -35,13 +35,24 @@ The latest release of the Mobile Wallet SDKs is 2.3.0
 ## UI Components Screenshots
 
 ### activateUser
+![create-pin](/platform/docs/assets/ui-thru-sdk/activate-user/create-pin.png)
+![confirm-pin](/platform/docs/assets/ui-thru-sdk/activate-user/confirm-pin.png)
+![activating-user-loader](/platform/docs/assets/ui-thru-sdk/activate-user/activating-user-loader.png)
+![pin-match-failed](/platform/docs/assets/ui-thru-sdk/activate-user/pin-match-failed.png)
+
 ### initiateDeviceRecovery
+![recovery-enter-pin](/platform/docs/assets/ui-thru-sdk/device-recovery/recovery-enter-pin.png)
+![recovery-loader](/platform/docs/assets/ui-thru-sdk/device-recovery/recovery-loader.png)
+![recovery-confirmation-success](/platform/docs/assets/ui-thru-sdk/device-recovery/recovery-confirmation-success.png)
+
 ### abortDeviceRecovery 
-### addSession
-### resetPin
+![abort-recovery-enter-pin](/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-enter-pin.png)
+![abort-recovery-device-list](/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-device-list.png)
+![abort-recovery-confirmation](/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-confirmation.png)
+
 
 ## Theming
-More details coming soon!
+Please check back soon! More details will be published on 6th Aug 2019.
 
 ## Learn More
 To learn more, check out the UI components section in each of the Wallet SDK GitHub Readme files. Scroll down to the sections titled 'OstWalletUI.'

@@ -77,8 +77,8 @@
         "sidebar_label": "27-Mar-2019 OST Platform Relese"
       },
       "sample-app": {
-        "title": "Sample Application Built On OST Platform APIs and SDKs (OST Wallet App)",
-        "sidebar_label": "Sample Application"
+        "title": "Sample Application Built With OST Platform APIs and SDKs (OST Wallet App)",
+        "sidebar_label": "Sample App"
       },
       "security-features": {
         "title": "OST Platform Security Features",
