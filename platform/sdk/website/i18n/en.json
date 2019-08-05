@@ -7,7 +7,7 @@
     "docs": {
       "apis-in-sdks": {
         "title": "OST Platform APIs - Endpoint Actions Available in SDKs",
-        "sidebar_label": "API Endpoint Actions in SDKs"
+        "sidebar_label": "API Actions in SDKs"
       },
       "assets/kit_index": {
         "title": "assets/kit_index"
@@ -81,12 +81,12 @@
         "sidebar_label": "The Baiscs"
       },
       "ui-components-wallet-sdk": {
-        "title": "User Interface Components in the OST Wallet SDKs",
-        "sidebar_label": "User Interface Components"
+        "title": "User Interface Components Available in Mobile Wallet SDKs",
+        "sidebar_label": "User Interface Components (NEW)"
       },
       "webhooks": {
         "title": "Introduction to OST Platform WebHooks",
-        "sidebar_label": "WebHooks"
+        "sidebar_label": "WebHooks (NEW)"
       }
     },
     "links": {

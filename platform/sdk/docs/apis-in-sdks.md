@@ -1,7 +1,7 @@
 ---
 id: apis-in-sdks
 title: OST Platform APIs - Endpoint Actions Available in SDKs
-sidebar_label: API Endpoint Actions in SDKs
+sidebar_label: API Actions in SDKs
 ---
 
 OST Platform provides a full suite of robust RESTful APIs to integrate your Token into your applications with ease. The APIs are packaged into Server Side SDKs and Mobile Wallet SDKs to enable a fast and smooth development experience.

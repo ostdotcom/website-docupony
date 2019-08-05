@@ -203,3 +203,9 @@ aside.gitter-chat-embed{
 .toc .toggleNav ul li.navListItemActive a, nav.toc .toggleNav ul li a:hover {
  color: #e4b030!important;
 }
+
+img[alt="create-pin"] {
+ max-width: 50%;
+ border: none;
+ background: none;
+}

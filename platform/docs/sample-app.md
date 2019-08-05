@@ -1,6 +1,6 @@
 ---
 id: sample-app
-title: Sample Application Built With OST Platform APIs and SDKs (OST Wallet App)
+title: A Sample App Built With OST Platform APIs/SDKs
 sidebar_label: Sample App
 ---
 
