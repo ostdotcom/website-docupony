@@ -10,12 +10,8 @@ This page provides an overview of where each of the API endpoint actions are ava
 
 ## API Endpoints
 
-:::warning `setupDevice` workflow
-*If Get User and Get Token methods are called before `setupDevice` workflow is completed, the methods will return null. Without `setupDevice`, Wallet SDK cannot make API calls. Hence, it is always important to perform `setupDevice` workflow before using other methods of SDK (only exception: `initialize`)
-:::
-
 :::note Internal Status
-Internal implies it is used for the Wallet SDK internal use and is not exposed to app.
+Internal implies it is used for Wallet SDK internal use and is not exposed to your app.
 :::
 
 ### Users
@@ -106,3 +102,7 @@ Internal implies it is used for the Wallet SDK internal use and is not exposed t
 | | List WebHooks | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
 | | Update WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
 | | Delete WebHook | <span style="color:green"> Available </span> | <span style="color:#eb4d4a">N/A</span> |
+
+:::warning `setupDevice` workflow
+*Without `setupDevice`, Wallet SDK cannot make API calls. If Get User and Get Token methods are called before `setupDevice` workflow is completed, the methods will return null. Hence, it is always important to perform `setupDevice` workflow before using other methods of SDK (with the exception of `initialize`).
+:::

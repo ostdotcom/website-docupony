@@ -44,7 +44,7 @@ The latest release of the Mobile Wallet SDKs is 2.3.0
 More details coming soon!
 
 ## Learn More
-To learn more, check out UI components section in each of the Wallet SDK GitHub Readme's. Scroll down to the sections titled 'OstWalletUI.'
+To learn more, check out the UI components section in each of the Wallet SDK GitHub Readme files. Scroll down to the sections titled 'OstWalletUI.'
 * [Android Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.3)
 * [iOS Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/release-2.3)
 * [React-Native Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-react-native/tree/release-2.3)

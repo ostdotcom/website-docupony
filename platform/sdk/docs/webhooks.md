@@ -6,7 +6,9 @@ sidebar_label: WebHooks
 
 Our WebHooks allow you to subscribe to specific events or topics that occur in OST Platform. Whenever a trigger event occurs the WebHook sees the event, collects the data, and sends it to a URL specified by you in the form of an HTTP request. Once you recieve the data, you can then execute any code on your server app.
 
-**Example:** If you subscribe to users/activation_success topic then once a user is activated in OST Platform, you will recieve the notification following which you can execute any logic, for example: you can update the user entity with updated user entity in your database.
+**Example:** 
+1. If you subscribe to `users/activation_success` topic then once a user is activated in OST Platform, you will recieve a notification following which you can execute any logic, for example: you can update the user with updated user entity in your database.
+2. If you subscribe to `transactions/initiate`, you can show receivers of a transaction the transaction details as soon as it is initiated. Without subscribing to this webhook, receivers would only see these transactions - in their transactions ledger - once it reaches SUCCESS status, i.e. after it has been mined (6 blocks x 3 secs = 18 secs later).
 
 ## WebHook Object
 
@@ -91,9 +93,9 @@ Sample code is available in our API References documentation: [Validating WebHoo
 * price_points/eur_update
 * price_points/gbp_update
 
-## Using WebHooks
-### [Create a WebHook](https://dev.ost.com/platform/docs/api/#create-a-webhook)
-### [Get a WebHook](https://dev.ost.com/platform/docs/api/#get-a-webhook)
-### [List all WebHooks](https://dev.ost.com/platform/docs/api/#list-all-webhooks)
-### [Update a WebHook](https://dev.ost.com/platform/docs/api/#update-a-webhook)
-### [Delete a WebHook](https://dev.ost.com/platform/docs/api/#delete-a-webhook)
+## Using WebHooks (Creat, Get, List, Update, Delete)
+* [Create a WebHook](https://dev.ost.com/platform/docs/api/#create-a-webhook)
+* [Get a WebHook](https://dev.ost.com/platform/docs/api/#get-a-webhook)
+* [List all WebHooks](https://dev.ost.com/platform/docs/api/#list-all-webhooks)
+* [Update a WebHook](https://dev.ost.com/platform/docs/api/#update-a-webhook)
+* [Delete a WebHook](https://dev.ost.com/platform/docs/api/#delete-a-webhook)
