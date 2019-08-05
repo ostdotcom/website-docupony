@@ -4,7 +4,7 @@ title: User Interface Components in the OST Wallet SDKs
 sidebar_label: User Interface Components
 ---
 
-Beginning in version 2.3.0 of our Mobile Wallet SDKs, we have started to add user-interface components to the SDKs. The intent is to add components for each workflow to make easier for app developers to integrate the Wallet SDKs into their apps. The UI components will be available in each SDK [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native). 
+Beginning version 2.3.0 (beta) of our Mobile Wallet SDKs, we started to add user-interface components to the SDKs. The intent is to add components for each workflow to make easier for app developers to integrate the Wallet SDKs into their apps. The UI components are available for each SDK [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native). 
 
 Theming will also be added so that developers can configure the components as needed.
 
@@ -50,12 +50,11 @@ The latest release of the Mobile Wallet SDKs is 2.3.0
 ![abort-recovery-device-list](/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-device-list.png)
 ![abort-recovery-confirmation](/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-confirmation.png)
 
-
 ## Theming
 Please check back soon! More details will be published on 6th Aug 2019.
 
 ## Learn More
-To learn more, check out the UI components section in each of the Wallet SDK GitHub Readme files. Scroll down to the sections titled 'OstWalletUI.'
+To learn more, check out the UI components section in each of the Wallet SDK GitHub Readme files. Scroll down to the sections titled OstWalletUI.
 * [Android Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.3)
 * [iOS Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/release-2.3)
 * [React-Native Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-react-native/tree/release-2.3)
