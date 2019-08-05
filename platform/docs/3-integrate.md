@@ -37,7 +37,7 @@ Check-out our technical implementation guides for an overview of how to approach
 ### Mobile Wallet SDKs
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
 * [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)
-* [ React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native)
+* [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native)
 
 ## d. Perform test transactions
 Perform test transactions in Sandbox to ensure everything is working as expected! Check our [Go-Live Checklist](/platform/docs/go-live-checklist/) for a list of things to consider.

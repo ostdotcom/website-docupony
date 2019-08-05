@@ -6,7 +6,7 @@ sidebar_label: Getting Started
 
 Robust RESTful APIs and SDKs to integrate your Token into your applications with ease while observing the highest security standards and without encumbering the user experience. No in-house blockchain expertise required.
 
-**Server Side APIs and SDKs** provide various endpoints/methods that can be used to design and manage Token Economies. **Wallet SDKs** enable end-users to interact with Tokens within existing mobile apps.
+Server Side APIs and SDKs provide various endpoints/methods that can be used to design and manage Token Economies. Wallet SDKs enable end-users to interact with Tokens within existing mobile apps.
 
 ![platform-overview](/platform/docs/assets/Platform-Integrations.jpg)
 

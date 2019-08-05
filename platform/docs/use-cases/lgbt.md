@@ -4,4 +4,4 @@ title: Abc
 sidebar_label: Hornet LGBT
 ---
 
-**Coming soon!**
+**Coming Soon!**

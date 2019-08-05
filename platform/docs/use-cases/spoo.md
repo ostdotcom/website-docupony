@@ -4,4 +4,4 @@ title: Abc
 sidebar_label: Spoon Tokens
 ---
 
-**Coming soon!**
+**Coming Soon!**

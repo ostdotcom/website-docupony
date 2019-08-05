@@ -4,7 +4,7 @@ title: Technical Guide to Creating a User Wallet
 sidebar_label: Create User Wallet
 ---
 
-To create a user wallet in a Token Economy, the following contracts are deployed
+To create a user wallet, the following contracts are deployed
 
 | Contract | Description | 
 | --- | --- | 
@@ -149,7 +149,7 @@ public class App extends Application {
 In order to initiate the device registration from you mobile app, you need to call `setupDevice` workflow.
 <br>
 
-`setupDevice` workflow needs `userId` and `tokenId` so `setupDevice` should be called after app login or signup is successful. Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId` (unique identifier for your token economy).
+`setupDevice` workflow needs `userId` and `tokenId` so `setupDevice` should be called after app login or signup is successful. Using the mapping between userId in OST Platform and your app user, you have access to `userId` and `tokenId` (unique identifier for your token).
 
 **If the user is logged in, then `setupDevice` should be called every time the app launches, this ensures that the current device is registered before communicating with OST Platform server.**
 
@@ -195,7 +195,7 @@ To activate the user you will have to call **activateUser** workflow which requi
 
 1. A **6 digit PIN** set by user
 
-2. User Id: User id of economy user in OST Platform
+2. User Id: User id of user in OST Platform
 
 3. passphrasePrefix: a unique string for each user with high entropy, generated on your server.
 

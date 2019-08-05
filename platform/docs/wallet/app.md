@@ -6,7 +6,7 @@ sidebar_label: Wallet App
 
 The OST Wallet App was built with the OST Wallet SDK to showcase what's possible with OST Platform through using the OST Wallet SDK. The current version of the app lets you connect your Token to the app, invite users and send and receive tokens. Users can also explore wallet features and settings enabled through the Wallet SDK.
 
-## Connect Your Token to OST Wallet App
+## Add Your Token to OST Wallet App
 
 :::note iPhone users and TestFlight 
 iPhone users need to first download the TestFlight App from Apple to download the OST Wallet App

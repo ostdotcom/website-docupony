@@ -75,6 +75,18 @@
       "server-side-sdks/ruby": {
         "title": "Ruby SDK Quickstart Guide",
         "sidebar_label": "Ruby"
+      },
+      "the-basics": {
+        "title": "High Level Understanding of OST Platform SDKs",
+        "sidebar_label": "The Baiscs"
+      },
+      "ui-components-wallet-sdk": {
+        "title": "User Interface Components in the OST Wallet SDKs",
+        "sidebar_label": "User Interface Components Available"
+      },
+      "webhooks": {
+        "title": "Introduction to OST Platform WebHooks",
+        "sidebar_label": "WebHooks"
       }
     },
     "links": {

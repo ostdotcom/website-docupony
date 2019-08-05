@@ -102,9 +102,9 @@ Please refer to API References for details on the [input parameters of execute c
 
 Sample code for executing a `directTransfer` is shown below.
 
-Brand token to transfer: 10 Token
+Token to transfer: 10 Token
 
-Converting `Brand token` to `atto Token` = `10 *10^18` = `10^19` atto Token
+Converting `Token` to `atto Token` = `10 *10^18` = `10^19` atto Token
 
 ```php
 <?php

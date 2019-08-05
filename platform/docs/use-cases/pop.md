@@ -4,4 +4,4 @@ title: Abc
 sidebar_label: Popcorn
 ---
 
-**Coming soon!**
+**Coming Soon!**

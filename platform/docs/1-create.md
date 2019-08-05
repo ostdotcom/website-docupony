@@ -73,7 +73,7 @@ Once you associate the owner address the token set-up process starts. This proce
 | ---: | --- |
 | 1 | 'Deploying organization contracts' |
 | 2 | 'Setting up conversion rate on origin chain' |
-| 3 | 'Deploying utility brand token contract' |
+| 3 | 'Deploying utility token contract' |
 | 4 | 'Deploying gateway contract on origin chain' |
 | 5 | 'Deploying co-gateway contract on auxiliary chain' |
 | 6 | 'Linking gateways' |

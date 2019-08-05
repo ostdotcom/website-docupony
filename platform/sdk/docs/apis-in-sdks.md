@@ -11,7 +11,7 @@ This page provides an overview of where each of the API endpoint actions are ava
 ## API Endpoints
 
 :::warning `setupDevice` workflow
-* If Get User and Get Token methods are called before `setupDevice` workflow is completed, the methods will return null. Without `setupDevice`, Wallet SDK cannot make API calls. Hence, it is always important to perform `setupDevice` workflow before using other methods of SDK (only exception: `initialize`)
+*If Get User and Get Token methods are called before `setupDevice` workflow is completed, the methods will return null. Without `setupDevice`, Wallet SDK cannot make API calls. Hence, it is always important to perform `setupDevice` workflow before using other methods of SDK (only exception: `initialize`)
 :::
 
 :::note Internal Status

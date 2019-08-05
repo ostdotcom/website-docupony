@@ -4,7 +4,7 @@ title: An Example of What's Possible with OST Platform
 sidebar_label: Sample Use Case
 ---
 
-In this guide, we use an example of a fictitious restaurant recommendation application, “Spoon” to illustrate how a Brand could use the Wallet SDK to integrate the functionality of a user-friendly non-custodial Token wallet into their application. The UX case study aims to serve as a reference for Brand developers and to help create a faster and smoother implementation of the Wallet SDK with the application.
+In this guide, we use an example of a fictitious restaurant recommendation application, “Spoon” to illustrate how a company could use the Wallet SDK to integrate the functionality of a user-friendly non-custodial Token wallet into their application. The UX case study aims to serve as a reference for developers and to help create a faster and smoother implementation of the Wallet SDK with the application.
 
 We’ll be using user stories around sharing favorite local food experiences to illustrate the key concepts of the Wallet SDK implementation and to present some basic ideas for Tokenization.
 
@@ -61,7 +61,7 @@ Building a token ecosystem lets you reward your users for engaging with your and
 
 ### 5. Give your users spending options 
 
-To keep your users engaged and strengthen the perception of your Brand, use spending options that resonate with your users.
+To keep your users engaged and strengthen the perception of your brand, use spending options that resonate with your users.
 
 ![image](/platform/docs/assets/wallet-ux-guide/5-Spending-Options.jpg)
 

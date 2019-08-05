@@ -76,6 +76,14 @@
         "title": "27 March 2019 Release",
         "sidebar_label": "27-Mar-2019 OST Platform Relese"
       },
+      "sample-app": {
+        "title": "Sample Application Built On OST Platform APIs and SDKs (OST Wallet App)",
+        "sidebar_label": "Sample Application"
+      },
+      "security-features": {
+        "title": "OST Platform Security Features",
+        "sidebar_label": "Security Features"
+      },
       "smart-contracts": {
         "title": "Introduction to Smart Contracts - Smart Code Deployed On Chain",
         "sidebar_label": "Introduction to Smart Contracts"
@@ -98,7 +106,7 @@
       },
       "ux": {
         "title": "An Example of What's Possible with OST Platform",
-        "sidebar_label": "Token Example"
+        "sidebar_label": "Sample Use Case"
       },
       "view": {
         "title": "Introduction to OST VIEW",
@@ -119,10 +127,6 @@
       "wallet/sdk": {
         "title": "Introduction to the OST Wallet SDK",
         "sidebar_label": "Wallet SDK"
-      },
-      "wallet/ux": {
-        "title": "Create a Seamless User Experience using the OST Wallet SDK",
-        "sidebar_label": "Wallet UX Guidelines"
       },
       "X_maybe_useful": {
         "title": "X_maybe_useful"

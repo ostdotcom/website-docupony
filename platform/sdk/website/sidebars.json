@@ -3,7 +3,8 @@
     "Introduction": [
       "getting-started",
       "authentication",
-      "apis-in-sdks"
+      "apis-in-sdks",
+      "webhooks"
     ],
     
     "Server Sides SDKs": [
@@ -14,6 +15,7 @@
     ],
     
     "Mobile Wallet SDKs": [
+     "ui-components-wallet-sdk",
 
       {
         "type": "subcategory",

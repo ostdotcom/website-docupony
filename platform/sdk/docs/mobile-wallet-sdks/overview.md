@@ -7,7 +7,7 @@ sidebar_label: Overview
 
 ## Wallet SDK
 
-Wallet SDK is a mobile application development SDK that enables the client companies to integrate wallet into thier mobile applications (Android/iOS).The Wallet serves as the primary way in which end-users can interact with their tokens to participate in the Token Economy. To learn more about wallet functionality you can read the wallet guide.
+Wallet SDK is a mobile application development SDK that enables the client companies to integrate wallet into thier mobile applications (Android/iOS).The Wallet serves as the primary way in which end-users can interact with their tokens. To learn more about wallet functionality you can read the wallet guide.
 
 
 Wallet SDK will take care of key management solution (to learn more about key management you can read key management solution guide). Wallet SDK will also sign data on user's behalf since signed data is needed to execute actions on the blockchain. These signatures ensure that users have complete control of their tokens and these tokens can only be transferred with their explicit or implicit consent.

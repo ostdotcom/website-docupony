@@ -9,7 +9,7 @@ The OST Wallet SDK enables end-users to interact with Tokens within existing mas
 **OST Wallet SDKs**
 * [Android](/platform/docs/sdk/mobile-wallet-sdks/android/) 
 * [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS)
-* [ React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native)
+* [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native)
 
 The OST Wallet SDK supports non-custodial wallets, where users hold the keys and can transact with Tokens using their mobile devices. The OST Wallet SDK natively supports multi-device access. Thus a user can have independent private keys on different devices, all controlling the same  **TokenHolder** contract. This allows for more modular management of keys and revocation of keys that may have been compromised.
 
