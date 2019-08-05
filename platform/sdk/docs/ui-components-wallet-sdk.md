@@ -4,12 +4,12 @@ title: User Interface Components Available in Mobile Wallet SDKs
 sidebar_label: User Interface Components (NEW)
 ---
 
-Beginning version 2.3.0 (beta) of our Mobile Wallet SDKs, we started to add user-interface components to the SDKs. The intent is to add components for each workflow to make easier for app developers to integrate the Wallet SDKs into their apps. The UI components are available for each SDK [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native). 
+Beginning version 2.3.0 (beta) of our Mobile Wallet SDKs, we started to add user-interface components to the SDKs. The intent is to add components for each workflow to make it easier for app developers to integrate the Wallet SDKs into their own apps. The UI components are available for each SDK: [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native). 
 
-Theming will also be added so that developers can configure the components as needed.
+Theming is supported so that developers can configure the components as needed.
 
 :::note Basic Configuration
-In the inital beta version, you can configure the app logo image and app name. Component level configurations will be added soon! These are described in the [Theming](/platform/docs/sdk/ui-components-wallet-sdk/#theming) section below.
+In the inital beta version, you can just configure the app logo image and app name. Component level configurations will be added soon! These are described in the [Theming](/platform/docs/sdk/ui-components-wallet-sdk/#theming) section below.
 :::
 
 ## UI Components - Current Status
