@@ -72,7 +72,7 @@ void setupDevice( String userId,
 
 
 ### 3. activateUser
-It `authorizes` the registered device and activates the user. User activation deploys  **TokenHolder**, Device manager  contracts on blockchain. Session keys are also created and authorized during `activateUser` workflow. So after `user activation`, users can perform wallet actions like executing transactions and reset pin. 
+It `authorizes` the registered device and activates the user. User activation deploys  TokenHolder, Device manager  contracts on blockchain. Session keys are also created and authorized during `activateUser` workflow. So after `user activation`, users can perform wallet actions like executing transactions and reset pin. 
 
 ```
 void activateUser(UserPassphrase passphrase, 
@@ -143,7 +143,7 @@ Workflow should be used to do the `user-to-company` and `user-to-user` transacti
 ```java
 void executeTransaction(String userId, 
                         String tokenId, 
-                        List **TokenHolder**Addresses, 
+                        List TokenHolderAddresses, 
                         List amounts, 
                         String ruleName, 
                         Map<String,String> meta, 
@@ -155,7 +155,7 @@ void executeTransaction(String userId,
 |---|---|
 | **userId** <br> **String**	| Unique identifier of the user stored in OST Platform |
 | **tokenId** <br> **String**	| Unique identifier for the token |
-| ****TokenHolder**Addresses** <br> **List**	|  **TokenHolder**  addresses of amount receiver |
+| **TokenHolderAddresses** <br> **List**	|  TokenHolder  addresses of amount receiver |
 | **amounts** <br> **List**	| Amount to be transferred in atto.  |
 | **ruleName** <br> **String**	|  Rule name to be executed.  |
 | **meta** <br> **Map<String,String>**	|  Transaction Meta properties. <br> Example: `{"name": "transaction name","type": "user-to-user","details": "like"}`  |

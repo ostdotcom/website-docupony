@@ -59,7 +59,7 @@ public enum OstEntityType {
     recoveryOwner,
     string,
     dictionary,
-    **TokenHolder**
+    TokenHolder
 }
 ```
 

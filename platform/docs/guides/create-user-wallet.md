@@ -8,9 +8,9 @@ To create a user wallet, the following contracts are deployed
 
 | Contract | Description | 
 | --- | --- | 
-| **MultiSig** | The public addresses from certain keys generated on the user's devices are set as owners for the MultiSig. |
-| **TokenHolder** | The MultiSig controls the **TokenHolder** contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the **TokenHolder**. |
-| **DelayedRecoveryModule** | The public addresses of the recoveryOwner and the recoveryController are stored on this contract. A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay. | 
+| MultiSig | The public addresses from certain keys generated on the user's devices are set as owners for the MultiSig. |
+| TokenHolder | The MultiSig controls the TokenHolder contract, as its owner. The public addresses of certain key-pairs generated on the user's device are authorized as sessionKeys in the TokenHolder. |
+| DelayedRecoveryModule | The public addresses of the recoveryOwner and the recoveryController are stored on this contract. A number that represents blocks added to the blockchain, to approximate a period of delay before recovery can be executed (e.g., 14400 == 12 hours, assuming a block is added every 3 seconds), is also stored on this contract, as the recoveryBlockDelay. | 
 
 ## Creating a user's Token wallet on the blockchain 
 It is a 3 step process. [OST Wallet SDK](/platform/docs/wallet/sdk/) provides a number of functions called as workflows.
@@ -193,13 +193,13 @@ Make sure you implement the callback function `registerDevice` in the class call
 #### Input parameter for `activateUser`
 To activate the user you will have to call **activateUser** workflow which requires 5 input parameters given below:
 
-1. A **6 digit PIN** set by user
+1. A 6 digit PIN set by user
 
 2. User Id: User id of user in OST Platform
 
 3. passphrasePrefix: a unique string for each user with high entropy, generated on your server.
 
-4. expiryAfterInSecs: A  **TokenHolder** contract that holds a users tokens is one of three contracts that are deployed on blockchain during user activation.  **TokenHolder** contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each users session key as well as the spending limit. It is recommended to set expiration time to 2 weeks, however, you can choose more or less time.
+4. expiryAfterInSecs: A  TokenHolder contract that holds a users tokens is one of three contracts that are deployed on blockchain during user activation.  TokenHolder contract can authorize sessionKeys, to transact on the user's behalf. These keys can sign transactions on users behalf for a predetermined amount of time and with a defined maximum spending limit per-transaction. So your app needs to set expiration time of each users session key as well as the spending limit. It is recommended to set expiration time to 2 weeks, however, you can choose more or less time.
 
 5. spendingLimitinWei: Spending limit is the maximum number of tokens a user can spend in one transaction to be passed in atto Token. 1 Token = 10^18 atto Token.
 
@@ -279,7 +279,7 @@ There is a list of methods available as [interface](/platform/docs/sdk/mobile-wa
 
 To show you an example, we will just implement 2 functions to get the workflow status.
 
-1. **flowComplete**:  Callback function will be called if the workflow is completed successfully. The workflow details and the updated entity will be received in the arguments. `ostContextEntity` will be updated user entity. Once you receive this updated user entity, it is recommended that your app communicates the updated user entity to your server which stores the user's  **TokenHolder**  address with user info for further use. The user's updated status will be `ACTIVATED`.
+1. **flowComplete**:  Callback function will be called if the workflow is completed successfully. The workflow details and the updated entity will be received in the arguments. `ostContextEntity` will be updated user entity. Once you receive this updated user entity, it is recommended that your app communicates the updated user entity to your server which stores the user's  TokenHolder  address with user info for further use. The user's updated status will be `ACTIVATED`.
 
 ```java
 public void flowComplete(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity) {

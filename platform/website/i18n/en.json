@@ -21,6 +21,13 @@
         "title": "Launch to Your End-Users!",
         "sidebar_label": "Step 4. Launch to End-users"
       },
+      "archive/app": {
+        "title": "Introduction to the OST Wallet App",
+        "sidebar_label": "Wallet App"
+      },
+      "archive/X_maybe_useful": {
+        "title": "archive/X_maybe_useful"
+      },
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
@@ -112,24 +119,25 @@
         "title": "Introduction to OST VIEW",
         "sidebar_label": "OST VIEW (Explorer)"
       },
-      "wallet/app": {
-        "title": "Introduction to the OST Wallet App",
-        "sidebar_label": "Wallet App"
-      },
-      "wallet/features": {
-        "title": "OST Wallet Features",
-        "sidebar_label": "Features"
-      },
       "wallet/introduction": {
         "title": "Introduction to OST Wallet",
-        "sidebar_label": "Introduction"
+        "sidebar_label": "- Introduction"
       },
-      "wallet/sdk": {
-        "title": "Introduction to the OST Wallet SDK",
-        "sidebar_label": "Wallet SDK"
+      "wallet/multi-device": {
+        "title": "Multi-Device Access",
+        "sidebar_label": "- Multi-Device Access"
       },
-      "X_maybe_useful": {
-        "title": "X_maybe_useful"
+      "wallet/recovery": {
+        "title": "Innovative Wallet Recovery Mechanisms",
+        "sidebar_label": "- Recovery Mechanisms"
+      },
+      "wallet/session-keys": {
+        "title": "Ephemeral Session Keys",
+        "sidebar_label": "- Session Keys"
+      },
+      "wallet/user-experience": {
+        "title": "Seamless User Experience",
+        "sidebar_label": "- User Experience"
       }
     },
     "links": {

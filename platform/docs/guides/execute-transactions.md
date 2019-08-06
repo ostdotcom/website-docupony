@@ -5,11 +5,11 @@ sidebar_label: Execute Transactions
 ---
 
 1. Owner/device key is created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device
-2. The private key in each pair is encrypted and stored on device. A **MultiSig** contract is deployed on the blockchain. The public addresses from device keys generated on the user's device(s) are set as owners for the **MultiSig**.
-3. A **TokenHolder** contract is deployed on the blockchain. The **MultiSig** controls the **TokenHolder** contract, as its owner.
-4. A sessionKey is created on the user's device and is authorized by device key in **TokenHolder**
-5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's **TokenHolder** contract
-6. The **TokenHolder** contract verifies that the request is initiated by an authorized sessionKey and executes the transfer
+2. The private key in each pair is encrypted and stored on device. A MultiSig contract is deployed on the blockchain. The public addresses from device keys generated on the user's device(s) are set as owners for the MultiSig.
+3. A TokenHolder contract is deployed on the blockchain. The MultiSig controls the TokenHolder contract, as its owner.
+4. A sessionKey is created on the user's device and is authorized by device key in TokenHolder
+5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's TokenHolder contract
+6. The TokenHolder contract verifies that the request is initiated by an authorized sessionKey and executes the transfer
 
 :::warning atto denomination
 atto is the smallest denomination used in OST Platform. OST Platform APIs and SDKs accept value in `atto`, so it is important to understand the conversions to `atto`. 
@@ -42,7 +42,7 @@ The sections below lists the two rules deployed with the rule names and rule par
 
 | Parameter Name | Parameter Description |
 |---|---|
-| **transferToAddresses** <br> **Array of Address**   | Array of receivers **TokenHolder**  addresses |
+| **transferToAddresses** <br> **Array of Address**   | Array of receivers TokenHolder  addresses |
 | **transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address-1` will get the `amount-1`, `address-2` will get the `amount-2` and `address-3` will get the `amount-3` |
 
 ## **PricerRule** Transfers (Transfers in Fiat amounts)
@@ -51,8 +51,8 @@ The sections below lists the two rules deployed with the rule names and rule par
 ### `pay` Method Parameters
 | Parameter Name | Parameter Description |
 |---|---|
-|**from**TokenHolder**Address** <br> **Address**  | Transaction executors **TokenHolder** address |
-|**transferToAddresses** <br> **Array of addresses** | Array of receivers  **TokenHolder**  address |
+|**fromTokenHolderAddress** <br> **Address**  | Transaction executors TokenHolder address |
+|**transferToAddresses** <br> **Array of addresses** | Array of receivers  TokenHolder  address |
 |**transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transferAmountsinAtto** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 |**payCurrencyCode** <br> **String** | Pay Currency code. It's possible values are `EUR`, `GBP`, and `USD`.  |
 |**attoUSDIntendedPrice** <br> **Integer** | This is intended conversion of OST to pay currency (in atto denomination) which is USD in this example. This value will be used to calculate the deviation from actual conversion rate at the time of execution of transaction. If this deviation is more than the threshold value ($1), the transaction will be cancelled. This is to avoid transactions from happening during high deviation periods. This is the pay currency (USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
@@ -71,7 +71,7 @@ The QRCode data for executing transactions via web applications should be a JSON
 |  **d** <br> **JSON Object** |   |   |
 |   | **Property**  | **Description** |
 |   | **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer` |
-|   | **ads**  <br> **Array** | Array of receiver's  **TokenHolder**  Addresses |
+|   | **ads**  <br> **Array** | Array of receiver's  TokenHolder  Addresses |
 |   | **ams**  <br> **Array** | Array of amounts in atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in atto.  |
 |   | **tid**  <br> **String** | token_id of your Token |
 
@@ -88,7 +88,7 @@ The QRCode data for executing transactions via web applications should be a JSON
     "ddv": "1.0.0", // Data Definition Version
     "d": {
         "rn": "Direct Transfer", // Rule Name
-        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  **TokenHolder**  Addresses
+        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  TokenHolder  Addresses
         "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
         "tid": "123"     // token_id of your Token
     }
@@ -133,7 +133,7 @@ $executeParams = array(
 
         // These are method parameters in rule contract
         'parameters' => array(
-            // First array is of receiver's  **TokenHolder**  addresses 
+            // First array is of receiver's  TokenHolder  addresses 
             array("0xc3B9B4A5c1997D73cd8d9D0fb95AA945e68e0496"),
             
             // Second array is of receiver's amounts in atto 
@@ -181,7 +181,7 @@ To generate QRCode with transaction data follow the steps explained in the [abov
     "ddv": "1.0.0", // Data Definition Version
     "d": {
         "rn": "Direct Transfer", // Rule Name
-        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  **TokenHolder**  Addresses
+        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  TokenHolder  Addresses
         "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
         "tid": "123"     // token_id of your Token
     }

@@ -25,7 +25,7 @@ The CTA on this page is for the user to update the App to the latest version whi
 
 A user needs a Token wallet to participate.
 
-To create a Token Wallet, the user needs to enter a PIN. Setting a PIN helps emphasize to your users the importance of securing their Tokens. The PIN must be at least 6-digits. The same **6 digit PIN** will also be used to recover the Wallet using OST’s Recovery from Smart Contract method which eliminates the need for users to write down a 12-word seed phrase or private key.  We describe the recovery process in more detail below.
+To create a Token Wallet, the user needs to enter a PIN. Setting a PIN helps emphasize to your users the importance of securing their Tokens. The PIN must be at least 6-digits. The same 6 digit PIN will also be used to recover the Wallet using OST’s Recovery from Smart Contract method which eliminates the need for users to write down a 12-word seed phrase or private key.  We describe the recovery process in more detail below.
 
 :::warning User Authentication
 Your users do not need to enter a PIN to create their wallet until they visit the wallet section of your app. Likewise, the user does not need to re-enter their Wallet PIN to use other parts of your app. You can decide when and where in your app that you want to first introduce the Wallet.
@@ -35,7 +35,7 @@ Your users do not need to enter a PIN to create their wallet until they visit th
 
 ### 2. Authorize a session 
 
-A helpful feature of the OST Wallet SDK is Session Keys. A session refers to a duration of time when sessionKeys can seamlessly sign a transaction on behalf of the user for in-app transactions under the authorized spending limit. The user’s **6 digit PIN** can be used to authorize a session.
+A helpful feature of the OST Wallet SDK is Session Keys. A session refers to a duration of time when sessionKeys can seamlessly sign a transaction on behalf of the user for in-app transactions under the authorized spending limit. The user’s 6 digit PIN can be used to authorize a session.
 
 The default duration for Sessions is 2 weeks. During those two weeks, once the user has authorized the session, she can confirm transactions without having to re-enter her PIN.  
 
@@ -44,7 +44,7 @@ The default duration for Sessions is 2 weeks. During those two weeks, once the u
 
 ### 3. Reduce friction using biometrics 
 
-A **6 digit PIN** is a much nicer experience than a private key, but using biometrics on top of a **6 digit PIN** gets your users the security they need with none of the hassles. 
+A 6 digit PIN is a much nicer experience than a private key, but using biometrics on top of a 6 digit PIN gets your users the security they need with none of the hassles. 
 
 ![image](/platform/docs/assets/wallet-ux-guide/3-Reduce-Friction.jpg)
 

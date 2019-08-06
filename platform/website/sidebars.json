@@ -33,9 +33,10 @@
        "label": "OST Wallet",
        "ids": [
         "wallet/introduction",
-        "wallet/sdk",
-        "wallet/app",
-        "wallet/features"
+        "wallet/user-experience",
+        "wallet/session-keys",
+        "wallet/multi-device",
+        "wallet/recovery"
        ]
      }
     ],

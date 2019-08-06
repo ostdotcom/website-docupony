@@ -41,3 +41,12 @@ When you create your own token and add it to the sample app, you will be the onl
 :::
 
 ![InviteUsers](/platform/docs/assets/Wallet%20/InviteUsers.png)
+
+
+## Watch a Short Video on the OST Wallet App
+<div align="center">
+    <iframe width="680" height="384"
+        src="https://www.youtube.com/embed/GUbPb0Zt6Eg">
+    </iframe>
+</div>
+<br>
