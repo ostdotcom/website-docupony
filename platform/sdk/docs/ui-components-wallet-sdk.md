@@ -51,9 +51,7 @@ The latest release of the Mobile Wallet SDKs is 2.3.0
 
 ### resetPIN
 <div style="no-wrap">
-<img alt-text="reset-pin-1" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-1.png" width="50%">
-<img alt-text="reset-pin-2" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-2.png" width="50%">
-<img alt-text="reset-pin-3" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-3.png" width="50%">
+<img alt-text="reset-pin-1" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-1.png" width="50%"><img alt-text="reset-pin-2" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-2.png" width="50%"><img alt-text="reset-pin-3" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-3.png" width="50%">
 </div>
 
 ### getDeviceMnemonics
@@ -62,10 +60,9 @@ The latest release of the Mobile Wallet SDKs is 2.3.0
 </div>
 
 ## Theming
-Please check back soon! More details will be published on 6th Aug 2019.
+The following is an overview of the components that will be configurable.
 
 <img alt-text="theming" src="/platform/docs/assets/ui-thru-sdk/theming.jpg" width="100%">
-
 
 
 ## Learn More
