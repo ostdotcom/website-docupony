@@ -49,8 +49,24 @@ The latest release of the Mobile Wallet SDKs is 2.3.0
 <img alt-text="abort-recovery-enter-pin" src="/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-enter-pin.png" width="50%"><img alt-text="abort-recovery-device-list" src="/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-device-list.png" width="50%"><img alt-text="abort-recovery-confirmation" src="/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-confirmation.png" width="50%">
 </div>
 
+### resetPIN
+<div style="no-wrap">
+<img alt-text="reset-pin-1" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-1.png" width="50%">
+<img alt-text="reset-pin-2" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-2.png" width="50%">
+<img alt-text="reset-pin-3" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-3.png" width="50%">
+</div>
+
+### getDeviceMnemonics
+<div style="no-wrap">
+<img alt-text="mnemonic-phrase-1" src="/platform/docs/assets/ui-thru-sdk/mnemonic/mnemonic-phrase-1.png" width="50%"><img alt-text="mnemonic-phrase-2" src="/platform/docs/assets/ui-thru-sdk/mnemonic/mnemonic-phrase-2.png" width="50%">
+</div>
+
 ## Theming
 Please check back soon! More details will be published on 6th Aug 2019.
+
+<img alt-text="theming" src="/platform/docs/assets/ui-thru-sdk/theming.jpg" width="100%">
+
+
 
 ## Learn More
 To learn more, check out the UI components section in each of the Wallet SDK GitHub Readme files. Scroll down to the sections titled OstWalletUI.
