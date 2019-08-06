@@ -9,7 +9,7 @@ Beginning version 2.3.0 (beta) of our Mobile Wallet SDKs, we started to add user
 Theming is supported so that developers can configure the components as needed.
 
 :::note Basic Configuration
-In the inital beta version, you can just configure the app logo image and app name. Component level configurations will be added soon! These are described in the [Theming](/platform/docs/sdk/ui-components-wallet-sdk/#theming) section below.
+In the inital beta version, you can just configure the app logo image and link to terms and conditions. Component level configurations will be added soon! These are described in the [Theming](/platform/docs/sdk/ui-components-wallet-sdk/#theming) section below.
 :::
 
 ## UI Components - Current Status
