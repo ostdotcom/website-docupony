@@ -75,6 +75,7 @@ $(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework
 $(SRCROOT)/Carthage/Build/iOS/EthereumKit.framework
 $(SRCROOT)/Carthage/Build/iOS/FMDB.framework
 $(SRCROOT)/Carthage/Build/iOS/SipHash.framework
+$(SRCROOT)/Carthage/Build/iOS/TrustKit.framework
 $(SRCROOT)/Carthage/Build/iOS/OstWalletSdk.framework
 ```
 
@@ -117,8 +118,8 @@ Copy paste this configuration file
 | PricePointCurrencySymbol | It is the symbol of quote currency used in price conversion. |
 | RequestTimeoutDuration | Request timeout in seconds for https calls made by ostWalletSdk. |
 | PinMaxRetryCount | Maximum retry count to get the wallet Pin from user.|
-| SessionBufferTime | Buffer expiration time for session keys in seconds.|
-| UseSeedPassword | Uses mnemonics and password to generate seed. |
+| SessionBufferTime | Buffer expiration time for session keys in seconds. Default value is 3600 seconds.|
+| UseSeedPassword | The seed password is salt to PBKDF2 used to generate seed from the mnemonic. When UseSeedPassword set to true, different deterministic salts are used for different keys. |
 
 
 :::warning
