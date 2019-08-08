@@ -16,17 +16,18 @@ In the inital beta version, you can just configure the app logo image and link t
 
 | Workflow | UI Components | SDK Version | Theming | 
 | --- | --- | :---: | :---: |
-| activateUser | <ul><li>Create PIN</li><li>Confirm PIN</li><li>PIN Match Failed</li><li>Activating User Loader</li></ul> | Available v2.3.0 | Coming Soon! |
-| initiateDeviceRecovery | <ul><li>Device List</li><li>Start Recovery Button</li><li>Enter PIN</li><li>Recovering Wallet Loader</li><li>Initiate Recovery Success Message</li></ul> | Available v2.3.0 | Coming Soon! | 
-| abortDeviceRecovery | <ul><li>Abort Recovery (Enter PIN)</li><li>Abort Recovery Confirmation (Stop/Cancel)</li></ul> | Available v2.3.0 | Coming Soon! | 
-| addSession | <ul><li>Add Session (Enter PIN)</li><ul>| In Development | |  
-| resetPin | <ul><li>Enter Current PIN</li><li>Enter New PIN</li><li>Confirm PIN</li><li>PIN Match Failed</li></ul> | In Development | |
-| setBiometricPreference |  |  In Development |  |
+| activateUser | <ul><li>Enter PIN (Create PIN)</li><li>Enter PIN (Confirm PIN)</li><li>PIN Match Failed Msg</li><li>Activating User Loader</li></ul> | Available v2.3.0 | 15-Aug-2019 |
+| initiateDeviceRecovery | <ul><li>Device List</li><li>Start Recovery Button</li><li>Enter PIN (Initiate Recovery)</li><li>Recovering Wallet Loader</li><li>Initiate Recovery Success Message</li></ul> | Available v2.3.0 | 15-Aug-2019 | 
+| abortDeviceRecovery | <ul><li>Device List</li><li>Abort Recovery Button</li><li>Enter PIN (Abort Recovery)</li><li>Abort Recovery Confirmation (Stop/Cancel)</li></ul> | Available v2.3.0 | 15-Aug-2019 | 
+| addSession | <ul><li>Enter PIN (Add Session)</li><li>Authorizing Session Loader</li><li>Biometric Face</li><li>Biometric Thumb</li><ul> | In Development | 15-Aug-2019 |  
+| resetPin | <ul><li>Enter Current PIN</li><li>Enter New PIN</li><li>Confirm New PIN</li><li>PIN Match Failed Msg</li></ul> | In Development | 15-Aug-2019 |
+| getDeviceMnemonics | <ul><li>Enter PIN (View Mnemonics)</li><li>View 12-word Mnemonic </li></ul> | In Development | 15-Aug-2019 | 
+| authorizeCurrentDeviceWithMnemonics  | <ul><li>Enter 12-word Mnemonic</li><li>Recover Wallet Button</li></ul> | In Development | 15-Aug-2019 |
+| revokeDevice | <ul><li>Device List</li><li>Revoke Device Button</li></ul> | In Development | 15-Aug-2019 |
+| setBiometricPreference |  |  In Development | 15-Aug-2019 |
 | performQRAction | | |  |
-| getDeviceMnemonics | | | | 
-| executeTransaction | | | |
-| authorizeCurrentDeviceWithMnemonics  | | | |
 | logoutAllSessions | | | |
+| executeTransaction | | | |
 | setupDevice | Not Applicable | N/A | N/A |
 
 :::note SDK Release version
@@ -53,6 +54,11 @@ The latest release of the Mobile Wallet SDKs is 2.3.0
 ### resetPIN
 <div style="no-wrap">
 <img alt-text="reset-pin-1" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-1.png" width="50%"><img alt-text="reset-pin-2" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-2.png" width="50%"><img alt-text="reset-pin-3" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-3.png" width="50%">
+</div>
+
+### addSession
+<div style="no-wrap">
+<img alt-text="authorize-session" src="/platform/docs/assets/ui-thru-sdk/add-session/authorize-session.png" width="50%"><img alt-text="auth-loader" src="/platform/docs/assets/ui-thru-sdk/add-session/auth-loader.png" width="50%"><img alt-text="biometric-face" src="/platform/docs/assets/ui-thru-sdk/add-session/biometric-face.png" width="50%"><img alt-text="biometric-face-failed" src="/platform/docs/assets/ui-thru-sdk/add-session/biometric-face-failed.png" width="50%"><img alt-text="biometric-thumb" src="/platform/docs/assets/ui-thru-sdk/add-session/biometric-thumb.png" width="50%"><img alt-text="biometric-face-failed" src="/platform/docs/assets/ui-thru-sdk/add-session/biometric-face-failed.png" width="50%">
 </div>
 
 ### getDeviceMnemonics
