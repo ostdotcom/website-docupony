@@ -16,15 +16,15 @@ In the inital beta version, you can just configure the app logo image and link t
 
 | Workflow | UI Components | SDK Version | Theming | 
 | --- | --- | :---: | :---: |
-| activateUser | <ul><li>Enter PIN (Create PIN)</li><li>Enter PIN (Confirm PIN)</li><li>PIN Match Failed Msg</li><li>Activating User Loader</li></ul> | Available v2.3.0 | 15-Aug-2019 |
-| initiateDeviceRecovery | <ul><li>Device List</li><li>Start Recovery Button</li><li>Enter PIN (Initiate Recovery)</li><li>Recovering Wallet Loader</li><li>Initiate Recovery Success Message</li></ul> | Available v2.3.0 | 15-Aug-2019 | 
-| abortDeviceRecovery | <ul><li>Enter PIN (Abort Recovery)</li></ul> | Available v2.3.0 | 15-Aug-2019 | 
-| addSession | <ul><li>Enter PIN (Add Session)</li><li>Authorizing Session Loader</li><li>Biometric Face</li><li>Biometric Thumb</li><li>Enter PIN (if biometric fails)</li><ul> | In Development | 15-Aug-2019 |  
-| resetPin | <ul><li>Enter Current PIN</li><li>Enter New PIN</li><li>Confirm New PIN</li><li>PIN Match Failed Msg</li></ul> | In Development | 15-Aug-2019 |
-| getDeviceMnemonics | <ul><li>Authenticate with biometrics (Thumb/Face)</li><li>View 12-word Mnemonic</li></ul> | In Development | 15-Aug-2019 | 
-| authorizeCurrentDeviceWithMnemonics  | <ul><li>Enter 12-word Mnemonic</li><li>Authorize Button</li></ul> | In Development | 15-Aug-2019 |
-| revokeDevice | <ul><li>Device List</li><li>No devices found </li><li>Revoke Device Button</li></ul> | In Development | 15-Aug-2019 |
-| setBiometricPreference |  |  In Development | 15-Aug-2019 |
+| activateUser | <ul><li>Enter PIN (Create PIN)</li><li>Enter PIN (Confirm PIN)</li><li>PIN Match Failed Msg</li><li>Activating User Loader</li></ul> | Available v2.3.0 | Aug-2019 |
+| initiateDeviceRecovery | <ul><li>Device List</li><li>Start Recovery Button</li><li>Enter PIN (Initiate Recovery)</li><li>Recovering Wallet Loader</li><li>Initiate Recovery Success Message</li></ul> | Available v2.3.0 | Aug-2019 | 
+| abortDeviceRecovery | <ul><li>Enter PIN (Abort Recovery)</li></ul> | Available v2.3.0 | Aug-2019 | 
+| addSession | <ul><li>Enter PIN (Add Session)</li><li>Authorizing Session Loader</li><li>Biometric Face</li><li>Biometric Thumb</li><li>Enter PIN (if biometric fails)</li><ul> | In Development | Aug-2019 |  
+| resetPin | <ul><li>Enter Current PIN</li><li>Enter New PIN</li><li>Confirm New PIN</li><li>PIN Match Failed Msg</li></ul> | In Development | Aug-2019 |
+| getDeviceMnemonics | <ul><li>Authenticate with biometrics (Thumb/Face)</li><li>View 12-word Mnemonic</li></ul> | In Development | Aug-2019 | 
+| authorizeCurrentDeviceWithMnemonics  | <ul><li>Enter 12-word Mnemonic</li><li>Authorize Button</li></ul> | In Development | Aug-2019 |
+| revokeDevice | <ul><li>Device List</li><li>No devices found </li><li>Revoke Device Button</li></ul> | In Development | Aug-2019 |
+| setBiometricPreference |  |  In Development | Aug-2019 |
 | performQRAction | | |  |
 | logoutAllSessions | | | |
 | executeTransaction | | | |
