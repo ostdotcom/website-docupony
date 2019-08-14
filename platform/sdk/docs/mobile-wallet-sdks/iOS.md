@@ -1,8 +1,14 @@
 ---
 id: iOS
 title: iOS SDK Setup
-sidebar_label: Setup
+sidebar_label: iOS
 ---
+Please refer to our GitHub documentation for detailed information. The following page gives an overview of how to get started with the iOS Wallet Wallet SDK.
+
+## GitHub Readme Files
+* [iOS SDK Classes](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#classes)
+* [iOS SDK Methods](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#ost-wallet-sdk-apis)
+* [iOS SDK Protocols](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#protocol-workflow-callback)
 
 ## 1. Prerequisite 
 Install and complete integration with one of our Server Side SDKs
@@ -11,13 +17,14 @@ Install and complete integration with one of our Server Side SDKs
 * [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/)
 * [Java](/platform/docs/sdk/server-side-sdks/java/)
 
-
 ## 2. Requirements
 
 | Item | Supported Version | 
 | --- | ---: |
 | iOS | 9.0 and above. Recommended version: 10.3 |
 | Swift | 4.2 |
+
+3. iOS Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/), [Protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/classes/)
 
 
 ## 3. Install iOS Wallet SDK
@@ -237,4 +244,3 @@ To provide developers with sample integration of Wallet SDK, an [OST Wallet iOS 
 ## Next Steps
 1. [Create Wallet Guide](/platform/docs/1-create)
 2. [Execute Transaction Guide](/platform/docs/guides/execute-transactions/)
-3. iOS Wallet SDK [Methods](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/), [Protocol](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/) and [Classes](/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/classes/)

@@ -22,43 +22,15 @@
       },
       "mobile-wallet-sdks/android": {
         "title": "Android SDK Setup",
-        "sidebar_label": "Setup"
-      },
-      "mobile-wallet-sdks/android/latest/classes": {
-        "title": "Android SDK Classes",
-        "sidebar_label": "Classes"
-      },
-      "mobile-wallet-sdks/android/latest/interfaces": {
-        "title": "Android SDK interfaces",
-        "sidebar_label": "Interfaces"
-      },
-      "mobile-wallet-sdks/android/latest/methods": {
-        "title": "Android SDK Methods",
-        "sidebar_label": "Methods"
+        "sidebar_label": "Android"
       },
       "mobile-wallet-sdks/iOS": {
         "title": "iOS SDK Setup",
-        "sidebar_label": "Setup"
-      },
-      "mobile-wallet-sdks/iOS/latest/classes": {
-        "title": "iOS SDK Classes",
-        "sidebar_label": "Classes"
-      },
-      "mobile-wallet-sdks/iOS/latest/methods": {
-        "title": "iOS SDK Methods",
-        "sidebar_label": "Methods"
-      },
-      "mobile-wallet-sdks/iOS/latest/protocols": {
-        "title": "iOS SDK Protocols",
-        "sidebar_label": "Protocols"
-      },
-      "mobile-wallet-sdks/overview": {
-        "title": "Refrences",
-        "sidebar_label": "Overview"
+        "sidebar_label": "iOS"
       },
       "mobile-wallet-sdks/react-native": {
         "title": "React Native Wallet SDK Setup",
-        "sidebar_label": "Setup"
+        "sidebar_label": "React Native"
       },
       "server-side-sdks/java": {
         "title": "Java SDK Quickstart Guide",
