@@ -3,12 +3,15 @@ id: android
 title: Android SDK Setup
 sidebar_label: Android
 ---
-Please refer to our GitHub documentation for detailed information. The following page gives an overview of how to get started with the Android Wallet Wallet SDK.
+Please refer to our GitHub documentation for detailed information. The following page gives an overview of how to get started with the Android Wallet SDK.
 
-## GitHub Readme Files
-* [Android SDK Classes](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#classes)
+## GitHub Readme
 * [Android SDK Methods](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#ost-sdk-methods)
-* [Android SDK Interfaces](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#interface)
+* [Android SDK Workflows](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#workflows)
+* [Android SDK Getters](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#getters)
+* [OST JSON APIs](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#ost-json-apis)
+* [Android SDK Interfaces](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#ostworkflowcallback-interface)
+* [Android SDK Classes](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#classes)
 
 ## 1. Interfaces and workflows
 Android Wallet SDK consists of an `interface` and `workflows`.

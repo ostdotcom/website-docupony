@@ -5,10 +5,11 @@ sidebar_label: React Native
 ---
 Please refer to our GitHub documentation for detailed information. The following page gives an overview of how to get started with the React Native Wallet SDK.
 
-## GitHub Readme Files
+## GitHub Readme
 * [React Native SDK Usage](https://github.com/ostdotcom/ost-wallet-sdk-react-native#sdk-usage)
 * [React Native SDK Methods](https://github.com/ostdotcom/ost-wallet-sdk-react-native#sdk-methods)
 * [React Native SDK Callbacks](https://github.com/ostdotcom/ost-wallet-sdk-react-native#sdk-workflow-callbacks)
+* [OST JSON APIs](https://github.com/ostdotcom/ost-wallet-sdk-react-native#ost-json-apis)
 
 ## Introduction
 OST React Native Wallet SDK is the official Wallet SDK for the React Native platform. OST React Native Wallet SDK is a mobile application development SDK that enables developers to integrate the functionality of a non-custodial crypto-wallet into consumer applications.

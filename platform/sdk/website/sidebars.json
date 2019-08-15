@@ -17,7 +17,7 @@
 
       {
         "type": "subcategory",
-        "label": "Set-Up Processes",
+        "label": "Set-Up Guidelines",
         "ids": [
           "mobile-wallet-sdks/android",
           "mobile-wallet-sdks/iOS",

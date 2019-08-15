@@ -3,12 +3,14 @@ id: iOS
 title: iOS SDK Setup
 sidebar_label: iOS
 ---
-Please refer to our GitHub documentation for detailed information. The following page gives an overview of how to get started with the iOS Wallet Wallet SDK.
+Please refer to our GitHub documentation for detailed information. The following page gives an overview of how to get started with the iOS Wallet SDK.
 
-## GitHub Readme Files
+## GitHub Readme
+* [iOS SDK Methods](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#types-of-methods)
+* [iOS SDK Workflows](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#workflows)
+* [iOS SDK Getters](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#getters)
+* [OST JSON APIs](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#ost-json-apis)
 * [iOS SDK Classes](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#classes)
-* [iOS SDK Methods](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#ost-wallet-sdk-apis)
-* [iOS SDK Protocols](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#protocol-workflow-callback)
 
 ## 1. Prerequisite 
 Install and complete integration with one of our Server Side SDKs
