@@ -19,30 +19,10 @@
 
       {
         "type": "subcategory",
-        "label": "Android",
+        "label": "Set-Up Guidelines",
         "ids": [
           "mobile-wallet-sdks/android",
-          "mobile-wallet-sdks/android/latest/methods",
-          "mobile-wallet-sdks/android/latest/interfaces",
-          "mobile-wallet-sdks/android/latest/classes"
-        ]
-      },
-
-      {
-        "type": "subcategory",
-        "label": "iOS",
-        "ids": [
           "mobile-wallet-sdks/iOS",
-          "mobile-wallet-sdks/iOS/latest/methods",
-          "mobile-wallet-sdks/iOS/latest/protocols",
-          "mobile-wallet-sdks/iOS/latest/classes"
-        ]
-      },
-
-      {
-        "type": "subcategory",
-        "label": "React Native",
-        "ids": [
           "mobile-wallet-sdks/react-native"
         ]
       }
