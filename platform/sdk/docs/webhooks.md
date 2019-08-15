@@ -4,7 +4,7 @@ title: Introduction to OST Platform WebHooks
 sidebar_label: WebHooks (NEW)
 ---
 
-Our WebHooks allow you to subscribe to specific events or topics that occur in OST Platform. Whenever a trigger event occurs the WebHook sees the event, collects the data, and sends it to a URL specified by you in the form of an HTTP request. Once you recieve the data, you can then execute any code on your server app.
+Our WebHooks allow you to subscribe to specific events or topics that occur in OST Platform. Whenever a trigger event occurs the WebHook sees the event, collects the data, and sends it to a URL specified by you in the form of an HTTP request. Once you receive the data, you can then execute any code on your server app.
 
 **Example:** 
 1. If you subscribe to `users/activation_success` topic then once a user is activated in OST Platform, you will recieve a notification following which you can execute any logic, for example: you can update the user with updated user entity in your database.
