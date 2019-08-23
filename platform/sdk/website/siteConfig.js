@@ -38,24 +38,30 @@ const siteConfig = {
   //   {page: 'help', label: 'Help'},
   //   {blog: true, label: 'Blog'},
   // ],
+algolia: {
+    apiKey: '7e3dd5e8633259277ff8ca05926052d0',
+    indexName: 'stagingost',
+    algoliaOptions: {}, // Optional, if provided by Algolia
+    placeholder: 'Ask me something'
+  },
 
   headerLinks: [
     {href: '/platform/', label: 'Docs'},
     {href: '/platform/docs/sdk', label: 'SDKs'},
     {href: '/platform/docs/api', label: 'API References'},
+    { search: true },
     {href: 'https://platform.ost.com/login', external: true,  label: 'Login'},
     {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
   ],
 
   secondryHeaderLinks: [
-  
+
   ],
 
   markdownPlugins: [
    // Highlight admonitions.
    require('remarkable-admonitions')({ icon: 'svg-inline' })
  ],
-
   // If you have users set above, you add it here:
   users,
 
