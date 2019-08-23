@@ -42,8 +42,9 @@ const siteConfig = {
  algolia: {
     apiKey: '7e3dd5e8633259277ff8ca05926052d0',
     indexName: 'stagingost',
-    algoliaOptions: {} // Optional, if provided by Algolia
-  },
+    algoliaOptions: {}, // Optional, if provided by Algolia
+   placeholder: 'Ask me something'
+ },
   headerLinks: [
     {href: '/platform/', label: 'Docs'},
     {href: '/platform/docs/sdk/', label: 'SDKs'},
