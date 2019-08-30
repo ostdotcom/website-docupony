@@ -26,12 +26,10 @@ There are 12 supported workflows. Each workflow has one or more UI views. Views 
 | 11. Scan QR-Code to Authorize Device | Scan QR, Accept Button, Reject Button, Enter PIN|
 | 12. Scan QR-Code to Execute Transaction | Scan QR, Accept Button, Reject Button, Enter PIN |
 
-
-:::note Loaders
+### Loaders
 In every workflow we support two loaders with text configuration:
 * initial_loader: Loader shown before workflow request construct
 * loader: Loader shown after workflow request construct
-:::
 
 ## List of View Configuration Keys
 
