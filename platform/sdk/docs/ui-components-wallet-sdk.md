@@ -8,10 +8,10 @@ In version 2.3.1 (relased 28-Aug-2019) of our Mobile Wallet SDKs, we introduced 
 
 This pages introduces the core features and points to detailed documentation on GitHub. 
 
-## Workflows w/ UI Components
+## Workflows w/ UI Components (Views)
 There are 12 supported workflows. Each workflow has one or more UI views. Views are re-used and both the content (text) and theme (design) are configurable for each workflow.
 
-| Supported Workflows | Views |
+| Supported Workflows |Views |
 | --- | --- |
 | 1. Activate User | Create PIN, Confirm PIN |
 | 2. Add Session | Enter PIN |
@@ -28,10 +28,10 @@ There are 12 supported workflows. Each workflow has one or more UI views. Views 
 
 ### Loaders
 In every workflow we support two loaders with text configuration:
-* initial_loader: Loader shown before workflow request construct
-* loader: Loader shown after workflow request construct
+* `initial_loader`: Loader shown before workflow request construct
+* `loader`: Loader shown after workflow request construct
 
-## List of View Configuration Keys
+## List of Views
 
 | View Configuration Keys | Description |
 | --- | --- |
@@ -91,13 +91,13 @@ App developers can configure the content (text) and theme (design) of each of th
 * [React Native](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ThemeConfig.md)
  
 #### Navigation Bar
-<img alt-text="navigation bar" src="/platform/docs/assets/ui-thru-sdk/NavBar.png" width="90%">
+<img alt-text="navigation bar" src="/platform/docs/assets/ui-thru-sdk/NavBar.png" width="80%">
 
 #### Sample Screen (Create PIN)
-<img alt-text="sample screen" src="/platform/docs/assets/ui-thru-sdk/PinView.png" width="90%">
+<img alt-text="sample screen" src="/platform/docs/assets/ui-thru-sdk/PinView.png" width="80%">
 
 #### Sample Card (Device)
-<img alt-text="sample card" src="/platform/docs/assets/ui-thru-sdk/Card.png" width="80%">
+<img alt-text="sample card" src="/platform/docs/assets/ui-thru-sdk/Card.png" width="70%">
 
 ::: note Custom Fonts
 To support custom font in your application, add your font in /src/main/assets
