@@ -538,10 +538,23 @@ response = users_service.create(create_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -673,10 +686,23 @@ response = users_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -834,10 +860,23 @@ response = users_service.get_list(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -1122,10 +1161,23 @@ response = devices_service.create(create_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -1272,10 +1324,23 @@ response = devices_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -1421,10 +1486,23 @@ response = devices_service.get_list(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -1622,10 +1700,23 @@ response = sessions_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -1766,10 +1857,23 @@ response = sessions_service.get_list(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -1953,10 +2057,23 @@ response = rules_service.get_list(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -2801,10 +2918,23 @@ response = price_points_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -3256,10 +3386,23 @@ response = transactions_service.execute(execute_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -3750,10 +3893,23 @@ response = transactions_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -3961,10 +4117,23 @@ response = transactions_service.get_list(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -4235,10 +4404,23 @@ response = balances_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -4552,10 +4734,23 @@ response = tokens_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -4742,10 +4937,23 @@ response = recovery_owners_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -4898,10 +5106,23 @@ response = chains_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -5065,10 +5286,23 @@ response = device_managers_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -5293,10 +5527,23 @@ response = base_tokens_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -5569,10 +5816,23 @@ response = webhooks_service.verify_signature(signature_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -5702,10 +5962,23 @@ response = webhooks_service.create(create_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -5853,10 +6126,23 @@ response = webhooks_service.get(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -6000,10 +6286,23 @@ response = webhooks_service.get_list(get_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -6207,10 +6506,23 @@ response = webhooks_service.update(update_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 
@@ -6368,10 +6680,23 @@ response = webhooks_service.delete(delete_params)
 ```javascript
 const OSTSDK = require('@ostdotcom/ost-sdk-js');
 
+// OBTAINED FROM DEVELOPER PAGE
+let apiKey = '65e20fcfce72f4c34546338a70518478'; 
+
+// OBTAINED FROM DEVELOPER PAGE
+let apiSecret = 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0';  
+
+/* 
+  The valid API endpoints are:
+  1. Mainnet: "https://api.ost.com/mainnet/v2/"
+  2. Testnet: "https://api.ost.com/testnet/v2/"
+*/
+let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
 const ostObj = new OSTSDK({
-                            "apiKey": '65e20fcfce72f4c34546338a70518478', 
-                            "apiSecret": 'f07f94340ab66045634d7505385a53e4ed12f7d9792a40798f60fa9a95adb3e0', 
-                            "apiEndpoint": 'https://api.ost.com/testnet/v2/',
+                            "apiKey": apiKey, 
+                            "apiSecret": apiSecret, 
+                            "apiEndpoint": apiEndpoint,
                             "config": {"timeout": 15}
                         });
 

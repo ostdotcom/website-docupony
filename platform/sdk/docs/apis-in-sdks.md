@@ -33,7 +33,8 @@ Internal implies it is used for Wallet SDK internal use and is not exposed to yo
 |---|---|---|---|
 | Devices | Register Device | <a class="available-link" target="_blank" href="/platform/docs/api/#register-devices"><span style="color:green"> Available </span> </a> | <span style="color:#eb4d4a">N/A</span> |
 | | Get Device | <a class="available-link" target="_blank" href="/platform/docs/api/#get-a-device"><span style="color:green"> Available </span> </a> | <span style="color:green"> Available </span> |
-| | List Device | <a class="available-link" target="_blank" href="/platform/docs/api/#list-all-devices"><span style="color:green"> Available </span> </a>| Coming Soon! |
+| | List Devices in the Economy | <a class="available-link" target="_blank" href="/platform/docs/api/#list-all-devices"><span style="color:green"> Available </span> </a>|  <span style="color:#eb4d4a"> N/A </span> |
+| | List Devices of a User | <a class="available-link" target="_blank" href="/platform/docs/api/#list-all-devices"><span style="color:green"> Available </span> </a>|  <span style="color:green"> Available </span>|
 | | Authorize Device | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
 | | Revoke Device | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
 | | Initiate Device Recovery | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
@@ -45,7 +46,8 @@ Internal implies it is used for Wallet SDK internal use and is not exposed to yo
 |---|---|---|---|
 | Sessions | Authorize Session | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
 | | Get Session | <a class="available-link" target="_blank" href="/platform/docs/api/#get-a-user-39-s-session"><span style="color:green"> Available </span> </a>| Internal |
-| | List Session | <a class="available-link" target="_blank" href="/platform/docs/api/#list-all-sessions"> <span style="color:green"> Available </span> </a> | <span style="color:#eb4d4a">N/A</span> |
+| | List Sessions in the Economy  | <a class="available-link" target="_blank" href="/platform/docs/api/#list-all-sessions"> <span style="color:green"> Available </span> </a> | <span style="color:#eb4d4a">N/A</span> |
+| | List Sessions of a User| <a class="available-link" target="_blank" href="/platform/docs/api/#list-all-sessions"> <span style="color:green"> Available </span> </a> | <span style="color:green"> Available </span>|
 | | Logout All Sessions | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
 
 ### Rules
@@ -65,7 +67,8 @@ Internal implies it is used for Wallet SDK internal use and is not exposed to yo
 | | Execute User to Company Transaction | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
 | | Execute User to User Transaction | <span style="color:#eb4d4a">N/A</span> | <span style="color:green"> Available </span> |
 | | Get Transaction | <a class="available-link" target="_blank" href="/platform/docs/api/#get-a-transaction-details"><span style="color:green"> Available </span></a> | <span style="color:#eb4d4a">N/A</span> |
-| | List Transactions (for current user for Wallet SDK) | <a class="available-link" target="_blank" href="/platform/docs/api/#get-all-user-39-s-transactions"><span style="color:green"> Available </span> </a>| <span style="color:green"> Available </span> |
+| | List Transactions in the economy | <a class="available-link" target="_blank" href="/platform/docs/api/#get-all-user-39-s-transactions"><span style="color:green"> Available </span> </a>| <span style="color:#eb4d4a"> N/A </span> |
+| | List Transactions of a user | <a class="available-link" target="_blank" href="/platform/docs/api/#get-all-user-39-s-transactions"><span style="color:green"> Available </span> </a>| <span style="color:green"> Available </span> |
 
 ### Balance
 | API Endpoint <span style="color:white">~~~~~</span> | Actions <span style="color:white">~~~~~~~~~~~~~~~~~~~~~~</span> | Server SDK | Wallet SDK |
