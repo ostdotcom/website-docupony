@@ -5,12 +5,17 @@ sidebar_label: iOS
 ---
 Please refer to our GitHub documentation for detailed information. The following page gives an overview of how to get started with the iOS Wallet SDK.
 
-## GitHub Readme
-* [iOS SDK Methods](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#types-of-methods)
-* [iOS SDK Workflows](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#workflows)
-* [iOS SDK Getters](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#getters)
-* [OST JSON APIs](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#ost-json-apis)
-* [iOS SDK Classes](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop#classes)
+## GitHub Links
+* [GitHub Readme](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md)
+    * [SDK Types of Methods](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md#types-of-methods)
+    * [SDK Workflows](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md#workflows)
+    * [SDK Getters](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md#getters)
+    * [SDK Workflow Delegate Protocol](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md#ostworkflowdelegate-protocol)
+* [Additional GitHub documentation](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop/documentation)
+    * [OST JSON API](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/OstJsonApi.md)
+    * [OST Wallet UI (User Interface Components)](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/OstWalletUI.md)
+        * [Content Config](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ContentConfig.md)
+        * [Theming: Theme Config](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ThemeConfig.md)
 
 ## 1. Prerequisite 
 Install and complete integration with one of our Server Side SDKs

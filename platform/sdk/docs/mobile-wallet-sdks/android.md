@@ -5,13 +5,18 @@ sidebar_label: Android
 ---
 Please refer to our GitHub documentation for detailed information. The following page gives an overview of how to get started with the Android Wallet SDK.
 
-## GitHub Readme
-* [Android SDK Methods](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#ost-sdk-methods)
-* [Android SDK Workflows](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#workflows)
-* [Android SDK Getters](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#getters)
-* [OST JSON APIs](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#ost-json-apis)
-* [Android SDK Interfaces](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#ostworkflowcallback-interface)
-* [Android SDK Classes](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop#classes)
+## GitHub Links
+* [GitHub Readme](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/README.md)
+    * [SDK Methods](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/README.md#ost-sdk-methods)
+    * [SDK Workflows](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/README.md#workflows)
+    * [SDK Getters](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/README.md#getters)
+    * [SDK Workflow Callback Interface](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/README.md#ostworkflowcallback-interface)
+    * [SDK Classes](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/README.md#classes)
+* [Additional GitHub documentation](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/documentation)
+    * [OST JSON API](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/OstJsonApi.md)
+    * [OST Wallet UI (User Interface Components)](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/OstWalletUI.md)
+        * [Content Config](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ContentConfig.md)
+        * [Theming: Theme Config](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ThemeConfig.md)
 
 ## 1. Interfaces and workflows
 Android Wallet SDK consists of an `interface` and `workflows`.

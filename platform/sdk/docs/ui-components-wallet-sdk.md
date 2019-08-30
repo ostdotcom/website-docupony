@@ -27,7 +27,7 @@ In the inital beta version, you can just configure the app logo image and link t
 | setBiometricPreference |  |  In Development | Aug-2019 |
 | performQRAction | | |  |
 | logoutAllSessions | | | |
-| executeTransaction | | | |
+| executeTransaction | | | |gulp generate-all-docs-local-server
 | setupDevice | Not Applicable | N/A | N/A |
 
 :::note SDK Release version
