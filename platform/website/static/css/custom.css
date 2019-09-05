@@ -209,3 +209,81 @@ img[alt="create-pin"] {
  border: none;
  background: none;
 }
+
+input#search_input_react {
+    position:relative !important;
+    vertical-align:top !important;
+    background:#f5f6f500 !important;
+    color:#33445b !important;
+    border:1px solid#58667957 !important;
+    outline:none !important;
+    min-width:180px !important;
+}
+
+#search_input_react::placeholder {
+    color:#989898;
+}
+
+.navSearchWrapper:before {
+    left:26px;
+    top:17px;
+    border-color:#58667957;
+}
+    
+    
+.navSearchWrapper:after {
+    left:36px;
+    top:19px;
+    background:#58667957;
+}
+    
+
+li.navSearchWrapper.reactNavSearchWrapper {
+    top:5px;
+}
+
+@media only screen and (min-width: 520px) and (max-width: 1023px) {
+    input#search_input_react {
+
+        height: 36px;
+    }
+}
+
+
+@media only screen and (min-width: 450px) and (max-width: 735px) {
+    input#search_input_react {
+        width: 170px;
+    }
+}
+
+
+
+@media only screen and (max-width: 520px) {
+    input#search_input_react {
+        height: 36px;
+    }
+}
+
+@media only screen and (max-width: 511px) {
+
+    
+
+    .navSearchWrapper:before {
+        left:14px;
+        top:17px;
+        border-color:#58667957;
+    }
+        
+        
+    .navSearchWrapper:after {
+        left:25px;
+        top:19px;
+        background:#58667957;
+    }
+      
+    input#search_input_react{
+
+        min-width: 110px !important;
+    }
+}
+
