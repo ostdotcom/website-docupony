@@ -4,76 +4,113 @@ title: User Interface Components Available in Mobile Wallet SDKs
 sidebar_label: User Interface Components (NEW)
 ---
 
-Beginning version 2.3.0 (beta) of our Mobile Wallet SDKs, we started to add user-interface components to the SDKs. The intent is to add components for each workflow to make it easier for app developers to integrate the Wallet SDKs into their own apps. The UI components are available for each SDK: [Android](/platform/docs/sdk/mobile-wallet-sdks/android/), [iOS](/platform/docs/sdk/mobile-wallet-sdks/iOS), and [React Native](/platform/docs/sdk/mobile-wallet-sdks/react-native). 
+In version 2.3.1 (relased 28-Aug-2019) of our Mobile Wallet SDKs, we introduced user-interface (UI) components or views to expedite the development process and make it easier for developers to integrate with OST Platform.
 
-Theming is supported so that developers can configure the components as needed.
+This pages introduces the core features and points to detailed documentation on GitHub. 
 
-:::note Basic Configuration
-In the inital beta version, you can just configure the app logo image and link to terms and conditions. Component level configurations will be added soon! These are described in the [Theming](/platform/docs/sdk/ui-components-wallet-sdk/#theming) section below.
+## Workflows w/ UI Components (Views)
+There are 12 supported workflows. Each workflow has one or more UI views. Views are re-used and both the content (text) and theme (design) are configurable for each workflow.
+
+| Supported Workflows |Views |
+| --- | --- |
+| 1. Activate User | Create PIN, Confirm PIN |
+| 2. Add Session | Enter PIN |
+| 3. Get Mnemonic Phrase | Enter PIN, Show Mnemonics |
+| 4. Reset a User's PIN | Enter PIN, Set New PIN, Confirm New PIN |
+| 5. Initiate Recovery | Device List, Action Button, Enter PIN |
+| 6. Abort Device Recovery | Device List, Action Button, Enter PIN |
+| 7. Revoke Device | Device List, Action Button, Enter PIN |
+| 8. Update Biometric Preference | Enter PIN |
+| 9. Authorize Current Device With Mnemonics | Enter Mnemonics, Action Button, Enter PIN |
+| 10. Get Current Device QR-Code | Show QR |
+| 11. Scan QR-Code to Authorize Device | Scan QR, Accept Button, Reject Button, Enter PIN|
+| 12. Scan QR-Code to Execute Transaction | Scan QR, Accept Button, Reject Button, Enter PIN |
+
+### Loaders
+In every workflow we support two loaders with text configuration:
+* `initial_loader`: Loader shown before workflow request construct
+* `loader`: Loader shown after workflow request construct
+
+## List of Views
+
+| View Configuration Keys | Description |
+| --- | --- |
+| create_pin | User sets PIN for first time |
+| confirm_pin | User confirms PIN again | 
+| get_pin | User provides PIN for authentication |
+| set_new_pin | User sets new PIN |
+| confirm_new_pin | User confirms new PIN again |
+| show_mnemnonics | Shows 12 word mnemonic phrase of device |
+| provide_mnemonics | Get 12 word mnemonic phrase from user | 
+| show_qr | Show QR code of device | 
+| scan_qr | Scan QR code of another (registered) device or scan QR code of a transaction | 
+| verify_device | Dispays device data to be verified / authorized |
+| verify_transaction | Displays transaction data to be verified / authorized | |
+| device_list | 	Shows list of authorized devices for user to choose from | 
+
+## GitHub Documentation
+Detailed documentation is being maintained on GitHub
+* [Android](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/OstWalletUI.md)
+* [iOS](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/OstWalletUI.md)
+* [React Native](https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstWalletUI.md)
+
+App developers can configure the content (text) and theme (design) of each of the UI components available. To configure either, the SDK needs to be provided with JSON. The default configurations can be found below.
+
+### Content Config
+* [Android](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ContentConfig.md)
+* [iOS](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ContentConfig.md)
+* [React Native](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ContentConfig.md)
+
+#### PIN View (e.g. Create PIN)
+<img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/PinViewLabelTypes.png" width="90%">
+
+#### Show Device List View
+<img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/DeviceListLabelTypes.png" width="90%">
+
+#### Show Mnemonics View
+<img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/ViewMnemonicsLabelTypes.png" width="90%">
+
+#### Enter Mnemonics View
+<img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/ProvideMnemonics.png" width="90%">
+
+#### Show QR Code To Authorize Device View
+<img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/ShowQR.png" width="90%">
+
+#### Scan QR Code View
+<img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/ScanQR.png" width="90%">
+
+#### Authorize New Device View
+<img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/VerifyDevice.png" width="90%">
+
+#### Confirm Transaction View
+<img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/VerifyTX.png" width="90%">
+
+### Theming: Theme Config
+* [Android](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ThemeConfig.md)
+* [iOS](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ThemeConfig.md)
+* [React Native](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ThemeConfig.md)
+ 
+#### Navigation Bar
+<img alt-text="navigation bar" src="/platform/docs/assets/ui-thru-sdk/NavBar.png" width="80%">
+
+#### Sample Screen (Create PIN)
+<img alt-text="sample screen" src="/platform/docs/assets/ui-thru-sdk/PinView.png" width="80%">
+
+#### Sample Card (Device)
+<img alt-text="sample card" src="/platform/docs/assets/ui-thru-sdk/Card.png" width="70%">
+
+::: note Custom Fonts
+To support custom font in your application, add your font in /src/main/assets
 :::
 
-## UI Components - Current Status
+## UI Events and Listeners
+Developers can subscribe to specific event of each UI workflow. Supported events are:
+* requestAcknowledged
+* flowComplete
+* flowInterrupt
 
-| Workflow | UI Components | SDK Version | Theming | 
-| --- | --- | :---: | :---: |
-| activateUser | <ul><li>Enter PIN (Create PIN)</li><li>Enter PIN (Confirm PIN)</li><li>PIN Match Failed Msg</li><li>Activating User Loader</li></ul> | Available v2.3.0 | Aug-2019 |
-| initiateDeviceRecovery | <ul><li>Device List</li><li>Start Recovery Button</li><li>Enter PIN (Initiate Recovery)</li><li>Recovering Wallet Loader</li><li>Initiate Recovery Success Message</li></ul> | Available v2.3.0 | Aug-2019 | 
-| abortDeviceRecovery | <ul><li>Enter PIN (Abort Recovery)</li></ul> | Available v2.3.0 | Aug-2019 | 
-| addSession | <ul><li>Enter PIN (Add Session)</li><li>Authorizing Session Loader</li><li>Biometric Face</li><li>Biometric Thumb</li><li>Enter PIN (if biometric fails)</li><ul> | In Development | Aug-2019 |  
-| resetPin | <ul><li>Enter Current PIN</li><li>Enter New PIN</li><li>Confirm New PIN</li><li>PIN Match Failed Msg</li></ul> | In Development | Aug-2019 |
-| getDeviceMnemonics | <ul><li>Authenticate with biometrics (Thumb/Face)</li><li>View 12-word Mnemonic</li></ul> | In Development | Aug-2019 | 
-| authorizeCurrentDeviceWithMnemonics  | <ul><li>Enter 12-word Mnemonic</li><li>Authorize Button</li></ul> | In Development | Aug-2019 |
-| revokeDevice | <ul><li>Device List</li><li>No devices found </li><li>Revoke Device Button</li></ul> | In Development | Aug-2019 |
-| setBiometricPreference |  |  In Development | Aug-2019 |
-| performQRAction | | |  |
-| logoutAllSessions | | | |
-| executeTransaction | | | |gulp generate-all-docs-local-server
-| setupDevice | Not Applicable | N/A | N/A |
+## To Learn More Or Ask Questions Join us on Slack
 
-:::note SDK Release version
-The latest release of the Mobile Wallet SDKs is 2.3.0
+:::note Join our Public Slack space!
+We would love to hear your feedback! Join our public slack space and let's chat. Click [here](https://join.slack.com/t/tryost/shared_invite/enQtNjk5MTI4NDY5MjIyLTFlZWYyODNhMjA0YmNmM2ZmMTJkZDM4MDU0NGJlNDc3ZWEwMjY5ZWNiNjNiZDcyOTIyZTljNGFmN2E2NzY2MDk).
 :::
-
-## UI Components Screenshots
-
-### activateUser
-<div style="no-wrap">
-<img alt-text="create-pin" src="/platform/docs/assets/ui-thru-sdk/activate-user/create-pin.png" width="50%"><img alt-text="confirm-pin" src="/platform/docs/assets/ui-thru-sdk/activate-user/confirm-pin.png" width="50%"><img alt-text="activating-user-loader" src="/platform/docs/assets/ui-thru-sdk/activate-user/activating-user-loader.png" width="50%"><img alt-text="pin-match-failed" src="/platform/docs/assets/ui-thru-sdk/activate-user/pin-match-failed.png" width="50%">
-</div>
-
-### initiateDeviceRecovery
-<div style="no-wrap">
-<img alt-text="recovery-enter-pin" src="/platform/docs/assets/ui-thru-sdk/device-recovery/recovery-enter-pin.png" width="50%"><img alt-text="recovery-loader" src="/platform/docs/assets/ui-thru-sdk/device-recovery/recovery-loader.png" width="50%"><img alt-text="recovery-confirmation-success" src="/platform/docs/assets/ui-thru-sdk/device-recovery/recovery-confirmation-success.png" width="50%">
-</div>
-
-### abortDeviceRecovery 
-<div style="no-wrap">
-<img alt-text="abort-recovery-enter-pin" src="/platform/docs/assets/ui-thru-sdk/device-recovery/abort-recovery-enter-pin.png" width="50%">
-</div>
-
-### resetPIN
-<div style="no-wrap">
-<img alt-text="reset-pin-1" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-1.png" width="50%"><img alt-text="reset-pin-2" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-2.png" width="50%"><img alt-text="reset-pin-3" src="/platform/docs/assets/ui-thru-sdk/reset-pin/reset-pin-3.png" width="50%">
-</div>
-
-### addSession
-<div style="no-wrap">
-<img alt-text="authorize-session" src="/platform/docs/assets/ui-thru-sdk/add-session/authorize-session.png" width="50%"><img alt-text="auth-loader" src="/platform/docs/assets/ui-thru-sdk/add-session/auth-loader.png" width="50%"><img alt-text="biometric-face" src="/platform/docs/assets/ui-thru-sdk/add-session/biometric-face.png" width="50%"><img alt-text="biometric-face-failed" src="/platform/docs/assets/ui-thru-sdk/add-session/biometric-face-failed.png" width="50%"><img alt-text="biometric-thumb" src="/platform/docs/assets/ui-thru-sdk/add-session/biometric-thumb.png" width="50%"><img alt-text="biometric-face-failed" src="/platform/docs/assets/ui-thru-sdk/add-session/biometric-face-failed.png" width="50%">
-</div>
-
-### getDeviceMnemonics
-<div style="no-wrap">
-<img alt-text="mnemonic-phrase-1" src="/platform/docs/assets/ui-thru-sdk/mnemonic/mnemonic-phrase-1.png" width="50%"><img alt-text="mnemonic-phrase-2" src="/platform/docs/assets/ui-thru-sdk/mnemonic/mnemonic-phrase-2.png" width="50%">
-</div>
-
-## Theming
-The following is an overview of the components that will be configurable.
-
-<img alt-text="theming" src="/platform/docs/assets/ui-thru-sdk/theming.jpg" width="100%">
-
-
-## Learn More
-To learn more, check out the UI components section in each of the Wallet SDK GitHub Readme files. Scroll down to the sections titled OstWalletUI.
-* [Android Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/release-2.3)
-* [iOS Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/release-2.3)
-* [React-Native Wallet SDK](https://github.com/ostdotcom/ost-wallet-sdk-react-native/tree/release-2.3)
