@@ -39,17 +39,24 @@ const siteConfig = {
   //   {page: 'help', label: 'Help'},
   //   {blog: true, label: 'Blog'},
   // ],
-
+ algolia: {
+    apiKey: '4581592a66cad1175ed0af8d42692a80',
+    indexName: 'ost',
+    algoliaOptions: {}, // Optional, if provided by Algolia
+   placeholder: 'Search...'
+ },
   headerLinks: [
     {href: '/platform/', label: 'Docs'},
     {href: '/platform/docs/sdk/', label: 'SDKs'},
     {href: '/platform/docs/api', label: 'API References'},
+    { search: true },
     {href: 'https://platform.ost.com/login', external: true,  label: 'Login'},
-    {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
+    {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'},
+
   ],
 
   secondryHeaderLinks: [
-  
+
   ],
 
   markdownPlugins: [

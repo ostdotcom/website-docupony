@@ -38,10 +38,16 @@ const siteConfig = {
   //   {page: 'help', label: 'Help'},
   //   {blog: true, label: 'Blog'},
   // ],
-
+  // algolia: {
+  //   apiKey: '7e3dd5e8633259277ff8ca05926052d0',
+  //   indexName: 'stagingost',
+  //   algoliaOptions: {}, // Optional, if provided by Algolia
+  //   placeholder: 'Ask me something'
+  // },
   headerLinks: [
     {href: "/kyc/", label: 'KYC'},
-    {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'}
+    {href: 'https://help.ost.com/support/home', external: true,  label: 'Support'},
+    { search: true }
   ],
 
   secondryHeaderLinks: [
