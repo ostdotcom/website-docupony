@@ -40,8 +40,8 @@ const siteConfig = {
   //   {blog: true, label: 'Blog'},
   // ],
  algolia: {
-    apiKey: '7e3dd5e8633259277ff8ca05926052d0',
-    indexName: 'stagingost',
+    apiKey: '4581592a66cad1175ed0af8d42692a80',
+    indexName: 'ost',
     algoliaOptions: {}, // Optional, if provided by Algolia
    placeholder: 'Search...'
  },
