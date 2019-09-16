@@ -16,7 +16,7 @@ The CTA on this page is for the user to update the App to the latest version whi
 
 ![Update](/platform/docs/assets/wallet-ux-guide/0-Onboarding.jpg)
 
-![onbaording](/platform/docs/assets/wallet-ux-guide/0-1.1-Update-to-2.0.jpg)
+![onbaording](/platform/docs/assets/wallet-ux-guide/0-1.1-Update-to-2.0.png)
 
 
 ## Workflow: 
@@ -31,7 +31,7 @@ To create a Token Wallet, the user needs to enter a PIN. Setting a PIN helps emp
 Your users do not need to enter a PIN to create their wallet until they visit the wallet section of your app. Likewise, the user does not need to re-enter their Wallet PIN to use other parts of your app. You can decide when and where in your app that you want to first introduce the Wallet.
 :::
 
-![create wallet](/platform/docs/assets/wallet-ux-guide/1-Create-a-Wallet.jpg)
+![create wallet](/platform/docs/assets/wallet-ux-guide/1-Create-a-Wallet.png)
 
 ### 2. Authorize a session 
 
@@ -39,14 +39,14 @@ A helpful feature of the OST Wallet SDK is Session Keys. A session refers to a d
 
 The default duration for Sessions is 2 weeks. During those two weeks, once the user has authorized the session, she can confirm transactions without having to re-enter her PIN.  
 
-![Authorize](/platform/docs/assets/wallet-ux-guide/2-Authorize-a-Session.jpg)
+![Authorize](/platform/docs/assets/wallet-ux-guide/2-Authorize-a-Session.png)
 
 
 ### 3. Reduce friction using biometrics 
 
 A 6 digit PIN is a much nicer experience than a private key, but using biometrics on top of a 6 digit PIN gets your users the security they need with none of the hassles. 
 
-![image](/platform/docs/assets/wallet-ux-guide/3-Reduce-Friction.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/3-Reduce-Friction.png)
 
 
 Once biometrics are implemented, the user can authorize new Sessions with her biometrics and only rely on the PIN as a backup if biometrics are not working. 
@@ -63,17 +63,17 @@ Building a token ecosystem lets you reward your users for engaging with your and
 
 To keep your users engaged and strengthen the perception of your brand, use spending options that resonate with your users.
 
-![image](/platform/docs/assets/wallet-ux-guide/5-Spending-Options.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/5.1-Spending-Options.png)
 
 <br>
 
 If your company has a web app, spend actions can be authorized by using the Mobile Wallet QR. The suggested way to generate QR codes is to use a library that generates QR codes on the machine without making any external requests or without connecting to any third-party services. Here are a few examples of such libraries in [PHP](https://github.com/endroid/qr-code) , [NodeJS/Javascript](https://github.com/neocotic/qrious) and [Java/Android](https://github.com/zxing/zxing) 
 
-![image](/platform/docs/assets/wallet-ux-guide/5-WebStore.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/5.2-WebStore.png)
 
 An alternate way of performing transactions in web is via push notification. You can send the transaction data to the mobile app using push notification. Your mobile application can then use the transaction data to show the transaction confirmation dialog to the app user, who then can confirm or cancel the transaction. An image is shown below to give you an example.
 
-![image](/platform/docs/assets/wallet-ux-guide/5.3-WebStore.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/5.3-WebStore.png)
 
 ### 6. Balances and Activity history
 
@@ -83,13 +83,13 @@ The Balance and Ledger APIs allow the user to look at their current Token balanc
 The user does not need to be authorized for a Wallet Session to view Balance and Ledger
 :::
 
-![image](/platform/docs/assets/wallet-ux-guide/6-Balances-and-Activity.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/6-Balances-and-Activity.png)
 
 ### 7. Authorizing another device via a QR code (Optional)
 
 The OST Wallet SDK supports multiple devices accessing the same Wallet using the same PIN. Take advantage of the modular device management options by encouraging users to add devices. A QR code is a quick and easy way to set up a new device from an existing Wallet.  Enable users to scan the QR code to authorize the new device. Once the existing authorized device approves the request, the new device is also authorized and can use the same user PIN. Note: The user will have to set up biometrics again on the new device.
 
-![image](/platform/docs/assets/wallet-ux-guide/7-Multi-Device.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/7-Multi-Device.png)
 
 ### 8. Using mnemonic phrases to authorize a new device or recover a lost wallet (Optional) 
 
@@ -99,25 +99,25 @@ To do so, an authorized device shows the mnemonic phrase (after verifying the PI
 
 **This is an optional feature.**
 
-![image](/platform/docs/assets/wallet-ux-guide/8-Backup-Mnemonic.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/8.1-Backup-Mnemonic.png)
 
 The user enters their mnemonic phrase on a new device to authorize that device.
 
-![image](/platform/docs/assets/wallet-ux-guide/9-Mnemonic-Entry.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/8.2-Mnemonic-Entry.png)
 
 ### 9.  Recovery With PIN (Required) or mnemonic phrase (Optional)
 
 Oh no, a user lost the phone they had your application on. Thankfully, recovering access to funds is made painless with OST’s Wallet SDK.   
 
-![image](/platform/docs/assets/wallet-ux-guide/9-Recover-Wallet.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/9-Recover-Wallet.png)
 
 :::tip Recovery Process
 Notify users via Email to inform about the initiation and completion of the recovery process
 :::
 
-![image](/platform/docs/assets/wallet-ux-guide/9.1-recovery-emails-2.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/9.1-recovery-emails-2.png)
 
-![image](/platform/docs/assets/wallet-ux-guide/9.2-wallet-abort.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/9.2-wallet-abort.png)
 
 
 ### 10. Progress Indicators
@@ -127,13 +127,13 @@ Progress indicators help users understand the status and follow of an activity. 
 
 If the operation completes under 5 seconds, use a looping animation to indicate the progress. The animated loop offers enough feedback that the action has been initiated, but it doesn’t give any information on user wait times. A progress bar for a fast action would be confusing. Do not use stationary progress indicators as they may confuse the users and cause them to worry that the process has stalled
 
-![image](/platform/docs/assets/wallet-ux-guide/10.1-progress-tx.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/10.1-Progress-TX.png)
 
 **Long Actions - Creating & Recovering Wallet, Authorizing Sessions (10-30 seconds or more)**
 
 If the operation a very lengthy where the users are more interested in the completion of the action than progress,  use notifications or snack bars instead of blocking the UI with progress indicators. Allow users to continue with other tasks instead of actively monitoring the progress without any disruption. Let’s take a look at a couple of these long operations including PIN verification for first session authorization and Wallet recovery initiation. 
 
-![image](/platform/docs/assets/wallet-ux-guide/10.2-progress-tx-2.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/10.2-Progress-TX-2.png)
 
 * **Progress Indicator UX Studies** - https://www.nngroup.com/articles/progress-indicators/
 
@@ -145,7 +145,7 @@ If the operation a very lengthy where the users are more interested in the compl
 
 Good error messages allow users to be informed about the error that occurred and allow them to perform an action or change behavior as a result of the error i.e If a transaction fails, explain to users on why it failed and allow them to retry it (or) if a user doesn’t have enough token balance to complete the transaction ask the user to get more tokens.
 
-![image](/platform/docs/assets/wallet-ux-guide/11-Failed_TX.jpg)
+![image](/platform/docs/assets/wallet-ux-guide/11-Failed-TX.png)
 
 To learn more about how the OST Wallet SDK Recovery from PIN and Smart Contract is made possible in a safe and secure manner, please review the OST Wallet SDK Recovery documentation.
 
