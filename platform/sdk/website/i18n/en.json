@@ -54,11 +54,11 @@
       },
       "ui-components-wallet-sdk": {
         "title": "User Interface Components Available in Mobile Wallet SDKs",
-        "sidebar_label": "User Interface Components (NEW)"
+        "sidebar_label": "User Interface Components"
       },
       "webhooks": {
         "title": "Introduction to OST Platform WebHooks",
-        "sidebar_label": "WebHooks (NEW)"
+        "sidebar_label": "WebHooks"
       }
     },
     "links": {

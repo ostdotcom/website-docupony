@@ -1,7 +1,7 @@
 ---
 id: ui-components-wallet-sdk
 title: User Interface Components Available in Mobile Wallet SDKs
-sidebar_label: User Interface Components (NEW)
+sidebar_label: User Interface Components
 ---
 
 In version 2.3.1 (relased 28-Aug-2019) of our Mobile Wallet SDKs, we introduced user-interface (UI) components or views to expedite the development process and make it easier for developers to integrate with OST Platform.
