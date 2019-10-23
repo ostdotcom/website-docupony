@@ -8,6 +8,22 @@ In version 2.3.1 (relased 28-Aug-2019) of our Mobile Wallet SDKs, we introduced 
 
 This pages introduces the core features and points to detailed documentation on GitHub. 
 
+## Watch a detailed video on how to initialize the Wallet SDK and make use of the User Interface Components
+
+**Topics covered**
+1. How initialise the Wallet SDK
+2. How to set-up a user device
+3. Getter methods and how to call them
+4. How to activate a user
+5. How to configure the UI components
+
+<div align="center">
+    <iframe width="680" height="384"
+        src="https://www.youtube.com/embed/CCykqAsatUs">
+    </iframe>
+</div>
+<br>
+
 ## Workflows w/ UI Components (Views)
 There are 12 supported workflows. Each workflow has one or more UI views. Views are re-used and both the content (text) and theme (design) are configurable for each workflow.
 

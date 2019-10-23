@@ -52,8 +52,8 @@ When you create your own token and add it to the sample app, you will be the onl
 <br>
 
 ## Sample Invision
-<div align="center">
-    <iframe width="580" height="1050"
+<div align="center" >
+    <iframe width="580" height="1050" padding="20%"
         src="https://invis.io/8KU31MKQH2W">
     </iframe>
     </div>
