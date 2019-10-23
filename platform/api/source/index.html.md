@@ -3969,7 +3969,7 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the end-user.  |
+| **user_id**  <br> **Required**, [**\<uuid v4\>**](/platform/docs/definitions/#uuid-v4) | uuid of the end-user or uuid of company, can be either to or from user id |
 | **transaction_id** <br> **Required**   | Unique Identifier of the transaction to be retrieved  |
 
 
