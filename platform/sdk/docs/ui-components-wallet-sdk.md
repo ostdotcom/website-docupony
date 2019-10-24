@@ -19,7 +19,7 @@ This pages introduces the core features and points to detailed documentation on 
 
 <div align="center">
     <iframe width="680" height="384"
-        src="https://www.youtube.com/embed/CCykqAsatUs">
+        src="https://www.youtube.com/embed/CCykqAsatUs?rel=0"> 
     </iframe>
 </div>
 <br>
