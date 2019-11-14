@@ -4,7 +4,10 @@ title: A Sample App Built With OST Platform APIs/SDKs
 sidebar_label: Sample App
 ---
 
-We have built and released a sample app to showcase what's possible with OST Platform. The sample app is available on both Android and iOS and is built using the [OST Wallet React-Native SDK](/platform/docs/sdk/mobile-wallet-sdks/react-native/).
+We have built and released a sample app to showcase what's possible with OST Platform. The sample app is available on both Android and iOS and is built using the native Wallet SDKs. The App is open sourced and is included in the respective Wallet SDKs, GitHub links below.
+
+* [Android - OST Wallet App](https://github.com/ostdotcom/ost-wallet-sdk-android/tree/develop/ostwallet).
+* [iOS - OST Wallet App](https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop/demo-app).
 
 **Motivations for building the Sample App**
 1. Showcase what's possible with OST Platform
