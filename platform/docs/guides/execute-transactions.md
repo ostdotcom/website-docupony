@@ -89,7 +89,7 @@ The QRCode data for executing transactions via web applications should be a JSON
     "d":{   // Data
         "rn": "Direct Transfer",   // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's TokenHolder Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ams" array are.)
+        "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ads" array are.)
         "tid": "1234",   // token_id of your Token
         "o":{   /// Options
             "cs":"USD",   // Currency symbol
@@ -192,7 +192,7 @@ To generate QRCode with transaction data follow the steps explained in the [abov
     "d":{
         "rn": "Direct Transfer",   // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  TokenHolder  Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ams" array are.) 
+        "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ads" array are.) 
         "tid": "1234"   // token_id of your Token
         "o":{   /// Options
             "cs":"USD",   // Currency symbol
