@@ -91,11 +91,14 @@ The QRCode data for executing transactions via web applications should be a JSON
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's TokenHolder Addresses
         "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ams" array are.)
         "tid": "1234",   // token_id of your Token
-        "o":{"cs":"USD"}   // options > currency symbol
-        },   
+        "o":{   /// Options
+            "cs":"USD",   // Currency symbol
+            "s":"$"   /// Sign
+            }
+        },
     "m":{   // Meta properties
         "tn": "metaname1",   // name
-        "tt": "user_to_company",    // type
+        "tt": "user_to_company",    // type: can be either user_to_company, user_to_user, or company_to_user
         "td": "detail s3 ios"   // details
         }
 }
@@ -186,16 +189,19 @@ To generate QRCode with transaction data follow the steps explained in the [abov
 {
     "dd": "TX",   // Data definition
     "ddv": "1.0.0",   // Data definition version
-    "d": {
+    "d":{
         "rn": "Direct Transfer",   // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  TokenHolder  Addresses
         "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ams" array are.) 
         "tid": "1234"   // token_id of your Token
-        "o":{"cs":"USD"}   // options > currency symbol
+        "o":{   /// Options
+            "cs":"USD",   // Currency symbol
+            "s":"$"   /// Sign
+            }
         },   
     "m":{   // Meta properties
         "tn": "metaname1",   // name
-        "tt": "user_to_company",    // type
+        "tt": "user_to_company",    // type: can be either user_to_company, user_to_user, or company_to_user
         "td": "detail s3 ios"   // details
         }
 }
