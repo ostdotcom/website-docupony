@@ -4,18 +4,25 @@ title: Technical Guide to Executing Transactions
 sidebar_label: Execute Transactions
 ---
 
-1. Owner/device key is created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device
-2. The private key in each pair is encrypted and stored on device. A MultiSig contract is deployed on the blockchain. The public addresses from device keys generated on the user's device(s) are set as owners for the MultiSig.
-3. A TokenHolder contract is deployed on the blockchain. The MultiSig controls the TokenHolder contract, as its owner.
-4. A sessionKey is created on the user's device and is authorized by device key in TokenHolder
-5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's TokenHolder contract
-6. The TokenHolder contract verifies that the request is initiated by an authorized sessionKey and executes the transfer
+* Each transaction is defined by a Rules contract 
+  * A token can have N Rules contracts
+  * OST Platform, through the OpenST Protocol, includes a Rules contract called PricerRule
+  * Within PriceRule, there exists a method called `payMethod`. This allows transfers to be instructed in fiat amounts (in EUR, GPB, USD). The equivalent amount of tokens is calculated and sent.
+* Rules contracts are registered in a TokenRules contract
+  * Each token has one TokenRules contact (which acts as a "registery" of Rules contracts)
+  * Within TokenRules, there exists a method called `directTransfer`. This allows transfers to be instructed in token amounts.
+  * All transfers are executed by the TokenRules contract
+
+<!-- ![TransactionsExplained2](/platform/docs/assets/transactions_explained_2.png) -->
+
+:::tip GET `/rules` endpoint
+You can choose to get information about rules by sending a GET to the `/rules` endpoint.
+:::
 
 :::warning atto denomination
 atto is the smallest denomination used in OST Platform. OST Platform APIs and SDKs accept value in `atto`, so it is important to understand the conversions to `atto`. 
 
 **To convert a standard amount to its atto denomination, multiply the amount by 10^18**
-:::
 
 | Conversion | Example | 
 | --- | --- |
@@ -23,36 +30,27 @@ atto is the smallest denomination used in OST Platform. OST Platform APIs and SD
 | `USD` --> `atto USD`, multiply amount of USD by 10^18 | 25 USD = 25*10^18 atto USD |
 | `OST` --> `atto OST`, multiply amount of OST by 10^18 | 76 OST = 76*10^18 atto OST |
 
-
-## Executing a Token Transfer
-Each transaction is defined by a **Rules** Contract. OST Platform, through the OpenST Protocol, includes a ****Rules** Contract and **TokenRules** Contract to enable you to define the behavior of token transfers and design custom rules that align with your goals. OST has written one **Rules** Contract, the **PricerRule** Contract, for you to use. This allows you (and your end-users) to send an amount in fiat (EUR, GBP, or USD). The equivalent amount of Tokens is calculated and sent.
-
-![TransactionsExplained2](/platform/docs/assets/transactions_explained_2.png)
-
-:::tip GET `/rules` endpoint
-You can choose to get information about rules by sending a GET to `/rules` endpoint.
 :::
 
-The sections below lists the two rules deployed with the rule names and rule parameters which are to be sent as input parameter for executing a transaction.
-
-## Direct Transfers (Transfers in Token amounts)
-`directTransfers` is a method that enables a user or a company to directly transfer Tokens to a beneficiary. 
+# Token Rule Methods
+## 1. directTransfers Method
+`directTransfers` is a method that enables a company or a user to directly transfer tokens to a beneficiary.
 
 ### `directTransfers` Method Parameters
 
 | Parameter Name | Parameter Description |
 |---|---|
-| **transferToAddresses** <br> **Array of Address**   | Array of receivers TokenHolder  addresses |
+| **transferToAddresses** <br> **Array of Address**  | Array of receivers TokenHolder  addresses |
 | **transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto Token](#converting-brand-token-to-atto-brand-token)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **transferToAddresses** array are. <br> Example: <br> **transferToAddresses** = [address1, address2, address3] <br> **transfersAmount** = [amount1, amount2, amount3] <br> <br> `address-1` will get the `amount-1`, `address-2` will get the `amount-2` and `address-3` will get the `amount-3` |
 
-## **PricerRule** Transfers (Transfers in Fiat amounts)
-`pay` OR " **PricerRule**" transfers can be used to transfer an amount of Tokens based on fiat amount (in EUR, GBP or USD). You will have to specify the fiat currency code and the amount in fiat currency. This amount will then be converted into Token amount and the Tokens transferred.
+## 2. pay Method
+`pay` transfers can be used to transfer an amount of tokens based on fiat amount (in EUR, GBP, USD). You have to specify the fiat currency code and the amount in fiat currency. This amount will then be converted into token amount and the tokens transferred.
 
 ### `pay` Method Parameters
 | Parameter Name | Parameter Description |
 |---|---|
 |**fromTokenHolderAddress** <br> **Address**  | Transaction executors TokenHolder address |
-|**transferToAddresses** <br> **Array of addresses** | Array of receivers  TokenHolder  address |
+|**transferToAddresses** <br> **Array of addresses** | Array of receivers TokenHolder  address |
 |**transferAmountsinAtto** <br> **Array of amounts in atto** | Array of **amounts in [atto USD](#converting-usd-to-atto-usd)** that are to be transferred to the addresses listed in **transferToAddresses** array. These amounts should be in the same sequence as the addresses in **toList** array are. <br> Example: <br> **transfersTo** = [address1, address2, address3] <br> **transferAmountsinAtto** = [amount1, amount2, amount3] <br> <br> `address1` will get the `amount1`, `address2` will get the `amount2` and `address3` will get the `amount3` |
 |**payCurrencyCode** <br> **String** | Pay Currency code. It's possible values are `EUR`, `GBP`, and `USD`.  |
 |**attoUSDIntendedPrice** <br> **Integer** | This is intended conversion of OST to pay currency (in atto denomination) which is USD in this example. This value will be used to calculate the deviation from actual conversion rate at the time of execution of transaction. If this deviation is more than the threshold value ($1), the transaction will be cancelled. This is to avoid transactions from happening during high deviation periods. This is the pay currency (USD) value in atto USD for 1 OST. <br> Example: 1 OST = 0.5 USD <br> 0.5 USD = 0.5 * 10^18 atto USD = 5*10^17 atto USD   |
@@ -62,29 +60,25 @@ To enable transaction execution from web applications we have supported QRCodes.
 
 QRCode can be generated using transaction information which can then be scanned by the users mobile application (integrated with OST Wallet SDK). The users mobile application (wallet) will then execute the transaction using the QRCode data. 
  
-The QRCode data for executing transactions via web applications should be a JSON object with the following format.  
+The QRCode data for executing transactions via web applications should be a JSON object with the following properties. For the correct format, please refer to the example below.
 
 | **Property**  | **Description**  | 
 |---|---|
 | **dd** <br> **String** | Data definition. Its value will be `TX` since the QRCode is meant for transactions.|
 | **ddv** <br> **String**  | Data definition version. Current version is `1.0.0` |
 |  **d** <br> **JSON Object** |  Array of data properties |
-| { |   |
 |  **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer` |
 |  **ads**  <br> **Array** | Array of receiver's TokenHolder Addresses |
 |  **ams**  <br> **Array** | Array of amounts in atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in atto.  |
 |  **tid**  <br> **String** | token_id of your Token |
-|  **o**  <br> **String** | Array of options |
-|   { |   |
-|  **cs**  | Currency Symbol | 
-|  **s**  | Currency Sign | 
-|   } |   |
-| } |   |
+|  **o**  <br> **JSON Object** | Array of options |
+|  **cs** <br> **String** | Currency Symbol | 
+|  **s**  <br> **String** | Currency Sign | 
 |  **m** <br> **JSON Object** |  Array of meta properties | 
 | { |   |
-|  **tn**  | Name. Only numbers, alphabets, spaces, "-" and "_" are allowed. Max length is 25 characters. |  
-|  **tt**  | Type. String representing the type of transaction. It can have one of the following value: user_to_user, company_to_user and user_to_company. |
-|  **td**  | Details. String value having some extra information about transaction. Max length is 120 characters. |
+|  **tn** **String** | Name: Only numbers, alphabets, spaces, "-" and "_" are allowed. Max length is 25 characters. |  
+|  **tt** **String** | Type: String representing the type of transaction. It can have one of the following value: user_to_user, company_to_user and user_to_company. |
+|  **td** **String** | Details: String value having some extra information about transaction. Max length is 120 characters. |
 | } |   |
 
 ### Example JSON data for QRCode
@@ -96,28 +90,27 @@ The QRCode data for executing transactions via web applications should be a JSON
 ```js
 // Direct Transfer JSON data used to generate QRCode
 {
-    "dd": "TX",   // Data definition
-    "ddv": "1.0.0",   // Data definition version
-    "d":{   // Data
-        "rn": "Direct Transfer",   // Rule Name
-        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's TokenHolder Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ads" array are.)
-        "tid": "1234",   // token_id of your Token
-        "o":{   /// Options
-            "cs":"USD",   // Currency symbol
-            "s":"$"   /// Sign
+    "dd": "TX", // Data definition
+    "ddv": "1.0.0", // Data definition version
+    "d":{ // Data
+        "rn": "Direct Transfer", // Rule Name
+        "ads": ["0x0hhd1.....", "0xc3B......"], // Array of receiver's TokenHolder Addresses
+        "ams": ["1000000000000000000000", "100000000000000000000000"], // Array of amounts in atto (In the same squence as the addresses in "ads" array are.)
+        "tid": "1234", // token_id of your Token
+        "o":{ /// Options
+            "cs":"USD", // Currency symbol
+            "s":"$" // Sign
             }
         },
-    "m":{   // Meta properties
-        "tn": "metaname1",   // Name
-        "tt": "user_to_company",    // Type: can be either user_to_company or user_to_user
-        "td": "detail s3 ios"   // Details
+    "m":{ // Meta properties
+        "tn": "metaname1", // Name
+        "tt": "user_to_company",  // Type: can be either user_to_company or user_to_user
+        "td": "detail s3 ios" // Details
         }
 }
 ```
 
-
-## Executing company-to-user Transactions
+## Executing company-to-user transactions
 `company-to-user` transactions can be executed using Server Side SDK (available in [PHP](/platform/docs/sdk/server-side-sdks/php/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/)). 
 
 Please refer to API References for details on the [input parameters of execute company-to-user transaction](/platform/docs/api/#execute-a-transaction). 
@@ -147,7 +140,7 @@ $executeParams = array();
 
 $executeParams = array(
     'user_id' => '724ed66c-8a0a-477e-b303-b0486e2a3797',
-    'to' => '0x64315ba1018307d6bc0380fa8eb8af210991ccbc',
+    'to' => '0x64315ba1018307d6bc0380fa8eb8af210991ccbc', // address of directTransfer method obtained from TokenRules
 
     
     'raw_calldata' => json_encode(array(
@@ -177,47 +170,21 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
 ```
 
-## Executing `user` initiated transactions
-* `User` initiated transactions need to be signed by the user's device keys
+## Executing user initiated transactions
+* User initiated transactions need to be signed by the user's device keys
 * User's device keys are created and stored in their mobile device. So, user initiated transactions (`user-to-company`, `user-to-user`) need to be executed in the mobile app using Wallet SDK (available for Android and iOS).
 * To execute the transaction using Wallet SDK, you will have to use `executeTransaction` workflow. 
 
-## Executing `user` initiated transactions in web
+## Executing user initiated transactions in web
 
-To execute `user` initiated transactions in web, you will have to create QRCode with transaction data and then you need to build a QRCode scanner in your app to scan it. After scanning the QRCode, your application will have the transaction data. As a last step, you need to pass the transaction data to `performQRAction` workflow using OST Wallet SDK.
+To execute user initiated transactions in web, you will have to create QRCode with transaction data and then you need to build a QRCode scanner in your app to scan it. After scanning the QRCode, your application will have the transaction data. As a last step, you need to pass the transaction data to `performQRAction` workflow using OST Wallet SDK.
 
 1. Generate QRCode with transaction data
 2. Scan QRCode with mobile app
 3. Call `performQRAction` workflow in mobile app
 
-### 1. Generate QRCode with transaction data
-
-To generate QRCode with transaction data follow the steps explained in the [above section.](#generating-qrcode-with-transaction-data)
-
-**Sample QRCode Data**
-
-```js
-// Direct Transfer JSON data used to generate QRCode
-{
-    "dd": "TX",   // Data definition
-    "ddv": "1.0.0",   // Data definition version
-    "d":{
-        "rn": "Direct Transfer",   // Rule Name
-        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  TokenHolder  Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ads" array are.) 
-        "tid": "1234"   // token_id of your Token
-        "o":{   /// Options
-            "cs":"USD",   // Currency symbol
-            "s":"$"   /// Sign
-            }
-        },   
-    "m":{   // Meta properties
-        "tn": "metaname1",   // name
-        "tt": "user_to_company",    // type: can be either user_to_company or user_to_user
-        "td": "detail s3 ios"   // details
-        }
-}
-```
+### 1. Generate QRCode with transaction data as per above
+To generate QRCode with transaction data follow the steps explained in the [section above.](#generating-qrcode-with-transaction-data)
 
 ### 2. Scan QRCode with mobile app
 You need to provide functionality to scan a QRCode. You can use 3rd party libraries to create the QRCode scanner.
@@ -312,3 +279,12 @@ Sample code (Android Wallet SDK)
         ...
     }
 ```
+
+## Pre-requisites for executing user-initiated transactions
+
+1. Owner/device key is created on the user's mobile device. The OST Wallet SDK uses standard web3 libraries to generate the public-private key pairs on the device
+2. The private key in each pair is encrypted and stored on device. A MultiSig contract is deployed on the blockchain. The public addresses from device keys generated on the user's device(s) are set as owners for the MultiSig.
+3. A TokenHolder contract is deployed on the blockchain. The MultiSig controls the TokenHolder contract, as its owner.
+4. A sessionKey is created on the user's device and is authorized by device key in TokenHolder
+5. Whenever a user does an action which triggers a token transfer a message signed by an authorized sessionKey is sent from the user's device to the user's TokenHolder contract
+6. The TokenHolder contract verifies that the request is initiated by an authorized sessionKey and executes the transfer
