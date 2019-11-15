@@ -98,7 +98,7 @@ The QRCode data for executing transactions via web applications should be a JSON
         },
     "m":{   // Meta properties
         "tn": "metaname1",   // name
-        "tt": "user_to_company",    // type: can be either user_to_company, user_to_user, or company_to_user
+        "tt": "user_to_company",    // type: can be either user_to_company or user_to_user
         "td": "detail s3 ios"   // details
         }
 }
@@ -201,7 +201,7 @@ To generate QRCode with transaction data follow the steps explained in the [abov
         },   
     "m":{   // Meta properties
         "tn": "metaname1",   // name
-        "tt": "user_to_company",    // type: can be either user_to_company, user_to_user, or company_to_user
+        "tt": "user_to_company",    // type: can be either user_to_company or user_to_user
         "td": "detail s3 ios"   // details
         }
 }
