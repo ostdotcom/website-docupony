@@ -64,8 +64,8 @@ QRCode can be generated using transaction information which can then be scanned 
  
 The QRCode data for executing transactions via web applications should be a JSON object with the following format.  
 
-| **Property**  | **Description**  |   |
-|---|---|---|
+| **Property**  | **Description**  | 
+|---|---|
 | **dd** <br> **String** | Data definition. Its value will be `TX` since the QRCode is meant for transactions.|
 | **ddv** <br> **String**  | Data definition version. Current version is `1.0.0` |
 |  **d** <br> **JSON Object** |  Array of data properties |
