@@ -84,16 +84,23 @@ The QRCode data for executing transactions via web applications should be a JSON
 ```js
 // Direct Transfer JSON data used to generate QRCode
 {
-    "dd": "TX", // Data Definition
-    "ddv": "1.0.0", // Data Definition Version
-    "d": {
-        "rn": "Direct Transfer", // Rule Name
-        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  TokenHolder  Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
-        "tid": "123"     // token_id of your Token
-    }
+    "dd": "TX",   // Data definition
+    "ddv": "1.0.0",   // Data definition version
+    "d":{   // Data
+        "rn": "Direct Transfer",   // Rule Name
+        "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's TokenHolder Addresses
+        "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ams" array are.)
+        "tid": "1234",   // token_id of your Token
+        "o":{"cs":"USD"}   // options > currency symbol
+        },   
+    "m":{   // Meta properties
+        "tn": "metaname1",   // name
+        "tt": "user_to_company",    // type
+        "td": "detail s3 ios"   // details
+        }
 }
 ```
+
 
 ## Executing company-to-user Transactions
 `company-to-user` transactions can be executed using Server Side SDK (available in [PHP](/platform/docs/sdk/server-side-sdks/php/), [Java](/platform/docs/sdk/server-side-sdks/java/), [Node.js](/platform/docs/sdk/server-side-sdks/nodejs/), [Ruby](/platform/docs/sdk/server-side-sdks/ruby/)). 
@@ -177,14 +184,20 @@ To generate QRCode with transaction data follow the steps explained in the [abov
 ```js
 // Direct Transfer JSON data used to generate QRCode
 {
-    "dd": "TX", // Data Definition
-    "ddv": "1.0.0", // Data Definition Version
+    "dd": "TX",   // Data definition
+    "ddv": "1.0.0",   // Data definition version
     "d": {
-        "rn": "Direct Transfer", // Rule Name
+        "rn": "Direct Transfer",   // Rule Name
         "ads": ["0x0hhd1.....", "0xc3B......"],   // Array of receiver's  TokenHolder  Addresses
-        "ams": ["1000000000000000000000", "100000000000000000000000"],  // Array of amounts in atto (In the same squence as the addresses in "ams" array are. 
-        "tid": "123"     // token_id of your Token
-    }
+        "ams": ["1000000000000000000000", "100000000000000000000000"],   // Array of amounts in atto (In the same squence as the addresses in "ams" array are.) 
+        "tid": "1234"   // token_id of your Token
+        "o":{"cs":"USD"}   // options > currency symbol
+        },   
+    "m":{   // Meta properties
+        "tn": "metaname1",   // name
+        "tt": "user_to_company",    // type
+        "td": "detail s3 ios"   // details
+        }
 }
 ```
 
