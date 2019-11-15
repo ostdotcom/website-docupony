@@ -97,9 +97,9 @@ The QRCode data for executing transactions via web applications should be a JSON
             }
         },
     "m":{   // Meta properties
-        "tn": "metaname1",   // name
-        "tt": "user_to_company",    // type: can be either user_to_company or user_to_user
-        "td": "detail s3 ios"   // details
+        "tn": "metaname1",   // Name
+        "tt": "user_to_company",    // Type: can be either user_to_company or user_to_user
+        "td": "detail s3 ios"   // Details
         }
 }
 ```
