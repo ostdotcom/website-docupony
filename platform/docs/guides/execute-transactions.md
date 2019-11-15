@@ -66,14 +66,26 @@ The QRCode data for executing transactions via web applications should be a JSON
 
 | **Property**  | **Description**  |   |
 |---|---|---|
-| **dd** <br> **String** | Data Definition. Its value will be `TX` since the QRCode is meant for transactions.  |   |
-| **ddv** <br> **String**  | Data Definition Version. Current version is `1.0.0`  |   |
-|  **d** <br> **JSON Object** |   |   |
-|   | **Property**  | **Description** |
-|   | **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer` |
-|   | **ads**  <br> **Array** | Array of receiver's  TokenHolder  Addresses |
-|   | **ams**  <br> **Array** | Array of amounts in atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in atto.  |
-|   | **tid**  <br> **String** | token_id of your Token |
+| **dd** <br> **String** | Data definition. Its value will be `TX` since the QRCode is meant for transactions.|
+| **ddv** <br> **String**  | Data definition version. Current version is `1.0.0` |
+|  **d** <br> **JSON Object** |  Array of data properties |
+| { |   |
+|  **rn**  <br> **String** | Rule Name. It can take 1 of the 2 values: <br> 1. `Direct Transfer`<br> 2. `Pricer` |
+|  **ads**  <br> **Array** | Array of receiver's TokenHolder Addresses |
+|  **ams**  <br> **Array** | Array of amounts in atto to be transferred. These amounts should be in the same sequence as the **ads** addresses are. These amounts should be in atto.  |
+|  **tid**  <br> **String** | token_id of your Token |
+|  **o**  <br> **String** | Array of options |
+|   { |   |
+|  **cs**  | Currency Symbol | 
+|  **s**  | Currency Sign | 
+|   } |   |
+| } |   |
+|  **m** <br> **JSON Object** |  Array of meta properties | 
+| { |   |
+|  **tn**  | Name. Only numbers, alphabets, spaces, "-" and "_" are allowed. Max length is 25 characters. |  
+|  **tt**  | Type. String representing the type of transaction. It can have one of the following value: user_to_user, company_to_user and user_to_company. |
+|  **td**  | Details. String value having some extra information about transaction. Max length is 120 characters. |
+| } |   |
 
 ### Example JSON data for QRCode
 
