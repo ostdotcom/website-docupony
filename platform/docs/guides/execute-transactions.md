@@ -7,11 +7,12 @@ sidebar_label: Execute Transactions
 * Each transaction is defined by a Rules contract 
   * A token can have N Rules contracts
   * OST Platform, through the OpenST Protocol, includes a Rules contract called PricerRule
-  * Within PriceRule, there exists a method called `payMethod`. This allows transfers to be instructed in fiat amounts (in EUR, GPB, USD). The equivalent amount of tokens is calculated and sent.
+  * Within PriceRule, there is a method called `payMethod`. This allows transfers to be instructed in fiat amounts (in EUR, GPB, USD). The equivalent amount of tokens is calculated and sent.
 * Rules contracts are registered in a TokenRules contract
   * Each token has one TokenRules contact (which acts as a "registery" of Rules contracts)
-  * Within TokenRules, there exists a method called `directTransfer`. This allows transfers to be instructed in token amounts.
-  * All transfers are executed by the TokenRules contract
+  * Within TokenRules, there is a method called `directTransfer`. This allows transfers to be instructed in token amounts. _It made more sense to include this method in the TokenRules contract itself as opposed to creating a new Rules contracts. This is the only method that exists in the TokenRules contract._
+  * All transfers are executed by the TokenRules contract, not the individual Rules contracts
+  * All transfers must specify the address of the method being called (i.e. $executeParams[to] = address of method being called)
 
 <!-- ![TransactionsExplained2](/platform/docs/assets/transactions_explained_2.png) -->
 
@@ -75,11 +76,9 @@ The QRCode data for executing transactions via web applications should be a JSON
 |  **cs** <br> **String** | Currency Symbol | 
 |  **s**  <br> **String** | Currency Sign | 
 |  **m** <br> **JSON Object** |  Array of meta properties | 
-| { |   |
-|  **tn** **String** | Name: Only numbers, alphabets, spaces, "-" and "_" are allowed. Max length is 25 characters. |  
-|  **tt** **String** | Type: String representing the type of transaction. It can have one of the following value: user_to_user, company_to_user and user_to_company. |
-|  **td** **String** | Details: String value having some extra information about transaction. Max length is 120 characters. |
-| } |   |
+|  **tn** <br> **String** | Name: Only numbers, alphabets, spaces, "-" and "_" are allowed. Max length is 25 characters. |  
+|  **tt** <br> **String** | Type: String representing the type of transaction. It can have one of the following value: user_to_user, company_to_user and user_to_company. |
+|  **td** <br> **String** | Details: String value having some extra information about transaction. Max length is 120 characters. |
 
 ### Example JSON data for QRCode
 
