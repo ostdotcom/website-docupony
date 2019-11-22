@@ -5650,6 +5650,7 @@ You can use a webhook to subscribe the notifications of different events (also c
 * transactions/initiate
 * transactions/success
 * transactions/failure
+* transactions/mine
 
 ### User
 
