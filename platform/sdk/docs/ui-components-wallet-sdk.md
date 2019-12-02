@@ -27,7 +27,7 @@ This pages introduces the core features and points to detailed documentation on 
 ## Workflows w/ UI Components (Views)
 There are 12 supported workflows. Each workflow has one or more UI views. Views are re-used and both the content (text) and theme (design) are configurable for each workflow.
 
-| Supported Workflows |Views |
+| Supported Workflows | Views |
 | --- | --- |
 | 1. Activate User | Create PIN, Confirm PIN |
 | 2. Add Session | Enter PIN |

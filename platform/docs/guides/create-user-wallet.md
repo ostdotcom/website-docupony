@@ -19,10 +19,10 @@ It is a 3 step process. [OST Wallet SDK](/platform/docs/wallet/sdk/) provides a 
 Calling `init` function of Wallet SDK will initialize the SDK
 
 ### Step 2: setupDevice
-Calling `setupDevice` will Generating public-private key pairs. The ephemeral sessionKeys and owner keys are created on the user's mobile device.
+Calling `setupDevice` will generate public-private key pairs. Owner keys and ephemeral session keys are created on the user's mobile device.
 
 ### Step 3: activateUser
-calling `activateUser ` function of Wallet SDK will deploy smart contracts. Once the contract deployment is complete the `user` is `activated` and can perform transactions.
+Calling `activateUser ` function of Wallet SDK will deploy smart contracts. Once the contract deployment is complete the `user` is `activated` and can perform transactions.
 
 <hr> 
 
