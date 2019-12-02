@@ -47,6 +47,17 @@ In every workflow we support two loaders with text configuration:
 * `initial_loader`: Loader shown before workflow request construct
 * `loader`: Loader shown after workflow request construct
 
+::: note Custom Loaders
+In November 2019, we introduced support for **Custom Loaders** for OstWalletUI.  
+
+* Android: Version 2.3.6
+* iOS: Version 2.3.5
+* React Native: Version 2.3.10 -- _To use the Custom Loader in React Native, you must update the downstream Android and/or iOS SDKs._
+
+For more information, see the [Custom Loaders](../custom-loaders) section below.
+
+:::
+
 ## List of Views
 
 | View Configuration Keys | Description |
@@ -72,52 +83,59 @@ Detailed documentation is being maintained on GitHub
 
 App developers can configure the content (text) and theme (design) of each of the UI components available. To configure either, the SDK needs to be provided with JSON. The default configurations can be found below.
 
-### Content Config
+## Content Config
 * [Android](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ContentConfig.md)
 * [iOS](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ContentConfig.md)
 * [React Native](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ContentConfig.md)
 
-#### PIN View (e.g. Create PIN)
+### PIN View (e.g. Create PIN)
 <img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/PinViewLabelTypes.png" width="90%">
 
-#### Show Device List View
+### Show Device List View
 <img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/DeviceListLabelTypes.png" width="90%">
 
-#### Show Mnemonics View
+### Show Mnemonics View
 <img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/ViewMnemonicsLabelTypes.png" width="90%">
 
-#### Enter Mnemonics View
+### Enter Mnemonics View
 <img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/ProvideMnemonics.png" width="90%">
 
-#### Show QR Code To Authorize Device View
+### Show QR Code To Authorize Device View
 <img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/ShowQR.png" width="90%">
 
-#### Scan QR Code View
+### Scan QR Code View
 <img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/ScanQR.png" width="90%">
 
-#### Authorize New Device View
+### Authorize New Device View
 <img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/VerifyDevice.png" width="90%">
 
-#### Confirm Transaction View
+### Confirm Transaction View
 <img alt-text="device list" src="/platform/docs/assets/ui-thru-sdk/VerifyTX.png" width="90%">
 
-### Theming: Theme Config
+## Theming: Theme Config
 * [Android](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ThemeConfig.md)
 * [iOS](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ThemeConfig.md)
 * [React Native](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ThemeConfig.md)
  
-#### Navigation Bar
+### Navigation Bar
 <img alt-text="navigation bar" src="/platform/docs/assets/ui-thru-sdk/NavBar.png" width="80%">
 
-#### Sample Screen (Create PIN)
+### Sample Screen (Create PIN)
 <img alt-text="sample screen" src="/platform/docs/assets/ui-thru-sdk/PinView.png" width="80%">
 
-#### Sample Card (Device)
+### Sample Card (Device)
 <img alt-text="sample card" src="/platform/docs/assets/ui-thru-sdk/Card.png" width="70%">
 
-::: note Custom Fonts
-To support custom font in your application, add your font in /src/main/assets
-:::
+## Custom Loaders
+With the Custom Loader feature, it's possible to select or choose your own:
+1. Loader gif
+2. Success and failure icons
+3. Success message
+4. Loading-text message 
+
+For instructions on how to do this, see our GitHub documentation here:
+[Android Custom Loader Usage](https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/Samples/customloader/OstCustomLoader.md)
+[iOS Custom Loader Usage](https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/Samples/CustomLoader/OstMockCustomLoader.md)
 
 ## UI Events and Listeners
 Developers can subscribe to specific event of each UI workflow. Supported events are:
