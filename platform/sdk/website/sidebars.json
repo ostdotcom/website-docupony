@@ -16,7 +16,7 @@
     
     "Mobile Wallet SDKs": [
      "ui-components-wallet-sdk",
-     "ux-recommendations",
+     "ui-recommendations",
 
       {
         "type": "subcategory",

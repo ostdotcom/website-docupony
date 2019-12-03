@@ -56,9 +56,9 @@
         "title": "User Interface Components Available in Mobile Wallet SDKs",
         "sidebar_label": "User Interface Components"
       },
-      "ux-recommendations": {
+      "ui-recommendations": {
         "title": "User Interface/Experience Recommendations",
-        "sidebar_label": "UX Recommendations"
+        "sidebar_label": "UI Recommendations"
       },
       "webhooks": {
         "title": "Introduction to OST Platform WebHooks",
