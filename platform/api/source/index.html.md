@@ -4054,7 +4054,7 @@ echo json_encode($response, JSON_PRETTY_PRINT);
 }
 ```
 
-## Get all User's Transactions
+## Get All User Transactions
 
 ```php
 <?php
