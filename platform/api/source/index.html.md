@@ -4077,8 +4077,11 @@ $transactionService = $ostObj->services->transactions;
 
 $getParams = array();
 $getParams['user_id'] = '10543373-5eb5-4dce-8fac-dff38ba941ba';
-$getParams['limit']='2';
+//$getParams['startTime']='startTime';
+//$getParams['endTime']='endTime';
 //$getParams['status']=array('FAILED');
+//$getParams['meta_properties']=array('metaPropertiesArray');
+$getParams['limit']='2';
 //$getParams['pagination_identifier'] = 'eyJmcm9tIjoyLCJsaW1pdCI6MSwibWV0YV9wcm9wZXJ0eSI6W10sInN0YXR1cyI6WyJGQUlMRUQiXX0=';
 $response = $transactionService->getList($getParams)->wait();
 echo json_encode($response, JSON_PRETTY_PRINT);
@@ -4101,7 +4104,8 @@ transactions_service = ost_sdk.services.transactions
 
 get_params = {}
 get_params[:user_id] = 'e50e252c-318f-44a5-b586-9a9ea1c41c15'
-
+# get_params[:startTime] = 'startTime'
+# get_params[:endTime] = 'endTime'
 meta_properties = [{
       name: "transaction_name" ,
       type: "user_to_user",
@@ -4149,9 +4153,12 @@ var metaPropertiesArray =  JSON.stringify(
 
 transactionsService.getList({ 
     user_id: 'c2c6fbb2-2531-4c80-9e43-e67195bb01c7',
+    // start_time: startTime,
+    // end_time: endTime,
     // statuses: ["CREATED", "SUBMITTED", "SUCCESS", "FAILED"],
     // meta_properties: metaPropertiesArray,
     // limit: 10
+    // pagination_identifier: paginationIdentifier
  }).then(function(res) { 
    console.log(JSON.stringify(res)); 
   }).catch(function(err) { 
@@ -4225,9 +4232,11 @@ public class Test {
 
 | Parameter  | Description  |
 |---|---|
-| **meta_property** <br> **Optional**   | List of meta properties. |
-| **status** <br> **Optional**   | List of status values. |
+| **meta_property** <br> **Optional**   | List of meta properties |
+| **status** <br> **Optional**   | List of status values |
 | **limit** <br> **Optional**   |  Limit on the number of transactions to be returned. Max limit is 25.  **Default value of limit is 10**. |
+| **time interval** <br> **Optional** | To get transactions between a specific time interval, add start timestamp (startTime) and end timestamp (endTime). |
+| **pagination id** <br> **Optional** | Pagination identifier from the previous API call response.  Not needed for page one. |
 
 <u>**Success Response**</u><br>
 This call will return a hash with 2 properties `success` and `data`. If valid inputs were provided then value of success attribute will be `true`. The `data` property will have 3 child properties `result_type`, `transactions` and `meta`.<br><br>
