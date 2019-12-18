@@ -54,6 +54,7 @@ Sample code is available in our API References documentation: [Validating WebHoo
 * transactions/initiate
 * transactions/success
 * transactions/failure
+* transactions/mine
 
 ### Users
 
