@@ -1,57 +1,45 @@
 {
-  "OST Platform": {
-    "Introduction": [
-      "introduction",
-      "sample-app",
-      "ux",
-
-      {
-       "type": "subcategory",
-       "label": "Getting Started",
-       "ids": [
-        "getting-started",
-        "1-create",
-        "2-plan",
-        "3-integrate",
-        "4-launch"
-       ]
-     },
-
-     "go-live-checklist",
-     "definitions"
+  "Ost Docs": {
+    "Implementation Steps": [
+     "implementation-steps/introduction.md",
+     "implementation-steps/steps-to-follow.md",
+     "implementation-steps/production-checklist.md"
     ],
 
-    "OST Platform": [
-     "overview",
-     "components",
-     "smart-contracts",
-     "transactions",
-     "view",
-     
-      {
-       "type": "subcategory",
-       "label": "OST Wallet",
-       "ids": [
-        "wallet/introduction",
-        "wallet/user-experience",
-        "wallet/session-keys",
-        "wallet/multi-device",
-        "wallet/recovery"
-       ]
-     }
+    "Code Examples": [
+     "code-examples/introduction.md",
+     "code-examples/create-session.md",
+     "code-examples/set-up-device.md",
+     "code-examples/activate-user.md",
+     "code-examples/create-user-wallet.md",
+     "code-examples/execute-transactions.md"
     ],
     
-    "Technical Guides": [
-     "guides/introduction",
-     "guides/create-user-wallet",
-     "guides/execute-transactions",
-     "guides/create-session"
-   ],
+    "Best Practices": [
+     "best-practices/end-user-experience.md",
+     "best-practices/webhooks.md",
+     "best-practices/app-store-submission.md"
+    ],
       
-    "Release Notes": [
-      "release-notes/18Jun2019",
-      "release-notes/03Jun2019",
-      "release-notes/27Mar2019"
-    ]
+    "Use Cases": [
+     "use-cases/social-network.md",
+     "use-cases/online-publisher.md",
+     "use-cases/know-your-end-customer.md",
+     "use-cases/reviews.md",
+     "use-cases/voting.md"
+    ],
+
+    "Knowledge Base and FAQs": [
+     "knowledge-base-and-faqs/introduction.md",
+     "knowledge-base-and-faqs/tech-arch-overview.md",
+     "knowledge-base-and-faqs/components.md",
+     "knowledge-base-and-faqs/multi-device.md",
+     "knowledge-base-and-faqs/session-keys.md",
+     "knowledge-base-and-faqs/smart-contracts.md",
+     "knowledge-base-and-faqs/transactions-types.md",
+     "knowledge-base-and-faqs/wallet-recovery.md",
+     "knowledge-base-and-faqs/security-features.md"
+
+   ]
   }
 }

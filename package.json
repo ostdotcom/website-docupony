@@ -28,6 +28,6 @@
     "gulp-cli": "^2.2.0",
     "gulp-replace": "^1.0.0",
     "gulp-run-command": "0.0.9",
-    "remarkable-admonitions": "^0.2.1"
+    "remarkable-admonitions": "^0.2.2"
   }
 }

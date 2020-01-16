@@ -5,132 +5,124 @@
     "previous": "Previous",
     "tagline": "Developer Documentation",
     "docs": {
-      "1-create": {
-        "title": "Create Your Token in Sandbox and Explore OST Wallet App",
-        "sidebar_label": "Step 1. Create Token"
-      },
-      "2-plan": {
-        "title": "Plan and Design Your Token",
-        "sidebar_label": "Step 2. Plan and Design"
-      },
-      "3-integrate": {
-        "title": "Start Your Integration in Sandbox",
-        "sidebar_label": "Step 3. Start Integration"
-      },
-      "4-launch": {
-        "title": "Launch to Your End-Users!",
-        "sidebar_label": "Step 4. Launch to End-users"
-      },
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "components": {
-        "title": "OST Platform Overview",
-        "sidebar_label": "Components"
-      },
-      "definitions": {
-        "title": "Useful Definitions",
-        "sidebar_label": "Useful Definitions"
-      },
-      "getting-started": {
-        "title": "Four Steps to Success",
-        "sidebar_label": "Four Steps to Success"
-      },
-      "go-live-checklist": {
-        "title": "Go-Live Checklist",
-        "sidebar_label": "Go-Live Checklist"
-      },
-      "guides/introduction": {
-        "title": "Introduction to Technical Guides",
-        "sidebar_label": "Introduction"
-      },
-      "guides/create-session": {
-        "title": "Create Session Guide",
-        "sidebar_label": "Create Session"
-      },
-      "guides/create-user-wallet": {
-        "title": "Technical Guide to Creating a User Wallet",
-        "sidebar_label": "Create User Wallet"
-      },
-      "guides/execute-transactions": {
-        "title": "Technical Guide to Executing Transactions",
-        "sidebar_label": "Execute Transactions"
-      },
-      "introduction": {
-        "title": "Welcome to OST Platform",
-        "sidebar_label": "Welcome to OST Platform"
-      },
-      "overview": {
-        "title": "OST Platform Overview",
-        "sidebar_label": "Overview"
-      },
-      "release-notes/03Jun2019": {
-        "title": "03 June 2019 Release",
-        "sidebar_label": "03-Jun-2019"
-      },
-      "release-notes/18Jun2019": {
-        "title": "18 June 2019 Release",
-        "sidebar_label": "18-Jun-2019"
-      },
-      "release-notes/27Mar2019": {
-        "title": "27 March 2019 Release",
-        "sidebar_label": "27-Mar-2019 OST Platform Relese"
-      },
-      "sample-app": {
-        "title": "A Sample App Built With OST Platform APIs/SDKs",
-        "sidebar_label": "Sample App"
-      },
-      "security-features": {
-        "title": "OST Platform Security Features",
-        "sidebar_label": "Security Features"
-      },
-      "smart-contracts": {
-        "title": "Introduction to Smart Contracts - Smart Code Deployed On Chain",
-        "sidebar_label": "Introduction to Smart Contracts"
-      },
-      "transactions": {
-        "title": "Overview of Transactions in OST Platform",
-        "sidebar_label": "Transactions Explained"
-      },
-      "use-cases/lgbt": {
-        "title": "Abc",
-        "sidebar_label": "Hornet LGBT"
-      },
-      "use-cases/pop": {
-        "title": "Abc",
-        "sidebar_label": "Popcorn"
-      },
-      "use-cases/spoo": {
-        "title": "Abc",
-        "sidebar_label": "Spoon Tokens"
-      },
-      "ux": {
+      "best-practices/ux": {
         "title": "An Example of What's Possible with OST Platform",
         "sidebar_label": "Sample Use Case"
       },
-      "view": {
-        "title": "Introduction to OST VIEW",
-        "sidebar_label": "OST VIEW (Explorer)"
+      "best-practices/ui-recommendations": {
+        "title": "User Interface/Experience Recommendations",
+        "sidebar_label": "UI Recommendations"
       },
-      "wallet/introduction": {
+      "best-practices/user-experience": {
+        "title": "Seamless User Experience",
+        "sidebar_label": "- User Experience"
+      },
+      "code-examples/create-session": {
+        "title": "Create Session Guide",
+        "sidebar_label": "Create Session"
+      },
+      "code-examples/create-user-wallet": {
+        "title": "Technical Guide to Creating a User Wallet",
+        "sidebar_label": "Create User Wallet"
+      },
+      "code-examples/execute-transactions": {
+        "title": "Technical Guide to Executing Transactions",
+        "sidebar_label": "Execute Transactions"
+      },
+      "code-examples/introduction": {
+        "title": "Introduction to Technical Guides",
+        "sidebar_label": "Introduction"
+      },
+      "implementation-steps/introduction": {
+        "title": "Welcome to OST Platform",
+        "sidebar_label": "Welcome to OST Platform"
+      },
+      "implementation-steps/go-live-checklist": {
+        "title": "Go-Live Checklist",
+        "sidebar_label": "Go-Live Checklist"
+      },
+      "implementation-steps/sample-app": {
+        "title": "A Sample App Built With OST Platform APIs/SDKs",
+        "sidebar_label": "Sample App"
+      },
+      "knowledge-base-and-faq/components": {
+        "title": "OST Platform Overview",
+        "sidebar_label": "Components"
+      },
+      "knowledge-base-and-faq/definitions": {
+        "title": "Useful Definitions",
+        "sidebar_label": "Useful Definitions"
+      },
+      "knowledge-base-and-faq/introduction": {
         "title": "Introduction to OST Wallet",
         "sidebar_label": "- Introduction"
       },
-      "wallet/multi-device": {
+      "knowledge-base-and-faq/multi-device": {
         "title": "Multi-Device Access",
         "sidebar_label": "- Multi-Device Access"
       },
-      "wallet/recovery": {
-        "title": "Innovative Wallet Recovery Mechanisms",
-        "sidebar_label": "- Recovery Mechanisms"
+      "knowledge-base-and-faq/security-features": {
+        "title": "OST Platform Security Features",
+        "sidebar_label": "Security Features"
       },
-      "wallet/session-keys": {
+      "knowledge-base-and-faq/session-keys": {
         "title": "Ephemeral Session Keys",
         "sidebar_label": "- Session Keys"
       },
-      "wallet/user-experience": {
-        "title": "Seamless User Experience",
-        "sidebar_label": "- User Experience"
+      "knowledge-base-and-faq/smart-contracts": {
+        "title": "Introduction to Smart Contracts - Smart Code Deployed On Chain",
+        "sidebar_label": "Introduction to Smart Contracts"
+      },
+      "knowledge-base-and-faq/overview": {
+        "title": "OST Platform Overview",
+        "sidebar_label": "Overview"
+      },
+      "knowledge-base-and-faq/transactions": {
+        "title": "Overview of Transactions in OST Platform",
+        "sidebar_label": "Transactions Explained"
+      },
+      "knowledge-base-and-faq/view": {
+        "title": "Introduction to OST VIEW",
+        "sidebar_label": "OST VIEW (Explorer)"
+      },
+      "knowledge-base-and-faq/recovery": {
+        "title": "Innovative Wallet Recovery Mechanisms",
+        "sidebar_label": "- Recovery Mechanisms"
+      },
+      "OLD/1-create": {
+        "title": "Create Your Token in Sandbox and Explore OST Wallet App",
+        "sidebar_label": "Step 1. Create Token"
+      },
+      "OLD/2-plan": {
+        "title": "Plan and Design Your Token",
+        "sidebar_label": "Step 2. Plan and Design"
+      },
+      "OLD/3-integrate": {
+        "title": "Start Your Integration in Sandbox",
+        "sidebar_label": "Step 3. Start Integration"
+      },
+      "OLD/4-launch": {
+        "title": "Launch to Your End-Users!",
+        "sidebar_label": "Step 4. Launch to End-users"
+      },
+      "OLD/getting-started": {
+        "title": "Four Steps to Success",
+        "sidebar_label": "Four Steps to Success"
+      },
+      "OLD/sample-app": {
+        "title": "A Sample App Built With OST Platform APIs/SDKs",
+        "sidebar_label": "Sample App"
+      },
+      "use-cases/abc": {
+        "title": "abc",
+        "sidebar_label": "abc"
+      },
+      "use-cases/ux": {
+        "title": "An Example of What's Possible with OST Platform",
+        "sidebar_label": "Sample Use Case"
       }
     },
     "links": {
@@ -141,10 +133,11 @@
       "Support": "Support"
     },
     "categories": {
-      "Introduction": "Introduction",
-      "OST Platform": "OST Platform",
-      "Technical Guides": "Technical Guides",
-      "Release Notes": "Release Notes"
+      "Implementation Steps": "Implementation Steps",
+      "Code Examples": "Code Examples",
+      "Best Practices": "Best Practices",
+      "Use Cases": "Use Cases",
+      "Knowledge Base and FAQs": "Knowledge Base and FAQs"
     }
   },
   "pages-strings": {

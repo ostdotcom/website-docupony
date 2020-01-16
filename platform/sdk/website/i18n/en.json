@@ -5,20 +5,36 @@
     "previous": "Previous",
     "tagline": "Developer Documentation",
     "docs": {
-      "apis-in-sdks": {
-        "title": "OST Platform APIs - Endpoint Actions Available in SDKs",
-        "sidebar_label": "API Actions in SDKs"
-      },
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "authentication": {
+      "getting-started/apis-in-sdks": {
+        "title": "OST Platform APIs - Endpoint Actions Available in SDKs",
+        "sidebar_label": "API Actions in SDKs"
+      },
+      "getting-started/authentication": {
         "title": "Authentication",
         "sidebar_label": "Authentication"
       },
-      "getting-started": {
+      "getting-started/getting-started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
+      },
+      "getting-started/the-basics": {
+        "title": "High Level Understanding of OST Platform SDKs",
+        "sidebar_label": "The Baiscs"
+      },
+      "getting-started/ui-components-wallet-sdk": {
+        "title": "User Interface Components Available in Mobile Wallet SDKs",
+        "sidebar_label": "User Interface Components"
+      },
+      "getting-started/webhooks": {
+        "title": "Introduction to OST Platform WebHooks",
+        "sidebar_label": "WebHooks"
+      },
+      "getting-started/master-workflows": {
+        "title": "Ost Wallet SDKs Master Workflows",
+        "sidebar_label": "Ost Wallet SDKs Master Workflows"
       },
       "mobile-wallet-sdks/android": {
         "title": "Android SDK Setup",
@@ -47,22 +63,6 @@
       "server-side-sdks/ruby": {
         "title": "Ruby SDK Quickstart Guide",
         "sidebar_label": "Ruby"
-      },
-      "the-basics": {
-        "title": "High Level Understanding of OST Platform SDKs",
-        "sidebar_label": "The Baiscs"
-      },
-      "ui-components-wallet-sdk": {
-        "title": "User Interface Components Available in Mobile Wallet SDKs",
-        "sidebar_label": "User Interface Components"
-      },
-      "ui-recommendations": {
-        "title": "User Interface/Experience Recommendations",
-        "sidebar_label": "UI Recommendations"
-      },
-      "webhooks": {
-        "title": "Introduction to OST Platform WebHooks",
-        "sidebar_label": "WebHooks"
       }
     },
     "links": {
@@ -73,9 +73,11 @@
       "Support": "Support"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Getting Started": "Getting Started",
       "Server Sides SDKs": "Server Sides SDKs",
-      "Mobile Wallet SDKs": "Mobile Wallet SDKs"
+      "Mobile Wallet SDKs": "Mobile Wallet SDKs",
+      "Browser Wallet SDKs": "Browser Wallet SDKs",
+      "Sample Applications": "Sample Applications"
     }
   },
   "pages-strings": {

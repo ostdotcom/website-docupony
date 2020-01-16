@@ -1,13 +1,16 @@
 {
-  "OST Platform": {
-    "Introduction": [
-      "getting-started",
-      "authentication",
-      "apis-in-sdks",
-      "webhooks"
+  "Ost SDKs": {
+    "Getting Started": [
+      "introduction.md",
+      "authentication.md",
+      "workflows.md",
+      "ui-views-and-components.md",
+      "webhooks.md",
+      "apis-in-sdks.md"
     ],
     
     "Server Sides SDKs": [
+     "server-side-sdks/sample-code-snippets",
       "server-side-sdks/php",
       "server-side-sdks/ruby",
       "server-side-sdks/nodejs",
@@ -15,18 +18,19 @@
     ],
     
     "Mobile Wallet SDKs": [
-     "ui-components-wallet-sdk",
-     "ui-recommendations",
+     "mobile-wallet-sdks/sample-code-snippets",
+     "mobile-wallet-sdks/android",
+     "mobile-wallet-sdks/iOS",
+     "mobile-wallet-sdks/react-native"
 
-      {
-        "type": "subcategory",
-        "label": "Set-Up Guidelines",
-        "ids": [
-          "mobile-wallet-sdks/android",
-          "mobile-wallet-sdks/iOS",
-          "mobile-wallet-sdks/react-native"
-        ]
-      }
+    ],
+
+    "Browser Wallet SDKs": [
+     "browser-wallet-sdks/sample-code-snippets"
+    ],
+
+    "Sample Applications": [
+
     ]
   }
 }
