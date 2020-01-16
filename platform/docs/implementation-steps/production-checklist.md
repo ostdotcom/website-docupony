@@ -1,5 +1,5 @@
 ---
-id: go-live-checklist
+id: production-checklist
 title: Go-Live Checklist
 sidebar_label: Go-Live Checklist
 ---

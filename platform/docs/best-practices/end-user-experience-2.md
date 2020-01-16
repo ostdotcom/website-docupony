@@ -1,5 +1,5 @@
 ---
-id: user-experience
+id: end-user-experience-2
 title: Seamless User Experience
 sidebar_label: - User Experience
 ---

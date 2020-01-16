@@ -1,5 +1,5 @@
 ---
-id: view
+id: block-explorer
 title: Introduction to OST VIEW
 sidebar_label: OST VIEW (Explorer)
 ---

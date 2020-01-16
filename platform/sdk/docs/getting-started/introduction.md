@@ -1,5 +1,5 @@
 ---
-id: getting-started
+id: introduction
 title: Getting Started
 sidebar_label: Getting Started
 ---

@@ -1,5 +1,5 @@
 ---
-id: transactions
+id: transaction-types
 title: Overview of Transactions in OST Platform
 sidebar_label: Transactions Explained
 ---

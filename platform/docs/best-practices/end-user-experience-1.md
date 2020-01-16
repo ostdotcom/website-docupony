@@ -1,5 +1,5 @@
 ---
-id: ui-recommendations
+id: end-user-experience-1
 title: User Interface/Experience Recommendations
 sidebar_label: UI Recommendations
 ---

@@ -1,5 +1,5 @@
 ---
-id: ui-components-wallet-sdk
+id: ui-views-and-components
 title: User Interface Components Available in Mobile Wallet SDKs
 sidebar_label: User Interface Components
 ---

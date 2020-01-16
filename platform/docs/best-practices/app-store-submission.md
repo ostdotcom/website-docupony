@@ -1,5 +1,5 @@
 ---
-id: ux
+id: app-store-submission
 title: An Example of What's Possible with OST Platform
 sidebar_label: Sample Use Case
 ---

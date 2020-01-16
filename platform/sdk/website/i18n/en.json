@@ -8,6 +8,10 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
+      "browser-wallet-sdks/android": {
+        "title": "Android SDK Setup",
+        "sidebar_label": "Android"
+      },
       "getting-started/apis-in-sdks": {
         "title": "OST Platform APIs - Endpoint Actions Available in SDKs",
         "sidebar_label": "API Actions in SDKs"
@@ -16,7 +20,7 @@
         "title": "Authentication",
         "sidebar_label": "Authentication"
       },
-      "getting-started/getting-started": {
+      "getting-started/introduction": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
@@ -24,7 +28,7 @@
         "title": "High Level Understanding of OST Platform SDKs",
         "sidebar_label": "The Baiscs"
       },
-      "getting-started/ui-components-wallet-sdk": {
+      "getting-started/ui-views-and-components": {
         "title": "User Interface Components Available in Mobile Wallet SDKs",
         "sidebar_label": "User Interface Components"
       },
@@ -32,7 +36,7 @@
         "title": "Introduction to OST Platform WebHooks",
         "sidebar_label": "WebHooks"
       },
-      "getting-started/master-workflows": {
+      "getting-started/workflows": {
         "title": "Ost Wallet SDKs Master Workflows",
         "sidebar_label": "Ost Wallet SDKs Master Workflows"
       },
@@ -47,6 +51,14 @@
       "mobile-wallet-sdks/react-native": {
         "title": "React Native Wallet SDK Setup",
         "sidebar_label": "React Native"
+      },
+      "mobile-wallet-sdks/sample-code-snippets": {
+        "title": "Android SDK Setup",
+        "sidebar_label": "Android"
+      },
+      "sample-apps/demo-server-app": {
+        "title": "Android SDK Setup",
+        "sidebar_label": "Android"
       },
       "server-side-sdks/java": {
         "title": "Java SDK Quickstart Guide",
@@ -63,6 +75,10 @@
       "server-side-sdks/ruby": {
         "title": "Ruby SDK Quickstart Guide",
         "sidebar_label": "Ruby"
+      },
+      "server-side-sdks/sample-code-snippets": {
+        "title": "Android SDK Setup",
+        "sidebar_label": "Android"
       }
     },
     "links": {

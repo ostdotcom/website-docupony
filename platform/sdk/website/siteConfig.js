@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'OST SDKs' /* title for your website */,
+  title: 'Ost SDKs' /* title for your website */,
   tagline: 'Developer Documentation',
   url: 'https://dev.ost.com/' /* your website url */,
   baseUrl: '/platform/docs/sdk/' /* base url for your project */,

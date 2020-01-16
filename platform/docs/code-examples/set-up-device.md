@@ -1,5 +1,5 @@
 ---
-id: create-session
+id: set-up device
 title: Create Session Guide
 sidebar_label: Create Session
 ---

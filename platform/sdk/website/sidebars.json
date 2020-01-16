@@ -1,12 +1,13 @@
 {
   "Ost SDKs": {
+
     "Getting Started": [
-      "introduction.md",
-      "authentication.md",
-      "workflows.md",
-      "ui-views-and-components.md",
-      "webhooks.md",
-      "apis-in-sdks.md"
+      "introduction",
+      "authentication",
+      "workflows",
+      "ui-views-and-components",
+      "webhooks",
+      "apis-in-sdks"
     ],
     
     "Server Sides SDKs": [
@@ -30,7 +31,7 @@
     ],
 
     "Sample Applications": [
-
+     "sample-apps/demo-server-app"
     ]
   }
 }

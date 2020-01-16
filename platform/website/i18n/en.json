@@ -8,17 +8,21 @@
       "assets/kit_index": {
         "title": "assets/kit_index"
       },
-      "best-practices/ux": {
+      "best-practices/app-store-submission": {
         "title": "An Example of What's Possible with OST Platform",
         "sidebar_label": "Sample Use Case"
       },
-      "best-practices/ui-recommendations": {
+      "best-practices/end-user-experience-1": {
         "title": "User Interface/Experience Recommendations",
         "sidebar_label": "UI Recommendations"
       },
-      "best-practices/user-experience": {
+      "best-practices/end-user-experience-2": {
         "title": "Seamless User Experience",
         "sidebar_label": "- User Experience"
+      },
+      "code-examples/activate-user": {
+        "title": "Create Session Guide",
+        "sidebar_label": "Create Session"
       },
       "code-examples/create-session": {
         "title": "Create Session Guide",
@@ -36,17 +40,25 @@
         "title": "Introduction to Technical Guides",
         "sidebar_label": "Introduction"
       },
+      "code-examples/set-up device": {
+        "title": "Create Session Guide",
+        "sidebar_label": "Create Session"
+      },
       "implementation-steps/introduction": {
         "title": "Welcome to OST Platform",
         "sidebar_label": "Welcome to OST Platform"
       },
-      "implementation-steps/go-live-checklist": {
+      "implementation-steps/production-checklist": {
         "title": "Go-Live Checklist",
         "sidebar_label": "Go-Live Checklist"
       },
-      "implementation-steps/sample-app": {
+      "implementation-steps/steps-to-follow": {
         "title": "A Sample App Built With OST Platform APIs/SDKs",
         "sidebar_label": "Sample App"
+      },
+      "knowledge-base-and-faq/block-explorer": {
+        "title": "Introduction to OST VIEW",
+        "sidebar_label": "OST VIEW (Explorer)"
       },
       "knowledge-base-and-faq/components": {
         "title": "OST Platform Overview",
@@ -76,17 +88,13 @@
         "title": "Introduction to Smart Contracts - Smart Code Deployed On Chain",
         "sidebar_label": "Introduction to Smart Contracts"
       },
-      "knowledge-base-and-faq/overview": {
+      "knowledge-base-and-faq/tech-arch-overview": {
         "title": "OST Platform Overview",
         "sidebar_label": "Overview"
       },
-      "knowledge-base-and-faq/transactions": {
+      "knowledge-base-and-faq/transaction-types": {
         "title": "Overview of Transactions in OST Platform",
         "sidebar_label": "Transactions Explained"
-      },
-      "knowledge-base-and-faq/view": {
-        "title": "Introduction to OST VIEW",
-        "sidebar_label": "OST VIEW (Explorer)"
       },
       "knowledge-base-and-faq/recovery": {
         "title": "Innovative Wallet Recovery Mechanisms",

@@ -1,44 +1,46 @@
 {
   "Ost Docs": {
+
     "Implementation Steps": [
-     "implementation-steps/introduction.md",
-     "implementation-steps/steps-to-follow.md",
-     "implementation-steps/production-checklist.md"
+     "implementation-steps/introduction",
+     "implementation-steps/steps-to-follow",
+     "implementation-steps/production-checklist"
     ],
 
     "Code Examples": [
-     "code-examples/introduction.md",
-     "code-examples/create-session.md",
-     "code-examples/set-up-device.md",
-     "code-examples/activate-user.md",
-     "code-examples/create-user-wallet.md",
-     "code-examples/execute-transactions.md"
+     "code-examples/introduction",
+     "code-examples/create-session",
+     "code-examples/set-up-device",
+     "code-examples/activate-user",
+     "code-examples/create-user-wallet",
+     "code-examples/execute-transactions"
     ],
     
     "Best Practices": [
-     "best-practices/end-user-experience.md",
-     "best-practices/webhooks.md",
-     "best-practices/app-store-submission.md"
+     "best-practices/end-user-experience",
+     "best-practices/webhooks",
+     "best-practices/app-store-submission"
     ],
       
     "Use Cases": [
-     "use-cases/social-network.md",
-     "use-cases/online-publisher.md",
-     "use-cases/know-your-end-customer.md",
-     "use-cases/reviews.md",
-     "use-cases/voting.md"
+     "use-cases/social-network",
+     "use-cases/online-publisher",
+     "use-cases/know-your-end-customer",
+     "use-cases/reviews",
+     "use-cases/voting"
     ],
 
     "Knowledge Base and FAQs": [
-     "knowledge-base-and-faqs/introduction.md",
-     "knowledge-base-and-faqs/tech-arch-overview.md",
-     "knowledge-base-and-faqs/components.md",
-     "knowledge-base-and-faqs/multi-device.md",
-     "knowledge-base-and-faqs/session-keys.md",
-     "knowledge-base-and-faqs/smart-contracts.md",
-     "knowledge-base-and-faqs/transactions-types.md",
-     "knowledge-base-and-faqs/wallet-recovery.md",
-     "knowledge-base-and-faqs/security-features.md"
+     "knowledge-base-and-faqs/introduction",
+     "knowledge-base-and-faqs/tech-arch-overview",
+     "knowledge-base-and-faqs/components",
+     "knowledge-base-and-faqs/multi-device",
+     "knowledge-base-and-faqs/session-keys",
+     "knowledge-base-and-faqs/smart-contracts",
+     "knowledge-base-and-faqs/transaction-types",
+     "knowledge-base-and-faqs/wallet-recovery",
+     "knowledge-base-and-faqs/block-explorer",
+     "knowledge-base-and-faqs/security-features"
 
    ]
   }

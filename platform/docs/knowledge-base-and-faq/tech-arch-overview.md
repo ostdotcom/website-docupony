@@ -1,5 +1,5 @@
 ---
-id: overview
+id: tech-arch-overview
 title: OST Platform Overview
 sidebar_label: Overview
 ---

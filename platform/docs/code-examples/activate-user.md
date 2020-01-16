@@ -1,5 +1,5 @@
 ---
-id: create-session
+id: activate-user
 title: Create Session Guide
 sidebar_label: Create Session
 ---

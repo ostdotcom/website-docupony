@@ -1,5 +1,5 @@
 ---
-id: sample-app
+id: steps-to-follow
 title: A Sample App Built With OST Platform APIs/SDKs
 sidebar_label: Sample App
 ---
